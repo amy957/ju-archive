@@ -57,14 +57,25 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install dependencies
+      - name: Install dependencies (app)
+        working-directory: 3.code
         run: npm ci
 
-      - name: Install Chromium (Playwright)
+      - name: Install dependencies (step9 gates)
+        working-directory: 3.code/gates
+        run: npm ci
+
+      - name: Install Chromium (Playwright, app)
+        working-directory: 3.code
+        run: npx playwright install chromium
+
+      - name: Install Chromium (Playwright, step9 gates)
+        working-directory: 3.code/gates
         run: npx playwright install chromium
 
       # OP-12 / S1: inject the machine-portable Chromium path (no bundled cache).
       - name: Inject JU_CHROMIUM_PATH
+        working-directory: 3.code
         shell: pwsh
         run: |
           $p = node -e "console.log(require('@playwright/test').chromium.executablePath())"
@@ -121,11 +132,13 @@ jobs:
 
       # Stage 1 - registrar (PARTY_COUNT 以 verify-hash-registry.mjs 输出为准, zero drift). Read-only.
       - name: Registrar (PARTY_COUNT per verify-hash-registry.mjs / zero drift)
+        working-directory: 3.code/gates
         run: node verify-hash-registry.mjs
 
       # Stage 2 - full regression (Node 以 verify.js 输出为准 + Playwright 171 + bench 7). Read-only.
       # L13 (E-3 / M-B) is enabled by default; JU_L13=0 falls back to the 165 baseline.
       - name: Full regression (verify:all)
+        working-directory: 3.code/gates
         run: node scripts/verify.js all
 
       # ISSUE-004（review11-04）：release 归档自带清单只读闸门——manifest 与 checksums/真实字节不符
