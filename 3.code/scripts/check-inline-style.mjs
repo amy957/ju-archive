@@ -32,7 +32,14 @@ const hexCount = (cssText.match(/#[0-9a-fA-F]{3,8}\b/g) || []).length;
 const hexNoComment = (cssText.replace(/\/\*[\s\S]*?\*\//g, '').match(/#[0-9a-fA-F]{3,8}\b/g) || []).length;
 const bangCount = (cssText.match(/!important/g) || []).length;
 
+/* 干净检出（CI）无 dist：本闸门校验的是构建产物，只能在 vite build 之后跑。
+   CI 未构建时按 --ci-mode / GITHUB_ACTIONS 降级跳过，不得把「没有产物」误判成「样式缺失」。 */
+const ciMode = process.argv.includes('--ci-mode') || process.env.GITHUB_ACTIONS === 'true';
 if (!fs.existsSync(dist)) {
+  if (ciMode) {
+    console.log('[inline-style] SKIP ci-mode：干净检出无 dist/index.html，产物样式由本地 build-all 在构建后判定');
+    process.exit(0);
+  }
   console.error(`FAIL: 产物不存在 -> ${dist}`);
   process.exit(1);
 }

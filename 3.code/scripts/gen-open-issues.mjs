@@ -22,7 +22,11 @@ const sourceIds = () => {
   }
   return ids;
 };
-const DIST = sha8(WEB_BUNDLE), ARCH = sha8(path.join(resolveLatestReleaseDir(), WEB_OUT_NAME)), PE = parityExit();
+const ARCH = sha8(path.join(resolveLatestReleaseDir(), WEB_OUT_NAME));
+/* 干净检出（CI）无 dist：仅在 dist 缺失时回落到归档 Web 哈希。
+   否则文档内容随「本机有没有构建」漂移，check-manifest 在 CI 恒红。 */
+const DIST = sha8(WEB_BUNDLE) || ARCH;
+const PE = parityExit();
 const PARITY = PE === 0 ? 'PASS' : 'BLOCK', BLOCKED = PE === 0 ? '否' : '是';
 const BODY_ALL = [
   `ISSUE-001 关闭加密复核失败仍回滚加密态（实时 dist=${DIST}、归档 Web=${ARCH}；exe/setup 哈希见归档清单，待 P-15/P-16 实机复核）`,
