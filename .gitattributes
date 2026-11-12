@@ -1,0 +1,14 @@
+# 统一行尾：仓库内存 LF，任何平台检出也是 LF
+# 目的：源码指纹、哈希登记、checksums 等字节级判定必须跨机可复现
+* text=auto eol=lf
+
+# 二进制：禁止任何转换
+*.exe  -text
+*.dll  -text
+*.so   -text
+*.dylib -text
+*.png  -text
+*.jpg  -text
+*.ico  -text
+*.mp3  -text
+*.woff2 -text
