@@ -1,0 +1,9 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:5:1 鈥?review5 路 涓婚/瀵煎叆/瀹屾暣澶囦唤/鎵撳嵃鍏ュ彛鍙揪涓旂偣鍑讳笉鎶涢敊 (2.3s)
+  ok 2 [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:40:1 鈥?review10-09 路 鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇 (2.0s)
+
+  2 passed (6.0s)

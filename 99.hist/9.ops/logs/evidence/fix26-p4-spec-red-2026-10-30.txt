@@ -1,0 +1,42 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] 鈥?6.P0-T3鍩虹嚎\m07-vite\tests\v21-fix26-p4-sidebar-rename.spec.ts:15:1 鈥?fix26-p4 路 渚ф爮閲嶅懡鍚嶅悗 .sb-label 绔嬪嵆鍙樹负鏂板悕绉?(5.4s)
+
+
+  1) [chromium] 鈥?6.P0-T3鍩虹嚎\m07-vite\tests\v21-fix26-p4-sidebar-rename.spec.ts:15:1 鈥?fix26-p4 路 渚ф爮閲嶅懡鍚嶅悗 .sb-label 绔嬪嵆鍙樹负鏂板悕绉?
+
+    Error: 鏂囨。閲嶅懡鍚嶅悗渚ф爮鏂囧瓧蹇呴』绔嬪嵆鏇存柊
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "p4 鏂版枃妗?
+    Received: "p4 鏃ф枃妗?
+
+      50 |     return ((await row.locator('.sb-label').first().textContent()) || '').trim();
+      51 |   };
+    > 52 |   expect(await rename(ids.doc, 'p4 鏂版枃妗?), '鏂囨。閲嶅懡鍚嶅悗渚ф爮鏂囧瓧蹇呴』绔嬪嵆鏇存柊').toBe('p4 鏂版枃妗?);
+         |                                                               ^
+      53 |   expect(await rename(ids.folder, 'p4 鏂版枃浠跺す'), '鏂囦欢澶归噸鍛藉悕鍚庝晶鏍忔枃瀛楀繀椤荤珛鍗虫洿鏂?).toBe('p4 鏂版枃浠跺す');
+      54 |   expect(await rename(ids.table, 'p4 鏂拌〃鏍?), '琛ㄦ牸閲嶅懡鍚嶅悗渚ф爮鏂囧瓧蹇呴』绔嬪嵆鏇存柊').toBe('p4 鏂拌〃鏍?);
+      55 |   await ctx.close();
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\v21-fix26-p4-sidebar-rename.spec.ts:52:63
+
+    attachment #1: screenshot (image/png) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    6.P0-T3鍩虹嚎\m07-vite\test-results\v21-fix26-p4-sidebar-renam-65b4c-4-路-渚ф爮閲嶅懡鍚嶅悗-sb-label-绔嬪嵆鍙樹负鏂板悕绉?chromium\test-failed-1.png
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error Context: 6.P0-T3鍩虹嚎\m07-vite\test-results\v21-fix26-p4-sidebar-renam-65b4c-4-路-渚ф爮閲嶅懡鍚嶅悗-sb-label-绔嬪嵆鍙樹负鏂板悕绉?chromium\error-context.md
+
+    attachment #3: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    6.P0-T3鍩虹嚎\m07-vite\test-results\v21-fix26-p4-sidebar-renam-65b4c-4-路-渚ф爮閲嶅懡鍚嶅悗-sb-label-绔嬪嵆鍙樹负鏂板悕绉?chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace 6.P0-T3鍩虹嚎\m07-vite\test-results\v21-fix26-p4-sidebar-renam-65b4c-4-路-渚ф爮閲嶅懡鍚嶅悗-sb-label-绔嬪嵆鍙樹负鏂板悕绉?chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+  1 failed
+    [chromium] 鈥?6.P0-T3鍩虹嚎\m07-vite\tests\v21-fix26-p4-sidebar-rename.spec.ts:15:1 鈥?fix26-p4 路 渚ф爮閲嶅懡鍚嶅悗 .sb-label 绔嬪嵆鍙樹负鏂板悕绉?

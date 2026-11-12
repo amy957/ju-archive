@@ -1,0 +1,42 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › tests\v21-fixr6-close-persist.spec.ts:56:1 › review9-03 · 自动备份关闭时关闭仍先等主库 save_state 落盘 (1.0s)
+
+
+  1) [chromium] › tests\v21-fixr6-close-persist.spec.ts:56:1 › review9-03 · 自动备份关闭时关闭仍先等主库 save_state 落盘 
+
+    Error: 备份开关关闭时 close 不得早于主库落盘
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      65 |   await page.evaluate(() => { const w = window as any; const J = w.JU; w.__ev.length = 0; w.__hold = true; J.actions.addNode(J.getState().rootId, null, { text: 'review9-03' }); document.getElementById('btnClose')!.click(); });
+      66 |   await page.waitForFunction(() => { const ev = (window as any).__ev as string[]; return ev.includes('hide') && ev.includes('save_state:req'); }, null, { timeout: 20_000 });
+    > 67 |   expect(((await page.evaluate(() => (window as any).__ev as string[])).includes('close')), '备份开关关闭时 close 不得早于主库落盘').toBe(false);
+         |                                                                                                                       ^
+      68 |   await page.evaluate(() => (window as any).__release());
+      69 |   await page.waitForFunction(() => ((window as any).__ev as string[]).includes('close'), null, { timeout: 20_000 });
+      70 |   const ev2: string[] = await page.evaluate(() => (window as any).__ev);
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fixr6-close-persist.spec.ts:67:119
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\v21-fixr6-close-persist-re-41655-动备份关闭时关闭仍先等主库-save-state-落盘-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\v21-fixr6-close-persist-re-41655-动备份关闭时关闭仍先等主库-save-state-落盘-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v21-fixr6-close-persist-re-41655-动备份关闭时关闭仍先等主库-save-state-落盘-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fixr6-close-persist-re-41655-动备份关闭时关闭仍先等主库-save-state-落盘-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\v21-fixr6-close-persist.spec.ts:56:1 › review9-03 · 自动备份关闭时关闭仍先等主库 save_state 落盘 

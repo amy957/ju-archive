@@ -1,0 +1,47 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-Crc4toey.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+  x  1 [chromium] › tests\review9-12-probe.spec.ts:3:1 › review9-12 · preimport ui 偏好可恢复且不含敏感键 (1.1m)
+
+
+  1) [chromium] › tests\review9-12-probe.spec.ts:3:1 › review9-12 · preimport ui 偏好可恢复且不含敏感键 ───────
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "\"sidebarLeftWidth\":333"
+    Received string:    "{\"ts\":1793710383166,\"state\":{\"nodes\":{\"root\":{\"id\":\"root\",\"text\":\"\",\"parent\":null,\"children\":[\"uyhsxztukve\",\"j5zl1nkukzl\"],\"collapsed\":false,\"done\":false,\"date\":null,\"tags\":[],\"priority\":0,\"recur\":null,\"recurEnd\":null,\"habit\":null,\"time\":null,\"note\":null,\"color\":null,\"showInCal\":true,\"createdAt\":1793710382378,\"updatedAt\":1793710382378,\"_origin\":\"local\"},\"uyhsxztukve\":{\"id\":\"uyhsxztukve\",\"text\":\"欢迎使用 JU\",\"parent\":\"root\",\"children\":[\"v0d9iwpukve\",\"axsxrwsukve\",\"nsr49sbukve\",\"lan42pyukvf\"],\"collapsed\":false,\"done\":false,\"date\":null,\"tags\":[],\"priority\":0,\"recur\":null,\"recurEnd\":null,\"habit\":null,\"time\":null,\"note\":null,\"color\":null,\"showInCal\":true,\"createdAt\":1793710382378,\"updatedAt\":1793710382378,\"_origin\":\"local\"},\"v0d9iwpukve\":{\"id\":\"v0d9iwpukve\",\"text\":\"Enter 新建同级，Tab 缩进，Shift+Tab 反缩进\",\"parent\":\"uyhsxztukve\",\"children\":[],\"collapsed\":false,\"done\":false,\"date\":null,\"tags\":[],\"priority\":0,\"recur\":null,\"recurEnd\":null,\"habit\":null,\"time\":null,\"note\":null,\"color\":null,\"showInCal\":true,\"createdAt\":1793710382378,\"updatedAt\":1793710382378,\"_origin\":\"local\"},\"axsxrwsukve\":{\"id\":\"axsxrwsukve\",\"text\":\"Backspace 删除空行，Ctrl+D 复制\",\"parent\":\"uyhsxztukve\",\"children\":[],\"collapsed\":false,\"done\":false,\"date\":null,\"tags\":[],\"priority\":0,\"recur\":null,\"recurEnd\":null,\"habit\":null,\"time\":null,\"note\":null,\"color\":null,\"showInCal\":true,\"createdAt\":1793710382378,\"updatedAt\":1793710382378,\"_origin\":\"local\"},\"nsr49sbukve\":{\"id\":\"nsr49sbukve\",\"text\":\"顶部切换：资料库 / 大纲 / 导图 / 图谱 / 历史\",\"parent\":\"uyhsxztukve\",\"children\":[],\"collapsed\":false,\"done\":false,\"date\":null,\"tags\":[],\"priority\":0,\"recur\":null,\"recurEnd\":null,\"habit\":null,\"time\":null,\"note\":null,\"color\":null,\"showInCal\":true,\"createdAt\":1793710382378,\"updatedAt\":1793710382378,\"_origin\":\"local\"},\"lan42pyukvf\":{\"id\":\"lan42pyukvf\",\"text\":\"日历里的待办会独立存放在「日历待办」容器中\",\"parent\":\"uyhsxztukve\",\"children\":[],\"collapsed\":false,\"done\":false,\"date\":null,\"tags\":[],\"priority\":0,\"recur\":null,\"recurEnd\":null,\"habit\":null,\"time\":null,\"note\":null,\"color\":null,\"showInCal\":true,\"createdAt\":1793710382379,\"updatedAt\":1793710382379,\"_origin\":\"local\"},\"j5zl1nkukzl\":{\"id\":\"j5zl1nkukzl\",\"text\":\"日历待办\",\"parent\":\"root\",\"children\":[],\"collapsed\":false,\"done\":false,\"date\":null,\"tags\":[],\"priority\":0,\"recur\":null,\"habit\":null,\"time\":null,\"note\":null,\"color\":null,\"showInCal\":false,\"_isCalRoot\":true,\"_isFolder\":true,\"createdAt\":1793710382529,\"updatedAt\":1793710382529}},\"rootId\":\"root\",\"updatedAt\":1793710382532,\"_rev\":1,\"_structRev\":0,\"trashed\":[],\"tagColors\":{},\"_tags\":[],\"activity\":{},\"charStats\":{},\"_tombstones\":{},\"_localCreated\":[\"root\",\"uyhsxztukve\",\"v0d9iwpukve\",\"axsxrwsukve\",\"nsr49sbukve\",\"lan42pyukvf\"],\"_remoteReceived\":[]}}"
+
+    Call Log:
+    - Timeout 60000ms exceeded while waiting on the predicate
+
+      11 |   await page.evaluate((json: string) => { const J = (window as any).JU; const f = new File([json], 'r9-12.json', { type: 'application/json' }); void J.handleImportFiles([f]); }, JSON.stringify(st));
+      12 |   await page.locator('.modal-overlay .modal [data-ok]').last().click({ timeout: 30_000 });
+    > 13 |   await expect.poll(async () => page.evaluate(() => localStorage.getItem('juju.backup.preimport') || ''), { timeout: 60_000 }).toContain('"sidebarLeftWidth":333');
+         |                                                                                                                                ^
+      14 |   const raw = await page.evaluate(() => localStorage.getItem('juju.backup.preimport') || '');
+      15 |   expect(raw).toContain('"ui"'); expect(raw).not.toContain('encKey'); expect(raw).not.toContain('"encrypted"');
+      16 |   await context.addInitScript(() => { localStorage.setItem('juju.theme.manual', '1'); const g = Storage.prototype.getItem; Storage.prototype.getItem = function (k: string) { return k === 'juju.store.v31' ? '{invalid_json}' : (k === 'juju.ui.v31' || k === 'juju.ui.enc' ? null : g.call(this, k)); }; });
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\review9-12-probe.spec.ts:13:128
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\review9-12-probe-review9-12-·-preimport-ui-偏好可恢复且不含敏感键-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\review9-12-probe-review9-12-·-preimport-ui-偏好可恢复且不含敏感键-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\review9-12-probe-review9-12-·-preimport-ui-偏好可恢复且不含敏感键-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\review9-12-probe-review9-12-·-preimport-ui-偏好可恢复且不含敏感键-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\review9-12-probe.spec.ts:3:1 › review9-12 · preimport ui 偏好可恢复且不含敏感键 ────────

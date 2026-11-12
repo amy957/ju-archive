@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-10-17T02:33:59.759Z",
+  "canonical": {
+    "bytes": 1104391,
+    "sha256": "1A61EEBD3D17F59B5497ACAF4B6F0217770B0243B7AE32B3B1F154ECC07E8C0E"
+  },
+  "all": {
+    "json": {
+      "property": {
+        "full": {
+          "defectARootOps": 0,
+          "errSamples": [],
+          "baselineDefectARootOps": 7,
+          "baselineErrSamples": [
+            "TypeError: Cannot read properties of undefined (reading 'children')",
+            "TypeError: Cannot read properties of undefined (reading 'children')",
+            "TypeError: Cannot read properties of undefined (reading 'children')",
+            "TypeError: Cannot read properties of undefined (reading 'children')",
+            "TypeError: Cannot read properties of undefined (reading 'children')",
+            "TypeError: Cannot read properties of undefined (reading 'children')",
+            "TypeError: Cannot read properties of undefined (reading 'children')"
+          ]
+        }
+      }
+    }
+  },
+  "perf": {
+    "samplesNew": 20,
+    "samplesOld": 12,
+    "p95NewMs": 0.0249,
+    "p95OldMs": 29.6874,
+    "sizeAfterNew": 50001,
+    "expectedSize": 50001
+  },
+  "legitDeleteOk": true
+}

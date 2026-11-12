@@ -1,0 +1,74 @@
+TAP version 13
+# Subtest: A · 结构锚点（转义 / createTextNode / 表格上下文守卫）
+    # Subtest: A1 非 SAFE_TAGS 分支先转义再 createTextNode
+    ok 1 - A1 非 SAFE_TAGS 分支先转义再 createTextNode
+      ---
+      duration_ms: 0.7936
+      type: 'test'
+      ...
+    # Subtest: A2 表格类父上下文前置于最近 TABLE（foster parenting 同口径）
+    ok 2 - A2 表格类父上下文前置于最近 TABLE（foster parenting 同口径）
+      ---
+      duration_ms: 0.1856
+      type: 'test'
+      ...
+    1..2
+ok 1 - A · 结构锚点（转义 / createTextNode / 表格上下文守卫）
+  ---
+  duration_ms: 824.2215
+  type: 'suite'
+  ...
+# Subtest: B · sanitizeHtml 幂等（fuzz 31 例）
+    # Subtest: B1 31 例全部满足 sanitizeHtml(sanitizeHtml(x))===sanitizeHtml(x)
+    ok 1 - B1 31 例全部满足 sanitizeHtml(sanitizeHtml(x))===sanitizeHtml(x)
+      ---
+      duration_ms: 22.3899
+      type: 'test'
+      ...
+    # Subtest: B2 回填文本不含可再解析的字面标签（unsafeInState=false）
+    ok 2 - B2 回填文本不含可再解析的字面标签（unsafeInState=false）
+      ---
+      duration_ms: 6.8373
+      type: 'test'
+      ...
+    1..2
+ok 2 - B · sanitizeHtml 幂等（fuzz 31 例）
+  ---
+  duration_ms: 29.4842
+  type: 'suite'
+  ...
+# Subtest: C · 现有 XSS 用例（idx 0–13）
+    # Subtest: C1 14 例再解析后 pwned=false
+    ok 1 - C1 14 例再解析后 pwned=false
+      ---
+      duration_ms: 4.9086
+      type: 'test'
+      ...
+    1..1
+ok 3 - C · 现有 XSS 用例（idx 0–13）
+  ---
+  duration_ms: 5.0963
+  type: 'suite'
+  ...
+# Subtest: D · 大 state（5,000 节点 HTML）P95 采样
+    # Subtest: D1 单次净化耗时采样（记录值 · 幂等同时成立）
+    ok 1 - D1 单次净化耗时采样（记录值 · 幂等同时成立）
+      ---
+      duration_ms: 1753.5327
+      type: 'test'
+      ...
+    1..1
+ok 4 - D · 大 state（5,000 节点 HTML）P95 采样
+  ---
+  duration_ms: 1753.8306
+  type: 'suite'
+  ...
+1..4
+# tests 6
+# suites 4
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3137.8018

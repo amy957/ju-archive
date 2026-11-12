@@ -1,0 +1,125 @@
+TAP version 13
+# Subtest: L16-W7 §A 结构锚点（索引游标队列）
+    # Subtest: 使用 queue[head++] 游标；函数体无 stack.filter(Boolean) / stack.pop()
+    ok 1 - 使用 queue[head++] 游标；函数体无 stack.filter(Boolean) / stack.pop()
+      ---
+      duration_ms: 0.8183
+      type: 'test'
+      ...
+    1..1
+ok 1 - L16-W7 §A 结构锚点（索引游标队列）
+  ---
+  duration_ms: 1.8146
+  type: 'suite'
+  ...
+# Subtest: L16-W7 §B 结果等价（新口径 == 旧口径，逐位）
+    # Subtest: flat 子树逐位相等
+    ok 1 - flat 子树逐位相等
+      ---
+      duration_ms: 24.3091
+      type: 'test'
+      ...
+    # Subtest: chain 子树逐位相等
+    ok 2 - chain 子树逐位相等
+      ---
+      duration_ms: 38.8039
+      type: 'test'
+      ...
+    # Subtest: bushy 子树逐位相等
+    ok 3 - bushy 子树逐位相等
+      ---
+      duration_ms: 21.2366
+      type: 'test'
+      ...
+    # Subtest: deep2 子树逐位相等
+    ok 4 - deep2 子树逐位相等
+      ---
+      duration_ms: 33.547
+      type: 'test'
+      ...
+    # Subtest: malformed 子树逐位相等
+    ok 5 - malformed 子树逐位相等
+      ---
+      duration_ms: 0.1561
+      type: 'test'
+      ...
+    1..5
+ok 2 - L16-W7 §B 结果等价（新口径 == 旧口径，逐位）
+  ---
+  duration_ms: 118.4264
+  type: 'suite'
+  ...
+# Subtest: L16-W7 §C 单根传入（非数组 / 数组）等价
+    # Subtest: 单根字符串与单元素数组结果一致（含 null / undefined 守卫）
+    ok 1 - 单根字符串与单元素数组结果一致（含 null / undefined 守卫）
+      ---
+      duration_ms: 0.5159
+      type: 'test'
+      ...
+    1..1
+ok 3 - L16-W7 §C 单根传入（非数组 / 数组）等价
+  ---
+  duration_ms: 0.6463
+  type: 'suite'
+  ...
+# Subtest: L16-W7 §D 5 万节点子树（验收 ①：逐位相等）
+    # Subtest: 50,000 节点子树 id 集逐位相等且规模正确
+    ok 1 - 50,000 节点子树 id 集逐位相等且规模正确
+      ---
+      duration_ms: 38.0682
+      type: 'test'
+      ...
+    1..1
+ok 4 - L16-W7 §D 5 万节点子树（验收 ①：逐位相等）
+  ---
+  duration_ms: 38.1812
+  type: 'suite'
+  ...
+# Subtest: L16-W7 §E 确定性幂等
+    # Subtest: 同输入两次调用返回相同元素集（互不影响）
+    ok 1 - 同输入两次调用返回相同元素集（互不影响）
+      ---
+      duration_ms: 1.0884
+      type: 'test'
+      ...
+    1..1
+ok 5 - L16-W7 §E 确定性幂等
+  ---
+  duration_ms: 1.1723
+  type: 'suite'
+  ...
+# Subtest: L16-W7 §F 环引用防护（可终止）
+    # Subtest: 自引用 / 环路子树可终止且结果闭合
+    ok 1 - 自引用 / 环路子树可终止且结果闭合
+      ---
+      duration_ms: 0.2831
+      type: 'test'
+      ...
+    1..1
+ok 6 - L16-W7 §F 环引用防护（可终止）
+  ---
+  duration_ms: 0.3678
+  type: 'suite'
+  ...
+# Subtest: L16-W7 §G 非显著劣化（50k 子树 P95 对照）
+    # Subtest: 新口径 P95 不显著劣于旧口径（宽容差，避免抖动误报）
+    ok 1 - 新口径 P95 不显著劣于旧口径（宽容差，避免抖动误报）
+      ---
+      duration_ms: 1991.5236
+      type: 'test'
+      ...
+    1..1
+ok 7 - L16-W7 §G 非显著劣化（50k 子树 P95 对照）
+  ---
+  duration_ms: 1991.6
+  type: 'suite'
+  ...
+1..7
+# tests 11
+# suites 7
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2480.7351

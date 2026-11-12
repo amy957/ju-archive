@@ -1,0 +1,147 @@
+﻿TAP version 13
+# Subtest: L17-W2 · 结构锚点
+    # Subtest: week 分支不含 UTC 取值器 / Date.UTC
+    ok 1 - week 分支不含 UTC 取值器 / Date.UTC
+      ---
+      duration_ms: 1.0865
+      type: 'test'
+      ...
+    # Subtest: week 分支使用本地取值器与本地基准日
+    ok 2 - week 分支使用本地取值器与本地基准日
+      ---
+      duration_ms: 0.2442
+      type: 'test'
+      ...
+    # Subtest: 7 日序列与 buildTimeGrid(days) 收口逐字保留
+    ok 3 - 7 日序列与 buildTimeGrid(days) 收口逐字保留
+      ---
+      duration_ms: 0.115
+      type: 'test'
+      ...
+    # Subtest: 选中日解析口径未改动（parseYmd + todayStr 回退）
+    ok 4 - 选中日解析口径未改动（parseYmd + todayStr 回退）
+      ---
+      duration_ms: 0.1398
+      type: 'test'
+      ...
+    1..4
+ok 1 - L17-W2 · 结构锚点
+  ---
+  duration_ms: 3.1606
+  type: 'suite'
+  ...
+# Subtest: L17-W2 · 周区间（东八区）
+    # Subtest: 周六 2026-10-17 → 2026-10-11 ~ 2026-10-17
+    ok 1 - 周六 2026-10-17 → 2026-10-11 ~ 2026-10-17
+      ---
+      duration_ms: 2.9036
+      type: 'test'
+      ...
+    # Subtest: 周日 2026-10-18 → 2026-10-18 ~ 2026-10-24（缺陷触发日）
+    ok 2 - 周日 2026-10-18 → 2026-10-18 ~ 2026-10-24（缺陷触发日）
+      ---
+      duration_ms: 0.1667
+      type: 'test'
+      ...
+    # Subtest: 周日跨月 2026-11-01 → 2026-11-01 ~ 2026-11-07
+    ok 3 - 周日跨月 2026-11-01 → 2026-11-01 ~ 2026-11-07
+      ---
+      duration_ms: 0.1438
+      type: 'test'
+      ...
+    # Subtest: 周五跨年 2027-01-01 → 2026-12-27 ~ 2027-01-02
+    ok 4 - 周五跨年 2027-01-01 → 2026-12-27 ~ 2027-01-02
+      ---
+      duration_ms: 0.1694
+      type: 'test'
+      ...
+    1..4
+ok 2 - L17-W2 · 周区间（东八区）
+  ---
+  duration_ms: 3.6206
+  type: 'suite'
+  ...
+# Subtest: L17-W2 · 边界与降级
+    # Subtest: selectedDate 缺省 → 回退 todayStr()（2026-10-17 所在周）
+    ok 1 - selectedDate 缺省 → 回退 todayStr()（2026-10-17 所在周）
+      ---
+      duration_ms: 0.2032
+      type: 'test'
+      ...
+    # Subtest: selectedDate 非法（非 YYYY-MM-DD）→ 不抛错 · 7 日形态与改前一致（非回归）
+    ok 2 - selectedDate 非法（非 YYYY-MM-DD）→ 不抛错 · 7 日形态与改前一致（非回归）
+      ---
+      duration_ms: 4.4609
+      type: 'test'
+      ...
+    # Subtest: 7 日均为本地零点（避免 UTC 构造残留的时分偏移）
+    ok 3 - 7 日均为本地零点（避免 UTC 构造残留的时分偏移）
+      ---
+      duration_ms: 0.1471
+      type: 'test'
+      ...
+    # Subtest: 列首恒为周日、列尾恒为周六（星期序列 0..6）
+    ok 4 - 列首恒为周日、列尾恒为周六（星期序列 0..6）
+      ---
+      duration_ms: 0.1701
+      type: 'test'
+      ...
+    1..4
+ok 3 - L17-W2 · 边界与降级
+  ---
+  duration_ms: 5.1486
+  type: 'suite'
+  ...
+# Subtest: L17-W2 · 红证（frozen-l14 改前形态）
+    # Subtest: 只读冻结锚存在
+    ok 1 - 只读冻结锚存在
+      ---
+      duration_ms: 0.3614
+      type: 'test'
+      ...
+    # Subtest: 改前形态：周日整周回退 7 日（选中日不在周内）
+    ok 2 - 改前形态：周日整周回退 7 日（选中日不在周内）
+      ---
+      duration_ms: 3.1729
+      type: 'test'
+      ...
+    # Subtest: 改前形态：周六巧合正确（缺陷仅周日显形）
+    ok 3 - 改前形态：周六巧合正确（缺陷仅周日显形）
+      ---
+      duration_ms: 4.9088
+      type: 'test'
+      ...
+    # Subtest: 改前形态：结构锚点必然不成立（UTC 取值器仍在）
+    ok 4 - 改前形态：结构锚点必然不成立（UTC 取值器仍在）
+      ---
+      duration_ms: 3.9021
+      type: 'test'
+      ...
+    1..4
+ok 4 - L17-W2 · 红证（frozen-l14 改前形态）
+  ---
+  duration_ms: 12.492
+  type: 'suite'
+  ...
+# Subtest: L17-W2 · 属性采样（2026-01-01 ~ 2027-12-31）
+    # Subtest: 逐日：首日周日 · 序列连续 · 含选中日 · 星期 0..6
+    ok 1 - 逐日：首日周日 · 序列连续 · 含选中日 · 星期 0..6
+      ---
+      duration_ms: 8.9665
+      type: 'test'
+      ...
+    1..1
+ok 5 - L17-W2 · 属性采样（2026-01-01 ~ 2027-12-31）
+  ---
+  duration_ms: 9.044
+  type: 'suite'
+  ...
+1..5
+# tests 17
+# suites 5
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 266.502

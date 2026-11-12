@@ -1,0 +1,16 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 6 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/6] [chromium] 鈥?tests\v21-fix9-settings-bind.spec.ts:135:3 鈥?v2.1 fix9 路 璁剧疆娴獥琛ョ粦锛圫IMPLE 4 椤癸級 鈥?瀛楀彿婊戞潌 #setFontSize锛氭嫋鍒?155 鈫?ui().scale 鈮?1.55 + --font-size 鍙樺寲 + 鐧惧垎姣旀洿鏂?[chromium] 鈥?tests\v21-fix9-settings-bind.spec.ts:135:3 鈥?v2.1 fix9 路 璁剧疆娴獥琛ョ粦锛圫IMPLE 4 椤癸級 鈥?瀛楀彿婊戞潌 #setFontSize锛氭嫋鍒?155 鈫?ui().scale 鈮?1.55 + --font-size 鍙樺寲 + 鐧惧垎姣旀洿鏂?[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-C7KBmZ4T.js
+
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+
+[2/6] [chromium] 鈥?tests\v21-fix9-settings-bind.spec.ts:178:3 鈥?v2.1 fix9 路 璁剧疆娴獥琛ョ粦锛圫IMPLE 4 椤癸級 鈥?鑷姩澶囦唤寮€鍏?#setAutoBackupClose锛氱偣鍑?鈫?ui().autoBackupOnClose 鍙樺寲 + .switch.on 鍙樺寲
+[3/6] [chromium] 鈥?tests\v21-fix9-settings-bind.spec.ts:215:3 鈥?v2.1 fix9 路 璁剧疆娴獥琛ョ粦锛圫IMPLE 4 椤癸級 鈥?鎭㈠榛樿璺緞 #btnBackupDirReset锛氱偣鍑?鈫?toast銆屽凡鎭㈠榛樿澶囦唤璺緞銆? ui().backupDir 娓呯┖
+[4/6] [chromium] 鈥?tests\v21-fix9-settings-bind.spec.ts:230:3 鈥?v2.1 fix9 路 璁剧疆娴獥琛ョ粦锛圫IMPLE 4 椤癸級 鈥?浠庡浠芥仮澶?#btnRestoreBackup锛氱偣鍑?鈫?鎵撳紑瀵煎叆寮圭獥锛坥penImportDialog锛?[5/6] [chromium] 鈥?tests\v21-fix9-settings-bind.spec.ts:246:3 鈥?v2.1 fix9 路 璁剧疆娴獥琛ョ粦锛圫IMPLE 4 椤癸級 鈥?绯荤粺鎻愰啋閫氱煡 #setReminder锛氱偣鍑?鈫?ui().reminderEnabled === true + .switch.on 缈昏浆锛圧EG-9 鎾ゅ洖锛?[6/6] [chromium] 鈥?tests\v21-fix9-settings-bind.spec.ts:277:3 鈥?v2.1 fix9 路 璁剧疆娴獥琛ョ粦锛圫IMPLE 4 椤癸級 鈥?4 椤瑰凡鎭㈠锛氬叏搴撳姞瀵?/ 澶囦唤浣嶇疆路娴忚 / 蹇嵎閿?/ 鍙嶉 count=1 涓旂偣鍑绘湁鍙娴嬪弽搴?  6 passed (18.0s)

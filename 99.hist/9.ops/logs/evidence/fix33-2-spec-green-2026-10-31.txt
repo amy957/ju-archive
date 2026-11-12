@@ -1,0 +1,9 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\v21-fix33-encrypted-desktop-save.spec.ts:13:1 › fix33-2 · 正向：invoke 恒 resolve(null) 时加密 autosave 落盘且无「加密保存失败」提示 (2.2s)
+  ok 2 [chromium] › tests\v21-fix33-encrypted-desktop-save.spec.ts:16:1 › fix33-2 · 负向：invoke reject 时加密保存返回 false 并提示「加密保存失败」 (1.6s)
+
+  2 passed (5.1s)

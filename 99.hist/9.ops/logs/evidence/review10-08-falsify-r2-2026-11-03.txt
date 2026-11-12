@@ -1,0 +1,17 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BWYfgqEN.js
+[plugin vite:singlefile] Inlining: style-BheOwebL.css
+  ok 1 [chromium] 鈥?tests\v21-review9-02-preimport-enc.spec.ts:5:1 鈥?review9-02 路 鍔犲瘑鎬佸鍏ュ悗 preimport 涓哄瘑鏂囷紝閲嶈浇瑙ｉ攣鍙仮澶嶅鍏ュ墠蹇収 (8.9s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BWYfgqEN.js
+[plugin vite:singlefile] Inlining: style-BheOwebL.css
+  ok 2 [chromium] 鈥?tests\v21-review9-02-preimport-enc.spec.ts:15:1 鈥?review9-02 路 鏄庢枃鎬佸鍏ユ垚鍔熷悗娓呯悊 preimport (4.8s)
+
+  2 passed (16.9s)

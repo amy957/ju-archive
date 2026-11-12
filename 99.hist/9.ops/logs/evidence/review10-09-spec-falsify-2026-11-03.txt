@@ -1,0 +1,49 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:5:1 鈥?review5 路 涓婚/瀵煎叆/瀹屾暣澶囦唤/鎵撳嵃鍏ュ彛鍙揪涓旂偣鍑讳笉鎶涢敊 (2.3s)
+  x  2 [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:40:1 鈥?review10-09 路 鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇 (30.8s)
+
+
+  1) [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:40:1 鈥?review10-09 路 鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇 鈹€鈹€
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.modal-overlay .modal-body')
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.modal-overlay .modal-body') with timeout 30000ms
+      - waiting for locator('.modal-overlay .modal-body')
+
+
+      48 |   await page.locator('#btnBackupSide').click();
+      49 |   const dialog = page.locator('.modal-overlay .modal-body');
+    > 50 |   await expect(dialog).toBeVisible();
+         |                        ^
+      51 |   await expect(dialog).toContainText('鏄庢枃');
+      52 |   await page.locator('.modal-overlay .modal [data-cancel]').click();
+      53 |   await expect(page.locator('.modal-overlay')).toHaveCount(0);
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\v21-review5-feature-entries.spec.ts:50:24
+
+    attachment #1: screenshot (image/png) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-review5-feature-entries-review10-09-路-鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇-chromium\test-failed-1.png
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error Context: test-results\v21-review5-feature-entries-review10-09-路-鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇-chromium\error-context.md
+
+    attachment #3: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-review5-feature-entries-review10-09-路-鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-review5-feature-entries-review10-09-路-鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇-chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+  1 failed
+    [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:40:1 鈥?review10-09 路 鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇 鈹€鈹€鈹€
+  1 passed (35.2s)

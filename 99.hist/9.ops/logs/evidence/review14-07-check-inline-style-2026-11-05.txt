@@ -1,0 +1,16 @@
+﻿dist/index.html bytes = 4715423
+<style> blocks = 4 (inline css chars = 118729)
+index.html inline style attrs = 0
+dist inline style attrs = 61锛堣繍琛屾湡妯℃澘锛屼粎璁板綍锛屼笉鍙備笌纭棬绂侊級
+src/style.css hex = 130锛堝幓娉ㄩ噴 121锛夛紝闃堝€?鈮?130 鈫?PASS [hard]
+src/style.css !important = 72锛岄槇鍊?鈮?72 鈫?PASS [hard]
+PASS  has <style tag
+PASS  has --bg variable
+PASS  has body{ rule
+PASS  has #sidebarLeft rule
+PASS  has .sb-row rule
+PASS  has .main-toggle rule
+PASS  has .tb-wbtn rule
+PASS  no external stylesheet link
+PASS  no inline style attribute in index.html
+P0 PASS: 鏍峰紡宸插唴鑱旇繘鍗曟枃浠朵骇鐗?

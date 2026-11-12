@@ -1,0 +1,20 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs'; import path from 'node:path'; import os from 'node:os'; import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'); const BASE = 'http://localhost:5173';
+test('fix41 · 关闭先隐藏再静默落盘再退出', async ({ browser }) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ju41-')); const ctx = await browser.newContext({ baseURL: BASE, viewport: { width: 1200, height: 900 } });
+  await ctx.route(BASE + '/**', (r) => { const p = new URL(r.request().url()).pathname; const f = path.join(ROOT, 'dist', p === '/' ? 'index.html' : decodeURIComponent(p)); try { return r.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: fs.readFileSync(f) }); } catch { throw new Error('dist/index.html 缺失，请先 vite build'); } });
+  await ctx.exposeFunction('__juWriteBackup', (p: string, c: string) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, c, 'utf8'); return p; });
+  await ctx.addInitScript((d) => { localStorage.setItem('juju.ui.v31', JSON.stringify({ backupDir: d, autoBackupOnClose: true })); const ev: string[] = []; const api: any = { hide: async () => { ev.push('hide'); }, close: async () => { ev.push('close'); }, onCloseRequested: async (cb: any) => { (window as any).__closeCb = cb; }, minimize: async () => {}, toggleMaximize: async () => {}, setAlwaysOnTop: async () => {} }; (window as any).__ev = ev; (window as any).__TAURI__ = { window: { getCurrent: () => api, getCurrentWindow: () => api }, core: { invoke: async (c: string, a: any) => { if (c === 'save_backup') { ev.push('save'); await (window as any).__juWriteBackup(a.path, a.content); return a.path; } return c === 'load_state' ? '{}' : 'ok'; } } }; }, dir);
+  const page = await ctx.newPage(); await page.goto(BASE, { waitUntil: 'load' });
+  await page.waitForFunction((n) => { const el = document.getElementById('setBackupDirVal'); return !!(window as any).__closeCb && !!el && String(el.textContent || '').includes(n); }, path.basename(dir), { timeout: 60_000 });
+  await page.evaluate(async () => { await (window as any).__closeCb({ preventDefault: () => { (window as any).__prevented = true; } }); });
+  const files = fs.readdirSync(dir).filter((f) => /\.json$/.test(f));
+  expect(files.length, '关闭后应在指定目录生成备份 JSON').toBeGreaterThan(0);
+  expect(fs.readFileSync(path.join(dir, files[0]), 'utf8')).toContain('"type":"full-backup"');
+  const ev = await page.evaluate(() => (window as any).__ev);
+  expect(ev[0], '第一步必须隐藏窗口').toBe('hide');
+  expect(ev, '备份落盘先于退出').toContain('save');
+  expect(ev[ev.length - 1], '备份完成后才 close').toBe('close');
+  expect(await page.evaluate(() => (window as any).__prevented), '首次 close 必须 preventDefault').toBe(true);
+  await ctx.close(); });

@@ -1,0 +1,55 @@
+{
+  "version": "v2.1.0",
+  "release": "v2.1.0",
+  "build_date": "2026-11-12",
+  "parity":"PASS",
+  "openIssues": [
+    "ISSUE-001",
+    "ISSUE-002",
+    "ISSUE-003",
+    "ISSUE-004",
+    "ISSUE-005",
+    "ISSUE-008",
+    "ISSUE-009",
+    "ISSUE-010",
+    "ISSUE-011",
+    "ISSUE-101",
+    "ISSUE-102",
+    "ISSUE-103",
+    "ISSUE-104",
+    "ISSUE-105",
+    "ISSUE-106",
+    "ISSUE-107",
+    "ISSUE-108",
+    "ISSUE-109",
+    "ISSUE-110",
+    "ISSUE-111",
+    "ISSUE-112",
+    "ISSUE-113"
+  ],
+  "generated_at": "2026-11-12T12:41:36.161Z",
+  "source_dir": "3.code/src-tauri/target/release",
+  "checksums": "JU-v2.1-checksums.txt",
+  "artifacts": [
+    {
+      "file": "JU-v2.1-Web.html",
+      "bytes": 4721309,
+      "sha256": "361b27f06c1fb9459e00ed61d5bfcda42aac5624b366d5f7e18f8865cc813dd9"
+    },
+    {
+      "file": "JU-v2.1-win-x64.exe",
+      "bytes": 7368192,
+      "sha256": "76393b3a2ddfa9b3f549a23480dadb7ff257c0aebb28e1e17ea8cc59d931d9d7"
+    },
+    {
+      "file": "JU_2.1.0_x64-setup.exe",
+      "bytes": 4467795,
+      "sha256": "1bca02ce647f5e9628312ca04d598d5c3ae638282a562cec1fe7ff9bcde1ff8b"
+    },
+    {
+      "file": "JU-v2.1-checksums.txt",
+      "bytes": 258,
+      "sha256": "88252a5f50a964321a527f0efb58ff46ac99a9d32f0d9d053ff7a25ff50f0d74"
+    }
+  ]
+}

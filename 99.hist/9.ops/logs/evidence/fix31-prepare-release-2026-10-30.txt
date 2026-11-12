@@ -1,0 +1,9 @@
+[release] Web 单文件版   6.P0-T3基线/m07-vite/dist/index.html -> 8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-Web.html
+[release]   SHA-256 9b01fcfc618599f3be82d1d760a08dede654ad9405ed499a673004398580a3a5  (4.48 MB)
+[release]   绝对路径 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-29\JU-v2.1-Web.html
+[release] 桌面版 x64    6.P0-T3基线/m07-vite/src-tauri/target/release/ju.exe -> 8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe
+[release]   SHA-256 b4206f8ab67f9ead3686da06bafedbc56ec65086be8e163fc7350f9b5187c7c6  (6.45 MB)
+[release]   绝对路径 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-29\JU-v2.1-win-x64.exe
+[release] 清单     8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-checksums.txt（2 项）
+[release] 归档目录 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-29（位于 dist 之外，不会被 Tauri 内嵌）
+[release] ✓ 发布包准备完成

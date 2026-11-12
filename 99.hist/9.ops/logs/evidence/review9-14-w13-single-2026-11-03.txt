@@ -1,0 +1,174 @@
+TAP version 13
+# [L16-W13] merge(20k nodes / 200 peer deletions) P95 = 190.39 ms
+# Subtest: L16-W13 §A 结构锚点
+    # Subtest: A1: 插入分支登记 _remoteReceived（rn._origin='remote' 之后）
+    ok 1 - A1: 插入分支登记 _remoteReceived（rn._origin='remote' 之后）
+      ---
+      duration_ms: 1.0339
+      type: 'test'
+      ...
+    # Subtest: A2: 删除传播守卫含 _remoteReceived 放行（且位于 _localCreated 守卫之后）
+    ok 2 - A2: 删除传播守卫含 _remoteReceived 放行（且位于 _localCreated 守卫之后）
+      ---
+      duration_ms: 0.1838
+      type: 'test'
+      ...
+    # Subtest: A3: 合入前归一化（对端再包含 + 已上盘 → 摘除）
+    ok 3 - A3: 合入前归一化（对端再包含 + 已上盘 → 摘除）
+      ---
+      duration_ms: 0.2167
+      type: 'test'
+      ...
+    # Subtest: A4: 比对/持久化口径 — _strip 含 _remoteReceived，_ORIGIN_STRIP 不剥离
+    ok 4 - A4: 比对/持久化口径 — _strip 含 _remoteReceived，_ORIGIN_STRIP 不剥离
+      ---
+      duration_ms: 1.1559
+      type: 'test'
+      ...
+    # Subtest: A5: 初始化 / 迁移 / 兜底 / 删除清理锚点齐备
+    ok 5 - A5: 初始化 / 迁移 / 兜底 / 删除清理锚点齐备
+      ---
+      duration_ms: 0.826
+      type: 'test'
+      ...
+    1..5
+ok 1 - L16-W13 §A 结构锚点
+  ---
+  duration_ms: 5.239
+  type: 'suite'
+  ...
+# Subtest: L16-W13 §B 复现（Defect-F）
+    # Subtest: B1: 旧口径 —— 合入后未写盘，对端删除广播被跳过 ⇒ B 残留
+    ok 1 - B1: 旧口径 —— 合入后未写盘，对端删除广播被跳过 ⇒ B 残留
+      ---
+      duration_ms: 4.3888
+      type: 'test'
+      ...
+    # Subtest: B2: 新口径 —— 同一场景 B 跟随删除
+    ok 2 - B2: 新口径 —— 同一场景 B 跟随删除
+      ---
+      duration_ms: 2.4108
+      type: 'test'
+      ...
+    1..2
+ok 2 - L16-W13 §B 复现（Defect-F）
+  ---
+  duration_ms: 7.1414
+  type: 'suite'
+  ...
+# Subtest: L16-W13 §C 双标签删除传播（验收）
+    # Subtest: C1: A 删除 → B 收到广播后 count 一致，刷新后仍一致
+    ok 1 - C1: A 删除 → B 收到广播后 count 一致，刷新后仍一致
+      ---
+      duration_ms: 0.6569
+      type: 'test'
+      ...
+    # Subtest: C2: B 写盘后与 A 的后续广播仍收敛（无复活 / 无 ping-pong）
+    ok 2 - C2: B 写盘后与 A 的后续广播仍收敛（无复活 / 无 ping-pong）
+      ---
+      duration_ms: 1.0824
+      type: 'test'
+      ...
+    # Subtest: D1: 30 次突发 —— 每一步 A/B 计数一致
+    ok 3 - D1: 30 次突发 —— 每一步 A/B 计数一致
+      ---
+      duration_ms: 30.8185
+      type: 'test'
+      ...
+    1..3
+ok 3 - L16-W13 §C 双标签删除传播（验收）
+  ---
+  duration_ms: 32.9947
+  type: 'suite'
+  ...
+# Subtest: L16-W13 §E 反向护栏（不得回归）
+    # Subtest: E1: A-union-no-loss —— 双端并发新建，互相同步后并集不丢
+    ok 1 - E1: A-union-no-loss —— 双端并发新建，互相同步后并集不丢
+      ---
+      duration_ms: 2.5756
+      type: 'test'
+      ...
+    # Subtest: E2: B-lww-convergence —— 同一节点双端编辑，LWW 收敛到较新一方
+    ok 2 - E2: B-lww-convergence —— 同一节点双端编辑，LWW 收敛到较新一方
+      ---
+      duration_ms: 2.3517
+      type: 'test'
+      ...
+    # Subtest: E3: 从未收悉的本地新建节点不被对端旧快照误删（_origin / _localCreated 护栏不变）
+    ok 3 - E3: 从未收悉的本地新建节点不被对端旧快照误删（_origin / _localCreated 护栏不变）
+      ---
+      duration_ms: 1.43
+      type: 'test'
+      ...
+    1..3
+ok 4 - L16-W13 §E 反向护栏（不得回归）
+  ---
+  duration_ms: 7.2856
+  type: 'suite'
+  ...
+# Subtest: L16-W13 §F 保护集有界（不得随会话膨胀）
+    # Subtest: F1: 对端再包含 + 本页已上盘 → 摘除
+    ok 1 - F1: 对端再包含 + 本页已上盘 → 摘除
+      ---
+      duration_ms: 1.7836
+      type: 'test'
+      ...
+    # Subtest: F2: 本地删除 → 摘除
+    ok 2 - F2: 本地删除 → 摘除
+      ---
+      duration_ms: 1.1772
+      type: 'test'
+      ...
+    # Subtest: F3: 本地缺该节点但对端仍持有 → 重新合入并保留登记
+    ok 3 - F3: 本地缺该节点但对端仍持有 → 重新合入并保留登记
+      ---
+      duration_ms: 2.8766
+      type: 'test'
+      ...
+    1..3
+ok 5 - L16-W13 §F 保护集有界（不得随会话膨胀）
+  ---
+  duration_ms: 6.7443
+  type: 'suite'
+  ...
+# Subtest: L16-W13 §G 迁移与明文兜底
+    # Subtest: G1: migrateStateObject 归一化 _remoteReceived（去重 + 只保留存在的节点 + 缺省空数组）
+    ok 1 - G1: migrateStateObject 归一化 _remoteReceived（去重 + 只保留存在的节点 + 缺省空数组）
+      ---
+      duration_ms: 8.2185
+      type: 'test'
+      ...
+    # Subtest: G2: _pendingPlainState 携带 _remoteReceived（空集不带，与 _localCreated 同口径）
+    ok 2 - G2: _pendingPlainState 携带 _remoteReceived（空集不带，与 _localCreated 同口径）
+      ---
+      duration_ms: 2.4526
+      type: 'test'
+      ...
+    1..2
+ok 6 - L16-W13 §G 迁移与明文兜底
+  ---
+  duration_ms: 11.5629
+  type: 'suite'
+  ...
+# Subtest: L16-W13 §H 大 state 采样
+    # Subtest: H1: 20,000 节点 / 200 个对端合入删除 —— merge P95 采样
+    ok 1 - H1: 20,000 节点 / 200 个对端合入删除 —— merge P95 采样
+      ---
+      duration_ms: 2466.4429
+      type: 'test'
+      ...
+    1..1
+ok 7 - L16-W13 §H 大 state 采样
+  ---
+  duration_ms: 2466.798
+  type: 'suite'
+  ...
+1..7
+# tests 19
+# suites 7
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2781.2483

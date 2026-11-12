@@ -1,0 +1,12 @@
+fix12 封存批（执行记录）
+- 批次：fix12 · step10 早期设计 / 源码扫描 / 审计截图 / step9 旧测试输出封存
+- 时间：2026-10-30T14:08+08:00（本机 Asia/Shanghai）
+- DIST_BEFORE=10659680 B；DIST_AFTER=10659680 B
+- 本目录文件：pre-move-hash.txt（416 行 = SHA256 / 字节 / 源 / 目标）· post-move-hash.txt（416 行）· registry.txt · verify-all.txt
+- 结果：PRE=416 / POST=416 / MISMATCH=0 / SIZE_DIFF=0 / MISSING=0
+- 落位 A：1.历史归档/1.3封存/过程材料/6_P0_T3_旧迭代/（step10、基线核对记录-2026-10-08.md，6 件）
+- 落位 B：1.历史归档/1.3封存/过程材料/90_旧日志与报告/（_源码扫描、_哈希与行尾校验/ui-audit-shots-2026-10-20、三份根级 txt，30 件）
+- 落位 C：1.历史归档/1.3封存/过程材料/90_旧日志与报告/step9_测试输出/（reports、playwright-report、test-results，380 件）
+- 门禁：verify-hash-registry.mjs → 66 / 0 / PASS；verify.js all → Exit 0（Node 503 · PW 171 · bench 7/7）
+- edge_profile*：90过程材料/tmp 递归实测 0 匹配，未删除任何文件
+- 回执：90过程材料/_报告与元数据/fix12_回执_20261030.md

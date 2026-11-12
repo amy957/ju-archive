@@ -1,0 +1,11 @@
+﻿6.P0-L3基线\v2.0-l3.html.html | 1125276 | LF | c23bb0b1c2a2e3af2441e76564d91c804d841782560f8b4f9f276e676086beb0
+6.P0-L3基线\step9\v2.0-l3.html.html | 1125276 | LF | c23bb0b1c2a2e3af2441e76564d91c804d841782560f8b4f9f276e676086beb0
+1.冻结版本\v2.0-l3-frozen-l14-2026-10-16.html | 1012003 | LF | d110699f19d5a9c79350afc5375e325ed8d49baaed2baf1b18e3d9552ed7bbdd
+1.冻结版本\v2.0-l3-frozen-l13-2026-10-16.html | 991316 | LF | 21becfd43d330913545dfaa9090b8bb06b0a850d911ac578dcf91a2cec3aa3ca
+6.P0-L3基线\step9\scripts\verify.js | 12352 | LF | f7495a19615559f7756cafd273f3355f74c918fdadaca802ccf4eb32ee78d018
+6.P0-L3基线\step9\l9\l9-hash-check.mjs | 35149 | CRLF | 4a32bc764aaac6712d5e371a5af581e434dd6f3997c44493b97b85d770b10a88
+6.P0-L3基线\step9\scripts\_w5freeze.ps1 | 34051 | CRLF | 5216fe9cb74517f47b4cd81fc7a78986b320a2486e6944c4368e0fe528a1692c
+6.P0-L3基线\step9\scripts\_w4freeze.ps1 | 21986 | CRLF | 697f0c8f15f6dde6f15a1b9ec621d9e2d65122afa76cc4b187b5f4c0085fdbf9
+6.P0-L3基线\step9\scripts\_w4paths.ps1 | 13317 | CRLF | 172dbd96923cac717a477ff75a708b6d5a5e4cd354f96e8927c15b437726ee49
+8.发布与CI\ci\ci-gate.yml | 3457 | CRLF | 4f760848a5d9e15d0cb61f43480ff7a6072cf080faab221cf1f6912ba71144e7
+6.P0-L3基线\step9\l9\l17-w3-p1-fixes.test.mjs | 15325 | CRLF | 8d42751efd953be43c7deccc824d92efbe59111f1a5d93262a89885bfe4375cc

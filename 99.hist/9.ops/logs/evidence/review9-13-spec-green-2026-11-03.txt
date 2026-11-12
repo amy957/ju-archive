@@ -1,0 +1,13 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-B1n0v_uB.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+[probe] {"sel":"night","tog":"day","errs":[],"pageErrors":[]}
+  ok 1 [chromium] 鈥?tests\review9-13-probe.spec.ts:3:1 鈥?review9-13 路 setItem 鎶涢敊涓嶉樆鏂富棰樺垏鎹?(6.3s)
+
+  1 passed (8.6s)

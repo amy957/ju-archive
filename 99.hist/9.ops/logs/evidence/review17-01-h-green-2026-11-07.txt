@@ -1,0 +1,12 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-DBl_vuTF.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 1 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:241:1 › review17 · H 复核失败保持明文态：load_state 首抛一次不回滚 (5.7s)
+
+  1 passed (7.6s)

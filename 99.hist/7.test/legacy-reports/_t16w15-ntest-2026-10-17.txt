@@ -1,0 +1,107 @@
+TAP version 13
+# Subtest: A · Defect-K 异常路径：patch 缺失时整体重建
+    # Subtest: A1 无 patch（patch 序列化失败 / historyMode never）+ setStar → starred +1
+    ok 1 - A1 无 patch（patch 序列化失败 / historyMode never）+ setStar → starred +1
+      ---
+      duration_ms: 4.389
+      type: 'test'
+      ...
+    # Subtest: A2 patch 句柄存在但 paths 为空 → 整体重建（不继承旧基数）
+    ok 2 - A2 patch 句柄存在但 paths 为空 → 整体重建（不继承旧基数）
+      ---
+      duration_ms: 0.2044
+      type: 'test'
+      ...
+    # Subtest: A3 merge 期（__juInMerge=true）→ 整体重建
+    ok 3 - A3 merge 期（__juInMerge=true）→ 整体重建
+      ---
+      duration_ms: 0.178
+      type: 'test'
+      ...
+    # Subtest: A4 旧 state 缺计数 → 整体重建
+    ok 4 - A4 旧 state 缺计数 → 整体重建
+      ---
+      duration_ms: 0.1797
+      type: 'test'
+      ...
+    # Subtest: A5 try/catch 兜底：增量函数抛错 → 整体重建仍得正确计数
+    ok 5 - A5 try/catch 兜底：增量函数抛错 → 整体重建仍得正确计数
+      ---
+      duration_ms: 0.3056
+      type: 'test'
+      ...
+    # Subtest: A6 结构锚点：异常分支走 _sideCountsRebuild，旧继承写法已消除
+    ok 6 - A6 结构锚点：异常分支走 _sideCountsRebuild，旧继承写法已消除
+      ---
+      duration_ms: 0.1688
+      type: 'test'
+      ...
+    1..6
+ok 1 - A · Defect-K 异常路径：patch 缺失时整体重建
+  ---
+  duration_ms: 6.8914
+  type: 'suite'
+  ...
+# Subtest: B · 增量路径与整体重建等价
+    # Subtest: B1 随机 300 例：_sideCountsApply 结果 === _sideCountsRebuild(新 state)
+    ok 1 - B1 随机 300 例：_sideCountsApply 结果 === _sideCountsRebuild(新 state)
+      ---
+      duration_ms: 4.9101
+      type: 'test'
+      ...
+    # Subtest: B2 commit 收口在 patch 路径下与整体重建一致
+    ok 2 - B2 commit 收口在 patch 路径下与整体重建一致
+      ---
+      duration_ms: 0.3131
+      type: 'test'
+      ...
+    1..2
+ok 2 - B · 增量路径与整体重建等价
+  ---
+  duration_ms: 5.4051
+  type: 'suite'
+  ...
+# Subtest: C · 侧栏渲染口径
+    # Subtest: C1 随机 200 例：重建计数与 renderSidebar 全表循环逐项一致
+    ok 1 - C1 随机 200 例：重建计数与 renderSidebar 全表循环逐项一致
+      ---
+      duration_ms: 1.88
+      type: 'test'
+      ...
+    # Subtest: C2 异常路径后立即读取：星标 / 文档 / 数据库计数正确
+    ok 2 - C2 异常路径后立即读取：星标 / 文档 / 数据库计数正确
+      ---
+      duration_ms: 0.3733
+      type: 'test'
+      ...
+    1..2
+ok 3 - C · 侧栏渲染口径
+  ---
+  duration_ms: 2.3955
+  type: 'suite'
+  ...
+# Subtest: D · 100k 节点单次重建采样
+    # Subtest: D1 重建耗时采样（记录值 + 相对枚举地板的上界守卫）
+    ok 1 - D1 重建耗时采样（记录值 + 相对枚举地板的上界守卫）
+      ---
+      duration_ms: 3493.7276
+      type: 'test'
+      ...
+    # 100k 重建: med=26.27ms p95=29.91ms max=32.07ms
+    # 100k 枚举地板: med=15.43ms p95=18.59ms
+    # 重建 p95 − 枚举地板 p95 = 11.33ms
+    1..1
+ok 4 - D · 100k 节点单次重建采样
+  ---
+  duration_ms: 3493.8896
+  type: 'suite'
+  ...
+1..4
+# tests 11
+# suites 4
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3671.7537

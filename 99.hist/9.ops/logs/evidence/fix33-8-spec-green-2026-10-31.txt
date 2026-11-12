@@ -1,0 +1,9 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/2] [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-pin-catch.spec.ts:7:1 › fix33-8 · setAlwaysOnTop 拒绝时 #btnPin 不高亮
+[2/2] [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 › fix33-8 · 打开取色器后点 #btnSettings 取色器关闭
+  2 passed (4.5s)

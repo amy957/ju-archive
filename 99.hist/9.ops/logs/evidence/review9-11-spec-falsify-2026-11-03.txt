@@ -1,0 +1,47 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › tests\probe-review9-11.spec.ts:5:1 › review9-11 · JSON 恢复后同批 b.md 继续导入 (30.7s)
+
+
+  1) [chromium] › tests\probe-review9-11.spec.ts:5:1 › review9-11 · JSON 恢复后同批 b.md 继续导入 ───────────
+
+    Error: JSON 恢复后 b.md 必须继续生成节点
+
+    JSON 恢复后 b.md 必须继续生成节点
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 30000ms exceeded while waiting on the predicate
+
+      17 |   const ok = page.locator('.modal-overlay .modal [data-ok]').last();
+      18 |   await expect(ok).toBeVisible({ timeout: 30_000 }); await ok.click();
+    > 19 |   await expect.poll(count, { message: 'JSON 恢复后 b.md 必须继续生成节点', timeout: 30_000 }).toBe(1);
+         |                                                                                    ^
+      20 |   await expect(page.locator('#toast')).toContainText('已恢复备份');
+      21 |   await ctx.close();
+      22 | });
+        at E:\APP\归档\6.P0-T3基线\m07-vite\tests\probe-review9-11.spec.ts:19:84
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\probe-review9-11-review9-11-·-JSON-恢复后同批-b-md-继续导入-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\probe-review9-11-review9-11-·-JSON-恢复后同批-b-md-继续导入-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\probe-review9-11-review9-11-·-JSON-恢复后同批-b-md-继续导入-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\probe-review9-11-review9-11-·-JSON-恢复后同批-b-md-继续导入-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\probe-review9-11.spec.ts:5:1 › review9-11 · JSON 恢复后同批 b.md 继续导入 ────────────

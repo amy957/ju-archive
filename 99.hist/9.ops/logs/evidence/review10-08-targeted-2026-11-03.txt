@@ -1,0 +1,21 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 6 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 鈥?fix33-8 路 鎵撳紑鍙栬壊鍣ㄥ悗鐐?#btnSettings 鍙栬壊鍣ㄥ叧闂?(3.4s)
+  ok 2 [chromium] 鈥?tests\v21-fix33-8-topbar-doc-close.spec.ts:20:1 鈥?fixr6-6 路 __TAURI__ 缂?window 鍛藉悕绌洪棿鏃?#btnClose 涓嶆姏 TypeError 骞舵彁绀虹獥鍙?API (2.6s)
+  ok 3 [chromium] 鈥?tests\v21-fix33-desktop-save-guard.spec.ts:16:1 鈥?fix33-3 路 璐熷悜锛歘_TAURI__ 鏃?invoke 鏃跺垽瀹氶潪妗岄潰骞跺洖钀藉埌 localStorage 鍒嗘敮 (2.6s)
+  ok 4 [chromium] 鈥?tests\v21-fix33-desktop-save-guard.spec.ts:18:1 鈥?fix33-3 路 姝ｅ悜锛歩nvoke resolve(null) 鏃朵笉寰楀嚭鐜般€屾闈㈠瓨鍌ㄤ繚瀛樺け璐ャ€峵oast (2.7s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BWYfgqEN.js
+[plugin vite:singlefile] Inlining: style-BheOwebL.css
+  ok 5 [chromium] 鈥?tests\v21-review9-02-preimport-enc.spec.ts:5:1 鈥?review9-02 路 鍔犲瘑鎬佸鍏ュ悗 preimport 涓哄瘑鏂囷紝閲嶈浇瑙ｉ攣鍙仮澶嶅鍏ュ墠蹇収 (11.0s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BWYfgqEN.js
+[plugin vite:singlefile] Inlining: style-BheOwebL.css
+  ok 6 [chromium] 鈥?tests\v21-review9-02-preimport-enc.spec.ts:15:1 鈥?review9-02 路 鏄庢枃鎬佸鍏ユ垚鍔熷悗娓呯悊 preimport (5.0s)
+
+  6 passed (32.9s)

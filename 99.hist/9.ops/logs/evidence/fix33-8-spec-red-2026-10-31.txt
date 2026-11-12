@@ -1,0 +1,93 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/2] [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-pin-catch.spec.ts:7:1 › fix33-8 · setAlwaysOnTop 拒绝时 #btnPin 不高亮
+  1) [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-pin-catch.spec.ts:7:1 › fix33-8 · setAlwaysOnTop 拒绝时 #btnPin 不高亮 
+
+    Error: expect(locator).not.toHaveClass(expected) failed
+
+    Locator: locator('#btnPin')
+    Expected pattern: not /\bon\b/
+    Received string: "tb-wbtn on"
+    Timeout: 30000ms
+
+    Call log:
+      - Expect "not toHaveClass" locator('#btnPin') with timeout 30000ms
+      - waiting for locator('#btnPin')
+        62 × locator resolved to <button id="btnPin" title="置顶窗口" class="tb-wbtn on" aria-pressed="true">…</button>
+           - unexpected value "tb-wbtn on"
+
+
+      13 |   await page.waitForFunction(() => { const J = (window as any).JU; return !!(J && J.actions); }, null, { timeout: 60_000 });
+      14 |   await page.locator('#btnPin').click();
+    > 15 |   await expect(page.locator('#btnPin')).not.toHaveClass(/\bon\b/);
+         |                                             ^
+      16 |   await expect(page.locator('#toast')).toContainText('窗口置顶 在当前桌面环境不可用');
+      17 |   await ctx.close();
+      18 | });
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fix33-8-pin-catch.spec.ts:15:45
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    6.P0-T3基线\m07-vite\test-results\v21-fix33-8-pin-catch-fix3-9dc8d-tAlwaysOnTop-拒绝时-btnPin-不高亮-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: 6.P0-T3基线\m07-vite\test-results\v21-fix33-8-pin-catch-fix3-9dc8d-tAlwaysOnTop-拒绝时-btnPin-不高亮-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    6.P0-T3基线\m07-vite\test-results\v21-fix33-8-pin-catch-fix3-9dc8d-tAlwaysOnTop-拒绝时-btnPin-不高亮-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace 6.P0-T3基线\m07-vite\test-results\v21-fix33-8-pin-catch-fix3-9dc8d-tAlwaysOnTop-拒绝时-btnPin-不高亮-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[2/2] [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 › fix33-8 · 打开取色器后点 #btnSettings 取色器关闭
+  2) [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 › fix33-8 · 打开取色器后点 #btnSettings 取色器关闭 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.color-picker')
+    Expected: 0
+    Received: 1
+    Timeout:  30000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.color-picker') with timeout 30000ms
+      - waiting for locator('.color-picker')
+        62 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      15 |   await expect(page.locator('.color-picker')).toHaveCount(1);
+      16 |   await page.locator('#btnSettings').click();
+    > 17 |   await expect(page.locator('.color-picker')).toHaveCount(0);
+         |                                               ^
+      18 |   await ctx.close();
+      19 | });
+      20 |
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fix33-8-topbar-doc-close.spec.ts:17:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    6.P0-T3基线\m07-vite\test-results\v21-fix33-8-topbar-doc-clo-e1fa4-·-打开取色器后点-btnSettings-取色器关闭-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: 6.P0-T3基线\m07-vite\test-results\v21-fix33-8-topbar-doc-clo-e1fa4-·-打开取色器后点-btnSettings-取色器关闭-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    6.P0-T3基线\m07-vite\test-results\v21-fix33-8-topbar-doc-clo-e1fa4-·-打开取色器后点-btnSettings-取色器关闭-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace 6.P0-T3基线\m07-vite\test-results\v21-fix33-8-topbar-doc-clo-e1fa4-·-打开取色器后点-btnSettings-取色器关闭-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  2 failed
+    [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-pin-catch.spec.ts:7:1 › fix33-8 · setAlwaysOnTop 拒绝时 #btnPin 不高亮 
+    [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 › fix33-8 · 打开取色器后点 #btnSettings 取色器关闭 

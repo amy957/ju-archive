@@ -1,0 +1,155 @@
+# ============================================================================
+# JU CI gate  (Release path B / stage S2)
+# ---------------------------------------------------------------------------
+# CANONICAL LOCATION: .github/workflows/ci-gate.yml
+# This is the copy GitHub Actions actually loads. The former copy at
+# 8.发布与CI/ci/ci-gate.yml is retained as a historical archive marker and is
+# NOT executed by any platform (ISSUE-007).
+#
+# The workspace IS a local git repository (`.git` present), so this workflow is
+# live once pushed to a GitHub remote; it is no longer a "portable artifact only".
+#
+# Gate = two read-only stages (mirrors Project-Closure section 6.3 / S2):
+#   1) registrar : node verify-hash-registry.mjs    -> PARTY_COUNT 以 verify-hash-registry.mjs 输出为准 / drift=0
+#                   （登记方数不在此处写死：以 verify-hash-registry.mjs 的 PARTY_COUNT 输出为准）
+#                   (covers canonical / step9 mirror / 26 relocated frozen anchors under
+#                    99.hist/6.dev/frozen / ALIAS.md / release-manifest.json / specs /
+#                    N-layer modules / the archived scripts/_w5freeze.ps1)
+#   2) regression: node scripts/verify.js all       -> Node 以 verify.js 输出为准 + PW 171 + bench 7
+#                   (PW 171 = 165 baseline + L13 6; L13 T-111~T-116 included,
+#                    T-115/T-116 conditionally skipped unless JU_L13_100K=1)
+#
+# ISSUE-003 (2026-10-29) — the former stage 3 (freeze gate,
+#   `scripts/_w5freeze.ps1 -Wave l15 -NoFreeze`) has been removed from the gate:
+#   the script was absent from step9 (hard "file not found") and its expectation
+#   table is bound to the L15 generation (HEAD 1,022,711), so it reports
+#   HASH-DRIFT against the current HEAD (1,316,707) and can never pass.
+#   The script itself has been restored from 90过程材料\临时文件夹\ and is now
+#   byte-registered by the registrar as a read-only historical tool; frozen-anchor
+#   coverage is carried by stage 1. CI never writes a frozen artifact.
+# ============================================================================
+name: ju-ci-gate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# All gate commands must run from the step9 root (where package.json / verify.js
+# and playwright.config.ts live).
+defaults:
+  run:
+    working-directory: 3.code/gates
+
+jobs:
+  gate:
+    name: verify + registrar
+    runs-on: windows-latest
+    steps:
+      # Supply-chain hardening (ISSUE-029): pinned to an immutable commit SHA.
+      # Tag moved by upstream is no longer able to change what runs in the gate.
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      # Pinned to an immutable commit SHA (ISSUE-029).
+      - name: Setup Node 22
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium (Playwright)
+        run: npx playwright install chromium
+
+      # OP-12 / S1: inject the machine-portable Chromium path (no bundled cache).
+      - name: Inject JU_CHROMIUM_PATH
+        shell: pwsh
+        run: |
+          $p = node -e "console.log(require('@playwright/test').chromium.executablePath())"
+          "JU_CHROMIUM_PATH=$p" | Out-File -Append -Encoding utf8 $env:GITHUB_ENV
+          "ELECTRON_RUN_AS_NODE=1" | Out-File -Append -Encoding utf8 $env:GITHUB_ENV
+          "NO_COLOR=1" | Out-File -Append -Encoding utf8 $env:GITHUB_ENV
+
+      # ISSUE-004（review17）：verify:all 内含 Playwright，多数 spec 的 prepareDist() 会重建 dist；
+      # parity 必须在 verify 之前跑，否则 stale dist 被刷新后永远绿。
+      # 顺序固定 dist → web → release，与本地 build-all 的产物链一致。
+      # 干净检出无 dist（dist/ 未入库）时 --ci-mode 降级跳过前两项，构建后 parity 为权威判定。
+      - name: Dist parity (src ↔ dist, pre-verify)
+        working-directory: 3.code
+        run: node scripts/check-dist-parity.mjs --ci-mode
+
+      - name: Web parity (dist ↔ 归档 Web, pre-verify)
+        working-directory: 3.code
+        run: node scripts/check-web-parity.mjs --ci-mode
+
+      # CI 无 src-tauri/target/release（target/ 被 gitignore）：--ci-mode 降级为归档自洽校验，
+      # 不报 EXE_MISMATCH；与 dist 的权威比对仍在本地 build-all 第 6b 步（历史编号 010）。
+      - name: Release parity (归档 Web/exe/setup/checksums 自洽, pre-verify)
+        working-directory: 3.code
+        run: node scripts/check-release-parity.mjs --ci-mode
+
+      - name: Spec registration gate (check-spec-registration)
+        working-directory: 3.code
+        run: node scripts/check-spec-registration.mjs
+
+      # ---- 与本地 build-all 对齐的门禁（此前 CI 未覆盖，属 review29-005 的「门禁不可信」缺口） ----
+      - name: Deps wired gate (check-deps-wired)
+        working-directory: 3.code
+        run: node scripts/check-deps-wired.mjs
+
+      - name: Inline style gate (check-inline-style)
+        working-directory: 3.code
+        run: node scripts/check-inline-style.mjs
+
+      - name: No fixed-sleep gate (check-no-sleep)
+        working-directory: 3.code
+        run: node scripts/check-no-sleep.mjs
+
+      - name: CSS token gate (check-css-tokens)
+        working-directory: 3.code
+        run: node scripts/check-css-tokens.mjs
+
+      - name: Package scripts gate (check-package-scripts)
+        working-directory: 3.code
+        run: node scripts/check-package-scripts.mjs
+
+      - name: Security gate (check-security)
+        working-directory: 3.code
+        run: node scripts/check-security.mjs
+
+      # Stage 1 - registrar (PARTY_COUNT 以 verify-hash-registry.mjs 输出为准, zero drift). Read-only.
+      - name: Registrar (PARTY_COUNT per verify-hash-registry.mjs / zero drift)
+        run: node verify-hash-registry.mjs
+
+      # Stage 2 - full regression (Node 以 verify.js 输出为准 + Playwright 171 + bench 7). Read-only.
+      # L13 (E-3 / M-B) is enabled by default; JU_L13=0 falls back to the 165 baseline.
+      - name: Full regression (verify:all)
+        run: node scripts/verify.js all
+
+      # ISSUE-004（review11-04）：release 归档自带清单只读闸门——manifest 与 checksums/真实字节不符
+      # 或缺件即 Exit 1；不依赖构建产物，故在 m07-vite 目录跑（该脚本不 Load npm 依赖）。
+      - name: Release manifest gate (check-manifest)
+        working-directory: 3.code
+        run: node scripts/check-manifest.mjs
+
+      # 二次校验（verify 之后）：仅作回归留痕，权威判定为上方的 pre-verify 步骤。
+      - name: Dist parity (src ↔ dist)
+        working-directory: 3.code
+        run: node scripts/check-dist-parity.mjs
+
+      - name: Web parity (dist ↔ 归档 Web)
+        working-directory: 3.code
+        run: node scripts/check-web-parity.mjs
+
+      # ISSUE-010（review18-10）：归档自洽（不校验 exe 与构建产物同源）；权威判定在本地 build-all 6b。
+      # GITHUB_ACTIONS 置 false 仅使降级条件回到「无 src-tauri/target/release exe」；缺件/旧 setup/校验和不符照常 Exit 1。
+      - name: Release parity (归档自洽，不校验 exe 与构建产物同源)
+        working-directory: 3.code
+        env:
+          GITHUB_ACTIONS: 'false'
+        run: node scripts/check-release-parity.mjs
+
+      # (stage 3 removed — see ISSUE-003 note in the header: the L15-generation
+      #  freeze script is byte-registered by stage 1, frozen anchors are checked there.)

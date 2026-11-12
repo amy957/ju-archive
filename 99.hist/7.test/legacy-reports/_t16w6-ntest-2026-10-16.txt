@@ -1,0 +1,98 @@
+﻿TAP version 13
+# Subtest: L16-W6 搂A 缁撴瀯閿氱偣
+    # Subtest: canonical 鍏峰 _childSetCache(WeakMap) / _childSetDrop锛沖getChildSet 璇荤紦瀛橈紱initStore 閲嶇疆
+    ok 1 - canonical 鍏峰 _childSetCache(WeakMap) / _childSetDrop锛沖getChildSet 璇荤紦瀛橈紱initStore 閲嶇疆
+      ---
+      duration_ms: 3.4496
+      type: 'test'
+      ...
+    1..1
+ok 1 - L16-W6 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 5.2283
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂B 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃?Map 鍙ｅ緞锛?    # Subtest: 鐣稿舰鏍戜慨澶嶅悗閫愬瓧鑺備竴鑷?    ok 1 - 鐣稿舰鏍戜慨澶嶅悗閫愬瓧鑺備竴鑷?      ---
+      duration_ms: 7.7315
+      type: 'test'
+      ...
+    1..1
+ok 2 - L16-W6 搂B 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃?Map 鍙ｅ緞锛?  ---
+  duration_ms: 7.9446
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂C 鍒嗛厤涓嬮檷锛?00 娆¤繛缁?repair锛?    # Subtest: 绱鍒嗛厤瀵硅薄鏁颁笅闄?鈮?0%
+    ok 1 - 绱鍒嗛厤瀵硅薄鏁颁笅闄?鈮?0%
+      ---
+      duration_ms: 1209.2111
+      type: 'test'
+      ...
+    1..1
+ok 3 - L16-W6 搂C 鍒嗛厤涓嬮檷锛?00 娆¤繛缁?repair锛?  ---
+  duration_ms: 1209.6171
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂D 缂撳瓨涓€鑷存€э紙缂撳瓨 Set == 瀹為檯 children 闆嗭級
+    # Subtest: 淇鍚庢瘡涓埗鑺傜偣缂撳瓨 Set 涓?p.children 鎭掔瓑
+    ok 1 - 淇鍚庢瘡涓埗鑺傜偣缂撳瓨 Set 涓?p.children 鎭掔瓑
+      ---
+      duration_ms: 1.334
+      type: 'test'
+      ...
+    1..1
+ok 4 - L16-W6 搂D 缂撳瓨涓€鑷存€э紙缂撳瓨 Set == 瀹為檯 children 闆嗭級
+  ---
+  duration_ms: 1.525
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂E 澶嶇敤韬唤锛堝懡涓悓涓€ Set 瀵硅薄锛?    # Subtest: 鍚岃妭鐐硅繛缁袱娆?repair 澶嶇敤鍚屼竴 Set 瀵硅薄
+    ok 1 - 鍚岃妭鐐硅繛缁袱娆?repair 澶嶇敤鍚屼竴 Set 瀵硅薄
+      ---
+      duration_ms: 0.5507
+      type: 'test'
+      ...
+    1..1
+ok 5 - L16-W6 搂E 澶嶇敤韬唤锛堝懡涓悓涓€ Set 瀵硅薄锛?  ---
+  duration_ms: 0.7424
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂F 骞傜瓑锛堝悎娉曟爲 no-op锛?    # Subtest: 宸插悎娉曟爲 repair 鍚?children 涓嶅彉
+    ok 1 - 宸插悎娉曟爲 repair 鍚?children 涓嶅彉
+      ---
+      duration_ms: 1.2606
+      type: 'test'
+      ...
+    1..1
+ok 6 - L16-W6 搂F 骞傜瓑锛堝悎娉曟爲 no-op锛?  ---
+  duration_ms: 1.4607
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂G 绌?children 鐖?    # Subtest: 绌?children 鐖剁紦瀛樹负绌洪泦涓旂浜岄亶涓嶈鍒?    ok 1 - 绌?children 鐖剁紦瀛樹负绌洪泦涓旂浜岄亶涓嶈鍒?      ---
+      duration_ms: 0.3226
+      type: 'test'
+      ...
+    1..1
+ok 7 - L16-W6 搂G 绌?children 鐖?  ---
+  duration_ms: 0.4259
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂H 缂撳瓨澶辨晥锛坃childSetDrop锛?    # Subtest: drop 鍚庣紦瀛樿娓呴櫎锛屼笅涓€娆?repair 閲嶅缓涓烘柊 Set 瀵硅薄
+    ok 1 - drop 鍚庣紦瀛樿娓呴櫎锛屼笅涓€娆?repair 閲嶅缓涓烘柊 Set 瀵硅薄
+      ---
+      duration_ms: 0.5766
+      type: 'test'
+      ...
+    1..1
+ok 8 - L16-W6 搂H 缂撳瓨澶辨晥锛坃childSetDrop锛?  ---
+  duration_ms: 0.6671
+  type: 'suite'
+  ...
+1..8
+# tests 8
+# suites 8
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1512.3847

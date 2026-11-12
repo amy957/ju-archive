@@ -1,0 +1,20 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'); const BASE = 'http://localhost:5173'; const KEY = 'juju.pending.v1'; const PW = 'review25-07-pw';
+const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith('.ts') ? [path.join(d, e.name)] : []);
+test('review25-07 · juju.pending.v1 代码字面量仅 1 处', () => { const hits = walk(path.join(ROOT, 'src')).flatMap((f) => fs.readFileSync(f, 'utf8').match(/['"]juju\.pending\.v1['"]/g) || []); expect(hits.length, '独立字面量重复登记会导致 purge 漂移').toBe(1); });
+test('review25-07 · 写入→重启→恢复→内容一致', async ({ browser }) => {
+  const ctx = await browser.newContext({ baseURL: BASE, viewport: { width: 1200, height: 900 } });
+  await ctx.route(BASE + '/**', (r) => { const p = new URL(r.request().url()).pathname; const f = path.join(ROOT, 'dist', p === '/' ? 'index.html' : decodeURIComponent(p)); try { return r.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: fs.readFileSync(f) }); } catch { throw new Error('dist/index.html 缺失，请先 vite build'); } });
+  await ctx.addInitScript(() => { const w = window as any; const api: any = { minimize: async () => {}, toggleMaximize: async () => {}, close: async () => {}, setAlwaysOnTop: async () => {} }; const enc = sessionStorage.getItem('r2507.enc'); w.__TAURI__ = { core: { invoke: (c: string) => c === 'load_state' ? Promise.resolve(enc ? JSON.stringify({ encStore: enc }) : '{}') : Promise.reject(new Error('save_state failed (mock)')) }, window: { getCurrent: () => api, getCurrentWindow: () => api }, event: { listen: async () => () => {} } }; });
+  const page = await ctx.newPage(); await page.goto(BASE, { waitUntil: 'load' }); await page.waitForFunction(() => { const J = (window as any).JU; return !!(J && J.actions && typeof J.getState === 'function'); }, null, { timeout: 60_000 });
+  const pendRaw = () => page.evaluate((k: string) => { const r = sessionStorage.getItem(k); try { return r && JSON.parse(r).payload ? r : ''; } catch { return ''; } }, KEY);
+  await page.evaluate((pw: string) => { const J = (window as any).JU; const u = typeof J.ui === 'function' ? J.ui() : J.ui; u.encrypted = true; u.encKey = pw; J.flushPersistNow(); }, PW);
+  await expect.poll(pendRaw, { timeout: 60_000 }).not.toBe(''); const rawA = await pendRaw();
+  await page.evaluate((r: string) => sessionStorage.setItem('r2507.enc', JSON.stringify(JSON.parse(r).payload)), rawA);
+  await page.evaluate(() => { const J = (window as any).JU; J.actions.addNode(J.getState().rootId, null, { text: 'REVIEW25-07-PENDING' }); J.flushPersistNow(); });
+  await expect.poll(pendRaw, { timeout: 60_000 }).not.toBe(rawA); const rawB = await pendRaw();
+  await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#unlockPwd', { timeout: 60_000 }); await page.fill('#unlockPwd', PW); await page.click('#unlockOk');
+  await expect.poll(() => page.evaluate(() => { const s = (window as any).JU.getState(); return Object.keys(s.nodes || {}).some((id) => s.nodes[id] && s.nodes[id].text === 'REVIEW25-07-PENDING'); }), { timeout: 60_000 }).toBe(true);
+  const after = await page.evaluate((k: string) => { const r = sessionStorage.getItem(k); return r ? JSON.parse(r).ts : 0; }, KEY); expect(after === 0 || after > JSON.parse(rawB).ts, '兜底须已被恢复消费（取后即删/被新快照覆盖）').toBe(true); await ctx.close();
+});

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JU</title>
+    <!--
+      P0 · 单 HTML 产物骨架（批次 P0-修复）。
+      缺陷根因：M1-1 模块化迁移时，产品件的静态 DOM 骨架（顶栏 nav / 侧栏 nav 项 + 四棵子树 /
+      右栏 / 悬浮日历 / 音乐面板 / ctxMenu / toast）与 112KB 样式块均未随迁。
+      模块代码（renderSidebar / bindSidebar / syncTopbar / bindTools…）全部按这些固定 id 与类名查询 DOM，
+      骨架缺失 ⇒ 查询全部落空 ⇒ 侧栏空白、内容区只剩「请先选择文档」。
+      本文件骨架逐字取自 canonical（public/v2.0-t3.html 的 <body> 静态标记，去 <script>），零改写；
+      样式经 src/main.ts 的 import "./style.css" 由 Vite 打包并内联进 dist/index.html。
+    -->
+  </head>
+  <body>
+
+<div id="app">
+  <header id="topbar" data-tauri-drag-region>
+    <span class="tb-clock" id="tbClock" data-tauri-drag-region>--</span>
+    <nav class="tb-nav" id="tbNav">
+      <button class="tb-nav-btn" data-view="document">资料库</button>
+      <button class="tb-nav-btn active" data-view="outline">大纲</button>
+      <button class="tb-nav-btn" data-view="mindmap">思维导图</button>
+      <button class="tb-nav-btn" data-view="presentation">演示视图</button>
+      <button class="tb-nav-btn" data-view="slides">幻灯片</button>
+      <button class="tb-nav-btn" data-view="graph">图谱</button>
+      <button class="tb-nav-btn" data-view="history">历史</button>
+    </nav>
+    <div class="tb-right">
+      <button class="tb-wbtn" id="btnBell" title="今日待办与系统提醒"><svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 4 1.5 5.5 2 6H4c.5-.5 2-2 2-6"/><path d="M10 19a2 2 0 0 0 4 0"/></svg><span class="remind-badge" id="remindBadge" hidden>0</span></button>
+      <!-- 【fix14】设置按钮图标由「太阳/放射线」旧图标统一为齿轮（lucide settings 齿形，stroke/尺寸仍由 .tb-wbtn svg 规则接管） -->
+      <button class="tb-wbtn" id="btnSettings" title="设置"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+      <button class="tb-wbtn" id="btnPin" title="置顶窗口"><svg viewBox="0 0 24 24"><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24z"/><path d="M12 17v5"/></svg></button>
+      <button class="tb-wbtn" id="btnMin" title="最小化"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+      <button class="tb-wbtn" id="btnMax" title="最大化"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"/></svg></button>
+      <button class="tb-wbtn close" id="btnClose" title="关闭"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+  </header>
+  <div id="body">
+    <aside id="sidebarLeft">
+      <div id="sidebarResize" title="拖动调整宽度"></div>
+      <div class="sb-nav-block" id="navBlock">
+        <div class="sb-nav-body">
+          <div class="sb-icon-row">
+            <button class="sort-btn" id="sortBtn" title="排序切换"><svg viewBox="0 0 24 24"><path d="M8 20V5"/><path d="M5 8l3-3 3 3"/><path d="M16 4v15"/><path d="M13 16l3 3 3-3"/></svg></button>
+            <button class="sb-square" id="btnNewFolder" title="新建文件夹"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M12 11v6M9 14h6"/></svg></button>
+            <button class="sb-square" id="btnNewDoc" title="新建文件"><svg viewBox="0 0 24 24"><path d="M6 3h8l5 5v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M12 12v6M9 15h6"/></svg></button>
+            <button class="sb-square" id="btnNewDb" title="新建多维表格"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9.5h18"/><path d="M9.5 9.5V20"/><path d="M15.5 9.5V20"/><path d="M12 13v4M10 15h4"/></svg></button>
+            <button class="sb-square" id="btnTemplates" title="模板"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 8.5h18"/><path d="M13.5 12h5M13.5 15.5h5"/></svg></button>
+            <button class="sb-square" id="btnTrash" title="回收站"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/><path d="M10 11v6M14 11v6"/></svg></button>
+          </div>
+          <div class="sb-search"><input type="text" placeholder="全局搜索…" id="searchInput"></div>
+          <div class="sb-divider"></div>
+          <button class="sb-nav-item" data-nav="calendar"><span class="chev none">▶</span><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>日历</button>
+          <button class="sb-nav-item" data-nav="database"><span class="chev">▶</span><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9.5h18M9.5 9.5V20M15.5 9.5V20"/></svg></span>数据库<span class="count" id="cntDb">0</span></button>
+          <div class="sb-subtree" id="subDb"></div>
+          <button class="sb-nav-item" data-nav="starred"><span class="chev">▶</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.9 6.3.7-4.7 4.3 1.3 6.1L12 17l-5.6 3 1.3-6.1L3 9.6l6.3-.7z"/></svg></span>星标文件<span class="count" id="cntStarred">0</span></button>
+          <div class="sb-subtree" id="subStarred"></div>
+          <button class="sb-nav-item" data-nav="files"><span class="chev">▶</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg></span>我的文档<span class="count" id="cntDocs">0</span></button>
+          <div class="sb-subtree" id="subDocs"></div>
+          <button class="sb-nav-item" data-nav="tags"><span class="chev">▶</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>标签<span class="count" id="cntTags">0</span></button>
+          <div class="sb-subtree" id="subTags"></div>
+        </div>
+      </div>
+      <div class="sb-intro" id="sbIntro"></div>
+      <div class="sb-divider"></div>
+      <div class="sb-tools">
+        <button class="sb-tool" id="btnImport" title="导入"><svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 19h14"/></svg></button>
+        <button class="sb-tool" id="btnTheme" title="切换主题"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></button>
+        <button class="sb-tool" id="btnMusic" title="番茄钟与音乐"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="14.4" rx="7.4" ry="5.9"/><path d="M12 8.5C10.1 6.5 7.9 5.9 6 6.5c1 1.9 2.5 3.2 4.4 3.9"/><path d="M12 8.5c1.9-2 4.1-2.6 6-2-1 1.9-2.5 3.2-4.4 3.9"/><path d="M12 8.5c-.5-1.5-.4-3 .3-4.4"/><path d="M8.6 12.6a3.9 3.9 0 0 1 2.2-1.8" opacity=".55"/></svg></button>
+        <button class="sb-tool" id="btnFloatCal" title="悬浮日历"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></button>
+      </div>
+    </aside>
+    <main id="main">
+      <div id="content"></div>
+      <!-- 【批次1-4 修复】折叠三钮置于 #main 末尾；实际定位由 CSS .main-toggle 控制：position:fixed + 相对浏览器视口底部居中（left:50vw / calc(50vw - 40px) 组合），非相对 #main。若未来需改为贴内容区底部，请同步修改 CSS 为 position:absolute 并确保 #main 为定位上下文。 -->
+      <button class="main-toggle left" id="btnToggleLeft" title="收起左侧栏"><svg viewBox="0 0 16 10" class="tg-icon"><rect class="tg-frame" x="0.5" y="0.5" width="15" height="9" rx="2.5" fill="none"/><rect class="tg-solid" x="1" y="2" width="5.1" height="6" rx="1.2"/></svg></button>
+      <button class="main-toggle both" id="btnToggleBoth" title="同时折叠左右侧栏" aria-pressed="false"><svg viewBox="0 0 16 10" class="tg-icon"><rect class="tg-frame" x="0.5" y="0.5" width="15" height="9" rx="2.5" fill="none"/><rect class="tg-solid" x="1" y="2" width="5.1" height="6" rx="1.2"/><rect class="tg-solid" x="9.9" y="2" width="5.1" height="6" rx="1.2"/></svg></button>
+      <button class="main-toggle right" id="btnToggleRight" title="收起右侧栏"><svg viewBox="0 0 16 10" class="tg-icon"><rect class="tg-frame" x="0.5" y="0.5" width="15" height="9" rx="2.5" fill="none"/><rect class="tg-solid" x="9.9" y="2" width="5.1" height="6" rx="1.2"/></svg></button>
+    </main>
+    <aside id="sidebarRight">
+      <div id="sidebarRightResize" title="拖动调整宽度"></div>
+      <div class="sr-section">
+        <div class="sr-title" data-toggle><span class="chev">▼</span>安全与星级</div>
+        <div class="sr-body">
+          <div class="sr-star-row">
+            <span class="sr-lock" id="srLock" title="标记为私密"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.2"/><path d="M12 16.2v2"/></svg></span>
+            <div class="sr-stars" id="srStars">
+              <span class="star" data-level="1">★</span><span class="star" data-level="2">★</span>
+              <span class="star" data-level="3">★</span><span class="star" data-level="4">★</span>
+              <span class="star" data-level="5">★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sr-section" data-section="edit">
+        <div class="sr-title" data-toggle><span class="chev">▼</span>编辑</div>
+        <div class="sr-body">
+          <div class="sr-edit-row">
+            <button class="sr-edit-btn" data-cmd="bold" title="加粗"><svg viewBox="0 0 24 24"><path d="M7 4h6a4 4 0 0 1 0 8H7z"/><path d="M7 12h7a4 4 0 0 1 0 8H7z"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="italic" title="斜体"><svg viewBox="0 0 24 24"><path d="M10 4h8M6 20h8M14 4l-4 16"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="underline" title="下划线"><svg viewBox="0 0 24 24"><path d="M6 4v6a6 6 0 0 0 12 0V4"/><path d="M5 21h14"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="strike" title="删除线"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M7 8a4 4 0 0 1 4-3h2a4 4 0 0 1 3 6"/><path d="M17 16a4 4 0 0 1-4 3h-2a4 4 0 0 1-3-6"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="painter" title="格式刷（先选中带格式的文字，再选中目标文字）"><svg viewBox="0 0 24 24"><path d="M7 3h10a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M9 9v2h6V9"/><path d="M12 11v6"/><path d="M9 17h6"/></svg></button>
+          </div>
+          <div class="sr-edit-row">
+            <button class="sr-edit-btn" data-cmd="color" title="字体颜色"><svg viewBox="0 0 24 24"><path d="M5 16L11 4l6 12"/><path d="M7.5 12h7"/><path d="M4 20h16"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="bg" title="背景颜色（可选透明）"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 16l8-8 4 4-8 8H6z"/><path d="M14 8l3-3 3 3-3 3"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="size" title="字号"><svg viewBox="0 0 24 24"><path d="M4 18L9 6l5 12"/><path d="M6 14h6"/><path d="M18 6v12M15 9l3-3 3 3M15 15l3 3 3-3"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="cal" title="添加到日历"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M12 13v5M9.5 15.5h5"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="db" title="添加到数据库"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></button>
+          </div>
+          <div class="sr-edit-row">
+            <button class="sr-edit-btn" data-cmd="undo" title="撤销"><svg viewBox="0 0 24 24"><path d="M9 7H15a5 5 0 0 1 0 10h-4"/><path d="M9 7L5 11l4 4"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="redo" title="恢复"><svg viewBox="0 0 24 24"><path d="M15 7H9a5 5 0 0 0 0 10h4"/><path d="M15 7l4 4-4 4"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="copy" title="复制"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M5 16V5a1 1 0 0 1 1-1h11"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="cut" title="剪切"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 16L18 4M16 16L6 4"/></svg></button>
+            <button class="sr-edit-btn" data-cmd="paste" title="粘贴"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4h6v2H9z"/><path d="M9 12h6M9 16h4"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="sr-section">
+        <div class="sr-title" data-toggle><span class="chev">▼</span>展开 / 收起</div>
+        <div class="sr-body">
+          <button class="sr-btn" data-expand="all"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 9l8-5 8 5"/><path d="M4 15l8 5 8-5"/></svg></span>展开全部</button>
+          <button class="sr-btn" data-expand="none"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 9h12M6 15h12"/></svg></span>收起全部</button>
+          <button class="sr-btn" data-expand="l2"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h10M4 15h6"/><path d="M4 19l6-4-6-4"/></svg></span>展开到二级</button>
+          <button class="sr-btn" data-expand="l3"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16M4 8h12M4 12h8M4 16h4"/><path d="M4 20l6-4-6-4"/></svg></span>展开到三级</button>
+        </div>
+      </div>
+      <div class="sr-section" data-section="links">
+        <div class="sr-title" data-toggle><span class="chev">▼</span>链接 / 反链</div>
+        <div class="sr-body" id="srBacklinks"></div>
+      </div>
+      <div class="sr-section">
+        <div class="sr-title" data-toggle><span class="chev">▼</span>保存 / 下载</div>
+        <div class="sr-body">
+          <button class="sr-btn" data-download="template"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 8.5h18"/><path d="M13.5 12h5M13.5 15.5h5"/></svg></span>保存为模板</button>
+          <button class="sr-btn" id="btnExportICS"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M12 14l-3 3 3 3 3-3"/></svg></span>下载 ICS</button>
+          <button class="sr-btn" data-download="png"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8" cy="10" r="1.5"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span>下载 PNG</button>
+          <button class="sr-btn" data-download="html"><span class="ic"><svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span>下载 HTML</button>
+          <button class="sr-btn" data-download="opml"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 19h14"/></svg></span>下载 OPML</button>
+          <button class="sr-btn" data-download="excel"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9.5h18M9.5 9.5V20M15.5 9.5V20"/></svg></span>下载 Excel</button>
+          <button class="sr-btn" data-download="md"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 8v8M9 12l2 2 2-2M13 16V8"/></svg></span>下载 Markdown</button>
+          <button class="sr-btn" id="btnBackupSide"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 19h14"/></svg></span>下载 JSON（完整备份）</button>
+        </div>
+      </div>
+      <div class="sr-section collapsed">
+        <div class="sr-title" data-toggle><span class="chev">▼</span>打印</div>
+        <div class="sr-body">
+          <!-- 【UI修复8】删除与折叠头重复的“打印”按钮，打印面板由折叠头展开 -->
+          <div class="sr-print-panel" id="srPrintPanel">
+            <label class="sr-print-opt"><input type="radio" name="printMode" value="all" checked>全部内容</label>
+            <label class="sr-print-opt"><input type="radio" name="printMode" value="current">仅当前文档</label>
+            <label class="sr-print-opt"><input type="radio" name="printMode" value="selection">选定内容</label>
+            <label class="sr-print-opt"><input type="checkbox" id="printWithMeta">包含元信息</label>
+            <button class="btn print-primary" id="btnPrintDo">确认打印</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<div class="panel" id="settingsPanel">
+  <!-- 【fix14】面板头部「⚙」emoji 换成与顶栏同源的齿轮 SVG（.head-gear：16×16、4px 右外边距、stroke=var(--icon) 随主题） -->
+  <div class="panel-head"><svg class="head-gear" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>设置<button class="close" id="settingsClose">✕</button></div>
+  <div class="settings-body">
+    <!-- 区块一：开关组与数据操作 -->
+    <div class="settings-section" id="setSectionData" data-settings-slot="data">
+      <!-- 【fix9 · REMOVE】「全库加密」行按产品决策移除（Q1=只补 handler；补绑需新增加密确认框 + 设密码面板）。
+           取证与回滚点见 90过程材料/tmp_compare/fix7/settings_bind_audit.log §7 -->
+      <!-- 【fix10 · 本轮恢复】Q1=允许新增 UI ⇒ 按 settings_bind_fix.log §5 回滚锚点原样恢复该行，
+           并在 boot.bindSettingsRows() 补齐 handler（canonical 18835-18864 + 21822 + 21885） -->
+      <div class="settings-item"><label>全库加密</label><span class="settings-ctrl"><span class="switch" id="setEncrypt"></span></span></div>
+      <div class="settings-item"><label>系统提醒通知</label><span class="settings-ctrl"><span class="switch" id="setReminder"></span></span></div>
+      <div class="settings-item"><label>关闭应用时自动备份全部数据</label><span class="settings-ctrl"><span class="switch" id="setAutoBackupClose"></span></span></div>
+      <!-- 同行布局：标签在左，「恢复默认路径」文字链在右（.settings-ctrl 统一 8px 间距） -->
+      <div class="settings-item" id="rowBackupDir">
+        <label>备份位置</label>
+        <!-- `#setBackupDirVal` 为旧版 juApplyBackupDirUI() 的落点，保留隐藏节点避免外部脚本空引用；fix9 起由 bindSettingsRows 回填 -->
+        <!-- 【fix9 · REMOVE】「浏览」按钮按产品决策移除（Q1=只补 handler；补绑需新增 filechooser 目录选择链路）。回滚点见 settings_bind_audit.log §7 -->
+        <!-- 【fix10 · 本轮恢复】Q1=允许新增 UI ⇒ 行内恢复「浏览」按钮，handler 见 pickBackupDir（canonical 22268） -->
+        <div class="settings-ctrl"><button class="btn" id="btnBackupDirPick" type="button">浏览</button><button class="settings-link" id="btnBackupDirReset" type="button">恢复默认路径</button><span class="ju-dirval" id="setBackupDirVal" hidden>默认路径</span></div>
+      </div>
+      <div class="settings-item"><label>从备份恢复</label><div class="settings-ctrl"><button class="btn" id="btnRestoreBackup" type="button">导入备份（JSON）</button></div></div>
+    </div>
+    <hr class="settings-sep" />
+    <!-- 区块二：常规交互 -->
+    <div class="settings-section" id="setSectionGeneral" data-settings-slot="general">
+      <div class="settings-item"><label>字号</label><div class="settings-ctrl"><input type="range" id="setFontSize" min="70" max="200" step="5" value="100"><span class="size-val" id="setFontSizeVal">100%</span></div></div>
+      <!-- 【fix9 · REMOVE】「快捷键 · 查看」行按产品决策移除（Q1=只补 handler；补绑需新增快捷键说明面板）。回滚点见 settings_bind_audit.log §7 -->
+      <!-- 【fix10 · 本轮恢复】Q1=允许新增 UI ⇒ 恢复该行，handler 见 showHelp（canonical 18868 模态面板） -->
+      <div class="settings-item"><label>快捷键</label><div class="settings-ctrl"><button class="btn" id="setShortcuts" type="button">查看</button></div></div>
+    </div>
+    <hr class="settings-sep" />
+    <!-- 区块三：账户与网络（许可证行 / 云端同步行由 bindLicenseActivation / bindPublishTools 落位到本区块） -->
+    <div class="settings-section" id="setSectionAccount" data-settings-slot="account"></div>
+    <hr class="settings-sep" />
+    <!-- 区块四：支持与反馈（本地崩溃日志行由 bindCrashLogRow 落位到本区块） -->
+    <div class="settings-section" id="setSectionSupport" data-settings-slot="support">
+      <div class="settings-item"><label>帮助</label><div class="settings-ctrl"><button class="btn" id="btnViewManual" type="button">查看手册</button></div></div>
+      <!-- 【fix9 · REMOVE】「反馈与错误上报」行按产品决策移除（Q1=只补 handler；补绑需新增反馈入口）。
+           本地崩溃日志导出（#btnViewCrashLogs）仍由 bindCrashLogRow 落位到本区块，未受影响。回滚点见 settings_bind_audit.log §7 -->
+      <!-- 【fix10 · 本轮恢复】Q1=允许新增 UI ⇒ 恢复该行，handler 见 openFeedbackDialog（canonical 22415 模态） -->
+      <div class="settings-item"><label>反馈与错误上报</label><div class="settings-ctrl"><button class="btn" id="btnFeedback" type="button">反馈</button></div></div>
+    </div>
+  </div>
+</div>
+<div class="panel" id="remindPanel">
+  <div class="panel-head"><svg class="head-gear" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>今日待办</div>
+  <div class="remind-list" id="remindList"></div>
+  <div class="remind-foot">
+    <span class="remind-status" id="remindStatus"><span class="dot"></span><span>系统提醒未开启</span></span>
+    <span class="remind-spacer"></span>
+    <button class="btn" id="remindGoCal">查看日历</button>
+  </div>
+</div>
+<div class="pomo-timer" id="pomoTimer" hidden>
+  <div class="ft-head"><span class="ft-title">⏱ 番茄钟</span><button class="close" id="pomoClose">✕</button></div>
+  <div class="pomo-time" id="pomoTime">25:00</div>
+  <div class="pomo-btns"><button class="btn" id="pomoStart">开始</button><button class="btn" id="pomoReset">重置</button></div>
+  <div class="ft-divider"></div>
+  <div class="ft-music">
+    <div class="music-item" id="musicItem">
+      <span class="play-ic" id="musicPlayIc">▶</span>
+      <div class="music-meta"><div class="title">巴赫：哥德堡变奏曲</div><div class="composer">Goldberg Variations, Aria</div></div>
+    </div>
+    <div class="ft-controls">
+      <span class="music-vol-label">音量</span>
+      <input type="range" id="musicVol" min="0" max="100" value="40">
+    </div>
+  </div>
+</div>
+<div class="float-cal" id="floatCal" hidden>
+  <div class="fc-head" id="fcHead"><span id="fcTitle">2026年1月</span><button class="close" id="fcClose">✕</button></div>
+  <div class="fc-body">
+    <div class="fc-week"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
+    <div class="fc-days" id="fcDays"></div>
+    <div class="fc-list" id="fcList"></div>
+  </div>
+</div>
+<div id="ctxMenu"></div>
+<div id="toast"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

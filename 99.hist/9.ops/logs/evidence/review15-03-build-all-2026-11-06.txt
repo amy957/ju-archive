@@ -1,0 +1,24 @@
+[build:all] 产品件（m07-vite）本地一键发版开始（共 14 步）：tsc → 1b → 1c → 1d → 1e → 1f → 1g → test → vite → 3b → e2e → tauri → prepare-release → 6b
+[build:all] ━━━ [1/14] 类型检查 tsc --noEmit ━━━
+[build:all] ✓ 类型检查 tsc --noEmit 通过（6.2s）
+[build:all] ━━━ [1b/14] 装配门禁 check-deps-wired ━━━
+PASS  bindLayoutDeps: 5 个关键依赖均为真实实现
+PASS  bindThemeDeps: 2 个关键依赖均为真实实现
+PASS  bindSelectionDeps: 3 个关键依赖均为真实实现
+PASS  bindSidebarDeps: 17 个关键依赖均为真实实现
+PASS  bindRightbarDeps: 4 个关键依赖均为真实实现
+PASS  bindRenderMainDeps: 8 个关键依赖均为真实实现
+PASS  injectBootDeps: 14 个关键依赖均为真实实现
+PASS  bindErrorDeps: 5 个关键依赖均为真实实现
+PASS  bindPersistDeps: 7 个关键依赖均为真实实现
+PASS  bindCryptoDeps: 10 个关键依赖均为真实实现
+isDesktop 同源: hasDesktopInvoke
+FAIL  boot.ts: clear_encrypted 缺 await 读端（关闭加密 fail-open）
+PASS  desktopSave: 函数体含能力检查且按异常判败
+purge 覆盖: 21/21 keys
+
+共检查 78 个依赖键，失败 1 项
+P1/P2 FAILED: 装配点仍存在空壳依赖
+[build:all] ✗ 装配门禁 check-deps-wired 失败：Exit 1（0.1s）
+[build:all]   建议：node scripts/check-deps-wired.mjs
+[build:all]   建议：按 src/main.ts 装配块恢复真实函数引用（禁止 noop / () => null）

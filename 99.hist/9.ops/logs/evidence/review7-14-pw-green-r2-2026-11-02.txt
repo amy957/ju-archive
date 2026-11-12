@@ -1,0 +1,8 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\v21-review5-feature-entries.spec.ts:5:1 › review5 · 主题/导入/完整备份/打印入口可达且点击不抛错 (2.7s)
+
+  1 passed (4.0s)

@@ -1,0 +1,176 @@
+{
+  "env": {
+    "label": "after",
+    "app": "file:///home/user/Doubao/chats/38445869379338242/v2.0-t3.html",
+    "sha256": "846ccdc9f794f1b6db906c886d8f9489e29a5560657d799cd9d73d4d0a74cbbe",
+    "timestamp": "2026-10-08T16:03:28.509Z",
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+    "viewport": {
+      "w": 1280,
+      "h": 800
+    },
+    "node": "v22.23.2"
+  },
+  "results": [
+    {
+      "op": "juProduce",
+      "size": 100,
+      "n": 50,
+      "min": 0,
+      "median": 0,
+      "p95": 0.1,
+      "max": 0.6,
+      "mean": 0.022
+    },
+    {
+      "op": "juProduce",
+      "size": 1000,
+      "n": 50,
+      "min": 0,
+      "median": 0,
+      "p95": 0.1,
+      "max": 0.5,
+      "mean": 0.016
+    },
+    {
+      "op": "juProduce",
+      "size": 5000,
+      "n": 50,
+      "min": 0,
+      "median": 0,
+      "p95": 0.1,
+      "max": 0.1,
+      "mean": 0.01
+    },
+    {
+      "op": "safeClone",
+      "size": 100,
+      "n": 50,
+      "min": 0,
+      "median": 0.1,
+      "p95": 0.5,
+      "max": 1.7,
+      "mean": 0.182
+    },
+    {
+      "op": "safeClone",
+      "size": 1000,
+      "n": 50,
+      "min": 0.8,
+      "median": 1,
+      "p95": 1.4,
+      "max": 2,
+      "mean": 1.014
+    },
+    {
+      "op": "safeClone",
+      "size": 5000,
+      "n": 50,
+      "min": 5.2,
+      "median": 5.7,
+      "p95": 9,
+      "max": 9.1,
+      "mean": 6.24
+    },
+    {
+      "op": "commitNonLight",
+      "size": 100,
+      "n": 50,
+      "min": 0,
+      "median": 0.1,
+      "p95": 0.4,
+      "max": 0.9,
+      "mean": 0.11
+    },
+    {
+      "op": "commitNonLight",
+      "size": 500,
+      "n": 50,
+      "min": 0.1,
+      "median": 0.2,
+      "p95": 0.5,
+      "max": 2.4,
+      "mean": 0.314
+    },
+    {
+      "op": "commitLight",
+      "size": 100,
+      "n": 50,
+      "min": 0,
+      "median": 0,
+      "p95": 0.1,
+      "max": 0.1,
+      "mean": 0.026
+    },
+    {
+      "op": "commitLight",
+      "size": 500,
+      "n": 50,
+      "min": 0,
+      "median": 0,
+      "p95": 0.1,
+      "max": 0.5,
+      "mean": 0.038
+    },
+    {
+      "op": "commitRewriteAllText",
+      "size": 100,
+      "n": 50,
+      "min": 0.3,
+      "median": 0.4,
+      "p95": 1,
+      "max": 1.6,
+      "mean": 0.514
+    },
+    {
+      "op": "commitRewriteAllText",
+      "size": 500,
+      "n": 50,
+      "min": 1.9,
+      "median": 2.1,
+      "p95": 3.1,
+      "max": 3.9,
+      "mean": 2.324
+    },
+    {
+      "op": "undoRedo",
+      "size": 100,
+      "n": 50,
+      "min": 0.4,
+      "median": 0.6,
+      "p95": 1.5,
+      "max": 1.9,
+      "mean": 0.652
+    },
+    {
+      "op": "undoRedo",
+      "size": 500,
+      "n": 50,
+      "min": 2.2,
+      "median": 2.5,
+      "p95": 4.6,
+      "max": 6.2,
+      "mean": 2.818
+    },
+    {
+      "op": "mergeRemoteNew",
+      "size": 1,
+      "n": 100,
+      "min": 0,
+      "median": 0,
+      "p95": 0.1,
+      "max": 0.8,
+      "mean": 0.047
+    },
+    {
+      "op": "mergeRemoteUpdate",
+      "size": 1,
+      "n": 100,
+      "min": 0,
+      "median": 0,
+      "p95": 0.1,
+      "max": 0.6,
+      "mean": 0.037
+    }
+  ]
+}

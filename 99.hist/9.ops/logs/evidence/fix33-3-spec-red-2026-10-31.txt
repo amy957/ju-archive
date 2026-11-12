@@ -1,0 +1,43 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:14:1 › fix33-3 · 负向：__TAURI__ 无 invoke 时必须 toast「桌面存储保存失败」且不写 localStorage (2.0s)
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 2 [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:16:1 › fix33-3 · 正向：invoke resolve(null) 时不得出现「桌面存储保存失败」toast (2.4s)
+
+
+  1) [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:14:1 › fix33-3 · 负向：__TAURI__ 无 invoke 时必须 toast「桌面存储保存失败」且不写 localStorage 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "桌面存储保存失败"
+    Received string:    ""
+
+      13 | const edit = async (page: any) => { await page.evaluate(() => { const J = (window as any).JU; J.actions.addNode(J.getState().rootId, null, { text: 'fix33-3 guard' }); J.flushPersistNow(); }); await page.waitForTimeout(1200); return page.evaluate(() => { const w = window as any; return { toasts: (w.__juToasts || []).join('|'), store: localStorage.getItem('juju.store.v31'), calls: (w.__juCalls || []).map((c: any) => String(c.cmd)).join(',') }; }); };
+      14 | test('fix33-3 · 负向：__TAURI__ 无 invoke 时必须 toast「桌面存储保存失败」且不写 localStorage', async ({ browser }) => {
+    > 15 |   const { ctx, page } = await start(browser, false); const r = await edit(page); expect(r.toasts).toContain('桌面存储保存失败'); expect(r.store, '保存失败不得写明文 localStorage').toBeNull(); expect(r.calls).not.toContain('save_state'); await ctx.close(); });
+         |                                                                                                   ^
+      16 | test('fix33-3 · 正向：invoke resolve(null) 时不得出现「桌面存储保存失败」toast', async ({ browser }) => {
+      17 |   const { ctx, page } = await start(browser, true); const r = await edit(page); expect(r.calls).toContain('save_state'); expect(r.toasts).not.toContain('桌面存储保存失败'); await ctx.close(); });
+      18 |
+        at E:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fix33-desktop-save-guard.spec.ts:15:99
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\v21-fix33-desktop-save-gua-5a68f-t「桌面存储保存失败」且不写-localStorage-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\v21-fix33-desktop-save-gua-5a68f-t「桌面存储保存失败」且不写-localStorage-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v21-fix33-desktop-save-gua-5a68f-t「桌面存储保存失败」且不写-localStorage-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fix33-desktop-save-gua-5a68f-t「桌面存储保存失败」且不写-localStorage-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:14:1 › fix33-3 · 负向：__TAURI__ 无 invoke 时必须 toast「桌面存储保存失败」且不写 localStorage 
+  1 passed (7.8s)

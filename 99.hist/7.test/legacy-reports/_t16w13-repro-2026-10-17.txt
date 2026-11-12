@@ -1,0 +1,50 @@
+﻿{
+  "wave": "L16-W13",
+  "defect": "Defect-F",
+  "old": {
+    "mode": "old",
+    "afterMerge": {
+      "B_count": 2,
+      "B_has_X": true,
+      "B_diskConfirmed": null,
+      "B_remoteReceived": [
+        "X"
+      ]
+    },
+    "afterDelete": {
+      "A_count": 1,
+      "B_count": 2,
+      "B_has_X": true,
+      "B_ids": [
+        "X",
+        "root"
+      ]
+    },
+    "consistent": false
+  },
+  "new": {
+    "mode": "new",
+    "afterMerge": {
+      "B_count": 2,
+      "B_has_X": true,
+      "B_diskConfirmed": null,
+      "B_remoteReceived": [
+        "X"
+      ]
+    },
+    "afterDelete": {
+      "A_count": 1,
+      "B_count": 1,
+      "B_has_X": false,
+      "B_ids": [
+        "root"
+      ]
+    },
+    "consistent": true
+  },
+  "verdict": {
+    "old.ResidualB": true,
+    "new.ResidualB": false,
+    "new.countEqual": true
+  }
+}

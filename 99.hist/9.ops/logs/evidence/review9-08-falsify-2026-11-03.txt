@@ -1,0 +1,55 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-CFfBrK2q.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+REVIEW908 {"tagColors":"undefined","dbFields":false,"activity":"undefined","ver":"undefined","dangling":["old-orphan>ghost-child"],"docText":"旧文档","orphanParent":"old-root"}
+  x  1 [chromium] › tests\probe-review9-08.spec.ts:40:1 › review9-08 · 旧备份导入补齐缺省字段且无悬空 children (4.1s)
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-CFfBrK2q.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+REVIEW908NEW {"tagColors":{"标签甲":"#ff0000"},"dbFields":["标题"],"activity":{"2026-11-03":{"add":["a1"],"mod":[],"del":[]}},"ver":18,"rootKids":["new-doc","guygl83z873"],"docKids":["new-kid"],"delText":"回收站根","delDeleted":true}
+  ok 2 [chromium] › tests\probe-review9-08.spec.ts:75:1 › review9-08 · 合法新备份导入零改动（含回收站子树脱离活树） (3.7s)
+
+
+  1) [chromium] › tests\probe-review9-08.spec.ts:40:1 › review9-08 · 旧备份导入补齐缺省字段且无悬空 children ──────
+
+    Error: tagColors 缺省必须补为空对象
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "object"
+    Received: "undefined"
+
+      63 |   });
+      64 |   console.log('REVIEW908', JSON.stringify(r));
+    > 65 |   expect(r.tagColors, 'tagColors 缺省必须补为空对象').toBe('object');
+         |                                              ^
+      66 |   expect(r.dbFields, 'dbFields 缺省必须补为数组').toBe(true);
+      67 |   expect(r.activity, 'activity 缺省必须补为空对象').toBe('object');
+      68 |   expect(r.ver, '_ver 缺省必须补为数字').toBe('number');
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\probe-review9-08.spec.ts:65:46
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\probe-review9-08-review9-08-·-旧备份导入补齐缺省字段且无悬空-children-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\probe-review9-08-review9-08-·-旧备份导入补齐缺省字段且无悬空-children-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\probe-review9-08-review9-08-·-旧备份导入补齐缺省字段且无悬空-children-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\probe-review9-08-review9-08-·-旧备份导入补齐缺省字段且无悬空-children-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\probe-review9-08.spec.ts:40:1 › review9-08 · 旧备份导入补齐缺省字段且无悬空 children ───────
+  1 passed (11.5s)

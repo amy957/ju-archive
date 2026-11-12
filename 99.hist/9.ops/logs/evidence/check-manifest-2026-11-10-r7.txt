@@ -1,0 +1,1 @@
+﻿[manifest] RESULT=PASS entries=4 openIssues=23 dir=v2.1.0-2026-11-10

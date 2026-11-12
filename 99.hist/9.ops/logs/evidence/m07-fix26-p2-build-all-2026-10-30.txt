@@ -1,0 +1,201 @@
+﻿[build:all] 鏈湴涓€閿彂鐗堝紑濮嬶細tsc 鈫?test 鈫?vite 鈫?e2e 鈫?tauri 鈫?prepare-release
+[build:all] 鈹佲攣鈹?[1/6] 绫诲瀷妫€鏌?tsc --noEmit 鈹佲攣鈹?[build:all] 鉁?绫诲瀷妫€鏌?tsc --noEmit 閫氳繃锛?.4s锛?[build:all] 鈹佲攣鈹?[2/6] 濂戠害鍗曞厓娴嬭瘯 node --test test/*.mjs 鈹佲攣鈹?TAP version 13
+# Subtest: 浜у搧浠讹細J.register / J.require / J.lifecycle 瀹氫箟鐗囨鍙畾浣?ok 1 - 浜у搧浠讹細J.register / J.require / J.lifecycle 瀹氫箟鐗囨鍙畾浣?  ---
+  duration_ms: 1.5443
+  type: 'test'
+  ...
+# Subtest: 鏂规硶鍚嶉泦鍚?{register,require,add,on,dispose} 浜у搧渚?vs src/contract/*.ts 涓€鑷?ok 2 - 鏂规硶鍚嶉泦鍚?{register,require,add,on,dispose} 浜у搧渚?vs src/contract/*.ts 涓€鑷?  ---
+  duration_ms: 2.1985
+  type: 'test'
+  ...
+# Subtest: 閿欒娑堟伅涓庡憡璀﹀墠缂€瀛楅潰閲忛€愬瓧涓€鑷?ok 3 - 閿欒娑堟伅涓庡憡璀﹀墠缂€瀛楅潰閲忛€愬瓧涓€鑷?  ---
+  duration_ms: 0.4242
+  type: 'test'
+  ...
+# Subtest: 浜у搧浠跺湪鏈瀵规媿涓浂鍐欏叆锛堝彧璇诲揩鐓у搱甯岀ǔ瀹氾級
+ok 4 - 浜у搧浠跺湪鏈瀵规媿涓浂鍐欏叆锛堝彧璇诲揩鐓у搱甯岀ǔ瀹氾級
+  ---
+  duration_ms: 7.0524
+  type: 'test'
+  ...
+# Subtest: register / require 姝ｅ父寰€杩斿彇鍊?ok 5 - register / require 姝ｅ父寰€杩斿彇鍊?  ---
+  duration_ms: 1.1559
+  type: 'test'
+  ...
+# Subtest: require 缂哄け鎶涢敊娑堟伅閫愬瓧绛変簬 "JU.require missing: xxx"
+ok 6 - require 缂哄け鎶涢敊娑堟伅閫愬瓧绛変簬 "JU.require missing: xxx"
+  ---
+  duration_ms: 0.4572
+  type: 'test'
+  ...
+# Subtest: lifecycle.add 姝ｅ簭鎵ц锛氬凡鐧昏 disposer 鍏ㄩ儴鎵ц涓斿悇鎵ц涓€娆?ok 7 - lifecycle.add 姝ｅ簭鎵ц锛氬凡鐧昏 disposer 鍏ㄩ儴鎵ц涓斿悇鎵ц涓€娆?  ---
+  duration_ms: 0.8031
+  type: 'test'
+  ...
+# Subtest: lifecycle.dispose 閫嗗簭鎵ц锛堟爤璇箟 pop锛?ok 8 - lifecycle.dispose 閫嗗簭鎵ц锛堟爤璇箟 pop锛?  ---
+  duration_ms: 0.3245
+  type: 'test'
+  ...
+# Subtest: 鍗曚釜 disposer 鎶涢敊涓嶉樆鏂悗缁?disposer
+ok 9 - 鍗曚釜 disposer 鎶涢敊涓嶉樆鏂悗缁?disposer
+  ---
+  duration_ms: 0.2567
+  type: 'test'
+  ...
+# Subtest: lifecycle.on锛歛ddEventListener 璋冪敤涓€娆★紝dispose 鍚?removeEventListener 璋冪敤涓€娆?ok 10 - lifecycle.on锛歛ddEventListener 璋冪敤涓€娆★紝dispose 鍚?removeEventListener 璋冪敤涓€娆?  ---
+  duration_ms: 0.2455
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 188.0846
+[build:all] 鉁?濂戠害鍗曞厓娴嬭瘯 node --test test/*.mjs 閫氳繃锛?.3s锛?[build:all] 鈹佲攣鈹?[3/6] Web 鏋勫缓 vite build 鈹佲攣鈹?[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m鉁?[39m 62 modules transformed.
+rendering chunks...
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-DLu1HT9X.js
+[plugin vite:singlefile] Inlining: style-Trc_llWd.css
+computing gzip size...
+[2mdist/[22m[32mindex.html  [39m[1m[2m4,675.63 kB[22m[1m[22m[2m 鈹?gzip: 3,175.69 kB[22m
+[32m鉁?built in 2.36s[39m
+[build:all] 鉁?Web 鏋勫缓 vite build 閫氳繃锛?.1s锛?[build:all] Web 浜х墿鎸囩汗锛歞ist/index.html  4699470 B  SHA-256 6cec1ea0ffd3d154668f4cef961a9e6ea6a0b535da47dba07bc90e7d71dc55c8
+[build:all] 鉁?Web 浜х墿鍚壒寰佺鍙凤細applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] 鈹佲攣鈹?[4/6] E2E 鍐掔儫 + 鍏ㄩ摼璺?+ 骞跺彂锛坧laywright锛?鈹佲攣鈹?[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 6 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-DLu1HT9X.js
+[plugin vite:singlefile] Inlining: style-Trc_llWd.css
+[M1-2] perTab stats=[{"add":519,"update":316,"remove":165,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":1101,"storedBytes":384217},{"add":563,"update":287,"remove":150,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":1093,"storedBytes":379287},{"add":545,"update":286,"remove":169,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":1001,"storedBytes":348264}]
+[M1-2] {
+  "perTab": [
+    {
+      "tab": "tab-1",
+      "add": 519,
+      "update": 316,
+      "remove": 165,
+      "finalCount": 1101,
+      "storedBytes": 384217
+    },
+    {
+      "tab": "tab-2",
+      "add": 563,
+      "update": 287,
+      "remove": 150,
+      "finalCount": 1093,
+      "storedBytes": 379287
+    },
+    {
+      "tab": "tab-3",
+      "add": 545,
+      "update": 286,
+      "remove": 169,
+      "finalCount": 1001,
+      "storedBytes": 348264
+    }
+  ],
+  "totalOps": 3000,
+  "convergedCounts": [
+    1100,
+    1100,
+    1100
+  ],
+  "memoryProjectionHash": [
+    "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b",
+    "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b",
+    "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b"
+  ],
+  "diskProjectionHash": [
+    "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b",
+    "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b",
+    "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b"
+  ],
+  "diskRawHash": [
+    "509e01af8eb10b1af2cf516cc54a5b02e125e5522f6685b59046bfef5d96372b",
+    "b8b83ac559f0606435ccd2fc306b0b8ed4cf208a900d02e88b92b21e07400d5c",
+    "509e01af8eb10b1af2cf516cc54a5b02e125e5522f6685b59046bfef5d96372b"
+  ],
+  "memoryDiskAligned": [
+    {
+      "tab": "tab-1",
+      "mem": "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b",
+      "disk": "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b"
+    },
+    {
+      "tab": "tab-2",
+      "mem": "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b",
+      "disk": "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b"
+    },
+    {
+      "tab": "tab-3",
+      "mem": "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b",
+      "disk": "8d3ff0f7f736187a1d644b3fbc7f5687e8621d190d126f83b5e7b2ceaf76ce9b"
+    }
+  ],
+  "canonicalEqual": true,
+  "pageErrors": []
+}
+  ok 1 [chromium] 鈥?tests\concurrency.spec.ts:154:1 鈥?M1-2 3 鏍囩骞跺彂鏀舵暃娴嬭瘯锛堝唴瀛樻€?+ 纾佺洏鎬侊級 (1.3m)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-DLu1HT9X.js
+[plugin vite:singlefile] Inlining: style-Trc_llWd.css
+  ok 2 [chromium] 鈥?tests\full-e2e.spec.ts:427:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 1 路 鍔犲瘑涓庤В閿侀棴鐜細璁剧疆寮€鍚叏搴撳姞瀵?鈫?鍒锋柊閿佸畾 鈫?瑙ｉ攣鍚庢暟鎹浂涓㈠け (3.4s)
+[full-e2e] download=瀵煎叆鏂囨。-2026-10-30.md bytes=77
+  ok 3 [chromium] 鈥?tests\full-e2e.spec.ts:589:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 2 路 瀵煎叆涓庡鍑洪棴鐜細瀵煎叆 3 鑺傜偣 JSON 鈫?娓叉煋 鈫?瀵煎嚭 Markdown 鍚鍏ユ枃鏈?(1.2s)
+  ok 4 [chromium] 鈥?tests\full-e2e.spec.ts:684:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 3 路 澶氱淮琛ㄦ牸涓庢棩鍘嗚仈鍔細琛ㄦ牸鏂板缓琛?鈫?璁句粖澶?鈫?鏃ュ巻褰撴棩寰呭姙鍙 (1.3s)
+[smoke] dist files=["index.html"] dirs=[]
+[smoke] dist/index.html bytes=4699470
+  ok 5 [chromium] 鈥?tests\smoke.spec.ts:88:3 鈥?M1-1 鍗?HTML 浜х墿 鈥?dist 蹇呴』浜у嚭 index.html锛屼笖鑴氭湰 / 鏍峰紡宸插唴鑱?(27ms)
+  ok 6 [chromium] 鈥?tests\smoke.spec.ts:120:3 鈥?M1-1 鍗?HTML 浜х墿 鈥?鍔犺浇鏋勫缓浜х墿锛氭爣棰?/ JU.getState 娆㈣繋鑺傜偣 / 涓夊尯 DOM 鍧囧瓨鍦?(744ms)
+
+  6 passed (1.5m)
+[build:all] 鉁?E2E 鍐掔儫 + 鍏ㄩ摼璺?+ 骞跺彂锛坧laywright锛?閫氳繃锛?1.2s锛?[build:all] E2E 閲嶅缓鍚庣殑 Web 浜х墿鎸囩汗锛堝嵆灏嗚 tauri build 鍐呭祵鐨勫瓧鑺傦級锛?[build:all] Web 浜х墿鎸囩汗锛歞ist/index.html  4699470 B  SHA-256 6cec1ea0ffd3d154668f4cef961a9e6ea6a0b535da47dba07bc90e7d71dc55c8
+[build:all] 鉁?Web 浜х墿鍚壒寰佺鍙凤細applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+[build:all] 娓呯悊鍘嗗彶 tauri-codegen 璧勪骇娈嬬暀锛堢 5 姝ュ墠缃級锛?[build:all]   娓呯悊 codegen 璧勪骇鐩綍锛歴rc-tauri/target/release/build/app-e879dede60df386f/out/tauri-codegen-assets锛? 涓枃浠讹級
+[build:all]     - e2933b58b45fab17e7631e7ecdd3907140fdeb1d7f4a21fb99f36d3fd449c4c9.html  3139070 B
+node :    Compiling app v0.1.0 (E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri)
+所在位置 行:1 字符: 45
++ ... APP\归档\99.开发辅助工具;'+$env:PATH; node scripts\build-all.mjs 2>&1 | Out-F ...
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (   Compiling ap...vite\src-tauri):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    Finished `release` profile [optimized] target(s) in 18.15s
+[build:all]   宸茶Е纰?src-tauri/build.rs锛堝己鍒?codegen 閲嶅缓锛?[build:all] 鉁?codegen 璧勪骇娓呯悊瀹屾垚锛氱洰褰?1 涓?/ 鏂囦欢 1 涓紙鏋勫缓鍚庡簲 stale=0锛?[build:all] 鈹佲攣鈹?[5/6] 妗岄潰鏋勫缓 tauri build --bundles none 鈹佲攣鈹?[build:all] 鉁?妗岄潰鏋勫缓 tauri build --bundles none 閫氳繃锛?1.9s锛?[build:all] 绗?5 姝ヤ骇鍑烘椂闂存埑锛?[build:all]   web E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\dist\index.html  4699470 B  2026-10-30T11:04:06.751Z
+[build:all]   exe E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\JU.exe  6767104 B  2026-10-30T11:04:35.956Z
+[build:all]   codegen 璧勪骇锛堟瀯寤哄悗锛夛細src-tauri/target/release/build/app-e879dede60df386f/out/tauri-codegen-assets  html=1 exe=0  [0562de0406034ad02c4ae1ab8fb949c5b9a3e736fc7b136391567ec648ef7163.html]
+[build:all] 鉁?codegen 璧勪骇鐩綍骞插噣锛堜粎鏈疆浜х墿锛屾棤娈嬬暀 HTML/exe锛?[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+[build:all] 鈹佲攣鈹?[6/6] 鍙戝竷褰掓。 prepare-release 鈹佲攣鈹?[release] Web 鍗曟枃浠剁増   6.P0-T3鍩虹嚎/m07-vite/dist/index.html -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-Web.html
+[release]   SHA-256 6cec1ea0ffd3d154668f4cef961a9e6ea6a0b535da47dba07bc90e7d71dc55c8  (4.48 MB)
+[release]   缁濆璺緞 E:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-10-29\JU-v2.1-Web.html
+[release] 妗岄潰鐗?x64    6.P0-T3鍩虹嚎/m07-vite/src-tauri/target/release/ju.exe -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe
+[release]   SHA-256 791ebc95e5ac7b7ad46e33e477e63bdb12cf14b21d2da2b8c8e39537020f3e9e  (6.45 MB)
+[release]   缁濆璺緞 E:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-10-29\JU-v2.1-win-x64.exe
+[release] 娓呭崟     8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-checksums.txt锛? 椤癸級
+[release] 褰掓。鐩綍 E:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-10-29锛堜綅浜?dist 涔嬪锛屼笉浼氳 Tauri 鍐呭祵锛?[release] 鉁?鍙戝竷鍖呭噯澶囧畬鎴?[build:all] 鉁?鍙戝竷褰掓。 prepare-release 閫氳繃锛?.4s锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-Web.html == dist/index.html锛?cec1ea0ffd3d154668f4cef961a9e6ea6a0b535da47dba07bc90e7d71dc55c8锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe == src-tauri/target/release/JU.exe锛?91ebc95e5ac7b7ad46e33e477e63bdb12cf14b21d2da2b8c8e39537020f3e9e锛?[build:all] 
+[build:all] 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 鏋勫缓浜х墿娓呭崟 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲
+[build:all] 
+[build:all] 鏂囦欢                                                                       瀛楄妭  SHA-256
+[build:all] -------------------------------------------------------------  ------------  ----------------------------------------------------------------
+[build:all] dist/index.html                                                     4699470  6cec1ea0ffd3d154668f4cef961a9e6ea6a0b535da47dba07bc90e7d71dc55c8
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-Web.html            4699470  6cec1ea0ffd3d154668f4cef961a9e6ea6a0b535da47dba07bc90e7d71dc55c8
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-checksums.txt           169  ea9b99cb8660433ad15447a16aac002c6c73023207b8dab798c1db0a118dc4a6
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe         6767104  791ebc95e5ac7b7ad46e33e477e63bdb12cf14b21d2da2b8c8e39537020f3e9e
+[build:all] 
+[build:all] 鍚堣 4 涓枃浠讹紝16,166,213 瀛楄妭
+[build:all] 鉁?涓€閿彂鐗堥摼璺畬鎴?

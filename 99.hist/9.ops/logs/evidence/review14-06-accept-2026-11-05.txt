@@ -1,0 +1,6 @@
+﻿HIT_不可发布=4
+HIT_发布准入=不可发布=1
+HIT_准入=可发布=0
+README_HIT_不可发布=1
+README_HIT_准入=可发布=0
+FALSIFY_HIT=0

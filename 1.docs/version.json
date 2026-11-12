@@ -1,0 +1,24 @@
+{
+  "product": "JU",
+  "version": "v2.1.0",
+  "generated_at": "2026-11-12T19:46:59+08:00",
+  "generated_by": "review28-fix-2026-11-12",
+  "canonical": {
+    "path": "3.code/canonical/v2.0-t3.html",
+    "bytes": 1316707,
+    "sha256": "5fed021578e775b560bf98af719046eb2916472f4053354a33a1a436dfbff818",
+    "note": "现行基线（唯一真相源），由生成脚本写入，禁止手改"
+  },
+  "sealedHead": {
+    "path": "99.hist/6.dev/sealed-head.json",
+    "bytes": 1212364,
+    "sha256": "FE04CC1ADA7788FAFB84C11F4423CC303A42A124A9FB7E78A5ED4DF8A3F7C1D5",
+    "note": "历史封存锚（非现行，仅历史锚）"
+  },
+  "release": {
+    "current": "v2.1.0",
+    "manifest": "99.hist/8.rel/v2.1.0/release-manifest.json",
+    "status": "RELEASE-HOLD",
+    "statusReason": "13 项桌面实机验证（ISSUE-101~113）仍未执行；parity 已转 PASS（check-release-parity/web/dist/manifest/hash-registry 全绿）"
+  }
+}

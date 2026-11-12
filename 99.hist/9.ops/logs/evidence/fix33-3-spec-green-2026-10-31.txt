@@ -1,0 +1,9 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:16:1 › fix33-3 · 负向：__TAURI__ 无 invoke 时必须 toast「桌面存储保存失败」且不写 localStorage (2.4s)
+  ok 2 [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:18:1 › fix33-3 · 正向：invoke resolve(null) 时不得出现「桌面存储保存失败」toast (2.2s)
+
+  2 passed (6.0s)

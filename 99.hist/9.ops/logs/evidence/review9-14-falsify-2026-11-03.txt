@@ -1,0 +1,45 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-B1n0v_uB.js
+[plugin vite:singlefile] Inlining: style-CddrPRl9.css
+[probe] day={"--bg":"rgb(223, 236, 213)","--bg-panel":"rgb(234, 243, 225)","--fg":"rgb(0, 0, 0)","--icon":"rgb(0, 0, 0)","--now-line":"rgb(124, 24, 35)","--mm-node-stroke":"rgb(74, 122, 94)","--cp-custom-alt":"rgb(0, 0, 0)"}
+  x  1 [chromium] › tests\probe-review9-14.spec.ts:25:1 › review9-14 · hex 提为 --c-* 后日/夜/打印三态计算值不变 (5.2s)
+
+
+  1) [chromium] › tests\probe-review9-14.spec.ts:25:1 › review9-14 · hex 提为 --c-* 后日/夜/打印三态计算值不变 ───
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 122, 94)"
+    Received: "rgb(0, 0, 0)"
+
+      45 |   expect(day['--bg-panel']).toBe('rgb(234, 243, 225)');
+      46 |   expect(day['--fg']).toBe('rgb(0, 0, 0)');
+    > 47 |   expect(day['--icon']).toBe('rgb(74, 122, 94)');
+         |                         ^
+      48 |   expect(day['--now-line']).toBe('rgb(124, 24, 35)');
+      49 |   expect(day['--mm-node-stroke']).toBe('rgb(74, 122, 94)');
+      50 |   expect(day['--cp-custom-alt']).toBe('rgb(0, 0, 0)');
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\probe-review9-14.spec.ts:47:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\probe-review9-14-review9-14-·-hex-提为---c--后日-夜-打印三态计算值不变-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\probe-review9-14-review9-14-·-hex-提为---c--后日-夜-打印三态计算值不变-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\probe-review9-14-review9-14-·-hex-提为---c--后日-夜-打印三态计算值不变-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\probe-review9-14-review9-14-·-hex-提为---c--后日-夜-打印三态计算值不变-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\probe-review9-14.spec.ts:25:1 › review9-14 · hex 提为 --c-* 后日/夜/打印三态计算值不变 ────

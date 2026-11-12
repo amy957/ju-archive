@@ -1,0 +1,9 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 鈥?fix33-8 路 鎵撳紑鍙栬壊鍣ㄥ悗鐐?#btnSettings 鍙栬壊鍣ㄥ叧闂?(2.9s)
+  ok 2 [chromium] 鈥?tests\v21-fix33-8-topbar-doc-close.spec.ts:20:1 鈥?fixr6-6 路 __TAURI__ 缂?window 鍛藉悕绌洪棿鏃?#btnClose 涓嶆姏 TypeError 骞舵彁绀虹獥鍙?API (2.1s)
+
+  2 passed (7.3s)

@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-10-17T03:02:48.404Z",
+  "canonical": {
+    "bytes": 1109402,
+    "sha256": "DC6D62C661B4899D8E6BD06C9D89F75BE30A486C498268AFFF2121AD3D8EBB45"
+  },
+  "fixPresent": true,
+  "all": {
+    "json": {
+      "property": {
+        "full": {
+          "iterations": 200,
+          "invFails": {
+            "I1": 0,
+            "I2": 0,
+            "I3": 0
+          },
+          "baselineInvFails": {
+            "I1": 199,
+            "I2": 199,
+            "I3": 199
+          },
+          "childrenAfterUndoNotAllString": {
+            "baseline": 199,
+            "current": 0
+          }
+        }
+      }
+    }
+  },
+  "perf": {
+    "bigStateNodes": 50002,
+    "clean": {
+      "rounds": 20,
+      "p95BaselineMs": 38.2685,
+      "p95CurrentMs": 58.343,
+      "p95OverheadMs": 20.0745,
+      "maxCurrentMs": 58.343
+    },
+    "holes": {
+      "rounds": 10,
+      "p95BaselineMs": 37.8139,
+      "p95CurrentMs": 47.8189,
+      "maxCurrentMs": 47.8189
+    }
+  },
+  "result": "PASS"
+}

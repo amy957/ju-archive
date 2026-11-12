@@ -1,0 +1,60 @@
+id,category,title,location,level,status,owner,step,evidence
+L3-01,code,内联 __juProduce,v2.0-l3.html.html,OK,完成,core,1,tests/l3-reference-semantics.spec.ts#I-01~I-05
+L3-02,code,内联 __juProduceSafe,v2.0-l3.html.html,OK,完成,core,1,tests/l3-reference-semantics.spec.ts#I-06~I-07
+L3-03,code,commit 非 light 走 __juProduceSafe,commit(),OK,完成,core,2,tests/l3-commit-callbacks.spec.ts#Step2
+L3-04,code,undo/redo 统一 safeClone 入栈,undo()/redo(),OK,完成,core,2,tests/l3-reference-semantics.spec.ts#I-16~I-18
+L3-05,code,light _backupValid 检测（机制已废除：produce 失败天然不污染 base）,commit(),P1,完成,core,3,tests/l3-light-pollution.spec.ts#A1
+L3-06,code,light 抛错 reportError（两种 kind）（机制已废除：produce 失败不产生 kind）,commit(),P1,完成,core,3,tests/l3-light-pollution.spec.ts#A1; tests/l3-light-pollution.spec.ts#A2
+L3-07,code,light 抛错强制通知（非 silent）（语义保持：失败非 silent 时通知一次）,commit(),P1,完成,core,3,tests/l3-light-pollution.spec.ts#B1
+L3-08,code,flushPendingLogs 关页前告警断言,flushBeforeUnload,P1,完成,core,5,tests/l3-commit-callbacks.spec.ts#P1-3
+L3-11,tool,审计工具集（audit-commit-callbacks.js + audit-indirect-calls.js）,tools/,OK,完成,tooling,4,node tools/audit-commit-callbacks.js; node tools/audit-indirect-calls.js
+L3-12,tool,compare-bench.js,scripts/,OK,完成,tooling,7,node scripts/compare-bench.js
+L3-13,tool,bench-p0-after-l3.spec.ts,tests/,OK,完成,tooling,7,npx playwright test tests/bench-p0-after-l3.spec.ts
+L3-21,test,l3-light-pollution.spec.ts,tests/,P1,7 通过,qa,3,playwright-report
+L3-22,test,l3-commit-callbacks.spec.ts,tests/,P1,24 通过,qa,5,playwright-report
+L3-23,test,l3-reference-semantics.spec.ts,tests/,P1,28 通过,qa,6,playwright-report
+L3-31,doc,P0-L3/README.md,P0-L3/,OK,完成,docs,0,P0-L3/README.md
+L3-32,doc,P0-L3/基线核对.md,P0-L3/,OK,完成,docs,0,P0-L3/基线核对.md
+L3-33,doc,P0-L3/选型记录.md,P0-L3/,OK,完成,docs,1,P0-L3/选型记录.md
+L3-34,doc,P0-L3/immutable-adapter.md,P0-L3/,OK,完成,docs,1,P0-L3/immutable-adapter.md
+L3-35,doc,P0-L3/commit-diff.patch,P0-L3/,OK,完成,docs,2,P0-L3/commit-diff.patch
+L3-36,doc,P0-L3/commit替换说明.md,P0-L3/,OK,完成,docs,2,P0-L3/commit替换说明.md
+L3-37,doc,P0-L3/light污染修复记录.md,P0-L3/,P1,完成,docs,3,P0-L3/light污染修复记录.md
+L3-38,doc,P0-L3/commit-callback-audit.md,P0-L3/,P1,完成,docs,4,P0-L3/commit-callback-audit.md
+L3-39,doc,P0-L3/commit-callback-audit.csv（显式 84 条）,P0-L3/,OK,完成,docs,4,P0-L3/commit-callback-audit.csv; P0-L3/commit-callback-indirect.csv
+L3-40,doc,P0-L3/回调验证记录.md,P0-L3/,OK,完成,docs,5,P0-L3/回调验证记录.md
+L3-41,doc,P0-L3/引用语义测试报告.md,P0-L3/,OK,完成,docs,6,P0-L3/引用语义测试报告.md
+L3-42,doc,P0-L3/P0后基准对比.md,P0-L3/,OK,完成,docs,7,P0-L3/P0后基准对比.md
+L3-43,doc,P0-L3/回归对拍报告.md,P0-L3/,OK,完成,docs,7,P0-L3/回归对拍报告.md
+L3-44,doc,P0-L3/性能预算.md,P0-L3/,OK,完成,docs,9,P0-L3/性能预算.md
+ACT-1,action,OBS-3 落定：mindmap 拖拽改 snapshot:false,renderMindmap,P1,完成,core,4,P0-L3/commit-callback-audit.md#OBS-3; P0-L3/回调验证记录.md#OBS-3
+ACT-2,action,P1 UI 一致性：列/行拖拽 up 回调 try/finally,renderDbTable,P1,完成,core,4,P0-L3/commit-callback-audit.md#P1-1; tests/l3-commit-callbacks.spec.ts#P1-1
+ACT-3,action,light 引用不变量 + dirtyText 三态文档补遗,immutable-adapter.md,P2,完成,docs,6,P0-L3/immutable-adapter.md#第九节; P0-L3/immutable-adapter.md#第十节
+ACT-4,action,三套功能 spec 纳入 CI,CI,P1,待办,tooling,9,
+REF-ACT-1,action,Immer 式未修改返回原引用评估,选型,P2,完成（评估关闭）,core,9,P0-L3/引用语义测试报告.md#REF-ACT-1
+REF-ACT-2,action,mergeRemoteState 克隆式合并评估,merge,P2,完成（评估关闭）,core,9,P0-L3/引用语义测试报告.md#REF-ACT-2
+REF-ACT-3,action,Step5 + Step6 spec 入 CI,CI,P1,待办,tooling,9,
+BENCH-ACT-1,action,性能对拍纳入 CI,CI,P1,待办,tooling,9,scripts/compare-bench.js
+BENCH-ACT-3,action,性能预算文档,CI,P2,待办,docs,9,P0-L3/P0后基准对比.md#BENCH-ACT-3
+REG-ACT-1,action,功能 spec 入 CI（PR 卡口）,CI,P1,待办,tooling,9,
+OK-01,ok,actions.addNode snapshot 齐全,L1160,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#1
+OK-02,ok,actions.updateText tags 重算,L1173,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#2
+OK-03,ok,actions.toggleDone 双向切换,L1181,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#3
+OK-04,ok,actions.moveNode 拒绝自环,L1215,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#5
+OK-05,ok,actions.removeNode 递归 + 墓碑,L1236,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#6
+OK-06,ok,commitPendingEditBeforeRender 三态,L2124,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#38
+OK-07,ok,openCalTimeModal 时间/重复,L3573,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#25
+OK-08,ok,renderCalNode blur 日期解析,L5655,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#30
+OK-09,ok,ensureWordInit 幂等迁移,L7420,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#33
+OK-10,ok,importOutline 缩进单位推断,L9600,OK,审计通过,audit,4,P0-L3/commit-callback-audit.csv#57
+OBS-1,obs,commitPendingEditBeforeRender.word 四标志,L2147,P2,已复核,audit,4,P0-L3/回调验证记录.md#OBS-1
+OBS-2,obs,renderDbTable.titleInput 400ms 防抖,L6290,P2,已复核,audit,4,P0-L3/commit-callback-audit.md#OBS-2
+OBS-3,obs,renderMindmap 拖拽 snapshot 决策,L7900,P2,已闭环,audit,4,P0-L3/回调验证记录.md#OBS-3; P0-L3/diffs/step4.diff
+OBS-4,obs,ensureWordInit _wordFlat 标记,L7420,P2,已复核,audit,4,P0-L3/commit-callback-audit.md#OBS-4
+58-01,agg,__juProduce 与 safeClone 量级同级（固定开销不可测）,-,OK,完成,bench,7,P0-L3/P0后基准对比.md#观察3
+58-02,agg,commit 非 light delta 0.0%（@100/@500）,-,OK,完成,bench,7,P0-L3/P0后基准对比.md#4.1
+58-03,agg,commit light 近零（计时分辨率内）,-,OK,完成,bench,7,P0-L3/P0后基准对比.md#4.1
+58-04,agg,undoRedo delta 0.0%（p95 @500 噪声 -21%）,-,OK,完成,bench,7,P0-L3/P0后基准对比.md#4.1
+58-05,agg,三套 spec 合计 59 用例全绿（after）,tests/,OK,完成,qa,5-6,playwright-report
+58-06,agg,P0 前基线（baseline-step1）4 条预期失败 → after 全通过,tests/,OK,完成,qa,3-7,P0-L3/回归对拍报告.md#3.4
+58-07,agg,引用不变量 28 条锁定,tests/,OK,完成,qa,6,P0-L3/引用语义测试报告.md

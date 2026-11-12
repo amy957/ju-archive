@@ -1,0 +1,19 @@
+{
+  "name": "ju-html-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node scripts/verify.js spec",
+    "verify:node": "node scripts/verify.js node",
+    "verify:pw": "node scripts/verify.js pw",
+    "verify:bench": "node scripts/verify.js bench",
+    "verify:all": "node scripts/verify.js all"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

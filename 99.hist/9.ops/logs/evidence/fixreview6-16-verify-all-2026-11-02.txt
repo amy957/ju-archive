@@ -1,0 +1,4129 @@
+﻿[verify] mode=all root=E:\APP\褰掓。\6.P0-T3鍩虹嚎\step9
+琚祴浠讹細浜у搧浠?m07-vite锛坉ist 浜х墿锛壜?PW 闆嗘垚娴嬭瘯 canonical v2.0-t3.html锛坒ile:// 鍔犺浇锛?
+鈻?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?鉁?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?(0 鍛戒腑, 15ms)
+
+鈻?Node 鍗曞厓娴嬭瘯
+  $ node --test --test-concurrency=1 P0-T3/tests/structural-sharing.test.mjs P0-T3/tests/step1-produce.test.mjs P0-T3/tests/step2-commit.test.mjs P0-T3/tests/step3-light.test.mjs t9/t9-persist-layer.test.mjs t9/t9-backend-parity.test.mjs t9/t9-shadow-wiring.test.mjs t9/t10-idb-persist.test.mjs t9/t10-w4-consistency.test.mjs t9/t11-w4-consistency.test.mjs t9/t12-virtual-scroll.test.mjs t9/t12-w4-consistency.test.mjs t9/t13-mb-workset.test.mjs t9/t14-vs-hardening.test.mjs t9/t14-w4-consistency.test.mjs t9/t16-w1-persist-rev.test.mjs t9/t16-w2-cal-rev.test.mjs t9/t16-w3-sidebar-counts.test.mjs t9/t16-w4-outline-header-ro.test.mjs t9/t16-w5-caltg-visibility.test.mjs t9/t16-w6-childset-cache.test.mjs t9/t16-w7-collect-subtree.test.mjs t9/t16-w8-tombstone-sweep.test.mjs t9/t16-w9-theme-token.test.mjs t9/t16-w10-defecta-root-guard.test.mjs t9/t16-w11-tombstone-queue-compaction.test.mjs t9/t16-w12-patch-children-holes.test.mjs t9/t16-w13-remote-received-delete-propagation.test.mjs t9/t16-w14-persist-chain-async.test.mjs t9/t16-w15-sidecounts-fallback.test.mjs t9/t16-w16-sanitize-idempotent.test.mjs t9/t16-w17-boot-backup-fallback.test.mjs t9/t16-w18-pii-redaction.test.mjs t9/t16-w19-enc-stack-placeholder.test.mjs t9/t16-w20-calrev-gate.test.mjs t9/t16-w21-merge-ts-unit.test.mjs t9/t17-w1-rendersubtags-rows.test.mjs t9/t17-w2-weekview-local-day.test.mjs t9/t17-w3-p1-fixes.test.mjs t9/t17-w4-batch-fixes.test.mjs t9/t18-final-patch.test.mjs t9/t19-patch1.test.mjs t9/t19-patch2.test.mjs t9/t19-patch3.test.mjs
+TAP version 13
+# 鍐呰仈 <script> 鍧楁暟閲? 9
+#   script\#0: 璇硶 OK (271841 chars)
+#   script\#1: 璇硶 OK (199179 chars)
+#   script\#2: 璇硶 OK (130434 chars)
+#   script\#3: 璇硶 OK (53242 chars)
+#   script\#4: 璇硶 OK (111937 chars)
+#   script\#5: 璇硶 OK (207002 chars)
+#   script\#6: 璇硶 OK (5046 chars)
+#   script\#7: 璇硶 OK (51709 chars)
+#   script\#8: 璇硶 OK (3559 chars)
+# --- 鍗曞厓鐢ㄤ緥锛坕mmutable-adapter.md 7.1锛?---
+#   PASS  __juProduce({a:1}, d=>{d.a=2}) -> {a:2} 涓?base 浠?{a:1}
+#   PASS  __juProduce({a:1}, d=>{}) -> {a:1} 鍘熷紩鐢紙鏈慨鏀逛笉澶嶅埗锛?#   PASS  __juProduce({a:1}, ()=>null) -> null
+#   PASS  __juProduce(null, ()=>1) -> 1
+#   PASS  __juProduce(null, ()=>{}) -> null
+#   PASS  __juProduce(5, d=>d+1) -> 6
+#   PASS  recipe 鎶涢敊 -> 鍘熸牱鎶涘嚭锛宐ase 鏈薄鏌?#   PASS  __juProduceSafe 鎶涢敊 -> {ok:false, base, error}
+#   PASS  __juProduceSafe({a:1}, d=>{d.a=2}) -> {ok:true, next:{a:2}}
+#   PASS  __juProduce([1,2], d=>{d.push(3)}) -> [1,2,3]
+#   PASS  __juProduce({a:{b:1}}, d=>{d.a.b=2}) -> {a:{b:2}} 娣卞厠闅?#   PASS  __juProduce(new Date(0), ...) -> Date 瀹炰緥锛屽勾浠?2000锛堜緷璧?structuredClone锛?#   PASS  __juProduce({m:Map}, d=>{}) -> Map 淇濈暀锛堜緷璧?structuredClone锛?#   PASS  __juProduce("abc", ()=>undefined) -> "abc"
+#   PASS  recipe 闈炲嚱鏁?-> TypeError
+#   PASS  寰幆寮曠敤瀵硅薄 -> structuredClone 姝ｅ父鍏嬮殕
+# 缁撴灉: 16 閫氳繃, 0 澶辫触
+# Subtest: P0-T3\\tests\\step1-produce.test.mjs
+ok 1 - P0-T3\\tests\\step1-produce.test.mjs
+  ---
+  duration_ms: 103.4949
+  type: 'test'
+  ...
+# 鍐呰仈 <script> 鍧楁暟閲? 9
+#   璇硶妫€鏌? 鍏ㄩ儴閫氳繃
+# --- commit 鏇挎崲琛屼负锛?.1/6.2锛?---
+#   PASS  闈?light 鎴愬姛锛歴tate 鏇挎崲涓烘柊寮曠敤涓?foo=1, updatedAt 鎺ㄨ繘
+# [JU] commit action failed, rolling back Error: x
+#     at commit.silent (evalmachine.<anonymous>:1:25)
+#     at __juProduce (evalmachine.<anonymous>:171:13)
+#     at __juProduceSafe (evalmachine.<anonymous>:217:25)
+#     at commit (evalmachine.<anonymous>:9:11)
+#     at evalmachine.<anonymous>:1:7
+#     at Script.runInContext (node:vm:149:12)
+#     at Object.runInContext (node:vm:301:6)
+#     at run (file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/step9/P0-T3/tests/step2-commit.test.mjs:120:24)
+#     at file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/step9/P0-T3/tests/step2-commit.test.mjs:145:3
+#     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+#   PASS  闈?light 鎶涢敊锛氳繑鍥炲師 state 寮曠敤锛屾湭鏇挎崲锛岄€氱煡 1 娆★紝鍘嗗彶鏍?0 push
+#   PASS  light 鎴愬姛锛歴tate 寮曠敤鏀瑰彉锛坈opy-on-write锛夛紝colWidth=200
+#   PASS  light 鎶涢敊锛堝彲鍥炴粴璇箟锛夛細state 鍘熷紩鐢ㄤ笉鍙樸€佹棤 colWidth 娈嬬暀锛岄€氱煡 1 娆?#   PASS  light 鎶涢敊+noRollback锛歴tate 鍘熷紩鐢ㄤ笉鍙樸€佹棤娈嬬暀锛堣涔夎嚜鐒舵弧瓒筹級锛岄€氱煡 1 娆?# [JU] commit action failed, rolling back Error: x
+#     at commit.light (evalmachine.<anonymous>:1:33)
+#     at __juProduce (evalmachine.<anonymous>:171:13)
+#     at __juProduceSafe (evalmachine.<anonymous>:217:25)
+#     at commit (evalmachine.<anonymous>:9:11)
+#     at evalmachine.<anonymous>:1:1
+#     at Script.runInContext (node:vm:149:12)
+#     at Object.runInContext (node:vm:301:6)
+#     at run (file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/step9/P0-T3/tests/step2-commit.test.mjs:120:24)
+#     at file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/step9/P0-T3/tests/step2-commit.test.mjs:162:3
+#     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+# [JU] commit action failed, rolling back Error: x
+#     at commit.light (evalmachine.<anonymous>:1:33)
+#     at __juProduce (evalmachine.<anonymous>:171:13)
+#     at __juProduceSafe (evalmachine.<anonymous>:217:25)
+#     at commit (evalmachine.<anonymous>:9:11)
+#     at evalmachine.<anonymous>:1:1
+#     at Script.runInContext (node:vm:149:12)
+#     at Object.runInContext (node:vm:301:6)
+#     at run (file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/step9/P0-T3/tests/step2-commit.test.mjs:120:24)
+#     at file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/step9/P0-T3/tests/step2-commit.test.mjs:171:3
+#     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+#   PASS  snapshot=true锛歨istoryPast=1, historyFuture=0, state.x=1
+#   PASS  undo锛氳繑鍥?true锛宧istoryFuture=1锛坕nvertPatch锛夛紝state 寮瑰嚭鍚庣敱 applyPatch 鍐冲畾锛屽壇鏈潪鍚屼竴寮曠敤
+#   PASS  redo锛氳繑鍥?true锛宧istoryPast=1锛坕nvertPatch 鎺ㄥ叆锛夛紝state 鐢?applyPatch 鍐冲畾
+#   PASS  杩炵画 snapshot锛歨istoryPast 瀛?patch锛坢ode=snapshot, op=unknown锛夛紝state.x=2锛屽壇鏈紩鐢ㄩ殧绂?# 缁撴灉: 9 閫氳繃, 0 澶辫触
+# Subtest: P0-T3\\tests\\step2-commit.test.mjs
+ok 2 - P0-T3\\tests\\step2-commit.test.mjs
+  ---
+  duration_ms: 100.7593
+  type: 'test'
+  ...
+# 鍐呰仈 <script> 鍧楁暟閲? 9
+#   璇硶妫€鏌? 鍏ㄩ儴閫氳繃
+# --- Step3 light 姹℃煋闃叉姢 ---
+#   PASS  light 鎴愬姛锛歴tate 寮曠敤鏀瑰彉锛坈opy-on-write锛夛紝updatedAt 琚?bump锛屽€煎啓鍏?#   PASS  A2 noRollback 鎶涢敊锛歴tate 鍘熷紩鐢ㄤ笉鍙樸€佹棤姹℃煋娈嬬暀锛坧roduce 澶╃劧鍥炴粴锛?#   PASS  A1 safeClone 鎵撴々 + 鎶涢敊锛歴tate 鍘熷紩鐢ㄤ笉鍙樸€佹棤娈嬬暀锛堝浠芥満鍒跺凡绉婚櫎锛?#   PASS  鏈夋晥澶囦唤 + 鎶涢敊锛歴tate 琚洖婊氾紙鏃犳薄鏌撳瓧娈碉級锛屼笉涓婃姤浠讳綍 kind
+#   PASS  B1 闈?silent 鎶涢敊锛歴cheduleNotify 鑷冲皯琚皟鐢?1 娆?#   PASS  C1 light 涓嶅叆鍘嗗彶鏍堬細绗竴娆?undo=true锛堝洖閫€ snapshot锛夛紝绗簩娆?undo=false
+#   PASS  Step2 鍥炲綊锛氶潪 light 鎶涢敊 state 寮曠敤涓嶅彉銆乶odes 瀹屽ソ銆佷笉涓婃姤 light kind
+# 缁撴灉: 7 閫氳繃, 0 澶辫触
+# Subtest: P0-T3\\tests\\step3-light.test.mjs
+ok 3 - P0-T3\\tests\\step3-light.test.mjs
+  ---
+  duration_ms: 93.3034
+  type: 'test'
+  ...
+# Subtest: 浠呭彉鏇磋矾寰勫紩鐢ㄥ彉鍖栵細鏀?a.text锛宐 寮曠敤涓嶅彉
+ok 4 - 浠呭彉鏇磋矾寰勫紩鐢ㄥ彉鍖栵細鏀?a.text锛宐 寮曠敤涓嶅彉
+  ---
+  duration_ms: 2.324
+  type: 'test'
+  ...
+# Subtest: 鏁扮粍 splice 缁撴瀯鍏变韩锛氫粎 children 鏁扮粍涓庢牴璺緞鍙樺寲
+ok 5 - 鏁扮粍 splice 缁撴瀯鍏变韩锛氫粎 children 鏁扮粍涓庢牴璺緞鍙樺寲
+  ---
+  duration_ms: 3.2659
+  type: 'test'
+  ...
+# Subtest: delete 缁撴瀯鍏变韩锛氬垹闄?a锛宐 寮曠敤涓嶅彉
+ok 6 - delete 缁撴瀯鍏变韩锛氬垹闄?a锛宐 寮曠敤涓嶅彉
+  ---
+  duration_ms: 0.4927
+  type: 'test'
+  ...
+# Subtest: recipe 鎶涢敊涓嶆薄鏌?base
+ok 7 - recipe 鎶涢敊涓嶆薄鏌?base
+  ---
+  duration_ms: 0.3332
+  type: 'test'
+  ...
+# Subtest: recipe 杩斿洖闈?undefined 鏃剁洿鎺ユ浛鎹?ok 8 - recipe 杩斿洖闈?undefined 鏃剁洿鎺ユ浛鎹?  ---
+  duration_ms: 0.8199
+  type: 'test'
+  ...
+# Subtest: 宓屽鏁扮粍 push 缁撴瀯鍏变韩
+ok 9 - 宓屽鏁扮粍 push 缁撴瀯鍏变韩
+  ---
+  duration_ms: 0.3249
+  type: 'test'
+  ...
+# Subtest: F-1 鍥炲綊锛歞elete 鍚?draft 涓棿鎬佽涔夋纭紙get/in/keys/JSON/descriptor锛?ok 10 - F-1 鍥炲綊锛歞elete 鍚?draft 涓棿鎬佽涔夋纭紙get/in/keys/JSON/descriptor锛?  ---
+  duration_ms: 0.5467
+  type: 'test'
+  ...
+# Subtest: F-1 鍥炲綊锛氬垹鍚庨噸璁?/ 閲嶅畾涔夛紝閿噸鏂板瓨鍦?ok 11 - F-1 鍥炲綊锛氬垹鍚庨噸璁?/ 閲嶅畾涔夛紝閿噸鏂板瓨鍦?  ---
+  duration_ms: 0.5148
+  type: 'test'
+  ...
+# Subtest: O-1锛欴ate 璧?safeClone 鍥為€€锛坆ase 涓?Date 瀹炰緥锛?ok 12 - O-1锛欴ate 璧?safeClone 鍥為€€锛坆ase 涓?Date 瀹炰緥锛?  ---
+  duration_ms: 2.0118
+  type: 'test'
+  ...
+# Subtest: O-1锛歁ap 缁忚矾寰勫鍒朵繚鎸佸疄渚嬶紙涓嶈Е鍙?Map 鏂规硶浠ｇ悊锛?ok 13 - O-1锛歁ap 缁忚矾寰勫鍒朵繚鎸佸疄渚嬶紙涓嶈Е鍙?Map 鏂规硶浠ｇ悊锛?  ---
+  duration_ms: 0.5595
+  type: 'test'
+  ...
+# Subtest: O-鏂帮細宓屽 Map 鏂规硶璋冪敤鎶?TypeError锛堜粎椤跺眰鍥為€€锛屽祵濂椾笉淇濊瘉锛?ok 14 - O-鏂帮細宓屽 Map 鏂规硶璋冪敤鎶?TypeError锛堜粎椤跺眰鍥為€€锛屽祵濂椾笉淇濊瘉锛?  ---
+  duration_ms: 1.27
+  type: 'test'
+  ...
+# Subtest: BUG-1: __proto__ 鍐欏叆淇濈暀鑷湁鏁版嵁閿紝涓嶆浛鎹㈠師鍨?ok 15 - BUG-1: __proto__ 鍐欏叆淇濈暀鑷湁鏁版嵁閿紝涓嶆浛鎹㈠師鍨?  ---
+  duration_ms: 0.3051
+  type: 'test'
+  ...
+# Subtest: BUG-2: 鏁扮粍 length 鎴柇鍚庤秺鐣岀储寮曞湪 draft 涓庣粨鏋滀腑鍧囦笉鍙
+ok 16 - BUG-2: 鏁扮粍 length 鎴柇鍚庤秺鐣岀储寮曞湪 draft 涓庣粨鏋滀腑鍧囦笉鍙
+  ---
+  duration_ms: 0.4168
+  type: 'test'
+  ...
+# Subtest: BUG-3: 鍒悕瀵硅薄淇敼鍙蛋涓€鏉＄埗閾撅紙鍛婅鑰岄潪閿欒锛?ok 17 - BUG-3: 鍒悕瀵硅薄淇敼鍙蛋涓€鏉＄埗閾撅紙鍛婅鑰岄潪閿欒锛?  ---
+  duration_ms: 0.2133
+  type: 'test'
+  ...
+# Subtest: BUG-3 娣卞眰锛氬埆鍚嶅璞″湪涓や釜鐖剁骇涓嬶紝淇敼鍏朵腑涓€涓埗绾т笅鐨勫紩鐢紙鍛婅 + 涓嶄繚璇侊級
+ok 18 - BUG-3 娣卞眰锛氬埆鍚嶅璞″湪涓や釜鐖剁骇涓嬶紝淇敼鍏朵腑涓€涓埗绾т笅鐨勫紩鐢紙鍛婅 + 涓嶄繚璇侊級
+  ---
+  duration_ms: 0.263
+  type: 'test'
+  ...
+# Subtest: delete arr[i] 鍚?length 涓嶅彉锛岀█鐤忚涔夋纭?ok 19 - delete arr[i] 鍚?length 涓嶅彉锛岀█鐤忚涔夋纭?  ---
+  duration_ms: 0.1942
+  type: 'test'
+  ...
+# Subtest: L10-W3 搂D-1 鎸佷箙灞備富妯″潡锛圢 灞傦級
+    # Subtest: T-94(N) buildPersistBatch 褰㈢姸 / 鍒犻櫎浼樺厛 / 涓婇檺
+    ok 1 - T-94(N) buildPersistBatch 褰㈢姸 / 鍒犻櫎浼樺厛 / 涓婇檺
+      ---
+      duration_ms: 3.3344
+      type: 'test'
+      ...
+    # Subtest: T-95(N) mock 鍚庣绛変环锛坕db vs invoke锛壜?浜嬪姟钀界洏 + 鎶曞奖绛変环
+    ok 2 - T-95(N) mock 鍚庣绛変环锛坕db vs invoke锛壜?浜嬪姟钀界洏 + 鎶曞奖绛変环
+      ---
+      duration_ms: 2.2332
+      type: 'test'
+      ...
+    # Subtest: T-96(N) 鍗曟壒浜嬪姟鍘熷瓙鎬э紙涓€?throw 鈫?鏃犲崐鎵癸級
+    ok 3 - T-96(N) 鍗曟壒浜嬪姟鍘熷瓙鎬э紙涓€?throw 鈫?鏃犲崐鎵癸級
+      ---
+      duration_ms: 0.6821
+      type: 'test'
+      ...
+    # Subtest: T-96(N) 闄嶇骇璺緞鍙祴锛歴etFailNext / closed 鈫?鍚?{name,message}
+    ok 4 - T-96(N) 闄嶇骇璺緞鍙祴锛歴etFailNext / closed 鈫?鍚?{name,message}
+      ---
+      duration_ms: 0.5179
+      type: 'test'
+      ...
+    # Subtest: T-97(N) 鏃у簱杩佺Щ骞傜瓑锛堥€?id 鍊肩瓑浠凤級
+    ok 5 - T-97(N) 鏃у簱杩佺Щ骞傜瓑锛堥€?id 鍊肩瓑浠凤級
+      ---
+      duration_ms: 0.519
+      type: 'test'
+      ...
+    1..5
+ok 20 - L10-W3 搂D-1 鎸佷箙灞備富妯″潡锛圢 灞傦級
+  ---
+  duration_ms: 8.659
+  type: 'suite'
+  ...
+# Subtest: L10-W4 搂宕╂簝/涓€鑷存€э紙宕╂簝娉ㄥ叆濂椾欢锛?    # Subtest: T-96(N) 宕╂簝@BEGIN 鈫?鏃犲崐鎵?+ 鏃㈡湁琛屼繚鎸?+ 闄嶇骇 full
+    ok 1 - T-96(N) 宕╂簝@BEGIN 鈫?鏃犲崐鎵?+ 鏃㈡湁琛屼繚鎸?+ 闄嶇骇 full
+      ---
+      duration_ms: 2.3241
+      type: 'test'
+      ...
+    # Subtest: T-96(N) 宕╂簝@APPLY锛堢紦鍐插氨缁悗 / COMMIT 鍓嶏級鈫?鏃犲崐鎵?    ok 2 - T-96(N) 宕╂簝@APPLY锛堢紦鍐插氨缁悗 / COMMIT 鍓嶏級鈫?鏃犲崐鎵?      ---
+      duration_ms: 0.303
+      type: 'test'
+      ...
+    # Subtest: T-96(N) checkpoint 澶辫触鍘熷瓙鎬?鈫?鎶曞奖涓嶅彉 + 闄嶇骇 full
+    ok 3 - T-96(N) checkpoint 澶辫触鍘熷瓙鎬?鈫?鎶曞奖涓嶅彉 + 闄嶇骇 full
+      ---
+      duration_ms: 0.4886
+      type: 'test'
+      ...
+    # Subtest: 涓€鑷存€?路 seq 骞傜瓑閲嶆斁锛坮eplay:true锛屼笉閲嶅鐢熸晥锛?    ok 4 - 涓€鑷存€?路 seq 骞傜瓑閲嶆斁锛坮eplay:true锛屼笉閲嶅鐢熸晥锛?      ---
+      duration_ms: 1.0575
+      type: 'test'
+      ...
+    1..4
+ok 21 - L10-W4 搂宕╂簝/涓€鑷存€э紙宕╂簝娉ㄥ叆濂椾欢锛?  ---
+  duration_ms: 5.2393
+  type: 'suite'
+  ...
+# Subtest: L10-W4 搂涓夎矾寰勯殧绂伙紙妯″瀷绾?路 搂鍏?鍥涜矾寰勶級
+    # Subtest: 涓夎矾寰勪簰鏂ュ垎绫?+ 鍚勮矾寰勭嫭绔嬪悗绔棤涓插懗
+    ok 1 - 涓夎矾寰勪簰鏂ュ垎绫?+ 鍚勮矾寰勭嫭绔嬪悗绔棤涓插懗
+      ---
+      duration_ms: 0.928
+      type: 'test'
+      ...
+    # Subtest: 鍔犲瘑璺緞 路 钀界洏瀛楄妭鏃犳槑鏂囷紙缁撴瀯鎬у瘑鏂囩函鍑€锛?    ok 2 - 鍔犲瘑璺緞 路 钀界洏瀛楄妭鏃犳槑鏂囷紙缁撴瀯鎬у瘑鏂囩函鍑€锛?      ---
+      duration_ms: 0.281
+      type: 'test'
+      ...
+    1..2
+ok 22 - L10-W4 搂涓夎矾寰勯殧绂伙紙妯″瀷绾?路 搂鍏?鍥涜矾寰勶級
+  ---
+  duration_ms: 1.4282
+  type: 'suite'
+  ...
+# Subtest: L10-W4 搂鍝ㄥ叺 + 搂鎸囨爣
+    # Subtest: T-99(N) 鍝ㄥ叺 路 200 姝ョ‘瀹氭€ч殢鏈哄簭鍒?鈫?鎶曞奖涓€鑷存€э紙缁撴瀯鎬э級
+    ok 1 - T-99(N) 鍝ㄥ叺 路 200 姝ョ‘瀹氭€ч殢鏈哄簭鍒?鈫?鎶曞奖涓€鑷存€э紙缁撴瀯鎬э級
+      ---
+      duration_ms: 5.6035
+      type: 'test'
+      ...
+    # Subtest: 鎸囨爣 路 stats().p95 nearest-rank + 鏈夌晫 ring锛圠9_METRIC_CAP锛?    ok 2 - 鎸囨爣 路 stats().p95 nearest-rank + 鏈夌晫 ring锛圠9_METRIC_CAP锛?      ---
+      duration_ms: 0.3701
+      type: 'test'
+      ...
+    1..2
+ok 23 - L10-W4 搂鍝ㄥ叺 + 搂鎸囨爣
+  ---
+  duration_ms: 6.285
+  type: 'suite'
+  ...
+# Subtest: L11-W4 搂宕╂簝/涓€鑷存€э紙宕╂簝娉ㄥ叆濂椾欢 路 澶嶇敤 T-96 璇箟锛?    # Subtest: 涓€鑷存€?路 宕╂簝@BEGIN 鈫?鏃犲崐鎵?+ 鏃㈡湁琛屼繚鎸?+ 闄嶇骇 full
+    ok 1 - 涓€鑷存€?路 宕╂簝@BEGIN 鈫?鏃犲崐鎵?+ 鏃㈡湁琛屼繚鎸?+ 闄嶇骇 full
+      ---
+      duration_ms: 2.4373
+      type: 'test'
+      ...
+    # Subtest: 涓€鑷存€?路 宕╂簝@APPLY锛堢紦鍐插氨缁悗 / COMMIT 鍓嶏級鈫?鏃犲崐鎵?    ok 2 - 涓€鑷存€?路 宕╂簝@APPLY锛堢紦鍐插氨缁悗 / COMMIT 鍓嶏級鈫?鏃犲崐鎵?      ---
+      duration_ms: 0.3029
+      type: 'test'
+      ...
+    # Subtest: 涓€鑷存€?路 checkpoint 澶辫触鍘熷瓙鎬?鈫?鎶曞奖涓嶅彉 + 闄嶇骇 full
+    ok 3 - 涓€鑷存€?路 checkpoint 澶辫触鍘熷瓙鎬?鈫?鎶曞奖涓嶅彉 + 闄嶇骇 full
+      ---
+      duration_ms: 0.5005
+      type: 'test'
+      ...
+    # Subtest: 涓€鑷存€?路 seq 骞傜瓑閲嶆斁锛坮eplay:true锛屼笉閲嶅鐢熸晥锛?    ok 4 - 涓€鑷存€?路 seq 骞傜瓑閲嶆斁锛坮eplay:true锛屼笉閲嶅鐢熸晥锛?      ---
+      duration_ms: 1.0876
+      type: 'test'
+      ...
+    1..4
+ok 24 - L11-W4 搂宕╂簝/涓€鑷存€э紙宕╂簝娉ㄥ叆濂椾欢 路 澶嶇敤 T-96 璇箟锛?  ---
+  duration_ms: 5.3864
+  type: 'suite'
+  ...
+# Subtest: L11-W4 搂鍥涜矾寰勯殧绂伙紙妯″瀷绾?路 搂鍏?鍥涜矾寰勯€愬瓧锛?    # Subtest: 鍥涜矾寰勪簰鏂ュ垎绫伙紙desktop / encrypted / browser / shadow锛? 鍚勮矾寰勭嫭绔嬪悗绔棤涓插懗
+    ok 1 - 鍥涜矾寰勪簰鏂ュ垎绫伙紙desktop / encrypted / browser / shadow锛? 鍚勮矾寰勭嫭绔嬪悗绔棤涓插懗
+      ---
+      duration_ms: 1.0128
+      type: 'test'
+      ...
+    # Subtest: 鍔犲瘑璺緞 路 钀界洏瀛楄妭鏃犳槑鏂囷紙缁撴瀯鎬у瘑鏂囩函鍑€锛?    ok 2 - 鍔犲瘑璺緞 路 钀界洏瀛楄妭鏃犳槑鏂囷紙缁撴瀯鎬у瘑鏂囩函鍑€锛?      ---
+      duration_ms: 1.0022
+      type: 'test'
+      ...
+    1..2
+ok 25 - L11-W4 搂鍥涜矾寰勯殧绂伙紙妯″瀷绾?路 搂鍏?鍥涜矾寰勯€愬瓧锛?  ---
+  duration_ms: 2.1763
+  type: 'suite'
+  ...
+# Subtest: L11-W4 搂鍝ㄥ叺 + 搂鎸囨爣
+    # Subtest: T-105(N) 鍝ㄥ叺 路 200 姝ョ‘瀹氭€ч殢鏈哄簭鍒楋紙鍥涜矾寰勶級鈫?鎶曞奖涓€鑷存€э紙缁撴瀯鎬э級
+    ok 1 - T-105(N) 鍝ㄥ叺 路 200 姝ョ‘瀹氭€ч殢鏈哄簭鍒楋紙鍥涜矾寰勶級鈫?鎶曞奖涓€鑷存€э紙缁撴瀯鎬э級
+      ---
+      duration_ms: 22.8324
+      type: 'test'
+      ...
+    # Subtest: 鎸囨爣 路 stats().p95 nearest-rank + 鏈夌晫 ring锛圠9_METRIC_CAP锛?    ok 2 - 鎸囨爣 路 stats().p95 nearest-rank + 鏈夌晫 ring锛圠9_METRIC_CAP锛?      ---
+      duration_ms: 0.3837
+      type: 'test'
+      ...
+    # Subtest: 鎸囨爣 路 commit / 鍒囪鍥?/ longtask 涓夊簭鍒?p95锛圠11-W4 搴﹂噺鍙ｅ緞锛?    ok 3 - 鎸囨爣 路 commit / 鍒囪鍥?/ longtask 涓夊簭鍒?p95锛圠11-W4 搴﹂噺鍙ｅ緞锛?      ---
+      duration_ms: 0.4255
+      type: 'test'
+      ...
+    1..3
+ok 26 - L11-W4 搂鍝ㄥ叺 + 搂鎸囨爣
+  ---
+  duration_ms: 24.1597
+  type: 'suite'
+  ...
+# Subtest: L12-W3 搂绐楀彛璁＄畻濂戠害锛圚2 缁濆瀹氫綅 路 瑙嗗彛涓婇檺锛?    # Subtest: 甯搁噺鎺ュ湴 路 闃堝€?琛岄珮/棰勬覆鏌?姹犱笂闄愬潎涓烘湁鏁堟暣鏁?    ok 1 - 甯搁噺鎺ュ湴 路 闃堝€?琛岄珮/棰勬覆鏌?姹犱笂闄愬潎涓烘湁鏁堟暣鏁?      ---
+      duration_ms: 0.964
+      type: 'test'
+      ...
+    # Subtest: 娓叉煋宸ヤ綔闆嗚妯?路 浠绘剰婊氬姩浣嶇疆 鈮?姹犱笂闄愶紙< 瑙嗗彛涓婇檺 200锛?    ok 2 - 娓叉煋宸ヤ綔闆嗚妯?路 浠绘剰婊氬姩浣嶇疆 鈮?姹犱笂闄愶紙< 瑙嗗彛涓婇檺 200锛?      ---
+      duration_ms: 0.4412
+      type: 'test'
+      ...
+    # Subtest: 瑙嗗彛澶栦笉鍦?DOM 路 绐楀彛涓ユ牸灏忎簬鍏ㄩ噺涓旈琛屽綊闆?    ok 3 - 瑙嗗彛澶栦笉鍦?DOM 路 绐楀彛涓ユ牸灏忎簬鍏ㄩ噺涓旈琛屽綊闆?      ---
+      duration_ms: 0.4463
+      type: 'test'
+      ...
+    # Subtest: 涓嶅彉閲?\#32 鍝ㄥ叺 路 婊氬姩浣嶇疆 鈫?娓叉煋鍖洪棿鏄犲皠鍗曡皟涓嶅噺
+    ok 4 - 涓嶅彉閲?\#32 鍝ㄥ叺 路 婊氬姩浣嶇疆 鈫?娓叉煋鍖洪棿鏄犲皠鍗曡皟涓嶅噺
+      ---
+      duration_ms: 0.4045
+      type: 'test'
+      ...
+    # Subtest: 鍙彉琛岄珮娈嬩綑锛圧25锛壜?浼扮畻琛岄珮鍚屾簮涓?鈮?32px
+    ok 5 - 鍙彉琛岄珮娈嬩綑锛圧25锛壜?浼扮畻琛岄珮鍚屾簮涓?鈮?32px
+      ---
+      duration_ms: 0.164
+      type: 'test'
+      ...
+    1..5
+ok 27 - L12-W3 搂绐楀彛璁＄畻濂戠害锛圚2 缁濆瀹氫綅 路 瑙嗗彛涓婇檺锛?  ---
+  duration_ms: 3.5997
+  type: 'suite'
+  ...
+# Subtest: L12-W3 搂浜х墿绾х粨鏋勬€ф壂鎻忥紙榛樿鍏抽棴鎬?+ 寮曟搸 API锛?    # Subtest: 寮曟搸 API 钀藉湴锛圚2 缁濆瀹氫綅 / H3 DOM 澶嶇敤锛?    ok 1 - 寮曟搸 API 钀藉湴锛圚2 缁濆瀹氫綅 / H3 DOM 澶嶇敤锛?      ---
+      duration_ms: 1.9026
+      type: 'test'
+      ...
+    # Subtest: 闄嶇骇璺緞锛圚5锛壜?_virtualDisabled + fallback 鎶ュ憡閿?    ok 2 - 闄嶇骇璺緞锛圚5锛壜?_virtualDisabled + fallback 鎶ュ憡閿?      ---
+      duration_ms: 0.5558
+      type: 'test'
+      ...
+    # Subtest: D-7 鎵撳嵃鍏ㄩ噺娓叉煋閿氾紙beforeprint / afterprint + @media print锛?    ok 3 - D-7 鎵撳嵃鍏ㄩ噺娓叉煋閿氾紙beforeprint / afterprint + @media print锛?      ---
+      duration_ms: 0.7696
+      type: 'test'
+      ...
+    # Subtest: 浜や簰鐮村潖闈㈠彴璐?D-1鈥-8 閿氱偣瀛樺湪鎬?    ok 4 - 浜や簰鐮村潖闈㈠彴璐?D-1鈥-8 閿氱偣瀛樺湪鎬?      ---
+      duration_ms: 2.8465
+      type: 'test'
+      ...
+    # Subtest: 榛樿鍏抽棴鎬侊紙LO-7=A锛壜?闃堝€奸棬鎺?+ 鍘熷叏閲忚矾寰勪繚鐣?    ok 5 - 榛樿鍏抽棴鎬侊紙LO-7=A锛壜?闃堝€奸棬鎺?+ 鍘熷叏閲忚矾寰勪繚鐣?      ---
+      duration_ms: 0.6923
+      type: 'test'
+      ...
+    1..5
+ok 28 - L12-W3 搂浜х墿绾х粨鏋勬€ф壂鎻忥紙榛樿鍏抽棴鎬?+ 寮曟搸 API锛?  ---
+  duration_ms: 7.1802
+  type: 'suite'
+  ...
+# Subtest: L12-W4 搂宕╂簝/涓€鑷存€э紙闄嶇骇涓夋€?+ 宕╂簝娉ㄥ叆 路 妯″瀷绾э級
+    # Subtest: T-109(N) 闄嶇骇涓夋€?路 闃堝€煎唴 / 瓒呴槇鍊?/ 鏄惧紡鍏抽棴 鍒ゅ畾
+    ok 1 - T-109(N) 闄嶇骇涓夋€?路 闃堝€煎唴 / 瓒呴槇鍊?/ 鏄惧紡鍏抽棴 鍒ゅ畾
+      ---
+      duration_ms: 0.7843
+      type: 'test'
+      ...
+    # Subtest: T-109(N) 宕╂簝娉ㄥ叆 路 绐楀彛璁＄畻鎶涢敊 鈫?闄嶇骇缃綅 + 鍏ㄩ噺琛屾暟 = total
+    ok 2 - T-109(N) 宕╂簝娉ㄥ叆 路 绐楀彛璁＄畻鎶涢敊 鈫?闄嶇骇缃綅 + 鍏ㄩ噺琛屾暟 = total
+      ---
+      duration_ms: 0.3531
+      type: 'test'
+      ...
+    # Subtest: H5 鏄惧紡寮€鍏?路 _vsUserDisabled=true 鈫?姘镐笉铏氭嫙鍖栵紙绛変环鍏ㄩ噺锛?    ok 3 - H5 鏄惧紡寮€鍏?路 _vsUserDisabled=true 鈫?姘镐笉铏氭嫙鍖栵紙绛変环鍏ㄩ噺锛?      ---
+      duration_ms: 0.2451
+      type: 'test'
+      ...
+    1..3
+ok 29 - L12-W4 搂宕╂簝/涓€鑷存€э紙闄嶇骇涓夋€?+ 宕╂簝娉ㄥ叆 路 妯″瀷绾э級
+  ---
+  duration_ms: 2.5047
+  type: 'suite'
+  ...
+# Subtest: L12-W4 搂H5 闄嶇骇寮€鍏筹紙鏄惧紡 UI 寮€鍏?路 浜х墿绾у彧璇绘壂鎻忥級
+    # Subtest: H5 閿氬瓨鍦ㄦ€?路 鏄惧紡寮€鍏崇鍙?+ 鎸佷箙鍖栧瓧娈?+ 鎾姤鏂囨
+    ok 1 - H5 閿氬瓨鍦ㄦ€?路 鏄惧紡寮€鍏崇鍙?+ 鎸佷箙鍖栧瓧娈?+ 鎾姤鏂囨
+      ---
+      duration_ms: 1.3637
+      type: 'test'
+      ...
+    # Subtest: H5 鎺ュ湴 路 _vsShouldUse 璁ゆ樉寮忓叧闂爣蹇楋紙鍒ゅ畾鎺ュ叆锛?    ok 2 - H5 鎺ュ湴 路 _vsShouldUse 璁ゆ樉寮忓叧闂爣蹇楋紙鍒ゅ畾鎺ュ叆锛?      ---
+      duration_ms: 0.4054
+      type: 'test'
+      ...
+    1..2
+ok 30 - L12-W4 搂H5 闄嶇骇寮€鍏筹紙鏄惧紡 UI 寮€鍏?路 浜х墿绾у彧璇绘壂鎻忥級
+  ---
+  duration_ms: 2.0064
+  type: 'suite'
+  ...
+# Subtest: L12-W4 搂鍝ㄥ叺 + 搂鎸囨爣
+    # Subtest: T-110(N) 鍝ㄥ叺 路 200 姝ョ‘瀹氭€ф粴鍔ㄥ簭鍒?鈫?绐楀彛鏄犲皠鏈夌晫涓斿崟璋冧笉鍑?    ok 1 - T-110(N) 鍝ㄥ叺 路 200 姝ョ‘瀹氭€ф粴鍔ㄥ簭鍒?鈫?绐楀彛鏄犲皠鏈夌晫涓斿崟璋冧笉鍑?      ---
+      duration_ms: 0.798
+      type: 'test'
+      ...
+    # Subtest: 鎸囨爣 路 p95 nearest-rank锛堢函鍑芥暟锛?    ok 2 - 鎸囨爣 路 p95 nearest-rank锛堢函鍑芥暟锛?      ---
+      duration_ms: 0.3954
+      type: 'test'
+      ...
+    # Subtest: 鎸囨爣 路 commit / 鍒囪鍥?/ longtask 涓夊簭鍒楃嫭绔嬶紙鍚堟垚鏍锋湰锛?    ok 3 - 鎸囨爣 路 commit / 鍒囪鍥?/ longtask 涓夊簭鍒楃嫭绔嬶紙鍚堟垚鏍锋湰锛?      ---
+      duration_ms: 1.1852
+      type: 'test'
+      ...
+    # Subtest: 鎸囨爣 路 canonical 鏆撮湶搴﹂噺閿氾紙ring 涓婇檺 + 缁熻鍏ュ彛 + longtask 瑙傚療鑰咃級
+    ok 4 - 鎸囨爣 路 canonical 鏆撮湶搴﹂噺閿氾紙ring 涓婇檺 + 缁熻鍏ュ彛 + longtask 瑙傚療鑰咃級
+      ---
+      duration_ms: 0.9132
+      type: 'test'
+      ...
+    1..4
+ok 31 - L12-W4 搂鍝ㄥ叺 + 搂鎸囨爣
+  ---
+  duration_ms: 3.7224
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂甯搁噺鎺ュ湴锛圠0-4=A 路 L0-5=A锛?    # Subtest: MB_LRU_CAP=5,000 / MB_VIEW_CAP=200 / 鍚堟壒 16ms / 涓€鑷存€х幆 64
+    ok 1 - MB_LRU_CAP=5,000 / MB_VIEW_CAP=200 / 鍚堟壒 16ms / 涓€鑷存€х幆 64
+      ---
+      duration_ms: 0.9186
+      type: 'test'
+      ...
+    1..1
+ok 32 - L13-W6 搂甯搁噺鎺ュ湴锛圠0-4=A 路 L0-5=A锛?  ---
+  duration_ms: 1.903
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂MB-LRU 涓婇檺涓庡洖濉竴鑷达紙MB-Q1/Q2锛?    # Subtest: 宸ヤ綔闆嗗皝椤?鈮?5,000 涓?capBreach=0锛?00k 搴忓垪锛?    ok 1 - 宸ヤ綔闆嗗皝椤?鈮?5,000 涓?capBreach=0锛?00k 搴忓垪锛?      ---
+      duration_ms: 488.3516
+      type: 'test'
+      ...
+    # Subtest: LRU 绋冲畾 路 touch 灏嗗懡涓」缃《锛堟彃鍏ュ簭 = LRU 搴忥級
+    ok 2 - LRU 绋冲畾 路 touch 灏嗗懡涓」缃《锛堟彃鍏ュ簭 = LRU 搴忥級
+      ---
+      duration_ms: 0.9946
+      type: 'test'
+      ...
+    # Subtest: 娣樻卑鍚庡啀鍙栧洖濉竴鑷达紙寮曠敤绛変环锛?    ok 3 - 娣樻卑鍚庡啀鍙栧洖濉竴鑷达紙寮曠敤绛変环锛?      ---
+      duration_ms: 0.171
+      type: 'test'
+      ...
+    # Subtest: 娣樻卑浠呭洖濉悗瑙﹀彂锛堟湭瓒呴檺鏃堕浂娣樻卑锛?    ok 4 - 娣樻卑浠呭洖濉悗瑙﹀彂锛堟湭瓒呴檺鏃堕浂娣樻卑锛?      ---
+      duration_ms: 0.1447
+      type: 'test'
+      ...
+    1..4
+ok 33 - L13-W6 搂MB-LRU 涓婇檺涓庡洖濉竴鑷达紙MB-Q1/Q2锛?  ---
+  duration_ms: 489.9296
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂瑙嗗彛娈靛父椹?/ 闃熷垪锛堝畧鍗?鈶?路 MB-Q2锛?    # Subtest: 瑙嗗彛娈?鈮?200 甯搁┗涓嶆窐姹帮紙鎬婚┗鐣?= 5,200锛?    ok 1 - 瑙嗗彛娈?鈮?200 甯搁┗涓嶆窐姹帮紙鎬婚┗鐣?= 5,200锛?      ---
+      duration_ms: 6.2475
+      type: 'test'
+      ...
+    # Subtest: 瑙嗗彛鍒锋柊锛坃mbSetViewport 璇箟锛夎鐩栨棫瑙嗗彛骞朵粠宸ヤ綔闆嗗墧闄?    ok 2 - 瑙嗗彛鍒锋柊锛坃mbSetViewport 璇箟锛夎鐩栨棫瑙嗗彛骞朵粠宸ヤ綔闆嗗墧闄?      ---
+      duration_ms: 0.3542
+      type: 'test'
+      ...
+    # Subtest: 鍚堟壒闃熷垪锛坢bCoalesceCommit 璇箟锛壜?鍚岀獥澶氭鍙樻洿骞跺叆鍗曟壒
+    ok 3 - 鍚堟壒闃熷垪锛坢bCoalesceCommit 璇箟锛壜?鍚岀獥澶氭鍙樻洿骞跺叆鍗曟壒
+      ---
+      duration_ms: 0.3125
+      type: 'test'
+      ...
+    1..3
+ok 34 - L13-W6 搂瑙嗗彛娈靛父椹?/ 闃熷垪锛堝畧鍗?鈶?路 MB-Q2锛?  ---
+  duration_ms: 7.2152
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂MB-SEAM 鍞竴寮傛杈圭晫锛圫-A 鐭矾 路 L0-9=A锛?    # Subtest: 榛樿鎬侊紙_mbDisabled=true锛壜?await getNodeAsync(id) === N(id)锛堝悓寮曠敤锛?    ok 1 - 榛樿鎬侊紙_mbDisabled=true锛壜?await getNodeAsync(id) === N(id)锛堝悓寮曠敤锛?      ---
+      duration_ms: 0.445
+      type: 'test'
+      ...
+    # Subtest: 寮€鍚€?路 getNodeAsync 缁忓伐浣滈泦鍛戒腑 / 鍥炲～涓?N(id) 绛変环
+    ok 2 - 寮€鍚€?路 getNodeAsync 缁忓伐浣滈泦鍛戒腑 / 鍥炲～涓?N(id) 绛変环
+      ---
+      duration_ms: 0.7692
+      type: 'test'
+      ...
+    1..2
+ok 35 - L13-W6 搂MB-SEAM 鍞竴寮傛杈圭晫锛圫-A 鐭矾 路 L0-9=A锛?  ---
+  duration_ms: 1.3556
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂TS-V 鍗曟帴鍏ョ偣 + 鎶曞奖锛圛F-1鈥F-5 路 搂3.2锛?    # Subtest: T-116(N) 绛変环鍝ㄥ叺 路 off 鎬?mbResolve 閫愰」 鈮?鍏ㄩ噺鎶曞奖锛坉egraded=true锛?    ok 1 - T-116(N) 绛変环鍝ㄥ叺 路 off 鎬?mbResolve 閫愰」 鈮?鍏ㄩ噺鎶曞奖锛坉egraded=true锛?      ---
+      duration_ms: 1.8058
+      type: 'test'
+      ...
+    # Subtest: 鎶曞奖涓嶆硠婕忥紙浠呮姇褰遍敭 / 缂哄け 鈫?undefined锛?    ok 2 - 鎶曞奖涓嶆硠婕忥紙浠呮姇褰遍敭 / 缂哄け 鈫?undefined锛?      ---
+      duration_ms: 0.1487
+      type: 'test'
+      ...
+    # Subtest: TS-V 鍗曟帴鍏ョ偣瀛樺湪 路 6 绫昏鍥?descriptor 璇箟閿氾紙kind 鐩撮€氾級
+    ok 3 - TS-V 鍗曟帴鍏ョ偣瀛樺湪 路 6 绫昏鍥?descriptor 璇箟閿氾紙kind 鐩撮€氾級
+      ---
+      duration_ms: 0.2468
+      type: 'test'
+      ...
+    1..3
+ok 36 - L13-W6 搂TS-V 鍗曟帴鍏ョ偣 + 鎶曞奖锛圛F-1鈥F-5 路 搂3.2锛?  ---
+  duration_ms: 2.399
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂RWS 澧為噺 鈯?鍏ㄩ噺瀵规媿锛圠0-6=A 路 涓嶅彉閲?\#33锛?    # Subtest: 澧為噺澶辨晥闆?鈯?宸插洖濉泦锛堝啓闆嗕笉瓒婅闆嗭級
+    ok 1 - 澧為噺澶辨晥闆?鈯?宸插洖濉泦锛堝啓闆嗕笉瓒婅闆嗭級
+      ---
+      duration_ms: 0.2174
+      type: 'test'
+      ...
+    # Subtest: 涓€鑷存€у鎷?路 澧為噺澶辨晥鍚庡洖濉笌鍏ㄩ噺閫愰」 mismatch=0
+    ok 2 - 涓€鑷存€у鎷?路 澧為噺澶辨晥鍚庡洖濉笌鍏ㄩ噺閫愰」 mismatch=0
+      ---
+      duration_ms: 0.7018
+      type: 'test'
+      ...
+    1..2
+ok 37 - L13-W6 搂RWS 澧為噺 鈯?鍏ㄩ噺瀵规媿锛圠0-6=A 路 涓嶅彉閲?\#33锛?  ---
+  duration_ms: 1.016
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂宕╂簝瀹夊叏缃戯紙浼氳瘽绾ч檷绾у洖鍏ㄩ噺锛?    # Subtest: 宸ヤ綔闆嗚矾寰勬姏閿?鈫?闄嶇骇鍥炲叏閲忥紙涓嶆姏閿欙級
+    ok 1 - 宸ヤ綔闆嗚矾寰勬姏閿?鈫?闄嶇骇鍥炲叏閲忥紙涓嶆姏閿欙級
+      ---
+      duration_ms: 0.1766
+      type: 'test'
+      ...
+    1..1
+ok 38 - L13-W6 搂宕╂簝瀹夊叏缃戯紙浼氳瘽绾ч檷绾у洖鍏ㄩ噺锛?  ---
+  duration_ms: 0.2408
+  type: 'suite'
+  ...
+# Subtest: L13-W6 搂浜х墿绾х粨鏋勬€ф壂鎻忥紙canonical 寮曟搸 API + 瀹堝崼閿氾級
+    # Subtest: L13 寮曟搸 API 钀藉湴锛圡B-SEAM / MB-LRU / TS-V锛?    ok 1 - L13 寮曟搸 API 钀藉湴锛圡B-SEAM / MB-LRU / TS-V锛?      ---
+      duration_ms: 3.0912
+      type: 'test'
+      ...
+    # Subtest: 榛樿鍏抽棴鎬侀敋锛坃mbDisabled=true 路 闆跺洖褰掞級
+    ok 2 - 榛樿鍏抽棴鎬侀敋锛坃mbDisabled=true 路 闆跺洖褰掞級
+      ---
+      duration_ms: 0.3659
+      type: 'test'
+      ...
+    # Subtest: 涓夐噸娣樻卑瀹堝崼閿氾紙瑙嗗彛 / 鑴忛泦 / 鏄惧紡 pin锛?    ok 3 - 涓夐噸娣樻卑瀹堝崼閿氾紙瑙嗗彛 / 鑴忛泦 / 鏄惧紡 pin锛?      ---
+      duration_ms: 0.4018
+      type: 'test'
+      ...
+    # Subtest: W4 闃叉姈 / 鍚堟壒 / 涓€鑷存€ч敋
+    ok 4 - W4 闃叉姈 / 鍚堟壒 / 涓€鑷存€ч敋
+      ---
+      duration_ms: 0.8219
+      type: 'test'
+      ...
+    1..4
+ok 39 - L13-W6 搂浜х墿绾х粨鏋勬€ф壂鎻忥紙canonical 寮曟搸 API + 瀹堝崼閿氾級
+  ---
+  duration_ms: 4.807
+  type: 'suite'
+  ...
+# Subtest: L14-W3 搂鍔犲浐鍘熻钀藉湴锛圙1鈥揋5 路 鍒ゅ埆鍔涢敋锛?    # Subtest: G1 路 鍙橀珮琛岄珮搴﹁〃鍘熻 `__vsHeightTable` 钀藉湴
+    ok 1 - G1 路 鍙橀珮琛岄珮搴﹁〃鍘熻 `__vsHeightTable` 钀藉湴
+      ---
+      duration_ms: 1.5184
+      type: 'test'
+      ...
+    # Subtest: G2 路 鏁版嵁浠ｆ缂撳瓨鍘熻 `__vsGenCache` 钀藉湴锛堥敭 = state.updatedAt锛?    ok 2 - G2 路 鏁版嵁浠ｆ缂撳瓨鍘熻 `__vsGenCache` 钀藉湴锛堥敭 = state.updatedAt锛?      ---
+      duration_ms: 0.6521
+      type: 'test'
+      ...
+    # Subtest: G3 路 鐢诲粖/瀵煎浘绐楀彛鍖栧師璇惤鍦?    ok 3 - G3 路 鐢诲粖/瀵煎浘绐楀彛鍖栧師璇惤鍦?      ---
+      duration_ms: 0.5217
+      type: 'test'
+      ...
+    # Subtest: G4 路 搴旂敤鍐呮悳绱㈠師璇?`l14SearchAll` 钀藉湴锛堝叧闂?OP-14锛?    ok 4 - G4 路 搴旂敤鍐呮悳绱㈠師璇?`l14SearchAll` 钀藉湴锛堝叧闂?OP-14锛?      ---
+      duration_ms: 0.5732
+      type: 'test'
+      ...
+    # Subtest: G5 路 浜や簰鎶ゆ爮鍘熻 `__vsInteractGuard` 钀藉湴
+    ok 5 - G5 路 浜や簰鎶ゆ爮鍘熻 `__vsInteractGuard` 钀藉湴
+      ---
+      duration_ms: 0.642
+      type: 'test'
+      ...
+    # Subtest: 榛樿鍏抽棴闂搁棬 路 `_l14Enabled` 缂虹渷 false 涓旀帴缂?`__l14On` 瀛樺湪
+    ok 6 - 榛樿鍏抽棴闂搁棬 路 `_l14Enabled` 缂虹渷 false 涓旀帴缂?`__l14On` 瀛樺湪
+      ---
+      duration_ms: 0.4672
+      type: 'test'
+      ...
+    # Subtest: 鎸傛帴鐜版湁铏氭嫙婊氬姩寮曟搸 路 楂樺害琛ㄥ垎鏀?+ 鍘熻矾寰勪繚鐣?    ok 7 - 鎸傛帴鐜版湁铏氭嫙婊氬姩寮曟搸 路 楂樺害琛ㄥ垎鏀?+ 鍘熻矾寰勪繚鐣?      ---
+      duration_ms: 0.8135
+      type: 'test'
+      ...
+    # Subtest: 闄嶇骇璺緞閿氾紙RL-7锛壜?`_virtualDisabled` / `_vsUserDisabled` / fallback 鎶ュ憡淇濈暀
+    ok 8 - 闄嶇骇璺緞閿氾紙RL-7锛壜?`_virtualDisabled` / `_vsUserDisabled` / fallback 鎶ュ憡淇濈暀
+      ---
+      duration_ms: 0.6774
+      type: 'test'
+      ...
+    1..8
+ok 40 - L14-W3 搂鍔犲浐鍘熻钀藉湴锛圙1鈥揋5 路 鍒ゅ埆鍔涢敋锛?  ---
+  duration_ms: 7.1797
+  type: 'suite'
+  ...
+# Subtest: L14-W3 搂G1 楂樺害琛紙鍓嶇紑鍜岋級濂戠害锛圗-鈶狅級
+    # Subtest: 甯搁噺鎺ュ湴 路 琛岄珮/棰勬覆鏌?姹犱笂闄?瑙嗗彛涓婇檺鍧囦负鏈夋晥鏁存暟
+    ok 1 - 甯搁噺鎺ュ湴 路 琛岄珮/棰勬覆鏌?姹犱笂闄?瑙嗗彛涓婇檺鍧囦负鏈夋晥鏁存暟
+      ---
+      duration_ms: 0.3071
+      type: 'test'
+      ...
+    # Subtest: 鍓嶇紑鍜屼弗鏍奸€掑 路 total = 危heights 路 offset(0)=0 路 offset(n)=total
+    ok 2 - 鍓嶇紑鍜屼弗鏍奸€掑 路 total = 危heights 路 offset(0)=0 路 offset(n)=total
+      ---
+      duration_ms: 1.5534
+      type: 'test'
+      ...
+    # Subtest: indexAt 瑕嗙洊杈圭晫锛? / total-1 / 涓琛岄琛屽熬锛?    ok 3 - indexAt 瑕嗙洊杈圭晫锛? / total-1 / 涓琛岄琛屽熬锛?      ---
+      duration_ms: 0.6766
+      type: 'test'
+      ...
+    # Subtest: range 鍚?overscan 路 鈮?姹犱笂闄?路 鐩搁偦琛?offset 杩炵画锛堟棤閲嶅彔/鏃犵┖娲烇級
+    ok 4 - range 鍚?overscan 路 鈮?姹犱笂闄?路 鐩搁偦琛?offset 杩炵画锛堟棤閲嶅彔/鏃犵┖娲烇級
+      ---
+      duration_ms: 32.4169
+      type: 'test'
+      ...
+    # Subtest: 鍙橀珮琛岋紙琛ㄦ牸/鎹㈣锛変笅绐楀彛鍖洪棿鍗曡皟涓嶅噺锛堟粴鍔ㄤ綅缃?鈫?娓叉煋鍖洪棿锛?    ok 5 - 鍙橀珮琛岋紙琛ㄦ牸/鎹㈣锛変笅绐楀彛鍖洪棿鍗曡皟涓嶅噺锛堟粴鍔ㄤ綅缃?鈫?娓叉煋鍖洪棿锛?      ---
+      duration_ms: 7.6109
+      type: 'test'
+      ...
+    # Subtest: 琛岄珮涓嬮檺淇濇姢 路 闈炴硶/闆堕珮搴﹀洖閫€ VS_ROW_H锛堟潨缁濊楂橀敊涔憋級
+    ok 6 - 琛岄珮涓嬮檺淇濇姢 路 闈炴硶/闆堕珮搴﹀洖閫€ VS_ROW_H锛堟潨缁濊楂橀敊涔憋級
+      ---
+      duration_ms: 0.2729
+      type: 'test'
+      ...
+    1..6
+ok 41 - L14-W3 搂G1 楂樺害琛紙鍓嶇紑鍜岋級濂戠害锛圗-鈶狅級
+  ---
+  duration_ms: 43.1655
+  type: 'suite'
+  ...
+# Subtest: L14-W3 搂G2 浠ｆ缂撳瓨涓庡閲忕瓑浠凤紙E-鈶♀憿锛?    # Subtest: 澧為噺 patch 涓庡叏閲忛噸寤洪€愯妭鐐圭瓑浠凤紙id/depth 瀵归綈 鈫?true锛?    ok 1 - 澧為噺 patch 涓庡叏閲忛噸寤洪€愯妭鐐圭瓑浠凤紙id/depth 瀵归綈 鈫?true锛?      ---
+      duration_ms: 0.3427
+      type: 'test'
+      ...
+    # Subtest: 闀垮害鎴栨繁搴﹀樊寮?鈫?涓嶇瓑锛堣Е鍙戝叏閲忛噸寤哄厹搴曪級
+    ok 2 - 闀垮害鎴栨繁搴﹀樊寮?鈫?涓嶇瓑锛堣Е鍙戝叏閲忛噸寤哄厹搴曪級
+      ---
+      duration_ms: 0.147
+      type: 'test'
+      ...
+    # Subtest: 浠ｆ缂撳瓨鍘熻鎺ョ嚎 路 閬嶅巻涓庤鍙ｈ妯℃垚姝ｆ瘮锛堢紦瀛樺懡涓垎鏀瓨鍦級
+    ok 3 - 浠ｆ缂撳瓨鍘熻鎺ョ嚎 路 閬嶅巻涓庤鍙ｈ妯℃垚姝ｆ瘮锛堢紦瀛樺懡涓垎鏀瓨鍦級
+      ---
+      duration_ms: 1.0462
+      type: 'test'
+      ...
+    1..3
+ok 42 - L14-W3 搂G2 浠ｆ缂撳瓨涓庡閲忕瓑浠凤紙E-鈶♀憿锛?  ---
+  duration_ms: 1.7495
+  type: 'suite'
+  ...
+# Subtest: L14-W3 搂G3/G4/G5 璇箟鍝ㄥ叺
+    # Subtest: G3 路 瑙嗗浘瑕嗙洊涓婇檺鎺ョ嚎锛堢敾寤?瀵煎浘 鈮?瑙嗗彛涓婇檺锛?    ok 1 - G3 路 瑙嗗浘瑕嗙洊涓婇檺鎺ョ嚎锛堢敾寤?瀵煎浘 鈮?瑙嗗彛涓婇檺锛?      ---
+      duration_ms: 0.5639
+      type: 'test'
+      ...
+    # Subtest: G4 路 搴旂敤鍐呮悳绱㈠绾︼紙璺ㄥ叏鏂囨。 / 鍛戒腑灞忓 / 涓庢粴鍔ㄥ畾浣嶈仈鍔級
+    ok 2 - G4 路 搴旂敤鍐呮悳绱㈠绾︼紙璺ㄥ叏鏂囨。 / 鍛戒腑灞忓 / 涓庢粴鍔ㄥ畾浣嶈仈鍔級
+      ---
+      duration_ms: 0.5228
+      type: 'test'
+      ...
+    # Subtest: G5 路 浜や簰鎶ゆ爮璁℃暟褰㈢姸锛坮enders / geometryReads / geometryHits锛?    ok 3 - G5 路 浜や簰鎶ゆ爮璁℃暟褰㈢姸锛坮enders / geometryReads / geometryHits锛?      ---
+      duration_ms: 1.6903
+      type: 'test'
+      ...
+    1..3
+ok 43 - L14-W3 搂G3/G4/G5 璇箟鍝ㄥ叺
+  ---
+  duration_ms: 2.9118
+  type: 'suite'
+  ...
+# Subtest: L14-W4 搂G6 鐪熻妯￠椄闂ㄥ绾︼紙100k 路 T-118(N) 绛変环锛?    # Subtest: 棰勭畻甯搁噺鎺ュ湴 路 longtask/RSS/p95 闂ㄦ涓哄喕缁撳€硷紙50 / 200 / 16锛?    ok 1 - 棰勭畻甯搁噺鎺ュ湴 路 longtask/RSS/p95 闂ㄦ涓哄喕缁撳€硷紙50 / 200 / 16锛?      ---
+      duration_ms: 0.9877
+      type: 'test'
+      ...
+    # Subtest: longtask 璁℃暟 路 浠?duration > 棰勭畻璁″叆锛沵axDuration 鍗曡皟鍙栧ぇ
+    ok 2 - longtask 璁℃暟 路 浠?duration > 棰勭畻璁″叆锛沵axDuration 鍗曡皟鍙栧ぇ
+      ---
+      duration_ms: 0.1713
+      type: 'test'
+      ...
+    # Subtest: longtask 闂?路 100k 鍒囪鍥炬棤闀夸换鍔?鈫?ok锛涘嚭鐜伴暱浠诲姟 鈫?涓嶉€氳繃
+    ok 3 - longtask 闂?路 100k 鍒囪鍥炬棤闀夸换鍔?鈫?ok锛涘嚭鐜伴暱浠诲姟 鈫?涓嶉€氳繃
+      ---
+      duration_ms: 0.1564
+      type: 'test'
+      ...
+    # Subtest: RSS 闂?路 鈮?200MB 閫氳繃 / > 200MB 鎷掔粷 / 鏈噰鏍锋潯浠堕€氳繃
+    ok 4 - RSS 闂?路 鈮?200MB 閫氳繃 / > 200MB 鎷掔粷 / 鏈噰鏍锋潯浠堕€氳繃
+      ---
+      duration_ms: 0.1798
+      type: 'test'
+      ...
+    # Subtest: p95 闂?路 nearest-rank p95 鈮?16ms锛涙棤鏍锋湰鏉′欢閫氳繃
+    ok 5 - p95 闂?路 nearest-rank p95 鈮?16ms锛涙棤鏍锋湰鏉′欢閫氳繃
+      ---
+      duration_ms: 0.4029
+      type: 'test'
+      ...
+    # Subtest: 闃叉姈濂戠害 路 鍚屽抚澶氭鍚堟壒涓轰竴娆★紙鍘绘姈鍔級
+    ok 6 - 闃叉姈濂戠害 路 鍚屽抚澶氭鍚堟壒涓轰竴娆★紙鍘绘姈鍔級
+      ---
+      duration_ms: 0.2549
+      type: 'test'
+      ...
+    # Subtest: 鑺傛祦濂戠害 路 绐楀彛鍐呴娌跨珛鍗?+ 鑷冲涓€娆″熬娌匡紙commit(s=>...) 鍚堟壒锛?    ok 7 - 鑺傛祦濂戠害 路 绐楀彛鍐呴娌跨珛鍗?+ 鑷冲涓€娆″熬娌匡紙commit(s=>...) 鍚堟壒锛?      ---
+      duration_ms: 0.3259
+      type: 'test'
+      ...
+    # Subtest: 浜х墿绾ч敋 路 闂搁棬鍘熻涓庢毚闇插嚭鍙ｅ瓨鍦紙P 灞?T-118 鍒ゅ埆鍔涳級
+    ok 8 - 浜х墿绾ч敋 路 闂搁棬鍘熻涓庢毚闇插嚭鍙ｅ瓨鍦紙P 灞?T-118 鍒ゅ埆鍔涳級
+      ---
+      duration_ms: 2.1902
+      type: 'test'
+      ...
+    # Subtest: 榛樿鍏抽棴鎬佸畧鎸?路 `__l14On()` 淇濇姢 resize 闃叉姈锛堢己鐪佷笉鏀硅矾寰勮涔夛級
+    ok 9 - 榛樿鍏抽棴鎬佸畧鎸?路 `__l14On()` 淇濇姢 resize 闃叉姈锛堢己鐪佷笉鏀硅矾寰勮涔夛級
+      ---
+      duration_ms: 0.6012
+      type: 'test'
+      ...
+    1..9
+ok 44 - L14-W4 搂G6 鐪熻妯￠椄闂ㄥ绾︼紙100k 路 T-118(N) 绛変环锛?  ---
+  duration_ms: 6.7392
+  type: 'suite'
+  ...
+# Subtest: L14-W4 搂宕╂簝/涓€鑷存€э紙闄嶇骇绛夐樁 路 T-116(N) 绛変环 路 鍝ㄥ叺 \#35 鎷燂級
+    # Subtest: 闄嶇骇绛夐樁 路 off 鎬佷笌鍏ㄩ噺璺緞閫愯绛変环锛?00% 涓€鑷?鈬?ok锛?    ok 1 - 闄嶇骇绛夐樁 路 off 鎬佷笌鍏ㄩ噺璺緞閫愯绛変环锛?00% 涓€鑷?鈬?ok锛?      ---
+      duration_ms: 2.5306
+      type: 'test'
+      ...
+    # Subtest: 闄嶇骇绛夐樁 路 闀垮害 / 琛屽唴瀹瑰樊寮?鈬?涓嶉€氳繃锛堣Е鍙戝叏閲忓厹搴曪級
+    ok 2 - 闄嶇骇绛夐樁 路 闀垮害 / 琛屽唴瀹瑰樊寮?鈬?涓嶉€氳繃锛堣Е鍙戝叏閲忓厹搴曪級
+      ---
+      duration_ms: 0.1353
+      type: 'test'
+      ...
+    # Subtest: 宕╂簝娉ㄥ叆 路 闂搁棬瑙傛祴蹇収纭畾鎬э紙鍚岃緭鍏?鈬?鍚岃緭鍑?路 鏃?wall-clock 鏁忔劅锛?    ok 3 - 宕╂簝娉ㄥ叆 路 闂搁棬瑙傛祴蹇収纭畾鎬э紙鍚岃緭鍏?鈬?鍚岃緭鍑?路 鏃?wall-clock 鏁忔劅锛?      ---
+      duration_ms: 0.1815
+      type: 'test'
+      ...
+    # Subtest: 闄嶇骇閿氾紙RL-7锛壜?`_virtualDisabled` / `_vsUserDisabled` / fallback 鎶ュ憡淇濈暀
+    ok 4 - 闄嶇骇閿氾紙RL-7锛壜?`_virtualDisabled` / `_vsUserDisabled` / fallback 鎶ュ憡淇濈暀
+      ---
+      duration_ms: 0.5124
+      type: 'test'
+      ...
+    # Subtest: 鍝ㄥ叺 \#35锛堟嫙锛壜?E-2 琛ュ叏闈㈠洓鏂█褰㈢姸鎴愮珛
+    ok 5 - 鍝ㄥ叺 \#35锛堟嫙锛壜?E-2 琛ュ叏闈㈠洓鏂█褰㈢姸鎴愮珛
+      ---
+      duration_ms: 0.6135
+      type: 'test'
+      ...
+    1..5
+ok 45 - L14-W4 搂宕╂簝/涓€鑷存€э紙闄嶇骇绛夐樁 路 T-116(N) 绛変环 路 鍝ㄥ叺 \#35 鎷燂級
+  ---
+  duration_ms: 4.2507
+  type: 'suite'
+  ...
+# Subtest: L16-W1 搂瀛楄妭绛変环锛坮unPersist 鍗曟鍏ㄩ噺搴忓垪鍖栵級
+    # Subtest: 澶?state锛?0k 鑺傜偣锛壜?钀界洏涓查€愬瓧鑺備竴鑷翠笖浼樺寲鍛戒腑
+    ok 1 - 澶?state锛?0k 鑺傜偣锛壜?钀界洏涓查€愬瓧鑺備竴鑷翠笖浼樺寲鍛戒腑
+      ---
+      duration_ms: 71.4526
+      type: 'test'
+      ...
+    # Subtest: rev 閿簭棣?/ 涓?/ 灏句笁鎬佸潎閫愬瓧鑺備竴鑷翠笖浼樺寲鍛戒腑
+    ok 2 - rev 閿簭棣?/ 涓?/ 灏句笁鎬佸潎閫愬瓧鑺備竴鑷翠笖浼樺寲鍛戒腑
+      ---
+      duration_ms: 1.6805
+      type: 'test'
+      ...
+    # Subtest: 浣嶆暟璺冭縼 路 9鈫?0 / 99鈫?00 / 999鈫?000 / 0鈫? 閫愬瓧鑺備竴鑷?    ok 3 - 浣嶆暟璺冭縼 路 9鈫?0 / 99鈫?00 / 999鈫?000 / 0鈫? 閫愬瓧鑺備竴鑷?      ---
+      duration_ms: 0.685
+      type: 'test'
+      ...
+    # Subtest: 杞箟瀹夊叏 路 鑺傜偣鏂囨湰鍚?rev token 瀛楅潰閲忎笉璇懡涓紙钀界洏浠嶉€愬瓧鑺備竴鑷达級
+    ok 4 - 杞箟瀹夊叏 路 鑺傜偣鏂囨湰鍚?rev token 瀛楅潰閲忎笉璇懡涓紙钀界洏浠嶉€愬瓧鑺備竴鑷达級
+      ---
+      duration_ms: 0.3681
+      type: 'test'
+      ...
+    1..4
+ok 46 - L16-W1 搂瀛楄妭绛変环锛坮unPersist 鍗曟鍏ㄩ噺搴忓垪鍖栵級
+  ---
+  duration_ms: 75.9729
+  type: 'suite'
+  ...
+# Subtest: L16-W1 搂闄嶇骇鍏滃簳锛堣繑鍥?null 鈫?璋冪敤鏂瑰叏閲忛噸搴忓垪鍖栵級
+    # Subtest: rev 缂轰綅 / 鍚庣户寮傚父 / 鍛戒腑涓嶅敮涓€ 鈫?null
+    ok 1 - rev 缂轰綅 / 鍚庣户寮傚父 / 鍛戒腑涓嶅敮涓€ 鈫?null
+      ---
+      duration_ms: 0.1439
+      type: 'test'
+      ...
+    1..1
+ok 47 - L16-W1 搂闄嶇骇鍏滃簳锛堣繑鍥?null 鈫?璋冪敤鏂瑰叏閲忛噸搴忓垪鍖栵級
+  ---
+  duration_ms: 0.2554
+  type: 'suite'
+  ...
+# Subtest: L16-W1 搂缁撴瀯鏀舵暃锛坮unPersist 浣撳唴涓嶅啀浜屾鍏ㄩ噺搴忓垪鍖栵級
+    # Subtest: 鏃у弻搴忓垪鍖栨秷闄?+ 闄嶇骇鍒嗘敮淇濈暀
+    ok 1 - 鏃у弻搴忓垪鍖栨秷闄?+ 闄嶇骇鍒嗘敮淇濈暀
+      ---
+      duration_ms: 0.6095
+      type: 'test'
+      ...
+    1..1
+ok 48 - L16-W1 搂缁撴瀯鏀舵暃锛坮unPersist 浣撳唴涓嶅啀浜屾鍏ㄩ噺搴忓垪鍖栵級
+  ---
+  duration_ms: 0.9165
+  type: 'suite'
+  ...
+# Subtest: L16-W10 搂A 缁撴瀯閿氱偣锛堝洓澶勬牴鑺傜偣瀹堝崼锛?    # Subtest: removeNode 瀹堝崼鍚?state.rootId 涓斿厛浜?commit
+    ok 1 - removeNode 瀹堝崼鍚?state.rootId 涓斿厛浜?commit
+      ---
+      duration_ms: 0.7458
+      type: 'test'
+      ...
+    # Subtest: getCurrentDoc 鍦ㄥ彇鏍瑰悗绔嬪嵆鍒ょ┖杩斿洖 null
+    ok 2 - getCurrentDoc 鍦ㄥ彇鏍瑰悗绔嬪嵆鍒ょ┖杩斿洖 null
+      ---
+      duration_ms: 0.14
+      type: 'test'
+      ...
+    # Subtest: moveToTrash / outlineBatchDelete 鍏ュ彛鍚屽彛寰?    ok 3 - moveToTrash / outlineBatchDelete 鍏ュ彛鍚屽彛寰?      ---
+      duration_ms: 0.1342
+      type: 'test'
+      ...
+    1..3
+ok 49 - L16-W10 搂A 缁撴瀯閿氱偣锛堝洓澶勬牴鑺傜偣瀹堝崼锛?  ---
+  duration_ms: 2.0739
+  type: 'suite'
+  ...
+# Subtest: L16-W10 搂B removeNode(state.rootId) 涓嶆敼鍙樿妭鐐规暟
+    # Subtest: 澶?state锛?0,000 鑺傜偣锛夛細鑺傜偣鏁颁笉鍙?/ 闆?commit / 鏃?throw
+    ok 1 - 澶?state锛?0,000 鑺傜偣锛夛細鑺傜偣鏁颁笉鍙?/ 闆?commit / 鏃?throw
+      ---
+      duration_ms: 24.7761
+      type: 'test'
+      ...
+    # Subtest: 姝ｅ父鑺傜偣鍒犻櫎浠嶇敓鏁堬紙瀹堝崼涓嶈浼わ級
+    ok 2 - 姝ｅ父鑺傜偣鍒犻櫎浠嶇敓鏁堬紙瀹堝崼涓嶈浼わ級
+      ---
+      duration_ms: 0.6146
+      type: 'test'
+      ...
+    1..2
+ok 50 - L16-W10 搂B removeNode(state.rootId) 涓嶆敼鍙樿妭鐐规暟
+  ---
+  duration_ms: 25.5905
+  type: 'suite'
+  ...
+# Subtest: L16-W10 搂C getCurrentDoc 鏍硅妭鐐圭己澶辫繑鍥?null
+    # Subtest: 鏁存爲琚竻锛坰tate.nodes 鏃?root锛変笉鎶?TypeError
+    ok 1 - 鏁存爲琚竻锛坰tate.nodes 鏃?root锛変笉鎶?TypeError
+      ---
+      duration_ms: 0.3798
+      type: 'test'
+      ...
+    # Subtest: 甯歌璺緞缁撴灉涓嶅彉锛堣繑鍥為涓潪瀹瑰櫒鏂囨。 / 绌?children 杩斿洖 null锛?    ok 2 - 甯歌璺緞缁撴灉涓嶅彉锛堣繑鍥為涓潪瀹瑰櫒鏂囨。 / 绌?children 杩斿洖 null锛?      ---
+      duration_ms: 0.4845
+      type: 'test'
+      ...
+    1..2
+ok 51 - L16-W10 搂C getCurrentDoc 鏍硅妭鐐圭己澶辫繑鍥?null
+  ---
+  duration_ms: 1.1881
+  type: 'suite'
+  ...
+# Subtest: L16-W10 搂D moveToTrash(state.rootId) 涓嶈繘鍏ュ洖鏀舵祦绋?    # Subtest: 闆?commit / 鍥炴敹绔欎笉鍙?/ 鏍硅妭鐐?children 涓嶅彉
+    ok 1 - 闆?commit / 鍥炴敹绔欎笉鍙?/ 鏍硅妭鐐?children 涓嶅彉
+      ---
+      duration_ms: 3.1089
+      type: 'test'
+      ...
+    1..1
+ok 52 - L16-W10 搂D moveToTrash(state.rootId) 涓嶈繘鍏ュ洖鏀舵祦绋?  ---
+  duration_ms: 3.2791
+  type: 'suite'
+  ...
+# Subtest: L16-W10 搂E outlineBatchDelete 鍛戒腑鏍硅妭鐐瑰嵆杩斿洖
+    # Subtest: 闆剁‘璁ゆ / 闆跺垹闄よ皟鐢?    ok 1 - 闆剁‘璁ゆ / 闆跺垹闄よ皟鐢?      ---
+      duration_ms: 0.4251
+      type: 'test'
+      ...
+    # Subtest: 甯歌鏂囨。鐩爣浠嶈蛋纭娴佺▼
+    ok 2 - 甯歌鏂囨。鐩爣浠嶈蛋纭娴佺▼
+      ---
+      duration_ms: 0.4271
+      type: 'test'
+      ...
+    1..2
+ok 53 - L16-W10 搂E outlineBatchDelete 鍛戒腑鏍硅妭鐐瑰嵆杩斿洖
+  ---
+  duration_ms: 0.9548
+  type: 'suite'
+  ...
+# Subtest: L16-W10 搂F 鎬ц川瀵圭収锛坉efectARootOps 7 鈫?0锛?    # Subtest: 鏃у彛寰?7 娆℃牴鎿嶄綔 = 7 娆¤繚瑙勶紱鏂板彛寰?= 0 涓?errSamples 绌?    ok 1 - 鏃у彛寰?7 娆℃牴鎿嶄綔 = 7 娆¤繚瑙勶紱鏂板彛寰?= 0 涓?errSamples 绌?      ---
+      duration_ms: 1.3944
+      type: 'test'
+      ...
+    1..1
+ok 54 - L16-W10 搂F 鎬ц川瀵圭収锛坉efectARootOps 7 鈫?0锛?  ---
+  duration_ms: 1.4678
+  type: 'suite'
+  ...
+# Subtest: L16-W10 搂G 澶?state锛?0,000 鑺傜偣锛塒95 閲囨牱
+    # Subtest: 瀹堝崼鎷掔粷璺緞 P95 鈮?0.5ms 涓斾笉鍔ｄ簬鏃у彛寰勬暣鏍戝垹闄?    ok 1 - 瀹堝崼鎷掔粷璺緞 P95 鈮?0.5ms 涓斾笉鍔ｄ簬鏃у彛寰勬暣鏍戝垹闄?      ---
+      duration_ms: 622.8394
+      type: 'test'
+      ...
+    1..1
+ok 55 - L16-W10 搂G 澶?state锛?0,000 鑺傜偣锛塒95 閲囨牱
+  ---
+  duration_ms: 622.949
+  type: 'suite'
+  ...
+# Subtest: L16-W11 搂A 缁撴瀯閿氱偣锛堥槦鍒楅暱搴︾嫭绔嬭Е鍙?+ 瀹归噺瑙﹀彂淇濈暀锛?    # Subtest: TOMB_QUEUE_MAX=4096 涓?compaction 璋冪敤鐐瑰瓨鍦?    ok 1 - TOMB_QUEUE_MAX=4096 涓?compaction 璋冪敤鐐瑰瓨鍦?      ---
+      duration_ms: 0.7517
+      type: 'test'
+      ...
+    # Subtest: compaction 鍙繚鐣?_recentlyRemoved 涓粛瀛樺湪鐨勬潯鐩?    ok 2 - compaction 鍙繚鐣?_recentlyRemoved 涓粛瀛樺湪鐨勬潯鐩?      ---
+      duration_ms: 0.1426
+      type: 'test'
+      ...
+    # Subtest: 瀹归噺瑙﹀彂锛坰ize>2000锛夐€昏緫淇濈暀涓斿垎鎵规帹杩涗笉绌鸿浆
+    ok 3 - 瀹归噺瑙﹀彂锛坰ize>2000锛夐€昏緫淇濈暀涓斿垎鎵规帹杩涗笉绌鸿浆
+      ---
+      duration_ms: 0.137
+      type: 'test'
+      ...
+    1..3
+ok 56 - L16-W11 搂A 缁撴瀯閿氱偣锛堥槦鍒楅暱搴︾嫭绔嬭Е鍙?+ 瀹归噺瑙﹀彂淇濈暀锛?  ---
+  duration_ms: 2.0938
+  type: 'suite'
+  ...
+# Subtest: L16-W11 搂B 缂洪櫡澶嶇幇锛堟棫鍙ｅ緞 路 鏃犵晫澧為暱锛?    # Subtest: 12000 娆＄█鐤忓垹闄ゅ悗鏃у彛寰勯槦鍒?> 8192
+    ok 1 - 12000 娆＄█鐤忓垹闄ゅ悗鏃у彛寰勯槦鍒?> 8192
+      ---
+      duration_ms: 13.8479
+      type: 'test'
+      ...
+    1..1
+ok 57 - L16-W11 搂B 缂洪櫡澶嶇幇锛堟棫鍙ｅ緞 路 鏃犵晫澧為暱锛?  ---
+  duration_ms: 14.0406
+  type: 'suite'
+  ...
+# Subtest: L16-W11 搂C 楠屾敹锛?600 娆＄█鐤忓垹闄わ紙1 娆?绉掞級鏈夌晫
+    # Subtest: 闃熷垪 鈮?8192 涓?_recentlyRemoved 鈮?2000
+    ok 1 - 闃熷垪 鈮?8192 涓?_recentlyRemoved 鈮?2000
+      ---
+      duration_ms: 15.4779
+      type: 'test'
+      ...
+    # Subtest: 鍚屼竴搴忓垪鍦ㄦ棫鍙ｅ緞涓嬪繀鐒舵棤鐣岋紙鍒ゅ埆鍔涘鐓э級
+    ok 2 - 鍚屼竴搴忓垪鍦ㄦ棫鍙ｅ緞涓嬪繀鐒舵棤鐣岋紙鍒ゅ埆鍔涘鐓э級
+      ---
+      duration_ms: 3.9733
+      type: 'test'
+      ...
+    1..2
+ok 58 - L16-W11 搂C 楠屾敹锛?600 娆＄█鐤忓垹闄わ紙1 娆?绉掞級鏈夌晫
+  ---
+  duration_ms: 19.807
+  type: 'suite'
+  ...
+# Subtest: L16-W11 搂D 绐佸彂 5000 娆″垹闄わ紙瀹归噺鍒嗘敮 + compaction 鍗忓悓锛?    # Subtest: Map 鏀剁缉鑷?2000 涓旈槦鍒楁湁鐣岋紙< 鍐欏叆娆℃暟锛?    ok 1 - Map 鏀剁缉鑷?2000 涓旈槦鍒楁湁鐣岋紙< 鍐欏叆娆℃暟锛?      ---
+      duration_ms: 14.2426
+      type: 'test'
+      ...
+    1..1
+ok 59 - L16-W11 搂D 绐佸彂 5000 娆″垹闄わ紙瀹归噺鍒嗘敮 + compaction 鍗忓悓锛?  ---
+  duration_ms: 14.4181
+  type: 'suite'
+  ...
+# Subtest: L16-W11 搂E compaction 姝ｇ‘鎬э紙瀛樻椿闆?/ 娓告爣 / 椤哄簭锛?    # Subtest: 瓒呴槇鍊煎悗鍙繚鐣欏瓨娲绘潯鐩笖娓告爣褰掗浂
+    ok 1 - 瓒呴槇鍊煎悗鍙繚鐣欏瓨娲绘潯鐩笖娓告爣褰掗浂
+      ---
+      duration_ms: 10.8594
+      type: 'test'
+      ...
+    1..1
+ok 60 - L16-W11 搂E compaction 姝ｇ‘鎬э紙瀛樻椿闆?/ 娓告爣 / 椤哄簭锛?  ---
+  duration_ms: 10.9681
+  type: 'suite'
+  ...
+# Subtest: L16-W11 搂F 涓?initStore 澶嶄綅涓嶅啿绐?    # Subtest: 澶嶄綅锛堥槦鍒楁竻绌?+ 娓告爣褰掗浂锛夊悗 compaction / 鍐欏叆鍧囨甯?    ok 1 - 澶嶄綅锛堥槦鍒楁竻绌?+ 娓告爣褰掗浂锛夊悗 compaction / 鍐欏叆鍧囨甯?      ---
+      duration_ms: 7.4486
+      type: 'test'
+      ...
+    # Subtest: 绌洪槦鍒?compaction 骞傜瓑锛堥浂鍓綔鐢級
+    ok 2 - 绌洪槦鍒?compaction 骞傜瓑锛堥浂鍓綔鐢級
+      ---
+      duration_ms: 1.1267
+      type: 'test'
+      ...
+    1..2
+ok 61 - L16-W11 搂F 涓?initStore 澶嶄綅涓嶅啿绐?  ---
+  duration_ms: 8.7003
+  type: 'suite'
+  ...
+# Subtest: L16-W11 搂G 澶?state锛?0,000 鑺傜偣锛塒95 閲囨牱
+    # Subtest: 鍗曟澧撶鍐欏叆 P95 鈮?0.5ms 涓旈槦鍒椾笂鐣屼笉鍙?    ok 1 - 鍗曟澧撶鍐欏叆 P95 鈮?0.5ms 涓旈槦鍒椾笂鐣屼笉鍙?      ---
+      duration_ms: 53.5268
+      type: 'test'
+      ...
+    1..1
+ok 62 - L16-W11 搂G 澶?state锛?0,000 鑺傜偣锛塒95 閲囨牱
+  ---
+  duration_ms: 53.6386
+  type: 'suite'
+  ...
+# Subtest: A1: applyPatch carries the L16-W12 children hole filter
+ok 63 - A1: applyPatch carries the L16-W12 children hole filter
+  ---
+  duration_ms: 1.1966
+  type: 'test'
+  ...
+# Subtest: A2: hole filtering is inlined (no repairTreeConsistency(next)); its signature stays parameterless
+ok 64 - A2: hole filtering is inlined (no repairTreeConsistency(next)); its signature stays parameterless
+  ---
+  duration_ms: 0.2043
+  type: 'test'
+  ...
+# Subtest: B1: undo of an appended child no longer plants null holes
+ok 65 - B1: undo of an appended child no longer plants null holes
+  ---
+  duration_ms: 2.2494
+  type: 'test'
+  ...
+# Subtest: C1: same-level duplicate ids are removed
+ok 66 - C1: same-level duplicate ids are removed
+  ---
+  duration_ms: 0.3834
+  type: 'test'
+  ...
+# Subtest: D1: deleted / dangling child ids are removed
+ok 67 - D1: deleted / dangling child ids are removed
+  ---
+  duration_ms: 0.4262
+  type: 'test'
+  ...
+# Subtest: E1: patches that cannot carry children keep the children array identity
+ok 68 - E1: patches that cannot carry children keep the children array identity
+  ---
+  duration_ms: 0.2711
+  type: 'test'
+  ...
+# Subtest: F1: the previous state is never mutated
+ok 69 - F1: the previous state is never mutated
+  ---
+  duration_ms: 0.4245
+  type: 'test'
+  ...
+# Subtest: G1: patch pre/post values are not rewritten (redo reuses the same object)
+ok 70 - G1: patch pre/post values are not rewritten (redo reuses the same object)
+  ---
+  duration_ms: 0.3171
+  type: 'test'
+  ...
+# Subtest: H1: redo direction is filtered as well
+ok 71 - H1: redo direction is filtered as well
+  ---
+  duration_ms: 0.4167
+  type: 'test'
+  ...
+# Subtest: I1: 60 seeded scenarios keep I1/I2/I3 clean
+ok 72 - I1: 60 seeded scenarios keep I1/I2/I3 clean
+  ---
+  duration_ms: 4.3928
+  type: 'test'
+  ...
+# Subtest: J1: 5,000-node state P95 stays within budget
+ok 73 - J1: 5,000-node state P95 stays within budget
+  ---
+  duration_ms: 134.7184
+  type: 'test'
+  ...
+# Subtest: K1: root children stay valid after filtering
+ok 74 - K1: root children stay valid after filtering
+  ---
+  duration_ms: 0.3026
+  type: 'test'
+  ...
+# [L16-W13] merge(20k nodes / 200 peer deletions) P95 = 121.77 ms
+# Subtest: L16-W13 搂A 缁撴瀯閿氱偣
+    # Subtest: A1: 鎻掑叆鍒嗘敮鐧昏 _remoteReceived锛坮n._origin='remote' 涔嬪悗锛?    ok 1 - A1: 鎻掑叆鍒嗘敮鐧昏 _remoteReceived锛坮n._origin='remote' 涔嬪悗锛?      ---
+      duration_ms: 0.8078
+      type: 'test'
+      ...
+    # Subtest: A2: 鍒犻櫎浼犳挱瀹堝崼鍚?_remoteReceived 鏀捐锛堜笖浣嶄簬 _localCreated 瀹堝崼涔嬪悗锛?    ok 2 - A2: 鍒犻櫎浼犳挱瀹堝崼鍚?_remoteReceived 鏀捐锛堜笖浣嶄簬 _localCreated 瀹堝崼涔嬪悗锛?      ---
+      duration_ms: 0.1637
+      type: 'test'
+      ...
+    # Subtest: A3: 鍚堝叆鍓嶅綊涓€鍖栵紙瀵圭鍐嶅寘鍚?+ 宸蹭笂鐩?鈫?鎽橀櫎锛?    ok 3 - A3: 鍚堝叆鍓嶅綊涓€鍖栵紙瀵圭鍐嶅寘鍚?+ 宸蹭笂鐩?鈫?鎽橀櫎锛?      ---
+      duration_ms: 0.2027
+      type: 'test'
+      ...
+    # Subtest: A4: 姣斿/鎸佷箙鍖栧彛寰?鈥?_strip 鍚?_remoteReceived锛宊ORIGIN_STRIP 涓嶅墺绂?    ok 4 - A4: 姣斿/鎸佷箙鍖栧彛寰?鈥?_strip 鍚?_remoteReceived锛宊ORIGIN_STRIP 涓嶅墺绂?      ---
+      duration_ms: 1.1321
+      type: 'test'
+      ...
+    # Subtest: A5: 鍒濆鍖?/ 杩佺Щ / 鍏滃簳 / 鍒犻櫎娓呯悊閿氱偣榻愬
+    ok 5 - A5: 鍒濆鍖?/ 杩佺Щ / 鍏滃簳 / 鍒犻櫎娓呯悊閿氱偣榻愬
+      ---
+      duration_ms: 0.8429
+      type: 'test'
+      ...
+    1..5
+ok 75 - L16-W13 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 4.2964
+  type: 'suite'
+  ...
+# Subtest: L16-W13 搂B 澶嶇幇锛圖efect-F锛?    # Subtest: B1: 鏃у彛寰?鈥斺€?鍚堝叆鍚庢湭鍐欑洏锛屽绔垹闄ゅ箍鎾璺宠繃 鈬?B 娈嬬暀
+    ok 1 - B1: 鏃у彛寰?鈥斺€?鍚堝叆鍚庢湭鍐欑洏锛屽绔垹闄ゅ箍鎾璺宠繃 鈬?B 娈嬬暀
+      ---
+      duration_ms: 3.7762
+      type: 'test'
+      ...
+    # Subtest: B2: 鏂板彛寰?鈥斺€?鍚屼竴鍦烘櫙 B 璺熼殢鍒犻櫎
+    ok 2 - B2: 鏂板彛寰?鈥斺€?鍚屼竴鍦烘櫙 B 璺熼殢鍒犻櫎
+      ---
+      duration_ms: 2.4511
+      type: 'test'
+      ...
+    1..2
+ok 76 - L16-W13 搂B 澶嶇幇锛圖efect-F锛?  ---
+  duration_ms: 6.5626
+  type: 'suite'
+  ...
+# Subtest: L16-W13 搂C 鍙屾爣绛惧垹闄や紶鎾紙楠屾敹锛?    # Subtest: C1: A 鍒犻櫎 鈫?B 鏀跺埌骞挎挱鍚?count 涓€鑷达紝鍒锋柊鍚庝粛涓€鑷?    ok 1 - C1: A 鍒犻櫎 鈫?B 鏀跺埌骞挎挱鍚?count 涓€鑷达紝鍒锋柊鍚庝粛涓€鑷?      ---
+      duration_ms: 0.6572
+      type: 'test'
+      ...
+    # Subtest: C2: B 鍐欑洏鍚庝笌 A 鐨勫悗缁箍鎾粛鏀舵暃锛堟棤澶嶆椿 / 鏃?ping-pong锛?    ok 2 - C2: B 鍐欑洏鍚庝笌 A 鐨勫悗缁箍鎾粛鏀舵暃锛堟棤澶嶆椿 / 鏃?ping-pong锛?      ---
+      duration_ms: 1.0505
+      type: 'test'
+      ...
+    # Subtest: D1: 30 娆＄獊鍙?鈥斺€?姣忎竴姝?A/B 璁℃暟涓€鑷?    ok 3 - D1: 30 娆＄獊鍙?鈥斺€?姣忎竴姝?A/B 璁℃暟涓€鑷?      ---
+      duration_ms: 17.7856
+      type: 'test'
+      ...
+    1..3
+ok 77 - L16-W13 搂C 鍙屾爣绛惧垹闄や紶鎾紙楠屾敹锛?  ---
+  duration_ms: 19.7348
+  type: 'suite'
+  ...
+# Subtest: L16-W13 搂E 鍙嶅悜鎶ゆ爮锛堜笉寰楀洖褰掞級
+    # Subtest: E1: A-union-no-loss 鈥斺€?鍙岀骞跺彂鏂板缓锛屼簰鐩稿悓姝ュ悗骞堕泦涓嶄涪
+    ok 1 - E1: A-union-no-loss 鈥斺€?鍙岀骞跺彂鏂板缓锛屼簰鐩稿悓姝ュ悗骞堕泦涓嶄涪
+      ---
+      duration_ms: 0.6076
+      type: 'test'
+      ...
+    # Subtest: E2: B-lww-convergence 鈥斺€?鍚屼竴鑺傜偣鍙岀缂栬緫锛孡WW 鏀舵暃鍒拌緝鏂颁竴鏂?    ok 2 - E2: B-lww-convergence 鈥斺€?鍚屼竴鑺傜偣鍙岀缂栬緫锛孡WW 鏀舵暃鍒拌緝鏂颁竴鏂?      ---
+      duration_ms: 0.6249
+      type: 'test'
+      ...
+    # Subtest: E3: 浠庢湭鏀舵倝鐨勬湰鍦版柊寤鸿妭鐐逛笉琚绔棫蹇収璇垹锛坃origin / _localCreated 鎶ゆ爮涓嶅彉锛?    ok 3 - E3: 浠庢湭鏀舵倝鐨勬湰鍦版柊寤鸿妭鐐逛笉琚绔棫蹇収璇垹锛坃origin / _localCreated 鎶ゆ爮涓嶅彉锛?      ---
+      duration_ms: 0.3096
+      type: 'test'
+      ...
+    1..3
+ok 78 - L16-W13 搂E 鍙嶅悜鎶ゆ爮锛堜笉寰楀洖褰掞級
+  ---
+  duration_ms: 1.7331
+  type: 'suite'
+  ...
+# Subtest: L16-W13 搂F 淇濇姢闆嗘湁鐣岋紙涓嶅緱闅忎細璇濊啫鑳€锛?    # Subtest: F1: 瀵圭鍐嶅寘鍚?+ 鏈〉宸蹭笂鐩?鈫?鎽橀櫎
+    ok 1 - F1: 瀵圭鍐嶅寘鍚?+ 鏈〉宸蹭笂鐩?鈫?鎽橀櫎
+      ---
+      duration_ms: 0.533
+      type: 'test'
+      ...
+    # Subtest: F2: 鏈湴鍒犻櫎 鈫?鎽橀櫎
+    ok 2 - F2: 鏈湴鍒犻櫎 鈫?鎽橀櫎
+      ---
+      duration_ms: 0.4273
+      type: 'test'
+      ...
+    # Subtest: F3: 鏈湴缂鸿鑺傜偣浣嗗绔粛鎸佹湁 鈫?閲嶆柊鍚堝叆骞朵繚鐣欑櫥璁?    ok 3 - F3: 鏈湴缂鸿鑺傜偣浣嗗绔粛鎸佹湁 鈫?閲嶆柊鍚堝叆骞朵繚鐣欑櫥璁?      ---
+      duration_ms: 0.7975
+      type: 'test'
+      ...
+    1..3
+ok 79 - L16-W13 搂F 淇濇姢闆嗘湁鐣岋紙涓嶅緱闅忎細璇濊啫鑳€锛?  ---
+  duration_ms: 1.8827
+  type: 'suite'
+  ...
+# Subtest: L16-W13 搂G 杩佺Щ涓庢槑鏂囧厹搴?    # Subtest: G1: migrateStateObject 褰掍竴鍖?_remoteReceived锛堝幓閲?+ 鍙繚鐣欏瓨鍦ㄧ殑鑺傜偣 + 缂虹渷绌烘暟缁勶級
+    ok 1 - G1: migrateStateObject 褰掍竴鍖?_remoteReceived锛堝幓閲?+ 鍙繚鐣欏瓨鍦ㄧ殑鑺傜偣 + 缂虹渷绌烘暟缁勶級
+      ---
+      duration_ms: 0.6004
+      type: 'test'
+      ...
+    # Subtest: G2: _pendingPlainState 鎼哄甫 _remoteReceived锛堢┖闆嗕笉甯︼紝涓?_localCreated 鍚屽彛寰勶級
+    ok 2 - G2: _pendingPlainState 鎼哄甫 _remoteReceived锛堢┖闆嗕笉甯︼紝涓?_localCreated 鍚屽彛寰勶級
+      ---
+      duration_ms: 0.1998
+      type: 'test'
+      ...
+    1..2
+ok 80 - L16-W13 搂G 杩佺Щ涓庢槑鏂囧厹搴?  ---
+  duration_ms: 0.8886
+  type: 'suite'
+  ...
+# Subtest: L16-W13 搂H 澶?state 閲囨牱
+    # Subtest: H1: 20,000 鑺傜偣 / 200 涓绔悎鍏ュ垹闄?鈥斺€?merge P95 閲囨牱
+    ok 1 - H1: 20,000 鑺傜偣 / 200 涓绔悎鍏ュ垹闄?鈥斺€?merge P95 閲囨牱
+      ---
+      duration_ms: 1738.41
+      type: 'test'
+      ...
+    1..1
+ok 81 - L16-W13 搂H 澶?state 閲囨牱
+  ---
+  duration_ms: 1738.4962
+  type: 'suite'
+  ...
+# [L16-W14] autobackup payload build P95 (20k nodes): legacy=67.61 ms, reuse=0.21 ms
+# Subtest: L16-W14 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?    # Subtest: A1: saveGraphPositions 闃叉姈 + flushGraphPositions + pagehide 娉ㄥ唽
+    ok 1 - A1: saveGraphPositions 闃叉姈 + flushGraphPositions + pagehide 娉ㄥ唽
+      ---
+      duration_ms: 0.8252
+      type: 'test'
+      ...
+    # Subtest: A2: beforeunload 璺緞锛坒lushBeforeUnload锛夊己鍒?flush
+    ok 2 - A2: beforeunload 璺緞锛坒lushBeforeUnload锛夊己鍒?flush
+      ---
+      duration_ms: 0.7698
+      type: 'test'
+      ...
+    # Subtest: A3: saveAutoBackup 澶嶇敤钀界洏涓诧紙鎷兼帴 + 闄嶇骇鍒嗘敮淇濈暀锛?    ok 3 - A3: saveAutoBackup 澶嶇敤钀界洏涓诧紙鎷兼帴 + 闄嶇骇鍒嗘敮淇濈暀锛?      ---
+      duration_ms: 0.5138
+      type: 'test'
+      ...
+    # Subtest: A4: runPersist / flushPersistNow 鍧囦紶 json2锛堝叡 4 澶勶級
+    ok 4 - A4: runPersist / flushPersistNow 鍧囦紶 json2锛堝叡 4 澶勶級
+      ---
+      duration_ms: 0.3212
+      type: 'test'
+      ...
+    # Subtest: A5: patch ack 鎸囩汗澶嶇敤锛堟棫浜屾搴忓垪鍖栨秷闄?+ 闄嶇骇淇濈暀锛?    ok 5 - A5: patch ack 鎸囩汗澶嶇敤锛堟棫浜屾搴忓垪鍖栨秷闄?+ 闄嶇骇淇濈暀锛?      ---
+      duration_ms: 0.4371
+      type: 'test'
+      ...
+    1..5
+ok 82 - L16-W14 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?  ---
+  duration_ms: 3.9555
+  type: 'suite'
+  ...
+# Subtest: L16-W14 搂B autobackup 杞借嵎绛変环
+    # Subtest: B1: stateJson 璺緞 鈥斺€?閿簭 state,ui,graphpos,ts + state 鍐呭绛変环
+    ok 1 - B1: stateJson 璺緞 鈥斺€?閿簭 state,ui,graphpos,ts + state 鍐呭绛変环
+      ---
+      duration_ms: 1.7484
+      type: 'test'
+      ...
+    # Subtest: B2: 鏃?stateJson 闄嶇骇璺緞 鈥斺€?涓庢棫鍙ｅ緞锛坈lone + stringify锛夐€愬瓧鑺備竴鑷?    ok 2 - B2: 鏃?stateJson 闄嶇骇璺緞 鈥斺€?涓庢棫鍙ｅ緞锛坈lone + stringify锛夐€愬瓧鑺備竴鑷?      ---
+      duration_ms: 1.5272
+      type: 'test'
+      ...
+    # Subtest: B3: 10s 闄愰浠嶇敓鏁堬紱force 缁曡繃
+    ok 3 - B3: 10s 闄愰浠嶇敓鏁堬紱force 缁曡繃
+      ---
+      duration_ms: 0.3721
+      type: 'test'
+      ...
+    # Subtest: B4: 闈炴硶 stateJson锛堥潪瀵硅薄棣栧熬锛夐檷绾ц€屼笉鎶涢敊
+    ok 4 - B4: 闈炴硶 stateJson锛堥潪瀵硅薄棣栧熬锛夐檷绾ц€屼笉鎶涢敊
+      ---
+      duration_ms: 0.3786
+      type: 'test'
+      ...
+    # Subtest: B5: 涓诲簱鎺ヨ繎閰嶉闃堝€间粛璺宠繃锛團-16 璇箟涓嶅彉锛?    ok 5 - B5: 涓诲簱鎺ヨ繎閰嶉闃堝€间粛璺宠繃锛團-16 璇箟涓嶅彉锛?      ---
+      duration_ms: 0.3226
+      type: 'test'
+      ...
+    1..5
+ok 83 - L16-W14 搂B autobackup 杞借嵎绛変环
+  ---
+  duration_ms: 4.696
+  type: 'suite'
+  ...
+# Subtest: L16-W14 搂C 鍥句綅缃槻鎶栦笌鍏抽〉 flush
+    # Subtest: C1: 绐楀彛鍐呭娆¤皟鐢ㄥ彧钀界洏涓€娆★紙鏈€鍚庝竴娆″唴瀹癸級
+    ok 1 - C1: 绐楀彛鍐呭娆¤皟鐢ㄥ彧钀界洏涓€娆★紙鏈€鍚庝竴娆″唴瀹癸級
+      ---
+      duration_ms: 0.5552
+      type: 'test'
+      ...
+    # Subtest: C2: flushGraphPositions 绔嬪嵆鍐欑洏骞舵竻闄ゆ寕璧峰畾鏃跺櫒锛堝箓绛夛級
+    ok 2 - C2: flushGraphPositions 绔嬪嵆鍐欑洏骞舵竻闄ゆ寕璧峰畾鏃跺櫒锛堝箓绛夛級
+      ---
+      duration_ms: 0.2796
+      type: 'test'
+      ...
+    # Subtest: C3: pagehide 宸叉敞鍐屼笖鎸囧悜 flushGraphPositions锛堝叧椤靛己鍒?flush锛?    ok 3 - C3: pagehide 宸叉敞鍐屼笖鎸囧悜 flushGraphPositions锛堝叧椤靛己鍒?flush锛?      ---
+      duration_ms: 0.2363
+      type: 'test'
+      ...
+    1..3
+ok 84 - L16-W14 搂C 鍥句綅缃槻鎶栦笌鍏抽〉 flush
+  ---
+  duration_ms: 1.1995
+  type: 'suite'
+  ...
+# Subtest: L16-W14 搂D patch ack 鎸囩汗澶嶇敤绛変环
+    # Subtest: D1: 澶氭壒 ack锛坮ev 杩炲锛夊悗澶嶇敤涓蹭笌鍏ㄩ噺閲嶅簭鍒楀寲閫愬瓧鑺備竴鑷?    ok 1 - D1: 澶氭壒 ack锛坮ev 杩炲锛夊悗澶嶇敤涓蹭笌鍏ㄩ噺閲嶅簭鍒楀寲閫愬瓧鑺備竴鑷?      ---
+      duration_ms: 1.443
+      type: 'test'
+      ...
+    # Subtest: D2: 闄嶇骇鍏滃簳 鈥斺€?rev 缂轰綅鏃惰繑鍥?null锛堣皟鐢ㄦ柟鍏ㄩ噺閲嶅簭鍒楀寲锛?    ok 2 - D2: 闄嶇骇鍏滃簳 鈥斺€?rev 缂轰綅鏃惰繑鍥?null锛堣皟鐢ㄦ柟鍏ㄩ噺閲嶅簭鍒楀寲锛?      ---
+      duration_ms: 0.1192
+      type: 'test'
+      ...
+    # Subtest: D3: 鏂囨湰鍚?rev token 瀛楅潰閲忎笉璇懡涓?    ok 3 - D3: 鏂囨湰鍚?rev token 瀛楅潰閲忎笉璇懡涓?      ---
+      duration_ms: 0.1355
+      type: 'test'
+      ...
+    1..3
+ok 85 - L16-W14 搂D patch ack 鎸囩汗澶嶇敤绛変环
+  ---
+  duration_ms: 1.8055
+  type: 'suite'
+  ...
+# Subtest: L16-W14 搂E 澶?state锛?0,000 鑺傜偣锛夎浇鑽锋瀯閫犻噰鏍?    # Subtest: E1: 鎷兼帴璺緞 P95 鏄捐憲浣庝簬鏃?clone+stringify 璺緞
+    ok 1 - E1: 鎷兼帴璺緞 P95 鏄捐憲浣庝簬鏃?clone+stringify 璺緞
+      ---
+      duration_ms: 651.0294
+      type: 'test'
+      ...
+    1..1
+ok 86 - L16-W14 搂E 澶?state锛?0,000 鑺傜偣锛夎浇鑽锋瀯閫犻噰鏍?  ---
+  duration_ms: 651.1217
+  type: 'suite'
+  ...
+# Subtest: A 路 Defect-K 寮傚父璺緞锛歱atch 缂哄け鏃舵暣浣撻噸寤?    # Subtest: A1 鏃?patch锛坧atch 搴忓垪鍖栧け璐?/ historyMode never锛? setStar 鈫?starred +1
+    ok 1 - A1 鏃?patch锛坧atch 搴忓垪鍖栧け璐?/ historyMode never锛? setStar 鈫?starred +1
+      ---
+      duration_ms: 2.0362
+      type: 'test'
+      ...
+    # Subtest: A2 patch 鍙ユ焺瀛樺湪浣?paths 涓虹┖ 鈫?鏁翠綋閲嶅缓锛堜笉缁ф壙鏃у熀鏁帮級
+    ok 2 - A2 patch 鍙ユ焺瀛樺湪浣?paths 涓虹┖ 鈫?鏁翠綋閲嶅缓锛堜笉缁ф壙鏃у熀鏁帮級
+      ---
+      duration_ms: 0.2608
+      type: 'test'
+      ...
+    # Subtest: A3 merge 鏈燂紙__juInMerge=true锛夆啋 鏁翠綋閲嶅缓
+    ok 3 - A3 merge 鏈燂紙__juInMerge=true锛夆啋 鏁翠綋閲嶅缓
+      ---
+      duration_ms: 0.2623
+      type: 'test'
+      ...
+    # Subtest: A4 鏃?state 缂鸿鏁?鈫?鏁翠綋閲嶅缓
+    ok 4 - A4 鏃?state 缂鸿鏁?鈫?鏁翠綋閲嶅缓
+      ---
+      duration_ms: 0.3016
+      type: 'test'
+      ...
+    # Subtest: A5 try/catch 鍏滃簳锛氬閲忓嚱鏁版姏閿?鈫?鏁翠綋閲嶅缓浠嶅緱姝ｇ‘璁℃暟
+    ok 5 - A5 try/catch 鍏滃簳锛氬閲忓嚱鏁版姏閿?鈫?鏁翠綋閲嶅缓浠嶅緱姝ｇ‘璁℃暟
+      ---
+      duration_ms: 0.3677
+      type: 'test'
+      ...
+    # Subtest: A6 缁撴瀯閿氱偣锛氬紓甯稿垎鏀蛋 _sideCountsRebuild锛屾棫缁ф壙鍐欐硶宸叉秷闄?    ok 6 - A6 缁撴瀯閿氱偣锛氬紓甯稿垎鏀蛋 _sideCountsRebuild锛屾棫缁ф壙鍐欐硶宸叉秷闄?      ---
+      duration_ms: 0.1968
+      type: 'test'
+      ...
+    1..6
+ok 87 - A 路 Defect-K 寮傚父璺緞锛歱atch 缂哄け鏃舵暣浣撻噸寤?  ---
+  duration_ms: 4.5801
+  type: 'suite'
+  ...
+# Subtest: B 路 澧為噺璺緞涓庢暣浣撻噸寤虹瓑浠?    # Subtest: B1 闅忔満 300 渚嬶細_sideCountsApply 缁撴灉 === _sideCountsRebuild(鏂?state)
+    ok 1 - B1 闅忔満 300 渚嬶細_sideCountsApply 缁撴灉 === _sideCountsRebuild(鏂?state)
+      ---
+      duration_ms: 9.3671
+      type: 'test'
+      ...
+    # Subtest: B2 commit 鏀跺彛鍦?patch 璺緞涓嬩笌鏁翠綋閲嶅缓涓€鑷?    ok 2 - B2 commit 鏀跺彛鍦?patch 璺緞涓嬩笌鏁翠綋閲嶅缓涓€鑷?      ---
+      duration_ms: 0.7806
+      type: 'test'
+      ...
+    1..2
+ok 88 - B 路 澧為噺璺緞涓庢暣浣撻噸寤虹瓑浠?  ---
+  duration_ms: 10.5277
+  type: 'suite'
+  ...
+# Subtest: C 路 渚ф爮娓叉煋鍙ｅ緞
+    # Subtest: C1 闅忔満 200 渚嬶細閲嶅缓璁℃暟涓?renderSidebar 鍏ㄨ〃寰幆閫愰」涓€鑷?    ok 1 - C1 闅忔満 200 渚嬶細閲嶅缓璁℃暟涓?renderSidebar 鍏ㄨ〃寰幆閫愰」涓€鑷?      ---
+      duration_ms: 2.1118
+      type: 'test'
+      ...
+    # Subtest: C2 寮傚父璺緞鍚庣珛鍗宠鍙栵細鏄熸爣 / 鏂囨。 / 鏁版嵁搴撹鏁版纭?    ok 2 - C2 寮傚父璺緞鍚庣珛鍗宠鍙栵細鏄熸爣 / 鏂囨。 / 鏁版嵁搴撹鏁版纭?      ---
+      duration_ms: 0.4199
+      type: 'test'
+      ...
+    1..2
+ok 89 - C 路 渚ф爮娓叉煋鍙ｅ緞
+  ---
+  duration_ms: 2.7419
+  type: 'suite'
+  ...
+# Subtest: D 路 100k 鑺傜偣鍗曟閲嶅缓閲囨牱
+    # Subtest: D1 閲嶅缓鑰楁椂閲囨牱锛堣褰曞€?+ 鐩稿鏋氫妇鍦版澘鐨勪笂鐣屽畧鍗級
+    ok 1 - D1 閲嶅缓鑰楁椂閲囨牱锛堣褰曞€?+ 鐩稿鏋氫妇鍦版澘鐨勪笂鐣屽畧鍗級
+      ---
+      duration_ms: 4100.5881
+      type: 'test'
+      ...
+    # 100k 閲嶅缓: med=30.64ms p95=33.43ms max=36.11ms
+    # 100k 鏋氫妇鍦版澘: med=17.83ms p95=19.71ms
+    # 閲嶅缓 p95 鈭?鏋氫妇鍦版澘 p95 = 13.72ms
+    1..1
+ok 90 - D 路 100k 鑺傜偣鍗曟閲嶅缓閲囨牱
+  ---
+  duration_ms: 4100.7508
+  type: 'suite'
+  ...
+# Subtest: A 路 缁撴瀯閿氱偣锛坈reateTextNode 鍥炲～ / 琛ㄦ牸涓婁笅鏂囧畧鍗級
+    # Subtest: A1 闈?SAFE_TAGS 鍒嗘敮浠?createTextNode 鍥炲～鏂囨湰锛坃sanTextEsc 閫€褰瑰悗缁撴瀯 + 琛屼负绛変环锛?    ok 1 - A1 闈?SAFE_TAGS 鍒嗘敮浠?createTextNode 鍥炲～鏂囨湰锛坃sanTextEsc 閫€褰瑰悗缁撴瀯 + 琛屼负绛変环锛?      ---
+      duration_ms: 11.373
+      type: 'test'
+      ...
+    # Subtest: A2 琛ㄦ牸绫荤埗涓婁笅鏂囧墠缃簬鏈€杩?TABLE锛坒oster parenting 鍚屽彛寰勶級
+    ok 2 - A2 琛ㄦ牸绫荤埗涓婁笅鏂囧墠缃簬鏈€杩?TABLE锛坒oster parenting 鍚屽彛寰勶級
+      ---
+      duration_ms: 0.3143
+      type: 'test'
+      ...
+    1..2
+ok 91 - A 路 缁撴瀯閿氱偣锛坈reateTextNode 鍥炲～ / 琛ㄦ牸涓婁笅鏂囧畧鍗級
+  ---
+  duration_ms: 692.9367
+  type: 'suite'
+  ...
+# Subtest: B 路 sanitizeHtml 骞傜瓑锛坒uzz 31 渚嬶級
+    # Subtest: B1 31 渚嬪叏閮ㄦ弧瓒?sanitizeHtml(sanitizeHtml(x))===sanitizeHtml(x)
+    ok 1 - B1 31 渚嬪叏閮ㄦ弧瓒?sanitizeHtml(sanitizeHtml(x))===sanitizeHtml(x)
+      ---
+      duration_ms: 18.245
+      type: 'test'
+      ...
+    # Subtest: B2 鍥炲～鏂囨湰涓嶅惈鍙啀瑙ｆ瀽鐨勫瓧闈㈡爣绛撅紙unsafeInState=false锛?    ok 2 - B2 鍥炲～鏂囨湰涓嶅惈鍙啀瑙ｆ瀽鐨勫瓧闈㈡爣绛撅紙unsafeInState=false锛?      ---
+      duration_ms: 9.27
+      type: 'test'
+      ...
+    1..2
+ok 92 - B 路 sanitizeHtml 骞傜瓑锛坒uzz 31 渚嬶級
+  ---
+  duration_ms: 27.9197
+  type: 'suite'
+  ...
+# Subtest: C 路 鐜版湁 XSS 鐢ㄤ緥锛坕dx 0鈥?3锛?    # Subtest: C1 14 渚嬪啀瑙ｆ瀽鍚?pwned=false
+    ok 1 - C1 14 渚嬪啀瑙ｆ瀽鍚?pwned=false
+      ---
+      duration_ms: 6.115
+      type: 'test'
+      ...
+    1..1
+ok 93 - C 路 鐜版湁 XSS 鐢ㄤ緥锛坕dx 0鈥?3锛?  ---
+  duration_ms: 6.4945
+  type: 'suite'
+  ...
+# Subtest: D 路 澶?state锛?,000 鑺傜偣 HTML锛塒95 閲囨牱
+    # Subtest: D1 鍗曟鍑€鍖栬€楁椂閲囨牱锛堣褰曞€?路 骞傜瓑鍚屾椂鎴愮珛锛?    ok 1 - D1 鍗曟鍑€鍖栬€楁椂閲囨牱锛堣褰曞€?路 骞傜瓑鍚屾椂鎴愮珛锛?      ---
+      duration_ms: 1593.7352
+      type: 'test'
+      ...
+    1..1
+ok 94 - D 路 澶?state锛?,000 鑺傜偣 HTML锛塒95 閲囨牱
+  ---
+  duration_ms: 1594.1737
+  type: 'suite'
+  ...
+# Subtest: L16-W17 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?    # Subtest: A1: migrateOrBackup 瀛樺湪涓旇縼绉诲け璐ユ椂鍏堝皾璇?loadAutoBackup
+    ok 1 - A1: migrateOrBackup 瀛樺湪涓旇縼绉诲け璐ユ椂鍏堝皾璇?loadAutoBackup
+      ---
+      duration_ms: 0.7592
+      type: 'test'
+      ...
+    # Subtest: A2: boot 浜斿璋冪敤鍧囦负 migrateOrBackup锛屼富搴撹矾寰勬棤鏃ц皟鐢?    ok 2 - A2: boot 浜斿璋冪敤鍧囦负 migrateOrBackup锛屼富搴撹矾寰勬棤鏃ц皟鐢?      ---
+      duration_ms: 0.1998
+      type: 'test'
+      ...
+    # Subtest: A3: 闈炲姞瀵嗘€佸畧鍗紙鍔犲瘑鎬佷笉璇诲彇鏄庢枃澶囦唤锛?    ok 3 - A3: 闈炲姞瀵嗘€佸畧鍗紙鍔犲瘑鎬佷笉璇诲彇鏄庢枃澶囦唤锛?      ---
+      duration_ms: 0.1983
+      type: 'test'
+      ...
+    1..3
+ok 95 - L16-W17 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?  ---
+  duration_ms: 2.1684
+  type: 'suite'
+  ...
+# Subtest: L16-W17 搂B crash.S2 涓诲簱鎹熷潖鍥為€€澶囦唤
+    # Subtest: B1: 涓诲簱杩佺Щ澶辫触 + 鏈夋晥澶囦唤 鈫?浠庡浠芥仮澶嶏紝鑺傜偣鏁?= 澶囦唤鍓?    ok 1 - B1: 涓诲簱杩佺Щ澶辫触 + 鏈夋晥澶囦唤 鈫?浠庡浠芥仮澶嶏紝鑺傜偣鏁?= 澶囦唤鍓?      ---
+      duration_ms: 0.9474
+      type: 'test'
+      ...
+    # Subtest: B2: 涓诲簱鎹熷潖 + 澶囦唤鎹熷潖 鈫?鍥為€€榛樿鎬佷笖缁欏嚭鎹熷潖鎻愮ず
+    ok 2 - B2: 涓诲簱鎹熷潖 + 澶囦唤鎹熷潖 鈫?鍥為€€榛樿鎬佷笖缁欏嚭鎹熷潖鎻愮ず
+      ---
+      duration_ms: 0.4019
+      type: 'test'
+      ...
+    1..2
+ok 96 - L16-W17 搂B crash.S2 涓诲簱鎹熷潖鍥為€€澶囦唤
+  ---
+  duration_ms: 1.5248
+  type: 'suite'
+  ...
+# Subtest: L16-W17 搂C crash.S3 / S4 涓嶅洖褰?    # Subtest: C1: 涓嶅彲瑙ｆ瀽 JSON锛坙oadState 杩斿洖 null锛? 鏈夋晥澶囦唤 鈫?鎭㈠澶囦唤
+    ok 1 - C1: 涓嶅彲瑙ｆ瀽 JSON锛坙oadState 杩斿洖 null锛? 鏈夋晥澶囦唤 鈫?鎭㈠澶囦唤
+      ---
+      duration_ms: 0.3889
+      type: 'test'
+      ...
+    # Subtest: C2: 绌哄簱锛堟棤涓诲簱 路 鏃犲浠斤級鈫?榛樿鎬侊紝涓嶆姏閿?    ok 2 - C2: 绌哄簱锛堟棤涓诲簱 路 鏃犲浠斤級鈫?榛樿鎬侊紝涓嶆姏閿?      ---
+      duration_ms: 0.3083
+      type: 'test'
+      ...
+    # Subtest: C3: boot 淇濈暀 stored 涓虹┖鏃剁殑鑷姩澶囦唤鍒嗘敮
+    ok 3 - C3: boot 淇濈暀 stored 涓虹┖鏃剁殑鑷姩澶囦唤鍒嗘敮
+      ---
+      duration_ms: 0.2071
+      type: 'test'
+      ...
+    1..3
+ok 97 - L16-W17 搂C crash.S3 / S4 涓嶅洖褰?  ---
+  duration_ms: 1.2153
+  type: 'suite'
+  ...
+# Subtest: L16-W17 搂D 鍔犲瘑鎬佷笌闄嶇骇鍙ｅ緞
+    # Subtest: D1: 鍔犲瘑鎬佽縼绉诲け璐ヤ笉璇诲彇鏄庢枃澶囦唤锛堟棦鏈夊姞瀵嗚涔変笉鍙橈級
+    ok 1 - D1: 鍔犲瘑鎬佽縼绉诲け璐ヤ笉璇诲彇鏄庢枃澶囦唤锛堟棦鏈夊姞瀵嗚涔変笉鍙橈級
+      ---
+      duration_ms: 0.2916
+      type: 'test'
+      ...
+    # Subtest: D2: 涓诲簱姝ｅ父鏃朵笉瑙︾澶囦唤锛堥浂棰濆寮€閿€璺緞锛?    ok 2 - D2: 涓诲簱姝ｅ父鏃朵笉瑙︾澶囦唤锛堥浂棰濆寮€閿€璺緞锛?      ---
+      duration_ms: 0.8962
+      type: 'test'
+      ...
+    1..2
+ok 98 - L16-W17 搂D 鍔犲瘑鎬佷笌闄嶇骇鍙ｅ緞
+  ---
+  duration_ms: 1.3
+  type: 'suite'
+  ...
+# Subtest: L16-W17 搂E 澶?state 鎭㈠ P95 閲囨牱
+    # Subtest: E1: 20,000 鑺傜偣澶囦唤鎭㈠ P95 鏈夐檺涓旇妭鐐规暟涓€鑷?    ok 1 - E1: 20,000 鑺傜偣澶囦唤鎭㈠ P95 鏈夐檺涓旇妭鐐规暟涓€鑷?      ---
+      duration_ms: 2042.8107
+      type: 'test'
+      ...
+    1..1
+ok 99 - L16-W17 搂E 澶?state 鎭㈠ P95 閲囨牱
+  ---
+  duration_ms: 2042.954
+  type: 'suite'
+  ...
+# error_report={"pii-redaction":true,"rawPhone":false,"rawEmail":false,"rawIp":false}
+# error_report.pii-redaction=true
+# rawPhone=false
+# rawEmail=false
+# rawIp=false
+# bigMessage.len=448898
+# bigMessage.p95ms=5.627
+# bigMessage.maxms=6.647
+# Subtest: L16-W18 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?    # Subtest: A1: 鎵嬫満鍙疯鍒欏瓨鍦紙\\b1[3-9]\\d{9}\\b -> <phone>锛?    ok 1 - A1: 鎵嬫満鍙疯鍒欏瓨鍦紙\\b1[3-9]\\d{9}\\b -> <phone>锛?      ---
+      duration_ms: 0.7997
+      type: 'test'
+      ...
+    # Subtest: A2: 閭瑙勫垯瀛樺湪锛圽\b[\\w.+-]+@[\\w-]+(?:\\.[\\w-]+)+\\b -> <email>锛?    ok 2 - A2: 閭瑙勫垯瀛樺湪锛圽\b[\\w.+-]+@[\\w-]+(?:\\.[\\w-]+)+\\b -> <email>锛?      ---
+      duration_ms: 0.1991
+      type: 'test'
+      ...
+    # Subtest: A3: IPv4 瑙勫垯瀛樺湪锛圽\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b -> <ip>锛?    ok 3 - A3: IPv4 瑙勫垯瀛樺湪锛圽\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b -> <ip>锛?      ---
+      duration_ms: 0.1482
+      type: 'test'
+      ...
+    # Subtest: A4: 寮曞彿鍖呰９鏂囨湰瑙勫垯鍘熸牱淇濈暀
+    ok 4 - A4: 寮曞彿鍖呰９鏂囨湰瑙勫垯鍘熸牱淇濈暀
+      ---
+      duration_ms: 0.1913
+      type: 'test'
+      ...
+    1..4
+ok 100 - L16-W18 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?  ---
+  duration_ms: 2.385
+  type: 'suite'
+  ...
+# Subtest: L16-W18 搂B 鑴辨晱琛屼负
+    # Subtest: B1: 瑁告墜鏈哄彿 -> <phone>
+    ok 1 - B1: 瑁告墜鏈哄彿 -> <phone>
+      ---
+      duration_ms: 0.57
+      type: 'test'
+      ...
+    # Subtest: B2: 瑁搁偖绠?-> <email>
+    ok 2 - B2: 瑁搁偖绠?-> <email>
+      ---
+      duration_ms: 0.1479
+      type: 'test'
+      ...
+    # Subtest: B3: IPv4 -> <ip>
+    ok 3 - B3: IPv4 -> <ip>
+      ---
+      duration_ms: 0.3391
+      type: 'test'
+      ...
+    # Subtest: B4: 寮曞彿鍖呰９瑙勫垯涓嶅洖褰掞紙>= 4 瀛楃浠嶆浛鎹級
+    ok 4 - B4: 寮曞彿鍖呰９瑙勫垯涓嶅洖褰掞紙>= 4 瀛楃浠嶆浛鎹級
+      ---
+      duration_ms: 0.29
+      type: 'test'
+      ...
+    # Subtest: B5: 姝ｅ父閿欒娑堟伅涓嶈浼わ紙Column 'foo' not found / 鏁板瓧涓诧級
+    ok 5 - B5: 姝ｅ父閿欒娑堟伅涓嶈浼わ紙Column 'foo' not found / 鏁板瓧涓诧級
+      ---
+      duration_ms: 0.3436
+      type: 'test'
+      ...
+    # Subtest: B6: 骞傜瓑锛坮edact(redact(x)) === redact(x)锛?    ok 6 - B6: 骞傜瓑锛坮edact(redact(x)) === redact(x)锛?      ---
+      duration_ms: 0.2657
+      type: 'test'
+      ...
+    # Subtest: B7: 涓夌被 PII 鍚屼竴娑堟伅鍐呬竴骞惰劚鏁?    ok 7 - B7: 涓夌被 PII 鍚屼竴娑堟伅鍐呬竴骞惰劚鏁?      ---
+      duration_ms: 0.1148
+      type: 'test'
+      ...
+    1..7
+ok 101 - L16-W18 搂B 鑴辨晱琛屼负
+  ---
+  duration_ms: 2.5418
+  type: 'suite'
+  ...
+# Subtest: L16-W18 搂C 鎸囨爣 error_report.pii-redaction
+    # Subtest: C1: rawPhone=false && rawEmail=false 鈬?pii-redaction=true
+    ok 1 - C1: rawPhone=false && rawEmail=false 鈬?pii-redaction=true
+      ---
+      duration_ms: 0.6796
+      type: 'test'
+      ...
+    1..1
+ok 102 - L16-W18 搂C 鎸囨爣 error_report.pii-redaction
+  ---
+  duration_ms: 0.7655
+  type: 'suite'
+  ...
+# Subtest: L16-W18 搂D 鍔犲瘑妯″紡鍗犱綅琛屼负涓嶅彉
+    # Subtest: D1: enc 鍒嗘敮浠?<enc-message> 鍗犱綅涓斿厛浜庤劚鏁忓垎鏀?    ok 1 - D1: enc 鍒嗘敮浠?<enc-message> 鍗犱綅涓斿厛浜庤劚鏁忓垎鏀?      ---
+      duration_ms: 0.7945
+      type: 'test'
+      ...
+    1..1
+ok 103 - L16-W18 搂D 鍔犲瘑妯″紡鍗犱綅琛屼负涓嶅彉
+  ---
+  duration_ms: 1.6428
+  type: 'suite'
+  ...
+# Subtest: L16-W18 搂E 澶?state 鏋勯€?+ P95 閲囨牱
+    # Subtest: E1: 20,000 鑺傜偣姝ｆ枃鍚堝苟娑堟伅鑴辨晱 P95 鏈夐檺涓斿叏閲忓懡涓?    ok 1 - E1: 20,000 鑺傜偣姝ｆ枃鍚堝苟娑堟伅鑴辨晱 P95 鏈夐檺涓斿叏閲忓懡涓?      ---
+      duration_ms: 256.8093
+      type: 'test'
+      ...
+    1..1
+ok 104 - L16-W18 搂E 澶?state 鏋勯€?+ P95 閲囨牱
+  ---
+  duration_ms: 256.8965
+  type: 'suite'
+  ...
+# error_report={"encrypted-msg-placeholder":true,"hasSecret":false,"ctx.enc":true}
+# encryptedReport.p95ms=0.0035
+# encryptedReport.maxms=0.1579
+# juLog.len=1
+# Subtest: L16-W19 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?    # Subtest: A1: 鍔犲瘑鍒嗘敮鍚?_p.stack / _p.filename / _p.lineno 鍗犱綅
+    ok 1 - A1: 鍔犲瘑鍒嗘敮鍚?_p.stack / _p.filename / _p.lineno 鍗犱綅
+      ---
+      duration_ms: 0.7397
+      type: 'test'
+      ...
+    # Subtest: A2: 鍗犱綅浣嶄簬 if(encNow){鈥 鍐呬笖鍏堜簬 else 鑴辨晱鍒嗘敮
+    ok 2 - A2: 鍗犱綅浣嶄簬 if(encNow){鈥 鍐呬笖鍏堜簬 else 鑴辨晱鍒嗘敮
+      ---
+      duration_ms: 0.1425
+      type: 'test'
+      ...
+    # Subtest: A3: ctx.enc 浠?encNow 涓夊厓寮忔樉寮忕粦瀹氫笖 entry 寮曠敤 ctx:_ctx
+    ok 3 - A3: ctx.enc 浠?encNow 涓夊厓寮忔樉寮忕粦瀹氫笖 entry 寮曠敤 ctx:_ctx
+      ---
+      duration_ms: 0.2224
+      type: 'test'
+      ...
+    1..3
+ok 105 - L16-W19 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?  ---
+  duration_ms: 2.0968
+  type: 'suite'
+  ...
+# Subtest: L16-W19 搂B 鍔犲瘑妯″紡鍗犱綅琛屼负
+    # Subtest: B1: stack / filename / lineno / msg / reason 涓€骞跺崰浣?    ok 1 - B1: stack / filename / lineno / msg / reason 涓€骞跺崰浣?      ---
+      duration_ms: 0.8598
+      type: 'test'
+      ...
+    # Subtest: B2: entry 搴忓垪鍖栧悗闆舵晱鎰熸畫鐣?    ok 2 - B2: entry 搴忓垪鍖栧悗闆舵晱鎰熸畫鐣?      ---
+      duration_ms: 0.5649
+      type: 'test'
+      ...
+    # Subtest: B3: ctx.enc=true 涓旀晱鎰熶笂涓嬫枃娓呴浂
+    ok 3 - B3: ctx.enc=true 涓旀晱鎰熶笂涓嬫枃娓呴浂
+      ---
+      duration_ms: 0.3547
+      type: 'test'
+      ...
+    # Subtest: B4: 瓒呴暱 stack锛? 4KB锛夊湪鍔犲瘑妯″紡涓嬩粛鏁翠綋鍗犱綅锛堥潪鎴柇鍘熸枃锛?    ok 4 - B4: 瓒呴暱 stack锛? 4KB锛夊湪鍔犲瘑妯″紡涓嬩粛鏁翠綋鍗犱綅锛堥潪鎴柇鍘熸枃锛?      ---
+      duration_ms: 0.262
+      type: 'test'
+      ...
+    1..4
+ok 106 - L16-W19 搂B 鍔犲瘑妯″紡鍗犱綅琛屼负
+  ---
+  duration_ms: 2.6331
+  type: 'suite'
+  ...
+# Subtest: L16-W19 搂C 闈炲姞瀵嗗垎鏀浂鍥炲綊
+    # Subtest: C1: stack / filename / lineno 鍘熸牱淇濈暀锛宮sg 浠嶈劚鏁?    ok 1 - C1: stack / filename / lineno 鍘熸牱淇濈暀锛宮sg 浠嶈劚鏁?      ---
+      duration_ms: 0.5684
+      type: 'test'
+      ...
+    # Subtest: C2: 闈炲姞瀵?stack 浠嶆埅鏂埌 4096 瀛楃
+    ok 2 - C2: 闈炲姞瀵?stack 浠嶆埅鏂埌 4096 瀛楃
+      ---
+      duration_ms: 0.38
+      type: 'test'
+      ...
+    # Subtest: C3: ctx.enc=false 涓旀彁鍙?view / docId / nodeCount
+    ok 3 - C3: ctx.enc=false 涓旀彁鍙?view / docId / nodeCount
+      ---
+      duration_ms: 0.9183
+      type: 'test'
+      ...
+    1..3
+ok 107 - L16-W19 搂C 闈炲姞瀵嗗垎鏀浂鍥炲綊
+  ---
+  duration_ms: 2.0837
+  type: 'suite'
+  ...
+# Subtest: L16-W19 搂D 鎸囨爣 error_report.encrypted-msg-placeholder
+    # Subtest: D1: hasSecret=false 鈬?encrypted-msg-placeholder=true 涓?ctx.enc=true
+    ok 1 - D1: hasSecret=false 鈬?encrypted-msg-placeholder=true 涓?ctx.enc=true
+      ---
+      duration_ms: 0.6486
+      type: 'test'
+      ...
+    1..1
+ok 108 - L16-W19 搂D 鎸囨爣 error_report.encrypted-msg-placeholder
+  ---
+  duration_ms: 0.7247
+  type: 'suite'
+  ...
+# Subtest: L16-W19 搂E 澶?state 鏋勯€?+ P95 閲囨牱
+    # Subtest: E1: 20,000 鑺傜偣鍔犲瘑涓婃姤 P95 鏈夐檺涓斿叏閮ㄥ崰浣?    ok 1 - E1: 20,000 鑺傜偣鍔犲瘑涓婃姤 P95 鏈夐檺涓斿叏閮ㄥ崰浣?      ---
+      duration_ms: 19.4684
+      type: 'test'
+      ...
+    1..1
+ok 109 - L16-W19 搂E 澶?state 鏋勯€?+ P95 閲囨牱
+  ---
+  duration_ms: 19.6298
+  type: 'suite'
+  ...
+# Subtest: L16-W2 搂浠ｆ鍙ｅ緞鏀舵暃锛坃gen: updatedAt -> _calDataRev锛?    # Subtest: _renderDayCache._gen 鏀圭敤 _calDataRev锛屾棫 updatedAt 浠ｆ宸叉秷闄?    ok 1 - _renderDayCache._gen 鏀圭敤 _calDataRev锛屾棫 updatedAt 浠ｆ宸叉秷闄?      ---
+      duration_ms: 1.0397
+      type: 'test'
+      ...
+    # Subtest: invalidateCalIndex 鍐呭悓姝ユ帹杩?_calDataRev
+    ok 2 - invalidateCalIndex 鍐呭悓姝ユ帹杩?_calDataRev
+      ---
+      duration_ms: 0.1255
+      type: 'test'
+      ...
+    # Subtest: 缁撴瀯閿氱偣 + 鍚屽潃鏍￠獙锛? 澶勬牳蹇冧唬娆℃帹杩涚偣榻愬锛屼笖 _calIndexCache 缃┖鐐瑰潎鎺ㄨ繘浠ｆ
+    ok 3 - 缁撴瀯閿氱偣 + 鍚屽潃鏍￠獙锛? 澶勬牳蹇冧唬娆℃帹杩涚偣榻愬锛屼笖 _calIndexCache 缃┖鐐瑰潎鎺ㄨ繘浠ｆ
+      ---
+      duration_ms: 1.8363
+      type: 'test'
+      ...
+    1..3
+ok 110 - L16-W2 搂浠ｆ鍙ｅ緞鏀舵暃锛坃gen: updatedAt -> _calDataRev锛?  ---
+  duration_ms: 4.1296
+  type: 'suite'
+  ...
+# Subtest: L16-W2 搂澶х翰姝ｆ枃缂栬緫涓嶉噸寤?/ 閫夋嫨鎬佸彉鍖栭噸寤?    # Subtest: 浠?state.updatedAt 鍙樺寲锛堣繛缁ぇ绾叉鏂囩紪杈戯級鈫?缂撳瓨澶嶇敤锛屼笉閲嶅缓
+    ok 1 - 浠?state.updatedAt 鍙樺寲锛堣繛缁ぇ绾叉鏂囩紪杈戯級鈫?缂撳瓨澶嶇敤锛屼笉閲嶅缓
+      ---
+      duration_ms: 0.4947
+      type: 'test'
+      ...
+    # Subtest: selectedDate 鍙樺寲 鈫?浠ｆ鎺ㄨ繘 + 閲嶅缓
+    ok 2 - selectedDate 鍙樺寲 鈫?浠ｆ鎺ㄨ繘 + 閲嶅缓
+      ---
+      duration_ms: 0.3474
+      type: 'test'
+      ...
+    # Subtest: calTagFilter 鍙樺寲 鈫?浠ｆ鎺ㄨ繘 + 閲嶅缓
+    ok 3 - calTagFilter 鍙樺寲 鈫?浠ｆ鎺ㄨ繘 + 閲嶅缓
+      ---
+      duration_ms: 0.1527
+      type: 'test'
+      ...
+    1..3
+ok 111 - L16-W2 搂澶х翰姝ｆ枃缂栬緫涓嶉噸寤?/ 閫夋嫨鎬佸彉鍖栭噸寤?  ---
+  duration_ms: 1.2826
+  type: 'suite'
+  ...
+# Subtest: L16-W2 搂鏃ュ巻鏁版嵁澶辨晥瑙﹀彂閲嶅缓锛堟ā鍨嬪寲 date 缂栬緫锛?    # Subtest: invalidateCalIndex 鈫?缃┖缂撳瓨 + 浠ｆ鎺ㄨ繘 + 閲嶅缓
+    ok 1 - invalidateCalIndex 鈫?缃┖缂撳瓨 + 浠ｆ鎺ㄨ繘 + 閲嶅缓
+      ---
+      duration_ms: 0.32
+      type: 'test'
+      ...
+    # Subtest: 浠ｆ涓嶅彉涓旂紦瀛樺瓨鍦?鈫?鍙嶅娓叉煋鍛戒腑鍚屼竴瀵硅薄锛堝箓绛夛級
+    ok 2 - 浠ｆ涓嶅彉涓旂紦瀛樺瓨鍦?鈫?鍙嶅娓叉煋鍛戒腑鍚屼竴瀵硅薄锛堝箓绛夛級
+      ---
+      duration_ms: 0.2407
+      type: 'test'
+      ...
+    1..2
+ok 112 - L16-W2 搂鏃ュ巻鏁版嵁澶辨晥瑙﹀彂閲嶅缓锛堟ā鍨嬪寲 date 缂栬緫锛?  ---
+  duration_ms: 0.8862
+  type: 'suite'
+  ...
+# calrev_gate={"nonCalFailures":5,"revDelta":1,"calCacheCleared":true}
+# calrev_gate_helper_p95_ms=0.0004
+# calrev_gate_fail_p95_ms=0.0019
+# Subtest: L16-W20 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?    # Subtest: A1: helper 瀹堝崼 _calIndexCache===null 鍏堜簬缃┖ / 浠ｆ閫掑
+    ok 1 - A1: helper 瀹堝崼 _calIndexCache===null 鍏堜簬缃┖ / 浠ｆ閫掑
+      ---
+      duration_ms: 0.8482
+      type: 'test'
+      ...
+    # Subtest: A2: 鍏ㄤ粨鏃犳畫鐣?`_calIndexCache=null;_calDataRev++` 杩炲啓
+    ok 2 - A2: 鍏ㄤ粨鏃犳畫鐣?`_calIndexCache=null;_calDataRev++` 杩炲啓
+      ---
+      duration_ms: 0.5179
+      type: 'test'
+      ...
+    # Subtest: A3: 7 澶勭储寮曞け璐ュ嚭鍙ｅ叏閮ㄦ敹鍙ｅ埌 invalidateCalIndexOnly()
+    ok 3 - A3: 7 澶勭储寮曞け璐ュ嚭鍙ｅ叏閮ㄦ敹鍙ｅ埌 invalidateCalIndexOnly()
+      ---
+      duration_ms: 1.1316
+      type: 'test'
+      ...
+    # Subtest: A4: mergeRemoteState finally 浠嶅己鍒跺叾浣欎笁绱㈠紩澶辨晥锛堜粎鏃ュ巻绱㈠紩鏀规敹鍙ｏ級
+    ok 4 - A4: mergeRemoteState finally 浠嶅己鍒跺叾浣欎笁绱㈠紩澶辨晥锛堜粎鏃ュ巻绱㈠紩鏀规敹鍙ｏ級
+      ---
+      duration_ms: 0.2501
+      type: 'test'
+      ...
+    1..4
+ok 113 - L16-W20 搂A 缁撴瀯閿氱偣锛坈anonical 鏂囨湰锛?  ---
+  duration_ms: 3.8188
+  type: 'suite'
+  ...
+# Subtest: L16-W20 搂B 鏉′欢閫掑琛屼负
+    # Subtest: B1: _calIndexCache 涓?null 鏃?helper 涓烘棤鎿嶄綔
+    ok 1 - B1: _calIndexCache 涓?null 鏃?helper 涓烘棤鎿嶄綔
+      ---
+      duration_ms: 0.4968
+      type: 'test'
+      ...
+    # Subtest: B2: 瀹炴湁缂撳瓨鏃?helper 缃┖骞?+1锛屼簩娆¤皟鐢ㄤ笉鍐嶉€掑
+    ok 2 - B2: 瀹炴湁缂撳瓨鏃?helper 缃┖骞?+1锛屼簩娆¤皟鐢ㄤ笉鍐嶉€掑
+      ---
+      duration_ms: 0.332
+      type: 'test'
+      ...
+    # Subtest: B3: 杩炵画 5 娆￠潪鏃ュ巻绱㈠紩澶辫触 鈫?_calDataRev 浠?+1
+    ok 3 - B3: 杩炵画 5 娆￠潪鏃ュ巻绱㈠紩澶辫触 鈫?_calDataRev 浠?+1
+      ---
+      duration_ms: 0.4361
+      type: 'test'
+      ...
+    # Subtest: B4: l6InjectionFailure 鍚屾牱鎸夌紦瀛樺疄鏈夋€ч€掑
+    ok 4 - B4: l6InjectionFailure 鍚屾牱鎸夌紦瀛樺疄鏈夋€ч€掑
+      ---
+      duration_ms: 0.4169
+      type: 'test'
+      ...
+    # Subtest: B5: 鏃ュ巻鏁版嵁鐪熷疄鍙樺寲锛坕nvalidateCalIndex锛変粛鏃犳潯浠堕€掑
+    ok 5 - B5: 鏃ュ巻鏁版嵁鐪熷疄鍙樺寲锛坕nvalidateCalIndex锛変粛鏃犳潯浠堕€掑
+      ---
+      duration_ms: 0.3447
+      type: 'test'
+      ...
+    1..5
+ok 114 - L16-W20 搂B 鏉′欢閫掑琛屼负
+  ---
+  duration_ms: 2.5675
+  type: 'suite'
+  ...
+# Subtest: L16-W20 搂C 鏃ュ巻瑙嗗浘澶辨晥绮掑害
+    # Subtest: C1: 杩炵画 5 娆￠潪鏃ュ巻绱㈠紩澶辫触浠呴噸寤?1 娆★紙鍘熷疄鐜颁负 5 娆★級
+    ok 1 - C1: 杩炵画 5 娆￠潪鏃ュ巻绱㈠紩澶辫触浠呴噸寤?1 娆★紙鍘熷疄鐜颁负 5 娆★級
+      ---
+      duration_ms: 0.4145
+      type: 'test'
+      ...
+    # Subtest: C4: 鏃ュ巻绱㈠紩鏈瀯寤烘椂鍙嶅澶辫触涓嶉噸寤烘棩缂撳瓨
+    ok 2 - C4: 鏃ュ巻绱㈠紩鏈瀯寤烘椂鍙嶅澶辫触涓嶉噸寤烘棩缂撳瓨
+      ---
+      duration_ms: 0.2689
+      type: 'test'
+      ...
+    # Subtest: C2: 鏃ュ巻鏁版嵁鍙樺寲鍚庢棩缂撳瓨鎸変唬娆￠噸寤?    ok 3 - C2: 鏃ュ巻鏁版嵁鍙樺寲鍚庢棩缂撳瓨鎸変唬娆￠噸寤?      ---
+      duration_ms: 0.1785
+      type: 'test'
+      ...
+    # Subtest: C3: 閲嶅缓闂ㄦ浠嶄互 _calDataRev 涓哄敮涓€浠ｆ鏉ユ簮
+    ok 4 - C3: 閲嶅缓闂ㄦ浠嶄互 _calDataRev 涓哄敮涓€浠ｆ鏉ユ簮
+      ---
+      duration_ms: 0.2323
+      type: 'test'
+      ...
+    1..4
+ok 115 - L16-W20 搂C 鏃ュ巻瑙嗗浘澶辨晥绮掑害
+  ---
+  duration_ms: 2.0178
+  type: 'suite'
+  ...
+# Subtest: L16-W20 搂D 鎸囨爣
+    # Subtest: D1: calrev_gate 鎸囨爣锛? 娆￠潪鏃ュ巻澶辫触 / 浠ｆ澧為噺 1锛?    ok 1 - D1: calrev_gate 鎸囨爣锛? 娆￠潪鏃ュ巻澶辫触 / 浠ｆ澧為噺 1锛?      ---
+      duration_ms: 1.2732
+      type: 'test'
+      ...
+    1..1
+ok 116 - L16-W20 搂D 鎸囨爣
+  ---
+  duration_ms: 1.3451
+  type: 'suite'
+  ...
+# Subtest: L16-W20 搂E 澶?state 涓?P95 閲囨牱
+    # Subtest: E1: 20,000 鑺傜偣 state 涓?helper P95
+    ok 1 - E1: 20,000 鑺傜偣 state 涓?helper P95
+      ---
+      duration_ms: 20.2215
+      type: 'test'
+      ...
+    # Subtest: E2: 20,000 鑺傜偣 state 涓嬬储寮曞け璐ュ嚭鍙?P95
+    ok 2 - E2: 20,000 鑺傜偣 state 涓嬬储寮曞け璐ュ嚭鍙?P95
+      ---
+      duration_ms: 10.9187
+      type: 'test'
+      ...
+    1..2
+ok 117 - L16-W20 搂E 澶?state 涓?P95 閲囨牱
+  ---
+  duration_ms: 31.3277
+  type: 'suite'
+  ...
+# [L16-W21] baseline property.clean={"iterations":200,"legacyScenarios":22,"invFails":{"I1":0,"I2":22,"I3":0}}
+# [L16-W21] property.clean={"iterations":200,"legacyScenarios":22,"invFails":{"I1":0,"I2":0,"I3":0}}
+# [L16-W21] merge(20,001 nodes / second-unit remote) P95 = 148.06 ms锛坅ttempt 1/3锛岄绠?200 ms锛?# Subtest: L16-W21 搂A 缁撴瀯閿氱偣
+    # Subtest: A1: 鏂板 _normToMs 涓斿惈绉?/ 寰 / 鍘熸牱涓夊垎鏀?    ok 1 - A1: 鏂板 _normToMs 涓斿惈绉?/ 寰 / 鍘熸牱涓夊垎鏀?      ---
+      duration_ms: 0.7795
+      type: 'test'
+      ...
+    # Subtest: A2: merge 娈靛唴鏃у彛寰?_norm( 璋冪敤娈嬬暀 0
+    ok 2 - A2: merge 娈靛唴鏃у彛寰?_norm( 璋冪敤娈嬬暀 0
+      ---
+      duration_ms: 0.3226
+      type: 'test'
+      ...
+    # Subtest: A3: remoteUpdatedAt 涓庡叏灞€ state.updatedAt 鍚屽彛寰勫綊涓€
+    ok 3 - A3: remoteUpdatedAt 涓庡叏灞€ state.updatedAt 鍚屽彛寰勫綊涓€
+      ---
+      duration_ms: 0.1552
+      type: 'test'
+      ...
+    # Subtest: A4: 褰掍竴鍑芥暟浣嶄簬 merge 浣滅敤鍩熷唴涓斿厛浜?remoteUpdatedAt
+    ok 4 - A4: 褰掍竴鍑芥暟浣嶄簬 merge 浣滅敤鍩熷唴涓斿厛浜?remoteUpdatedAt
+      ---
+      duration_ms: 0.2041
+      type: 'test'
+      ...
+    1..4
+ok 118 - L16-W21 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 2.4961
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂B _normToMs 褰掍竴
+    # Subtest: B1: 绉掔骇锛?<v<1e10锛壝?000
+    ok 1 - B1: 绉掔骇锛?<v<1e10锛壝?000
+      ---
+      duration_ms: 0.2241
+      type: 'test'
+      ...
+    # Subtest: B2: 姝ｅ父姣锛?e12~1e13锛夊師鏍疯繑鍥烇紙鏃犲壇浣滅敤锛?    ok 2 - B2: 姝ｅ父姣锛?e12~1e13锛夊師鏍疯繑鍥烇紙鏃犲壇浣滅敤锛?      ---
+      duration_ms: 0.1359
+      type: 'test'
+      ...
+    # Subtest: B3: 寰绾э紙>8.64e14锛壝?000
+    ok 3 - B3: 寰绾э紙>8.64e14锛壝?000
+      ---
+      duration_ms: 0.221
+      type: 'test'
+      ...
+    # Subtest: B4: 0 / 璐熷€?/ NaN 鍘熸牱锛堜笉璇垽涓虹绾э級
+    ok 4 - B4: 0 / 璐熷€?/ NaN 鍘熸牱锛堜笉璇垽涓虹绾э級
+      ---
+      duration_ms: 0.2734
+      type: 'test'
+      ...
+    # Subtest: B5: 骞傜瓑锛堝箓绛夊綊涓€涓嶆敼鍙樹簩娆＄粨鏋滐級
+    ok 5 - B5: 骞傜瓑锛堝箓绛夊綊涓€涓嶆敼鍙樹簩娆＄粨鏋滐級
+      ---
+      duration_ms: 0.2666
+      type: 'test'
+      ...
+    1..5
+ok 119 - L16-W21 搂B _normToMs 褰掍竴
+  ---
+  duration_ms: 1.643
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂C 鍚堝苟琛屼负
+    # Subtest: C1: 瀵圭绉掔骇鏇存柊锛堣涔夎緝鏂帮級鑳滃嚭锛堟敼鍓嶆湰鍦版棫鍊间繚鐣欙級
+    ok 1 - C1: 瀵圭绉掔骇鏇存柊锛堣涔夎緝鏂帮級鑳滃嚭锛堟敼鍓嶆湰鍦版棫鍊间繚鐣欙級
+      ---
+      duration_ms: 3.5452
+      type: 'test'
+      ...
+    # Subtest: C2: 瀵圭绉掔骇鍒犻櫎浼犳挱锛堣涔夎緝鏂颁笖缂鸿妭鐐?鈫?鏈湴鍒犻櫎锛?    ok 2 - C2: 瀵圭绉掔骇鍒犻櫎浼犳挱锛堣涔夎緝鏂颁笖缂鸿妭鐐?鈫?鏈湴鍒犻櫎锛?      ---
+      duration_ms: 1.6403
+      type: 'test'
+      ...
+    # Subtest: C3: 鏈湴姣杈冩柊鏃朵粛鑳滐紙鍙嶅悜鎶ゆ爮锛?    ok 3 - C3: 鏈湴姣杈冩柊鏃朵粛鑳滐紙鍙嶅悜鎶ゆ爮锛?      ---
+      duration_ms: 1.5028
+      type: 'test'
+      ...
+    # Subtest: C4: 寰绾у垎鏀笉鍥炲綊
+    ok 4 - C4: 寰绾у垎鏀笉鍥炲綊
+      ---
+      duration_ms: 0.2344
+      type: 'test'
+      ...
+    # Subtest: C5: 澧撶瀹堝崼淇濇寔锛堝垹闄ゅ墠鏃у揩鐓т笉澶嶆椿鑺傜偣锛?    ok 5 - C5: 澧撶瀹堝崼淇濇寔锛堝垹闄ゅ墠鏃у揩鐓т笉澶嶆椿鑺傜偣锛?      ---
+      duration_ms: 0.2706
+      type: 'test'
+      ...
+    1..5
+ok 120 - L16-W21 搂C 鍚堝苟琛屼负
+  ---
+  duration_ms: 7.395
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂D 灞炴€ч噰鏍?property.clean
+    # Subtest: D1: 鏃у彛寰勫鐜?I2 = 22锛堢孩璇佸垽鍒姏锛?    ok 1 - D1: 鏃у彛寰勫鐜?I2 = 22锛堢孩璇佸垽鍒姏锛?      ---
+      duration_ms: 69.7707
+      type: 'test'
+      ...
+    # Subtest: D2: 鐜拌鍙ｅ緞 property.clean.invFails.I2 = 0
+    ok 2 - D2: 鐜拌鍙ｅ緞 property.clean.invFails.I2 = 0
+      ---
+      duration_ms: 70.5706
+      type: 'test'
+      ...
+    1..2
+ok 121 - L16-W21 搂D 灞炴€ч噰鏍?property.clean
+  ---
+  duration_ms: 140.4581
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂E 澶?state 閲囨牱
+    # Subtest: E1: 20,001 鑺傜偣 / 绉掔骇瀵圭蹇収 鈥斺€?merge P95 閲囨牱
+    ok 1 - E1: 20,001 鑺傜偣 / 绉掔骇瀵圭蹇収 鈥斺€?merge P95 閲囨牱
+      ---
+      duration_ms: 2301.7871
+      type: 'test'
+      ...
+    1..1
+ok 122 - L16-W21 搂E 澶?state 閲囨牱
+  ---
+  duration_ms: 2301.966
+  type: 'suite'
+  ...
+# Subtest: L16-W3 搂A 缁撴瀯閿氱偣
+    # Subtest: canonical 鍏峰 Symbol 璁℃暟鎸傝浇涓庡閲?閲嶅缓杈呭姪
+    ok 1 - canonical 鍏峰 Symbol 璁℃暟鎸傝浇涓庡閲?閲嶅缓杈呭姪
+      ---
+      duration_ms: 0.9811
+      type: 'test'
+      ...
+    # Subtest: renderSidebar 缁?_sideCountsGet 璇诲彇锛屽垹闄ょ洿璇诲叏琛ㄥ惊鐜紙淇濈暀闄嶇骇鍒嗘敮锛?    ok 2 - renderSidebar 缁?_sideCountsGet 璇诲彇锛屽垹闄ょ洿璇诲叏琛ㄥ惊鐜紙淇濈暀闄嶇骇鍒嗘敮锛?      ---
+      duration_ms: 0.6753
+      type: 'test'
+      ...
+    # Subtest: commit / undo / redo / initStore / mergeRemoteState 鎺ュ叆璁℃暟缁存姢
+    ok 3 - commit / undo / redo / initStore / mergeRemoteState 鎺ュ叆璁℃暟缁存姢
+      ---
+      duration_ms: 1.3086
+      type: 'test'
+      ...
+    1..3
+ok 123 - L16-W3 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 4.063
+  type: 'suite'
+  ...
+# Subtest: L16-W3 搂B 搴忓垪鍖栧绾︼紙Symbol 璁℃暟瀵?JSON 涓嶅彲瑙侊級
+    # Subtest: 鎸傝浇璁℃暟鍚?JSON.stringify(state) 涓嶅惈璁℃暟瀛楁
+    ok 1 - 鎸傝浇璁℃暟鍚?JSON.stringify(state) 涓嶅惈璁℃暟瀛楁
+      ---
+      duration_ms: 0.7253
+      type: 'test'
+      ...
+    1..1
+ok 124 - L16-W3 搂B 搴忓垪鍖栧绾︼紙Symbol 璁℃暟瀵?JSON 涓嶅彲瑙侊級
+  ---
+  duration_ms: 0.851
+  type: 'suite'
+  ...
+# Subtest: L16-W3 搂C 閲嶅缓鍙ｅ緞 = 鍘熷叏琛ㄥ惊鐜?    # Subtest: 鍩虹闆嗭細_sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+    ok 1 - 鍩虹闆嗭細_sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+      ---
+      duration_ms: 1.065
+      type: 'test'
+      ...
+    # Subtest: 鏃?dbRoot锛歘sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+    ok 2 - 鏃?dbRoot锛歘sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+      ---
+      duration_ms: 0.2617
+      type: 'test'
+      ...
+    # Subtest: 鏃犳槦鏍囷細_sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+    ok 3 - 鏃犳槦鏍囷細_sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+      ---
+      duration_ms: 0.2736
+      type: 'test'
+      ...
+    # Subtest: 绌哄簱锛歘sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+    ok 4 - 绌哄簱锛歘sideCountsRebuild == 鍏ㄨ〃寰幆鍙傜収
+      ---
+      duration_ms: 0.1888
+      type: 'test'
+      ...
+    1..4
+ok 125 - L16-W3 搂C 閲嶅缓鍙ｅ緞 = 鍘熷叏琛ㄥ惊鐜?  ---
+  duration_ms: 2.0516
+  type: 'suite'
+  ...
+# Subtest: L16-W3 搂D 澧為噺鍙ｅ緞 = 閲嶅缓鍙ｅ緞锛堣剼鏈寲鍙樻洿搴忓垪锛?    # Subtest: star / 澧炲垹 / 璺ㄦ牴绉诲姩 / dbRoot / dbCount 搴忓垪涓€鑷?    ok 1 - star / 澧炲垹 / 璺ㄦ牴绉诲姩 / dbRoot / dbCount 搴忓垪涓€鑷?      ---
+      duration_ms: 2.2833
+      type: 'test'
+      ...
+    1..1
+ok 126 - L16-W3 搂D 澧為噺鍙ｅ緞 = 閲嶅缓鍙ｅ緞锛堣剼鏈寲鍙樻洿搴忓垪锛?  ---
+  duration_ms: 2.479
+  type: 'suite'
+  ...
+# Subtest: L16-W3 搂E 闄嶇骇鍏滃簳
+    # Subtest: _sideCountsEnsure锛氱己澶辨椂閲嶅缓鎸傝浇锛屽瓨鍦ㄦ椂骞傜瓑
+    ok 1 - _sideCountsEnsure锛氱己澶辨椂閲嶅缓鎸傝浇锛屽瓨鍦ㄦ椂骞傜瓑
+      ---
+      duration_ms: 0.2772
+      type: 'test'
+      ...
+    1..1
+ok 127 - L16-W3 搂E 闄嶇骇鍏滃簳
+  ---
+  duration_ms: 0.3535
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂A 缁撴瀯閿氱偣
+    # Subtest: canonical 鍏峰 _outlineHeaderRO 涓庤闃?/ 鏂紑杈呭姪
+    ok 1 - canonical 鍏峰 _outlineHeaderRO 涓庤闃?/ 鏂紑杈呭姪
+      ---
+      duration_ms: 1.3353
+      type: 'test'
+      ...
+    # Subtest: renderMain 鎸傝浇鍚庤闃呫€侀《閮ㄦ柇寮€锛屽ぇ绾?rAF 涓嶅啀璋冪敤 _syncOutlineHeaderH
+    ok 2 - renderMain 鎸傝浇鍚庤闃呫€侀《閮ㄦ柇寮€锛屽ぇ绾?rAF 涓嶅啀璋冪敤 _syncOutlineHeaderH
+      ---
+      duration_ms: 0.6778
+      type: 'test'
+      ...
+    # Subtest: _syncOutlineHeaderH 鏀逛负銆屽彉鍖栨墠鍐欏叆銆嶅苟缁?_setOutlineHeaderH 鏀跺彛
+    ok 3 - _syncOutlineHeaderH 鏀逛负銆屽彉鍖栨墠鍐欏叆銆嶅苟缁?_setOutlineHeaderH 鏀跺彛
+      ---
+      duration_ms: 0.3951
+      type: 'test'
+      ...
+    1..3
+ok 128 - L16-W4 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 3.4042
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂B 鍐欏叆闂ㄦ锛?-doc-header-h 浠呭湪鍙樺寲鏃舵洿鏂帮級
+    # Subtest: 鍚岄珮閲嶅鍐欏叆涓嶉噸澶?setProperty锛涘彉鍖栨墠鍐?    ok 1 - 鍚岄珮閲嶅鍐欏叆涓嶉噸澶?setProperty锛涘彉鍖栨墠鍐?      ---
+      duration_ms: 0.4063
+      type: 'test'
+      ...
+    1..1
+ok 129 - L16-W4 搂B 鍐欏叆闂ㄦ锛?-doc-header-h 浠呭湪鍙樺寲鏃舵洿鏂帮級
+  ---
+  duration_ms: 0.5262
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂C 璁㈤槄琛屼负锛堝洖璋冩寜 offsetHeight 鍒锋柊锛?    # Subtest: _observeOutlineHeader 瑙傚療 .doc-header锛屽洖璋冨埛鏂板睘鎬?    ok 1 - _observeOutlineHeader 瑙傚療 .doc-header锛屽洖璋冨埛鏂板睘鎬?      ---
+      duration_ms: 0.4799
+      type: 'test'
+      ...
+    1..1
+ok 130 - L16-W4 搂C 璁㈤槄琛屼负锛堝洖璋冩寜 offsetHeight 鍒锋柊锛?  ---
+  duration_ms: 0.589
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂D 鏂紑璇箟
+    # Subtest: _disconnectOutlineHeaderRO 鏂紑骞剁疆绌猴紱閲嶈闃呭厛鏂紑涓婁竴涓?    ok 1 - _disconnectOutlineHeaderRO 鏂紑骞剁疆绌猴紱閲嶈闃呭厛鏂紑涓婁竴涓?      ---
+      duration_ms: 0.3428
+      type: 'test'
+      ...
+    1..1
+ok 131 - L16-W4 搂D 鏂紑璇箟
+  ---
+  duration_ms: 0.6321
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂E 闄嶇骇鍏滃簳
+    # Subtest: 鏃?ResizeObserver 鏃跺洖閫€ _syncOutlineHeaderH锛堝嵆鏃跺啓鍏ワ級
+    ok 1 - 鏃?ResizeObserver 鏃跺洖閫€ _syncOutlineHeaderH锛堝嵆鏃跺啓鍏ワ級
+      ---
+      duration_ms: 0.2183
+      type: 'test'
+      ...
+    # Subtest: 鏃?.doc-header 鏃剁Щ闄ゅ睘鎬?    ok 2 - 鏃?.doc-header 鏃剁Щ闄ゅ睘鎬?      ---
+      duration_ms: 0.144
+      type: 'test'
+      ...
+    1..2
+ok 132 - L16-W4 搂E 闄嶇骇鍏滃簳
+  ---
+  duration_ms: 0.5787
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂A 缁撴瀯閿氱偣
+    # Subtest: canonical 鍏峰 _calTgVisHandler锛宻tartCalTgTimer 娉ㄥ唽銆乧learCalTgTimer 娉ㄩ攢鍙鎬х洃鍚?    ok 1 - canonical 鍏峰 _calTgVisHandler锛宻tartCalTgTimer 娉ㄥ唽銆乧learCalTgTimer 娉ㄩ攢鍙鎬х洃鍚?      ---
+      duration_ms: 0.894
+      type: 'test'
+      ...
+    1..1
+ok 133 - L16-W5 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 1.7995
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂B 鍓嶅彴鍚姩
+    # Subtest: 鍙鏃跺缓绔嬪敮涓€ 60s 杞骞舵敞鍐屼竴涓洃鍚?    ok 1 - 鍙鏃跺缓绔嬪敮涓€ 60s 杞骞舵敞鍐屼竴涓洃鍚?      ---
+      duration_ms: 1.7307
+      type: 'test'
+      ...
+    1..1
+ok 134 - L16-W5 搂B 鍓嶅彴鍚姩
+  ---
+  duration_ms: 1.8669
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂C 鍒囧悗鍙板仠琛?    # Subtest: document.hidden 鏃舵竻绌鸿疆璇紙鍚庡彴闆?tick锛?    ok 1 - document.hidden 鏃舵竻绌鸿疆璇紙鍚庡彴闆?tick锛?      ---
+      duration_ms: 0.4809
+      type: 'test'
+      ...
+    1..1
+ok 135 - L16-W5 搂C 鍒囧悗鍙板仠琛?  ---
+  duration_ms: 0.6201
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂D 鍥炲墠鍙拌嚜鍚?+ 绔嬪嵆閲嶅畾浣?    # Subtest: 鍙涓旂嚎浠嶅湪鎸傛椂閲嶅惎杞骞跺嵆鍒?tick 涓€娆?    ok 1 - 鍙涓旂嚎浠嶅湪鎸傛椂閲嶅惎杞骞跺嵆鍒?tick 涓€娆?      ---
+      duration_ms: 0.3893
+      type: 'test'
+      ...
+    1..1
+ok 136 - L16-W5 搂D 鍥炲墠鍙拌嚜鍚?+ 绔嬪嵆閲嶅畾浣?  ---
+  duration_ms: 0.5802
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂E 鍥炲墠鍙扮嚎鏈寕涓嶉噸鍚?    # Subtest: line.isConnected=false 鏃朵笉閲嶅惎锛堢瓑浠烽潪鍛ㄨ鍥撅級
+    ok 1 - line.isConnected=false 鏃朵笉閲嶅惎锛堢瓑浠烽潪鍛ㄨ鍥撅級
+      ---
+      duration_ms: 0.3156
+      type: 'test'
+      ...
+    1..1
+ok 137 - L16-W5 搂E 鍥炲墠鍙扮嚎鏈寕涓嶉噸鍚?  ---
+  duration_ms: 0.5949
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂F 娉ㄩ攢璇箟
+    # Subtest: clearCalTgTimer 绉婚櫎鐩戝惉骞剁疆绌哄彞鏌?    ok 1 - clearCalTgTimer 绉婚櫎鐩戝惉骞剁疆绌哄彞鏌?      ---
+      duration_ms: 0.233
+      type: 'test'
+      ...
+    1..1
+ok 138 - L16-W5 搂F 娉ㄩ攢璇箟
+  ---
+  duration_ms: 0.3843
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂G 閲嶆覆鏌撳箓绛?    # Subtest: 閲嶅 startCalTgTimer 涓嶄骇鐢熼噸澶嶈疆璇?/ 閲嶅鐩戝惉
+    ok 1 - 閲嶅 startCalTgTimer 涓嶄骇鐢熼噸澶嶈疆璇?/ 閲嶅鐩戝惉
+      ---
+      duration_ms: 0.1579
+      type: 'test'
+      ...
+    1..1
+ok 139 - L16-W5 搂G 閲嶆覆鏌撳箓绛?  ---
+  duration_ms: 0.2289
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂H tick 鑷竻鐞?    # Subtest: 绾垮嵏杞藉悗 tick 缁?clearCalTgTimer 涓€骞舵竻杞 + 娉ㄩ攢鐩戝惉
+    ok 1 - 绾垮嵏杞藉悗 tick 缁?clearCalTgTimer 涓€骞舵竻杞 + 娉ㄩ攢鐩戝惉
+      ---
+      duration_ms: 0.8434
+      type: 'test'
+      ...
+    1..1
+ok 140 - L16-W5 搂H tick 鑷竻鐞?  ---
+  duration_ms: 0.9085
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂A 缁撴瀯閿氱偣
+    # Subtest: canonical 鍏峰 _childSetCache(WeakMap) / _childSetDrop锛沖getChildSet 璇荤紦瀛橈紱initStore 閲嶇疆
+    ok 1 - canonical 鍏峰 _childSetCache(WeakMap) / _childSetDrop锛沖getChildSet 璇荤紦瀛橈紱initStore 閲嶇疆
+      ---
+      duration_ms: 1.1749
+      type: 'test'
+      ...
+    1..1
+ok 141 - L16-W6 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 2.1167
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂B 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃?Map 鍙ｅ緞锛?    # Subtest: 鐣稿舰鏍戜慨澶嶅悗閫愬瓧鑺備竴鑷?    ok 1 - 鐣稿舰鏍戜慨澶嶅悗閫愬瓧鑺備竴鑷?      ---
+      duration_ms: 0.8675
+      type: 'test'
+      ...
+    1..1
+ok 142 - L16-W6 搂B 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃?Map 鍙ｅ緞锛?  ---
+  duration_ms: 1.0495
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂C 鍒嗛厤涓嬮檷锛?00 娆¤繛缁?repair锛?    # Subtest: 绱鍒嗛厤瀵硅薄鏁颁笅闄?鈮?0%
+    ok 1 - 绱鍒嗛厤瀵硅薄鏁颁笅闄?鈮?0%
+      ---
+      duration_ms: 1336.8801
+      type: 'test'
+      ...
+    1..1
+ok 143 - L16-W6 搂C 鍒嗛厤涓嬮檷锛?00 娆¤繛缁?repair锛?  ---
+  duration_ms: 1337.0937
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂D 缂撳瓨涓€鑷存€э紙缂撳瓨 Set == 瀹為檯 children 闆嗭級
+    # Subtest: 淇鍚庢瘡涓埗鑺傜偣缂撳瓨 Set 涓?p.children 鎭掔瓑
+    ok 1 - 淇鍚庢瘡涓埗鑺傜偣缂撳瓨 Set 涓?p.children 鎭掔瓑
+      ---
+      duration_ms: 1.455
+      type: 'test'
+      ...
+    1..1
+ok 144 - L16-W6 搂D 缂撳瓨涓€鑷存€э紙缂撳瓨 Set == 瀹為檯 children 闆嗭級
+  ---
+  duration_ms: 1.5841
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂E 澶嶇敤韬唤锛堝懡涓悓涓€ Set 瀵硅薄锛?    # Subtest: 鍚岃妭鐐硅繛缁袱娆?repair 澶嶇敤鍚屼竴 Set 瀵硅薄
+    ok 1 - 鍚岃妭鐐硅繛缁袱娆?repair 澶嶇敤鍚屼竴 Set 瀵硅薄
+      ---
+      duration_ms: 0.6785
+      type: 'test'
+      ...
+    1..1
+ok 145 - L16-W6 搂E 澶嶇敤韬唤锛堝懡涓悓涓€ Set 瀵硅薄锛?  ---
+  duration_ms: 0.9483
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂F 骞傜瓑锛堝悎娉曟爲 no-op锛?    # Subtest: 宸插悎娉曟爲 repair 鍚?children 涓嶅彉
+    ok 1 - 宸插悎娉曟爲 repair 鍚?children 涓嶅彉
+      ---
+      duration_ms: 0.8775
+      type: 'test'
+      ...
+    1..1
+ok 146 - L16-W6 搂F 骞傜瓑锛堝悎娉曟爲 no-op锛?  ---
+  duration_ms: 1.0222
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂G 绌?children 鐖?    # Subtest: 绌?children 鐖剁紦瀛樹负绌洪泦涓旂浜岄亶涓嶈鍒?    ok 1 - 绌?children 鐖剁紦瀛樹负绌洪泦涓旂浜岄亶涓嶈鍒?      ---
+      duration_ms: 0.1871
+      type: 'test'
+      ...
+    1..1
+ok 147 - L16-W6 搂G 绌?children 鐖?  ---
+  duration_ms: 0.2598
+  type: 'suite'
+  ...
+# Subtest: L16-W6 搂H 缂撳瓨澶辨晥锛坃childSetDrop锛?    # Subtest: drop 鍚庣紦瀛樿娓呴櫎锛屼笅涓€娆?repair 閲嶅缓涓烘柊 Set 瀵硅薄
+    ok 1 - drop 鍚庣紦瀛樿娓呴櫎锛屼笅涓€娆?repair 閲嶅缓涓烘柊 Set 瀵硅薄
+      ---
+      duration_ms: 0.3658
+      type: 'test'
+      ...
+    1..1
+ok 148 - L16-W6 搂H 缂撳瓨澶辨晥锛坃childSetDrop锛?  ---
+  duration_ms: 0.4317
+  type: 'suite'
+  ...
+# Subtest: L16-W7 搂A 缁撴瀯閿氱偣锛堢储寮曟父鏍囬槦鍒楋級
+    # Subtest: 浣跨敤 queue[head++] 娓告爣锛涘嚱鏁颁綋鏃?stack.filter(Boolean) / stack.pop()
+    ok 1 - 浣跨敤 queue[head++] 娓告爣锛涘嚱鏁颁綋鏃?stack.filter(Boolean) / stack.pop()
+      ---
+      duration_ms: 0.758
+      type: 'test'
+      ...
+    1..1
+ok 149 - L16-W7 搂A 缁撴瀯閿氱偣锛堢储寮曟父鏍囬槦鍒楋級
+  ---
+  duration_ms: 1.7664
+  type: 'suite'
+  ...
+# Subtest: L16-W7 搂B 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃у彛寰勶紝閫愪綅锛?    # Subtest: flat 瀛愭爲閫愪綅鐩哥瓑
+    ok 1 - flat 瀛愭爲閫愪綅鐩哥瓑
+      ---
+      duration_ms: 40.0472
+      type: 'test'
+      ...
+    # Subtest: chain 瀛愭爲閫愪綅鐩哥瓑
+    ok 2 - chain 瀛愭爲閫愪綅鐩哥瓑
+      ---
+      duration_ms: 47.7925
+      type: 'test'
+      ...
+    # Subtest: bushy 瀛愭爲閫愪綅鐩哥瓑
+    ok 3 - bushy 瀛愭爲閫愪綅鐩哥瓑
+      ---
+      duration_ms: 30.1726
+      type: 'test'
+      ...
+    # Subtest: deep2 瀛愭爲閫愪綅鐩哥瓑
+    ok 4 - deep2 瀛愭爲閫愪綅鐩哥瓑
+      ---
+      duration_ms: 39.1819
+      type: 'test'
+      ...
+    # Subtest: malformed 瀛愭爲閫愪綅鐩哥瓑
+    ok 5 - malformed 瀛愭爲閫愪綅鐩哥瓑
+      ---
+      duration_ms: 0.1273
+      type: 'test'
+      ...
+    1..5
+ok 150 - L16-W7 搂B 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃у彛寰勶紝閫愪綅锛?  ---
+  duration_ms: 157.8672
+  type: 'suite'
+  ...
+# Subtest: L16-W7 搂C 鍗曟牴浼犲叆锛堥潪鏁扮粍 / 鏁扮粍锛夌瓑浠?    # Subtest: 鍗曟牴瀛楃涓蹭笌鍗曞厓绱犳暟缁勭粨鏋滀竴鑷达紙鍚?null / undefined 瀹堝崼锛?    ok 1 - 鍗曟牴瀛楃涓蹭笌鍗曞厓绱犳暟缁勭粨鏋滀竴鑷达紙鍚?null / undefined 瀹堝崼锛?      ---
+      duration_ms: 0.691
+      type: 'test'
+      ...
+    1..1
+ok 151 - L16-W7 搂C 鍗曟牴浼犲叆锛堥潪鏁扮粍 / 鏁扮粍锛夌瓑浠?  ---
+  duration_ms: 0.9637
+  type: 'suite'
+  ...
+# Subtest: L16-W7 搂D 5 涓囪妭鐐瑰瓙鏍戯紙楠屾敹 鈶狅細閫愪綅鐩哥瓑锛?    # Subtest: 50,000 鑺傜偣瀛愭爲 id 闆嗛€愪綅鐩哥瓑涓旇妯℃纭?    ok 1 - 50,000 鑺傜偣瀛愭爲 id 闆嗛€愪綅鐩哥瓑涓旇妯℃纭?      ---
+      duration_ms: 71.7064
+      type: 'test'
+      ...
+    1..1
+ok 152 - L16-W7 搂D 5 涓囪妭鐐瑰瓙鏍戯紙楠屾敹 鈶狅細閫愪綅鐩哥瓑锛?  ---
+  duration_ms: 71.8967
+  type: 'suite'
+  ...
+# Subtest: L16-W7 搂E 纭畾鎬у箓绛?    # Subtest: 鍚岃緭鍏ヤ袱娆¤皟鐢ㄨ繑鍥炵浉鍚屽厓绱犻泦锛堜簰涓嶅奖鍝嶏級
+    ok 1 - 鍚岃緭鍏ヤ袱娆¤皟鐢ㄨ繑鍥炵浉鍚屽厓绱犻泦锛堜簰涓嶅奖鍝嶏級
+      ---
+      duration_ms: 1.5783
+      type: 'test'
+      ...
+    1..1
+ok 153 - L16-W7 搂E 纭畾鎬у箓绛?  ---
+  duration_ms: 1.7807
+  type: 'suite'
+  ...
+# Subtest: L16-W7 搂F 鐜紩鐢ㄩ槻鎶わ紙鍙粓姝級
+    # Subtest: 鑷紩鐢?/ 鐜矾瀛愭爲鍙粓姝笖缁撴灉闂悎
+    ok 1 - 鑷紩鐢?/ 鐜矾瀛愭爲鍙粓姝笖缁撴灉闂悎
+      ---
+      duration_ms: 0.2335
+      type: 'test'
+      ...
+    1..1
+ok 154 - L16-W7 搂F 鐜紩鐢ㄩ槻鎶わ紙鍙粓姝級
+  ---
+  duration_ms: 0.306
+  type: 'suite'
+  ...
+# Subtest: L16-W7 搂G 闈炴樉钁楀姡鍖栵紙50k 瀛愭爲 P95 瀵圭収锛?    # Subtest: 鏂板彛寰?P95 涓嶆樉钁楀姡浜庢棫鍙ｅ緞锛堝瀹瑰樊锛岄伩鍏嶆姈鍔ㄨ鎶ワ級
+    ok 1 - 鏂板彛寰?P95 涓嶆樉钁楀姡浜庢棫鍙ｅ緞锛堝瀹瑰樊锛岄伩鍏嶆姈鍔ㄨ鎶ワ級
+      ---
+      duration_ms: 2642.6749
+      type: 'test'
+      ...
+    1..1
+ok 155 - L16-W7 搂G 闈炴樉钁楀姡鍖栵紙50k 瀛愭爲 P95 瀵圭収锛?  ---
+  duration_ms: 2642.7585
+  type: 'suite'
+  ...
+# [搂F] PASS(ratio) \#1 new=4.062ms old=63.468ms drop=93.6%
+# Subtest: L16-W8 搂A 缁撴瀯閿氱偣锛堟儼鎬у垎娈垫竻鎵級
+    # Subtest: canonical 鍏峰闃熷垪 / 娓告爣 / 鎵归噺甯搁噺锛涘閲忓垎鏀笉鍐?O(n) 鍏ㄦ壂锛?200 鍏滃簳淇濈暀
+    ok 1 - canonical 鍏峰闃熷垪 / 娓告爣 / 鎵归噺甯搁噺锛涘閲忓垎鏀笉鍐?O(n) 鍏ㄦ壂锛?200 鍏滃簳淇濈暀
+      ---
+      duration_ms: 1.0658
+      type: 'test'
+      ...
+    1..1
+ok 156 - L16-W8 搂A 缁撴瀯閿氱偣锛堟儼鎬у垎娈垫竻鎵級
+  ---
+  duration_ms: 2.0962
+  type: 'suite'
+  ...
+# Subtest: L16-W8 搂B 瀹归噺涓婄晫锛堣繛缁?5000 鍒犻櫎 路 鍚屽埢锛?    # Subtest: _recentlyRemoved.size 鎭?鈮?2000
+    ok 1 - _recentlyRemoved.size 鎭?鈮?2000
+      ---
+      duration_ms: 14.8467
+      type: 'test'
+      ...
+    1..1
+ok 157 - L16-W8 搂B 瀹归噺涓婄晫锛堣繛缁?5000 鍒犻櫎 路 鍚屽埢锛?  ---
+  duration_ms: 15.0788
+  type: 'suite'
+  ...
+# Subtest: L16-W8 搂C 杩囨湡娓呮壂锛堝彈鎺ф椂閽?>30s锛?    # Subtest: 鏃у纰戣娓咃紙鍚儼鎬у垎娈垫帹杩?/ %200 鍏滃簳锛?    ok 1 - 鏃у纰戣娓咃紙鍚儼鎬у垎娈垫帹杩?/ %200 鍏滃簳锛?      ---
+      duration_ms: 10.3983
+      type: 'test'
+      ...
+    1..1
+ok 158 - L16-W8 搂C 杩囨湡娓呮壂锛堝彈鎺ф椂閽?>30s锛?  ---
+  duration_ms: 10.5433
+  type: 'suite'
+  ...
+# Subtest: L16-W8 搂D 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃у彛寰勶紝<2000 娆″啓鍏ワ級
+    # Subtest: Map锛坕d鈫抰s锛夐€愰」鐩哥瓑
+    ok 1 - Map锛坕d鈫抰s锛夐€愰」鐩哥瓑
+      ---
+      duration_ms: 7.7094
+      type: 'test'
+      ...
+    1..1
+ok 159 - L16-W8 搂D 缁撴灉绛変环锛堟柊鍙ｅ緞 == 鏃у彛寰勶紝<2000 娆″啓鍏ワ級
+  ---
+  duration_ms: 7.8484
+  type: 'suite'
+  ...
+# Subtest: L16-W8 搂E 鎸佷箙鍖栦竴鑷达紙state._tombstones 鈫?鍐呭瓨 Map锛?    # Subtest: 閿泦涓€鑷达紙鍐欏叆 / 瀹归噺鏀剁缉 / 杩囨湡娓呮壂鍚屾锛?    ok 1 - 閿泦涓€鑷达紙鍐欏叆 / 瀹归噺鏀剁缉 / 杩囨湡娓呮壂鍚屾锛?      ---
+      duration_ms: 7.0607
+      type: 'test'
+      ...
+    1..1
+ok 160 - L16-W8 搂E 鎸佷箙鍖栦竴鑷达紙state._tombstones 鈫?鍐呭瓨 Map锛?  ---
+  duration_ms: 7.3699
+  type: 'suite'
+  ...
+# Subtest: L16-W8 搂F 鎬ц兘楠屾敹锛堣繛缁?5000 鍒犻櫎绱鑰楁椂涓嬮檷 鈮?0%锛?    # Subtest: 鏂板彛寰勭疮璁¤€楁椂 鈮?鏃у彛寰?40%锛堜氦閿欓噰鏍?路 鍙栧杞渶灏忓€?路 鏈€澶氶噸璇?3 娆★級
+    ok 1 - 鏂板彛寰勭疮璁¤€楁椂 鈮?鏃у彛寰?40%锛堜氦閿欓噰鏍?路 鍙栧杞渶灏忓€?路 鏈€澶氶噸璇?3 娆★級
+      ---
+      duration_ms: 435.2191
+      type: 'test'
+      ...
+    1..1
+ok 161 - L16-W8 搂F 鎬ц兘楠屾敹锛堣繛缁?5000 鍒犻櫎绱鑰楁椂涓嬮檷 鈮?0%锛?  ---
+  duration_ms: 435.3964
+  type: 'suite'
+  ...
+# Subtest: L16-W9 - extract hardcoded theme colors into CSS variables
+    # Subtest: A anchors: _themeColor/_themeList readers + close-hover color-mix with pure-token fallback
+    ok 1 - A anchors: _themeColor/_themeList readers + close-hover color-mix with pure-token fallback
+      ---
+      duration_ms: 0.8875
+      type: 'test'
+      ...
+    # Subtest: B extraction: \#RRGGBB outside definition blocks drops >=80% (actual 0)
+    ok 2 - B extraction: \#RRGGBB outside definition blocks drops >=80% (actual 0)
+      ---
+      duration_ms: 6.2548
+      type: 'test'
+      ...
+    # Subtest: C semantic tokens present (day + night)
+    ok 3 - C semantic tokens present (day + night)
+      ---
+      duration_ms: 0.8006
+      type: 'test'
+      ...
+    # Subtest: D equivalence: palette token values equal the pre-extraction hardcoded arrays
+    ok 4 - D equivalence: palette token values equal the pre-extraction hardcoded arrays
+      ---
+      duration_ms: 1.1143
+      type: 'test'
+      ...
+    # Subtest: E invariant: inline <script> block count stays 9
+    ok 5 - E invariant: inline <script> block count stays 9
+      ---
+      duration_ms: 0.8075
+      type: 'test'
+      ...
+    # Subtest: F perf: token resolution (100k samples) P95 < 50us
+    ok 6 - F perf: token resolution (100k samples) P95 < 50us
+      ---
+      duration_ms: 40.4043
+      type: 'test'
+      ...
+    1..6
+ok 162 - L16-W9 - extract hardcoded theme colors into CSS variables
+  ---
+  duration_ms: 51.6018
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 缁撴瀯閿氱偣
+    # Subtest: 鏀瑰悗婧愮爜鍚?tagRows 娲剧敓锛圫et.size 鍙ｅ緞锛?    ok 1 - 鏀瑰悗婧愮爜鍚?tagRows 娲剧敓锛圫et.size 鍙ｅ緞锛?      ---
+      duration_ms: 0.8124
+      type: 'test'
+      ...
+    # Subtest: renderSubTags 娈靛唴鏃犺８ tags.forEach 娈嬬暀
+    ok 2 - renderSubTags 娈靛唴鏃犺８ tags.forEach 娈嬬暀
+      ---
+      duration_ms: 0.1787
+      type: 'test'
+      ...
+    # Subtest: 绌虹储寮曞崰浣嶈閿氱偣瀛樺湪
+    ok 3 - 绌虹储寮曞崰浣嶈閿氱偣瀛樺湪
+      ---
+      duration_ms: 0.137
+      type: 'test'
+      ...
+    # Subtest: 鍘熸湁 row 鏋勫缓閫昏緫淇濈暀锛堥噸鍛藉悕 / 鍒犻櫎 / 鏀硅壊 / 鐐瑰嚮鎵撳紑锛?    ok 4 - 鍘熸湁 row 鏋勫缓閫昏緫淇濈暀锛堥噸鍛藉悕 / 鍒犻櫎 / 鏀硅壊 / 鐐瑰嚮鎵撳紑锛?      ---
+      duration_ms: 0.2118
+      type: 'test'
+      ...
+    # Subtest: R31锛氭爣绛惧渾鐐逛互 --tag-color 鍙橀噺缁戝畾锛堜笉鍐嶅啓鍐呰仈 background锛?    ok 5 - R31锛氭爣绛惧渾鐐逛互 --tag-color 鍙橀噺缁戝畾锛堜笉鍐嶅啓鍐呰仈 background锛?      ---
+      duration_ms: 1.185
+      type: 'test'
+      ...
+    1..5
+ok 163 - L17-W1 路 缁撴瀯閿氱偣
+  ---
+  duration_ms: 3.5854
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 琛屾覆鏌撲笌璁℃暟
+    # Subtest: 涓夋爣绛炬寜璁℃暟闄嶅簭娓叉煋涓旇鏁扮瓑浜?Set.size
+    ok 1 - 涓夋爣绛炬寜璁℃暟闄嶅簭娓叉煋涓旇鏁扮瓑浜?Set.size
+      ---
+      duration_ms: 1.6506
+      type: 'test'
+      ...
+    # Subtest: 璁℃暟涓烘暟瀛楁枃鏈?路 涓嶅嚭鐜?undefined / NaN
+    ok 2 - 璁℃暟涓烘暟瀛楁枃鏈?路 涓嶅嚭鐜?undefined / NaN
+      ---
+      duration_ms: 0.487
+      type: 'test'
+      ...
+    # Subtest: 鏂板缓鏍囩鍏ュ彛濮嬬粓鍦ㄦ湯灏?    ok 3 - 鏂板缓鏍囩鍏ュ彛濮嬬粓鍦ㄦ湯灏?      ---
+      duration_ms: 1.002
+      type: 'test'
+      ...
+    1..3
+ok 164 - L17-W1 路 琛屾覆鏌撲笌璁℃暟
+  ---
+  duration_ms: 3.478
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 杈圭晫涓庨檷绾?    # Subtest: 绌虹储寮?鈫?鍗犱綅琛?+ 鏂板缓鍏ュ彛锛堟棤寮傚父锛?    ok 1 - 绌虹储寮?鈫?鍗犱綅琛?+ 鏂板缓鍏ュ彛锛堟棤寮傚父锛?      ---
+      duration_ms: 0.3487
+      type: 'test'
+      ...
+    # Subtest: 绱㈠紩鍊间负鏁扮粍锛堟棤 size锛夆啋 count=0 涓斾笉鎶?    ok 2 - 绱㈠紩鍊间负鏁扮粍锛堟棤 size锛夆啋 count=0 涓斾笉鎶?      ---
+      duration_ms: 0.3896
+      type: 'test'
+      ...
+    # Subtest: 鎶樺彔鍒嗘敮锛?open锛変粎鍑烘柊寤哄叆鍙?路 琛屼负涓嶅彉
+    ok 3 - 鎶樺彔鍒嗘敮锛?open锛変粎鍑烘柊寤哄叆鍙?路 琛屼负涓嶅彉
+      ---
+      duration_ms: 0.2102
+      type: 'test'
+      ...
+    # Subtest: 灞曞紑鏃?box 鏍囪 open
+    ok 4 - 灞曞紑鏃?box 鏍囪 open
+      ---
+      duration_ms: 0.2266
+      type: 'test'
+      ...
+    1..4
+ok 165 - L17-W1 路 杈圭晫涓庨檷绾?  ---
+  duration_ms: 1.4132
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+    # Subtest: 鍙鍐荤粨閿氬瓨鍦?    ok 1 - 鍙鍐荤粨閿氬瓨鍦?      ---
+      duration_ms: 0.2111
+      type: 'test'
+      ...
+    # Subtest: 鏀瑰墠褰㈡€佸湪灞曞紑鏍囩鍒嗙粍鏃舵姏 ReferenceError锛坱ags 鏈畾涔夛級
+    ok 2 - 鏀瑰墠褰㈡€佸湪灞曞紑鏍囩鍒嗙粍鏃舵姏 ReferenceError锛坱ags 鏈畾涔夛級
+      ---
+      duration_ms: 5.6168
+      type: 'test'
+      ...
+    1..2
+ok 166 - L17-W1 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+  ---
+  duration_ms: 5.9969
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 灞炴€ч噰鏍凤紙200 缁勶級
+    # Subtest: count 鎬诲拰 = Set 澶у皬鎬诲拰 路 搴忓垪闈為€掑
+    ok 1 - count 鎬诲拰 = Set 澶у皬鎬诲拰 路 搴忓垪闈為€掑
+      ---
+      duration_ms: 34.0691
+      type: 'test'
+      ...
+    1..1
+ok 167 - L17-W1 路 灞炴€ч噰鏍凤紙200 缁勶級
+  ---
+  duration_ms: 34.1709
+  type: 'suite'
+  ...
+# Subtest: L17-W2 路 缁撴瀯閿氱偣
+    # Subtest: week 鍒嗘敮涓嶅惈 UTC 鍙栧€煎櫒 / Date.UTC
+    ok 1 - week 鍒嗘敮涓嶅惈 UTC 鍙栧€煎櫒 / Date.UTC
+      ---
+      duration_ms: 0.904
+      type: 'test'
+      ...
+    # Subtest: week 鍒嗘敮浣跨敤鏈湴鍙栧€煎櫒涓庢湰鍦板熀鍑嗘棩
+    ok 2 - week 鍒嗘敮浣跨敤鏈湴鍙栧€煎櫒涓庢湰鍦板熀鍑嗘棩
+      ---
+      duration_ms: 0.4132
+      type: 'test'
+      ...
+    # Subtest: 7 鏃ュ簭鍒椾笌 buildTimeGrid(days) 鏀跺彛閫愬瓧淇濈暀
+    ok 3 - 7 鏃ュ簭鍒椾笌 buildTimeGrid(days) 鏀跺彛閫愬瓧淇濈暀
+      ---
+      duration_ms: 0.1474
+      type: 'test'
+      ...
+    # Subtest: 閫変腑鏃ヨВ鏋愬彛寰勬湭鏀瑰姩锛坧arseYmd + todayStr 鍥為€€锛?    ok 4 - 閫変腑鏃ヨВ鏋愬彛寰勬湭鏀瑰姩锛坧arseYmd + todayStr 鍥為€€锛?      ---
+      duration_ms: 0.1269
+      type: 'test'
+      ...
+    1..4
+ok 168 - L17-W2 路 缁撴瀯閿氱偣
+  ---
+  duration_ms: 2.7089
+  type: 'suite'
+  ...
+# Subtest: L17-W2 路 鍛ㄥ尯闂达紙涓滃叓鍖猴級
+    # Subtest: 鍛ㄥ叚 2026-10-17 鈫?2026-10-11 ~ 2026-10-17
+    ok 1 - 鍛ㄥ叚 2026-10-17 鈫?2026-10-11 ~ 2026-10-17
+      ---
+      duration_ms: 1.1484
+      type: 'test'
+      ...
+    # Subtest: 鍛ㄦ棩 2026-10-18 鈫?2026-10-18 ~ 2026-10-24锛堢己闄疯Е鍙戞棩锛?    ok 2 - 鍛ㄦ棩 2026-10-18 鈫?2026-10-18 ~ 2026-10-24锛堢己闄疯Е鍙戞棩锛?      ---
+      duration_ms: 0.2077
+      type: 'test'
+      ...
+    # Subtest: 鍛ㄦ棩璺ㄦ湀 2026-11-01 鈫?2026-11-01 ~ 2026-11-07
+    ok 3 - 鍛ㄦ棩璺ㄦ湀 2026-11-01 鈫?2026-11-01 ~ 2026-11-07
+      ---
+      duration_ms: 0.3029
+      type: 'test'
+      ...
+    # Subtest: 鍛ㄤ簲璺ㄥ勾 2027-01-01 鈫?2026-12-27 ~ 2027-01-02
+    ok 4 - 鍛ㄤ簲璺ㄥ勾 2027-01-01 鈫?2026-12-27 ~ 2027-01-02
+      ---
+      duration_ms: 0.334
+      type: 'test'
+      ...
+    1..4
+ok 169 - L17-W2 路 鍛ㄥ尯闂达紙涓滃叓鍖猴級
+  ---
+  duration_ms: 2.3876
+  type: 'suite'
+  ...
+# Subtest: L17-W2 路 杈圭晫涓庨檷绾?    # Subtest: selectedDate 缂虹渷 鈫?鍥為€€ todayStr()锛?026-10-17 鎵€鍦ㄥ懆锛?    ok 1 - selectedDate 缂虹渷 鈫?鍥為€€ todayStr()锛?026-10-17 鎵€鍦ㄥ懆锛?      ---
+      duration_ms: 0.3333
+      type: 'test'
+      ...
+    # Subtest: selectedDate 闈炴硶锛堥潪 YYYY-MM-DD锛夆啋 涓嶆姏閿?路 7 鏃ュ舰鎬佷笌鏀瑰墠涓€鑷达紙闈炲洖褰掞級
+    ok 2 - selectedDate 闈炴硶锛堥潪 YYYY-MM-DD锛夆啋 涓嶆姏閿?路 7 鏃ュ舰鎬佷笌鏀瑰墠涓€鑷达紙闈炲洖褰掞級
+      ---
+      duration_ms: 4.8845
+      type: 'test'
+      ...
+    # Subtest: 7 鏃ュ潎涓烘湰鍦伴浂鐐癸紙閬垮厤 UTC 鏋勯€犳畫鐣欑殑鏃跺垎鍋忕Щ锛?    ok 3 - 7 鏃ュ潎涓烘湰鍦伴浂鐐癸紙閬垮厤 UTC 鏋勯€犳畫鐣欑殑鏃跺垎鍋忕Щ锛?      ---
+      duration_ms: 0.1639
+      type: 'test'
+      ...
+    # Subtest: 鍒楅鎭掍负鍛ㄦ棩銆佸垪灏炬亽涓哄懆鍏紙鏄熸湡搴忓垪 0..6锛?    ok 4 - 鍒楅鎭掍负鍛ㄦ棩銆佸垪灏炬亽涓哄懆鍏紙鏄熸湡搴忓垪 0..6锛?      ---
+      duration_ms: 0.2292
+      type: 'test'
+      ...
+    1..4
+ok 170 - L17-W2 路 杈圭晫涓庨檷绾?  ---
+  duration_ms: 6.6359
+  type: 'suite'
+  ...
+# Subtest: L17-W2 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+    # Subtest: 鍙鍐荤粨閿氬瓨鍦?    ok 1 - 鍙鍐荤粨閿氬瓨鍦?      ---
+      duration_ms: 0.1954
+      type: 'test'
+      ...
+    # Subtest: 鏀瑰墠褰㈡€侊細鍛ㄦ棩鏁村懆鍥為€€ 7 鏃ワ紙閫変腑鏃ヤ笉鍦ㄥ懆鍐咃級
+    ok 2 - 鏀瑰墠褰㈡€侊細鍛ㄦ棩鏁村懆鍥為€€ 7 鏃ワ紙閫変腑鏃ヤ笉鍦ㄥ懆鍐咃級
+      ---
+      duration_ms: 4.3411
+      type: 'test'
+      ...
+    # Subtest: 鏀瑰墠褰㈡€侊細鍛ㄥ叚宸у悎姝ｇ‘锛堢己闄蜂粎鍛ㄦ棩鏄惧舰锛?    ok 3 - 鏀瑰墠褰㈡€侊細鍛ㄥ叚宸у悎姝ｇ‘锛堢己闄蜂粎鍛ㄦ棩鏄惧舰锛?      ---
+      duration_ms: 5.4165
+      type: 'test'
+      ...
+    # Subtest: 鏀瑰墠褰㈡€侊細缁撴瀯閿氱偣蹇呯劧涓嶆垚绔嬶紙UTC 鍙栧€煎櫒浠嶅湪锛?    ok 4 - 鏀瑰墠褰㈡€侊細缁撴瀯閿氱偣蹇呯劧涓嶆垚绔嬶紙UTC 鍙栧€煎櫒浠嶅湪锛?      ---
+      duration_ms: 5.0321
+      type: 'test'
+      ...
+    1..4
+ok 171 - L17-W2 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+  ---
+  duration_ms: 15.1457
+  type: 'suite'
+  ...
+# Subtest: L17-W2 路 灞炴€ч噰鏍凤紙2026-01-01 ~ 2027-12-31锛?    # Subtest: 閫愭棩锛氶鏃ュ懆鏃?路 搴忓垪杩炵画 路 鍚€変腑鏃?路 鏄熸湡 0..6
+    ok 1 - 閫愭棩锛氶鏃ュ懆鏃?路 搴忓垪杩炵画 路 鍚€変腑鏃?路 鏄熸湡 0..6
+      ---
+      duration_ms: 9.112
+      type: 'test'
+      ...
+    1..1
+ok 172 - L17-W2 路 灞炴€ч噰鏍凤紙2026-01-01 ~ 2027-12-31锛?  ---
+  duration_ms: 9.2005
+  type: 'suite'
+  ...
+# Subtest: L17-W3 路 鎸囦护 1 路 initStore 绉掔骇鏃堕棿鎴冲綊涓€
+    # Subtest: A1 褰掍竴寰幆鍚绾у垎鏀紙0<v<1e10 脳1000锛?    ok 1 - A1 褰掍竴寰幆鍚绾у垎鏀紙0<v<1e10 脳1000锛?      ---
+      duration_ms: 1.2455
+      type: 'test'
+      ...
+    # Subtest: A2 寰 / 姣鏃㈡湁鍒嗘敮闆跺彉鏇?    ok 2 - A2 寰 / 姣鏃㈡湁鍒嗘敮闆跺彉鏇?      ---
+      duration_ms: 0.2434
+      type: 'test'
+      ...
+    # Subtest: B1 绉掔骇 鈫?姣锛坈reatedAt / updatedAt 鍚屾椂褰掍竴锛?    ok 3 - B1 绉掔骇 鈫?姣锛坈reatedAt / updatedAt 鍚屾椂褰掍竴锛?      ---
+      duration_ms: 0.3823
+      type: 'test'
+      ...
+    # Subtest: B2 寰浠?梅1000銆佹甯告绉掑師鏍枫€侀浂鍊?/ 璐熷€间笉鍔?    ok 4 - B2 寰浠?梅1000銆佹甯告绉掑師鏍枫€侀浂鍊?/ 璐熷€间笉鍔?      ---
+      duration_ms: 0.3047
+      type: 'test'
+      ...
+    # Subtest: B3 骞傜瓑锛氳繛缁袱娆″綊涓€缁撴灉涓嶅彉
+    ok 5 - B3 骞傜瓑锛氳繛缁袱娆″綊涓€缁撴灉涓嶅彉
+      ---
+      duration_ms: 0.2268
+      type: 'test'
+      ...
+    # Subtest: C1 涓?mergeRemoteState 鐨?_normToMs 缁撴灉閫愬€间竴鑷?    ok 6 - C1 涓?mergeRemoteState 鐨?_normToMs 缁撴灉閫愬€间竴鑷?      ---
+      duration_ms: 0.3785
+      type: 'test'
+      ...
+    # Subtest: C2 LWW锛氱绾ф棫鏁版嵁褰掍竴鍚庝笉鍐嶅帇杩囪緝鏂扮殑姣鍊?    ok 7 - C2 LWW锛氱绾ф棫鏁版嵁褰掍竴鍚庝笉鍐嶅帇杩囪緝鏂扮殑姣鍊?      ---
+      duration_ms: 0.2542
+      type: 'test'
+      ...
+    1..7
+ok 173 - L17-W3 路 鎸囦护 1 路 initStore 绉掔骇鏃堕棿鎴冲綊涓€
+  ---
+  duration_ms: 4.3698
+  type: 'suite'
+  ...
+# Subtest: L17-W3 路 鎸囦护 2 路 璇锋眰瓒呮椂 strikes 姝讳唬鐮佹竻闄?    # Subtest: A1 鍏ㄦ枃浠舵棤璇ュ嚱鏁版爣璇嗙娈嬬暀
+    ok 1 - A1 鍏ㄦ枃浠舵棤璇ュ嚱鏁版爣璇嗙娈嬬暀
+      ---
+      duration_ms: 0.6109
+      type: 'test'
+      ...
+    # Subtest: A2 __juIndexShadow 涓嶅啀瀵煎嚭 timeout 閿?    ok 2 - A2 __juIndexShadow 涓嶅啀瀵煎嚭 timeout 閿?      ---
+      duration_ms: 0.3993
+      type: 'test'
+      ...
+    # Subtest: A3 灏辩华鐪嬮棬鐙椾笌 readyStrikes 鐙珛璁℃暟淇濈暀
+    ok 3 - A3 灏辩华鐪嬮棬鐙椾笌 readyStrikes 鐙珛璁℃暟淇濈暀
+      ---
+      duration_ms: 3.6619
+      type: 'test'
+      ...
+    # Subtest: A4 鍏朵綑鍏紑瀵煎嚭淇濇寔涓嶅彉锛堢鍚嶅喕缁擄級
+    ok 4 - A4 鍏朵綑鍏紑瀵煎嚭淇濇寔涓嶅彉锛堢鍚嶅喕缁擄級
+      ---
+      duration_ms: 0.7322
+      type: 'test'
+      ...
+    1..4
+ok 174 - L17-W3 路 鎸囦护 2 路 璇锋眰瓒呮椂 strikes 姝讳唬鐮佹竻闄?  ---
+  duration_ms: 5.8101
+  type: 'suite'
+  ...
+# Subtest: L17-W3 路 鎸囦护 3 路 JU_SLIDES 瑙嗗浘鍗歌浇鍥炴敹
+    # Subtest: A1 render 鏆撮湶 wrap._cleanup / outer._cleanup
+    ok 1 - A1 render 鏆撮湶 wrap._cleanup / outer._cleanup
+      ---
+      duration_ms: 1.4823
+      type: 'test'
+      ...
+    # Subtest: A2 鍗歌浇閽╁瓙绉婚櫎 resize 鐩戝惉骞舵憳闄?_cleanups 鐧昏椤?    ok 2 - A2 鍗歌浇閽╁瓙绉婚櫎 resize 鐩戝惉骞舵憳闄?_cleanups 鐧昏椤?      ---
+      duration_ms: 0.5032
+      type: 'test'
+      ...
+    # Subtest: B1 閽╁瓙骞傜瓑锛氳皟鐢ㄥ悗鐩戝惉褰掗浂銆佺櫥璁伴」褰掗浂
+    ok 3 - B1 閽╁瓙骞傜瓑锛氳皟鐢ㄥ悗鐩戝惉褰掗浂銆佺櫥璁伴」褰掗浂
+      ---
+      duration_ms: 0.6705
+      type: 'test'
+      ...
+    # Subtest: B2 鍙嶅鍒囨崲 20 娆★細娲昏穬鐩戝惉鍣ㄤ笉绱Н锛堚墹1锛?    ok 4 - B2 鍙嶅鍒囨崲 20 娆★細娲昏穬鐩戝惉鍣ㄤ笉绱Н锛堚墹1锛?      ---
+      duration_ms: 0.9377
+      type: 'test'
+      ...
+    # Subtest: A3 renderMain 鍦?c.innerHTML 娓呯┖鍓嶈皟鐢?.ju-sl-wrap 鍗歌浇閽╁瓙
+    ok 5 - A3 renderMain 鍦?c.innerHTML 娓呯┖鍓嶈皟鐢?.ju-sl-wrap 鍗歌浇閽╁瓙
+      ---
+      duration_ms: 0.478
+      type: 'test'
+      ...
+    # Subtest: A4 涓庢棦鏈夊浘璋?/ 瀵煎浘鍗歌浇閽╁瓙鍚屽潃锛堥『搴忎笉鍐茬獊锛?    ok 6 - A4 涓庢棦鏈夊浘璋?/ 瀵煎浘鍗歌浇閽╁瓙鍚屽潃锛堥『搴忎笉鍐茬獊锛?      ---
+      duration_ms: 0.4859
+      type: 'test'
+      ...
+    1..6
+ok 175 - L17-W3 路 鎸囦护 3 路 JU_SLIDES 瑙嗗浘鍗歌浇鍥炴敹
+  ---
+  duration_ms: 4.7681
+  type: 'suite'
+  ...
+# Subtest: L17-W3 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€?路 鍒ゅ埆鍔涳級
+    # Subtest: D1 鏀瑰墠褰㈡€佷粛鍚浠ｇ爜鏍囪瘑绗?    ok 1 - D1 鏀瑰墠褰㈡€佷粛鍚浠ｇ爜鏍囪瘑绗?      ---
+      duration_ms: 0.1694
+      type: 'test'
+      ...
+    # Subtest: D2 鏀瑰墠褰㈡€佹棤绉掔骇褰掍竴鍒嗘敮
+    ok 2 - D2 鏀瑰墠褰㈡€佹棤绉掔骇褰掍竴鍒嗘敮
+      ---
+      duration_ms: 0.1349
+      type: 'test'
+      ...
+    # Subtest: D3 鏀瑰墠褰㈡€佹棤骞荤伅鐗囧嵏杞介挬瀛?    ok 3 - D3 鏀瑰墠褰㈡€佹棤骞荤伅鐗囧嵏杞介挬瀛?      ---
+      duration_ms: 0.4801
+      type: 'test'
+      ...
+    1..3
+ok 176 - L17-W3 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€?路 鍒ゅ埆鍔涳級
+  ---
+  duration_ms: 0.8886
+  type: 'suite'
+  ...
+# [graph-worker] 瓒呮椂锛宼erminate 閲嶅缓
+# Subtest: L17-W4 路 P1-4 路 _logTimers 涓婇檺
+    # Subtest: A1 LOG_TIMER_MAX=500 涓庢窐姹板潡浣嶄簬 set 涔嬪墠
+    ok 1 - A1 LOG_TIMER_MAX=500 涓庢窐姹板潡浣嶄簬 set 涔嬪墠
+      ---
+      duration_ms: 4.5848
+      type: 'test'
+      ...
+    # Subtest: B1 杈惧埌涓婇檺鍚庢柊澧?key 鈬?娣樻卑鏈€鏃╅」骞惰惤鐩橈紝瀹归噺涓嶈秴涓婇檺
+    ok 2 - B1 杈惧埌涓婇檺鍚庢柊澧?key 鈬?娣樻卑鏈€鏃╅」骞惰惤鐩橈紝瀹归噺涓嶈秴涓婇檺
+      ---
+      duration_ms: 0.6726
+      type: 'test'
+      ...
+    1..2
+ok 177 - L17-W4 路 P1-4 路 _logTimers 涓婇檺
+  ---
+  duration_ms: 6.2295
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P1-5 路 GraphLayoutWorker 鍗曟瓒呮椂閲嶅缓
+    # Subtest: A1 涓嶅啀淇濈暀杩炵画 2 娆￠槇鍊硷紝鍛戒腑鍗?terminate / ready=false / strikes 瀛楁閫€褰?    ok 1 - A1 涓嶅啀淇濈暀杩炵画 2 娆￠槇鍊硷紝鍛戒腑鍗?terminate / ready=false / strikes 瀛楁閫€褰?      ---
+      duration_ms: 0.5491
+      type: 'test'
+      ...
+    # Subtest: B1 棣栨瓒呮椂鍗崇粓姝㈠苟鎷掔粷鎸傝捣璇锋眰
+    ok 2 - B1 棣栨瓒呮椂鍗崇粓姝㈠苟鎷掔粷鎸傝捣璇锋眰
+      ---
+      duration_ms: 1.0248
+      type: 'test'
+      ...
+    1..2
+ok 178 - L17-W4 路 P1-5 路 GraphLayoutWorker 鍗曟瓒呮椂閲嶅缓
+  ---
+  duration_ms: 1.7378
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-1 路 鑷姩棰滆壊鍏ュ巻鍙叉爤
+    # Subtest: A1 鑷姩棰滆壊 commit 浣跨敤 snapshot:true锛屾棫 light+noRollback 闆舵畫鐣?    ok 1 - A1 鑷姩棰滆壊 commit 浣跨敤 snapshot:true锛屾棫 light+noRollback 闆舵畫鐣?      ---
+      duration_ms: 3.4272
+      type: 'test'
+      ...
+    1..1
+ok 179 - L17-W4 路 P2-1 路 鑷姩棰滆壊鍏ュ巻鍙叉爤
+  ---
+  duration_ms: 3.5407
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-2 路 docToXls 鏁板€煎垪 Number
+    # Subtest: B1 鏁存暟 / 灏忔暟瀵煎嚭涓?Number锛屾枃鏈笌绌轰覆浠嶄负 String
+    ok 1 - B1 鏁存暟 / 灏忔暟瀵煎嚭涓?Number锛屾枃鏈笌绌轰覆浠嶄负 String
+      ---
+      duration_ms: 0.8902
+      type: 'test'
+      ...
+    1..1
+ok 180 - L17-W4 路 P2-2 路 docToXls 鏁板€煎垪 Number
+  ---
+  duration_ms: 1.1904
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-3 路 copyPlain 杩囨护 Symbol 閿?    # Subtest: A1 寰幆棣栬璺宠繃 symbol
+    ok 1 - A1 寰幆棣栬璺宠繃 symbol
+      ---
+      duration_ms: 0.2192
+      type: 'test'
+      ...
+    # Subtest: B1 Symbol 閿笉杩涘叆缁撴灉锛屽瓧绗︿覆閿甯稿鍒?    ok 2 - B1 Symbol 閿笉杩涘叆缁撴灉锛屽瓧绗︿覆閿甯稿鍒?      ---
+      duration_ms: 0.2755
+      type: 'test'
+      ...
+    1..2
+ok 181 - L17-W4 路 P2-3 路 copyPlain 杩囨护 Symbol 閿?  ---
+  duration_ms: 0.7146
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-4 路 23:00 寤哄緟鍔炴彁绀?    # Subtest: B1 te 涓虹┖鏃惰Е鍙?toast锛宼e 鏈夋晥鏃朵笉瑙﹀彂
+    ok 1 - B1 te 涓虹┖鏃惰Е鍙?toast锛宼e 鏈夋晥鏃朵笉瑙﹀彂
+      ---
+      duration_ms: 0.3715
+      type: 'test'
+      ...
+    1..1
+ok 182 - L17-W4 路 P2-4 路 23:00 寤哄緟鍔炴彁绀?  ---
+  duration_ms: 0.5517
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P3-1 路 鍒犻櫎 parseCalTimeInput 姝讳唬鐮?    # Subtest: A1 鍏ㄦ枃浠堕浂瀹氫箟 / 闆惰皟鐢?    ok 1 - A1 鍏ㄦ枃浠堕浂瀹氫箟 / 闆惰皟鐢?      ---
+      duration_ms: 0.5938
+      type: 'test'
+      ...
+    1..1
+ok 183 - L17-W4 路 P3-1 路 鍒犻櫎 parseCalTimeInput 姝讳唬鐮?  ---
+  duration_ms: 0.6686
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P3-2 路 鏍囩璁℃暟鍗犱綅绗︼紙L18 路 P3-3 璧蜂负鐪佺暐鍙凤級
+    # Subtest: B1 鍐风紦瀛樿繑鍥炵渷鐣ュ彿鍗犱綅
+    ok 1 - B1 鍐风紦瀛樿繑鍥炵渷鐣ュ彿鍗犱綅
+      ---
+      duration_ms: 0.3149
+      type: 'test'
+      ...
+    1..1
+ok 184 - L17-W4 路 P3-2 路 鏍囩璁℃暟鍗犱綅绗︼紙L18 路 P3-3 璧蜂负鐪佺暐鍙凤級
+  ---
+  duration_ms: 0.3796
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P3-3 路 _errSeen 娓呯悊绛栫暐娉ㄩ噴
+    # Subtest: A1 娉ㄩ噴浣嶄簬鍏ㄦ壂鍒ゆ柇涔嬪墠涓旇〃杩板畬鏁?    ok 1 - A1 娉ㄩ噴浣嶄簬鍏ㄦ壂鍒ゆ柇涔嬪墠涓旇〃杩板畬鏁?      ---
+      duration_ms: 0.3618
+      type: 'test'
+      ...
+    1..1
+ok 185 - L17-W4 路 P3-3 路 _errSeen 娓呯悊绛栫暐娉ㄩ噴
+  ---
+  duration_ms: 0.4246
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 OP-L17W1-1 路 renderTagsView 鍙?size
+    # Subtest: A1 璁℃暟鏀圭敤 Set.size锛屾棫 length 闆舵畫鐣?    ok 1 - A1 璁℃暟鏀圭敤 Set.size锛屾棫 length 闆舵畫鐣?      ---
+      duration_ms: 3.2147
+      type: 'test'
+      ...
+    1..1
+ok 186 - L17-W4 路 OP-L17W1-1 路 renderTagsView 鍙?size
+  ---
+  duration_ms: 3.3073
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 OP-L17W3-2 路 initStore 鏍规椂闂存埑褰掍竴
+    # Subtest: A1/B1 绉掔骇鏍规椂闂存埑 脳1000锛屾绉掑師鏍?    ok 1 - A1/B1 绉掔骇鏍规椂闂存埑 脳1000锛屾绉掑師鏍?      ---
+      duration_ms: 0.2788
+      type: 'test'
+      ...
+    1..1
+ok 187 - L17-W4 路 OP-L17W3-2 路 initStore 鏍规椂闂存埑褰掍竴
+  ---
+  duration_ms: 0.3452
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+    # Subtest: D1 鏃у舰鎬侀綈澶?鈬?鍚勯」鏂█鍏峰鍒ゅ埆鍔?    ok 1 - D1 鏃у舰鎬侀綈澶?鈬?鍚勯」鏂█鍏峰鍒ゅ埆鍔?      ---
+      duration_ms: 1.7791
+      type: 'test'
+      ...
+    1..1
+ok 188 - L17-W4 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+  ---
+  duration_ms: 1.8426
+  type: 'suite'
+  ...
+# [graph-worker] 瓒呮椂锛宼erminate 閲嶅缓
+# Subtest: L18 路 P0-1 路 鏍囩绱㈠紩鍊硷紙Set锛変笉寰楃洿鎺?map
+    # Subtest: A1 涓ゅ鍙栧€煎潎涓?Array.from(tagIndex.get(t)||[])
+    ok 1 - A1 涓ゅ鍙栧€煎潎涓?Array.from(tagIndex.get(t)||[])
+      ---
+      duration_ms: 4.8904
+      type: 'test'
+      ...
+    # Subtest: A2 renderTagNodes 娈靛唴 ids 鍏堣浆鏁扮粍鍐?map
+    ok 2 - A2 renderTagNodes 娈靛唴 ids 鍏堣浆鏁扮粍鍐?map
+      ---
+      duration_ms: 0.7409
+      type: 'test'
+      ...
+    # Subtest: B1 Set 鍙栧€艰浆鏁扮粍鍚庢槧灏勪笉鎶涗笖椤哄簭淇濇寔
+    ok 3 - B1 Set 鍙栧€艰浆鏁扮粍鍚庢槧灏勪笉鎶涗笖椤哄簭淇濇寔
+      ---
+      duration_ms: 0.8428
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鍚屽悕琛ㄨ揪寮忥紙鏈寘瑁癸級蹇呮姏 TypeError
+    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鍚屽悕琛ㄨ揪寮忥紙鏈寘瑁癸級蹇呮姏 TypeError
+      ---
+      duration_ms: 3.0742
+      type: 'test'
+      ...
+    1..4
+ok 189 - L18 路 P0-1 路 鏍囩绱㈠紩鍊硷紙Set锛変笉寰楃洿鎺?map
+  ---
+  duration_ms: 10.6142
+  type: 'suite'
+  ...
+# Subtest: L18 路 P3-1 路 _indexWorkerStrikes 姝诲彉閲忛€€褰?    # Subtest: A1 鍘绘敞閲婂悗鍏ㄦ枃浠堕浂 _indexWorkerStrikes
+    ok 1 - A1 鍘绘敞閲婂悗鍏ㄦ枃浠堕浂 _indexWorkerStrikes
+      ---
+      duration_ms: 3.9373
+      type: 'test'
+      ...
+    # Subtest: A2 __juIndexShadow.strikes 閿繚鐣欎笖鎭掕繑鍥?0
+    ok 2 - A2 __juIndexShadow.strikes 閿繚鐣欎笖鎭掕繑鍥?0
+      ---
+      duration_ms: 0.4403
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶅惈璇ュ彉閲忎笌瀵煎嚭
+    ok 3 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶅惈璇ュ彉閲忎笌瀵煎嚭
+      ---
+      duration_ms: 5.0199
+      type: 'test'
+      ...
+    1..3
+ok 190 - L18 路 P3-1 路 _indexWorkerStrikes 姝诲彉閲忛€€褰?  ---
+  duration_ms: 9.8414
+  type: 'suite'
+  ...
+# Subtest: L18 路 P3-2 路 GraphLayoutWorker.timeoutStrikes 姝诲彉閲忛€€褰?    # Subtest: A1 鍘绘敞閲婂悗鍏ㄦ枃浠堕浂 timeoutStrikes
+    ok 1 - A1 鍘绘敞閲婂悗鍏ㄦ枃浠堕浂 timeoutStrikes
+      ---
+      duration_ms: 4.0243
+      type: 'test'
+      ...
+    # Subtest: A2 鍗曟瓒呮椂閲嶅缓璇箟淇濈暀锛坱erminate / revoke / ready=false锛?    ok 2 - A2 鍗曟瓒呮椂閲嶅缓璇箟淇濈暀锛坱erminate / revoke / ready=false锛?      ---
+      duration_ms: 0.5309
+      type: 'test'
+      ...
+    # Subtest: B1 棣栬秴鍗崇粓姝㈠苟鎷掔粷鎸傝捣璇锋眰锛堟棤 strikes 鍐欏叆锛?    ok 3 - B1 棣栬秴鍗崇粓姝㈠苟鎷掔粷鎸傝捣璇锋眰锛堟棤 strikes 鍐欏叆锛?      ---
+      duration_ms: 1.1661
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶅惈澹版槑 / 閫掑 / 娓呴浂
+    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶅惈澹版槑 / 閫掑 / 娓呴浂
+      ---
+      duration_ms: 2.3287
+      type: 'test'
+      ...
+    1..4
+ok 191 - L18 路 P3-2 路 GraphLayoutWorker.timeoutStrikes 姝诲彉閲忛€€褰?  ---
+  duration_ms: 8.318
+  type: 'suite'
+  ...
+# Subtest: L18 路 P3-3 路 _l7TagCountText 鍗犱綅绗︿笌 title 璇箟
+    # Subtest: A1 鍐风紦瀛樿繑鍥炵渷鐣ュ彿鍗犱綅骞舵爣娉?title
+    ok 1 - A1 鍐风紦瀛樿繑鍥炵渷鐣ュ彿鍗犱綅骞舵爣娉?title
+      ---
+      duration_ms: 0.4332
+      type: 'test'
+      ...
+    # Subtest: B1 灏辩华鍥炶皟鍥炲～璁℃暟骞舵竻闄?title
+    ok 2 - B1 灏辩华鍥炶皟鍥炲～璁℃暟骞舵竻闄?title
+      ---
+      duration_ms: 0.3761
+      type: 'test'
+      ...
+    # Subtest: B2 缂撳瓨宸插氨缁洿鎺ヨ繑鍥炶鏁颁笖涓嶅啓 title
+    ok 3 - B2 缂撳瓨宸插氨缁洿鎺ヨ繑鍥炶鏁颁笖涓嶅啓 title
+      ---
+      duration_ms: 0.1946
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 杩斿洖 "0" 涓斾笉鍐?title
+    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 杩斿洖 "0" 涓斾笉鍐?title
+      ---
+      duration_ms: 0.2426
+      type: 'test'
+      ...
+    1..4
+ok 192 - L18 路 P3-3 路 _l7TagCountText 鍗犱綅绗︿笌 title 璇箟
+  ---
+  duration_ms: 1.3861
+  type: 'suite'
+  ...
+# Subtest: L18 路 P3-4 路 renderSubTags 楠ㄦ灦鎻愮ず璇箟
+    # Subtest: A1 楠ㄦ灦娈靛惈 ju-skel-hint 涓庛€屾鍦ㄦ瀯寤虹储寮曗€︺€?    ok 1 - A1 楠ㄦ灦娈靛惈 ju-skel-hint 涓庛€屾鍦ㄦ瀯寤虹储寮曗€︺€?      ---
+      duration_ms: 0.6704
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 璇ユ鏃犳彁绀烘枃妗?    ok 2 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 璇ユ鏃犳彁绀烘枃妗?      ---
+      duration_ms: 0.554
+      type: 'test'
+      ...
+    1..2
+ok 193 - L18 路 P3-4 路 renderSubTags 楠ㄦ灦鎻愮ず璇箟
+  ---
+  duration_ms: 1.4016
+  type: 'suite'
+  ...
+# Subtest: L19 路 P0-1 路 boot 鍏煎鏃х増鍧椾繚鐣?juju.pending.v1 瀵嗘枃鍏滃簳
+    # Subtest: A1 鍏煎鍧楀瓨鍦ㄤ笖 removeItem 鍙?pend.state 鍛戒腑闂ㄦ帶
+    ok 1 - A1 鍏煎鍧楀瓨鍦ㄤ笖 removeItem 鍙?pend.state 鍛戒腑闂ㄦ帶
+      ---
+      duration_ms: 1.2862
+      type: 'test'
+      ...
+    # Subtest: B1 鏂?shape {payload,ts,ttl}锛氫笉鍒犻櫎銆佷笉瑕嗙洊 initial
+    ok 2 - B1 鏂?shape {payload,ts,ttl}锛氫笉鍒犻櫎銆佷笉瑕嗙洊 initial
+      ---
+      duration_ms: 1.1337
+      type: 'test'
+      ...
+    # Subtest: B2 鏃?shape {state}锛氬懡涓悗鍥炲～ initial 骞舵秷璐瑰垹闄?    ok 3 - B2 鏃?shape {state}锛氬懡涓悗鍥炲～ initial 骞舵秷璐瑰垹闄?      ---
+      duration_ms: 0.5549
+      type: 'test'
+      ...
+    # Subtest: B3 鏃?shape 宸茶繃鏈燂細涓嶈鐩?initial銆佷笉鍒犻櫎
+    ok 4 - B3 鏃?shape 宸茶繃鏈燂細涓嶈鐩?initial銆佷笉鍒犻櫎
+      ---
+      duration_ms: 0.4552
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 瀵规柊 shape 浠嶆棤鏉′欢鍒犻櫎
+    ok 5 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 瀵规柊 shape 浠嶆棤鏉′欢鍒犻櫎
+      ---
+      duration_ms: 1.062
+      type: 'test'
+      ...
+    1..5
+ok 194 - L19 路 P0-1 路 boot 鍏煎鏃х増鍧椾繚鐣?juju.pending.v1 瀵嗘枃鍏滃簳
+  ---
+  duration_ms: 5.6071
+  type: 'suite'
+  ...
+# Subtest: L19 路 P0-2 路 commit 鐨?_patch 涓嶅啀琚唴灞?let 閬斀
+    # Subtest: A1 commit 鍑芥暟鍐呬粎涓€澶?let _patch;锛堝嚱鏁颁綔鐢ㄥ煙锛?    ok 1 - A1 commit 鍑芥暟鍐呬粎涓€澶?let _patch;锛堝嚱鏁颁綔鐢ㄥ煙锛?      ---
+      duration_ms: 1.0763
+      type: 'test'
+      ...
+    # Subtest: A2 _patch 鐢?buildPatch 璧嬪€硷紙鏃犲唴灞傚０鏄庯級锛宊l8Patch 鎹曡幏淇濈暀
+    ok 2 - A2 _patch 鐢?buildPatch 璧嬪€硷紙鏃犲唴灞傚０鏄庯級锛宊l8Patch 鎹曡幏淇濈暀
+      ---
+      duration_ms: 0.63
+      type: 'test'
+      ...
+    # Subtest: B1 閬斀鍙鐜帮細鍐呭眰 let 浣垮灞傛亽 undefined锛涘幓閬斀鍚庡彲瑙?    ok 3 - B1 閬斀鍙鐜帮細鍐呭眰 let 浣垮灞傛亽 undefined锛涘幓閬斀鍚庡彲瑙?      ---
+      duration_ms: 0.3691
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?commit 鍐呭惈涓ゅ let _patch;
+    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?commit 鍐呭惈涓ゅ let _patch;
+      ---
+      duration_ms: 1.1393
+      type: 'test'
+      ...
+    1..4
+ok 195 - L19 路 P0-2 路 commit 鐨?_patch 涓嶅啀琚唴灞?let 閬斀
+  ---
+  duration_ms: 3.8926
+  type: 'suite'
+  ...
+# Subtest: L19 路 P0-2 路 鏃ュ巻 / 鏍囩瑙嗗浘瀹炴椂鍒锋柊鍏滃簳
+    # Subtest: A1 鍥涗釜鍔ㄤ綔涓嶅啀娈嬬暀閲嶅鐨勫叏閲忕紦瀛樺け鏁堬紙L22 路 娓呯悊 11锛?    ok 1 - A1 鍥涗釜鍔ㄤ綔涓嶅啀娈嬬暀閲嶅鐨勫叏閲忕紦瀛樺け鏁堬紙L22 路 娓呯悊 11锛?      ---
+      duration_ms: 0.7213
+      type: 'test'
+      ...
+    # Subtest: B1 invalidateCalIndex 娓呯┖鍏ㄩ儴缂撳瓨骞舵帹杩?_calDataRev
+    ok 2 - B1 invalidateCalIndex 娓呯┖鍏ㄩ儴缂撳瓨骞舵帹杩?_calDataRev
+      ---
+      duration_ms: 0.3213
+      type: 'test'
+      ...
+    1..2
+ok 196 - L19 路 P0-2 路 鏃ュ巻 / 鏍囩瑙嗗浘瀹炴椂鍒锋柊鍏滃簳
+  ---
+  duration_ms: 1.1681
+  type: 'suite'
+  ...
+# Subtest: L19 路 P1-1 路 鏍囩閫夋嫨鍣ㄦ浠ｇ爜绉婚櫎涓庢墜鍔ㄦ寚娲剧储寮曞け鏁?    # Subtest: A1 鍏ㄦ枃浠堕浂 openTagPicker / _tagPickerEl / closeTagPicker 寮曠敤
+    ok 1 - A1 鍏ㄦ枃浠堕浂 openTagPicker / _tagPickerEl / closeTagPicker 寮曠敤
+      ---
+      duration_ms: 2.2455
+      type: 'test'
+      ...
+    # Subtest: A2 鐜板瓨鎵嬪姩鎸囨淳鍏ュ彛 promptNewTag锛歝ommit 鈫?_tagIndexCache=null 鈫?renderSidebar/forceRender
+    ok 2 - A2 鐜板瓨鎵嬪姩鎸囨淳鍏ュ彛 promptNewTag锛歝ommit 鈫?_tagIndexCache=null 鈫?renderSidebar/forceRender
+      ---
+      duration_ms: 0.506
+      type: 'test'
+      ...
+    # Subtest: B1 绱㈠紩澶辨晥鍚庝晶鏍忚鏁拌鍙栬矾寰勫洖鍒板喎缂撳瓨
+    ok 3 - B1 绱㈠紩澶辨晥鍚庝晶鏍忚鏁拌鍙栬矾寰勫洖鍒板喎缂撳瓨
+      ---
+      duration_ms: 0.1581
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?pick / clearTags 娈垫棤 _tagIndexCache=null
+    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?pick / clearTags 娈垫棤 _tagIndexCache=null
+      ---
+      duration_ms: 0.5443
+      type: 'test'
+      ...
+    1..4
+ok 197 - L19 路 P1-1 路 鏍囩閫夋嫨鍣ㄦ浠ｇ爜绉婚櫎涓庢墜鍔ㄦ寚娲剧储寮曞け鏁?  ---
+  duration_ms: 4.5537
+  type: 'suite'
+  ...
+# Subtest: L19 路 P1-2 路 removeNodeFromMap 娓呯悊 dbRowHeights / dbColumnWidths
+    # Subtest: A1 缁撴瀯閿氱偣锛歱urgeNodeMeta 鏀跺埌瀹屾暣 state 涓?nodes 瑕嗙洊涓?map
+    ok 1 - A1 缁撴瀯閿氱偣锛歱urgeNodeMeta 鏀跺埌瀹屾暣 state 涓?nodes 瑕嗙洊涓?map
+      ---
+      duration_ms: 0.5709
+      type: 'test'
+      ...
+    # Subtest: B1 瀛愭爲鍒犻櫎鍚?dbRowHeights / dbColumnWidths 鏃犲鍎块敭
+    ok 2 - B1 瀛愭爲鍒犻櫎鍚?dbRowHeights / dbColumnWidths 鏃犲鍎块敭
+      ---
+      duration_ms: 1.2323
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鍙紶 {nodes:map}锛宒b 鍏冩暟鎹畫鐣?    ok 3 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鍙紶 {nodes:map}锛宒b 鍏冩暟鎹畫鐣?      ---
+      duration_ms: 0.7539
+      type: 'test'
+      ...
+    1..3
+ok 198 - L19 路 P1-2 路 removeNodeFromMap 娓呯悊 dbRowHeights / dbColumnWidths
+  ---
+  duration_ms: 2.9583
+  type: 'suite'
+  ...
+# Subtest: L19 路 P1-3 路 JU_SLIDES blur 淇濆瓨鍘熸枃銆佹覆鏌撳崟娆¤浆涔?    # Subtest: A1 缁撴瀯閿氱偣锛歜lur 淇濆瓨 nn.text=txt锛堜笉鍐?_esc锛?    ok 1 - A1 缁撴瀯閿氱偣锛歜lur 淇濆瓨 nn.text=txt锛堜笉鍐?_esc锛?      ---
+      duration_ms: 0.5831
+      type: 'test'
+      ...
+    # Subtest: A2 缁撴瀯閿氱偣锛歘paint 娓叉煋浠嶄负 _esc(_plain(n.text)) 鍗曟杞箟
+    ok 2 - A2 缁撴瀯閿氱偣锛歘paint 娓叉煋浠嶄负 _esc(_plain(n.text)) 鍗曟杞箟
+      ---
+      duration_ms: 1.5526
+      type: 'test'
+      ...
+    # Subtest: B1 琛屼负锛氬師鏂囦繚瀛?+ 鍗曟杞箟涓嶅啀鍑虹幇瀹炰綋瀛楅潰閲?    ok 3 - B1 琛屼负锛氬師鏂囦繚瀛?+ 鍗曟杞箟涓嶅啀鍑虹幇瀹炰綋瀛楅潰閲?      ---
+      duration_ms: 0.5533
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?blur 浠?_esc(txt)
+    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?blur 浠?_esc(txt)
+      ---
+      duration_ms: 0.4038
+      type: 'test'
+      ...
+    1..4
+ok 199 - L19 路 P1-3 路 JU_SLIDES blur 淇濆瓨鍘熸枃銆佹覆鏌撳崟娆¤浆涔?  ---
+  duration_ms: 3.353
+  type: 'suite'
+  ...
+# Subtest: L19 路 P2-1 路 sanitizeHtml 涓嶅啀渚濊禆 _sanTextEsc
+    # Subtest: A1 鍘绘敞閲婂悗鍏ㄦ枃浠堕浂 _sanTextEsc
+    ok 1 - A1 鍘绘敞閲婂悗鍏ㄦ枃浠堕浂 _sanTextEsc
+      ---
+      duration_ms: 4.6233
+      type: 'test'
+      ...
+    # Subtest: A2 闈炵櫧鍚嶅崟鍒嗘敮鐩存帴鍙?ch.textContent
+    ok 2 - A2 闈炵櫧鍚嶅崟鍒嗘敮鐩存帴鍙?ch.textContent
+      ---
+      duration_ms: 0.2973
+      type: 'test'
+      ...
+    # Subtest: B1 createTextNode 浠ユ枃鏈妭鐐规壙杞芥爣绛惧瓧闈㈤噺锛堟棤 HTML 璇箟锛?    ok 3 - B1 createTextNode 浠ユ枃鏈妭鐐规壙杞芥爣绛惧瓧闈㈤噺锛堟棤 HTML 璇箟锛?      ---
+      duration_ms: 0.2044
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶅惈 _sanTextEsc 瀹氫箟涓庤皟鐢?    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶅惈 _sanTextEsc 瀹氫箟涓庤皟鐢?      ---
+      duration_ms: 2.5055
+      type: 'test'
+      ...
+    1..4
+ok 200 - L19 路 P2-1 路 sanitizeHtml 涓嶅啀渚濊禆 _sanTextEsc
+  ---
+  duration_ms: 8.768
+  type: 'suite'
+  ...
+# Subtest: L19 路 P2-2 路 applyPatch 鏈熬 repairTreeConsistency(next) 宸插垹闄?    # Subtest: A1 applyPatch 鍐呴浂 repairTreeConsistency(next) 璋冪敤
+    ok 1 - A1 applyPatch 鍐呴浂 repairTreeConsistency(next) 璋冪敤
+      ---
+      duration_ms: 0.3937
+      type: 'test'
+      ...
+    # Subtest: A2 L16-W12 children 娲炶繃婊や繚鐣?    ok 2 - A2 L16-W12 children 娲炶繃婊や繚鐣?      ---
+      duration_ms: 0.4511
+      type: 'test'
+      ...
+    # Subtest: A3 repairTreeConsistency 鍑芥暟鏈綋淇濈暀锛堝叾瀹冭皟鐢ㄧ偣涓嶅彈褰卞搷锛?    ok 3 - A3 repairTreeConsistency 鍑芥暟鏈綋淇濈暀锛堝叾瀹冭皟鐢ㄧ偣涓嶅彈褰卞搷锛?      ---
+      duration_ms: 3.0392
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?applyPatch 浠嶅惈璇ヨ皟鐢?    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?applyPatch 浠嶅惈璇ヨ皟鐢?      ---
+      duration_ms: 0.6427
+      type: 'test'
+      ...
+    1..4
+ok 201 - L19 路 P2-2 路 applyPatch 鏈熬 repairTreeConsistency(next) 宸插垹闄?  ---
+  duration_ms: 4.9274
+  type: 'suite'
+  ...
+# Subtest: L19 路 P2-3 路 commit 鍐?_clearTag 姝诲彉閲忓凡鍒犻櫎
+    # Subtest: A1 commit 鍐呴浂 _clearTag
+    ok 1 - A1 commit 鍐呴浂 _clearTag
+      ---
+      duration_ms: 0.4995
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?commit 鍚?const _clearTag
+    ok 2 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?commit 鍚?const _clearTag
+      ---
+      duration_ms: 0.4137
+      type: 'test'
+      ...
+    1..2
+ok 202 - L19 路 P2-3 路 commit 鍐?_clearTag 姝诲彉閲忓凡鍒犻櫎
+  ---
+  duration_ms: 1.1309
+  type: 'suite'
+  ...
+# Subtest: L19 路 P2-4 路 reportError 鍘婚噸閿敼鐢ㄨ劚鏁忓悗鐨?_p 瀛楁
+    # Subtest: A1 缁撴瀯閿氱偣锛歬ey 鐢?_p 鏋勫缓
+    ok 1 - A1 缁撴瀯閿氱偣锛歬ey 鐢?_p 鏋勫缓
+      ---
+      duration_ms: 0.5148
+      type: 'test'
+      ...
+    # Subtest: B1 鍔犲瘑鍗犱綅涓嬮敭涓嶅惈鍘熷娑堟伅 / 璺緞
+    ok 2 - B1 鍔犲瘑鍗犱綅涓嬮敭涓嶅惈鍘熷娑堟伅 / 璺緞
+      ---
+      duration_ms: 0.3345
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?key 浠嶅彇 payload
+    ok 3 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 鐨?key 浠嶅彇 payload
+      ---
+      duration_ms: 0.3286
+      type: 'test'
+      ...
+    1..3
+ok 203 - L19 路 P2-4 路 reportError 鍘婚噸閿敼鐢ㄨ劚鏁忓悗鐨?_p 瀛楁
+  ---
+  duration_ms: 1.3105
+  type: 'suite'
+  ...
+# Subtest: L19 路 P2-6 路 openFieldTypeMenu 浣跨敤瑙﹀彂鎸夐挳 rect
+    # Subtest: A1 绛惧悕鎺ユ敹 anchorRect 涓斾紭鍏堜娇鐢?    ok 1 - A1 绛惧悕鎺ユ敹 anchorRect 涓斾紭鍏堜娇鐢?      ---
+      duration_ms: 0.3725
+      type: 'test'
+      ...
+    # Subtest: A2 addCol 璋冪敤浼犲叆鑷韩 getBoundingClientRect()
+    ok 2 - A2 addCol 璋冪敤浼犲叆鑷韩 getBoundingClientRect()
+      ---
+      duration_ms: 0.2491
+      type: 'test'
+      ...
+    # Subtest: B1 鎸夐挳 rect 浼樺厛浜庤彍鍗?rect
+    ok 3 - B1 鎸夐挳 rect 浼樺厛浜庤彍鍗?rect
+      ---
+      duration_ms: 0.7741
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶄互鑿滃崟鑷韩 rect 涓洪敋
+    ok 4 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶄互鑿滃崟鑷韩 rect 涓洪敋
+      ---
+      duration_ms: 0.548
+      type: 'test'
+      ...
+    1..4
+ok 204 - L19 路 P2-6 路 openFieldTypeMenu 浣跨敤瑙﹀彂鎸夐挳 rect
+  ---
+  duration_ms: 2.139
+  type: 'suite'
+  ...
+# Subtest: L19 路 P3-1 路 commit 璁℃椂鍐呰仈锛岀Щ闄ゅ叏灞€閲嶈祴鍊?    # Subtest: A1 鍏ㄦ枃浠堕浂 _origCommit / commit=function
+    ok 1 - A1 鍏ㄦ枃浠堕浂 _origCommit / commit=function
+      ---
+      duration_ms: 4.0975
+      type: 'test'
+      ...
+    # Subtest: A2 commit 棣栧熬鍐呰仈璁℃椂锛堣嚦灏?4 涓繑鍥炲垎鏀級
+    ok 2 - A2 commit 棣栧熬鍐呰仈璁℃椂锛堣嚦灏?4 涓繑鍥炲垎鏀級
+      ---
+      duration_ms: 0.2472
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶄互鍖呰鍣ㄩ噸璧嬪€?commit
+    ok 3 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶄互鍖呰鍣ㄩ噸璧嬪€?commit
+      ---
+      duration_ms: 2.1509
+      type: 'test'
+      ...
+    1..3
+ok 205 - L19 路 P3-1 路 commit 璁℃椂鍐呰仈锛岀Щ闄ゅ叏灞€閲嶈祴鍊?  ---
+  duration_ms: 6.6124
+  type: 'suite'
+  ...
+# Subtest: L19 路 P2-7 路 initPomo 鎷栨嫿鐩戝惉鍔ㄦ€佹寕杞藉苟绉婚櫎
+    # Subtest: A1 鏃犳案涔?document mousemove 鍖垮悕鐩戝惉
+    ok 1 - A1 鏃犳案涔?document mousemove 鍖垮悕鐩戝惉
+      ---
+      duration_ms: 0.1287
+      type: 'test'
+      ...
+    # Subtest: A2 鎷栨嫿鏈熼棿鎸傝浇銆佹姮璧峰嵆绉婚櫎
+    ok 2 - A2 鎷栨嫿鏈熼棿鎸傝浇銆佹姮璧峰嵆绉婚櫎
+      ---
+      duration_ms: 0.1336
+      type: 'test'
+      ...
+    # Subtest: C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶆案涔呮寕杞?document 鐩戝惉
+    ok 3 - C1 绾㈣瘉锛氬喕缁撻敋 frozen-l17 浠嶆案涔呮寕杞?document 鐩戝惉
+      ---
+      duration_ms: 0.4228
+      type: 'test'
+      ...
+    1..3
+ok 206 - L19 路 P2-7 路 initPomo 鎷栨嫿鐩戝惉鍔ㄦ€佹寕杞藉苟绉婚櫎
+  ---
+  duration_ms: 0.7889
+  type: 'suite'
+  ...
+# Subtest: L9-W3 搂mock 鍚庣閫傞厤鍣?parity
+    # Subtest: T-87 閫傞厤鍣ㄦ竻鍗?+ 璇诲啓鍒犻櫎鏌ヨ parity锛堝悓搴忓垪 鈫?鍚岀粨鏋滐級
+    ok 1 - T-87 閫傞厤鍣ㄦ竻鍗?+ 璇诲啓鍒犻櫎鏌ヨ parity锛堝悓搴忓垪 鈫?鍚岀粨鏋滐級
+      ---
+      duration_ms: 3.5928
+      type: 'test'
+      ...
+    # Subtest: T-88 浜嬪姟 / 鍏ㄩ噺 checkpoint parity锛氫袱閫傞厤鍣ㄩ┍鍔?PersistStore 琛屼负涓€鑷?    ok 2 - T-88 浜嬪姟 / 鍏ㄩ噺 checkpoint parity锛氫袱閫傞厤鍣ㄩ┍鍔?PersistStore 琛屼负涓€鑷?      ---
+      duration_ms: 2.627
+      type: 'test'
+      ...
+    # Subtest: T-89 閿欒浼犳挱 parity锛氶潪娉曟壒 / 鍚庣澶辫触 / 宸插叧闂?鈫?鍚?name + 鍚?message
+    ok 3 - T-89 閿欒浼犳挱 parity锛氶潪娉曟壒 / 鍚庣澶辫触 / 宸插叧闂?鈫?鍚?name + 鍚?message
+      ---
+      duration_ms: 1.0169
+      type: 'test'
+      ...
+    1..3
+ok 207 - L9-W3 搂mock 鍚庣閫傞厤鍣?parity
+  ---
+  duration_ms: 8.2958
+  type: 'suite'
+  ...
+# Subtest: L9-W1 搂P1a 钀界洏閫昏緫
+    # Subtest: T-69 buildPersistBatch锛氬垹闄や紭鍏堬紙D-2锛? 鍗曟壒涓婇檺 + 瓒呴檺閫€鍏ㄩ噺锛圖-6锛?    ok 1 - T-69 buildPersistBatch锛氬垹闄や紭鍏堬紙D-2锛? 鍗曟壒涓婇檺 + 瓒呴檺閫€鍏ㄩ噺锛圖-6锛?      ---
+      duration_ms: 4.2307
+      type: 'test'
+      ...
+    # Subtest: T-70 宕╂簝鍘熷瓙鎬э細浜嬪姟涓€斿穿婧?鈫?鐩橀潰鏃犲崐鎵癸紙BEGIN鈫抋pply鈫扖OMMIT 涓夋寮忥級
+    ok 2 - T-70 宕╂簝鍘熷瓙鎬э細浜嬪姟涓€斿穿婧?鈫?鐩橀潰鏃犲崐鎵癸紙BEGIN鈫抋pply鈫扖OMMIT 涓夋寮忥級
+      ---
+      duration_ms: 1.5176
+      type: 'test'
+      ...
+    # Subtest: T-71 骞傜瓑鎶曢€掞紙K-2锛夛細鍚?seq 閲嶆斁涓嶉噸澶嶅簲鐢?    ok 3 - T-71 骞傜瓑鎶曢€掞紙K-2锛夛細鍚?seq 閲嶆斁涓嶉噸澶嶅簲鐢?      ---
+      duration_ms: 0.2011
+      type: 'test'
+      ...
+    # Subtest: T-72 flushNow 鍏ㄩ噺 checkpoint锛氬師瀛愭浛鎹?+ 娓呭鍎胯 + 鏀舵暃璁℃暟褰掗浂
+    ok 4 - T-72 flushNow 鍏ㄩ噺 checkpoint锛氬師瀛愭浛鎹?+ 娓呭鍎胯 + 鏀舵暃璁℃暟褰掗浂
+      ---
+      duration_ms: 0.3673
+      type: 'test'
+      ...
+    # Subtest: T-73 閿欒澶勭悊锛欶IFO 澶辫触缂撳啿涓婇檺 + 瀹夊叏缃戠疆 full
+    ok 5 - T-73 閿欒澶勭悊锛欶IFO 澶辫触缂撳啿涓婇檺 + 瀹夊叏缃戠疆 full
+      ---
+      duration_ms: 1.8333
+      type: 'test'
+      ...
+    # Subtest: T-74 鎶曞奖绛変环锛歟qualProjection 閫?id JSON 姣斿
+    ok 6 - T-74 鎶曞奖绛変环锛歟qualProjection 閫?id JSON 姣斿
+      ---
+      duration_ms: 0.2694
+      type: 'test'
+      ...
+    1..6
+ok 208 - L9-W1 搂P1a 钀界洏閫昏緫
+  ---
+  duration_ms: 9.7316
+  type: 'suite'
+  ...
+# Subtest: L9-W1 搂Worker 楠ㄦ灦 / 鍗忚 / syncFallback 妗?    # Subtest: T-75 娑堟伅鍗忚褰㈢姸锛堣姹?鍝嶅簲/閿欒锛?    ok 1 - T-75 娑堟伅鍗忚褰㈢姸锛堣姹?鍝嶅簲/閿欒锛?      ---
+      duration_ms: 0.5095
+      type: 'test'
+      ...
+    # Subtest: T-76 syncFallback 淇濈暀涓斿彲鐢紙LO-1锛氫富绾跨▼ L6 鍚屾璺緞涓嶅緱鍒犻櫎锛?    ok 2 - T-76 syncFallback 淇濈暀涓斿彲鐢紙LO-1锛氫富绾跨▼ L6 鍚屾璺緞涓嶅緱鍒犻櫎锛?      ---
+      duration_ms: 0.5995
+      type: 'test'
+      ...
+    # Subtest: T-77 Worker 楠ㄦ灦锛歳eady 鎻℃墜 + worker 妯″紡濮旀淳 + 瓒呮椂闄嶇骇 syncFallback
+    ok 3 - T-77 Worker 楠ㄦ灦锛歳eady 鎻℃墜 + worker 妯″紡濮旀淳 + 瓒呮椂闄嶇骇 syncFallback
+      ---
+      duration_ms: 85.6221
+      type: 'test'
+      ...
+    1..3
+ok 209 - L9-W1 搂Worker 楠ㄦ灦 / 鍗忚 / syncFallback 妗?  ---
+  duration_ms: 87.9343
+  type: 'suite'
+  ...
+# Subtest: L9-W1 搂鍔犺В瀵?    # Subtest: T-78 鍏ㄩ噺 roundtrip锛歟ncryptState 鈫?decryptState 閫愬瓧娈佃繕鍘燂紱閿欏瘑鐮佹嫆缁?    ok 1 - T-78 鍏ㄩ噺 roundtrip锛歟ncryptState 鈫?decryptState 閫愬瓧娈佃繕鍘燂紱閿欏瘑鐮佹嫆缁?      ---
+      duration_ms: 111.9827
+      type: 'test'
+      ...
+    # Subtest: T-79 鍔犲瘑鍐欐壒锛堥€愭潯鍔犲瘑 路 璁捐 搂7.1 閫夐」 1锛夛細鏃犳槑鏂囨硠婕?+ 鍙В瀵嗚繕鍘?    ok 2 - T-79 鍔犲瘑鍐欐壒锛堥€愭潯鍔犲瘑 路 璁捐 搂7.1 閫夐」 1锛夛細鏃犳槑鏂囨硠婕?+ 鍙В瀵嗚繕鍘?      ---
+      duration_ms: 47.9741
+      type: 'test'
+      ...
+    # Subtest: T-80 瀵嗛挜鍔犺浇锛欿eyStore unlock/lock 鐢熷懡鍛ㄦ湡
+    ok 3 - T-80 瀵嗛挜鍔犺浇锛欿eyStore unlock/lock 鐢熷懡鍛ㄦ湡
+      ---
+      duration_ms: 24.9008
+      type: 'test'
+      ...
+    1..3
+ok 210 - L9-W1 搂鍔犺В瀵?  ---
+  duration_ms: 185.2734
+  type: 'suite'
+  ...
+# Subtest: L9-W1 搂绱㈠紩灞?    # Subtest: T-81 build + 鍥涚储寮曟煡璇紙cal/tag/search/backlink锛沖deleted 鎺掗櫎锛?    ok 1 - T-81 build + 鍥涚储寮曟煡璇紙cal/tag/search/backlink锛沖deleted 鎺掗櫎锛?      ---
+      duration_ms: 0.8267
+      type: 'test'
+      ...
+    # Subtest: T-82 澧為噺 update 绛変环鍏ㄩ噺 rebuild锛堝惈鏃ユ湡杩佺Щ / 杞垹 / 澶嶆椿锛?    ok 2 - T-82 澧為噺 update 绛変环鍏ㄩ噺 rebuild锛堝惈鏃ユ湡杩佺Щ / 杞垹 / 澶嶆椿锛?      ---
+      duration_ms: 0.7291
+      type: 'test'
+      ...
+    1..2
+ok 211 - L9-W1 搂绱㈠紩灞?  ---
+  duration_ms: 1.6569
+  type: 'suite'
+  ...
+# Subtest: L9-W3 搂DISPOSE / RESULT 鍗忚
+    # Subtest: T-83 鍗忚鏋勯€犱笌褰㈢姸鏍￠獙锛歮akeResult / isResponse / isDispose
+    ok 1 - T-83 鍗忚鏋勯€犱笌褰㈢姸鏍￠獙锛歮akeResult / isResponse / isDispose
+      ---
+      duration_ms: 0.3214
+      type: 'test'
+      ...
+    # Subtest: T-84 bridge.dispose 骞傜瓑锛歵eardown + 鍦ㄩ€旀竻绌?+ post-dispose 鎷掔粷
+    ok 2 - T-84 bridge.dispose 骞傜瓑锛歵eardown + 鍦ㄩ€旀竻绌?+ post-dispose 鎷掔粷
+      ---
+      duration_ms: 29.3287
+      type: 'test'
+      ...
+    # Subtest: T-85 RESULT 鍏宠仈锛堝悎鎴愬搷搴旓級+ unknown-id 瀹夊叏蹇界暐锛堟棤鏈鐞嗘嫆缁濓級
+    ok 3 - T-85 RESULT 鍏宠仈锛堝悎鎴愬搷搴旓級+ unknown-id 瀹夊叏蹇界暐锛堟棤鏈鐞嗘嫆缁濓級
+      ---
+      duration_ms: 15.071
+      type: 'test'
+      ...
+    # Subtest: T-86 杩涚▼鍐?worker DISPOSE锛歛ck 鍚?teardown锛泃erminate 鍚?postMessage 鏃犲洖璋?    ok 4 - T-86 杩涚▼鍐?worker DISPOSE锛歛ck 鍚?teardown锛泃erminate 鍚?postMessage 鏃犲洖璋?      ---
+      duration_ms: 93.2029
+      type: 'test'
+      ...
+    1..4
+ok 212 - L9-W3 搂DISPOSE / RESULT 鍗忚
+  ---
+  duration_ms: 138.4596
+  type: 'suite'
+  ...
+# Subtest: L9-W4 搂鎸囨爣 p95 wall-clock
+    # Subtest: T-90 stats() 鏆撮湶 p95 鏁板€煎瓧娈碉紝鏃㈡湁濂戠害瀛楁閫愰」涓嶅彉锛堟棤鐮村潖锛?    ok 1 - T-90 stats() 鏆撮湶 p95 鏁板€煎瓧娈碉紝鏃㈡湁濂戠害瀛楁閫愰」涓嶅彉锛堟棤鐮村潖锛?      ---
+      duration_ms: 0.9832
+      type: 'test'
+      ...
+    # Subtest: T-91 p95 鐧惧垎浣嶆暟瀛︼紙nearest-rank 鏈€杩戠З锛夛細宸茬煡鏍锋湰闆?鈫?鏈熸湜鍊?+ 鏈夌晫缂撳啿
+    ok 2 - T-91 p95 鐧惧垎浣嶆暟瀛︼紙nearest-rank 鏈€杩戠З锛夛細宸茬煡鏍锋湰闆?鈫?鏈熸湜鍊?+ 鏈夌晫缂撳啿
+      ---
+      duration_ms: 0.8252
+      type: 'test'
+      ...
+    # Subtest: T-92 wall-clock 閲囨牱涓虹湡瀹炶€楁椂锛堟垚鍔?+ 澶辫触璺緞鍧囬噰鏍凤紱搴﹂噺涓嶇牬鍧忓け璐ョ紦鍐插绾︼級
+    ok 3 - T-92 wall-clock 閲囨牱涓虹湡瀹炶€楁椂锛堟垚鍔?+ 澶辫触璺緞鍧囬噰鏍凤紱搴﹂噺涓嶇牬鍧忓け璐ョ紦鍐插绾︼級
+      ---
+      duration_ms: 0.6415
+      type: 'test'
+      ...
+    1..3
+ok 213 - L9-W4 搂鎸囨爣 p95 wall-clock
+  ---
+  duration_ms: 2.782
+  type: 'suite'
+  ...
+# Subtest: L9-W4 搂LO-2 褰卞瓙灞傛帴绾匡紙鍝ㄥ叺 / 璺緞闅旂 / 骞傜瓑 / 闄嶇骇锛?    # Subtest: W4-0 isProductHost锛氬涓诲湪鍦烘爣璁板垽瀹氾紙鏃犳爣璁板嵆闈炰骇鍝侊級
+    ok 1 - W4-0 isProductHost锛氬涓诲湪鍦烘爣璁板垽瀹氾紙鏃犳爣璁板嵆闈炰骇鍝侊級
+      ---
+      duration_ms: 1.7077
+      type: 'test'
+      ...
+    # Subtest: W4-1 璺緞闅旂锛氭敮鏌?URL 閿氬畾鏈ā鍧楋紙闈?cwd锛変笖纭畾鍙紦瀛?    ok 2 - W4-1 璺緞闅旂锛氭敮鏌?URL 閿氬畾鏈ā鍧楋紙闈?cwd锛変笖纭畾鍙紦瀛?      ---
+      duration_ms: 1.2964
+      type: 'test'
+      ...
+    # Subtest: W4-2 鎺ョ嚎鎴愬姛锛氱疆鍝ㄥ叺 + 瑁呭懡鍚嶇┖闂?+ 鍏敮鏌卞彲瑙ｆ瀽
+    ok 3 - W4-2 鎺ョ嚎鎴愬姛锛氱疆鍝ㄥ叺 + 瑁呭懡鍚嶇┖闂?+ 鍏敮鏌卞彲瑙ｆ瀽
+      ---
+      duration_ms: 8.6339
+      type: 'test'
+      ...
+    # Subtest: W4-3 骞傜瓑鍐嶆帴绾匡細鏃犻噸澶嶅壇浣滅敤锛坙oader 浠?1 娆?/ 鍛藉悕绌洪棿鍚屽紩鐢?/ 鍝ㄥ叺涓嶇炕鍊嶏級
+    ok 4 - W4-3 骞傜瓑鍐嶆帴绾匡細鏃犻噸澶嶅壇浣滅敤锛坙oader 浠?1 娆?/ 鍛藉悕绌洪棿鍚屽紩鐢?/ 鍝ㄥ叺涓嶇炕鍊嶏級
+      ---
+      duration_ms: 0.6399
+      type: 'test'
+      ...
+    # Subtest: W4-4 鏃犱骇鍝佸湪鍦猴細瀹夊叏 no-op锛堜笉缃摠鍏?/ 涓嶈鍛藉悕绌洪棿 / 涓嶆柊澧炲涓婚敭锛?    ok 5 - W4-4 鏃犱骇鍝佸湪鍦猴細瀹夊叏 no-op锛堜笉缃摠鍏?/ 涓嶈鍛藉悕绌洪棿 / 涓嶆柊澧炲涓婚敭锛?      ---
+      duration_ms: 0.2486
+      type: 'test'
+      ...
+    # Subtest: W4-5 L9 涓嶅彲鐢細瀹夊叏闄嶇骇 no-op锛坙oader 鎶涢敊 鈫?涓嶇疆鍝ㄥ叺锛?    ok 6 - W4-5 L9 涓嶅彲鐢細瀹夊叏闄嶇骇 no-op锛坙oader 鎶涢敊 鈫?涓嶇疆鍝ㄥ叺锛?      ---
+      duration_ms: 0.3302
+      type: 'test'
+      ...
+    # Subtest: W4-6 detach锛氬彲瑙傛祴澶嶄綅锛堝箓绛夋竻闄ゅ摠鍏典笌鍛藉悕绌洪棿锛?    ok 7 - W4-6 detach锛氬彲瑙傛祴澶嶄綅锛堝箓绛夋竻闄ゅ摠鍏典笌鍛藉悕绌洪棿锛?      ---
+      duration_ms: 0.493
+      type: 'test'
+      ...
+    1..7
+ok 214 - L9-W4 搂LO-2 褰卞瓙灞傛帴绾匡紙鍝ㄥ叺 / 璺緞闅旂 / 骞傜瓑 / 闄嶇骇锛?  ---
+  duration_ms: 14.5662
+  type: 'suite'
+  ...
+1..214
+# tests 503
+# suites 183
+# pass 503
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 25509.5239
+鉁?Node 鍗曞厓娴嬭瘯锛?03 鐢ㄤ緥锛?(25800ms)
+
+鈻?Playwright 闆嗘垚娴嬭瘯锛坈anonical v2.0-t3.html 路 L3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 鐢ㄤ緥锛?+ L13 6 = 171 鐢ㄤ緥
+  $ node node_modules/@playwright/test/cli.js test tests/t3-invariants.spec.ts tests/t3-commit-callbacks.spec.ts tests/t3-reference-semantics.spec.ts tests/t3-light-pollution.spec.ts tests/t4-history.spec.ts tests/t6-index.spec.ts tests/t7-index-worker.spec.ts tests/t8-persist-patch.spec.ts tests/t9-persist-layer.spec.ts tests/t10-idb-persist.spec.ts tests/t13-mb-workset.spec.ts
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 171 tests using 6 workers
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok   1 [chromium] 鈥?tests\t13-mb-workset.spec.ts:114:1 鈥?T-111 路 MB-SEAM 鍞竴寮傛杈圭晫锛坓etNodeAsync 缂轰綅 路 绾㈣瘉鍏堣锛?(2.1s)
+  ok   6 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:65:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?__juProduce / __juProduceSafe 寮曠敤濂戠害 鈥?瀵硅薄 + 淇敼锛氳繑鍥炴柊寮曠敤锛宐ase 鏈薄鏌?(2.5s)
+  ok   3 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:53:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?snapshot:true 鍏ュ巻鍙叉爤锛寀ndo 鍙洖閫€ (2.5s)
+  ok   4 [chromium] 鈥?tests\t3-light-pollution.spec.ts:60:3 鈥?P0-T3 Step3 路 light 鍘熷湴淇敼姹℃煋 鈥?light commit 鎴愬姛锛歴tate 寮曠敤鏀瑰彉锛坈opy-on-write锛夛紝updatedAt 琚?bump (2.2s)
+  ok   7 [chromium] 鈥?tests\t13-mb-workset.spec.ts:130:1 鈥?T-112 路 MB-LRU 涓婇檺锛堝伐浣滈泦 鈮?5,000锛変笌鍥炲～涓€鑷达紙缂轰綅 路 绾㈣瘉杞戒綋锛?(1.5s)
+  ok   2 [chromium] 鈥?tests\t10-idb-persist.spec.ts:99:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-93 N+P 路 鏈帴绾垮啓 8MB 鈫?QuotaExceededError锛涙帴绾垮悗 8MB/32MB 钀界洏鎴愬姛涓旀姇褰辩瓑浠?(4.3s)
+  ok   8 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:83:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?__juProduce / __juProduceSafe 寮曠敤濂戠害 鈥?瀵硅薄 + 绌?recipe锛氳繑鍥炲師寮曠敤锛圛mmer 寮忔湭淇敼涓嶅鍒讹級 (1.6s)
+  ok   9 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:65:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?light:true 涓嶅叆鍘嗗彶鏍堬紝undo 杩斿洖 false (1.5s)
+  ok   5 [chromium] 鈥?tests\t3-invariants.spec.ts:50:3 鈥?P0-T3 绗笁姝?路 缁撴瀯涓嶅彉閲忓鎷?鈥?鏍戠粨鏋勶細parent 鎸囧悜姝ｇ‘銆佺埗瀛愪竴鑷淬€乧hildren 鏃犻噸澶嶃€佹棤鐜?(4.9s)
+  ok  10 [chromium] 鈥?tests\t3-light-pollution.spec.ts:91:3 鈥?P0-T3 Step3 路 light 鍘熷湴淇敼姹℃煋 鈥?light + noRollback + action 鎶涢敊锛歴tate 鏈薄鏌擄紙produce 澶辫触澶╃劧鍥炴粴锛?(1.4s)
+  ok  11 [chromium] 鈥?tests\t13-mb-workset.spec.ts:148:1 鈥?T-113 路 瑙嗗彛闆嗗父椹伙紙瀹堝崼 鈶?路 瑙嗗彛娈?鈮?200 涓嶆窐姹?路 缂轰綅 路 绾㈣瘉杞戒綋锛?(1.4s)
+  ok  13 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:97:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?__juProduce / __juProduceSafe 寮曠敤濂戠害 鈥?recipe 杩斿洖闈?undefined锛氳繑鍥炲€煎師鏍烽€忎紶 (1.4s)
+  ok  12 [chromium] 鈥?tests\t10-idb-persist.spec.ts:212:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-94 N 路 buildPersistBatch 褰㈢姸/鍒犻櫎浼樺厛/涓婇檺锛堢函鍑芥暟锛?(1.6s)
+  ok  14 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:77:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?light:true 寮曠敤鏇挎崲锛堜笉鍐嶅師鍦版敼锛夛紝updatedAt 琚?bump (1.6s)
+  ok  16 [chromium] 鈥?tests\t3-light-pollution.spec.ts:126:3 鈥?P0-T3 Step3 路 light 鍘熷湴淇敼姹℃煋 鈥?light + safeClone 琚浛鎹?+ action 鎶涢敊锛歴tate 涓嶅彈褰卞搷锛堝浠芥満鍒跺凡绉婚櫎锛?(1.3s)
+  ok  15 [chromium] 鈥?tests\t3-invariants.spec.ts:288:3 鈥?P0-T3 绗笁姝?路 缁撴瀯涓嶅彉閲忓鎷?鈥?undo 鍚?state 涓庡揩鐓у€肩浉绛夈€佸紩鐢ㄤ笉绛夛紙鍘嗗彶鍓湰锛?(1.3s)
+  ok  17 [chromium] 鈥?tests\t13-mb-workset.spec.ts:166:1 鈥?T-114 路 TS-V 鍗曟帴鍏ョ偣 mbResolve锛堣鍥句笉鐩磋 state.nodes 路 绾㈣瘉杞戒綋 + 鎺㈤拡 ready锛?(1.5s)
+  ok  18 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:109:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?__juProduce / __juProduceSafe 寮曠敤濂戠害 鈥?鍘熷鍊?base锛氳繑鍥?recipe 杩斿洖鍊兼垨鍘熷€?(1.3s)
+  ok  19 [chromium] 鈥?tests\t10-idb-persist.spec.ts:301:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-95 P 路 l9_* 鈫?IDB 浜嬪姟 mock 绛変环锛圫-1/S-2 涓夋寮忥級 (1.3s)
+  -   23 [chromium] 鈥?tests\t13-mb-workset.spec.ts:186:1 鈥?T-115 路 M-B 鍐呭瓨灏侀《锛?00k 鐪熻妯￠椄闂?路 RSS 鈮?200MB锛?  ok  20 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:98:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?noHistory:true + snapshot:true 娓呯┖ historyFuture (1.3s)
+  -   26 [chromium] 鈥?tests\t13-mb-workset.spec.ts:242:1 鈥?T-116 路 闄嶇骇绛夐樁锛坥ff 鎬?鈮?L12 鍏ㄩ噺璺緞 路 鍝ㄥ叺 路 涓嶅彉閲?#33锛?  ok  21 [chromium] 鈥?tests\t3-light-pollution.spec.ts:157:3 鈥?P0-T3 Step3 路 light 鍘熷湴淇敼姹℃煋 鈥?闈?light + action 鎶涢敊锛歴tate 寮曠敤涓庡唴瀹瑰潎涓嶅彉 (1.2s)
+  ok  22 [chromium] 鈥?tests\t3-invariants.spec.ts:315:3 鈥?P0-T3 绗笁姝?路 缁撴瀯涓嶅彉閲忓鎷?鈥?杩炵画 undo/redo 鏀舵暃锛氱姸鎬佺ǔ瀹氥€佺┖鏍堣竟鐣?false銆佸彲鍐嶆仮澶?(1.2s)
+  ok  24 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:129:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?__juProduce / __juProduceSafe 寮曠敤濂戠害 鈥?recipe 鎶涢敊锛歜ase 寮曠敤涓庡唴瀹逛繚鎸佷笉鍙?(1.2s)
+  ok  25 [chromium] 鈥?tests\t10-idb-persist.spec.ts:394:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-96 P 路 鍗曟壒浜嬪姟鍘熷瓙鎬э紙涓€?throw 鈫?鏃犲崐鎵癸紝#28 寤朵几锛?(1.3s)
+  ok  27 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:109:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?noHistory:true 涓嶆薄鏌?historyPast锛坰napshot 涓嶅叆鏍堬級 (1.2s)
+  ok  28 [chromium] 鈥?tests\t4-history.spec.ts:47:3 鈥?L4 搂6.1 鏍戠粨鏋勪笉鍙橀噺鍦?undo 鍚庝繚鎸?鈥?T-01 undo 鍚庢牴鍙揪 + 鐖跺瓙浜掑弽 (1.1s)
+  ok  30 [chromium] 鈥?tests\t6-index.spec.ts:57:3 鈥?L6 搂7.1 extractChangedIds 鈥?T-01 绌?paths 杩斿洖绌?Set (1.2s)
+  ok  31 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:141:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?__juProduce / __juProduceSafe 寮曠敤濂戠害 鈥?__juProduceSafe 鎴愬姛锛歿ok:true, next}锛宯ext 鏄柊寮曠敤 (1.1s)
+  ok  32 [chromium] 鈥?tests\t10-idb-persist.spec.ts:452:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-97 P 路 鏃у簱杩佺Щ骞傜瓑锛堥€?id 鍊肩瓑浠凤級 (1.1s)
+  ok  37 [chromium] 鈥?tests\t10-idb-persist.spec.ts:509:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-98 闂ㄧ 路 verify.js 璁℃暟鍚屾锛?58 + N锛孡O-7锛?(14ms)
+  ok  33 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:118:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?persistOnly:true 瑙﹀彂鎸佷箙鍖栬皟搴︿絾涓嶅叆鍘嗗彶銆佷笉 notify锛坰ilent:true锛?(1.1s)
+  ok  34 [chromium] 鈥?tests\t4-history.spec.ts:79:3 鈥?L4 搂6.1 鏍戠粨鏋勪笉鍙橀噺鍦?undo 鍚庝繚鎸?鈥?T-02 undo 鍚庢棤鐜紙DFS 涓嶉噸澶嶈闂級 (1.1s)
+  ok  35 [chromium] 鈥?tests\t6-index.spec.ts:67:3 鈥?L6 搂7.1 extractChangedIds 鈥?T-02 鍗曡妭鐐逛慨鏀硅矾寰?鈫?鍗?id (985ms)
+  ok  36 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:161:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?__juProduce / __juProduceSafe 寮曠敤濂戠害 鈥?__juProduceSafe 澶辫触锛歿ok:false, base, error}锛宐ase 鏄師寮曠敤 (975ms)
+  ok  29 [chromium] 鈥?tests\t3-light-pollution.spec.ts:180:3 鈥?P0-T3 Step3 路 light 鍘熷湴淇敼姹℃煋 鈥?light 淇敼鍚?_lastWrittenJson 鎸囩汗涓嶄竴鑷达紝鎸佷箙鍖栧啓鍏ョ鐩?(2.7s)
+  ok  39 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:136:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?silent:true 涓嶈Е鍙?scheduleNotify锛泂ilent:false 瑙﹀彂 (972ms)
+  ok  40 [chromium] 鈥?tests\t4-history.spec.ts:103:3 鈥?L4 搂6.1 鏍戠粨鏋勪笉鍙橀噺鍦?undo 鍚庝繚鎸?鈥?T-03 undo 鍚?children 鏃犻噸澶?(1.0s)
+  ok  41 [chromium] 鈥?tests\t6-index.spec.ts:77:3 鈥?L6 搂7.1 extractChangedIds 鈥?T-03 澶氳妭鐐逛慨鏀硅矾寰?鈫?澶?id 鍘婚噸 (947ms)
+  ok  42 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:186:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?safeClone 娣辨嫹璐濋殧绂?鈥?椤跺眰涓庡祵濂楀潎涓烘柊寮曠敤 (1.0s)
+  ok  43 [chromium] 鈥?tests\t3-light-pollution.spec.ts:210:3 鈥?P0-T3 Step3 路 light 鍘熷湴淇敼姹℃煋 鈥?light 涓嶅叆鍘嗗彶鏍堬細杩炵画涓ゆ undo锛岀浜屾杩斿洖 false (1.1s)
+  ok  38 [chromium] 鈥?tests\t10-idb-persist.spec.ts:543:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-99 闂ㄧ 路 15+M 鏂圭櫥璁?RESULT=PASS锛堝摠鍏?路 涓嶅彉閲?#29 路 LO-8锛?(2.1s)
+  ok  46 [chromium] 鈥?tests\t6-index.spec.ts:88:3 鈥?L6 搂7.1 extractChangedIds 鈥?T-04 椤跺眰瀛楁锛堥潪 nodes.锛夆啋 涓嶆彁鍙?(937ms)
+  ok  45 [chromium] 鈥?tests\t4-history.spec.ts:127:3 鈥?L4 搂6.2 鍒犻櫎/澧撶涓嶅彉閲?鈥?T-04 undo 鍒犻櫎娓呭纰?(1.0s)
+  ok  44 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:153:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 鏍囧織璇箟 鈥?persistOnly:true 浠嶅啓鐩橈紙flush 鍚?localStorage 鍙樺寲锛?(1.8s)
+  ok  48 [chromium] 鈥?tests\t3-light-pollution.spec.ts:239:3 鈥?P0-T3 Step3 路 light 鍘熷湴淇敼姹℃煋 鈥?light + action 鎶涢敊 + silent:false锛歴cheduleNotify 琚皟鐢?(985ms)
+  ok  47 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:202:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?safeClone 娣辨嫹璐濋殧绂?鈥?淇敼鍓湰涓嶅奖鍝嶅師瀵硅薄 (1.0s)
+  ok  49 [chromium] 鈥?tests\t7-index-worker.spec.ts:51:3 鈥?L7-W1 搂8.1 妯″紡涓庡洖閫€ 鈥?T-35 Worker 涓嶅彲鐢?鈫?闄嶇骇 sync锛屽姛鑳戒笉闄嶇骇 (980ms)
+  ok  50 [chromium] 鈥?tests\t6-index.spec.ts:102:3 鈥?L6 搂7.2 collectSubtreeIds 鈥?T-05 绠€鍗?3 鑺傜偣閾?鈫?鏀堕泦 3 id (1.1s)
+  ok  51 [chromium] 鈥?tests\t4-history.spec.ts:142:3 鈥?L4 搂6.2 鍒犻櫎/澧撶涓嶅彉閲?鈥?T-05 undo 鍒犻櫎鎭㈠ parent + children (1.1s)
+  ok  53 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:219:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?safeClone 娣辨嫹璐濋殧绂?鈥?state 蹇収闅旂锛氫慨鏀瑰壇鏈笉鏀瑰彉 state (1.2s)
+  ok  52 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:172:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 dirtyText 涓夋€?鈥?dirtyText:true 澶辨晥鎸囧畾鏂囨。瀛楁暟缂撳瓨 (1.3s)
+  ok  54 [chromium] 鈥?tests\t8-persist-patch.spec.ts:79:3 鈥?L8-W1 搂8.1 閲囬泦锛堣剰闆嗘姇褰憋級 鈥?T-53 commit 鍚庝粎鏀瑰姩鑺傜偣鍏ヨ剰闆嗭紙寮曠敤鐩哥瓑 路 榛樿 patch 妯″紡锛?(1.2s)
+  ok  56 [chromium] 鈥?tests\t6-index.spec.ts:125:3 鈥?L6 搂7.2 collectSubtreeIds 鈥?T-06 鐜紩鐢ㄩ槻鎶わ紙child == parent锛?(1.2s)
+  ok  57 [chromium] 鈥?tests\t4-history.spec.ts:158:3 鈥?L4 搂6.2 鍒犻櫎/澧撶涓嶅彉閲?鈥?T-06 undo 鎭㈠鍚庤妭鐐瑰彲杈撅紙3 灞傚瓙鏍戯級 (1.2s)
+  ok  55 [chromium] 鈥?tests\t7-index-worker.spec.ts:77:3 鈥?L7-W1 搂8.1 妯″紡涓庡洖閫€ 鈥?T-36 blob worker 鍙敤锛坈lassic 路 淇 R1锛夆啋 ready + applyDelta ack锛坒ile:// 瀹炴祴 路 R5锛?(1.5s)
+  ok  58 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:238:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?commit 寮曠敤璇箟 鈥?闈?light 鎴愬姛锛歴tate 寮曠敤鏇挎崲锛屾棫寮曠敤涓嶈姹℃煋 (1.2s)
+  ok  59 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:185:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 dirtyText 涓夋€?鈥?dirtyText:false 涓嶅奖鍝嶅瓧鏁扮紦瀛?(1.2s)
+  ok  60 [chromium] 鈥?tests\t8-persist-patch.spec.ts:115:3 鈥?L8-W1 搂8.2 鎾ら攢/閲嶅仛鏍囪剰 鈥?T-54 undo/redo 鍚屾牱鏍囪剰锛堣惤鐩樺啓褰撳墠鎬侊紝涓庡巻鍙叉爤姝ｄ氦锛?(1.3s)
+  ok  61 [chromium] 鈥?tests\t6-index.spec.ts:145:3 鈥?L6 搂7.2 collectSubtreeIds 鈥?T-07 涓嶅瓨鍦ㄨ妭鐐?鈫?绌?Set (1.1s)
+  ok  63 [chromium] 鈥?tests\t7-index-worker.spec.ts:128:3 鈥?L7-W1 搂8.2 鍗忚涓庝唬娆?鈥?T-37 杩囨湡 gen 鍥炲寘琚涪寮冿紝褰撳墠 gen 璁℃暟 (1.2s)
+  ok  62 [chromium] 鈥?tests\t4-history.spec.ts:187:3 鈥?L4 搂6.3 鏍囩/绱㈠紩/缂撳瓨涓嶅彉閲?鈥?T-07 undo 鏂囨湰缂栬緫娓呮爣绛?(1.2s)
+  ok  64 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:252:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?commit 寮曠敤璇箟 鈥?闈?light 澶辫触锛歴tate 寮曠敤涓庡唴瀹瑰畬鍏ㄤ笉鍙?(1.2s)
+  ok  65 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:199:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 dirtyText 涓夋€?鈥?dirtyText:null 瀹炴祴璧板け鏁堣矾寰勶紙_clearWC=snapshot锛?(1.3s)
+  ok  66 [chromium] 鈥?tests\t8-persist-patch.spec.ts:156:3 鈥?L8-W1 搂8.3 杩滅鍚堝苟閲囬泦锛?22 淇濇寔涓嶅彉锛?鈥?T-55 mergeRemoteState 鍚庤繙绔柊鑺傜偣鍏ヨ剰闆嗭紙涓斾笉鏀瑰彉鍘嗗彶鏍堬級 (1.2s)
+  ok  67 [chromium] 鈥?tests\t6-index.spec.ts:163:3 鈥?L6 搂7.3 updateIncrementalIndexes 鈥?T-08 绌?changedIds 鈫?ok=true, added=0, removed=0 (1.1s)
+  ok  68 [chromium] 鈥?tests\t7-index-worker.spec.ts:145:3 鈥?L7-W1 搂8.2 鍗忚涓庝唬娆?鈥?T-38 榛樿 sync锛氶浂 Worker 鍒涘缓銆佺洿閫?L6 鏉冨▉瀹炵幇 (1.2s)
+  ok  69 [chromium] 鈥?tests\t4-history.spec.ts:201:3 鈥?L4 搂6.3 鏍囩/绱㈠紩/缂撳瓨涓嶅彉閲?鈥?T-08 undo 瑙﹀彂 _wordCountCache 娓呯┖ (1.2s)
+  ok  70 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:266:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?commit 寮曠敤璇箟 鈥?light 鎴愬姛锛歴tate 寮曠敤鏀瑰彉锛坈opy-on-write锛屼笉鍐嶅師鍦颁慨鏀癸級 (1.1s)
+  ok  72 [chromium] 鈥?tests\t8-persist-patch.spec.ts:204:3 鈥?L8-W1 搂8.4 杞垹/纭垹鍒嗘祦 + LO-3 瀛愭爲鍏ㄩ泦 鈥?T-56 杞垹杩?dirty锛涚‖鍒犺繘 removed 涓斿惈 pre 鎬佸瓙鏍?id 鍏ㄩ泦 (1.2s)
+  ok  71 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:214:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?濂戠害绾?路 dirtyText 涓夋€?鈥?dirtyDocs:null 鏄惧紡涓嶅け鏁堬紙涓嶅奖鍝嶅瓧鏁帮級 (1.3s)
+  ok  73 [chromium] 鈥?tests\t6-index.spec.ts:175:3 鈥?L6 搂7.3 updateIncrementalIndexes 鈥?T-09 4 绱㈠紩鏈瀯寤猴紙null锛夆啋 闈欓粯杩斿洖锛堜笉鎶涢敊锛?(1.1s)
+  ok  74 [chromium] 鈥?tests\t7-index-worker.spec.ts:174:3 鈥?L7-W1 搂8.3 鏌ヨ闄嶇骇 鈥?T-39 闈?worker 妯″紡涓?query 杩斿洖闄嶇骇缁撴灉涓斾笉鎶涢敊 (1.2s)
+  ok  75 [chromium] 鈥?tests\t4-history.spec.ts:220:3 鈥?L4 搂6.4 鍘嗗彶鏍堣竟鐣岋紙鍚堝苟瑙勫垯 + 14.M2锛?鈥?T-09 500ms 鍐呮枃鏈悎骞讹紙merge 妯″紡锛?(1.2s)
+  ok  76 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:283:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?commit 寮曠敤璇箟 鈥?杩炵画闈?light锛氭瘡娆?state 寮曠敤鍞竴 (1.2s)
+  ok  77 [chromium] 鈥?tests\t8-persist-patch.spec.ts:265:3 鈥?L8-W1 搂8.5 鍒犻櫎浼樺厛锛堢粓鎬佽鍐筹級 鈥?T-57 鍚?id 鍏堝叆 dirty 鍚庣‖鍒?鈫?浠呬繚鐣欎簬 removed锛坉irty 鍓旈櫎锛?(1.2s)
+  ok  78 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:233:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?璋冪敤鐐?路 actions.* 鈥?actions.addNode 鈫?snapshot 鍏ユ爤 (1.2s)
+  ok  79 [chromium] 鈥?tests\t6-index.spec.ts:198:3 鈥?L6 搂7.3 updateIncrementalIndexes 鈥?T-10 subtreeCleanup 妯″紡 鈫?浠呰蛋 4 绱㈠紩 remove 璺緞 (1.1s)
+  ok  82 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:299:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?commit 寮曠敤璇箟 鈥?updatedAt 涓ユ牸鍗曡皟閫掑锛堝悓姣鍐呬粛 +1锛?(886ms)
+  ok  81 [chromium] 鈥?tests\t4-history.spec.ts:240:3 鈥?L4 搂6.4 鍘嗗彶鏍堣竟鐣岋紙鍚堝苟瑙勫垯 + 14.M2锛?鈥?T-10 500ms 杈圭晫澶栦笉鍚堝苟 (1.6s)
+  ok  85 [chromium] 鈥?tests\t6-index.spec.ts:226:3 鈥?L6 搂7.3 updateIncrementalIndexes 鈥?T-11 op 鍙傛暟閫忎紶 (843ms)
+  ok  84 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:245:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?璋冪敤鐐?路 actions.* 鈥?actions.updateText 鈫?tags 閲嶇畻锛坃manualTags 鈭?姝ｆ枃 #鏍囩锛?(866ms)
+  ok  86 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:317:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?undo / redo 寮曠敤璇箟 鈥?undo 鍚?state 鏄柊寮曠敤锛堝巻鍙插壇鏈級锛屼笉鏄垵濮嬪紩鐢?(856ms)
+  ok  87 [chromium] 鈥?tests\t4-history.spec.ts:254:3 鈥?L4 搂6.4 鍘嗗彶鏍堣竟鐣岋紙鍚堝苟瑙勫垯 + 14.M2锛?鈥?T-11 缁撴瀯鎬ф搷浣滀笉鍚堝苟锛坰napshot 妯″紡锛?(779ms)
+  ok  88 [chromium] 鈥?tests\t6-index.spec.ts:251:3 鈥?L6 搂7.4 calIndexUpdate 鈥?T-12 鑺傜偣 date 鏀瑰彉 鈫?鏃?set 绉婚櫎 + 鏂?set 鍔犲叆 (787ms)
+  ok  89 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:255:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?璋冪敤鐐?路 actions.* 鈥?actions.toggleDone 鈫?done 缈昏浆 (820ms)
+  ok  83 [chromium] 鈥?tests\t8-persist-patch.spec.ts:419:3 鈥?L8-W2 搂8.6 鐪熷疄閫氶亾鎵瑰舰鐘?鈥?T-58 desktopInvoke(patch_nodes,{changed,deleted,seq,baseRev}) 鎵瑰舰鐘讹紙搂鍏?6.1/6.4锛?(2.3s)
+  ok  90 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:335:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?undo / redo 寮曠敤璇箟 鈥?redo 鍚?state 鏄柊寮曠敤锛坒uture 鍓湰锛?(890ms)
+  ok  92 [chromium] 鈥?tests\t6-index.spec.ts:286:3 鈥?L6 搂7.4 calIndexUpdate 鈥?T-13 鑺傜偣 _deleted 鈫?浠?date set 绉婚櫎 (857ms)
+  ok  93 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:268:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?璋冪敤鐐?路 actions.* 鈥?actions.moveNode 鈫?鎷掔粷绉诲叆鑷韩 (918ms)
+  ok  95 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:353:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?undo / redo 寮曠敤璇箟 鈥?鍘嗗彶鏍堟繁鎷疯礉闅旂锛歝ommit-commit-undo-undo-redo-redo 鐘舵€佹纭?(897ms)
+  ok  96 [chromium] 鈥?tests\t6-index.spec.ts:313:3 鈥?L6 搂7.5 tagIndexUpdate 鈥?T-14 鑺傜偣鍔?#newtag 鈫?tagIndex 鏂板 entry (842ms)
+  ok  97 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:279:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?璋冪敤鐐?路 actions.* 鈥?actions.removeNode 鈫?閫掑綊鍒犻櫎 + 澧撶鍐欏叆 (862ms)
+  ok  94 [chromium] 鈥?tests\t8-persist-patch.spec.ts:456:3 鈥?L8-W2 搂8.7 缁勬壒涓婇檺 + 瓒呴檺閫€鍏ㄩ噺 鈥?T-59 鍗曟壒 鈮?L8_MAX_PER_BATCH(500)锛涜剰闆?> L8_PATCH_MAX(2000) 鈫?over-threshold 閫€鍏ㄩ噺锛圖-6锛?(1.4s)
+  ok  99 [chromium] 鈥?tests\t6-index.spec.ts:335:3 鈥?L6 搂7.5 tagIndexUpdate 鈥?T-15 鑺傜偣鍒?#oldtag 鈫?tagIndex 绉婚櫎 entry (793ms)
+  ok  98 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:374:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?undo / redo 寮曠敤璇箟 鈥?淇敼鍘嗗彶鍓湰涓嶅奖鍝嶅綋鍓?state锛堥殧绂绘柇瑷€锛?(836ms)
+  ok 100 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:295:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?璋冪敤鐐?路 actions.* 鈥?actions.setDbColumnWidth 鈫?light锛屼笉鍏ュ巻鍙叉爤锛屽紩鐢ㄦ浛鎹€乶odes 鍏变韩 (857ms)
+  ok 103 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:398:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?鎸囩汗鏈哄埗涓庡紩鐢ㄨВ鑰?鈥?light 闈炵粨鏋勬彁浜わ細state 寮曠敤鏀瑰彉銆乢sidebarFingerprint 涓嶅彉 (710ms)
+  ok 102 [chromium] 鈥?tests\t6-index.spec.ts:362:3 鈥?L6 搂7.6 searchInvertedUpdate 鈥?T-16 鏂囨湰鏀?hello鈫抔oodbye 鈫?searchInverted 澧為噺 (713ms)
+  ok 106 [chromium] 鈥?tests\t6-index.spec.ts:397:3 鈥?L6 搂7.6 searchInvertedUpdate 鈥?T-17 CJK 瀛楃 token 鍒囧垎 (628ms)
+  ok 105 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:417:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?鎸囩汗鏈哄埗涓庡紩鐢ㄨВ鑰?鈥?闈?light 闈炵粨鏋勬彁浜わ細_sidebarFingerprint 涓嶅彉 (624ms)
+  ok 101 [chromium] 鈥?tests\t8-persist-patch.spec.ts:495:3 鈥?L8-W2 搂8.8 ack 鍥炴墽锛堟竻鑴?+ 鍩虹嚎缁存姢锛?鈥?T-60 ack 鍚庯細寮曠敤姣斿娓呰剰 / _removedNodes.delete / _diskConfirmed / _rev++ / _persistBatchSeq++ / _lastPersistFingerprint锛埪у叚 6.2锛?(2.2s)
+  ok 107 [chromium] 鈥?tests\t6-index.spec.ts:426:3 鈥?L6 搂7.7 backlinkMapUpdate 鈥?T-18 鑺傜偣鍔?[[doc1]] wiki 寮曠敤 鈫?backlinkMap 鏂板 (550ms)
+  ok 108 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:427:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?鎸囩汗鏈哄埗涓庡紩鐢ㄨВ鑰?鈥?姝ｆ枃缂栬緫涓嶆帹杩涙寚绾癸紝缁撴瀯鍙樻洿锛坅ddNode锛夋帹杩涙寚绾?(577ms)
+  ok 110 [chromium] 鈥?tests\t6-index.spec.ts:457:3 鈥?L6 搂7.7 backlinkMapUpdate 鈥?T-19 鑺傜偣鍒?[[doc1]] wiki 寮曠敤 鈫?backlinkMap 绉婚櫎 (603ms)
+  ok 111 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:460:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?鎸囩汗鏈哄埗涓庡紩鐢ㄨВ鑰?鈥?light 鍚?_lastWrittenJson 涓庡綋鍓?state 鎸囩汗瀵规瘮鍙劅鐭ュ彉鍖?(691ms)
+  ok 104 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:316:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?璋冪敤鐐?路 actions.* 鈥?actions.logActivity 鈫?1.5s 闃叉姈鍚?activity 璁板綍鍐欏叆 (2.5s)
+  ok 112 [chromium] 鈥?tests\t6-index.spec.ts:492:3 鈥?L6 搂7.8 undo/redo 鍙嶅悜澧為噺瀵圭О鎬?鈥?T-20 undo 鍙嶅悜澧為噺锛氫粠 post 鈫?pre 鐘舵€佸弽鍚戠淮鎶?(573ms)
+  ok 113 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:486:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?mergeRemoteState 鑺傜偣绾у紩鐢?鈥?杩滅鏂拌妭鐐癸細state.nodes[id] 鐩存帴寮曠敤杩滅瀵硅薄 (652ms)
+  ok 114 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:337:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?OBS 澶嶆牳 鈥?OBS-3 路 mindmap 鎷栨嫿 snapshot:false锛圫tep4 宸茶惤瀹氾級锛氫笉鍏ュ巻鍙叉爤 (628ms)
+  ok  80 [chromium] 鈥?tests\t7-index-worker.spec.ts:197:3 鈥?L7-W2 搂8.4 灏辩华鐪嬮棬鐙?鈥?T-40 鏋勯€犳垚鍔熶絾姘镐笉 ready 涓旀棤 onerror 鈫?閲嶅缓涓€娆″悗闄嶇骇 sync锛圵2 琛ュ彛锛?(8.6s)
+  ok 115 [chromium] 鈥?tests\t6-index.spec.ts:529:3 鈥?L6 搂7.8 undo/redo 鍙嶅悜澧為噺瀵圭О鎬?鈥?T-21 redo 鍙嶅悜澧為噺锛氫粠 pre 鈫?post 鐘舵€佸墠鍚戠淮鎶?(777ms)
+  ok 116 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:523:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?mergeRemoteState 鑺傜偣绾у紩鐢?鈥?杩滅杈冩柊锛氳鐩栨湰鍦板紩鐢?(831ms)
+  ok 117 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:357:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?OBS 澶嶆牳 鈥?OBS-1 路 commitPendingEditBeforeRender.word 鍥涙爣蹇楄涔夋纭?(850ms)
+  ok 118 [chromium] 鈥?tests\t7-index-worker.spec.ts:258:3 鈥?L7-W2 搂8.5 鏉冨▉鍒囧垎涓庡弻鍚戝鎷?鈥?T-41 褰卞瓙瀵规媿 mismatch 涓婃姤涓旂紦鍐插彈 _INDEX_SHADOW_CAP 闄愬埗 (847ms)
+  ok 109 [chromium] 鈥?tests\t8-persist-patch.spec.ts:534:3 鈥?L8-W2 搂8.9 杞婚噺鎸囩汗瀹堝崼 + 鎺㈤拡 w2 + 澶辫触缂撳啿 鈥?T-61 鏃犲彉鏇磋烦杩?invoke锛圖-8锛夛紱鎺㈤拡 w2 瀛楁锛沖_juPersistFailures 涓婇檺 L8_FAIL_CAP(50) (2.6s)
+  ok 119 [chromium] 鈥?tests\t6-index.spec.ts:571:3 鈥?L6 搂7.9 __juIndexFailures 鈥?T-22 瀹归噺 50 FIFO (910ms)
+  ok 120 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:556:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?mergeRemoteState 鑺傜偣绾у紩鐢?鈥?鏈湴杈冩柊锛氫繚鐣欐湰鍦板紩鐢?(991ms)
+  ok 121 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:381:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?P1 路 UI 涓€鑷存€?鈥?P1-1/P1-2 路 setDbColumnWidth / setDbRowHeight 涓嶆姏閿?(985ms)
+  ok 122 [chromium] 鈥?tests\t7-index-worker.spec.ts:282:3 鈥?L7-W2 搂8.5 鏉冨▉鍒囧垎涓庡弻鍚戝鎷?鈥?T-42 瀵规媿 mismatch 瓒呴槇鍊?鈫?鑷姩鍥為€€ shadow鈫抯ync 骞舵姤鍛婏紙#23锛?(996ms)
+  ok 124 [chromium] 鈥?tests\t6-index.spec.ts:585:3 鈥?L6 搂7.9 __juIndexFailures 鈥?T-23 杩炵画 3 娆″け璐?鈫?寮哄埗 4 绱㈠紩 null锛堣嚜鍐?2锛?(905ms)
+  ok 125 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:590:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?鍗遍櫓閿紩鐢ㄥ畨鍏?鈥?mergeRemoteState 璺宠繃 __proto__锛屼笉姹℃煋鍘熷瀷閾?(810ms)
+  ok 126 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:394:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?P1 路 UI 涓€鑷存€?鈥?P1-3 路 flushPendingLogs 娓呯┖ _logTimers (841ms)
+  ok 127 [chromium] 鈥?tests\t7-index-worker.spec.ts:309:3 鈥?L7-W2 搂8.5 鏉冨▉鍒囧垎涓庡弻鍚戝鎷?鈥?T-43 worker 妯″紡 calIndex/tagIndex 鏌ヨ = L6 鏉冨▉缁撴灉锛堢瓑浠锋€э級 (874ms)
+  ok 128 [chromium] 鈥?tests\t6-index.spec.ts:631:3 鈥?L6 搂7.10 #22.22.M1 merge 璞佸厤 鈥?T-24 mergeRemoteState 鍏ュ彛/鍑哄彛 __juInMerge 鍒囨崲 (868ms)
+  ok 129 [chromium] 鈥?tests\t3-reference-semantics.spec.ts:618:5 鈥?P0-T3 Step6 路 寮曠敤璇箟鏂█ 鈥?鍗遍櫓閿紩鐢ㄥ畨鍏?鈥?__juProduce 涓嶆竻娲楀嵄闄╅敭锛堟竻娲楄矗浠诲湪娑堣垂璺緞锛?(932ms)
+  ok 130 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:412:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?Step2 / Step3 鍥炲綊 鈥?Step2 路 闈?light 鎶涢敊鏃?state 寮曠敤涓庡唴瀹瑰畬鍏ㄤ笉鍙?(964ms)
+  ok 131 [chromium] 鈥?tests\t7-index-worker.spec.ts:357:3 鈥?L7-W2 搂8.5 鏉冨▉鍒囧垎涓庡弻鍚戝鎷?鈥?T-44 鏉冨▉鍒囨崲鍓嶇疆 ready 闂ㄦ锛堟湭灏辩华鎷掔粷鍒?worker锛?(1.0s)
+  ok 123 [chromium] 鈥?tests\t8-persist-patch.spec.ts:578:3 鈥?L8-W2 搂8.10 mode='full' 鍙岄噸瀹堝崼鍙嶅悜鎶ゆ爮 鈥?T-62 mode='full' 闃绘柇 patch 閫氶亾锛堥€€鍏ㄩ噺锛夛紱鍒囧洖 'patch' 鎵嶅彂鎵癸紙涓嶆墜鍔ㄨ烦闂革紝浠呯粡鍏紑 setMode锛?(2.9s)
+  ok 132 [chromium] 鈥?tests\t6-index.spec.ts:669:3 鈥?L6 搂7.11 fuzz 澧為噺涓€鑷存€?鈥?T-25 100 姝ラ殢鏈?date 鍙樻洿 鈫?澧為噺 vs 鍏ㄨ〃閲嶅缓涓€鑷?(1.1s)
+  ok 133 [chromium] 鈥?tests\t9-persist-layer.spec.ts:106:3 鈥?L9-W3 路 鎸佷箙灞?/ 鍔犺В瀵?/ 绱㈠紩 / Worker 鍗忚锛圥 灞?路 鐪熷疄娴忚鍣級 鈥?L9-1 褰卞瓙灞傛敞鍏ワ細浜у搧鍏ㄥ眬闆跺奖鍝?+ P1a 钀界洏 round-trip锛堝惈鍚?seq 閲嶆斁骞傜瓑 / 瓒呴檺閫€鍏ㄩ噺锛?(1.0s)
+  ok 134 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:426:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?Step2 / Step3 鍥炲綊 鈥?Step3 路 light + noRollback + action 鎶涢敊 鈫?鍘熷紩鐢ㄤ笉鍙樸€侀浂姹℃煋銆佹棤 kind (1.0s)
+  ok 135 [chromium] 鈥?tests\t7-index-worker.spec.ts:392:3 鈥?L7-W3 搂8.6 searchInverted / backlinkMap 杩佹潈濞?鈥?T-45 worker 妯″紡 searchInverted / searchInvertedDocs = L6 鏉冨▉缁撴灉锛堢瓑浠锋€э級 (1.1s)
+  ok 137 [chromium] 鈥?tests\t6-index.spec.ts:710:3 鈥?L6 搂7.11 fuzz 澧為噺涓€鑷存€?鈥?T-26 50 姝?tag 澧炲垹 fuzz 鈫?澧為噺 vs 鍏ㄨ〃閲嶅缓涓€鑷?(882ms)
+  ok 139 [chromium] 鈥?tests\t3-commit-callbacks.spec.ts:447:5 鈥?P0-T3 Step5 路 commit 鍥炶皟琛屼负楠岃瘉 鈥?Step2 / Step3 鍥炲綊 鈥?Step3 路 light + safeClone 瑕嗙洊 + action 鎶涢敊 鈫?produce 澶╃劧闅旂 (874ms)
+  ok 140 [chromium] 鈥?tests\t7-index-worker.spec.ts:497:3 鈥?L7-W3 搂8.6 searchInverted / backlinkMap 杩佹潈濞?鈥?T-46 worker 妯″紡 backlinkMap锛堝惈璁℃暟/澶氶噸闆嗗彛寰勶級= L6 鏉冨▉缁撴灉锛堢瓑浠锋€э級 (852ms)
+  ok 138 [chromium] 鈥?tests\t9-persist-layer.spec.ts:150:3 鈥?L9-W3 路 鎸佷箙灞?/ 鍔犺В瀵?/ 绱㈠紩 / Worker 鍗忚锛圥 灞?路 鐪熷疄娴忚鍣級 鈥?L9-2 鍔犺В瀵嗭紙娴忚鍣ㄧ湡瀹?WebCrypto锛夛細鍏ㄩ噺 roundtrip + 閫愭潯鎵规棤鏄庢枃 + 閿欏瘑鐮佹嫆缁?(1.1s)
+  ok 141 [chromium] 鈥?tests\t6-index.spec.ts:760:3 鈥?L6 搂7.12 calIndex 澶嶆椿瀵圭О鎬э紙#14.M4 / #15.M4锛?鈥?T-27 calIndexUpdate 澶嶆椿锛坃deleted true鈫抐alse, date 涓嶅彉锛夆啋 閲嶆柊鍔犲叆 (858ms)
+  ok 143 [chromium] 鈥?tests\t9-persist-layer.spec.ts:202:3 鈥?L9-W3 路 鎸佷箙灞?/ 鍔犺В瀵?/ 绱㈠紩 / Worker 鍗忚锛圥 灞?路 鐪熷疄娴忚鍣級 鈥?L9-3 绱㈠紩灞傦細build + 鍥涚储寮曟煡璇?+ 澧為噺 update 涓庡叏閲?rebuild 閫愰敭绛変环 (758ms)
+  ok 136 [chromium] 鈥?tests\t8-persist-patch.spec.ts:629:3 鈥?L8-W3 搂8.11 宕╂簝鎭㈠ 路 鍗婃壒锛圕OMMIT 鍓嶅穿婧?鈫?鎵瑰墠鎬侊級 鈥?T-63 鎵逛腑閫斿穿婧?鈫?宕╂椂鐩橀潰閫愬瓧鑺?== 鎵瑰墠锛堟棤鍗婃壒锛夛紱reload 鍚庢棤鎾曡鎵癸紙#28 / K-1 / K-5锛?(2.7s)
+  ok 142 [chromium] 鈥?tests\t7-index-worker.spec.ts:607:3 鈥?L7-W4 搂8.7 楠ㄦ灦灞?+ progress + 寮傛鍒嗗潡 鈥?T-47 楠ㄦ灦灞忓悓姝ユ覆鏌擄紙闃舵1锛? 杩涘害鍑哄彛 + 灏辩华鍚庡～鍏咃紙闃舵2锛?(885ms)
+  -  147 [chromium] 鈥?tests\t7-index-worker.spec.ts:699:8 鈥?L7-W4 搂8.7 楠ㄦ灦灞?+ progress + 寮傛鍒嗗潡 鈥?T-48 澶у簱锛?2k锛夊垏鏍囩瑙嗗浘锛氶樁娈? 鍚屾楠ㄦ灦 + 鍒嗗潡寤虹储寮?鈫?涓荤嚎绋?longtask=0 銆怶5 闅旂锛氳礋杞芥晱鎰?wall-clock 鎸囨爣銆?  -  148 [chromium] 鈥?tests\t7-index-worker.spec.ts:833:8 鈥?L7-W4 搂8.7 楠ㄦ灦灞?+ progress + 寮傛鍒嗗潡 鈥?T-49 澶у簱锛?2k锛夊垏鏃ュ巻瑙嗗浘锛氶樁娈? 鍚屾楠ㄦ灦 + 鍒嗗潡寤?calIndex 鈫?涓荤嚎绋?longtask=0 銆怶5 闅旂锛氳礋杞芥晱鎰?wall-clock 鎸囨爣銆?  ok 144 [chromium] 鈥?tests\t6-index.spec.ts:783:3 鈥?L6 搂7.12 calIndex 澶嶆椿瀵圭О鎬э紙#14.M4 / #15.M4锛?鈥?T-28 鍙嶅悜瀵圭О锛氳蒋鍒犵Щ闄?鈫?undo 澶嶆椿鍚?calIndex 澶嶅師 (733ms)
+  ok 145 [chromium] 鈥?tests\t9-persist-layer.spec.ts:247:3 鈥?L9-W3 路 鎸佷箙灞?/ 鍔犺В瀵?/ 绱㈠紩 / Worker 鍗忚锛圥 灞?路 鐪熷疄娴忚鍣級 鈥?L9-4 鍙彃鎷?mock 閫傞厤鍣?parity锛圛DB-style vs invoke-style锛夛細鍚屽簭鍒楀悓缁撴灉 + 鍚岄敊璇舰鐘?(793ms)
+  ok 150 [chromium] 鈥?tests\t6-index.spec.ts:815:3 鈥?L6 搂7.12 calIndex 澶嶆椿瀵圭О鎬э紙#14.M4 / #15.M4锛?鈥?T-29 restoreFromTrash 姝ｅ悜锛歞eleted鈫抋live 閲嶆柊鍔犲叆 calIndex (719ms)
+  ok 151 [chromium] 鈥?tests\t9-persist-layer.spec.ts:296:3 鈥?L9-W3 路 鎸佷箙灞?/ 鍔犺В瀵?/ 绱㈠紩 / Worker 鍗忚锛圥 灞?路 鐪熷疄娴忚鍣級 鈥?L9-5 Worker 鐢熷懡鍛ㄦ湡锛堢湡瀹?file:// classic Blob Worker锛夛細ready 鈫?PATCH ack 鈫?DISPOSE 骞傜瓑 鈫?post-dispose 鎷掔粷 (688ms)
+  ok 152 [chromium] 鈥?tests\t6-index.spec.ts:845:3 鈥?L6 搂7.13 M5 杈圭晫鏉′欢 + 娉ㄥ叆鐐归檷绾?鈥?T-30 杈圭晫锛氬娲?+ date 鍙樻洿锛堟棫 date 涓嶆畫鐣欍€佹柊 date 鍔犲叆锛?(532ms)
+  ok 149 [chromium] 鈥?tests\t7-index-worker.spec.ts:948:3 鈥?L7-W4 搂8.7 楠ㄦ灦灞?+ progress + 寮傛鍒嗗潡 鈥?T-50 progress 鍗忚锛歐orker fullRebuild 鍒嗗潡涓婃姤锛? 鈫?100%锛屽崟璋冿級鈫?涓荤嚎绋嬭繘搴﹀嚭鍙?+ 楠ㄦ灦杩涘害鏉?(1.5s)
+  ok 153 [chromium] 鈥?tests\t9-persist-layer.spec.ts:342:3 鈥?L9-W3 路 鎸佷箙灞?/ 鍔犺В瀵?/ 绱㈠紩 / Worker 鍗忚锛圥 灞?路 鐪熷疄娴忚鍣級 鈥?L9-6 RESULT 鍏宠仈 + 鍗忚褰㈢姸 + unknown-id 瀹夊叏蹇界暐锛堟棤鏈鐞嗘嫆缁?/ 鏃犳偓鎸?timer锛?(709ms)
+  ok 154 [chromium] 鈥?tests\t6-index.spec.ts:877:3 鈥?L6 搂7.13 M5 杈圭晫鏉′欢 + 娉ㄥ叆鐐归檷绾?鈥?T-31 杈圭晫锛氬箓绛?鈥斺€?绱㈠紩宸插惈璇?id 鏃跺娲讳笉閲嶅娣诲姞 (713ms)
+  ok 155 [chromium] 鈥?tests\t7-index-worker.spec.ts:1078:3 鈥?L7-W4 搂8.7 楠ㄦ灦灞?+ progress + 寮傛鍒嗗潡 鈥?T-51 寮傛鍒嗗潡鏋勫缓 = 鍚屾 L6 鏋勫缓锛? 绱㈠紩 digest 閫愰」涓€鑷?+ 鍦ㄩ€斿幓閲嶏級 (818ms)
+  ok 146 [chromium] 鈥?tests\t8-persist-patch.spec.ts:691:3 鈥?L8-W3 搂8.12 宕╂簝鎭㈠ 路 鎻愪氦鍚庢湭 ack锛圕OMMIT 宸茶惤鐩?鈫?鎵瑰悗鎬?+ 涓嶉噸鏀撅級 鈥?T-64 鎵瑰凡 COMMIT 浣?ack 涓㈠け 鈫?宕╂椂鐩橀潰 == 鎵瑰悗锛堝凡鎻愪氦涓嶄涪锛夛紱reload 鍚庢棤鍚?seq 閲嶆斁锛?28 / K-1 / K-2锛?(2.5s)
+  ok 156 [chromium] 鈥?tests\t6-index.spec.ts:906:3 鈥?L6 搂7.13 M5 杈圭晫鏉′欢 + 娉ㄥ叆鐐归檷绾?鈥?T-32 杈圭晫锛氱‖鍒犲瓙鏍戞竻鐞?鈫?undo 閫愯妭鐐归噸鍔狅紙鍙嶅悜瀵圭О锛?(705ms)
+  ok 157 [chromium] 鈥?tests\t7-index-worker.spec.ts:1213:3 鈥?L7-W5 搂8.8 #26 涓嶅彉閲忓摠鍏碉紙楠ㄦ灦灞?+ progress 鍑哄彛 + 鍒嗗潡寮傛鏋勫缓锛?鈥?T-52 #26 鍝ㄥ叺锛氶鏋朵袱闃舵 + progress 0鈫?00 鍗曡皟 + 鍒嗗潡棰勭畻 8ms + 寮傛鈮″悓姝?digest (824ms)
+  ok 159 [chromium] 鈥?tests\t6-index.spec.ts:957:3 鈥?L6 搂7.13 M5 杈圭晫鏉′欢 + 娉ㄥ叆鐐归檷绾?鈥?T-33 杈圭晫锛氱┖ changedIds + 鏃?subtreeIds 鈫?瀹夊叏绌烘搷浣?(504ms)
+  ok  91 [chromium] 鈥?tests\t4-history.spec.ts:273:3 鈥?L4 搂6.5 undo/redo 绛変环 + 鍐呭瓨 鈥?T-12 patch 鍐呭瓨鐩爣锛?0 鏉?< 30KB锛?(16.4s)
+  ok 160 [chromium] 鈥?tests\t6-index.spec.ts:976:3 鈥?L6 搂7.13 M5 杈圭晫鏉′欢 + 娉ㄥ叆鐐归檷绾?鈥?T-34 M5-2 娉ㄥ叆鐐归檷绾э細l6InjectionFailure 璁板綍澶辫触 + 寮哄埗 4 绱㈠紩 null (470ms)
+  ok 161 [chromium] 鈥?tests\t4-history.spec.ts:288:3 鈥?L4 搂6.5 undo/redo 绛変环 + 鍐呭瓨 鈥?T-13 undo 杩樺師绛変环锛坧atch 璺緞瑕嗙洊锛?(522ms)
+  ok 162 [chromium] 鈥?tests\t4-history.spec.ts:303:3 鈥?L4 搂6.5 undo/redo 绛変环 + 鍐呭瓨 鈥?T-14 redo 鎺ㄨ繘绛変环 (466ms)
+  ok 163 [chromium] 鈥?tests\t4-history.spec.ts:330:3 鈥?L4 搂6.6 澶氭爣绛?LWW + #22 杩滅鍚堝苟涓嶅彲鎾ら攢锛堜慨姝?1 鍚庯級 鈥?T-15 mergeRemoteState 淇濇寔 historyPast (446ms)
+  ok 164 [chromium] 鈥?tests\t4-history.spec.ts:353:3 鈥?L4 搂6.6 澶氭爣绛?LWW + #22 杩滅鍚堝苟涓嶅彲鎾ら攢锛堜慨姝?1 鍚庯級 鈥?T-16 undo 涓嶅緱瑙﹁揪 merge 涓棿鎬?(451ms)
+  ok 165 [chromium] 鈥?tests\t4-history.spec.ts:386:3 鈥?L4 搂6.7 鏃佽矾/鍏煎 + 绯荤粺鑷剤涓嶅叆鍘嗗彶 鈥?T-17 setDbColumnWidth 涓嶅叆鍘嗗彶锛堝吋瀹?light锛?(485ms)
+  ok 166 [chromium] 鈥?tests\t4-history.spec.ts:400:3 鈥?L4 搂6.7 鏃佽矾/鍏煎 + 绯荤粺鑷剤涓嶅叆鍘嗗彶 鈥?T-18 鏃?snapshot:true 鍏煎锛堚啋 historyMode snapshot锛?(424ms)
+  ok 167 [chromium] 鈥?tests\t4-history.spec.ts:414:3 鈥?L4 搂6.7 鏃佽矾/鍏煎 + 绯荤粺鑷剤涓嶅叆鍘嗗彶 鈥?T-20 dedupCalRoots (4731) 涓嶅叆鍘嗗彶锛堟緞娓?2锛?(449ms)
+  ok 168 [chromium] 鈥?tests\t4-history.spec.ts:447:3 鈥?L4 搂6.8 搴忓垪鍖栧け璐ラ檷绾?鈥?T-19 patch 搴忓垪鍖栧け璐?鈫?never + 璁板綍鎶ュ憡锛堟敞鍏ョ偣锛歝ommit 鏀跺彛 catch锛?(459ms)
+  ok 158 [chromium] 鈥?tests\t8-persist-patch.spec.ts:756:3 鈥?L8-W3 搂8.13 checkpoint 涓?patch 娣峰悎锛堝惈 OP-3 / #17 鍥炲綊瀛愭柇瑷€锛岀紪鍙蜂笉鏂板锛?鈥?T-65 N 鎵?patch + 1 娆″叏閲?checkpoint + M 鎵?patch锛氭姇褰遍€?id 绛変环 / sinceFull 褰掗浂 / 鏃犲鍎胯 / pending=false锛?27 / K-7 / D-10锛?(5.7s)
+  ok 169 [chromium] 鈥?tests\t8-persist-patch.spec.ts:884:3 鈥?L8-W4 搂8.14 璺緞闅旂 路 娴忚鍣紙闈炴闈級 鈥?T-66 闈炴闈細sent===0 涓斾笉閲囬泦锛沴ocalStorage[STORE_KEY] 鍏ㄩ噺鏇存柊锛埪т竷 7.3锛?(1.4s)
+  ok 170 [chromium] 鈥?tests\t8-persist-patch.spec.ts:939:3 鈥?L8-W4 搂8.15 璺緞闅旂 路 鍔犲瘑 鈥?T-67 鍔犲瘑鎬侊細妗岄潰浜︿笉鍙戞壒锛泈riteEncryptedStore 鍛戒腑锛涗笉閲囬泦锛埪т竷 7.2锛?(1.9s)
+  ok 171 [chromium] 鈥?tests\t8-persist-patch.spec.ts:994:3 鈥?L8-W4 搂8.16 鍝ㄥ叺 路 涓嶅彉閲?#27锛?00 姝ラ殢鏈哄簭鍒?路 璐熻浇椴佹锛?鈥?T-68 200 姝ュ/鏀?鍒?鎾ら攢/閲嶅仛/鍚堝苟鍚?鎶曞奖===鍐呭瓨锛堢粨鏋勬€?+ 鍗曡皟鎬э級 (6.8s)
+
+  4 skipped
+  167 passed (54.0s)
+鉁?Playwright 闆嗘垚娴嬭瘯锛坈anonical v2.0-t3.html 路 L3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 鐢ㄤ緥锛?+ L13 6 = 171 鐢ㄤ緥 (54975ms)
+
+鈻?涓嶅彉閲忚鐩栨槧灏勶紙ISSUE-028 路 鏈鐩栨竻鍗曪級
+  娓呭崟锛?.鍥炲綊涓庨獙鏀禱JU-涓嶅彉閲忔竻鍗?v2.0-frozen.md锛?15 鏉★級
+  宸茬櫥璁拌鐩栵細10 鏉°€€鏈鐩栵細105 鏉°€€寮曠敤鐢ㄤ緥锛?3 涓?  鏈鐩栦笉鍙橀噺锛?    #1 鏍瑰敮涓€涓斿彲杈?    #2 娲绘爲鐖跺瓙浜掑弽
+    #3 children 鏃犻噸澶嶃€佹棤骞界伒 id
+    #4 娲绘爲鏃犵幆銆佹棤澶氱埗
+    #5 闈炴牴娲昏妭鐐?parent 蹇呴』瀛樺湪涓旈潪鍒犻櫎
+    #6 鍒犻櫎鑺傜偣涓嶅湪娲绘爲
+    #7 鍥炴敹绔欏紩鐢ㄤ竴鑷?    #8 澧撶鏈夌晫銆乀TL 涓€鑷淬€佹仮澶嶅嵆娓?    #9 鏍囩骞堕泦鍏紡
+    #10 鏍囩绱㈠紩涓€鑷?    #11 鎼滅储缂撳瓨涓€鑷?    #12 鏃ュ巻绱㈠紩涓€鑷?    #13 瀛楁暟缂撳瓨涓€鑷?    #16 澶氭爣绛?LWW 鏀舵暃
+    #17 澶氭爣绛惧垹闄や紶鎾畧鍗?    #18 rev 鍗曡皟涓庡箍鎾棬鎺?    #22 杩滅鍚堝苟涓嶅彲鎾ら攢鎬э紙L4 闃舵 1.6 鏂板锛?    #43 鍘嗗彶鏍堥殧绂讳笌杩滅鍚堝苟涓嶅彲鎾ら攢锛堜氦鍙夊紩鐢級
+    #19 鍔犲瘑鍏滃簳鍙屽啓銆佹槑鏂囨渶灏忓寲涓庢仮澶?    #20 閿佸畾鎬佷笌鍔犲瘑澶囦唤涓嶇牬鍧忓瘑鏂?    #44 鍔犲瘑妯″紡涓嬬殑鏄庢枃鏈€灏忓寲涓庡穿婧冨厹搴曪紙浜ゅ弶寮曠敤锛?    #21 涓婚 token 涓嶅彉閲忥紙瑙嗚绾︽潫锛?    #24 鍒犻櫎瀛愭爲绱㈠紩鏀舵暃
+    #25 鎬ц兘棰勭畻
+    #26 楠ㄦ灦灞?+ progress 鍑哄彛 + 鍒嗗潡寮傛鏋勫缓
+    #28 钀界洏鎵瑰穿婧冨師瀛愭€?    #31 鐧昏閿氱偣娌荤悊鍚庨浂婕傜Щ锛堝惈鏂板閿氱偣闆嗭級
+    #34 鐜鍙揪鎬э紙Chrome / node 璺緞瀛樺湪鎬э級
+    #36 鍓创鏉垮琛屽繀鎷嗕笌棣栧熬绌鸿鍑€鍖栵紙INV-PASTE-01/02锛?    #37 鏃ュ巻寰呭姙绮樿创缁ф壙涓庡崟琛岃涔夐檷绾э紙INV-PASTE-03/04锛?    #38 绮樿创鎷嗗垎鍚庣殑娓叉煋涓庣劍鐐瑰悓姝ワ紙INV-PASTE-05 / INV-FOCUS-01锛?    #39 UI 甯冨眬涓庤鍥句氦浜掞紙INV-UI-01 ~ 07锛?    #40 搴曞眰鐘舵€佹祦涓庡鏍囩骞跺彂锛圛NV-STATE-01/02锛?    #41 寮哄埗瀹夊叏鍑€鍖栦笌杈撳叆娉曢殧绂伙紙INV-IME-01 / INV-SAFE-01锛?    #42 澶ф枃妗ｈ櫄鎷熸粴鍔ㄩ槇鍊硷紙INV-PERF-01锛?    #45 鎷栨嫿浜嬩欢闃插啿绐佷笌搴曢儴淇濇姢甯︼紙Drag Conflict & Safe Zone锛?    #46 杈撳叆妗嗕笌閲嶆覆鏌撶殑闃蹭涪瀛楁満鍒讹紙Anti-Data-Loss锛?    #47 UI 鐘舵€佷笌涓氬姟鐘舵€佺殑涓ユ牸闅旂锛圲I-State Isolation锛?    #48 鏃ュ巻鏃堕棿缃戞牸鐨勬寚閽堟崟鑾蜂笌鍚搁檮锛圥ointer Capture & Snap锛?    #49 渚ф爮妯″潡鍖栧寘瑁圭殑鍘熷湴鎼Щ鍘熷垯锛圖OM Reparenting锛?    #50 鎷栨嫿鏂瑰悜鏅鸿兘鍒ゅ畾涓庢枃鏈€変腑/澶氶€変簰鏂?    #51 閫変腑鎬佽瑙夌粺涓€涓哄崟鑹茶儗鏅笖鏃犺竟妗?    #52 浜や簰淇闂ㄧ涓庡搱甯岀櫥璁?    #53 澶氶€夌姸鎬佸鐢ㄤ笌闅旂锛坄_mSel` Model Reuse锛?    #54 鍥炴敹绔欐壒閲忔搷浣滈槻绱㈠紩婕傜Щ锛圛ndex Drift Prevention锛?    #55 鎵归噺鍒犻櫎鐨勪簩娆＄‘璁ゆ満鍒讹紙Batch Deletion Confirmation锛?    #56 瀵屾枃鏈紙Word锛夋ā寮忔棤鎹熶笅绾夸笌鏁版嵁杩佺Щ
+    #57 瑙嗗浘瀵艰埅涓€鑷存€т笌鎸夐挳婵€娲绘€?    #58 鏁版嵁搴撹〃鍚嶅疄鏃惰仈鍔ㄤ笌缂栬緫
+    #59 渚ф爮瀛愭爲澶氶€夐殧绂?    #60 妗岄潰绐楀彛鎸夐挳 API 涓庡畨鍏ㄩ檷绾?    #61 鏂囦欢澶?鏁版嵁搴撶┖鐘舵€佸崰浣嶅己鍚屾
+    #62 鐙珛瑙嗗浘杩斿洖鎸夐挳缁熶竴娓叉煋
+    #63 瀵艰埅閫変腑鎬佷弗鏍兼墽琛?#39锛堟挙閿€宸︿晶鑹叉潯灏濊瘯锛?    #64 澶辩劍浜嬩欢鏃ユ湡瑙ｆ瀽鍘婚噸
+    #65 搴曢儴鎶樺彔涓夐挳榛樿閫忔槑搴︼紙鍒绘剰璁捐淇濈暀锛?    #66 妯℃€佸脊绐楄儗鏅?inert 鐘舵€佸己鍚屾
+    #67 鏍囩璁℃暟鍥炶皟鍘婚噸涓庤鍥剧淮鎶ゆ敞閲?    #68 淇鐧昏锛氬鑸€変腑鎬佸洖閫€宸︿晶鑹叉潯锛堝榻?#63锛?    #69 淇鐧昏锛氫晶鏍忔暟鎹簱/鏄熸爣瀛愭爲澶氶€夛紙瀵归綈 #59锛?    #70 淇鐧昏锛氬瘜鏂囨湰澶氳绮樿创寮哄埗鎷嗗垎锛堝榻?#36锛?    #71 淇鐧昏锛欼ME 瀹堝崼鍓嶇Щ鑷抽琛岋紙瀵归綈 #41锛?    #72 淇鐧昏锛氭墜鍐欐ā鎬佹樉寮忓悓姝?inert锛堝榻?#66锛?    #73 淇鐧昏锛氬闂翠富棰?token 瀵归綈浠ｇ爜锛堝榻?#21锛?    #74 淇鐧昏锛氭柇瑷€鐢ㄤ緥 HTML 鑷浉鐭涚浘锛堝榻?#37锛?    #75 涓诲唴瀹瑰尯瀹藉害鑷€傚簲涓庝袱杈圭┖鐧芥敹鏁?    #77 骞荤伅鐗囪鍥捐嚜閫傚簲甯冨眬涓庝俊鎭綊浣?    #78 瀵煎叆浜岃繘鍒舵牸寮忔嫆缁?    #79 浜岃繘鍒朵贡鐮佹娴?    #80 docx 娈佃惤灞傜骇瀵煎叆
+    #81 鏃х増 .doc 鏄庣‘鎷掔粷
+    #82 瀵煎叆寮圭獥鏀寔鏍煎紡澹版槑涓庢爣棰樻爮鍥炬爣
+    #83 鍥剧墖瀵煎叆锛堝唴鑱?data URL锛?    #84 宸︿晶杈规爮鎶樺彔涓庤妭鐐硅瀵归綈
+    #85 鏍囩璋冭壊鏉垮樊寮傚寲涓庝綆鐏板害绾︽潫
+    #86 鏃ュ巻寰呭姙鍕鹃€夋涓庢爣绛捐壊缁熶竴
+    #87 鍕鹃€夋涓庢爣绛惧渾鐐规祬鑹插悓婧愯鑼?    #88 鏃ュ巻缃戞牸妯″潡鍖栦笌妯″潡闂磋窛 5px
+    #89 鏃ュ巻瑙嗗浘鍐呭鍖哄唴璺?5px 涓庢ā鍧楃瓑姣斾几缂╅槻鐣稿彉
+    #90 鏃ュ巻搴曢儴浜旀ā鍧椾綅缃ǔ瀹氭€т笌灏哄钀界洏鍙ｅ緞
+    #91 渚ц竟鏍忓彇娑堢缉杩涗笌鍥炬爣鏂囧瓧涓ユ牸瀵归綈
+    #92 鎶樺彔涓夎鎸夐挳鐐瑰嚮鎶樺彔鍙潬鎬?    #93 骞荤伅鐗囦富鑸炲彴闈㈢Н鏈€澶у寲涓庢暣浣撹创鍚堝眳涓?    #94 鏍囩閫夋嫨鍣ㄥ弽閫変笌瑙嗚鍙嶉
+    #95 涓婚鎸夐挳鍥炬爣鏇存浛涓庢牱寮忕粺涓€
+    #96 褰撴棩寰呭姙鍙抽敭鑿滃崟鎶樺彔鍖栦笌缁熶竴瑙嗚
+    #97 澶氶€夎妭鐐规壒閲忔牸寮忓寲涓庢牸寮忓埛鍏煎
+    #98 棰滆壊/瀛楀彿閫夋嫨鍣ㄥ嵆鐐瑰嵆鐢ㄤ笌甯冨眬鐭╅樀
+    #99 鏃ュ巻瀛楁暟缁熻妯″潡涓庡簳灞傚閲忚仛鍚?    #100 鏃ュ巻妯″潡鏍囬缁熶竴涓庢煴鐘跺浘琛ュ叏
+    #101 鏁版嵁搴撳伐鍏锋爮鏍囬涓庢寜閽粍瀵归綈
+    #102 鏃ュ巻妯″潡鏍囬琛岃鏁板唴鑱斿睍绀?    #103 鏃ュ巻鏂板寰呭姙婊氬姩浣嶇疆淇濇寔涓庣劍鐐规仮澶?    #104 鏃ュ巻寰呭姙榛樿瀛楅噸鍓ョ涓庡瘜鏂囨湰鍑€鍖?    #105 鍏ㄥ眬婊氬姩鏉℃瀬绠€鍖栦笌涓婚鑷€傚簲
+    #106 鎷栨嫿鎺掑簭涓庡悓鐖剁Щ鍔ㄧ储寮曢槻鍋忕Щ
+    #107 寰幆閬嶅巻闃叉剰澶栦腑鏂笌瀛愭爲婕忕畻
+    #108 澶栭儴鏃堕棿鏍囧噯瑙ｆ瀽涓庢湰鍦板寲瀵归綈
+    #109 寮傛娓叉煋闃茬珵鎬佷笌闃查珮浜畫鐣?    #110 鏁版嵁搴撲富鍒楅『寤朵笌娓叉煋鎬ц兘浼樺寲
+    #111 鏃╅€€瑙嗗浘娲剧敓闈㈡澘鍚屾涓庡彉閲忎綔鐢ㄥ煙闃查伄钄?    #112 淇敼闂ㄧ涓庣櫥璁版牳瀹?    #113 澶х翰 text 鍐呮嫋鎷芥柟鍚戝垽瀹氫笌鍘熺敓鏂囧瓧閫夊尯鍏煎
+    #114 澶氶€夎妭鐐瑰鍒?/ 鍓垏锛堢郴缁熷壀璐存澘鍚屾閫氶亾锛?    #115 澶氶€夎妭鐐圭矘璐达紙鍓嶇紑璇嗗埆涓庤惤鐐硅鍒欙級
+鉁?涓嶅彉閲忚鐩栨槧灏勶紙ISSUE-028 路 鏈鐩栨竻鍗曪級 (鏈鐩?105/115 鏉? 36ms)
+
+鈻?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?  $ node scripts/compare-bench.js bench-p0-baseline.json bench-p0-after-t3.json --exclude-op=commitRewriteAllText
+[compare-bench] 鎺掗櫎鍦烘櫙锛堜笉鍙備笌鍒ゅ畾/閫€鍑虹爜锛夛細commitRewriteAllText
+# 鍩哄噯瀵规瘮
+
+- baseline: `baseline` sha256=`0635e55a2c8212d6鈥
+- after   : `after` sha256=`846ccdc9f794f1b6鈥
+- 杩愯鏃堕棿: baseline 2026-10-08T16:03:18.291Z / after 2026-10-08T16:03:28.509Z
+
+| op | size | baseline median (ms) | after median (ms) | delta | baseline p95 | after p95 | p95 delta | 鍒ゅ畾 |
+|---|---|---|---|---|---|---|---|---|
+| commitLight | 100 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.2 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| commitLight | 500 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.1 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| commitNonLight | 100 | 0.2 | 0.1 | -50.0% | 0.5 | 0.4 | -20.0% | 鉁?閫氳繃 |
+| commitNonLight | 500 | 0.8 | 0.2 | -75.0% | 1.5 | 0.5 | -66.7% | 鉁?閫氳繃 |
+| commitRewriteAllText | 100 | 0.2 | 0.4 | 鈥?| 0.4 | 1 | 鈥?| 鈴?鎺掗櫎锛?-exclude-op锛?|
+| commitRewriteAllText | 500 | 0.9 | 2.1 | 鈥?| 1.5 | 3.1 | 鈥?| 鈴?鎺掗櫎锛?-exclude-op锛?|
+| juProduce@100 | - | - | - | - | - | - | - | 缂烘暟鎹紙baseline鏃犳鍦烘櫙锛?|
+| juProduce@1000 | - | - | - | - | - | - | - | 缂烘暟鎹紙baseline鏃犳鍦烘櫙锛?|
+| juProduce@5000 | - | - | - | - | - | - | - | 缂烘暟鎹紙baseline鏃犳鍦烘櫙锛?|
+| mergeRemoteNew | 1 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.2 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| mergeRemoteUpdate | 1 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.1 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| safeClone | 100 | 0.1 | 0.1 | 0.0% | 0.5 | 0.5 | 0.0% | 鉁?閫氳繃 |
+| safeClone | 1000 | 1 | 1 | 0.0% | 1.6 | 1.4 | -12.5% | 鉁?閫氳繃 |
+| safeClone | 5000 | 5.9 | 5.7 | -3.4% | 8.8 | 9 | 2.3% | 鉁?閫氳繃 |
+| undoRedo | 100 | 0.7 | 0.6 | -14.3% | 2.9 | 1.5 | -48.3% | 鉁?閫氳繃 |
+| undoRedo | 500 | 3.2 | 2.5 | -21.9% | 6.5 | 4.6 | -29.2% | 鉁?閫氳繃 |
+
+## 鎽樿
+
+- 鍙瘮鍦烘櫙鎬绘暟锛?
+- 鉁?閫氳繃锛坉elta 鈮?+30%锛夛細7
+- 鈿?璀﹀憡锛?30% < delta 鈮?+100%锛夛細0
+- 鉂?澶辫触锛坉elta > +100%锛夛細0
+- 鏈€澶ф伓鍖栵細0.0%
+- 涓綅鏁版伓鍖栵細-14.3%
+鉁?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?(84ms)
+
+鈹佲攣 姝ラ鎽樿 鈹佲攣
+  鉁?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?(15ms)
+  鉁?Node 鍗曞厓娴嬭瘯锛?03 鐢ㄤ緥锛?(25800ms)
+  鉁?Playwright 闆嗘垚娴嬭瘯锛坈anonical v2.0-t3.html 路 L3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 鐢ㄤ緥锛?+ L13 6 = 171 鐢ㄤ緥 (54975ms)
+  鉁?涓嶅彉閲忚鐩栨槧灏勶紙ISSUE-028 路 鏈鐩栨竻鍗曪級锛堟湭瑕嗙洊 105 鏉★級 (36ms)
+  鉁?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?(84ms)
+
+[verify] 鍏ㄩ儴閫氳繃

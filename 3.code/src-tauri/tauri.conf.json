@@ -1,0 +1,86 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "JU",
+    "version": "2.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "window": {
+        "all": false,
+        "minimize": true,
+        "maximize": true,
+        "unmaximize": true,
+        "close": true,
+        "hide": true,
+        "setAlwaysOnTop": true,
+        "startDragging": true
+      },
+      "protocol": { "all": false, "asset": true, "assetScope": ["$APPDATA/ju-media/**"] },
+      "dialog": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.ju.app",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": ["nsis"],
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: asset: http://asset.localhost; connect-src 'self'; worker-src 'self' blob:; media-src 'self' data: asset: http://asset.localhost"
+    },
+    "updater": {
+      "active": false,
+      "dialog": true,
+      "endpoints": []
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 900,
+        "resizable": true,
+        "title": "JU",
+        "width": 1200,
+        "decorations": false,
+        "fileDropEnabled": false,
+        "transparent": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+﻿[parity] v2.1.0-2026-11-09/JU-v2.1-Web.html  553f9b2a3bdc6afdbfc9cd953766d4c68f6731e09d7685ef08320877ecd4e92e
+[parity] dist/index.html  553f9b2a3bdc6afdbfc9cd953766d4c68f6731e09d7685ef08320877ecd4e92e
+[parity] ✓ 归档 Web 与 dist 一致
+[parity] v2.1.0-2026-11-09/JU-v2.1-win-x64.exe  cf9536c9acb2c3d970cea9e6d551d435965c6b5098a038533712aba9de0656fc
+[parity] 6.P0-T3基线\m07-vite\src-tauri\target\release\ju.exe  cf9536c9acb2c3d970cea9e6d551d435965c6b5098a038533712aba9de0656fc
+[parity] ✓ 归档 exe 与构建产物一致
+[parity] ✓ exe ≥ src 最新变更
+[parity] ✓ 归档源码指纹与当前源码一致 4a891ea4d149b94df387802d03c7589875bd29741c777cf3c0533429f532c9a6
+[parity] v2.1.0-2026-11-09/JU_2.1.0_x64-setup.exe  4468424 bytes  ✓
+[parity] ✓ checksums 3 项复算一致

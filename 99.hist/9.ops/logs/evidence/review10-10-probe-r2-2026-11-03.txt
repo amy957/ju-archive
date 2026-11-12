@@ -1,0 +1,16 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-D4Uwb0db.js
+[plugin vite:singlefile] Inlining: style-mkbkehBu.css
+[probe] day={"--bg-soft":"rgb(202, 211, 195)","--bg-mid":"rgb(214, 227, 203)","--bg-panel2":"rgb(226, 237, 215)","--bg-menu":"rgb(211, 222, 201)","--line-soft":"rgb(189, 204, 174)","--accent-soft":"rgb(201, 220, 196)","--bg":"rgb(223, 236, 213)"}
+[probe] night={"--bg-soft":"rgb(21, 42, 74)","--bg-mid":"rgba(21, 42, 74, 0.55)","--bg-panel2":"rgba(29, 53, 94, 0.55)","--bg-menu":"rgb(18, 35, 63)","--line-soft":"rgba(255, 255, 255, 0.12)","--accent-soft":"rgba(20, 45, 80, 0.85)","--bg":"rgb(10, 25, 41)"}
+[probe] print={"--bg-soft":"rgb(202, 211, 195)","--bg-mid":"rgb(214, 227, 203)","--bg-panel2":"rgb(226, 237, 215)","--bg-menu":"rgb(211, 222, 201)","--line-soft":"rgb(189, 204, 174)","--accent-soft":"rgb(201, 220, 196)","--bg":"rgb(223, 236, 213)"}
+[probe] RESULT=PASS
+  ok 1 [chromium] 鈥?tests\probe-review10-10.spec.ts:9:1 鈥?review10-10 路 :root hex 鎻愪负 --c-* 鍚庢棩/澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?(3.1s)
+
+  1 passed (4.8s)

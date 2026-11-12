@@ -1,0 +1,45 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 14 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/14] [chromium] › tests\v21-fix10-settings-ui.spec.ts:119:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 全库加密 #setEncrypt：点击 → 设密码面板；取消 → ui().encrypted 仍为 false；已加密态点击 → 二次确认框（取消不改状态）
+[chromium] › tests\v21-fix10-settings-ui.spec.ts:119:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 全库加密 #setEncrypt：点击 → 设密码面板；取消 → ui().encrypted 仍为 false；已加密态点击 → 二次确认框（取消不改状态）
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-Bfhcu5TJ.js
+
+[plugin vite:singlefile] Inlining: style-BxcvMRpA.css
+
+[2/14] [chromium] › tests\v21-fix10-settings-ui.spec.ts:174:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 备份位置·浏览 #btnBackupDirPick：点击 → 拦到 filechooser；拦不到记 BLOCKED_DIALOG（不判 FAIL）
+[3/14] [chromium] › tests\v21-fix10-settings-ui.spec.ts:207:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 快捷键 · 查看 #setShortcuts：点击 → .modal-overlay 出现且含快捷键文本
+[4/14] [chromium] › tests\v21-fix10-settings-ui.spec.ts:225:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 反馈与错误上报 #btnFeedback：点击 → 模态出现（count>0）且含三个动作按钮
+[5/14] [chromium] › tests\v21-fix2-btnsync.spec.ts:157:3 › 第二轮 · #btnSettings 契约解耦（事件单一消费） › 单次点击打开面板；连点两次仍打开（幂等开启，不翻转误关）
+[chromium] › tests\v21-fix2-btnsync.spec.ts:157:3 › 第二轮 · #btnSettings 契约解耦（事件单一消费） › 单次点击打开面板；连点两次仍打开（幂等开启，不翻转误关）
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-Bfhcu5TJ.js
+
+[plugin vite:singlefile] Inlining: style-BxcvMRpA.css
+
+[6/14] [chromium] › tests\v21-fix2-btnsync.spec.ts:188:3 › 第二轮 · #btnSettings 契约解耦（事件单一消费） › window.JU.openSettings() / closeSettings() 与按钮行为一致
+[7/14] [chromium] › tests\v21-fix30-topbar-popover.spec.ts:7:1 › fix30 · 浮窗初始关闭 · 提醒浮窗落在视口内
+[8/14] [chromium] › tests\v21-fix31-topbar-popover.spec.ts:7:1 › fix31 · 顶栏设置/提醒浮窗可开且落在视口内 · 置顶有反馈
+[9/14] [chromium] › tests\v21-fix9-settings-bind.spec.ts:135:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 字号滑杆 #setFontSize：拖到 155 → ui().scale ≈ 1.55 + --font-size 变化 + 百分比更新
+[chromium] › tests\v21-fix9-settings-bind.spec.ts:135:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 字号滑杆 #setFontSize：拖到 155 → ui().scale ≈ 1.55 + --font-size 变化 + 百分比更新
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-Bfhcu5TJ.js
+
+[plugin vite:singlefile] Inlining: style-BxcvMRpA.css
+
+[10/14] [chromium] › tests\v21-fix9-settings-bind.spec.ts:178:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 自动备份开关 #setAutoBackupClose：点击 → ui().autoBackupOnClose 变化 + .switch.on 变化
+[11/14] [chromium] › tests\v21-fix9-settings-bind.spec.ts:213:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 恢复默认路径 #btnBackupDirReset：点击 → toast「已恢复默认备份路径」+ ui().backupDir 清空
+[12/14] [chromium] › tests\v21-fix9-settings-bind.spec.ts:228:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 从备份恢复 #btnRestoreBackup：点击 → 打开导入弹窗（openImportDialog）
+[13/14] [chromium] › tests\v21-fix9-settings-bind.spec.ts:244:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 系统提醒通知 #setReminder：点击 → ui().reminderEnabled === true + .switch.on 翻转（REG-9 撤回）
+[14/14] [chromium] › tests\v21-fix9-settings-bind.spec.ts:275:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 4 项已恢复：全库加密 / 备份位置·浏览 / 快捷键 / 反馈 count=1 且点击有可观测反应
+  14 passed (38.6s)

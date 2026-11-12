@@ -1,0 +1,48 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+REVIEW906 {"total":5,"leaked":["[JU-RT] 1 JSHandle@node JSHandle@node REVIEW906-SECRET-TEXT"],"logs":["[btnSet] clicked","[popover] toggle settingsPanel","[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o","[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o","[JU-RT] 1 JSHandle@node JSHandle@node REVIEW906-SECRET-TEXT"],"post":{"sel":"REVIEW906-SECRET-TEXT","html":"<span style=\"color: rgb(158, 46, 36); font-size: 15px; font-weight: bold;\">REVIEW906-SECRET-TEXT</span>"}}
+  x  1 [chromium] › tests\probe-review9-06.spec.ts:16:1 › review9-06 · 加密态选中正文加粗，控制台不得出现正文 (2.7s)
+
+
+  1) [chromium] › tests\probe-review9-06.spec.ts:16:1 › review9-06 · 加密态选中正文加粗，控制台不得出现正文 ───────────
+
+    Error: 控制台不得输出所选正文
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "[JU-RT] 1 JSHandle@node JSHandle@node REVIEW906-SECRET-TEXT",
+    + ]
+
+      27 |   console.log('REVIEW906', JSON.stringify({ total: logs.length, leaked, logs, post }));
+      28 |   expect(post.html, 'applyInlineStyle 必须实际执行（颜色写入 DOM）').toContain('color');
+    > 29 |   expect(leaked, '控制台不得输出所选正文').toEqual([]);
+         |                                 ^
+      30 |   await ctx.close();
+      31 | });
+      32 |
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\probe-review9-06.spec.ts:29:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\probe-review9-06-review9-06-·-加密态选中正文加粗，控制台不得出现正文-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\probe-review9-06-review9-06-·-加密态选中正文加粗，控制台不得出现正文-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\probe-review9-06-review9-06-·-加密态选中正文加粗，控制台不得出现正文-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\probe-review9-06-review9-06-·-加密态选中正文加粗，控制台不得出现正文-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\probe-review9-06.spec.ts:16:1 › review9-06 · 加密态选中正文加粗，控制台不得出现正文 ────────────

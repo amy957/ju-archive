@@ -1,0 +1,26 @@
+import { test, expect } from '@playwright/test';
+import { prepare, skeleton, ready } from './review8-helpers';
+const PW = 'review11-pw';
+const IMP = JSON.stringify({ tagColors: {}, rootId: 'r', nodes: { r: { id: 'r', text: '', parent: null, children: [], collapsed: false, done: false, date: null, tags: [], priority: 0, createdAt: 1, updatedAt: 1 } } });
+const pre = (p: any) => p.evaluate(() => localStorage.getItem('juju.backup.preimport') || '');
+const root = (p: any) => p.evaluate(() => { const J = (window as any).JU; const s = J && J.getState(); return s && s.nodes[s.rootId] ? String(s.nodes[s.rootId].text || '') : ''; });
+test('review11 · 主库可读时残留密文快照不得覆盖主库且被一次性消费', async ({ context, page }) => {
+  test.setTimeout(180_000); await prepare(context); await skeleton(context); await page.goto('/'); await ready(page);
+  await page.evaluate((pw: string) => { const J = (window as any).JU; const u = typeof J.ui === 'function' ? J.ui() : J.ui; u.encrypted = true; u.encKey = pw; const s = J.getState(); (window as any).__r11root = s.rootId; s.nodes['snap-root'] = { id: 'snap-root', text: 'REVIEW10-PREIMPORT', parent: null, children: [], collapsed: false, done: false, date: null, tags: [], priority: 0, createdAt: 1, updatedAt: 1 }; s.rootId = 'snap-root'; s.updatedAt = Date.now() + 60_000; (window as any).__r11stamp = s.updatedAt; J.flushPersistNow(); }, PW);
+  await expect.poll(async () => page.evaluate(() => localStorage.getItem('juju.enc.v1') || ''), { timeout: 60_000 }).not.toBe('');
+  const stamp = await page.evaluate(() => (window as any).__r11stamp);
+  await expect.poll(() => page.evaluate(() => (window as any).JU.getState().updatedAt), { timeout: 60_000 }).toBeGreaterThanOrEqual(stamp);
+  await page.evaluate((json: string) => { const f = new File([json], 'r11.json', { type: 'application/json' }); void (window as any).JU.handleImportFiles([f]); }, IMP);
+  await page.locator('.modal-overlay .modal [data-cancel]').click({ timeout: 30_000 });
+  await expect.poll(() => pre(page), { timeout: 60_000 }).toContain('"enc"');
+  await expect.poll(() => page.evaluate(() => (window as any).JU.getState().rootId), { timeout: 60_000 }).toBe('snap-root');
+  const encBefore = await page.evaluate(() => localStorage.getItem('juju.enc.v1') || '');
+  await page.evaluate(() => { const J = (window as any).JU; const s = J.getState(); s.rootId = (window as any).__r11root; s.nodes[s.rootId].text = 'REVIEW11-KEEP'; J.flushPersistNow(); });
+  await expect.poll(async () => page.evaluate(() => localStorage.getItem('juju.enc.v1') || ''), { timeout: 60_000 }).not.toBe(encBefore);
+  await page.evaluate(() => { (window as any).JU.flushPersistNow(); });
+  await expect.poll(() => page.evaluate(() => { const J = (window as any).JU; const s = J.getState(); return String(s.nodes[s.rootId].text || '') === 'REVIEW11-KEEP' && !!localStorage.getItem('juju.enc.v1'); }), { timeout: 60_000 }).toBe(true);
+  await page.reload(); await page.waitForSelector('#unlockPwd', { timeout: 60_000 });
+  await page.fill('#unlockPwd', PW); await page.click('#unlockOk');
+  await expect.poll(() => root(page), { timeout: 90_000 }).toBe('REVIEW11-KEEP');
+  await expect.poll(async () => pre(page), { timeout: 60_000 }).toBe('');
+});

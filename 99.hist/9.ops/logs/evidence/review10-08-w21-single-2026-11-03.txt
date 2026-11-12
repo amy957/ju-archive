@@ -1,0 +1,160 @@
+﻿TAP version 13
+# [L16-W21] baseline property.clean={"iterations":200,"legacyScenarios":22,"invFails":{"I1":0,"I2":22,"I3":0}}
+# [L16-W21] property.clean={"iterations":200,"legacyScenarios":22,"invFails":{"I1":0,"I2":0,"I3":0}}
+# [L16-W21] merge(20,001 nodes / second-unit remote) P95 = 318.34 ms锛坅ttempt 1/3锛岄绠?200 ms锛?# [L16-W21] merge(20,001 nodes / second-unit remote) P95 = 452.33 ms锛坅ttempt 2/3锛岄绠?200 ms锛?# [L16-W21] merge(20,001 nodes / second-unit remote) P95 = 252.46 ms锛坅ttempt 3/3锛岄绠?200 ms锛?# Subtest: L16-W21 搂A 缁撴瀯閿氱偣
+    # Subtest: A1: 鏂板 _normToMs 涓斿惈绉?/ 寰 / 鍘熸牱涓夊垎鏀?    ok 1 - A1: 鏂板 _normToMs 涓斿惈绉?/ 寰 / 鍘熸牱涓夊垎鏀?      ---
+      duration_ms: 0.8367
+      type: 'test'
+      ...
+    # Subtest: A2: merge 娈靛唴鏃у彛寰?_norm( 璋冪敤娈嬬暀 0
+    ok 2 - A2: merge 娈靛唴鏃у彛寰?_norm( 璋冪敤娈嬬暀 0
+      ---
+      duration_ms: 0.355
+      type: 'test'
+      ...
+    # Subtest: A3: remoteUpdatedAt 涓庡叏灞€ state.updatedAt 鍚屽彛寰勫綊涓€
+    ok 3 - A3: remoteUpdatedAt 涓庡叏灞€ state.updatedAt 鍚屽彛寰勫綊涓€
+      ---
+      duration_ms: 0.1606
+      type: 'test'
+      ...
+    # Subtest: A4: 褰掍竴鍑芥暟浣嶄簬 merge 浣滅敤鍩熷唴涓斿厛浜?remoteUpdatedAt
+    ok 4 - A4: 褰掍竴鍑芥暟浣嶄簬 merge 浣滅敤鍩熷唴涓斿厛浜?remoteUpdatedAt
+      ---
+      duration_ms: 0.2248
+      type: 'test'
+      ...
+    1..4
+ok 1 - L16-W21 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 2.7439
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂B _normToMs 褰掍竴
+    # Subtest: B1: 绉掔骇锛?<v<1e10锛壝?000
+    ok 1 - B1: 绉掔骇锛?<v<1e10锛壝?000
+      ---
+      duration_ms: 0.226
+      type: 'test'
+      ...
+    # Subtest: B2: 姝ｅ父姣锛?e12~1e13锛夊師鏍疯繑鍥烇紙鏃犲壇浣滅敤锛?    ok 2 - B2: 姝ｅ父姣锛?e12~1e13锛夊師鏍疯繑鍥烇紙鏃犲壇浣滅敤锛?      ---
+      duration_ms: 0.1474
+      type: 'test'
+      ...
+    # Subtest: B3: 寰绾э紙>8.64e14锛壝?000
+    ok 3 - B3: 寰绾э紙>8.64e14锛壝?000
+      ---
+      duration_ms: 0.2231
+      type: 'test'
+      ...
+    # Subtest: B4: 0 / 璐熷€?/ NaN 鍘熸牱锛堜笉璇垽涓虹绾э級
+    ok 4 - B4: 0 / 璐熷€?/ NaN 鍘熸牱锛堜笉璇垽涓虹绾э級
+      ---
+      duration_ms: 0.2777
+      type: 'test'
+      ...
+    # Subtest: B5: 骞傜瓑锛堝箓绛夊綊涓€涓嶆敼鍙樹簩娆＄粨鏋滐級
+    ok 5 - B5: 骞傜瓑锛堝箓绛夊綊涓€涓嶆敼鍙樹簩娆＄粨鏋滐級
+      ---
+      duration_ms: 1.3711
+      type: 'test'
+      ...
+    1..5
+ok 2 - L16-W21 搂B _normToMs 褰掍竴
+  ---
+  duration_ms: 2.7779
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂C 鍚堝苟琛屼负
+    # Subtest: C1: 瀵圭绉掔骇鏇存柊锛堣涔夎緝鏂帮級鑳滃嚭锛堟敼鍓嶆湰鍦版棫鍊间繚鐣欙級
+    ok 1 - C1: 瀵圭绉掔骇鏇存柊锛堣涔夎緝鏂帮級鑳滃嚭锛堟敼鍓嶆湰鍦版棫鍊间繚鐣欙級
+      ---
+      duration_ms: 4.7252
+      type: 'test'
+      ...
+    # Subtest: C2: 瀵圭绉掔骇鍒犻櫎浼犳挱锛堣涔夎緝鏂颁笖缂鸿妭鐐?鈫?鏈湴鍒犻櫎锛?    ok 2 - C2: 瀵圭绉掔骇鍒犻櫎浼犳挱锛堣涔夎緝鏂颁笖缂鸿妭鐐?鈫?鏈湴鍒犻櫎锛?      ---
+      duration_ms: 3.9961
+      type: 'test'
+      ...
+    # Subtest: C3: 鏈湴姣杈冩柊鏃朵粛鑳滐紙鍙嶅悜鎶ゆ爮锛?    ok 3 - C3: 鏈湴姣杈冩柊鏃朵粛鑳滐紙鍙嶅悜鎶ゆ爮锛?      ---
+      duration_ms: 2.149
+      type: 'test'
+      ...
+    # Subtest: C4: 寰绾у垎鏀笉鍥炲綊
+    ok 4 - C4: 寰绾у垎鏀笉鍥炲綊
+      ---
+      duration_ms: 0.5528
+      type: 'test'
+      ...
+    # Subtest: C5: 澧撶瀹堝崼淇濇寔锛堝垹闄ゅ墠鏃у揩鐓т笉澶嶆椿鑺傜偣锛?    ok 5 - C5: 澧撶瀹堝崼淇濇寔锛堝垹闄ゅ墠鏃у揩鐓т笉澶嶆椿鑺傜偣锛?      ---
+      duration_ms: 0.3905
+      type: 'test'
+      ...
+    1..5
+ok 3 - L16-W21 搂C 鍚堝苟琛屼负
+  ---
+  duration_ms: 12.4493
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂D 灞炴€ч噰鏍?property.clean
+    # Subtest: D1: 鏃у彛寰勫鐜?I2 = 22锛堢孩璇佸垽鍒姏锛?    ok 1 - D1: 鏃у彛寰勫鐜?I2 = 22锛堢孩璇佸垽鍒姏锛?      ---
+      duration_ms: 99.1492
+      type: 'test'
+      ...
+    # Subtest: D2: 鐜拌鍙ｅ緞 property.clean.invFails.I2 = 0
+    ok 2 - D2: 鐜拌鍙ｅ緞 property.clean.invFails.I2 = 0
+      ---
+      duration_ms: 87.2316
+      type: 'test'
+      ...
+    1..2
+ok 4 - L16-W21 搂D 灞炴€ч噰鏍?property.clean
+  ---
+  duration_ms: 186.5794
+  type: 'suite'
+  ...
+# Subtest: L16-W21 搂E 澶?state 閲囨牱
+    # Subtest: E1: 20,001 鑺傜偣 / 绉掔骇瀵圭蹇収 鈥斺€?merge P95 閲囨牱
+    not ok 1 - E1: 20,001 鑺傜偣 / 绉掔骇瀵圭蹇収 鈥斺€?merge P95 閲囨牱
+      ---
+      duration_ms: 10699.8856
+      type: 'test'
+      location: 'E:\\APP\\褰掓。\\6.P0-T3鍩虹嚎\\step9\\t9\\t16-w21-merge-ts-unit.test.mjs:434:3'
+      failureType: 'testCodeFailure'
+      error: 'merge P95 瓒呴绠楋紙杩炵画 3 娆￠噰鏍峰潎瓒?200 ms锛夛細318.34 / 452.33 / 252.46 ms'
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: true
+      actual: false
+      operator: '=='
+      stack: |-
+        TestContext.<anonymous> (file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/step9/t9/t16-w21-merge-ts-unit.test.mjs:490:12)
+        Test.runInAsyncScope (node:async_hooks:214:14)
+        Test.run (node:internal/test_runner/test:1047:25)
+        Test.start (node:internal/test_runner/test:944:17)
+        node:internal/test_runner/test:1440:71
+        node:internal/per_context/primordials:466:82
+        new Promise (<anonymous>)
+        new SafePromise (node:internal/per_context/primordials:435:3)
+        node:internal/per_context/primordials:466:9
+        Array.map (<anonymous>)
+      ...
+    1..1
+not ok 5 - L16-W21 搂E 澶?state 閲囨牱
+  ---
+  duration_ms: 10700.1349
+  type: 'suite'
+  location: 'E:\\APP\\褰掓。\\6.P0-T3鍩虹嚎\\step9\\t9\\t16-w21-merge-ts-unit.test.mjs:433:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..5
+# tests 17
+# suites 5
+# pass 16
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11064.0296

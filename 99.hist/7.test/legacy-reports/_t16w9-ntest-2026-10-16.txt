@@ -1,0 +1,53 @@
+﻿TAP version 13
+# Subtest: L16-W9 - extract hardcoded theme colors into CSS variables
+    # Subtest: A anchors: _themeColor/_themeList readers + close-hover color-mix with pure-token fallback
+    ok 1 - A anchors: _themeColor/_themeList readers + close-hover color-mix with pure-token fallback
+      ---
+      duration_ms: 1.5125
+      type: 'test'
+      ...
+    # Subtest: B extraction: \#RRGGBB outside definition blocks drops >=80% (actual 0)
+    ok 2 - B extraction: \#RRGGBB outside definition blocks drops >=80% (actual 0)
+      ---
+      duration_ms: 3.411
+      type: 'test'
+      ...
+    # Subtest: C semantic tokens present (day + night)
+    ok 3 - C semantic tokens present (day + night)
+      ---
+      duration_ms: 0.1919
+      type: 'test'
+      ...
+    # Subtest: D equivalence: palette token values equal the pre-extraction hardcoded arrays
+    ok 4 - D equivalence: palette token values equal the pre-extraction hardcoded arrays
+      ---
+      duration_ms: 1.7113
+      type: 'test'
+      ...
+    # Subtest: E invariant: inline <script> block count stays 9
+    ok 5 - E invariant: inline <script> block count stays 9
+      ---
+      duration_ms: 0.6839
+      type: 'test'
+      ...
+    # Subtest: F perf: token resolution (100k samples) P95 < 50us
+    ok 6 - F perf: token resolution (100k samples) P95 < 50us
+      ---
+      duration_ms: 53.2092
+      type: 'test'
+      ...
+    1..6
+ok 1 - L16-W9 - extract hardcoded theme colors into CSS variables
+  ---
+  duration_ms: 62.6817
+  type: 'suite'
+  ...
+1..1
+# tests 6
+# suites 1
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 276.6907

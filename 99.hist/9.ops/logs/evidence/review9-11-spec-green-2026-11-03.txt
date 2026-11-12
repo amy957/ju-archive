@@ -1,0 +1,8 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\probe-review9-11.spec.ts:5:1 鈥?review9-11 路 JSON 鎭㈠鍚庡悓鎵?b.md 缁х画瀵煎叆 (1.7s)
+
+  1 passed (3.2s)

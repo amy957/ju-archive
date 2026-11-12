@@ -1,0 +1,115 @@
+﻿TAP version 13
+# Subtest: L17-W1 路 缁撴瀯閿氱偣
+    # Subtest: 鏀瑰悗婧愮爜鍚?tagRows 娲剧敓锛圫et.size 鍙ｅ緞锛?    ok 1 - 鏀瑰悗婧愮爜鍚?tagRows 娲剧敓锛圫et.size 鍙ｅ緞锛?      ---
+      duration_ms: 0.7916
+      type: 'test'
+      ...
+    # Subtest: renderSubTags 娈靛唴鏃犺８ tags.forEach 娈嬬暀
+    ok 2 - renderSubTags 娈靛唴鏃犺８ tags.forEach 娈嬬暀
+      ---
+      duration_ms: 0.1771
+      type: 'test'
+      ...
+    # Subtest: 绌虹储寮曞崰浣嶈閿氱偣瀛樺湪
+    ok 3 - 绌虹储寮曞崰浣嶈閿氱偣瀛樺湪
+      ---
+      duration_ms: 0.1102
+      type: 'test'
+      ...
+    # Subtest: 鍘熸湁 row 鏋勫缓閫昏緫淇濈暀锛堥噸鍛藉悕 / 鍒犻櫎 / 鏀硅壊 / 鐐瑰嚮鎵撳紑锛?    ok 4 - 鍘熸湁 row 鏋勫缓閫昏緫淇濈暀锛堥噸鍛藉悕 / 鍒犻櫎 / 鏀硅壊 / 鐐瑰嚮鎵撳紑锛?      ---
+      duration_ms: 0.1499
+      type: 'test'
+      ...
+    1..4
+ok 1 - L17-W1 路 缁撴瀯閿氱偣
+  ---
+  duration_ms: 2.2909
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 琛屾覆鏌撲笌璁℃暟
+    # Subtest: 涓夋爣绛炬寜璁℃暟闄嶅簭娓叉煋涓旇鏁扮瓑浜?Set.size
+    ok 1 - 涓夋爣绛炬寜璁℃暟闄嶅簭娓叉煋涓旇鏁扮瓑浜?Set.size
+      ---
+      duration_ms: 1.9693
+      type: 'test'
+      ...
+    # Subtest: 璁℃暟涓烘暟瀛楁枃鏈?路 涓嶅嚭鐜?undefined / NaN
+    ok 2 - 璁℃暟涓烘暟瀛楁枃鏈?路 涓嶅嚭鐜?undefined / NaN
+      ---
+      duration_ms: 0.3311
+      type: 'test'
+      ...
+    # Subtest: 鏂板缓鏍囩鍏ュ彛濮嬬粓鍦ㄦ湯灏?    ok 3 - 鏂板缓鏍囩鍏ュ彛濮嬬粓鍦ㄦ湯灏?      ---
+      duration_ms: 0.1706
+      type: 'test'
+      ...
+    1..3
+ok 2 - L17-W1 路 琛屾覆鏌撲笌璁℃暟
+  ---
+  duration_ms: 2.6613
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 杈圭晫涓庨檷绾?    # Subtest: 绌虹储寮?鈫?鍗犱綅琛?+ 鏂板缓鍏ュ彛锛堟棤寮傚父锛?    ok 1 - 绌虹储寮?鈫?鍗犱綅琛?+ 鏂板缓鍏ュ彛锛堟棤寮傚父锛?      ---
+      duration_ms: 0.3571
+      type: 'test'
+      ...
+    # Subtest: 绱㈠紩鍊间负鏁扮粍锛堟棤 size锛夆啋 count=0 涓斾笉鎶?    ok 2 - 绱㈠紩鍊间负鏁扮粍锛堟棤 size锛夆啋 count=0 涓斾笉鎶?      ---
+      duration_ms: 0.2148
+      type: 'test'
+      ...
+    # Subtest: 鎶樺彔鍒嗘敮锛?open锛変粎鍑烘柊寤哄叆鍙?路 琛屼负涓嶅彉
+    ok 3 - 鎶樺彔鍒嗘敮锛?open锛変粎鍑烘柊寤哄叆鍙?路 琛屼负涓嶅彉
+      ---
+      duration_ms: 0.2655
+      type: 'test'
+      ...
+    # Subtest: 灞曞紑鏃?box 鏍囪 open
+    ok 4 - 灞曞紑鏃?box 鏍囪 open
+      ---
+      duration_ms: 0.1992
+      type: 'test'
+      ...
+    1..4
+ok 3 - L17-W1 路 杈圭晫涓庨檷绾?  ---
+  duration_ms: 1.3161
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+    # Subtest: 鍙鍐荤粨閿氬瓨鍦?    ok 1 - 鍙鍐荤粨閿氬瓨鍦?      ---
+      duration_ms: 0.2772
+      type: 'test'
+      ...
+    # Subtest: 鏀瑰墠褰㈡€佸湪灞曞紑鏍囩鍒嗙粍鏃舵姏 ReferenceError锛坱ags 鏈畾涔夛級
+    ok 2 - 鏀瑰墠褰㈡€佸湪灞曞紑鏍囩鍒嗙粍鏃舵姏 ReferenceError锛坱ags 鏈畾涔夛級
+      ---
+      duration_ms: 4.6578
+      type: 'test'
+      ...
+    1..2
+ok 4 - L17-W1 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+  ---
+  duration_ms: 5.0294
+  type: 'suite'
+  ...
+# Subtest: L17-W1 路 灞炴€ч噰鏍凤紙200 缁勶級
+    # Subtest: count 鎬诲拰 = Set 澶у皬鎬诲拰 路 搴忓垪闈為€掑
+    ok 1 - count 鎬诲拰 = Set 澶у皬鎬诲拰 路 搴忓垪闈為€掑
+      ---
+      duration_ms: 17.0525
+      type: 'test'
+      ...
+    1..1
+ok 5 - L17-W1 路 灞炴€ч噰鏍凤紙200 缁勶級
+  ---
+  duration_ms: 17.16
+  type: 'suite'
+  ...
+1..5
+# tests 14
+# suites 5
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 248.6561

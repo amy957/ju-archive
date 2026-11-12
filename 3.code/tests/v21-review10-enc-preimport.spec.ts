@@ -1,0 +1,20 @@
+import { test, expect } from '@playwright/test';
+import { prepare, skeleton, ready } from './review8-helpers';
+const PW = 'review10-pw';
+const IMP = JSON.stringify({ tagColors: {}, rootId: 'r', nodes: { r: { id: 'r', text: '', parent: null, children: [], collapsed: false, done: false, date: null, tags: [], priority: 0, createdAt: 1, updatedAt: 1 } } });
+test('review10 · 加密态主库不可读时 preimport 密文可恢复', async ({ context, page }) => {
+  test.setTimeout(180_000);
+  await prepare(context); await skeleton(context);
+  await page.goto('/'); await ready(page);
+  await page.evaluate((pw: string) => { const J = (window as any).JU; const u = typeof J.ui === 'function' ? J.ui() : J.ui; u.encrypted = true; u.encKey = pw; const s = J.getState(); s.nodes[s.rootId].text = 'REVIEW10-PREIMPORT'; J.flushPersistNow(); }, PW);
+  await expect.poll(async () => page.evaluate(() => localStorage.getItem('juju.enc.v1') || ''), { timeout: 60_000 }).not.toBe('');
+  const before = await page.evaluate(() => localStorage.getItem('juju.enc.v1') || '');
+  await page.evaluate((json: string) => { const f = new File([json], 'r10.json', { type: 'application/json' }); void (window as any).JU.handleImportFiles([f]); }, IMP);
+  await page.locator('.modal-overlay .modal [data-cancel]').last().click({ timeout: 30_000 });
+  await expect.poll(async () => page.evaluate(() => localStorage.getItem('juju.backup.preimport') || ''), { timeout: 60_000 }).toContain('"enc"');
+  await page.evaluate(() => { const J = (window as any).JU; J.getState().rootId = 'r10-missing-root'; J.flushPersistNow(); });
+  await expect.poll(async () => page.evaluate(() => localStorage.getItem('juju.enc.v1') || ''), { timeout: 60_000 }).not.toBe(before);
+  await page.reload(); await page.waitForSelector('#unlockPwd', { timeout: 60_000 });
+  await page.fill('#unlockPwd', PW); await page.click('#unlockOk');
+  await expect.poll(async () => page.evaluate(() => { const J = (window as any).JU; const s = J && J.getState(); return s && s.nodes[s.rootId] ? String(s.nodes[s.rootId].text || '') : ''; }), { timeout: 90_000 }).toBe('REVIEW10-PREIMPORT');
+});

@@ -1,0 +1,38 @@
+[package]
+name = "app"
+version = "2.1.0"
+description = "JU 笔记：本地优先、安全加密的知识库"
+authors = ["JU"]
+license = "LicenseRef-Proprietary"
+repository = ""  # 无公开仓库（闭源分发）
+default-run = "app"
+edition = "2021"
+rust-version = "1.63"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.5.5", features = [] }
+
+[dependencies]
+serde_json = "1"
+serde = { version = "1.0", features = ["derive"] }
+# 注意：本工程为 Tauri v1（tauri 1.8.x）。`tauri-plugin-shell` 在 crates.io 仅有 2.x/3.x 线，
+# 不存在 1.x 版本（证据：_环境与调试/m07-bi-cargo-add-dryrun-2026-10-24.txt，cargo add tauri-plugin-shell@1 -> exit 101
+# "could not be found in registry index"）。强行引入 2.x 会拉入 tauri 2.x 造成依赖冲突并使现有 v1 构建失败，
+# 因此 shell 能力继续由 tauri v1 内置 feature `shell-all` 提供（见下），不额外引入插件。
+# 批 BN（M5-1a · 修正 2026-11-11）：自动更新当前**关闭**（`tauri.conf.json` `updater.active = false`），
+# 故 `features` 未启用 `updater`（原注释称其为「必需 feature」有误——仅当 `updater.active = true` 时才需补齐）。
+# 若后续启用自动更新：需在 `tauri` 的 `features` 加入 `updater` + 置 `updater.active = true` + 配置签名/端点。
+tauri = { version = "1.8.1", features = ["window-close", "window-hide", "window-maximize", "window-minimize", "window-set-always-on-top", "window-start-dragging", "window-unmaximize", "dialog-open", "protocol-asset"] }
+
+# 测试宿主：tauri v1 的 mock 运行时仅在 `test` feature 下导出（`tauri::test`），
+# 放在 dev-dependencies 内，非测试构建不启用该 feature
+[dev-dependencies]
+tauri = { version = "1.8.1", features = ["test"] }
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
+# If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
+# DO NOT REMOVE!!
+custom-protocol = [ "tauri/custom-protocol" ]

@@ -1,0 +1,83 @@
+﻿TAP version 13
+# Subtest: L16-W4 搂A 缁撴瀯閿氱偣
+    # Subtest: canonical 鍏峰 _outlineHeaderRO 涓庤闃?/ 鏂紑杈呭姪
+    ok 1 - canonical 鍏峰 _outlineHeaderRO 涓庤闃?/ 鏂紑杈呭姪
+      ---
+      duration_ms: 1.8347
+      type: 'test'
+      ...
+    # Subtest: renderMain 鎸傝浇鍚庤闃呫€侀《閮ㄦ柇寮€锛屽ぇ绾?rAF 涓嶅啀璋冪敤 _syncOutlineHeaderH
+    ok 2 - renderMain 鎸傝浇鍚庤闃呫€侀《閮ㄦ柇寮€锛屽ぇ绾?rAF 涓嶅啀璋冪敤 _syncOutlineHeaderH
+      ---
+      duration_ms: 0.6231
+      type: 'test'
+      ...
+    # Subtest: _syncOutlineHeaderH 鏀逛负銆屽彉鍖栨墠鍐欏叆銆嶅苟缁?_setOutlineHeaderH 鏀跺彛
+    ok 3 - _syncOutlineHeaderH 鏀逛负銆屽彉鍖栨墠鍐欏叆銆嶅苟缁?_setOutlineHeaderH 鏀跺彛
+      ---
+      duration_ms: 0.3607
+      type: 'test'
+      ...
+    1..3
+ok 1 - L16-W4 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 4.3708
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂B 鍐欏叆闂ㄦ锛?-doc-header-h 浠呭湪鍙樺寲鏃舵洿鏂帮級
+    # Subtest: 鍚岄珮閲嶅鍐欏叆涓嶉噸澶?setProperty锛涘彉鍖栨墠鍐?    ok 1 - 鍚岄珮閲嶅鍐欏叆涓嶉噸澶?setProperty锛涘彉鍖栨墠鍐?      ---
+      duration_ms: 0.2934
+      type: 'test'
+      ...
+    1..1
+ok 2 - L16-W4 搂B 鍐欏叆闂ㄦ锛?-doc-header-h 浠呭湪鍙樺寲鏃舵洿鏂帮級
+  ---
+  duration_ms: 0.6241
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂C 璁㈤槄琛屼负锛堝洖璋冩寜 offsetHeight 鍒锋柊锛?    # Subtest: _observeOutlineHeader 瑙傚療 .doc-header锛屽洖璋冨埛鏂板睘鎬?    ok 1 - _observeOutlineHeader 瑙傚療 .doc-header锛屽洖璋冨埛鏂板睘鎬?      ---
+      duration_ms: 0.2755
+      type: 'test'
+      ...
+    1..1
+ok 3 - L16-W4 搂C 璁㈤槄琛屼负锛堝洖璋冩寜 offsetHeight 鍒锋柊锛?  ---
+  duration_ms: 0.6161
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂D 鏂紑璇箟
+    # Subtest: _disconnectOutlineHeaderRO 鏂紑骞剁疆绌猴紱閲嶈闃呭厛鏂紑涓婁竴涓?    ok 1 - _disconnectOutlineHeaderRO 鏂紑骞剁疆绌猴紱閲嶈闃呭厛鏂紑涓婁竴涓?      ---
+      duration_ms: 0.2553
+      type: 'test'
+      ...
+    1..1
+ok 4 - L16-W4 搂D 鏂紑璇箟
+  ---
+  duration_ms: 0.4043
+  type: 'suite'
+  ...
+# Subtest: L16-W4 搂E 闄嶇骇鍏滃簳
+    # Subtest: 鏃?ResizeObserver 鏃跺洖閫€ _syncOutlineHeaderH锛堝嵆鏃跺啓鍏ワ級
+    ok 1 - 鏃?ResizeObserver 鏃跺洖閫€ _syncOutlineHeaderH锛堝嵆鏃跺啓鍏ワ級
+      ---
+      duration_ms: 0.1781
+      type: 'test'
+      ...
+    # Subtest: 鏃?.doc-header 鏃剁Щ闄ゅ睘鎬?    ok 2 - 鏃?.doc-header 鏃剁Щ闄ゅ睘鎬?      ---
+      duration_ms: 0.1168
+      type: 'test'
+      ...
+    1..2
+ok 5 - L16-W4 搂E 闄嶇骇鍏滃簳
+  ---
+  duration_ms: 0.4314
+  type: 'suite'
+  ...
+1..5
+# tests 8
+# suites 5
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 205.5631

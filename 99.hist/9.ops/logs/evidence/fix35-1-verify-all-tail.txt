@@ -1,0 +1,45 @@
+﻿鈻?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?  $ node scripts/compare-bench.js bench-p0-baseline.json bench-p0-after-t3.json --exclude-op=commitRewriteAllText
+[compare-bench] 鎺掗櫎鍦烘櫙锛堜笉鍙備笌鍒ゅ畾/閫€鍑虹爜锛夛細commitRewriteAllText
+# 鍩哄噯瀵规瘮
+
+- baseline: `baseline` sha256=`0635e55a2c8212d6鈥
+- after   : `after` sha256=`846ccdc9f794f1b6鈥
+- 杩愯鏃堕棿: baseline 2026-10-08T16:03:18.291Z / after 2026-10-08T16:03:28.509Z
+
+| op | size | baseline median (ms) | after median (ms) | delta | baseline p95 | after p95 | p95 delta | 鍒ゅ畾 |
+|---|---|---|---|---|---|---|---|---|
+| commitLight | 100 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.2 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| commitLight | 500 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.1 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| commitNonLight | 100 | 0.2 | 0.1 | -50.0% | 0.5 | 0.4 | -20.0% | 鉁?閫氳繃 |
+| commitNonLight | 500 | 0.8 | 0.2 | -75.0% | 1.5 | 0.5 | -66.7% | 鉁?閫氳繃 |
+| commitRewriteAllText | 100 | 0.2 | 0.4 | 鈥?| 0.4 | 1 | 鈥?| 鈴?鎺掗櫎锛?-exclude-op锛?|
+| commitRewriteAllText | 500 | 0.9 | 2.1 | 鈥?| 1.5 | 3.1 | 鈥?| 鈴?鎺掗櫎锛?-exclude-op锛?|
+| juProduce@100 | - | - | - | - | - | - | - | 缂烘暟鎹紙baseline鏃犳鍦烘櫙锛?|
+| juProduce@1000 | - | - | - | - | - | - | - | 缂烘暟鎹紙baseline鏃犳鍦烘櫙锛?|
+| juProduce@5000 | - | - | - | - | - | - | - | 缂烘暟鎹紙baseline鏃犳鍦烘櫙锛?|
+| mergeRemoteNew | 1 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.2 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| mergeRemoteUpdate | 1 | 0 | 0.0000 | 鈥旓紙杩戦浂锛?| 0.1 | 0.1 | 鈥?| 鉁?閫氳繃锛堣繎闆讹紝璁℃椂鍒嗚鲸鐜囧唴锛?|
+| safeClone | 100 | 0.1 | 0.1 | 0.0% | 0.5 | 0.5 | 0.0% | 鉁?閫氳繃 |
+| safeClone | 1000 | 1 | 1 | 0.0% | 1.6 | 1.4 | -12.5% | 鉁?閫氳繃 |
+| safeClone | 5000 | 5.9 | 5.7 | -3.4% | 8.8 | 9 | 2.3% | 鉁?閫氳繃 |
+| undoRedo | 100 | 0.7 | 0.6 | -14.3% | 2.9 | 1.5 | -48.3% | 鉁?閫氳繃 |
+| undoRedo | 500 | 3.2 | 2.5 | -21.9% | 6.5 | 4.6 | -29.2% | 鉁?閫氳繃 |
+
+## 鎽樿
+
+- 鍙瘮鍦烘櫙鎬绘暟锛?
+- 鉁?閫氳繃锛坉elta 鈮?+30%锛夛細7
+- 鈿?璀﹀憡锛?30% < delta 鈮?+100%锛夛細0
+- 鉂?澶辫触锛坉elta > +100%锛夛細0
+- 鏈€澶ф伓鍖栵細0.0%
+- 涓綅鏁版伓鍖栵細-14.3%
+鉁?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?(79ms)
+
+鈹佲攣 姝ラ鎽樿 鈹佲攣
+  鉁?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?(14ms)
+  鉁?Node 鍗曞厓娴嬭瘯锛?03 鐢ㄤ緥锛?(26384ms)
+  鉁?Playwright 闆嗘垚娴嬭瘯锛圠3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 鐢ㄤ緥锛?+ L13 6 = 171 鐢ㄤ緥 (57758ms)
+  鉁?涓嶅彉閲忚鐩栨槧灏勶紙ISSUE-028 路 鏈鐩栨竻鍗曪級锛堟湭瑕嗙洊 105 鏉★級 (46ms)
+  鉁?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?(79ms)
+
+[verify] 鍏ㄩ儴閫氳繃

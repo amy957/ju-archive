@@ -1,0 +1,821 @@
+﻿[build:all] 浜у搧浠讹紙m07-vite锛夋湰鍦颁竴閿彂鐗堝紑濮嬶紙鍏?15 姝ワ級锛歵sc 鈫?1b 鈫?1c 鈫?1d 鈫?1e 鈫?1f 鈫?1g 鈫?1h 鈫?test 鈫?vite 鈫?3b 鈫?e2e 鈫?tauri 鈫?prepare-release 鈫?6b
+[build:all] 鈹佲攣鈹?[1/15] 绫诲瀷妫€鏌?tsc --noEmit 鈹佲攣鈹?[build:all] 鉁?绫诲瀷妫€鏌?tsc --noEmit 閫氳繃锛?.9s锛?[build:all] 鈹佲攣鈹?[1b/15] 瑁呴厤闂ㄧ check-deps-wired 鈹佲攣鈹?PASS  bindLayoutDeps: 5 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindThemeDeps: 2 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindSelectionDeps: 3 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindSidebarDeps: 17 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindRightbarDeps: 4 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindRenderMainDeps: 8 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  injectBootDeps: 14 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindErrorDeps: 5 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindPersistDeps: 7 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindCryptoDeps: 10 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?isDesktop 鍚屾簮: hasDesktopInvoke
+PASS  鍏抽棴鍔犲瘑璇荤: OK (boot.ts load_state 澶嶆牳 + 妗ユ帴涓嶅彲鐢ㄦ彁绀?+ 鍘熷瓙鍐欏厛浜庢垚鍔燂紱crypto.ts await clear_encrypted)
+PASS  desktopSave: 鍑芥暟浣撳惈鑳藉姏妫€鏌ヤ笖鎸夊紓甯稿垽璐?PASS  layout 妗岄潰鎺㈡祴: OK锛坙ayout/main 鍏辩敤 hasTauriInvoke 鍙岄€氶亾锛?PASS  璇荤娑堣垂: persist.ts dsLoadState锛堟槑鏂?瀵嗘枃鍒嗘敮锛? boot.ts flushPendingSession锛堝叧椤靛厹搴曪級
+purge 瑕嗙洊: 21/21 keys
+
+鍏辨鏌?84 涓緷璧栭敭锛屽け璐?0 椤?P1/P2 PASS: 瑁呴厤鐐规棤绌哄３渚濊禆
+[build:all] 鉁?瑁呴厤闂ㄧ check-deps-wired 閫氳繃锛?.1s锛?[build:all] 鈹佲攣鈹?[1c/15] 闆舵紓绉讳笌鍐呰仈鏍峰紡闂搁棬 鈹佲攣鈹?PARITY OK  sha256=5fed021578e775b560bf98af719046eb2916472f4053354a33a1a436dfbff818  bytes=1316707
+VERSION OK  main.ts JU_VER=2.1.0  errors.ts JU_VER=''  package.json.version=2.1.0  Cargo.toml=2.1.0  tauri.conf.json=2.1.0
+[build:all] 鉁?闆舵紓绉讳笌鍐呰仈鏍峰紡闂搁棬 閫氳繃锛?.1s锛?[build:all] 鈹佲攣鈹?[1d/15] 璁稿彲瀹¤ audit-license 鈹佲攣鈹?[audit-license] --check 鍙妯″紡锛氭湭鍐欏叆 docs\LICENSE-AUDIT.md
+[audit-license] 渚濊禆 79锛坮untime 0 / dev 79锛?路 strong 0 路 weak 0 路 permissive 79 路 unknown 0
+[audit-license] Rust app@2.1.0 路 license LicenseRef-Proprietary 路 Cargo.lock 鍖?416
+[audit-license] OK锛氭棤 AGPL / GPL / SSPL 寮轰紶鏌撳崗璁?[build:all] 鉁?璁稿彲瀹¤ audit-license 閫氳繃锛?.1s锛?[build:all] 鈹佲攣鈹?[1e/15] 鏈娇鐢ㄥ鍑虹粺璁?check-unused-exports 鈹佲攣鈹?[unused-exports] 鎵弿 51 涓枃浠讹紝瀵煎嚭 1222 涓紝鏈娇鐢?213 涓紙浣跨敤鐜?82.6%锛夈€?  - src/views/outline.ts: 25
+  - src/core/richtext.ts: 16
+  - src/views/calendar.ts: 11
+  - src/core/virtual-scroll.ts: 10
+  - src/utils/lunar.ts: 10
+  - src/core/idb.ts: 9
+  - src/core/persist.ts: 9
+  - src/ui/editors.ts: 9
+  - src/io/import.ts: 8
+  - src/core/search.worker.ts: 7
+  - src/core/store.ts: 7
+  - src/core/wordcount.worker.ts: 7
+  - src/ui/xselect.ts: 7
+  - src/ui/rightbar.ts: 5
+  - src/core/crypto.ts: 4
+  - src/io/export.ts: 4
+  - src/ui/focus.ts: 4
+  - src/ui/layout.ts: 4
+  - src/ui/timepicker.ts: 4
+  - src/views/database/formula.ts: 4
+  - src/views/database/panels.ts: 4
+  - src/views/graph.ts: 4
+  - src/views/slides.ts: 4
+  - src/app/boot.ts: 3
+  - src/contract/lifecycle.ts: 3
+  - src/contract/registry.ts: 3
+  - src/views/lists.ts: 3
+  - src/app/render.ts: 2
+  - src/core/actions.ts: 2
+  - src/core/errors.ts: 2
+  - src/ui/print.ts: 2
+  - src/ui/selection.ts: 2
+  - src/utils/regions.ts: 2
+  - src/views/database/render.ts: 2
+  - src/views/mindmap.ts: 2
+  - src/views/presentation.ts: 2
+  - src/core/audio.ts: 1
+  - src/core/local-copies.ts: 1
+  - src/legacy/loader.ts: 1
+  - src/ui/common.ts: 1
+  - src/ui/manual.ts: 1
+  - src/ui/sidebar.ts: 1
+  - src/ui/theme.ts: 1
+node.exe :    Compiling app v2.1.0 (E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri)
+所在位置 行:1 字符: 147
++ ... 10-r4.txt'; & 'E:\APP\归档\99.开发辅助工具\node.exe' 'E:\APP\归档\6.P0-T3基线\m07 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (   Compiling ap...vite\src-tauri):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 5.39s
+   Compiling app v2.1.0 (E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.12s
+     Running unittests src\main.rs (src-tauri\target\debug\deps\app-dfe450622efd072c.exe)
+[build:all] 鉁?鏈娇鐢ㄥ鍑虹粺璁?check-unused-exports 閫氳繃锛?.2s锛?[build:all] 鈹佲攣鈹?[1f/15] Rust 缂栬瘧妫€鏌?鈹佲攣鈹?[build:all] 鉁?Rust 缂栬瘧妫€鏌?閫氳繃锛?.5s锛?[build:all] 鈹佲攣鈹?[1g/15] Rust 鐢ㄤ緥 鈹佲攣鈹?
+running 22 tests
+test tests::rejects_parent_dir_backup ... ok
+test tests::save_backup_rejects_system_dir ... ok
+test tests::save_backup_default_dir ... ok
+test tests::save_backup_uses_name ... ok
+test tests::report_error_quarantines_corrupt_store ... ok
+test tests::save_backup_counts_encrypted_with_suffix_in_enc_bucket ... ok
+test tests::save_backup_keeps_encrypted_quota ... ok
+test tests::save_backup_keeps_newest_same_day ... ok
+test tests::save_backup_leaves_no_tmp_residue ... ok
+test tests::second_instance_guard_detects_running ... ok
+test tests::save_crash_dump_keeps_latest_twenty ... ok
+test tests::save_crash_dump_sync_failure_leaves_no_tmp_or_half_pack ... ok
+test tests::save_state_keeps_existing_encstore ... ok
+test tests::save_state_quarantines_corrupt_store_before_overwrite ... ok
+test tests::write_store_reports_sync_failure_without_replacing_target ... ok
+test tests::save_plain_and_clear_is_atomic ... ok
+test tests::save_plain_and_clear_removes_encstore_in_one_write ... ok
+test tests::save_state_after_clear_does_not_backfill ... ok
+test tests::save_backup_keeps_latest_five ... ok
+test tests::concurrent_save_backup_keeps_parseable_and_no_tmp ... ok
+test tests::concurrent_write_store_keeps_json_parseable ... ok
+test tests::focus_when_ready_gives_up_without_window ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.00s
+
+[build:all] 鉁?Rust 鐢ㄤ緥 閫氳繃锛?2.8s锛?[build:all] 鈹佲攣鈹?[1h/15] 鍥炴墽鎵弿 鈹佲攣鈹?[build:all] 鈿?鏃犲洖鎵?archive
+[build:all] 鈿?鏃犲洖鎵?fix-rev17
+[build:all] 鈿?鏃犲洖鎵?fix1-1
+[build:all] 鈿?鏃犲洖鎵?fix10
+[build:all] 鈿?鏃犲洖鎵?fix11
+[build:all] 鈿?鏃犲洖鎵?fix12
+[build:all] 鈿?鏃犲洖鎵?fix13
+[build:all] 鈿?鏃犲洖鎵?fix15-13
+[build:all] 鈿?鏃犲洖鎵?fix1h
+[build:all] 鈿?鏃犲洖鎵?fix1i
+[build:all] 鈿?鏃犲洖鎵?fix22
+[build:all] 鈿?鏃犲洖鎵?fix22-patch1
+[build:all] 鈿?鏃犲洖鎵?fix22-patch2
+[build:all] 鈿?鏃犲洖鎵?fix22-patch3
+[build:all] 鈿?鏃犲洖鎵?fix23
+[build:all] 鈿?鏃犲洖鎵?fix24
+[build:all] 鈿?鏃犲洖鎵?fix25
+[build:all] 鈿?鏃犲洖鎵?fix26
+[build:all] 鈿?鏃犲洖鎵?fix26-p1
+[build:all] 鈿?鏃犲洖鎵?fix26-p2
+[build:all] 鈿?鏃犲洖鎵?fix26-p3
+[build:all] 鈿?鏃犲洖鎵?fix26-p4
+[build:all] 鈿?鏃犲洖鎵?fix26-p5
+[build:all] 鈿?鏃犲洖鎵?fix26-patch1
+[build:all] 鈿?鏃犲洖鎵?fix27
+[build:all] 鈿?鏃犲洖鎵?fix27-10
+[build:all] 鈿?鏃犲洖鎵?fix27-11
+[build:all] 鈿?鏃犲洖鎵?fix27-3
+[build:all] 鈿?鏃犲洖鎵?fix27-4
+[build:all] 鈿?鏃犲洖鎵?fix27-9
+[build:all] 鈿?鏃犲洖鎵?fix28
+[build:all] 鈿?鏃犲洖鎵?fix29
+[build:all] 鈿?鏃犲洖鎵?fix30
+[build:all] 鈿?鏃犲洖鎵?fix31
+[build:all] 鈿?鏃犲洖鎵?fix32-10
+[build:all] 鈿?鏃犲洖鎵?fix32-5
+[build:all] 鈿?鏃犲洖鎵?fix33
+[build:all] 鈿?鏃犲洖鎵?fix33-2
+[build:all] 鈿?鏃犲洖鎵?fix33-3
+[build:all] 鈿?鏃犲洖鎵?fix33-4
+[build:all] 鈿?鏃犲洖鎵?fix33-5
+[build:all] 鈿?鏃犲洖鎵?fix33-6
+[build:all] 鈿?鏃犲洖鎵?fix33-7
+[build:all] 鈿?鏃犲洖鎵?fix33-8
+[build:all] 鈿?鏃犲洖鎵?fix33-9
+[build:all] 鈿?鏃犲洖鎵?fix34
+[build:all] 鈿?鏃犲洖鎵?fix34-1
+[build:all] 鈿?鏃犲洖鎵?fix34-2
+[build:all] 鈿?鏃犲洖鎵?fix34-4
+[build:all] 鈿?鏃犲洖鎵?fix34-5
+[build:all] 鈿?鏃犲洖鎵?fix34-6
+[build:all] 鈿?鏃犲洖鎵?fix35-1
+[build:all] 鈿?鏃犲洖鎵?fix36
+[build:all] 鈿?鏃犲洖鎵?fix36-1
+[build:all] 鈿?鏃犲洖鎵?fix37-1
+[build:all] 鈿?鏃犲洖鎵?fix37-2
+[build:all] 鈿?鏃犲洖鎵?fix37-p1
+[build:all] 鈿?鏃犲洖鎵?fix38
+[build:all] 鈿?鏃犲洖鎵?fix38-1
+[build:all] 鈿?鏃犲洖鎵?fix39
+[build:all] 鈿?鏃犲洖鎵?fix39-1
+[build:all] 鈿?鏃犲洖鎵?fix40
+[build:all] 鈿?鏃犲洖鎵?fix40-1
+[build:all] 鈿?鏃犲洖鎵?fix41
+[build:all] 鈿?鏃犲洖鎵?fix42
+[build:all] 鈿?鏃犲洖鎵?fix43-4
+[build:all] 鈿?鏃犲洖鎵?fix43-5
+[build:all] 鈿?鏃犲洖鎵?fix6
+[build:all] 鈿?鏃犲洖鎵?fix7
+[build:all] 鈿?鏃犲洖鎵?fix8
+[build:all] 鈿?鏃犲洖鎵?fix9
+[build:all] 鈿?鏃犲洖鎵?fixPaste-1
+[build:all] 鈿?鏃犲洖鎵?fixUnused1
+[build:all] 鈿?鏃犲洖鎵?fixhex-01
+[build:all] 鈿?鏃犲洖鎵?fixr23-02-7
+[build:all] 鈿?鏃犲洖鎵?fixr25-02-7
+[build:all] 鈿?鏃犲洖鎵?fixr25-03-7
+[build:all] 鈿?鏃犲洖鎵?fixr6-1
+[build:all] 鈿?鏃犲洖鎵?fixr6-10
+[build:all] 鈿?鏃犲洖鎵?fixr6-11
+[build:all] 鈿?鏃犲洖鎵?fixr6-12
+[build:all] 鈿?鏃犲洖鎵?fixr6-13
+[build:all] 鈿?鏃犲洖鎵?fixr6-14
+[build:all] 鈿?鏃犲洖鎵?fixr6-15
+[build:all] 鈿?鏃犲洖鎵?fixr6-17
+[build:all] 鈿?鏃犲洖鎵?fixr6-19
+[build:all] 鈿?鏃犲洖鎵?fixr6-3
+[build:all] 鈿?鏃犲洖鎵?fixr6-4
+[build:all] 鈿?鏃犲洖鎵?fixr6-5
+[build:all] 鈿?鏃犲洖鎵?fixr6-6
+[build:all] 鈿?鏃犲洖鎵?fixr6-8
+[build:all] 鈿?鏃犲洖鎵?fixr6-9
+[build:all] 鈿?鏃犲洖鎵?fixr7-03
+[build:all] 鈿?鏃犲洖鎵?fixr7-04
+[build:all] 鈿?鏃犲洖鎵?fixr7-05
+[build:all] 鈿?鏃犲洖鎵?fixr7-07
+[build:all] 鈿?鏃犲洖鎵?fixr7-12
+[build:all] 鈿?鏃犲洖鎵?fixr7-13
+[build:all] 鈿?鏃犲洖鎵?fixr7-18
+[build:all] 鈿?鏃犲洖鎵?fixr7-19
+[build:all] 鈿?鏃犲洖鎵?fixr8-01
+[build:all] 鈿?鏃犲洖鎵?fixr9-02
+[build:all] 鈿?鏃犲洖鎵?fixreview5-1
+[build:all] 鈿?鏃犲洖鎵?fixreview5-10
+[build:all] 鈿?鏃犲洖鎵?fixreview5-11
+[build:all] 鈿?鏃犲洖鎵?fixreview5-12
+[build:all] 鈿?鏃犲洖鎵?fixreview5-13
+[build:all] 鈿?鏃犲洖鎵?fixreview5-2
+[build:all] 鈿?鏃犲洖鎵?fixreview5-3
+[build:all] 鈿?鏃犲洖鎵?fixreview5-4
+[build:all] 鈿?鏃犲洖鎵?fixreview5-5
+[build:all] 鈿?鏃犲洖鎵?fixreview5-6
+[build:all] 鈿?鏃犲洖鎵?fixreview5-7
+[build:all] 鈿?鏃犲洖鎵?fixreview5-8
+[build:all] 鈿?鏃犲洖鎵?fixreview5-9
+[build:all] 鈿?鏃犲洖鎵?fixreview6-15
+[build:all] 鈿?鏃犲洖鎵?fixreview6-16
+[build:all] 鈿?鏃犲洖鎵?fixreview6-17
+[build:all] 鈿?鏃犲洖鎵?fixreview8-01
+[build:all] 鈿?鏃犲洖鎵?release-final-2026-11-05
+[build:all] 鈿?鏃犲洖鎵?release-final-2026-11-06
+[build:all] 鈿?鏃犲洖鎵?release18
+[build:all] 鈿?鏃犲洖鎵?review1
+[build:all] 鈿?鏃犲洖鎵?review10
+[build:all] 鈿?鏃犲洖鎵?review10-01
+[build:all] 鈿?鏃犲洖鎵?review10-03
+[build:all] 鈿?鏃犲洖鎵?review10-04
+[build:all] 鈿?鏃犲洖鎵?review10-06
+[build:all] 鈿?鏃犲洖鎵?review10-08
+[build:all] 鈿?鏃犲洖鎵?review10-09
+[build:all] 鈿?鏃犲洖鎵?review10-10
+[build:all] 鈿?鏃犲洖鎵?review10-11
+[build:all] 鈿?鏃犲洖鎵?review11
+[build:all] 鈿?鏃犲洖鎵?review11-01
+[build:all] 鈿?鏃犲洖鎵?review11-02
+[build:all] 鈿?鏃犲洖鎵?review11-04
+[build:all] 鈿?鏃犲洖鎵?review11-05
+[build:all] 鈿?鏃犲洖鎵?review11-06
+[build:all] 鈿?鏃犲洖鎵?review11-07
+[build:all] 鈿?鏃犲洖鎵?review11-09
+[build:all] 鈿?鏃犲洖鎵?review12
+[build:all] 鈿?鏃犲洖鎵?review12-1.3
+[build:all] 鈿?鏃犲洖鎵?review12-fix1205
+[build:all] 鈿?鏃犲洖鎵?review12-realcheck
+[build:all] 鈿?鏃犲洖鎵?review12-rerun347
+[build:all] 鈿?鏃犲洖鎵?review13
+[build:all] 鈿?鏃犲洖鎵?review14
+[build:all] 鈿?鏃犲洖鎵?review14-02
+[build:all] 鈿?鏃犲洖鎵?review14-03
+[build:all] 鈿?鏃犲洖鎵?review14-04
+[build:all] 鈿?鏃犲洖鎵?review14-05
+[build:all] 鈿?鏃犲洖鎵?review14-07
+[build:all] 鈿?鏃犲洖鎵?review14-08
+[build:all] 鈿?鏃犲洖鎵?review15
+[build:all] 鈿?鏃犲洖鎵?review15-01
+[build:all] 鈿?鏃犲洖鎵?review15-02
+[build:all] 鈿?鏃犲洖鎵?review15-02-r2
+[build:all] 鈿?鏃犲洖鎵?review15-03
+[build:all] 鈿?鏃犲洖鎵?review15-05
+[build:all] 鈿?鏃犲洖鎵?review15-05-r2
+[build:all] 鈿?鏃犲洖鎵?review15-06
+[build:all] 鈿?鏃犲洖鎵?review15-06-r2
+[build:all] 鈿?鏃犲洖鎵?review15-07
+[build:all] 鈿?鏃犲洖鎵?review15-08
+[build:all] 鈿?鏃犲洖鎵?review15-10
+[build:all] 鈿?鏃犲洖鎵?review15-13
+[build:all] 鈿?鏃犲洖鎵?review16
+[build:all] 鈿?鏃犲洖鎵?review17
+[build:all] 鈿?鏃犲洖鎵?review17-01
+[build:all] 鈿?鏃犲洖鎵?review17-03
+[build:all] 鈿?鏃犲洖鎵?review17-04
+[build:all] 鈿?鏃犲洖鎵?review17-05
+[build:all] 鈿?鏃犲洖鎵?review17-06
+[build:all] 鈿?鏃犲洖鎵?review17-07
+[build:all] 鈿?鏃犲洖鎵?review17-09
+[build:all] 鈿?鏃犲洖鎵?review17-12
+[build:all] 鈿?鏃犲洖鎵?review17-fix
+[build:all] 鈿?鏃犲洖鎵?review18
+[build:all] 鈿?鏃犲洖鎵?review18-05
+[build:all] 鈿?鏃犲洖鎵?review18-06
+[build:all] 鈿?鏃犲洖鎵?review18-07
+[build:all] 鈿?鏃犲洖鎵?review18-08
+[build:all] 鈿?鏃犲洖鎵?review18-09
+[build:all] 鈿?鏃犲洖鎵?review18-12
+[build:all] 鈿?鏃犲洖鎵?review19
+[build:all] 鈿?鏃犲洖鎵?review19-01
+[build:all] 鈿?鏃犲洖鎵?review19-03
+[build:all] 鈿?鏃犲洖鎵?review19-04
+[build:all] 鈿?鏃犲洖鎵?review19-05
+[build:all] 鈿?鏃犲洖鎵?review19-07
+[build:all] 鈿?鏃犲洖鎵?review19-08
+[build:all] 鈿?鏃犲洖鎵?review19-09
+[build:all] 鈿?鏃犲洖鎵?review2
+[build:all] 鈿?鏃犲洖鎵?review20-01
+[build:all] 鈿?鏃犲洖鎵?review20-01-03
+[build:all] 鈿?鏃犲洖鎵?review20-01-04
+[build:all] 鈿?鏃犲洖鎵?review20-01-05
+[build:all] 鈿?鏃犲洖鎵?review20-01-06
+[build:all] 鈿?鏃犲洖鎵?review21
+[build:all] 鈿?鏃犲洖鎵?review21-01-05
+[build:all] 鈿?鏃犲洖鎵?review21-02-05
+[build:all] 鈿?鏃犲洖鎵?review21-03-05
+[build:all] 鈿?鏃犲洖鎵?review21-04
+[build:all] 鈿?鏃犲洖鎵?review21-05
+[build:all] 鈿?鏃犲洖鎵?review22
+[build:all] 鈿?鏃犲洖鎵?review22-02
+[build:all] 鈿?鏃犲洖鎵?review22-03
+[build:all] 鈿?鏃犲洖鎵?review22-04
+[build:all] 鈿?鏃犲洖鎵?review23
+[build:all] 鈿?鏃犲洖鎵?review23-01
+[build:all] 鈿?鏃犲洖鎵?review23-03
+[build:all] 鈿?鏃犲洖鎵?review23-04
+[build:all] 鈿?鏃犲洖鎵?review23-05
+[build:all] 鈿?鏃犲洖鎵?review23-07
+[build:all] 鈿?鏃犲洖鎵?review24
+[build:all] 鈿?鏃犲洖鎵?review25
+[build:all] 鈿?鏃犲洖鎵?review25-01
+[build:all] 鈿?鏃犲洖鎵?review25-05
+[build:all] 鈿?鏃犲洖鎵?review26
+[build:all] 鈿?鏃犲洖鎵?review27
+[build:all] 鈿?鏃犲洖鎵?review27-paste
+[build:all] 鈿?鏃犲洖鎵?review3
+[build:all] 鈿?鏃犲洖鎵?review4
+[build:all] 鈿?鏃犲洖鎵?review5
+[build:all] 鈿?鏃犲洖鎵?review6
+[build:all] 鈿?鏃犲洖鎵?review7
+[build:all] 鈿?鏃犲洖鎵?review7-08
+[build:all] 鈿?鏃犲洖鎵?review7-09
+[build:all] 鈿?鏃犲洖鎵?review7-10
+[build:all] 鈿?鏃犲洖鎵?review7-11
+[build:all] 鈿?鏃犲洖鎵?review8
+[build:all] 鈿?鏃犲洖鎵?review9
+[build:all] 鈿?鏃犲洖鎵?review9-01
+[build:all] 鈿?鏃犲洖鎵?review9-02
+[build:all] 鈿?鏃犲洖鎵?review9-03
+[build:all] 鈿?鏃犲洖鎵?review9-04
+[build:all] 鈿?鏃犲洖鎵?review9-05
+[build:all] 鈿?鏃犲洖鎵?review9-06
+[build:all] 鈿?鏃犲洖鎵?review9-07
+[build:all] 鈿?鏃犲洖鎵?review9-08
+[build:all] 鈿?鏃犲洖鎵?review9-09
+[build:all] 鈿?鏃犲洖鎵?review9-10
+[build:all] 鈿?鏃犲洖鎵?review9-11
+[build:all] 鈿?鏃犲洖鎵?review9-12
+[build:all] 鈿?鏃犲洖鎵?review9-13
+[build:all] 鈿?鏃犲洖鎵?review9-14
+[build:all] 鈿?鏃犲洖鎵?sync-ci-gate
+[build:all] 鉁?鍥炴墽鎵弿瀹屾垚锛氭壒娆?251 涓紝缂哄洖鎵?247 涓紙涓嶉樆鏂級
+[build:all] 鈹佲攣鈹?[2/15] 濂戠害鍗曞厓娴嬭瘯 node --test test/*.mjs src/test/*.mjs 鈹佲攣鈹?TAP version 13
+# [PASTE-DBG richtext] html<=200: <ul><li>A<ul><li>B<ul><li>C</li></ul></li></ul></li></ul>
+# [PASTE-DBG richtext] plain<=200: 
+# [PASTE-DBG richtext] out.tree is null: false
+# [PASTE-DBG richtext] html<=200: <div data-indent="0">A</div><div data-indent="1">B</div><div data-indent="2">C</div>
+# [PASTE-DBG richtext] plain<=200: 
+# [PASTE-DBG richtext] out.tree is null: false
+# [PASTE-DBG richtext] html<=200: <div>A</div><div>B</div><div>C</div>
+# [PASTE-DBG richtext] plain<=200: 
+# [PASTE-DBG richtext] out.tree is null: false
+# Subtest: fixPaste-1 澶氳缂╄繘绾枃鏈В鏋愪负鑺傜偣鏍?ok 1 - fixPaste-1 澶氳缂╄繘绾枃鏈В鏋愪负鑺傜偣鏍?  ---
+  duration_ms: 2.2403
+  type: 'test'
+  ...
+# Subtest: fixPaste-1 鍒惰〃绗︾缉杩涘悓鏍锋垚鏍?ok 2 - fixPaste-1 鍒惰〃绗︾缉杩涘悓鏍锋垚鏍?  ---
+  duration_ms: 0.2672
+  type: 'test'
+  ...
+# Subtest: PASTE-001 鏃犵缉杩戝钩閾?A\\nB 寤轰负 2 涓牴鑺傜偣
+ok 3 - PASTE-001 鏃犵缉杩戝钩閾?A\\nB 寤轰负 2 涓牴鑺傜偣
+  ---
+  duration_ms: 0.2355
+  type: 'test'
+  ...
+# Subtest: PASTE-001 鏃犵缉杩戝钩閾?A\\nB\\nC 寤轰负 3 涓牴鑺傜偣
+ok 4 - PASTE-001 鏃犵缉杩戝钩閾?A\\nB\\nC 寤轰负 3 涓牴鑺傜偣
+  ---
+  duration_ms: 0.2575
+  type: 'test'
+  ...
+# Subtest: PASTE-002 宓屽 ul 杈撳嚭娣卞害 0/1/2
+ok 5 - PASTE-002 宓屽 ul 杈撳嚭娣卞害 0/1/2
+  ---
+  duration_ms: 2.1606
+  type: 'test'
+  ...
+# Subtest: PASTE-002 data-indent 0/1/2 杈撳嚭閾惧紡鐖跺瓙
+ok 6 - PASTE-002 data-indent 0/1/2 杈撳嚭閾惧紡鐖跺瓙
+  ---
+  duration_ms: 1.1005
+  type: 'test'
+  ...
+# Subtest: PASTE-002 骞抽摵鏃?ind 杈撳嚭 3 鏍?ok 7 - PASTE-002 骞抽摵鏃?ind 杈撳嚭 3 鏍?  ---
+  duration_ms: 1.012
+  type: 'test'
+  ...
+# Subtest: PASTE-004 鍓ョ鏃犲簭鍒楄〃鏍囪 - * +
+ok 8 - PASTE-004 鍓ョ鏃犲簭鍒楄〃鏍囪 - * +
+  ---
+  duration_ms: 0.3333
+  type: 'test'
+  ...
+# Subtest: PASTE-004 鍓ョ鏈夊簭鍒楄〃鏍囪 1. 涓?2)
+ok 9 - PASTE-004 鍓ョ鏈夊簭鍒楄〃鏍囪 1. 涓?2)
+  ---
+  duration_ms: 0.3617
+  type: 'test'
+  ...
+# Subtest: PASTE-004 淇濈暀杩炲瓧绗﹀紑澶存棤绌虹櫧鏂囨湰 -abc
+ok 10 - PASTE-004 淇濈暀杩炲瓧绗﹀紑澶存棤绌虹櫧鏂囨湰 -abc
+  ---
+  duration_ms: 0.4411
+  type: 'test'
+  ...
+# [D-01] IDB_USED=true dbs=["juju.store"] writes=4 recoveredBytes=2574 localStorageBytes=2574
+# Subtest: D-01 路 鎵撳紑椤甸潰鍚?indexedDB.databases() 闈炵┖涓?juju.store 搴撳瓨鍦?ok 11 - D-01 路 鎵撳紑椤甸潰鍚?indexedDB.databases() 闈炵┖涓?juju.store 搴撳瓨鍦?  ---
+  duration_ms: 1402.7225
+  type: 'test'
+  ...
+# Subtest: D-02 路 color(srgb r g b / a) 褰掍竴涓?rgba()锛屼笖鍖归厤鍚堟硶棰滆壊褰㈡€?ok 12 - D-02 路 color(srgb r g b / a) 褰掍竴涓?rgba()锛屼笖鍖归厤鍚堟硶棰滆壊褰㈡€?  ---
+  duration_ms: 1.5628
+  type: 'test'
+  ...
+# Subtest: D-02 路 涓嶉€忔槑 srgb 褰掍竴涓?\#RRGGBB
+ok 13 - D-02 路 涓嶉€忔槑 srgb 褰掍竴涓?\#RRGGBB
+  ---
+  duration_ms: 0.2898
+  type: 'test'
+  ...
+# Subtest: D-02 路 srgb 鐧惧垎姣斿彛寰勶紙脳2.55 鍙栨暣锛?ok 14 - D-02 路 srgb 鐧惧垎姣斿彛寰勶紙脳2.55 鍙栨暣锛?  ---
+  duration_ms: 0.1482
+  type: 'test'
+  ...
+# Subtest: D-02 路 绌烘牸璇硶 rgb(r g b / a) 涓庨€楀彿璇硶 rgba() 鍧囧綊涓€
+ok 15 - D-02 路 绌烘牸璇硶 rgb(r g b / a) 涓庨€楀彿璇硶 rgba() 鍧囧綊涓€
+  ---
+  duration_ms: 0.315
+  type: 'test'
+  ...
+# Subtest: D-02 路 宸叉槸 hex / 鍛藉悕鑹?/ 鍏跺畠璇硶涓€寰嬪師鏍疯繑鍥烇紙涓嶅仛鐚滄祴锛?ok 16 - D-02 路 宸叉槸 hex / 鍛藉悕鑹?/ 鍏跺畠璇硶涓€寰嬪師鏍疯繑鍥烇紙涓嶅仛鐚滄祴锛?  ---
+  duration_ms: 0.295
+  type: 'test'
+  ...
+# Subtest: D-02 路 normalizeInlineDeclValue锛氶鑹插睘鎬у綊涓€骞舵敮鎸侀┘宄板啓娉?ok 17 - D-02 路 normalizeInlineDeclValue锛氶鑹插睘鎬у綊涓€骞舵敮鎸侀┘宄板啓娉?  ---
+  duration_ms: 0.3273
+  type: 'test'
+  ...
+# Subtest: D-02 路 applyInlineStyle 鍏ュ彛鎺ョ嚎锛氬啓鍏ュ墠蹇呰繃 normalizeInlineDeclValue
+ok 18 - D-02 路 applyInlineStyle 鍏ュ彛鎺ョ嚎锛氬啓鍏ュ墠蹇呰繃 normalizeInlineDeclValue
+  ---
+  duration_ms: 1.289
+  type: 'test'
+  ...
+# Subtest: D-02 路 CSS_WHITELIST 鏄惧紡鏀捐 color / background-color / font-size / font-weight
+ok 19 - D-02 路 CSS_WHITELIST 鏄惧紡鏀捐 color / background-color / font-size / font-weight
+  ---
+  duration_ms: 0.3732
+  type: 'test'
+  ...
+# Subtest: D-02 路 sanitizeStyle 娓呮礂鍚庨鑹蹭粛涓哄綊涓€褰㈡€侊紝涓斿洓椤圭櫧鍚嶅崟涓嶈涓㈠純
+ok 20 - D-02 路 sanitizeStyle 娓呮礂鍚庨鑹蹭粛涓哄綊涓€褰㈡€侊紝涓斿洓椤圭櫧鍚嶅崟涓嶈涓㈠純
+  ---
+  duration_ms: 1.1657
+  type: 'test'
+  ...
+# Subtest: 浜у搧浠讹細J.register / J.require / J.lifecycle 瀹氫箟鐗囨鍙畾浣?ok 21 - 浜у搧浠讹細J.register / J.require / J.lifecycle 瀹氫箟鐗囨鍙畾浣?  ---
+  duration_ms: 2.5085
+  type: 'test'
+  ...
+# Subtest: 鏂规硶鍚嶉泦鍚?{register,require,add,on,dispose} 浜у搧渚?vs src/contract/*.ts 涓€鑷?ok 22 - 鏂规硶鍚嶉泦鍚?{register,require,add,on,dispose} 浜у搧渚?vs src/contract/*.ts 涓€鑷?  ---
+  duration_ms: 3.3413
+  type: 'test'
+  ...
+# Subtest: 閿欒娑堟伅涓庡憡璀﹀墠缂€瀛楅潰閲忛€愬瓧涓€鑷?ok 23 - 閿欒娑堟伅涓庡憡璀﹀墠缂€瀛楅潰閲忛€愬瓧涓€鑷?  ---
+  duration_ms: 0.7113
+  type: 'test'
+  ...
+# Subtest: 浜у搧浠跺湪鏈瀵规媿涓浂鍐欏叆锛堝彧璇诲揩鐓у搱甯岀ǔ瀹氾級
+ok 24 - 浜у搧浠跺湪鏈瀵规媿涓浂鍐欏叆锛堝彧璇诲揩鐓у搱甯岀ǔ瀹氾級
+  ---
+  duration_ms: 8.7112
+  type: 'test'
+  ...
+# Subtest: register / require 姝ｅ父寰€杩斿彇鍊?ok 25 - register / require 姝ｅ父寰€杩斿彇鍊?  ---
+  duration_ms: 1.7681
+  type: 'test'
+  ...
+# Subtest: require 缂哄け鎶涢敊娑堟伅閫愬瓧绛変簬 "JU.require missing: xxx"
+ok 26 - require 缂哄け鎶涢敊娑堟伅閫愬瓧绛変簬 "JU.require missing: xxx"
+  ---
+  duration_ms: 1.2279
+  type: 'test'
+  ...
+# Subtest: lifecycle.add 姝ｅ簭鎵ц锛氬凡鐧昏 disposer 鍏ㄩ儴鎵ц涓斿悇鎵ц涓€娆?ok 27 - lifecycle.add 姝ｅ簭鎵ц锛氬凡鐧昏 disposer 鍏ㄩ儴鎵ц涓斿悇鎵ц涓€娆?  ---
+  duration_ms: 1.5403
+  type: 'test'
+  ...
+# Subtest: lifecycle.dispose 閫嗗簭鎵ц锛堟爤璇箟 pop锛?ok 28 - lifecycle.dispose 閫嗗簭鎵ц锛堟爤璇箟 pop锛?  ---
+  duration_ms: 0.431
+  type: 'test'
+  ...
+# Subtest: 鍗曚釜 disposer 鎶涢敊涓嶉樆鏂悗缁?disposer
+ok 29 - 鍗曚釜 disposer 鎶涢敊涓嶉樆鏂悗缁?disposer
+  ---
+  duration_ms: 0.4567
+  type: 'test'
+  ...
+# Subtest: lifecycle.on锛歛ddEventListener 璋冪敤涓€娆★紝dispose 鍚?removeEventListener 璋冪敤涓€娆?ok 30 - lifecycle.on锛歛ddEventListener 璋冪敤涓€娆★紝dispose 鍚?removeEventListener 璋冪敤涓€娆?  ---
+  duration_ms: 0.4801
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2051.8564
+[build:all] 鉁?濂戠害鍗曞厓娴嬭瘯 node --test test/*.mjs src/test/*.mjs 閫氳繃锛?.2s锛?[build:all] 鈹佲攣鈹?[3/15] Web 鏋勫缓 vite build 鈹佲攣鈹?[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m鉁?[39m 63 modules transformed.
+rendering chunks...
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+computing gzip size...
+[2mdist/[22m[32mindex.html  [39m[1m[2m4,695.13 kB[22m[1m[22m[2m 鈹?gzip: 3,182.54 kB[22m
+[32m鉁?built in 2.12s[39m
+[build:all] 鉁?Web 鏋勫缓 vite build 閫氳繃锛?.7s锛?[build:all] 鈹佲攣鈹?[3b/15] 鍐呰仈鏍峰紡闂搁棬 鈹佲攣鈹?dist/index.html bytes = 4719438
+<style> blocks = 4 (inline css chars = 118729)
+index.html inline style attrs = 0
+dist inline style attrs = 61锛堣繍琛屾湡妯℃澘锛屼粎璁板綍锛屼笉鍙備笌纭棬绂侊級
+src/style.css hex = 130锛堝幓娉ㄩ噴 121锛夛紝闃堝€?鈮?130 鈫?PASS [hard]
+src/style.css !important = 72锛岄槇鍊?鈮?72 鈫?PASS [hard]
+PASS  has <style tag
+PASS  has --bg variable
+PASS  has body{ rule
+PASS  has #sidebarLeft rule
+PASS  has .sb-row rule
+PASS  has .main-toggle rule
+PASS  has .tb-wbtn rule
+PASS  no external stylesheet link
+PASS  no inline style attribute in index.html
+P0 PASS: 鏍峰紡宸插唴鑱旇繘鍗曟枃浠朵骇鐗?[build:all] 鉁?鍐呰仈鏍峰紡闂搁棬 閫氳繃锛?.1s锛?[build:all] Web 浜х墿鎸囩汗锛歞ist/index.html  4719438 B  SHA-256 6fed7d742f2b75636a7122a03ea6af9cf21938247e1897d9efd1e4f419868e34
+[build:all] 鉁?Web 浜х墿鍚壒寰佺鍙凤細applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] CLOSED_HIGH_SPECS: 22 椤?[build:all] REQUIRED_PROBES: 5 椤?路 缂哄け 0
+[build:all] 鈹佲攣鈹?[4/15] E2E 鍐掔儫 + 鍏ㄩ摼璺?+ 骞跺彂锛坧laywright锛?鈹佲攣鈹?[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 59 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+[M1-2] perTab stats=[{"add":519,"update":316,"remove":165,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":315,"storedBytes":155994},{"add":563,"update":287,"remove":150,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":306,"storedBytes":158088},{"add":545,"update":286,"remove":169,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":104,"storedBytes":87609}]
+[M1-2] {
+  "perTab": [
+    {
+      "tab": "tab-1",
+      "add": 519,
+      "update": 316,
+      "remove": 165,
+      "finalCount": 315,
+      "storedBytes": 155994
+    },
+    {
+      "tab": "tab-2",
+      "add": 563,
+      "update": 287,
+      "remove": 150,
+      "finalCount": 306,
+      "storedBytes": 158088
+    },
+    {
+      "tab": "tab-3",
+      "add": 545,
+      "update": 286,
+      "remove": 169,
+      "finalCount": 104,
+      "storedBytes": 87609
+    }
+  ],
+  "totalOps": 3000,
+  "convergedCounts": [
+    315,
+    315,
+    315
+  ],
+  "memoryProjectionHash": [
+    "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918",
+    "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918",
+    "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918"
+  ],
+  "diskProjectionHash": [
+    "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918",
+    "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918",
+    "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918"
+  ],
+  "diskRawHash": [
+    "9877dd3fdf6dbe884f8b3ff5629d52112164d263a471f21f71f0fd7dba836b67",
+    "9877dd3fdf6dbe884f8b3ff5629d52112164d263a471f21f71f0fd7dba836b67",
+    "9877dd3fdf6dbe884f8b3ff5629d52112164d263a471f21f71f0fd7dba836b67"
+  ],
+  "memoryDiskAligned": [
+    {
+      "tab": "tab-1",
+      "mem": "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918",
+      "disk": "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918"
+    },
+    {
+      "tab": "tab-2",
+      "mem": "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918",
+      "disk": "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918"
+    },
+    {
+      "tab": "tab-3",
+      "mem": "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918",
+      "disk": "9a12688e49cc5a57e9555521fc8783fac05e4eb6d26e89aaa6618d6215853918"
+    }
+  ],
+  "canonicalEqual": true,
+  "pageErrors": []
+}
+  ok  1 [chromium] 鈥?tests\concurrency.spec.ts:154:1 鈥?M1-2 3 鏍囩骞跺彂鏀舵暃娴嬭瘯锛堝唴瀛樻€?+ 纾佺洏鎬侊級 (1.3m)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok  2 [chromium] 鈥?tests\concurrency.spec.ts:373:1 鈥?review13 路 涓ょ獥鍙ｄ氦鏇跨紪杈戝悗寮烘潃涓嶄涪鏈€鍚庣紪杈戯紙ISSUE-001 鍗曢€氶亾锛?(5.4s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok  3 [chromium] 鈥?tests\full-e2e.spec.ts:427:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 1 路 鍔犲瘑涓庤В閿侀棴鐜細璁剧疆寮€鍚叏搴撳姞瀵?鈫?鍒锋柊閿佸畾 鈫?瑙ｉ攣鍚庢暟鎹浂涓㈠け (2.8s)
+[full-e2e] download=瀵煎叆鏂囨。-2026-11-10.md bytes=77
+  ok  4 [chromium] 鈥?tests\full-e2e.spec.ts:589:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 2 路 瀵煎叆涓庡鍑洪棴鐜細瀵煎叆 3 鑺傜偣 JSON 鈫?娓叉煋 鈫?瀵煎嚭 Markdown 鍚鍏ユ枃鏈?(1.2s)
+  ok  5 [chromium] 鈥?tests\full-e2e.spec.ts:684:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 3 路 澶氱淮琛ㄦ牸涓庢棩鍘嗚仈鍔細琛ㄦ牸鏂板缓琛?鈫?璁句粖澶?鈫?鏃ュ巻褰撴棩寰呭姙鍙 (1.3s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok  6 [chromium] 鈥?tests\review18-12-close-backup-error-log.spec.ts:3:1 鈥?review18-12 路 save_backup 鎶涢敊鍚?__juLog 鍚劚鏁?error (2.3s)
+[smoke] dist files=["index.html"] dirs=[]
+[smoke] dist/index.html bytes=4719438
+  ok  7 [chromium] 鈥?tests\smoke.spec.ts:88:3 鈥?M1-1 鍗?HTML 浜х墿 鈥?dist 蹇呴』浜у嚭 index.html锛屼笖鑴氭湰 / 鏍峰紡宸插唴鑱?(31ms)
+  ok  8 [chromium] 鈥?tests\smoke.spec.ts:120:3 鈥?M1-1 鍗?HTML 浜х墿 鈥?鍔犺浇鏋勫缓浜х墿锛氭爣棰?/ JU.getState 娆㈣繋鑺傜偣 / 涓夊尯 DOM 鍧囧瓨鍦?(769ms)
+  ok  9 [chromium] 鈥?tests\v21-fix30-topbar-popover.spec.ts:7:1 鈥?fix30 路 娴獥鍒濆鍏抽棴 路 鎻愰啋娴獥钀藉湪瑙嗗彛鍐?(1.1s)
+  ok 10 [chromium] 鈥?tests\v21-fix31-topbar-popover.spec.ts:7:1 鈥?fix31 路 椤舵爮璁剧疆/鎻愰啋娴獥鍙紑涓旇惤鍦ㄨ鍙ｅ唴 路 缃《鏈夊弽棣?(1.3s)
+  ok 11 [chromium] 鈥?tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 鈥?fix33-8 路 鎵撳紑鍙栬壊鍣ㄥ悗鐐?#btnSettings 鍙栬壊鍣ㄥ叧闂?(1.3s)
+  ok 12 [chromium] 鈥?tests\v21-fix33-8-topbar-doc-close.spec.ts:20:1 鈥?fixr6-6 路 __TAURI__.window 鏃?onCloseRequested 鏃?#btnClose 涓嶇洿鍏充笖鎻愮ず鍏抽棴閾捐矾鏈氨缁?(1.1s)
+  ok 13 [chromium] 鈥?tests\v21-fix33-desktop-save-guard.spec.ts:16:1 鈥?fix33-3 路 璐熷悜锛歘_TAURI__ 鏃?invoke 鏃跺垽瀹氶潪妗岄潰骞跺洖钀藉埌 localStorage 鍒嗘敮 (1.1s)
+  ok 14 [chromium] 鈥?tests\v21-fix33-desktop-save-guard.spec.ts:18:1 鈥?fix33-3 路 姝ｅ悜锛歩nvoke resolve(null) 鏃朵笉寰楀嚭鐜般€屾闈㈠瓨鍌ㄤ繚瀛樺け璐ャ€峵oast (1.1s)
+  ok 15 [chromium] 鈥?tests\v21-fix40-topbar-close-backup.spec.ts:7:1 鈥?fix40 路 缃《/璁剧疆椤哄簭瀵硅皟 + 鍏抽棴鏃犵‘璁?+ 鍏抽棴鏃跺啓澶囦唤鏂囦欢 (1.1s)
+  ok 16 [chromium] 鈥?tests\v21-fix40-topbar-close-backup.spec.ts:34:1 鈥?fix40-enc 路 鍔犲瘑鎬佸叧闂浠藉彧钀藉瘑鏂囦笖鍚庣紑 .enc.json (1.3s)
+  ok 17 [chromium] 鈥?tests\v21-fix41-close-hidden-backup.spec.ts:4:1 鈥?fix41 路 鍏抽棴鍏堥殣钘忓啀闈欓粯钀界洏鍐嶉€€鍑?(1.2s)
+  ok 18 [chromium] 鈥?tests\v21-fix43-bridge-capability.spec.ts:5:1 鈥?fix43-1 路 浠呮敞鍏?window 鐨?__TAURI__ 鏃跺姞瀵嗕繚瀛樿惤 localStorage (1.6s)
+  ok 19 [chromium] 鈥?tests\v21-fix43-bridge-capability.spec.ts:20:1 鈥?review15-10 路 鍏抽棴鍔犲瘑閬囧懡鍚嶇┖闂?only 妗ユ帴蹇呴』澶辫触涓斾繚鐣?encStore (1.8s)
+  ok 20 [chromium] 鈥?tests\v21-fixr6-13-db-skip.spec.ts:4:1 鈥?fixr6-13 路 .db 瀵煎叆澶辫触鍙烦杩囨湰鏂囦欢锛屽悗缁?b.md 浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a.db (1.2s)
+  ok 21 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:4:1 鈥?fixr6-4 路 鍏崇獥绛変富搴?save_state 钀界洏鍚庡啀 close (1.2s)
+  ok 22 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:25:1 鈥?fixr6-10 路 杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤 (1.4s)
+  ok 23 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:44:1 鈥?review7-12 路 鍏抽〉鍓?flushPendingLogs 琛ラ綈寰呰惤鐩?activity 鏃ュ織 (1.2s)
+  ok 24 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:59:1 鈥?review9-03 路 鑷姩澶囦唤鍏抽棴鏃跺叧闂粛鍏堢瓑涓诲簱 save_state 钀界洏 (11.2s)
+  ok 25 [chromium] 鈥?tests\v21-fixr6-merge-equal-ts.spec.ts:4:1 鈥?fixr6-8 路 涓ゆ爣绛惧悇钀界洏 10 鑺傜偣鍚庣鐩樺繀椤讳负 20锛堝啓鐩樺墠鍚堝苟闂ㄦ锛?(3.2s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 26 [chromium] 鈥?tests\v21-review10-enc-backup-restore.spec.ts:5:1 鈥?review10-02 路 鍔犲瘑鍏抽棴澶囦唤鍙鍏ユ仮澶?(3.0s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 27 [chromium] 鈥?tests\v21-review10-enc-preimport.spec.ts:5:1 鈥?review10 路 鍔犲瘑鎬佷富搴撲笉鍙鏃?preimport 瀵嗘枃鍙仮澶?(3.9s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 28 [chromium] 鈥?tests\v21-review11-preimport-once.spec.ts:7:1 鈥?review11 路 涓诲簱鍙鏃舵畫鐣欏瘑鏂囧揩鐓т笉寰楄鐩栦富搴撲笖琚竴娆℃€ф秷璐?(3.6s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 29 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:14:1 鈥?review12 路 A 涓诲簱鍙 + 娈嬬暀蹇収 鈫?涓嶅娲讳笖蹇収琚竻闄?(2.8s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 30 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:28:1 鈥?review12 路 B 蹇樿瀵嗙爜娓呯┖鍚?preimport 涓庝富搴撳潎涓嶅娲?(4.2s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 31 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:59:1 鈥?review12 路 C 涓诲簱涓嶅彲璇绘椂蹇収琚秷璐逛笖涓€娆℃€ф竻闄?(2.9s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 32 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:73:1 鈥?review13 路 D clear_encrypted 澶辫触蹇呴』淇濇寔閿佸畾骞舵彁绀猴紙ISSUE-005锛?(3.7s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 33 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:155:1 鈥?review14 路 E 鍏抽棴鍔犲瘑锛氬湪閫斿瘑鏂囧啓鐩樺悗鍏堟槑鏂囪惤鐩樺啀娓?encStore (3.7s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 34 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:186:1 鈥?review14 路 F 鍏抽棴鍔犲瘑 clear 澶辫触蹇呴』鍥炴粴鍔犲瘑鎬佷笖淇濈暀 encStore (4.2s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 35 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:212:1 鈥?review15 路 G 鍘熷瓙鍐欑獥鍙ｅ唴寮烘潃锛氶噸鍚棤 encStore 涓旀爣棰樹负鏂板€?(6.6s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 36 [chromium] 鈥?tests\v21-review12-preimport-lifecycle.spec.ts:241:1 鈥?review17 路 H 澶嶆牳澶辫触淇濇寔鏄庢枃鎬侊細load_state 棣栨姏涓€娆′笉鍥炴粴 (4.2s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 37 [chromium] 鈥?tests\v21-review25-04-relative-backup-dir.spec.ts:4:1 鈥?review25-04 路 鐩稿鍚嶅浠界洰褰曚粎璁板綍涓嶅彲鍐欎笖鍏崇獥涓嶈惤鐩?(3.0s)
+  ok 38 [chromium] 鈥?tests\v21-review25-07-pending-key.spec.ts:5:1 鈥?review25-07 路 juju.pending.v1 浠ｇ爜瀛楅潰閲忎粎 1 澶?(17ms)
+  ok 39 [chromium] 鈥?tests\v21-review25-07-pending-key.spec.ts:6:1 鈥?review25-07 路 鍐欏叆鈫掗噸鍚啋鎭㈠鈫掑唴瀹逛竴鑷?(2.5s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 40 [chromium] 鈥?tests\v21-review27-paste-multinode.spec.ts:5:24 鈥?review27-paste-07 路 宓屽 ul (2.6s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 41 [chromium] 鈥?tests\v21-review27-paste-multinode.spec.ts:5:24 鈥?review27-paste-07 路 plain 2 绌烘牸缂╄繘 (2.5s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 42 [chromium] 鈥?tests\v21-review27-paste-multinode.spec.ts:5:24 鈥?review27-paste-07 路 plain tab 缂╄繘 (2.5s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 43 [chromium] 鈥?tests\v21-review27-paste-multinode.spec.ts:5:24 鈥?review27-paste-07 路 骞抽摵 div data-indent (2.5s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 44 [chromium] 鈥?tests\v21-review27-paste-multinode.spec.ts:5:24 鈥?review27-paste-07 路 JU-NODES 寰€杩?(4.0s)
+  ok 45 [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:5:1 鈥?review5 路 涓婚/瀵煎叆/瀹屾暣澶囦唤/鎵撳嵃鍏ュ彛鍙揪涓旂偣鍑讳笉鎶涢敊 (3.1s)
+  ok 46 [chromium] 鈥?tests\v21-review5-feature-entries.spec.ts:40:1 鈥?review10-09 路 鍔犲瘑鎬佸鍑哄浠藉厛纭涓斿彇娑堜笉涓嬭浇 (2.1s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 47 [chromium] 鈥?tests\v21-review8-recovery.spec.ts:4:1 鈥?review8 路 preimport 鑷姩澶囦唤鍙仮澶?(4.5s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 48 [chromium] 鈥?tests\v21-review8-recovery.spec.ts:23:1 鈥?review8 路 鏃т富搴撶己 dbFields 瑁呰浇鍚庤ˉ榻?(3.9s)
+  ok 49 [chromium] 鈥?tests\v21-review9-01-close-backup-enc.spec.ts:4:1 鈥?review9-01 路 鍔犲瘑鎬佸叧闂浠藉彧钀藉瘑鏂囦笖涓嶅惈鏄庢枃鑺傜偣 (1.4s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 50 [chromium] 鈥?tests\v21-review9-02-preimport-enc.spec.ts:5:1 鈥?review9-02 路 鍔犲瘑鎬佸鍏ユ垚鍔熷悗娑堣垂 preimport锛岄噸杞戒繚鐣欏鍏ョ粨鏋?(4.6s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-rMahrSM6.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 51 [chromium] 鈥?tests\v21-review9-02-preimport-enc.spec.ts:16:1 鈥?review9-02 路 鏄庢枃鎬佸鍏ユ垚鍔熷悗娓呯悊 preimport (2.9s)
+  ok 52 [chromium] 鈥?tests\v21-review9-05-locked-backup.spec.ts:11:1 鈥?review9-05 路 鍔犲瘑鍙栨秷瑙ｉ攣涓庨攣瀹氭棤瀵嗛挜鍏崇獥鍧囦笉寰椾骇鐢熺┖澶囦唤 (2.4s)
+  ok 53 [chromium] 鈥?tests\v21-review9-05-locked-backup.spec.ts:17:1 鈥?review9-05 路 瑙ｉ攣鎬佸叧绐椾粛鍐?1 娆″浠?(1.2s)
+  ok 54 [chromium] 鈥?tests\v21-review9-06-rt-console.spec.ts:10:1 鈥?review9-06 路 鍔犲瘑鎬侀€変腑鍔犵矖涓?__JU_RT_DEBUG 鍧囦笉杈撳嚭姝ｆ枃 (3.5s)
+  ok 55 [chromium] 鈥?tests\v21-review9-08-legacy-backup-normalize.spec.ts:5:1 鈥?review9-08 路 鏃у浠藉綊涓€鍖栬ˉ榻愮己鐪佸瓧娈靛苟鎸?parent 閲嶅缓 children (1.2s)
+  ok 56 [chromium] 鈥?tests\v21-review9-11-batch-import-continue.spec.ts:4:1 鈥?review9-11 路 JSON 澶囦唤鎭㈠鍚庡悓鎵?markdown 缁х画瀵煎叆 (1.6s)
+  ok 57 [chromium] 鈥?tests\v21-review9-12-snapshot-ui-prefs.spec.ts:5:1 鈥?review9-12 路 瀵煎叆蹇収鎼哄甫 ui 鍋忓ソ鐧藉悕鍗曚笖涓嶅惈鏁忔劅閿?(1.4s)
+  ok 58 [chromium] 鈥?tests\v21-review9-13-theme-setitem-guard.spec.ts:4:1 鈥?review9-13 路 setItem 鎶涢敊涓嶄腑鏂富棰橀€夋嫨涓?toggleTheme (1.5s)
+  ok 59 [chromium] 鈥?tests\v21-review9-14-css-token-integrity.spec.ts:4:1 鈥?review9-14 路 鎵€鏈?var(--c-*) 鍧囨湁瀹氫箟涓旀棩/澶?鎵撳嵃鍏抽敭鑹蹭笉鍙?(1.3s)
+
+  59 passed (3.8m)
+[build:all] 鉁?E2E 鍐掔儫 + 鍏ㄩ摼璺?+ 骞跺彂锛坧laywright锛?閫氳繃锛?29.8s锛?[build:all] E2E 閲嶅缓鍚庣殑 Web 浜х墿鎸囩汗锛堝嵆灏嗚 tauri build 鍐呭祵鐨勫瓧鑺傦級锛?[build:all] Web 浜х墿鎸囩汗锛歞ist/index.html  4719438 B  SHA-256 6fed7d742f2b75636a7122a03ea6af9cf21938247e1897d9efd1e4f419868e34
+[build:all] 鉁?Web 浜х墿鍚壒寰佺鍙凤細applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+[build:all] 娓呯悊鍘嗗彶 tauri-codegen 璧勪骇娈嬬暀锛堢 5 姝ュ墠缃級锛?[build:all]   娓呯悊 codegen 璧勪骇鐩綍锛歴rc-tauri/target/release/build/app-3e2ce4bea8f00c9f/out/tauri-codegen-assets锛? 涓枃浠讹級
+[build:all]     - 6817e1d5587a7efeee5442e0c81603afd9b6fe7f99d5ee30a396b34790700b48.html  3142700 B
+   Compiling app v2.1.0 (E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri)
+    Finished `release` profile [optimized] target(s) in 20.79s
+        Info Target: x64
+     Running makensis.exe to produce E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\bundle\nsis\JU_2.1.0_x64-s
+etup.exe
+    Finished 1 bundle at:
+        E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\bundle\nsis\JU_2.1.0_x64-setup.exe
+
+[build:all]   宸茶Е纰?src-tauri/build.rs锛堝己鍒?codegen 閲嶅缓锛?[build:all] 鉁?codegen 璧勪骇娓呯悊瀹屾垚锛氱洰褰?1 涓?/ 鏂囦欢 1 涓紙鏋勫缓鍚庡簲 stale=0锛?[build:all] 鈹佲攣鈹?[5/15] 妗岄潰鏋勫缓 tauri build --bundles nsis 鈹佲攣鈹?[build:all] 鉁?妗岄潰鏋勫缓 tauri build --bundles nsis 閫氳繃锛?5.6s锛?[build:all] 绗?5 姝ヤ骇鍑烘椂闂存埑锛?[build:all]   web E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\dist\index.html  4719438 B  2026-11-10T13:15:02.785Z
+[build:all]   exe E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\JU.exe  7380480 B  2026-11-10T13:15:42.182Z
+[build:all]   codegen 璧勪骇锛堟瀯寤哄悗锛夛細src-tauri/target/release/build/app-3e2ce4bea8f00c9f/out/tauri-codegen-assets  html=1 exe=0  [1c5046eda46d3f02af19e851e54179775b4e2a0d0b581b7ecb160a1dbc67ab5a.html]
+[build:all] 鉁?codegen 璧勪骇鐩綍骞插噣锛堜粎鏈疆浜х墿锛屾棤娈嬬暀 HTML/exe锛?[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+node:fs:1012
+  binding.rename(
+          ^
+
+Error: EBUSY: resource busy or locked, rename 'E:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-10' -> 'E:\APP\褰掓。\8.鍙戝竷涓嶤I\r
+elease\v2.1.0-2026-11-10.prev-1794316545478'
+    at renameSync (node:fs:1012:11)
+    at file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/m07-vite/scripts/prepare-release.mjs:106:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'rename',
+  path: 'E:\\APP\\褰掓。\\8.鍙戝竷涓嶤I\\release\\v2.1.0-2026-11-10',
+  dest: 'E:\\APP\\褰掓。\\8.鍙戝竷涓嶤I\\release\\v2.1.0-2026-11-10.prev-1794316545478'
+}
+
+Node.js v22.22.2
+[build:all] 鈹佲攣鈹?[6/15] 鍙戝竷褰掓。 prepare-release 鈹佲攣鈹?[build:all] 鉁?鍙戝竷褰掓。 prepare-release 澶辫触锛欵xit 1锛?.1s锛?[build:all]   寤鸿锛氬厛瀹屾垚 vite build 涓?tauri build锛屽啀鎵ц node scripts/prepare-release.mjs

@@ -1,0 +1,25 @@
+﻿[build:all] 鈹佲攣鈹?[6/12] 鍙戝竷褰掓。 prepare-release 鈹佲攣鈹?[release] ISSUE-012 璁╀綅浠剁Щ鍑?1 浠?鈫?90杩囩▼鏉愭枡/tmp/fixr6-12/prev-release-1793625615407锛屼繚鐣?v2.1.0-2026-11-02.prev-1793624825642锛涙竻鍗曪細v2.1.0-2026-11-02.prev-1793624357374
+[release] 鏃㈡湁褰掓。鏁翠綋鏀瑰悕涓?8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02.prev-1793625615410锛圝U_RELEASE_OVERWRITE=1锛?[release] Web 鍗曟枃浠剁増   6.P0-T3鍩虹嚎/m07-vite/dist/index.html -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-Web.html
+[release]   SHA-256 450743964b5738fe738060779d7882331e6c6c9b37e92973f49ce22802b4158a  (4.49 MB)
+[release]   缁濆璺緞 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-02\JU-v2.1-Web.html
+[release] 妗岄潰鐗?x64    6.P0-T3鍩虹嚎/m07-vite/src-tauri/target/release/ju.exe -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe
+[release]   SHA-256 6b238930357f944eea0c893f73501c41e55b6f538d5198623e14e0dcaf52d1c3  (6.98 MB)
+[release]   缁濆璺緞 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-02\JU-v2.1-win-x64.exe
+[release] 娓呭崟     8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-checksums.txt锛? 椤癸級
+[release] 褰掓。鐩綍 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-02锛堜綅浜?dist 涔嬪锛屼笉浼氳 Tauri 鍐呭祵锛?[release] 鉁?鍙戝竷鍖呭噯澶囧畬鎴?[build:all] 鉁?鍙戝竷褰掓。 prepare-release 閫氳繃锛?.2s锛?[build:all] 鈹佲攣鈹?[6b/12] 褰掓。涓夎鏍￠獙 check-release-parity 鈹佲攣鈹?[parity] v2.1.0-2026-11-02/JU-v2.1-Web.html  450743964b5738fe738060779d7882331e6c6c9b37e92973f49ce22802b4158a
+[parity] dist/index.html  450743964b5738fe738060779d7882331e6c6c9b37e92973f49ce22802b4158a
+[parity] 鉁?褰掓。 Web 涓?dist 涓€鑷?[parity] v2.1.0-2026-11-02/JU-v2.1-win-x64.exe  6b238930357f944eea0c893f73501c41e55b6f538d5198623e14e0dcaf52d1c3
+[parity] 6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\ju.exe  6b238930357f944eea0c893f73501c41e55b6f538d5198623e14e0dcaf52d1c3
+[parity] 鉁?褰掓。 exe 涓庢瀯寤轰骇鐗╀竴鑷?[build:all] 鉁?褰掓。涓夎鏍￠獙 check-release-parity 閫氳繃锛?.1s锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-Web.html == dist/index.html锛?50743964b5738fe738060779d7882331e6c6c9b37e92973f49ce22802b4158a锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe == src-tauri/target/release/JU.exe锛?b238930357f944eea0c893f73501c41e55b6f538d5198623e14e0dcaf52d1c3锛?[build:all] 鉁?NSIS 鍏ユ。锛欽U_2.1.0_x64-setup.exe 鈫?../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU_2.1.0_x64-setup.exe锛堝凡鐧昏 checksums锛?[build:all] 
+[build:all] 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 鏋勫缓浜х墿娓呭崟 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲
+[build:all] 
+[build:all] 鏂囦欢                                                                        瀛楄妭  SHA-256
+[build:all] --------------------------------------------------------------  ------------  ----------------------------------------------------------------
+[build:all] dist/index.html                                                      4705509  450743964b5738fe738060779d7882331e6c6c9b37e92973f49ce22802b4158a
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-Web.html             4705509  450743964b5738fe738060779d7882331e6c6c9b37e92973f49ce22802b4158a
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-checksums.txt            258  ce6b130c565edfcd0973dcb6631c1939253de9aff2365ad090374e2e9f256241
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe          7319040  6b238930357f944eea0c893f73501c41e55b6f538d5198623e14e0dcaf52d1c3
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU_2.1.0_x64-setup.exe       4454104  e008cf3856c52c53921ac7b34e30ce95584ca0d427e94bcbf03c82c5cb6eb10f
+[build:all] 
+[build:all] 鍚堣 5 涓枃浠讹紝21,184,420 瀛楄妭
+[build:all] 鉁?涓€閿彂鐗堥摼璺畬鎴?

@@ -1,0 +1,40 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:41:1 鈥?review7-12 路 鍏抽〉鍓?flushPendingLogs 琛ラ綈寰呰惤鐩?activity 鏃ュ織 (1.0s)
+
+
+  1) [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:41:1 鈥?review7-12 路 鍏抽〉鍓?flushPendingLogs 琛ラ綈寰呰惤鐩?activity 鏃ュ織 
+
+    Error: 鍏抽〉鍓?getLogTimers/flushPendingLogs 鏈帴绾?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      52 |   });
+      53 |   expect(r.pending, 'beforeunload 鍓嶅簲澶勪簬闃叉姈寰呰惤鐩?).toBe(true);
+    > 54 |   expect(r.flushed, '鍏抽〉鍓?getLogTimers/flushPendingLogs 鏈帴绾?).toBe(1);
+         |                                                              ^
+      55 |   await ctx.close(); });
+      56 |
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\v21-fixr6-close-persist.spec.ts:54:62
+
+    attachment #1: screenshot (image/png) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-fixr6-close-persist-re-dbd32-ndingLogs-琛ラ綈寰呰惤鐩?activity-鏃ュ織-chromium\test-failed-1.png
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error Context: test-results\v21-fixr6-close-persist-re-dbd32-ndingLogs-琛ラ綈寰呰惤鐩?activity-鏃ュ織-chromium\error-context.md
+
+    attachment #3: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-fixr6-close-persist-re-dbd32-ndingLogs-琛ラ綈寰呰惤鐩?activity-鏃ュ織-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fixr6-close-persist-re-dbd32-ndingLogs-琛ラ綈寰呰惤鐩?activity-鏃ュ織-chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+  1 failed
+    [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:41:1 鈥?review7-12 路 鍏抽〉鍓?flushPendingLogs 琛ラ綈寰呰惤鐩?activity 鏃ュ織 

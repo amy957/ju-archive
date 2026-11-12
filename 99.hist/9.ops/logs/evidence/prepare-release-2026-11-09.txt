@@ -1,0 +1,11 @@
+﻿[release] 既有归档整体改名为 8.发布与CI/release/v2.1.0-2026-11-09.prev-1794234489148（JU_RELEASE_OVERWRITE=1）
+[release] ISSUE-012 让位件移出 1 件 → 90过程材料/tmp/fixr6-12/prev-release-1794234489283，保留 v2.1.0-2026-11-09.prev-1794234489148；清单：v2.1.0-2026-11-09.prev-1794229505958
+[release] Web 单文件版   6.P0-T3基线/m07-vite/dist/index.html -> 8.发布与CI/release/v2.1.0-2026-11-09/JU-v2.1-Web.html
+[release]   SHA-256 2f1a2b350cb3ecffaf5b26690e734c2de183048d13429a19503c1028ed458776  (4.50 MB)
+[release]   绝对路径 E:\APP\归档\8.发布与CI\release\v2.1.0-2026-11-09\JU-v2.1-Web.html
+[release] 桌面版 x64    6.P0-T3基线/m07-vite/src-tauri/target/release/ju.exe -> 8.发布与CI/release/v2.1.0-2026-11-09/JU-v2.1-win-x64.exe
+[release]   SHA-256 458f372ecdb48cff20e344ddc04c93c17e5147570d695b37bf2012c312c18cc4  (7.04 MB)
+[release]   绝对路径 E:\APP\归档\8.发布与CI\release\v2.1.0-2026-11-09\JU-v2.1-win-x64.exe
+[release] 清单     8.发布与CI/release/v2.1.0-2026-11-09/JU-v2.1-checksums.txt（2 项）
+[release] 归档目录 E:\APP\归档\8.发布与CI\release\v2.1.0-2026-11-09（位于 dist 之外，不会被 Tauri 内嵌）
+[release] ✓ 发布包准备完成

@@ -1,0 +1,25 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/2] [chromium] 鈥?tests\recovery.spec.ts:138:3 鈥?M3-3a 澶囦唤/鎭㈠鏁呴殰娉ㄥ叆 鈥?鎹熷潖鐨勪富搴?JSON 鑷姩鎭㈠榛樿娆㈣繋鑺傜偣
+[chromium] 鈥?tests\recovery.spec.ts:138:3 鈥?M3-3a 澶囦唤/鎭㈠鏁呴殰娉ㄥ叆 鈥?鎹熷潖鐨勪富搴?JSON 鑷姩鎭㈠榛樿娆㈣繋鑺傜偣
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-C7KBmZ4T.js
+
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+
+[2/2] [chromium] 鈥?tests\recovery.spec.ts:208:3 鈥?M3-3a 澶囦唤/鎭㈠鏁呴殰娉ㄥ叆 鈥?瀛樺偍閰嶉婊℃椂闄嶇骇鎻愮ず涓斾笉宕╂簝
+[chromium] 鈥?tests\recovery.spec.ts:208:3 鈥?M3-3a 澶囦唤/鎭㈠鏁呴殰娉ㄥ叆 鈥?瀛樺偍閰嶉婊℃椂闄嶇骇鎻愮ず涓斾笉宕╂簝
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-C7KBmZ4T.js
+
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+
+  2 passed (8.1s)

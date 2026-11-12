@@ -1,0 +1,54 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › tests\v21-fix33-encrypted-desktop-save.spec.ts:13:1 › fix33-2 · 正向：invoke 恒 resolve(null) 时加密 autosave 落盘且无「加密保存失败」提示 (21.3s)
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 2 [chromium] › tests\v21-fix33-encrypted-desktop-save.spec.ts:16:1 › fix33-2 · 负向：invoke reject 时加密保存返回 false 并提示「加密保存失败」 (1.8s)
+
+
+  1) [chromium] › tests\v21-fix33-encrypted-desktop-save.spec.ts:13:1 › fix33-2 · 正向：invoke 恒 resolve(null) 时加密 autosave 落盘且无「加密保存失败」提示 
+
+    Error: null 返回必须按成功处理并关闭设密码面板
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.modal-overlay')
+    Expected: 0
+    Received: 1
+    Timeout:  20000ms
+
+    Call log:
+      - null 返回必须按成功处理并关闭设密码面板 locator('.modal-overlay') with timeout 20000ms
+      - waiting for locator('.modal-overlay')
+        43 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      12 |   return page.evaluate(() => { const w = window as any; const J = w.JU; const u = typeof J.ui === 'function' ? J.ui() : J.ui; return { encrypted: !!u.encrypted, encPayload: (w.__juCalls || []).some((c: any) => c.cmd === 'save_state' && String((c.args || {}).payload || '').includes('encStore')), toasts: (w.__juToasts || []).join('|') }; }); };
+      13 | test('fix33-2 · 正向：invoke 恒 resolve(null) 时加密 autosave 落盘且无「加密保存失败」提示', async ({ browser }) => {
+    > 14 |   const { ctx, page } = await start(browser, false); await openEnc(page); await expect(page.locator('.modal-overlay'), 'null 返回必须按成功处理并关闭设密码面板').toHaveCount(0, { timeout: 20_000 });
+         |                                                                                                                                                  ^
+      15 |   const r = await autosave(page); expect(r.encrypted).toBe(true); expect(r.encPayload).toBe(true); expect(r.toasts).not.toContain('加密保存失败'); await ctx.close(); });
+      16 | test('fix33-2 · 负向：invoke reject 时加密保存返回 false 并提示「加密保存失败」', async ({ browser }) => {
+      17 |   const { ctx, page } = await start(browser, true); await page.evaluate(() => { const J = (window as any).JU; const u = typeof J.ui === 'function' ? J.ui() : J.ui; u.encrypted = true; u.encKey = 'test123'; }); const r = await autosave(page); expect(r.encPayload).toBe(true); expect(r.toasts).toContain('加密保存失败'); await ctx.close(); });
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fix33-encrypted-desktop-save.spec.ts:14:146
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\v21-fix33-encrypted-deskto-c8973-时加密-autosave-落盘且无「加密保存失败」提示-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\v21-fix33-encrypted-deskto-c8973-时加密-autosave-落盘且无「加密保存失败」提示-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v21-fix33-encrypted-deskto-c8973-时加密-autosave-落盘且无「加密保存失败」提示-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fix33-encrypted-deskto-c8973-时加密-autosave-落盘且无「加密保存失败」提示-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\v21-fix33-encrypted-desktop-save.spec.ts:13:1 › fix33-2 · 正向：invoke 恒 resolve(null) 时加密 autosave 落盘且无「加密保存失败」提示 
+  1 passed (26.7s)

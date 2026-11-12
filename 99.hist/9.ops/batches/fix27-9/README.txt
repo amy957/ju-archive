@@ -1,0 +1,7 @@
+批次：fix27-9（2026-11-09 发版重建 nsis + parity 记账修复）
+时间：2026-11-09T15:29Z（本地 23:29）～ 2026-11-10T05:10Z（本地 13:10）
+DIST_BEFORE：4,718,623 B / 2F1A2B350CB3ECFFAF5B26690E734C2DE183048D13429A19503C1028ED458776
+DIST_AFTER ：4,718,905 B / 9090523BCB208C4861CB8B0F2B29B0ADFE68F9BACDE5650854CA5B9E09B08A6D
+归档目录：8.发布与CI/release/v2.1.0-2026-11-09（7 件：Web/exe/setup/checksums/manifest/notes/src-fingerprint）
+让位件：v2.1.0-2026-11-09.prev-1794286959910（旧 prev 已由 ISSUE-012 规则移出到 90过程材料/tmp/fixr6-12）
+edge_profile* 扫描：90过程材料/tmp 下匹配 0 项，按规则跳过删除，未删除任何其他内容。

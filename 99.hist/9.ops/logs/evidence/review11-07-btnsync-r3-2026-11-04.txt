@@ -1,0 +1,16 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/2] [chromium] 鈥?tests\v21-fix2-btnsync.spec.ts:157:3 鈥?绗簩杞?路 #btnSettings 濂戠害瑙ｈ€︼紙浜嬩欢鍗曚竴娑堣垂锛?鈥?鍗曟鐐瑰嚮鎵撳紑闈㈡澘锛涜繛鐐逛袱娆′粛鎵撳紑锛堝箓绛夊紑鍚紝涓嶇炕杞鍏筹級
+[chromium] 鈥?tests\v21-fix2-btnsync.spec.ts:157:3 鈥?绗簩杞?路 #btnSettings 濂戠害瑙ｈ€︼紙浜嬩欢鍗曚竴娑堣垂锛?鈥?鍗曟鐐瑰嚮鎵撳紑闈㈡澘锛涜繛鐐逛袱娆′粛鎵撳紑锛堝箓绛夊紑鍚紝涓嶇炕杞鍏筹級
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-C7KBmZ4T.js
+
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+
+[2/2] [chromium] 鈥?tests\v21-fix2-btnsync.spec.ts:188:3 鈥?绗簩杞?路 #btnSettings 濂戠害瑙ｈ€︼紙浜嬩欢鍗曚竴娑堣垂锛?鈥?window.JU.openSettings() / closeSettings() 涓庢寜閽涓轰竴鑷?  2 passed (9.5s)

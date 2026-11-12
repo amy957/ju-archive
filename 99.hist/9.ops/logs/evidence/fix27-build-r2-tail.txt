@@ -1,0 +1,18 @@
+﻿[release]   SHA-256 81f348d3e02f53f72d9f915c94e09f0751d82a596fdc67c02dbc672007111e07  (4.48 MB)
+[release]   缁濆璺緞 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-10-29\JU-v2.1-Web.html
+[release] 妗岄潰鐗?x64    6.P0-T3鍩虹嚎/m07-vite/src-tauri/target/release/ju.exe -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe
+[release]   SHA-256 f1710b544b5f5b556882f4dc44ee9086bd6ec1c872462d631410f9764034da30  (6.45 MB)
+[release]   缁濆璺緞 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-10-29\JU-v2.1-win-x64.exe
+[release] 娓呭崟     8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-checksums.txt锛? 椤癸級
+[release] 褰掓。鐩綍 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-10-29锛堜綅浜?dist 涔嬪锛屼笉浼氳 Tauri 鍐呭祵锛?[release] 鉁?鍙戝竷鍖呭噯澶囧畬鎴?[build:all] 鉁?鍙戝竷褰掓。 prepare-release 閫氳繃锛?.4s锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-Web.html == dist/index.html锛?1f348d3e02f53f72d9f915c94e09f0751d82a596fdc67c02dbc672007111e07锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe == src-tauri/target/release/JU.exe锛坒1710b544b5f5b556882f4dc44ee9086bd6ec1c872462d631410f9764034da30锛?[build:all] 
+[build:all] 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 鏋勫缓浜х墿娓呭崟 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲
+[build:all] 
+[build:all] 鏂囦欢                                                                       瀛楄妭  SHA-256
+[build:all] -------------------------------------------------------------  ------------  ----------------------------------------------------------------
+[build:all] dist/index.html                                                     4700328  81f348d3e02f53f72d9f915c94e09f0751d82a596fdc67c02dbc672007111e07
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-Web.html            4700328  81f348d3e02f53f72d9f915c94e09f0751d82a596fdc67c02dbc672007111e07
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-checksums.txt           169  d69d40cd0a7798926d922c76e8bb8037047779529f79aae83261b22df7a206c2
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe         6759936  f1710b544b5f5b556882f4dc44ee9086bd6ec1c872462d631410f9764034da30
+[build:all] 
+[build:all] 鍚堣 4 涓枃浠讹紝16,160,761 瀛楄妭
+[build:all] 鉁?涓€閿彂鐗堥摼璺畬鎴?

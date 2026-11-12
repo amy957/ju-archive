@@ -1,0 +1,13 @@
+修复前（dist 临时改名为 dist.neg-probe，同命令内回滚）实录：
+node:fs:560
+  return binding.open(
+                 ^
+Error: ENOENT: no such file or directory, open 'e:\APP\归档\6.P0-T3基线\m07-vite\dist\index.html'
+    at Object.openSync (node:fs:560:18)
+    at readFileSync (node:fs:444:35)
+    at sha (file:///e:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3基线/m07-vite/scripts/check-release-parity.mjs:13:48)
+    at file:///e:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3基线/m07-vite/scripts/check-release-parity.mjs:14:30
+  code: 'ENOENT'
+Node.js v22.22.2
+说明：此行即证伪条件——修复前缺少 existsSync 分支时，同命令以 ENOENT 堆栈崩溃，
+      无「缺少 dist/index.html」诊断；修复后同条件输出明确缺件行并 Exit 1。

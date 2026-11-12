@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "appVersion": "v2.0-t13-frozen-t22-r4-2026-10-18",
+    "nodeCount": 20503,
+    "ts": "2026-10-18T18:42:00+08:00",
+    "appUrl": "file:///6.P0-T3基线/step9/v2.0-t3.html",
+    "baselineBytes": 1174919,
+    "baselineSha256": "0B4AA2A66D03C65219B1CF8A08407AF65DFCA3B2AF09544AB6632D78FA945A3C",
+    "baselineEol": "LF",
+    "sourceOfTruth": "1.冻结版本/HEAD.json",
+    "previousMeta": {
+      "appVersion": "v2.0-frozen",
+      "ts": "2026-10-08T05:45:58.850Z",
+      "appUrl": "http://localhost:8090/v2.0-frozen.html"
+    },
+    "note": "元数据于 2026-10-18 归档收尾波更新为 r4 基线（ISSUE-021）。本文件中的 metrics 为 v2.0-frozen 世代的历史采样值，尚未对 r4 重测；在新基线重测落盘前，性能对拍结论不具判别力，仅作历史参照。"
+  },
+  "metrics": {
+    "bootFirstPaint": 4636,
+    "memIdle": {
+      "JSHeapUsedSize": 60363192,
+      "JSHeapTotalSize": 78397440,
+      "Nodes": 4081,
+      "Documents": 6
+    },
+    "commitTyping": {
+      "n": 100,
+      "min": 57.4000000001397,
+      "p50": 67.39999999990687,
+      "p95": 93.89999999990687,
+      "p99": 115.30000000004657,
+      "max": 129.39999999990687,
+      "mean": 71.47100000000559
+    },
+    "memAfterType": {
+      "JSHeapUsedSize": 36372216,
+      "JSHeapTotalSize": 99201024,
+      "Nodes": 29610,
+      "Documents": 1
+    },
+    "persist": {
+      "n": 1,
+      "min": 110.0999999998603,
+      "p50": 110.0999999998603,
+      "p95": 110.0999999998603,
+      "p99": 110.0999999998603,
+      "max": 110.0999999998603,
+      "mean": 110.0999999998603
+    },
+    "viewSwitch": {
+      "mindmap": {
+        "n": 3,
+        "min": 81,
+        "p50": 139,
+        "p95": 191,
+        "p99": 191,
+        "max": 191,
+        "mean": 137
+      },
+      "graph": {
+        "n": 3,
+        "min": 117,
+        "p50": 122,
+        "p95": 129,
+        "p99": 129,
+        "max": 129,
+        "mean": 122.66666666666667
+      },
+      "outline_back": {
+        "n": 6,
+        "min": 136,
+        "p50": 173,
+        "p95": 231,
+        "p99": 231,
+        "max": 231,
+        "mean": 177.83333333333334
+      },
+      "calendar": {
+        "n": 3,
+        "min": 93,
+        "p50": 113,
+        "p95": 706,
+        "p99": 706,
+        "max": 706,
+        "mean": 304
+      }
+    },
+    "memEnd": {
+      "JSHeapUsedSize": 18460476,
+      "JSHeapTotalSize": 78073856,
+      "Nodes": 96098,
+      "Documents": 1
+    },
+    "memPeak": {
+      "JSHeapUsedSize": 60363192
+    }
+  }
+}

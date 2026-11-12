@@ -1,0 +1,7 @@
+# review15-03 证伪（重打包前，JU_BUILD_DATE=2026-11-05）
+[parity] v2.1.0-2026-11-05/JU-v2.1-Web.html  fe48c6a74b095058bdc631abe69ea01408c55218fab85adc6082eb7be0725852
+[parity] dist/index.html  af554472585afcfe6d69cb871197745208ea76c8f561cc5d598bf36974270509
+[parity] ✗ ISSUE-006 归档 Web 与 dist 不一致（发布包内嵌旧前端）
+EXIT=1
+[web-parity] ✗ 归档 Web 与 dist 不一致 fe48c6a74b095058bdc631abe69ea01408c55218fab85adc6082eb7be0725852 ≠ af554472585afcfe6d69cb871197745208ea76c8f561cc5d598bf36974270509
+EXIT=1

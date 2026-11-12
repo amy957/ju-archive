@@ -1,0 +1,163 @@
+﻿TAP version 13
+# [graph-worker] 瓒呮椂锛宼erminate 閲嶅缓
+# Subtest: L17-W4 路 P1-4 路 _logTimers 涓婇檺
+    # Subtest: A1 LOG_TIMER_MAX=500 涓庢窐姹板潡浣嶄簬 set 涔嬪墠
+    ok 1 - A1 LOG_TIMER_MAX=500 涓庢窐姹板潡浣嶄簬 set 涔嬪墠
+      ---
+      duration_ms: 3.5781
+      type: 'test'
+      ...
+    # Subtest: B1 杈惧埌涓婇檺鍚庢柊澧?key 鈬?娣樻卑鏈€鏃╅」骞惰惤鐩橈紝瀹归噺涓嶈秴涓婇檺
+    ok 2 - B1 杈惧埌涓婇檺鍚庢柊澧?key 鈬?娣樻卑鏈€鏃╅」骞惰惤鐩橈紝瀹归噺涓嶈秴涓婇檺
+      ---
+      duration_ms: 0.561
+      type: 'test'
+      ...
+    1..2
+ok 1 - L17-W4 路 P1-4 路 _logTimers 涓婇檺
+  ---
+  duration_ms: 5.144
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P1-5 路 GraphLayoutWorker 鍗曟瓒呮椂閲嶅缓
+    # Subtest: A1 涓嶅啀淇濈暀杩炵画 2 娆￠槇鍊硷紝鍛戒腑鍗?terminate / ready=false / strikes=0
+    ok 1 - A1 涓嶅啀淇濈暀杩炵画 2 娆￠槇鍊硷紝鍛戒腑鍗?terminate / ready=false / strikes=0
+      ---
+      duration_ms: 0.4308
+      type: 'test'
+      ...
+    # Subtest: B1 棣栨瓒呮椂鍗崇粓姝㈠苟鎷掔粷鎸傝捣璇锋眰
+    ok 2 - B1 棣栨瓒呮椂鍗崇粓姝㈠苟鎷掔粷鎸傝捣璇锋眰
+      ---
+      duration_ms: 1.1161
+      type: 'test'
+      ...
+    1..2
+ok 2 - L17-W4 路 P1-5 路 GraphLayoutWorker 鍗曟瓒呮椂閲嶅缓
+  ---
+  duration_ms: 2.0797
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-1 路 鑷姩棰滆壊鍏ュ巻鍙叉爤
+    # Subtest: A1 鑷姩棰滆壊 commit 浣跨敤 snapshot:true锛屾棫 light+noRollback 闆舵畫鐣?    ok 1 - A1 鑷姩棰滆壊 commit 浣跨敤 snapshot:true锛屾棫 light+noRollback 闆舵畫鐣?      ---
+      duration_ms: 2.7564
+      type: 'test'
+      ...
+    1..1
+ok 3 - L17-W4 路 P2-1 路 鑷姩棰滆壊鍏ュ巻鍙叉爤
+  ---
+  duration_ms: 2.867
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-2 路 docToXls 鏁板€煎垪 Number
+    # Subtest: B1 鏁存暟 / 灏忔暟瀵煎嚭涓?Number锛屾枃鏈笌绌轰覆浠嶄负 String
+    ok 1 - B1 鏁存暟 / 灏忔暟瀵煎嚭涓?Number锛屾枃鏈笌绌轰覆浠嶄负 String
+      ---
+      duration_ms: 1.0206
+      type: 'test'
+      ...
+    1..1
+ok 4 - L17-W4 路 P2-2 路 docToXls 鏁板€煎垪 Number
+  ---
+  duration_ms: 1.1686
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-3 路 copyPlain 杩囨护 Symbol 閿?    # Subtest: A1 寰幆棣栬璺宠繃 symbol
+    ok 1 - A1 寰幆棣栬璺宠繃 symbol
+      ---
+      duration_ms: 0.1975
+      type: 'test'
+      ...
+    # Subtest: B1 Symbol 閿笉杩涘叆缁撴灉锛屽瓧绗︿覆閿甯稿鍒?    ok 2 - B1 Symbol 閿笉杩涘叆缁撴灉锛屽瓧绗︿覆閿甯稿鍒?      ---
+      duration_ms: 0.2507
+      type: 'test'
+      ...
+    1..2
+ok 5 - L17-W4 路 P2-3 路 copyPlain 杩囨护 Symbol 閿?  ---
+  duration_ms: 0.568
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P2-4 路 23:00 寤哄緟鍔炴彁绀?    # Subtest: B1 te 涓虹┖鏃惰Е鍙?toast锛宼e 鏈夋晥鏃朵笉瑙﹀彂
+    ok 1 - B1 te 涓虹┖鏃惰Е鍙?toast锛宼e 鏈夋晥鏃朵笉瑙﹀彂
+      ---
+      duration_ms: 0.2871
+      type: 'test'
+      ...
+    1..1
+ok 6 - L17-W4 路 P2-4 路 23:00 寤哄緟鍔炴彁绀?  ---
+  duration_ms: 0.3493
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P3-1 路 鍒犻櫎 parseCalTimeInput 姝讳唬鐮?    # Subtest: A1 鍏ㄦ枃浠堕浂瀹氫箟 / 闆惰皟鐢?    ok 1 - A1 鍏ㄦ枃浠堕浂瀹氫箟 / 闆惰皟鐢?      ---
+      duration_ms: 0.5545
+      type: 'test'
+      ...
+    1..1
+ok 7 - L17-W4 路 P3-1 路 鍒犻櫎 parseCalTimeInput 姝讳唬鐮?  ---
+  duration_ms: 0.6225
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P3-2 路 鏍囩璁℃暟鍗犱綅绗?0
+    # Subtest: B1 鍐风紦瀛樿繑鍥?0 瀛楃涓?    ok 1 - B1 鍐风紦瀛樿繑鍥?0 瀛楃涓?      ---
+      duration_ms: 0.2148
+      type: 'test'
+      ...
+    1..1
+ok 8 - L17-W4 路 P3-2 路 鏍囩璁℃暟鍗犱綅绗?0
+  ---
+  duration_ms: 0.2709
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 P3-3 路 _errSeen 娓呯悊绛栫暐娉ㄩ噴
+    # Subtest: A1 娉ㄩ噴浣嶄簬鍏ㄦ壂鍒ゆ柇涔嬪墠涓旇〃杩板畬鏁?    ok 1 - A1 娉ㄩ噴浣嶄簬鍏ㄦ壂鍒ゆ柇涔嬪墠涓旇〃杩板畬鏁?      ---
+      duration_ms: 0.3346
+      type: 'test'
+      ...
+    1..1
+ok 9 - L17-W4 路 P3-3 路 _errSeen 娓呯悊绛栫暐娉ㄩ噴
+  ---
+  duration_ms: 0.3819
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 OP-L17W1-1 路 renderTagsView 鍙?size
+    # Subtest: A1 璁℃暟鏀圭敤 Set.size锛屾棫 length 闆舵畫鐣?    ok 1 - A1 璁℃暟鏀圭敤 Set.size锛屾棫 length 闆舵畫鐣?      ---
+      duration_ms: 2.2311
+      type: 'test'
+      ...
+    1..1
+ok 10 - L17-W4 路 OP-L17W1-1 路 renderTagsView 鍙?size
+  ---
+  duration_ms: 2.2927
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 OP-L17W3-2 路 initStore 鏍规椂闂存埑褰掍竴
+    # Subtest: A1/B1 绉掔骇鏍规椂闂存埑 脳1000锛屾绉掑師鏍?    ok 1 - A1/B1 绉掔骇鏍规椂闂存埑 脳1000锛屾绉掑師鏍?      ---
+      duration_ms: 0.1817
+      type: 'test'
+      ...
+    1..1
+ok 11 - L17-W4 路 OP-L17W3-2 路 initStore 鏍规椂闂存埑褰掍竴
+  ---
+  duration_ms: 0.2502
+  type: 'suite'
+  ...
+# Subtest: L17-W4 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+    # Subtest: D1 鏃у舰鎬侀綈澶?鈬?鍚勯」鏂█鍏峰鍒ゅ埆鍔?    ok 1 - D1 鏃у舰鎬侀綈澶?鈬?鍚勯」鏂█鍏峰鍒ゅ埆鍔?      ---
+      duration_ms: 3.4238
+      type: 'test'
+      ...
+    1..1
+ok 12 - L17-W4 路 绾㈣瘉锛坒rozen-l14 鏀瑰墠褰㈡€侊級
+  ---
+  duration_ms: 3.5188
+  type: 'suite'
+  ...
+1..12
+# tests 15
+# suites 12
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 187.6263

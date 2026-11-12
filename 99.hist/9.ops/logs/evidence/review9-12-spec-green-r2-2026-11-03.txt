@@ -1,0 +1,13 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BD8fOaDm.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+[probe] {"theme":"night","w":333,"rootOk":true}
+  ok 1 [chromium] › tests\review9-12-probe.spec.ts:3:1 › review9-12 · preimport ui 偏好可恢复且不含敏感键 (6.0s)
+
+  1 passed (8.2s)

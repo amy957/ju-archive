@@ -1,0 +1,8 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close (2.4s)
+
+  1 passed (4.2s)

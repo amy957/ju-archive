@@ -1,0 +1,147 @@
+﻿# L10-W4 path-isolation sentinel  wave=l15  ts=2026-10-17T02:35:11Z
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-design-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w1-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w1-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w1-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w2-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w2-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w2-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w3-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w3-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w3-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w3-w5freeze-l10-freeze.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w3-w5freeze-l10.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w3-w5freeze-red.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-entropy-snapshot-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-entropy-verify-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-entropy.json	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-paths-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-w4freeze-red.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w4-w4paths-red.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w5-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w5-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w5-verifyall-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l10-w5-w5freeze-l9.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-design-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w1-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w1-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w2-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w2-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w2-l11probe-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w2-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w3-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w3-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w3-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-entropy-snapshot-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-entropy-verify-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-entropy.json	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-l11probe-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-paths-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w4-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w5-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w5-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w6-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w6-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w6-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l11-w6-verifyall-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-design-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w1-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w1-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w2-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w2-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w2-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w3-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w3-green-log-2026-10-15-l12on.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w3-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w3-l12spec-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w3-red-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w4-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w4-green-2026-10-15-l12on.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w4-green-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w5-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w5-green-log-2026-10-15-l12on.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l12-w5-green-log-2026-10-15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-cleanup-ai-notes-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-cleanup-frozen-ai-notes-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-decisions-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-design-2026-10-15.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-design-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-online-release-closure-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w1-nid-audit-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w2-wiring-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w3-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w3-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w3-impl-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w3-impl-l13-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w3-implementation-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w3-red-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w4-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w4-decisions-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w4-impl-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w4-impl-l13-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w5-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w5-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l13-w6-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-design-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-online-release-closure-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w1-audit-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w2-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w2-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w2-red-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w3-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w3-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w3-red-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w4-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w4-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w5-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l14-w5-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w1-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w2-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w3-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w4-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w5-design-2026-10-16.md	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w5-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w6-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\l15-w7-green-log-2026-10-16.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4freeze-l10.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4freeze-l11.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4freeze-l11w6.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4freeze-l12.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4freeze-l15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4freeze.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4paths-l10.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4paths-l11.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4paths-l11w6.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4paths-l12.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4paths-l15.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\reports\_w4paths.txt	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\scripts\_w4freeze.ps1	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\scripts\_w4paths.ps1	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\tests\l10-idb-persist.spec.ts	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\tests\l11-anchor-governance.spec.ts	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\tests\l12-virtual-scroll.spec.ts	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\tests\l13-mb-workset.spec.ts	IN-ROOT	OK
+ARTIFACT	E:\APP\归档\6.P0-L3基线\step9\tests\l14-virtual-scroll-hardening.spec.ts	IN-ROOT	OK
+FORBIDDEN	name	sha256-16	verdict	expected
+FORBIDDEN	source-trace(v2.0-l3.html)	97E7331EAEB52640	PRESENT	(record)
+FORBIDDEN	canonical(v2.0-l3.html.html)	1A61EEBD3D17F59B	FROZEN-OK	1A61EEBD3D17F59B
+FORBIDDEN	73（与v2.0-frozen同哈希源文件）.html	97E7331EAEB52640	PRESENT	(record)
+FORBIDDEN	v2.0-frozen.html	97E7331EAEB52640	FROZEN-OK	97E7331EAEB52640
+FORBIDDEN	v2.0-l3-frozen-2026-10-14.html	89D889731B9E6B19	FROZEN-OK	89D889731B9E6B19
+FORBIDDEN	v2.0-l3-frozen-l10-2026-10-15.html	D7D265D5C8C584F1	FROZEN-OK	D7D265D5C8C584F1
+FORBIDDEN	v2.0-l3-frozen-l11-2026-10-15.html	D7D265D5C8C584F1	FROZEN-OK	D7D265D5C8C584F1
+FORBIDDEN	v2.0-l3-frozen-l11w6-2026-10-15.html	72DA6B3ED39389C3	FROZEN-OK	72DA6B3ED39389C3
+FORBIDDEN	v2.0-l3-frozen-l12-2026-10-15.html	F8529C60381D733D	FROZEN-OK	F8529C60381D733D
+FORBIDDEN	v2.0-l3-frozen-l13-2026-10-16.html	21BECFD43D330913	FROZEN-OK	21BECFD43D330913
+FORBIDDEN	v2.0-l3-frozen-l14-2026-10-16.html	D110699F19D5A9C7	FROZEN-OK	D110699F19D5A9C7
+FORBIDDEN	v2.0-l3-frozen-l8-2026-10-14.html	2F43EA0F097811C5	FROZEN-OK	2F43EA0F097811C5
+FORBIDDEN	v2.0-l3-frozen-l9-2026-10-14.html	2F43EA0F097811C5	FROZEN-OK	2F43EA0F097811C5
+FORBIDDEN	v2.0-l3-frozen-l9w6-2026-10-15.html	5D66C406EF9FD668	FROZEN-OK	5D66C406EF9FD668
+CANARY_ARTIFACTS=128
+VIOLATION_COUNT=0
+RESULT=PASS

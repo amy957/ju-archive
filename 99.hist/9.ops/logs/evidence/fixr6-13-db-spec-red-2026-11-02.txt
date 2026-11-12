@@ -1,0 +1,47 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] 鈥?tests\v21-fixr6-13-db-skip.spec.ts:4:1 鈥?fixr6-13 路 .db 瀵煎叆澶辫触鍙烦杩囨湰鏂囦欢锛屽悗缁?b.md 浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a.db (20.2s)
+
+
+  1) [chromium] 鈥?tests\v21-fixr6-13-db-skip.spec.ts:4:1 鈥?fixr6-13 路 .db 瀵煎叆澶辫触鍙烦杩囨湰鏂囦欢锛屽悗缁?b.md 浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a.db 
+
+    Error: a.db 涓嶅緱涓柇鏁存壒锛歜.md 蹇呴』鐢熸垚鑺傜偣
+
+    a.db 涓嶅緱涓柇鏁存壒锛歜.md 蹇呴』鐢熸垚鑺傜偣
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+      14 |     { name: 'b.md', mimeType: 'text/markdown', buffer: Buffer.from('db-skip-md 鑺傜偣') },
+      15 |   ]);
+    > 16 |   await expect.poll(count, { message: 'a.db 涓嶅緱涓柇鏁存壒锛歜.md 蹇呴』鐢熸垚鑺傜偣', timeout: 20_000 }).toBe(1);
+         |                                                                                     ^
+      17 |   await expect(page.locator('#toast')).toContainText('a.db');
+      18 |   await ctx.close();
+      19 | });
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\v21-fixr6-13-db-skip.spec.ts:16:85
+
+    attachment #1: screenshot (image/png) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-fixr6-13-db-skip-fixr6-abce2-杩囨湰鏂囦欢锛屽悗缁?b-md-浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a-db-chromium\test-failed-1.png
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error Context: test-results\v21-fixr6-13-db-skip-fixr6-abce2-杩囨湰鏂囦欢锛屽悗缁?b-md-浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a-db-chromium\error-context.md
+
+    attachment #3: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-fixr6-13-db-skip-fixr6-abce2-杩囨湰鏂囦欢锛屽悗缁?b-md-浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a-db-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fixr6-13-db-skip-fixr6-abce2-杩囨湰鏂囦欢锛屽悗缁?b-md-浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a-db-chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+  1 failed
+    [chromium] 鈥?tests\v21-fixr6-13-db-skip.spec.ts:4:1 鈥?fixr6-13 路 .db 瀵煎叆澶辫触鍙烦杩囨湰鏂囦欢锛屽悗缁?b.md 浠嶇敓鎴愯妭鐐逛笖鎻愮ず鍚?a.db 

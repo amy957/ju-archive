@@ -1,0 +1,11 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+REVIEW906 {"total":4,"leaked":[],"logs":["[btnSet] clicked","[popover] toggle settingsPanel","[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o","[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"],"post":{"sel":"REVIEW906-SECRET-TEXT","html":"<span style=\"color: rgb(158, 46, 36); font-size: 15px; font-weight: bold;\">REVIEW906-SECRET-TEXT</span>"}}
+  ok 1 [chromium] › tests\probe-review9-06.spec.ts:16:1 › review9-06 · 加密态选中正文加粗，控制台不得出现正文 (3.2s)
+REVIEW906DBG {"rt":["[JU-RT] 1 false #text 21"]}
+  ok 2 [chromium] › tests\probe-review9-06.spec.ts:32:1 › review9-06 · __JU_RT_DEBUG=true 时仅输出计数 / 标签 / 长度 (1.5s)
+
+  2 passed (6.4s)

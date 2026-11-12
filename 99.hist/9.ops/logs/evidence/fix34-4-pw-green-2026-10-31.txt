@@ -1,0 +1,9 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\update-crash.spec.ts:242:3 鈥?M5-1a / M5-1b 妗岄潰澧炲己閫氶亾 鈥?鑷姩鏇存柊纭妗嗭紙v2.2.0锛変笌宕╂簝鍖?save_crash_dump IPC 鍧囩湡瀹炶Е鍙?(2.6s)
+  ok 2 [chromium] 鈥?tests\update-crash.spec.ts:483:3 鈥?M5-1a / M5-1b 妗岄潰澧炲己閫氶亾 鈥?鏃?__TAURI__ 鏃?readCrashDumps 蹇呴』杩斿洖 ok:false (4ms)
+
+  2 passed (4.3s)

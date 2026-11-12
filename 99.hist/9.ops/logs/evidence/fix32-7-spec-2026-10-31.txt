@@ -1,0 +1,8 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\v21-fix31-topbar-popover.spec.ts:7:1 › fix31 · 顶栏设置/提醒浮窗可开且落在视口内 · 置顶有反馈 (2.0s)
+
+  1 passed (3.8s)

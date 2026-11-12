@@ -1,0 +1,54 @@
+﻿[verify] mode=all root=E:\APP\褰掓。\6.P0-T3鍩虹嚎\step9
+#   PASS  __juProduce({a:1}, d=>{d.a=2}) -> {a:2} 涓?base 浠?{a:1}
+#   PASS  __juProduce({a:1}, d=>{}) -> {a:1} 鍘熷紩鐢紙鏈慨鏀逛笉澶嶅埗锛?#   PASS  __juProduce({a:1}, ()=>null) -> null
+#   PASS  __juProduce(null, ()=>1) -> 1
+#   PASS  __juProduce(null, ()=>{}) -> null
+#   PASS  __juProduce(5, d=>d+1) -> 6
+#   PASS  recipe 鎶涢敊 -> 鍘熸牱鎶涘嚭锛宐ase 鏈薄鏌?#   PASS  __juProduceSafe 鎶涢敊 -> {ok:false, base, error}
+#   PASS  __juProduceSafe({a:1}, d=>{d.a=2}) -> {ok:true, next:{a:2}}
+#   PASS  __juProduce([1,2], d=>{d.push(3)}) -> [1,2,3]
+#   PASS  __juProduce({a:{b:1}}, d=>{d.a.b=2}) -> {a:{b:2}} 娣卞厠闅?#   PASS  __juProduce(new Date(0), ...) -> Date 瀹炰緥锛屽勾浠?2000锛堜緷璧?structuredClone锛?#   PASS  __juProduce({m:Map}, d=>{}) -> Map 淇濈暀锛堜緷璧?structuredClone锛?#   PASS  __juProduce("abc", ()=>undefined) -> "abc"
+#   PASS  recipe 闈炲嚱鏁?-> TypeError
+#   PASS  寰幆寮曠敤瀵硅薄 -> structuredClone 姝ｅ父鍏嬮殕
+#   PASS  闈?light 鎴愬姛锛歴tate 鏇挎崲涓烘柊寮曠敤涓?foo=1, updatedAt 鎺ㄨ繘
+# [JU] commit action failed, rolling back Error: x
+#   PASS  闈?light 鎶涢敊锛氳繑鍥炲師 state 寮曠敤锛屾湭鏇挎崲锛岄€氱煡 1 娆★紝鍘嗗彶鏍?0 push
+#   PASS  light 鎴愬姛锛歴tate 寮曠敤鏀瑰彉锛坈opy-on-write锛夛紝colWidth=200
+#   PASS  light 鎶涢敊锛堝彲鍥炴粴璇箟锛夛細state 鍘熷紩鐢ㄤ笉鍙樸€佹棤 colWidth 娈嬬暀锛岄€氱煡 1 娆?#   PASS  light 鎶涢敊+noRollback锛歴tate 鍘熷紩鐢ㄤ笉鍙樸€佹棤娈嬬暀锛堣涔夎嚜鐒舵弧瓒筹級锛岄€氱煡 1 娆?# [JU] commit action failed, rolling back Error: x
+# [JU] commit action failed, rolling back Error: x
+#   PASS  snapshot=true锛歨istoryPast=1, historyFuture=0, state.x=1
+#   PASS  undo锛氳繑鍥?true锛宧istoryFuture=1锛坕nvertPatch锛夛紝state 寮瑰嚭鍚庣敱 applyPatch 鍐冲畾锛屽壇鏈潪鍚屼竴寮曠敤
+#   PASS  redo锛氳繑鍥?true锛宧istoryPast=1锛坕nvertPatch 鎺ㄥ叆锛夛紝state 鐢?applyPatch 鍐冲畾
+#   PASS  杩炵画 snapshot锛歨istoryPast 瀛?patch锛坢ode=snapshot, op=unknown锛夛紝state.x=2锛屽壇鏈紩鐢ㄩ殧绂?# 缁撴灉: 9 閫氳繃, 0 澶辫触
+#   PASS  light 鎴愬姛锛歴tate 寮曠敤鏀瑰彉锛坈opy-on-write锛夛紝updatedAt 琚?bump锛屽€煎啓鍏?#   PASS  A2 noRollback 鎶涢敊锛歴tate 鍘熷紩鐢ㄤ笉鍙樸€佹棤姹℃煋娈嬬暀锛坧roduce 澶╃劧鍥炴粴锛?#   PASS  A1 safeClone 鎵撴々 + 鎶涢敊锛歴tate 鍘熷紩鐢ㄤ笉鍙樸€佹棤娈嬬暀锛堝浠芥満鍒跺凡绉婚櫎锛?#   PASS  鏈夋晥澶囦唤 + 鎶涢敊锛歴tate 琚洖婊氾紙鏃犳薄鏌撳瓧娈碉級锛屼笉涓婃姤浠讳綍 kind
+#   PASS  B1 闈?silent 鎶涢敊锛歴cheduleNotify 鑷冲皯琚皟鐢?1 娆?#   PASS  C1 light 涓嶅叆鍘嗗彶鏍堬細绗竴娆?undo=true锛堝洖閫€ snapshot锛夛紝绗簩娆?undo=false
+#   PASS  Step2 鍥炲綊锛氶潪 light 鎶涢敊 state 寮曠敤涓嶅彉銆乶odes 瀹屽ソ銆佷笉涓婃姤 light kind
+    # Subtest: T-96(N) 闄嶇骇璺緞鍙祴锛歴etFailNext / closed 鈫?鍚?{name,message}
+    ok 4 - T-96(N) 闄嶇骇璺緞鍙祴锛歴etFailNext / closed 鈫?鍚?{name,message}
+# calrev_gate={"nonCalFailures":5,"revDelta":1,"calCacheCleared":true}
+# calrev_gate_fail_p95_ms=0.0020
+    # Subtest: B4: l6InjectionFailure 鍚屾牱鎸夌紦瀛樺疄鏈夋€ч€掑
+    ok 4 - B4: l6InjectionFailure 鍚屾牱鎸夌紦瀛樺疄鏈夋€ч€掑
+# [L16-W21] baseline property.clean={"iterations":200,"legacyScenarios":22,"invFails":{"I1":0,"I2":22,"I3":0}}
+# [L16-W21] property.clean={"iterations":200,"legacyScenarios":22,"invFails":{"I1":0,"I2":0,"I3":0}}
+    # Subtest: D2: 鐜拌鍙ｅ緞 property.clean.invFails.I2 = 0
+    ok 2 - D2: 鐜拌鍙ｅ緞 property.clean.invFails.I2 = 0
+# [搂F] PASS(ratio) \#1 new=3.804ms old=58.514ms drop=93.5%
+# Subtest: L9-W3 搂DISPOSE / RESULT 鍗忚
+    # Subtest: T-83 鍗忚鏋勯€犱笌褰㈢姸鏍￠獙锛歮akeResult / isResponse / isDispose
+    ok 1 - T-83 鍗忚鏋勯€犱笌褰㈢姸鏍￠獙锛歮akeResult / isResponse / isDispose
+    # Subtest: T-85 RESULT 鍏宠仈锛堝悎鎴愬搷搴旓級+ unknown-id 瀹夊叏蹇界暐锛堟棤鏈鐞嗘嫆缁濓級
+    ok 3 - T-85 RESULT 鍏宠仈锛堝悎鎴愬搷搴旓級+ unknown-id 瀹夊叏蹇界暐锛堟棤鏈鐞嗘嫆缁濓級
+ok 212 - L9-W3 搂DISPOSE / RESULT 鍗忚
+# pass 503
+# fail 0
+  ok  37 [chromium] 鈥?tests\t10-idb-persist.spec.ts:543:3 鈥?L10-W2 路 D-1 鎸佷箙灞傛帴缂濓紙P 灞?路 鐪熷疄娴忚鍣?/ 闂ㄧ鏂█锛?鈥?T-99 闂ㄧ 路 15+M 鏂圭櫥璁?RESULT=PASS锛堝摠鍏?路 涓嶅彉閲?#29 路 LO-8锛?(2.3s)
+  ok 111 [chromium] 鈥?tests\t8-persist-patch.spec.ts:534:3 鈥?L8-W2 搂8.9 杞婚噺鎸囩汗瀹堝崼 + 鎺㈤拡 w2 + 澶辫触缂撳啿 鈥?T-61 鏃犲彉鏇磋烦杩?invoke锛圖-8锛夛紱鎺㈤拡 w2 瀛楁锛沖_juPersistFailures 涓婇檺 L8_FAIL_CAP(50) (2.7s)
+  ok 121 [chromium] 鈥?tests\t6-index.spec.ts:571:3 鈥?L6 搂7.9 __juIndexFailures 鈥?T-22 瀹归噺 50 FIFO (959ms)
+  ok 125 [chromium] 鈥?tests\t6-index.spec.ts:585:3 鈥?L6 搂7.9 __juIndexFailures 鈥?T-23 杩炵画 3 娆″け璐?鈫?寮哄埗 4 绱㈠紩 null锛堣嚜鍐?2锛?(917ms)
+  ok 154 [chromium] 鈥?tests\t9-persist-layer.spec.ts:342:3 鈥?L9-W3 路 鎸佷箙灞?/ 鍔犺В瀵?/ 绱㈠紩 / Worker 鍗忚锛圥 灞?路 鐪熷疄娴忚鍣級 鈥?L9-6 RESULT 鍏宠仈 + 鍗忚褰㈢姸 + unknown-id 瀹夊叏蹇界暐锛堟棤鏈鐞嗘嫆缁?/ 鏃犳偓鎸?timer锛?(658ms)
+  ok 160 [chromium] 鈥?tests\t6-index.spec.ts:976:3 鈥?L6 搂7.13 M5 杈圭晫鏉′欢 + 娉ㄥ叆鐐归檷绾?鈥?T-34 M5-2 娉ㄥ叆鐐归檷绾э細l6InjectionFailure 璁板綍澶辫触 + 寮哄埗 4 绱㈠紩 null (473ms)
+  167 passed (53.8s)
+鈻?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?  $ node scripts/compare-bench.js bench-p0-baseline.json bench-p0-after-t3.json --exclude-op=commitRewriteAllText
+[compare-bench] 鎺掗櫎鍦烘櫙锛堜笉鍙備笌鍒ゅ畾/閫€鍑虹爜锛夛細commitRewriteAllText
+[verify] 鍏ㄩ儴閫氳繃

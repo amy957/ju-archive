@@ -1,0 +1,20 @@
+{
+  "name": "ju-perf-baseline",
+  "private": true,
+  "description": "JU 工作台性能基线套件运行入口（ISSUE-009）。依赖版本与 6.P0-T3基线/step9/package.json 保持一致；本文件只提供可复现的启动命令，不改动任何基准数值。",
+  "scripts": {
+    "bench": "playwright test -c playwright.config.ts",
+    "bench:p0": "playwright test -c playwright.config.ts tests/bench-p0-baseline.spec.ts",
+    "bench:smoke": "playwright test -c playwright.config.ts tests/bench-smoke.spec.ts",
+    "bench:ui": "playwright test -c playwright.config.ts tests/JU-bench-ui-interaction.spec.ts",
+    "bench:fixtures": "node tools/gen-bench.js 20k",
+    "bench:fixtures:30k": "node tools/gen-bench.js 30k"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@types/node": "26.6.5"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

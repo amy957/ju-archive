@@ -1,0 +1,2 @@
+﻿blocks=9 syntaxFail=0
+SYNTAX=OK

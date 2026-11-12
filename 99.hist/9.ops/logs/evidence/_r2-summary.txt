@@ -1,0 +1,27 @@
+﻿[verify] 鍏ㄩ儴閫氳繃
+[verify] mode=all root=e:\APP\褰掓。\6.P0-T3鍩虹嚎\step9
+琚祴浠讹細浜у搧浠?m07-vite锛坉ist 浜х墿锛壜?PW 闆嗘垚娴嬭瘯 canonical v2.0-t3.html锛坒ile:// 鍔犺浇锛?
+鈻?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?鉁?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?(0 鍛戒腑, 15ms)
+
+鈻?Node 鍗曞厓娴嬭瘯
+  $ node --test --test-concurrency=1 P0-T3/tests/structural-sharing.test.mjs P0-T3/tests/step1-produce.test.mjs P0-T3/tests/step2-commit.test.mjs P0-T3/tests/step3-light.test.mjs t9/t9-persist-layer.test.mjs t9/t9-backend-parity.test.mjs t9/t9-shadow-wiring.test.mjs t9/t10-idb-persist.test.mjs t9/t10-w4-consistency.test.mjs t9/t11-w4-consistency.test.mjs t9/t12-virtual-scroll.test.mjs t9/t12-w4-consistency.test.mjs t9/t13-mb-workset.test.mjs t9/t14-vs-hardening.test.mjs t9/t14-w4-consistency.test.mjs t9/t16-w1-persist-rev.test.mjs t9/t16-w2-cal-rev.test.mjs t9/t16-w3-sidebar-counts.test.mjs t9/t16-w4-outline-header-ro.test.mjs t9/t16-w5-caltg-visibility.test.mjs t9/t16-w6-childset-cache.test.mjs t9/t16-w7-collect-subtree.test.mjs t9/t16-w8-tombstone-sweep.test.mjs t9/t16-w9-theme-token.test.mjs t9/t16-w10-defecta-root-guard.test.mjs t9/t16-w11-tombstone-queue-compaction.test.mjs t9/t16-w12-patch-children-holes.test.mjs t9/t16-w13-remote-received-delete-propagation.test.mjs t9/t16-w14-persist-chain-async.test.mjs t9/t16-w15-sidecounts-fallback.test.mjs t9/t16-w16-sanitize-idempotent.test.mjs t9/t16-w17-boot-backup-fallback.test.mjs t9/t16-w18-pii-redaction.test.mjs t9/t16-w19-enc-stack-placeholder.test.mjs t9/t16-w20-calrev-gate.test.mjs t9/t16-w21-merge-ts-unit.test.mjs t9/t17-w1-rendersubtags-rows.test.mjs t9/t17-w2-weekview-local-day.test.mjs t9/t17-w3-p1-fixes.test.mjs t9/t17-w4-batch-fixes.test.mjs t9/t18-final-patch.test.mjs t9/t19-patch1.test.mjs t9/t19-patch2.test.mjs t9/t19-patch3.test.mjs
+TAP version 13
+# 鍐呰仈 <script> 鍧楁暟閲? 9
+#   script\#0: 璇硶 OK (271841 chars)
+#   script\#1: 璇硶 OK (199179 chars)
+#   script\#2: 璇硶 OK (130434 chars)
+#   script\#3: 璇硶 OK (53242 chars)
+#   script\#4: 璇硶 OK (111937 chars)
+=====TAIL=====
+- 鏈€澶ф伓鍖栵細0.0%
+- 涓綅鏁版伓鍖栵細-14.3%
+鉁?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?(124ms)
+
+鈹佲攣 姝ラ鎽樿 鈹佲攣
+  鉁?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?(15ms)
+  鉁?Node 鍗曞厓娴嬭瘯锛?03 鐢ㄤ緥锛?(30086ms)
+  鉁?Playwright 闆嗘垚娴嬭瘯锛坈anonical v2.0-t3.html 路 L3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 鐢ㄤ緥锛?+ L13 6 = 171 鐢ㄤ緥 (75031ms)
+  鉁?涓嶅彉閲忚鐩栨槧灏勶紙ISSUE-028 路 鏈鐩栨竻鍗曪級锛堟湭瑕嗙洊 105 鏉★級 (50ms)
+  鉁?鎬ц兘瀵规媿锛堟帓闄?commitRewriteAllText锛?(124ms)
+
+[verify] 鍏ㄩ儴閫氳繃

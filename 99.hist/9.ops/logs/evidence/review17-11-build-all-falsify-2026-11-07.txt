@@ -1,0 +1,468 @@
+[build:all] 产品件（m07-vite）本地一键发版开始（共 14 步）：tsc → 1b → 1c → 1d → 1e → 1f → 1g → test → vite → 3b → e2e → tauri → prepare-release → 6b
+[build:all] ━━━ [1/14] 类型检查 tsc --noEmit ━━━
+[build:all] ✓ 类型检查 tsc --noEmit 通过（5.6s）
+[build:all] ━━━ [1b/14] 装配门禁 check-deps-wired ━━━
+PASS  bindLayoutDeps: 5 个关键依赖均为真实实现
+PASS  bindThemeDeps: 2 个关键依赖均为真实实现
+PASS  bindSelectionDeps: 3 个关键依赖均为真实实现
+PASS  bindSidebarDeps: 17 个关键依赖均为真实实现
+PASS  bindRightbarDeps: 4 个关键依赖均为真实实现
+PASS  bindRenderMainDeps: 8 个关键依赖均为真实实现
+PASS  injectBootDeps: 14 个关键依赖均为真实实现
+PASS  bindErrorDeps: 5 个关键依赖均为真实实现
+PASS  bindPersistDeps: 7 个关键依赖均为真实实现
+PASS  bindCryptoDeps: 10 个关键依赖均为真实实现
+isDesktop 同源: hasDesktopInvoke
+PASS  关闭加密读端: OK (boot.ts load_state 复核 + 桥接不可用提示 + 原子写先于成功；crypto.ts await clear_encrypted)
+PASS  desktopSave: 函数体含能力检查且按异常判败
+purge 覆盖: 21/21 keys
+
+共检查 78 个依赖键，失败 0 项
+P1/P2 PASS: 装配点无空壳依赖
+[build:all] ✓ 装配门禁 check-deps-wired 通过（0.1s）
+[build:all] ━━━ [1c/14] 零漂移与内联样式闸门 ━━━
+PARITY OK  sha256=5fed021578e775b560bf98af719046eb2916472f4053354a33a1a436dfbff818  bytes=1316707
+VERSION OK  main.ts JU_VER=2.1.0  errors.ts JU_VER=''  package.json.version=2.1.0  Cargo.toml=2.1.0  tauri.conf.json=2.1.0
+[build:all] ✓ 零漂移与内联样式闸门 通过（0.1s）
+[build:all] ━━━ [1d/14] 许可审计 audit-license ━━━
+[audit-license] --check 只读模式：未写入 docs\LICENSE-AUDIT.md
+[audit-license] 依赖 79（runtime 0 / dev 79） · strong 0 · weak 0 · permissive 79 · unknown 0
+[audit-license] Rust app@2.1.0 · license LicenseRef-Proprietary · Cargo.lock 包 416
+[audit-license] OK：无 AGPL / GPL / SSPL 强传染协议
+[build:all] ✓ 许可审计 audit-license 通过（0.1s）
+[build:all] ━━━ [1e/14] 未使用导出统计 check-unused-exports ━━━
+[unused-exports] 扫描 51 个文件，导出 1219 个，未使用 214 个（使用率 82.4%）。
+  - src/views/outline.ts: 25
+  - src/core/richtext.ts: 16
+  - src/views/calendar.ts: 11
+  - src/core/virtual-scroll.ts: 10
+  - src/utils/lunar.ts: 10
+  - src/core/idb.ts: 9
+  - src/core/persist.ts: 9
+  - src/ui/editors.ts: 9
+  - src/io/import.ts: 8
+  - src/core/search.worker.ts: 7
+  - src/core/store.ts: 7
+  - src/core/wordcount.worker.ts: 7
+  - src/ui/xselect.ts: 7
+  - src/ui/rightbar.ts: 5
+  - src/core/crypto.ts: 4
+  - src/io/export.ts: 4
+  - src/ui/focus.ts: 4
+  - src/ui/layout.ts: 4
+  - src/ui/timepicker.ts: 4
+  - src/views/database/formula.ts: 4
+  - src/views/database/panels.ts: 4
+  - src/views/graph.ts: 4
+  - src/views/slides.ts: 4
+  - src/app/boot.ts: 3
+  - src/contract/lifecycle.ts: 3
+  - src/contract/registry.ts: 3
+  - src/views/lists.ts: 3
+  - src/app/render.ts: 2
+  - src/core/actions.ts: 2
+  - src/core/errors.ts: 2
+  - src/core/local-copies.ts: 2
+  - src/ui/print.ts: 2
+  - src/ui/selection.ts: 2
+  - src/utils/regions.ts: 2
+  - src/views/database/render.ts: 2
+  - src/views/mindmap.ts: 2
+  - src/views/presentation.ts: 2
+  - src/core/audio.ts: 1
+  - src/legacy/loader.ts: 1
+  - src/ui/common.ts: 1
+  - src/ui/manual.ts: 1
+  - src/ui/sidebar.ts: 1
+  - src/ui/theme.ts: 1
+[build:all] ✓ 未使用导出统计 check-unused-exports 通过（0.2s）
+[build:all] ━━━ [1f/14] Rust 编译检查 ━━━
+   Compiling app v2.1.0 (E:\APP\归档\6.P0-T3基线\m07-vite\src-tauri)
+warning: function `patch_nodes` is never used
+   --> src\main.rs:150:4
+    |
+150 | fn patch_nodes(
+    |    ^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `app` (bin "app") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.83s
+[build:all] ✓ Rust 编译检查 通过（0.9s）
+[build:all] ━━━ [1g/14] 回执扫描 ━━━
+[build:all] ⚠ 无回执 archive
+[build:all] ⚠ 无回执 fix-rev17
+[build:all] ⚠ 无回执 fix1-1
+[build:all] ⚠ 无回执 fix10
+[build:all] ⚠ 无回执 fix11
+[build:all] ⚠ 无回执 fix12
+[build:all] ⚠ 无回执 fix13
+[build:all] ⚠ 无回执 fix15-13
+[build:all] ⚠ 无回执 fix1h
+[build:all] ⚠ 无回执 fix1i
+[build:all] ⚠ 无回执 fix22
+[build:all] ⚠ 无回执 fix22-patch1
+[build:all] ⚠ 无回执 fix22-patch2
+[build:all] ⚠ 无回执 fix22-patch3
+[build:all] ⚠ 无回执 fix23
+[build:all] ⚠ 无回执 fix24
+[build:all] ⚠ 无回执 fix25
+[build:all] ⚠ 无回执 fix26
+[build:all] ⚠ 无回执 fix26-p1
+[build:all] ⚠ 无回执 fix26-p2
+[build:all] ⚠ 无回执 fix26-p3
+[build:all] ⚠ 无回执 fix26-p4
+[build:all] ⚠ 无回执 fix26-p5
+[build:all] ⚠ 无回执 fix26-patch1
+[build:all] ⚠ 无回执 fix27
+[build:all] ⚠ 无回执 fix28
+[build:all] ⚠ 无回执 fix29
+[build:all] ⚠ 无回执 fix30
+[build:all] ⚠ 无回执 fix31
+[build:all] ⚠ 无回执 fix32-10
+[build:all] ⚠ 无回执 fix32-5
+[build:all] ⚠ 无回执 fix33
+[build:all] ⚠ 无回执 fix33-2
+[build:all] ⚠ 无回执 fix33-3
+[build:all] ⚠ 无回执 fix33-4
+[build:all] ⚠ 无回执 fix33-5
+[build:all] ⚠ 无回执 fix33-6
+[build:all] ⚠ 无回执 fix33-7
+[build:all] ⚠ 无回执 fix33-8
+[build:all] ⚠ 无回执 fix33-9
+[build:all] ⚠ 无回执 fix34
+[build:all] ⚠ 无回执 fix34-1
+[build:all] ⚠ 无回执 fix34-2
+[build:all] ⚠ 无回执 fix34-4
+[build:all] ⚠ 无回执 fix34-5
+[build:all] ⚠ 无回执 fix34-6
+[build:all] ⚠ 无回执 fix35-1
+[build:all] ⚠ 无回执 fix36
+[build:all] ⚠ 无回执 fix36-1
+[build:all] ⚠ 无回执 fix37-1
+[build:all] ⚠ 无回执 fix37-2
+[build:all] ⚠ 无回执 fix37-p1
+[build:all] ⚠ 无回执 fix38
+[build:all] ⚠ 无回执 fix38-1
+[build:all] ⚠ 无回执 fix39
+[build:all] ⚠ 无回执 fix39-1
+[build:all] ⚠ 无回执 fix40
+[build:all] ⚠ 无回执 fix40-1
+[build:all] ⚠ 无回执 fix41
+[build:all] ⚠ 无回执 fix42
+[build:all] ⚠ 无回执 fix43-4
+[build:all] ⚠ 无回执 fix43-5
+[build:all] ⚠ 无回执 fix6
+[build:all] ⚠ 无回执 fix7
+[build:all] ⚠ 无回执 fix8
+[build:all] ⚠ 无回执 fix9
+[build:all] ⚠ 无回执 fixPaste-1
+[build:all] ⚠ 无回执 fixUnused1
+[build:all] ⚠ 无回执 fixhex-01
+[build:all] ⚠ 无回执 fixr6-1
+[build:all] ⚠ 无回执 fixr6-10
+[build:all] ⚠ 无回执 fixr6-11
+[build:all] ⚠ 无回执 fixr6-12
+[build:all] ⚠ 无回执 fixr6-13
+[build:all] ⚠ 无回执 fixr6-14
+[build:all] ⚠ 无回执 fixr6-15
+[build:all] ⚠ 无回执 fixr6-17
+[build:all] ⚠ 无回执 fixr6-19
+[build:all] ⚠ 无回执 fixr6-3
+[build:all] ⚠ 无回执 fixr6-4
+[build:all] ⚠ 无回执 fixr6-5
+[build:all] ⚠ 无回执 fixr6-6
+[build:all] ⚠ 无回执 fixr6-8
+[build:all] ⚠ 无回执 fixr6-9
+[build:all] ⚠ 无回执 fixr7-03
+[build:all] ⚠ 无回执 fixr7-04
+[build:all] ⚠ 无回执 fixr7-05
+[build:all] ⚠ 无回执 fixr7-07
+[build:all] ⚠ 无回执 fixr7-12
+[build:all] ⚠ 无回执 fixr7-13
+[build:all] ⚠ 无回执 fixr7-18
+[build:all] ⚠ 无回执 fixr7-19
+[build:all] ⚠ 无回执 fixr8-01
+[build:all] ⚠ 无回执 fixr9-02
+[build:all] ⚠ 无回执 fixreview5-1
+[build:all] ⚠ 无回执 fixreview5-10
+[build:all] ⚠ 无回执 fixreview5-11
+[build:all] ⚠ 无回执 fixreview5-12
+[build:all] ⚠ 无回执 fixreview5-13
+[build:all] ⚠ 无回执 fixreview5-2
+[build:all] ⚠ 无回执 fixreview5-3
+[build:all] ⚠ 无回执 fixreview5-4
+[build:all] ⚠ 无回执 fixreview5-5
+[build:all] ⚠ 无回执 fixreview5-6
+[build:all] ⚠ 无回执 fixreview5-7
+[build:all] ⚠ 无回执 fixreview5-8
+[build:all] ⚠ 无回执 fixreview5-9
+[build:all] ⚠ 无回执 fixreview6-15
+[build:all] ⚠ 无回执 fixreview6-16
+[build:all] ⚠ 无回执 fixreview6-17
+[build:all] ⚠ 无回执 fixreview8-01
+[build:all] ⚠ 无回执 release-final-2026-11-05
+[build:all] ⚠ 无回执 release-final-2026-11-06
+[build:all] ⚠ 无回执 release18
+[build:all] ⚠ 无回执 review1
+[build:all] ⚠ 无回执 review10
+[build:all] ⚠ 无回执 review10-01
+[build:all] ⚠ 无回执 review10-03
+[build:all] ⚠ 无回执 review10-04
+[build:all] ⚠ 无回执 review10-06
+[build:all] ⚠ 无回执 review10-08
+[build:all] ⚠ 无回执 review10-09
+[build:all] ⚠ 无回执 review10-10
+[build:all] ⚠ 无回执 review10-11
+[build:all] ⚠ 无回执 review11
+[build:all] ⚠ 无回执 review11-01
+[build:all] ⚠ 无回执 review11-02
+[build:all] ⚠ 无回执 review11-04
+[build:all] ⚠ 无回执 review11-05
+[build:all] ⚠ 无回执 review11-06
+[build:all] ⚠ 无回执 review11-07
+[build:all] ⚠ 无回执 review11-09
+[build:all] ⚠ 无回执 review12
+[build:all] ⚠ 无回执 review12-1.3
+[build:all] ⚠ 无回执 review12-fix1205
+[build:all] ⚠ 无回执 review12-realcheck
+[build:all] ⚠ 无回执 review12-rerun347
+[build:all] ⚠ 无回执 review13
+[build:all] ⚠ 无回执 review14
+[build:all] ⚠ 无回执 review14-02
+[build:all] ⚠ 无回执 review14-03
+[build:all] ⚠ 无回执 review14-04
+[build:all] ⚠ 无回执 review14-05
+[build:all] ⚠ 无回执 review14-07
+[build:all] ⚠ 无回执 review14-08
+[build:all] ⚠ 无回执 review15
+[build:all] ⚠ 无回执 review15-01
+[build:all] ⚠ 无回执 review15-02
+[build:all] ⚠ 无回执 review15-02-r2
+[build:all] ⚠ 无回执 review15-03
+[build:all] ⚠ 无回执 review15-05
+[build:all] ⚠ 无回执 review15-05-r2
+[build:all] ⚠ 无回执 review15-06
+[build:all] ⚠ 无回执 review15-06-r2
+[build:all] ⚠ 无回执 review15-07
+[build:all] ⚠ 无回执 review15-08
+[build:all] ⚠ 无回执 review15-10
+[build:all] ⚠ 无回执 review15-13
+[build:all] ⚠ 无回执 review16
+[build:all] ⚠ 无回执 review17
+[build:all] ⚠ 无回执 review17-01
+[build:all] ⚠ 无回执 review17-03
+[build:all] ⚠ 无回执 review17-04
+[build:all] ⚠ 无回执 review17-05
+[build:all] ⚠ 无回执 review17-06
+[build:all] ⚠ 无回执 review17-07
+[build:all] ⚠ 无回执 review17-09
+[build:all] ⚠ 无回执 review17-fix
+[build:all] ⚠ 无回执 review2
+[build:all] ⚠ 无回执 review3
+[build:all] ⚠ 无回执 review4
+[build:all] ⚠ 无回执 review5
+[build:all] ⚠ 无回执 review6
+[build:all] ⚠ 无回执 review7
+[build:all] ⚠ 无回执 review7-08
+[build:all] ⚠ 无回执 review7-09
+[build:all] ⚠ 无回执 review7-10
+[build:all] ⚠ 无回执 review7-11
+[build:all] ⚠ 无回执 review8
+[build:all] ⚠ 无回执 review9
+[build:all] ⚠ 无回执 review9-01
+[build:all] ⚠ 无回执 review9-02
+[build:all] ⚠ 无回执 review9-03
+[build:all] ⚠ 无回执 review9-04
+[build:all] ⚠ 无回执 review9-05
+[build:all] ⚠ 无回执 review9-06
+[build:all] ⚠ 无回执 review9-07
+[build:all] ⚠ 无回执 review9-08
+[build:all] ⚠ 无回执 review9-09
+[build:all] ⚠ 无回执 review9-10
+[build:all] ⚠ 无回执 review9-11
+[build:all] ⚠ 无回执 review9-12
+[build:all] ⚠ 无回执 review9-13
+[build:all] ⚠ 无回执 review9-14
+[build:all] ⚠ 无回执 sync-ci-gate
+[build:all] ✓ 回执扫描完成：批次 199 个，缺回执 195 个（不阻断）
+[build:all] ━━━ [2/14] 契约单元测试 node --test test/*.mjs src/test/*.mjs ━━━
+TAP version 13
+# Subtest: fixPaste-1 多行缩进纯文本解析为节点树
+ok 1 - fixPaste-1 多行缩进纯文本解析为节点树
+  ---
+  duration_ms: 3.7153
+  type: 'test'
+  ...
+# Subtest: fixPaste-1 制表符缩进同样成树；无缩进返回 null 保留原路径
+ok 2 - fixPaste-1 制表符缩进同样成树；无缩进返回 null 保留原路径
+  ---
+  duration_ms: 0.5671
+  type: 'test'
+  ...
+# [D-01] IDB_USED=true dbs=["juju.store"] writes=4 recoveredBytes=2574 localStorageBytes=2574
+# Subtest: D-01 · 打开页面后 indexedDB.databases() 非空且 juju.store 库存在
+ok 3 - D-01 · 打开页面后 indexedDB.databases() 非空且 juju.store 库存在
+  ---
+  duration_ms: 1096.7147
+  type: 'test'
+  ...
+# Subtest: D-02 · color(srgb r g b / a) 归一为 rgba()，且匹配合法颜色形态
+ok 4 - D-02 · color(srgb r g b / a) 归一为 rgba()，且匹配合法颜色形态
+  ---
+  duration_ms: 2.4518
+  type: 'test'
+  ...
+# Subtest: D-02 · 不透明 srgb 归一为 \#RRGGBB
+ok 5 - D-02 · 不透明 srgb 归一为 \#RRGGBB
+  ---
+  duration_ms: 1.1773
+  type: 'test'
+  ...
+# Subtest: D-02 · srgb 百分比口径（×2.55 取整）
+ok 6 - D-02 · srgb 百分比口径（×2.55 取整）
+  ---
+  duration_ms: 0.2742
+  type: 'test'
+  ...
+# Subtest: D-02 · 空格语法 rgb(r g b / a) 与逗号语法 rgba() 均归一
+ok 7 - D-02 · 空格语法 rgb(r g b / a) 与逗号语法 rgba() 均归一
+  ---
+  duration_ms: 0.7091
+  type: 'test'
+  ...
+# Subtest: D-02 · 已是 hex / 命名色 / 其它语法一律原样返回（不做猜测）
+ok 8 - D-02 · 已是 hex / 命名色 / 其它语法一律原样返回（不做猜测）
+  ---
+  duration_ms: 0.446
+  type: 'test'
+  ...
+# Subtest: D-02 · normalizeInlineDeclValue：颜色属性归一并支持驼峰写法
+ok 9 - D-02 · normalizeInlineDeclValue：颜色属性归一并支持驼峰写法
+  ---
+  duration_ms: 0.8392
+  type: 'test'
+  ...
+# Subtest: D-02 · applyInlineStyle 入口接线：写入前必过 normalizeInlineDeclValue
+ok 10 - D-02 · applyInlineStyle 入口接线：写入前必过 normalizeInlineDeclValue
+  ---
+  duration_ms: 2.8981
+  type: 'test'
+  ...
+# Subtest: D-02 · CSS_WHITELIST 显式放行 color / background-color / font-size / font-weight
+ok 11 - D-02 · CSS_WHITELIST 显式放行 color / background-color / font-size / font-weight
+  ---
+  duration_ms: 0.2452
+  type: 'test'
+  ...
+# Subtest: D-02 · sanitizeStyle 清洗后颜色仍为归一形态，且四项白名单不被丢弃
+ok 12 - D-02 · sanitizeStyle 清洗后颜色仍为归一形态，且四项白名单不被丢弃
+  ---
+  duration_ms: 1.7475
+  type: 'test'
+  ...
+# Subtest: 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+ok 13 - 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+  ---
+  duration_ms: 1.6853
+  type: 'test'
+  ...
+# Subtest: 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+ok 14 - 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+  ---
+  duration_ms: 6.4753
+  type: 'test'
+  ...
+# Subtest: 错误消息与告警前缀字面量逐字一致
+ok 15 - 错误消息与告警前缀字面量逐字一致
+  ---
+  duration_ms: 1.1683
+  type: 'test'
+  ...
+# Subtest: 产品件在本次对拍中零写入（只读快照哈希稳定）
+ok 16 - 产品件在本次对拍中零写入（只读快照哈希稳定）
+  ---
+  duration_ms: 12.0135
+  type: 'test'
+  ...
+# Subtest: register / require 正常往返取值
+ok 17 - register / require 正常往返取值
+  ---
+  duration_ms: 1.1301
+  type: 'test'
+  ...
+# Subtest: require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+ok 18 - require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+  ---
+  duration_ms: 0.4734
+  type: 'test'
+  ...
+# Subtest: lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+ok 19 - lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+  ---
+  duration_ms: 0.8463
+  type: 'test'
+  ...
+# Subtest: lifecycle.dispose 逆序执行（栈语义 pop）
+ok 20 - lifecycle.dispose 逆序执行（栈语义 pop）
+  ---
+  duration_ms: 0.2065
+  type: 'test'
+  ...
+# Subtest: 单个 disposer 抛错不阻断后续 disposer
+ok 21 - 单个 disposer 抛错不阻断后续 disposer
+  ---
+  duration_ms: 0.3639
+  type: 'test'
+  ...
+# Subtest: lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+ok 22 - lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+  ---
+  duration_ms: 0.2656
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1728.5981
+[build:all] ✓ 契约单元测试 node --test test/*.mjs src/test/*.mjs 通过（1.8s）
+[build:all] ━━━ [3/14] Web 构建 vite build ━━━
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 63 modules transformed.
+rendering chunks...
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-DBl_vuTF.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+computing gzip size...
+[2mdist/[22m[32mindex.html  [39m[1m[2m4,692.22 kB[22m[1m[22m[2m │ gzip: 3,181.36 kB[22m
+[32m✓ built in 2.15s[39m
+[build:all] ✓ Web 构建 vite build 通过（2.7s）
+[build:all] ━━━ [3b/14] 内联样式闸门 ━━━
+dist/index.html bytes = 4716422
+<style> blocks = 4 (inline css chars = 118729)
+index.html inline style attrs = 0
+dist inline style attrs = 61（运行期模板，仅记录，不参与硬门禁）
+src/style.css hex = 130（去注释 121），阈值 ≤ 130 → PASS [hard]
+src/style.css !important = 72，阈值 ≤ 72 → PASS [hard]
+PASS  has <style tag
+PASS  has --bg variable
+PASS  has body{ rule
+PASS  has #sidebarLeft rule
+PASS  has .sb-row rule
+PASS  has .main-toggle rule
+PASS  has .tb-wbtn rule
+PASS  no external stylesheet link
+PASS  no inline style attribute in index.html
+P0 PASS: 样式已内联进单文件产物
+[build:all] ✓ 内联样式闸门 通过（0.2s）
+[build:all] Web 产物指纹：dist/index.html  4716422 B  SHA-256 bdb089050b30b707bf0385bb9f778d816fb540371816b5f617a5a40deab6685e
+[build:all] ✓ Web 产物含特征符号：applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] CLOSED_HIGH_SPECS: 13 项
+[build:all] FALSIFY_CONTINUE_NO_PROBE_GUARD: REQUIRED_PROBES check deleted

@@ -1,0 +1,179 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+Listing tests:
+  [chromium] › benchmark-30k.spec.ts:170:1 › M3-3 3 万节点性能基准
+  [chromium] › boot-render.spec.ts:87:3 › P4 · 启动渲染回归（真实产物，无测试侧骨架/依赖注入） › 样式生效 + 侧栏非空 + 内容区不是「请先选择文档」空态
+  [chromium] › boot-render.spec.ts:157:3 › P4 · 启动渲染回归（真实产物，无测试侧骨架/依赖注入） › P1/P2 行为证明：点击侧栏「我的文档」触发真实链路并渲染资料库网格
+  [chromium] › cal-invalidation.spec.ts:80:3 › CA · 日历索引失效链路 › actions.addNode / setNodeDate 必须使日历索引失效并推进 _calDataRev
+  [chromium] › cal-invalidation.spec.ts:133:3 › CA · 日历索引失效链路 › 日历根解析不得自递归（boot 期间无 RangeError）
+  [chromium] › concurrency.spec.ts:154:1 › M1-2 3 标签并发收敛测试（内存态 + 磁盘态）
+  [chromium] › db-module.spec.ts:110:3 › M07 · 数据库模块（真实产物，无测试侧依赖回填） › 1) 新增行：+ 行 按钮写入 state 并重渲染表格
+  [chromium] › db-module.spec.ts:128:3 › M07 · 数据库模块（真实产物，无测试侧依赖回填） › 2) 改单元格：contenteditable 标题列编辑后提交进 state
+  [chromium] › db-module.spec.ts:155:3 › M07 · 数据库模块（真实产物，无测试侧依赖回填） › 3) 切看板：dbView 写入共享 ui 并渲染 .db-board
+  [chromium] › db-module.spec.ts:174:3 › M07 · 数据库模块（真实产物，无测试侧依赖回填） › 4) 切画廊：dbView 写入共享 ui 并渲染 .db-gallery 卡片
+  [chromium] › db-module.spec.ts:192:3 › M07 · 数据库模块（真实产物，无测试侧依赖回填） › 5) 打开筛选面板：placePop 定位到触发按钮附近
+  [chromium] › db-module.spec.ts:211:3 › M07 · 数据库模块（真实产物，无测试侧依赖回填） › 6) 打开显隐面板：勾选联动 ui.dbHiddenFields 并重渲染表格列
+  [chromium] › feature-removal.spec.ts:93:3 › 功能移除 · UI 与 API 不再存在 › 设置面板不再渲染被移除的四项能力，其余设置行保持可用
+  [chromium] › feature-removal.spec.ts:141:3 › 功能移除 · UI 与 API 不再存在 › dist 单文件产物不含被移除文案与节点 id
+  [chromium] › full-e2e.spec.ts:427:3 › CI · 终极全链路 E2E 业务验收 › 用例 1 · 加密与解锁闭环：设置开启全库加密 → 刷新锁定 → 解锁后数据零丢失
+  [chromium] › full-e2e.spec.ts:589:3 › CI · 终极全链路 E2E 业务验收 › 用例 2 · 导入与导出闭环：导入 3 节点 JSON → 渲染 → 导出 Markdown 含导入文本
+  [chromium] › full-e2e.spec.ts:684:3 › CI · 终极全链路 E2E 业务验收 › 用例 3 · 多维表格与日历联动：表格新建行 → 设今天 → 日历当日待办可见
+  [chromium] › license.spec.ts:162:3 › Track B · 离线授权码商业闭环 › 有效授权码激活成功，刷新后 ui.isPro 仍为 true
+  [chromium] › license.spec.ts:190:3 › Track B · 离线授权码商业闭环 › 免费版 500 节点上限：第 501 次 addNode 被拦截并提示
+  [chromium] › license.spec.ts:237:3 › Track B · 离线授权码商业闭环 › 伪造授权码激活失败，ui.isPro 保持 false 且不落盘
+  [chromium] › license.spec.ts:273:3 › Track B · 离线授权码商业闭环 › 免费版点「同步到云」被 Pro 阈值拦截：toast 提示且不发任何请求
+  [chromium] › license.spec.ts:319:3 › Track B · 离线授权码商业闭环 › Pro 版点「同步到云」：fetch 成功、载荷含整库快照、控制台无报错
+  [chromium] › recovery.spec.ts:138:3 › M3-3a 备份/恢复故障注入 › 损坏的主库 JSON 自动恢复默认欢迎节点
+  [chromium] › recovery.spec.ts:208:3 › M3-3a 备份/恢复故障注入 › 存储配额满时降级提示且不崩溃
+  [chromium] › richtext-formatting-guard.spec.ts:128:1 › 批次1：真实 mousedown 颜色 / 背景 / 字号按钮不会把焦点从正文抢走
+  [chromium] › richtext-formatting-guard.spec.ts:163:1 › 批次2：焦点已在编辑区外仍能写入，且写完把焦点 / 选区还给编辑宿主
+  [chromium] › richtext-formatting-guard.spec.ts:222:1 › 批次3：格式写入区间内 renderMain 不再被拦截（主面板按正常判据重建）
+  [chromium] › richtext-inline-three-props.spec.ts:212:3 › 三属性顺序叠加（color → bg → size）：三项 computed style 全部保留
+  [chromium] › richtext-inline-three-props.spec.ts:212:3 › 三属性顺序叠加（color → size → bg）：三项 computed style 全部保留
+  [chromium] › richtext-inline-three-props.spec.ts:212:3 › 三属性顺序叠加（bg → color → size）：三项 computed style 全部保留
+  [chromium] › richtext-inline-three-props.spec.ts:212:3 › 三属性顺序叠加（bg → size → color）：三项 computed style 全部保留
+  [chromium] › richtext-inline-three-props.spec.ts:212:3 › 三属性顺序叠加（size → color → bg）：三项 computed style 全部保留
+  [chromium] › richtext-inline-three-props.spec.ts:212:3 › 三属性顺序叠加（size → bg → color）：三项 computed style 全部保留
+  [chromium] › richtext-inline-three-props.spec.ts:260:1 › 同值重复点击不清除（不 toggle），清除只走独立按钮
+  [chromium] › richtext-inline-three-props.spec.ts:296:1 › 字号以 px 写入（无 1-7 档位）且清除字号走独立按钮
+  [chromium] › richtext-inline-three-props.spec.ts:472:1 › 跨块级元素选区（两个 p）：三项 computed style 全部保留，且不产生嵌套 span
+  [chromium] › richtext-inline-three-props.spec.ts:504:1 › 跨两个大纲行（两个独立 contenteditable）：三项样式落到两行
+  [chromium] › richtext-inline-three-props.spec.ts:538:1 › 两条命令之间有整块重渲染：第二次命令仍落在同一段文字（实机分支）
+  [chromium] › richtext-inline-three-props.spec.ts:572:1 › document.execCommand undo/redo 往返后三项样式不丢失
+  [chromium] › richtext-inline-three-props.spec.ts:606:1 › 连续点击颜色 / 背景 / 字号后输入文字：新文字同时具备三项（typing style）
+  [chromium] › richtext-style-stack.spec.ts:174:1 › 富文本：加粗 → 颜色 → 字号 → 背景 可连续叠加（真实鼠标事件）
+  [chromium] › richtext-style-stack.spec.ts:240:1 › 富文本：字号 → 颜色 → 加粗 反向叠加，且取消加粗不吞掉颜色/字号
+  [chromium] › search-perf.spec.ts:123:1 › M5-2 搜索 Worker 化：3 万节点输入 5 字符无长任务
+  [chromium] › smoke.spec.ts:88:3 › M1-1 单 HTML 产物 › dist 必须产出 index.html，且脚本 / 样式已内联
+  [chromium] › smoke.spec.ts:120:3 › M1-1 单 HTML 产物 › 加载构建产物：标题 / JU.getState 欢迎节点 / 三区 DOM 均存在
+  [chromium] › stability.spec.ts:209:1 › M5-1 稳定期长跑与内存泄漏监测
+  [chromium] › t12-virtual-scroll.spec.ts:123:3 › T12 · 虚拟滚动自动策略 › 小文档 + deviceMemory>=8：自动关闭虚拟滚动，回退全量渲染
+  [chromium] › t12-virtual-scroll.spec.ts:142:3 › T12 · 虚拟滚动自动策略 › deviceMemory<8：自动开启虚拟滚动（.outline.virtual + 全量行在位）
+  [chromium] › t12-virtual-scroll.spec.ts:164:3 › T12 · 虚拟滚动自动策略 › 连续两帧 > 50ms：强制开启虚拟滚动
+  [chromium] › t12-virtual-scroll.spec.ts:187:3 › T12 · 虚拟滚动自动策略 › Ctrl+F / 复制全文 / 打印：虚拟滚动下临时全量渲染并恢复
+  [chromium] › ui.spec.ts:346:3 › BW · 全链路 UI 交互 E2E › 用例 1 · 大纲视图交互：新建文件 → 输入 → Enter 新建同级 → Tab 缩进
+  [chromium] › ui.spec.ts:476:3 › BW · 全链路 UI 交互 E2E › 用例 2 · 日历视图交互：左侧日历 → 点格子 → 生成待办输入框 → 写入并带日期
+  [chromium] › ui.spec.ts:573:3 › BW · 全链路 UI 交互 E2E › 用例 3 · 多维表格视图交互：双击状态单元格 → 选「进行」→ db 值落库
+  [chromium] › ui.spec.ts:666:3 › BW · 全链路 UI 交互 E2E › 用例 4 · 设置面板交互回归：齿轮打开 .panel.on → 关闭按钮收起
+  [chromium] › update-crash.spec.ts:242:3 › M5-1a / M5-1b 桌面增强通道 › 自动更新确认框（v2.2.0）与崩溃包 save_crash_dump IPC 均真实触发
+  [chromium] › update-crash.spec.ts:483:3 › M5-1a / M5-1b 桌面增强通道 › 无 __TAURI__ 时 readCrashDumps 必须返回 ok:false
+  [chromium] › v21-fix-d03-d04-d07.spec.ts:108:3 › v2.1 缺陷修复回归（D-03 / D-04 / D-07 / D-09） › D-03 点击 #btnToggleLeft：侧栏宽度由 210 变为折叠宽度（0），再点恢复
+  [chromium] › v21-fix-d03-d04-d07.spec.ts:135:3 › v2.1 缺陷修复回归（D-03 / D-04 / D-07 / D-09） › D-04 window.JU.getVirtualScrollPolicy() 返回只读策略 { enabled, overscan, thresholds }
+  [chromium] › v21-fix-d03-d04-d07.spec.ts:161:3 › v2.1 缺陷修复回归（D-03 / D-04 / D-07 / D-09） › D-09 点击 #btnBell 打开提醒面板（#remindPanel.on），再点关闭
+  [chromium] › v21-fix-d03-d04-d07.spec.ts:182:3 › v2.1 缺陷修复回归（D-03 / D-04 / D-07 / D-09） › D-07 右键：.doc-header-title / .sb-row 走容器委托弹菜单；.sb-nav-item 不弹（设计预期）
+  [chromium] › v21-fix1-cal-todo-ctx-prio.spec.ts:284:3 › v2.1 fix1 · 日历当日待办右键设置 + 四象限图标 › 右键「设置时间」→ 当日待办立刻显示 18:00（calRev 推进）
+  [chromium] › v21-fix1-cal-todo-ctx-prio.spec.ts:300:3 › v2.1 fix1 · 日历当日待办右键设置 + 四象限图标 › 右键「选择标签」→ 当日待办勾选框立刻变标签色（不再显示标签文本）
+  [chromium] › v21-fix1-cal-todo-ctx-prio.spec.ts:332:3 › v2.1 fix1 · 日历当日待办右键设置 + 四象限图标 › 四类优先级：当日待办与日历单元格 data-prio / aria-label / 图标组合一致
+  [chromium] › v21-fix1-cal-todo-ctx-prio.spec.ts:358:3 › v2.1 fix1 · 日历当日待办右键设置 + 四象限图标 › 重渲染（切周/切月）与重开（reload）后时间 / 标签 / 优先级三项仍显示
+  [chromium] › v21-fix10-db-template-ui.spec.ts:192:3 › v2.1 fix10 · 标题列单行 / 模板库内置多维表格 › 1) 新建表格：标题列空单元格只保留单一占位源，单行显示（不再两行叠加）
+  [chromium] › v21-fix10-db-template-ui.spec.ts:230:3 › v2.1 fix10 · 标题列单行 / 模板库内置多维表格 › 2) 模板视图：「内置多维表格（10列）」点击后生成 10 列表头 + 3 行空白
+  [chromium] › v21-fix10-db-template-ui.spec.ts:260:3 › v2.1 fix10 · 标题列单行 / 模板库内置多维表格 › 3) 模板视图在「无自存模板」时仍显示内置模板（空态只作提示，不吞掉卡片）
+  [chromium] › v21-fix10-settings-ui.spec.ts:119:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 全库加密 #setEncrypt：点击 → 设密码面板；取消 → ui().encrypted 仍为 false；已加密态点击 → 二次确认框（取消不改状态）
+  [chromium] › v21-fix10-settings-ui.spec.ts:174:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 备份位置·浏览 #btnBackupDirPick：点击 → 拦到 filechooser；拦不到记 BLOCKED_DIALOG（不判 FAIL）
+  [chromium] › v21-fix10-settings-ui.spec.ts:207:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 快捷键 · 查看 #setShortcuts：点击 → .modal-overlay 出现且含快捷键文本
+  [chromium] › v21-fix10-settings-ui.spec.ts:225:3 › v2.1 fix10 · 设置浮窗 4 项恢复 UI › 反馈与错误上报 #btnFeedback：点击 → 模态出现（count>0）且含三个动作按钮
+  [chromium] › v21-fix11-outline-selection.spec.ts:182:3 › v2.1 fix11 · 大纲拖选多行 · 选区配色（去蓝保绿保光标） › 拖选多行：覆盖块为产品绿、无系统蓝，行容器保持绿色选中态
+  [chromium] › v21-fix11-outline-selection.spec.ts:324:3 › v2.1 fix11 · 大纲拖选多行 · 选区配色（去蓝保绿保光标） › 行内正常编辑：光标可见（caret-color 非透明、activeElement=正文块），且行内选中为产品绿
+  [chromium] › v21-fix12-selection-single-layer.spec.ts:268:3 › v2.1 fix12 · 大纲拖选 · 选区单层化（绿色 == 选区） › 横向拖选部分文字：行底与 .ju-xsel 均零绘制，只有被选中的几个字有产品绿
+  [chromium] › v21-fix12-selection-single-layer.spec.ts:307:3 › v2.1 fix12 · 大纲拖选 · 选区单层化（绿色 == 选区） › 竖向拖选多行：行底与 .ju-xsel 零绘制，选区文本非空且跨宿主钳制已登记
+  [chromium] › v21-fix12-selection-single-layer.spec.ts:360:3 › v2.1 fix12 · 大纲拖选 · 选区单层化（绿色 == 选区） › ::selection 是唯一绿色来源：.text 与 .text.ju-xsel 同色，无其他颜色背景
+  [chromium] › v21-fix12-selection-single-layer.spec.ts:391:3 › v2.1 fix12 · 大纲拖选 · 选区单层化（绿色 == 选区） › 光标：caret-color 仍为产品绿且可见（单层化不得牺牲光标）
+  [chromium] › v21-fix13-exact-selection.spec.ts:239:3 › v2.1 fix13 · 大纲拖选 · 高亮精确到字符（Overlay） › 竖向拖选第 1 行中间 → 第 3 行中间：.ju-xsel-block 存在且为产品绿，行容器/文本块仍透明
+  [chromium] › v21-fix13-exact-selection.spec.ts:290:3 › v2.1 fix13 · 大纲拖选 · 高亮精确到字符（Overlay） › 取消选中（点空白）：.ju-xsel-block 数量归零，模型清空
+  [chromium] › v21-fix13-exact-selection.spec.ts:314:3 › v2.1 fix13 · 大纲拖选 · 高亮精确到字符（Overlay） › 跨行删除（Backspace）后 overlay 必须清空
+  [chromium] › v21-fix13-exact-selection.spec.ts:335:3 › v2.1 fix13 · 大纲拖选 · 高亮精确到字符（Overlay） › 精确性：overlay 只覆盖被选中的字符（宽度 < 行内容宽，且首段不覆盖行首手柄）
+  [chromium] › v21-fix13p-overlay-sync.spec.ts:242:3 › v2.1 fix13-patch1 · Overlay 滚动同步 / 节点池 / 选区清理 › 拖选后滚动页面：高亮块 top 随文字同步移动且仍与选中文字对齐
+  [chromium] › v21-fix13p-overlay-sync.spec.ts:288:3 › v2.1 fix13-patch1 · Overlay 滚动同步 / 节点池 / 选区清理 › 重复 10 次拖选：.ju-xsel-block 的 DOM 总数不超过第一次的稳定值（节点池复用）
+  [chromium] › v21-fix13p-overlay-sync.spec.ts:331:3 › v2.1 fix13-patch1 · Overlay 滚动同步 / 节点池 / 选区清理 › 拖选后键盘输入字符：高亮层必须自动清空（不得残留幽灵高亮）
+  [chromium] › v21-fix14-settings-icon.spec.ts:165:3 › fix14 · 设置图标统一为齿轮 › 1) 顶部栏 #btnSettings 使用齿轮 SVG（circle 12/12/3 + 标准齿形 path），旧「放射线」图标已消失
+  [chromium] › v21-fix14-settings-icon.spec.ts:187:3 › fix14 · 设置图标统一为齿轮 › 2) 真实点击后设置面板头部含同一份齿轮 SVG，emoji「⚙」已移除，标题文字保留
+  [chromium] › v21-fix14-settings-icon.spec.ts:222:3 › fix14 · 设置图标统一为齿轮 › 3) 两处图标尺寸 16×16、颜色随主题（var(--icon)，浅色/夜间不同），不写死颜色
+  [chromium] › v21-fix15-calendar-now-line.spec.ts:164:3 › v2.1 fix15 · 日历周视图当前时间指示线 › 切到周视图：时间指示线在滚动容器可视区内（top > 0 且 < 视口高度）
+  [chromium] › v21-fix15-calendar-now-line.spec.ts:188:3 › v2.1 fix15 · 日历周视图当前时间指示线 › 手动把红线滚出视口 → 切月再切周 → 红线自动回到可视区并居中
+  [chromium] › v21-fix15-calendar-now-line.spec.ts:225:3 › v2.1 fix15 · 日历周视图当前时间指示线 › 从「文件」模块切回日历（顶部导航往返）→ 红线仍在可视区内
+  [chromium] › v21-fix15-calendar-now-line.spec.ts:257:3 › v2.1 fix15 · 日历周视图当前时间指示线 › 固定 20:00 进入周视图：红线垂直居中（容差 25% 容器高）
+  [chromium] › v21-fix16-db-location.spec.ts:163:3 › v2.1 fix16 · 数据库「地点」字段类型与省市级联 › 1) 字段类型列表包含「地点」且位于「日期」之后
+  [chromium] › v21-fix16-db-location.spec.ts:189:3 › v2.1 fix16 · 数据库「地点」字段类型与省市级联 › 2) 地点选择器支持选择「香港特别行政区」与「台湾省」并级联出对应城市
+  [chromium] › v21-fix16-db-location.spec.ts:229:3 › v2.1 fix16 · 数据库「地点」字段类型与省市级联 › 3) 选择地点后刷新页面数据不丢失
+  [chromium] › v21-fix17-rightbar-align.spec.ts:282:3 › v2.1 fix17 · 右侧边栏列表项左对齐与视觉密度 › 1) 右侧边栏「保存 / 下载」组内图标左边缘误差 ≤ 1px
+  [chromium] › v21-fix17-rightbar-align.spec.ts:306:3 › v2.1 fix17 · 右侧边栏列表项左对齐与视觉密度 › 2) 右侧边栏「保存 / 下载」组内文字左边缘误差 ≤ 1px
+  [chromium] › v21-fix17-rightbar-align.spec.ts:330:3 › v2.1 fix17 · 右侧边栏列表项左对齐与视觉密度 › 3) 右栏操作行视觉密度与左侧 .sb-row 一致（行高 / padding / gap / 图标宽）
+  [chromium] › v21-fix17-rightbar-align.spec.ts:384:3 › v2.1 fix17 · 右侧边栏列表项左对齐与视觉密度 › 4) 分区标题文字与其下内容左边缘对齐（误差 ≤ 1px）
+  [chromium] › v21-fix18-layout-overflow.spec.ts:180:3 › v2.1 fix18 · 布局溢出与左下角图标归属 › 1) 大纲视图不产生横向滚动（window.innerWidth ≥ documentElement.scrollWidth）
+  [chromium] › v21-fix18-layout-overflow.spec.ts:218:3 › v2.1 fix18 · 布局溢出与左下角图标归属 › 2) 收起左侧栏：左下角图标不可见，且主内容区变宽
+  [chromium] › v21-fix18-layout-overflow.spec.ts:284:3 › v2.1 fix18 · 布局溢出与左下角图标归属 › 3) 思维导图 / 图谱画布宽度＝可用宽度，视图内无横向滚动
+  [chromium] › v21-fix18-layout-overflow.spec.ts:342:3 › v2.1 fix18 · 布局溢出与左下角图标归属 › 4) 窄视口（≤768px）抽屉态：工具条保留 40×40 命中区（fix6·D-11 不回退）
+  [chromium] › v21-fix18p-remove-tips.spec.ts:200:3 › v2.1 fix18-patch1 补充 · 移除选中提示条与空节点占位符 › 移除选中提示条与空节点占位符
+  [chromium] › v21-fix18p-sidebar-collapse.spec.ts:235:3 › v2.1 fix18-patch1 · 侧栏收起后各视图无截断且不贴边 › 侧边栏收起后各视图无截断且不贴边
+  [chromium] › v21-fix19-selection-keep.spec.ts:204:3 › v2.1 fix19 · 大纲跨行富文本编辑后选区保持不变 › 多选富文本编辑后选区保持不变
+  [chromium] › v21-fix2-btnsync.spec.ts:157:3 › 第二轮 · #btnSettings 契约解耦（事件单一消费） › 单次点击打开面板；连点两次仍打开（幂等开启，不翻转误关）
+  [chromium] › v21-fix2-btnsync.spec.ts:188:3 › 第二轮 · #btnSettings 契约解耦（事件单一消费） › window.JU.openSettings() / closeSettings() 与按钮行为一致
+  [chromium] › v21-fix2-cal-todo-tagchip.spec.ts:326:3 › v2.1 fix2 · 当日待办勾选框（标签色圆点）与标签文本隐藏 › 无标签：勾选框无 data-tagged 且背景透明；点击后 checked 与 state.done 同步翻转，重开仍保持
+  [chromium] › v21-fix2-cal-todo-tagchip.spec.ts:357:3 › v2.1 fix2 · 当日待办勾选框（标签色圆点）与标签文本隐藏 › 有标签：标签文本不显示，勾选框带 data-tagged=1、标签色背景、title 含 #标签
+  [chromium] › v21-fix2-cal-todo-tagchip.spec.ts:385:3 › v2.1 fix2 · 当日待办勾选框（标签色圆点）与标签文本隐藏 › 点击有标签的勾选框：checked 翻转、标签色不变，重开后完成态与标签色都保持
+  [chromium] › v21-fix2-cal-todo-tagchip.spec.ts:416:3 › v2.1 fix2 · 当日待办勾选框（标签色圆点）与标签文本隐藏 › 多标签：勾选框取第一个标签色，title 同时含两个标签名，标签文本不显示
+  [chromium] › v21-fix2-cal-todo-tagchip.spec.ts:456:3 › v2.1 fix2 · 当日待办勾选框（标签色圆点）与标签文本隐藏 › 右键清除标签：移除 data-tagged、背景恢复透明、title 清空；再选标签：颜色恢复且文本仍不显示
+  [chromium] › v21-fix22-calendar-chart.spec.ts:28:1 › fix22 · 字数统计 / 任务统计柱状图不坍塌、X 轴文字不重叠、无 CSP 拦截
+  [chromium] › v21-fix23-slides-csp.spec.ts:67:1 › fix23 · 幻灯片视图在严格 CSP 下样式完整、零 CSP 拦截
+  [chromium] › v21-fix26-p4-sidebar-rename.spec.ts:15:1 › fix26-p4 · 侧栏重命名后 .sb-label 立即变为新名称
+  [chromium] › v21-fix26-ui-align.spec.ts:17:1 › fix26 · 资料库置灰 / 标题居中 / 空日无圆点 / 侧栏折叠标题居中
+  [chromium] › v21-fix30-topbar-popover.spec.ts:7:1 › fix30 · 浮窗初始关闭 · 提醒浮窗落在视口内
+  [chromium] › v21-fix31-topbar-popover.spec.ts:7:1 › fix31 · 顶栏设置/提醒浮窗可开且落在视口内 · 置顶有反馈
+  [chromium] › v21-fix33-8-pin-catch.spec.ts:7:1 › fix33-8 · setAlwaysOnTop 拒绝时 #btnPin 不高亮
+  [chromium] › v21-fix33-8-topbar-doc-close.spec.ts:7:1 › fix33-8 · 打开取色器后点 #btnSettings 取色器关闭
+  [chromium] › v21-fix33-8-topbar-doc-close.spec.ts:20:1 › fixr6-6 · __TAURI__ 缺 window 命名空间时 #btnClose 不抛 TypeError 并提示窗口 API
+  [chromium] › v21-fix33-desktop-load-contract.spec.ts:4:1 › fix33 · load_state 裸 state 归一后 sentinel 装载且首条 save_state 含 sentinel
+  [chromium] › v21-fix33-desktop-save-guard.spec.ts:16:1 › fix33-3 · 负向：__TAURI__ 无 invoke 时判定非桌面并回落到 localStorage 分支
+  [chromium] › v21-fix33-desktop-save-guard.spec.ts:18:1 › fix33-3 · 正向：invoke resolve(null) 时不得出现「桌面存储保存失败」toast
+  [chromium] › v21-fix33-encrypted-desktop-save.spec.ts:13:1 › fix33-2 · 正向：invoke 恒 resolve(null) 时加密 autosave 落盘且无「加密保存失败」提示
+  [chromium] › v21-fix33-encrypted-desktop-save.spec.ts:16:1 › fix33-2 · 负向：invoke reject 时加密保存返回 false 并提示「加密保存失败」
+  [chromium] › v21-fix36-1-starred-open-doc.spec.ts:7:1 › fix36-1 · 星标列表点文档即回落正文视图
+  [chromium] › v21-fix37-1-multiline-toggle.spec.ts:10:1 › fix37-1 · 跨行加粗再次点击整体取消（标签移除 + 文本零丢失）
+  [chromium] › v21-fix37-2-multiline-unbold.spec.ts:49:1 › fix37-2 · 首行末字起选 + 中间空行 · 再点加粗整体取消
+  [chromium] › v21-fix37-2-multiline-unbold.spec.ts:63:1 › fix37-2 · 存量 <b> 标签跨行整行取消（标签展开 + 文本零丢失）
+  [chromium] › v21-fix37-2-multiline-unbold.spec.ts:87:1 › fix38-1 · 跨行加粗+斜体叠加 · 逐项取消且不误删另一项
+  [chromium] › v21-fix37-2-multiline-unbold.spec.ts:106:1 › fix38-1 · 存量 <b><i> 嵌套 · 去加粗只拆一层
+  [chromium] › v21-fix39-1-decoration-stack.spec.ts:9:1 › fix39-1 · 下划线与删除线叠加而非互相覆盖
+  [chromium] › v21-fix4-cal-color-uniform.spec.ts:252:3 › v2.1 fix4 · 日历标签色四处淡色一致 + 无行首白点 › 月视图事件块无行首白点：有标签 / 无标签 .cal-item 的 ::before content 均为 none，且标题无 • 前缀
+  [chromium] › v21-fix4-cal-color-uniform.spec.ts:279:3 › v2.1 fix4 · 日历标签色四处淡色一致 + 无行首白点 › 四路淡色一致：侧栏色点 / 日历事件块 / 当日待办勾选框 / 取色浮窗色块 的 background alpha 均 = P0 实测值
+  [chromium] › v21-fix4-cal-color-uniform.spec.ts:344:3 › v2.1 fix4 · 日历标签色四处淡色一致 + 无行首白点 › 重开（reload）后四处淡色与标签色保持，白点不回来
+  [chromium] › v21-fix40-topbar-close-backup.spec.ts:7:1 › fix40 · 置顶/设置顺序对调 + 关闭无确认 + 关闭时写备份文件
+  [chromium] › v21-fix41-close-hidden-backup.spec.ts:4:1 › fix41 · 关闭先隐藏再静默落盘再退出
+  [chromium] › v21-fix42-backup-keep-five.spec.ts:4:1 › fix42 · 自动备份仅保留最近 5 份
+  [chromium] › v21-fix43-bridge-capability.spec.ts:5:1 › fix43-1 · 仅注入 window 的 __TAURI__ 时加密保存落 localStorage
+  [chromium] › v21-fix43-enc-ui.spec.ts:4:1 › fix43-3 · 加密态 UI 主题刷新后恢复
+  [chromium] › v21-fix43-ui-restore.spec.ts:6:1 › fix43-2 · 裸 state 快照下仍恢复 juju.ui.v31 主题
+  [chromium] › v21-fix5-tag-sort-and-create.spec.ts:328:3 › v2.1 fix5 · 标签创建与侧栏排序同步 › 新建标签不自动关联任何文档（只进全局索引 state._tags）
+  [chromium] › v21-fix5-tag-sort-and-create.spec.ts:370:3 › v2.1 fix5 · 标签创建与侧栏排序同步 › 显式勾选标签后，文档才关联该标签
+  [chromium] › v21-fix5-tag-sort-and-create.spec.ts:415:3 › v2.1 fix5 · 标签创建与侧栏排序同步 › 点击「排序切换」后，文档列表与标签列表首项顺序同步改变
+  [chromium] › v21-fix5-tag-sort-and-create.spec.ts:491:3 › v2.1 fix5 · 标签创建与侧栏排序同步 › 排序状态在数据更新后实时生效（新关联标签无需再点按钮）
+  [chromium] › v21-fix6-weekview-prio-size.spec.ts:314:3 › v2.1 fix6 · 周视图优先级图标尺寸适配行高 › 周视图事件块内 .prio-badge 的 font-size ≥ 16px（三档优先级）
+  [chromium] › v21-fix6-weekview-prio-size.spec.ts:342:3 › v2.1 fix6 · 周视图优先级图标尺寸适配行高 › .prio-badge 的 height 不超过 .cal-tg-ev 的高度（不越界、不遮挡正文）
+  [chromium] › v21-fix6-weekview-prio-size.spec.ts:374:3 › v2.1 fix6 · 周视图优先级图标尺寸适配行高 › 两图标间距 ≥ 4px、line-height 为 1、事件块未被撑高（不改内联 style）
+  [chromium] › v21-fix7-richtext-multiline.spec.ts:168:3 › v2.1 fix7 · 富文本跨行机制 › 跨行机制 · 鼠标拖选第 1 行到第 3 行得到跨块选区（高亮 ≥2 块，且不进节点多选）
+  [chromium] › v21-fix7-richtext-multiline.spec.ts:195:3 › v2.1 fix7 · 富文本跨行机制 › 跨行机制 · Shift+↓ 连按 2 次跨块扩选（不再整块跳转）
+  [chromium] › v21-fix7-richtext-multiline.spec.ts:221:3 › v2.1 fix7 · 富文本跨行机制 › 跨行机制 · 跨行点颜色：覆盖的每一块都写入 color 内联样式
+  [chromium] › v21-fix7-richtext-multiline.spec.ts:255:3 › v2.1 fix7 · 富文本跨行机制 › 跨行机制 · 跨行 Backspace 删除选中范围（逐块生效）
+  [chromium] › v21-fix7-richtext-multiline.spec.ts:287:3 › v2.1 fix7 · 富文本跨行机制 › 跨行机制 · 跨行选过一次后单行操作不受影响（只改该行，其他行不变）
+  [chromium] › v21-fix7-wordcount.spec.ts:265:3 › v2.1 fix7 · 字数统计 token 化 › 1) 纯新增：A 增 / R=0 / M=0 / N>0，且日历面板「新增」等于桶内 add（绑定不再失效）
+  [chromium] › v21-fix7-wordcount.spec.ts:290:3 › v2.1 fix7 · 字数统计 token 化 › 2) 纯删除：R 增 / N 减
+  [chromium] › v21-fix7-wordcount.spec.ts:307:3 › v2.1 fix7 · 字数统计 token 化 › 3) 纯修改：M 增
+  [chromium] › v21-fix7-wordcount.spec.ts:323:3 › v2.1 fix7 · 字数统计 token 化 › 4) 刷新重开：stats 自洽（add - del == net）、无 pendingCalibration 残留、面板与桶一致
+  [chromium] › v21-fix8-cal-layout.spec.ts:226:3 › v2.1 fix8 · 日历周视图边框与高度自洽 › 1) 周视图时间网格无双重边框：外框只一层，相邻边界合计 ≤ 1px
+  [chromium] › v21-fix8-cal-layout.spec.ts:271:3 › v2.1 fix8 · 日历周视图边框与高度自洽 › 2) 日历模块无底部异常留白：网格高与滚动容器自洽
+  [chromium] › v21-fix8-cal-layout.spec.ts:303:3 › v2.1 fix8 · 日历周视图边框与高度自洽 › 3) 真实拉高面板后滚动区跟随伸长（网格伸缩，不留死白）
+  [chromium] › v21-fix9-db-template.spec.ts:186:3 › v2.1 fix9 · 多维表格默认模板 / 汇总浮窗 › 1) 新建表格即含 10 列表头（与 v2.0-t3 默认模板逐字一致）
+  [chromium] › v21-fix9-db-template.spec.ts:210:3 › v2.1 fix9 · 多维表格默认模板 / 汇总浮窗 › 2) 新建表格默认 3 行空白（不写「新条目」占位、不堆历史行）
+  [chromium] › v21-fix9-db-template.spec.ts:231:3 › v2.1 fix9 · 多维表格默认模板 / 汇总浮窗 › 3) 汇总浮窗无 P2 三段冗余文案，且尺寸紧凑（高 ≤ 100px）
+  [chromium] › v21-fix9-settings-bind.spec.ts:135:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 字号滑杆 #setFontSize：拖到 155 → ui().scale ≈ 1.55 + --font-size 变化 + 百分比更新
+  [chromium] › v21-fix9-settings-bind.spec.ts:178:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 自动备份开关 #setAutoBackupClose：点击 → ui().autoBackupOnClose 变化 + .switch.on 变化
+  [chromium] › v21-fix9-settings-bind.spec.ts:213:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 恢复默认路径 #btnBackupDirReset：点击 → toast「已恢复默认备份路径」+ ui().backupDir 清空
+  [chromium] › v21-fix9-settings-bind.spec.ts:228:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 从备份恢复 #btnRestoreBackup：点击 → 打开导入弹窗（openImportDialog）
+  [chromium] › v21-fix9-settings-bind.spec.ts:244:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 系统提醒通知 #setReminder：点击 → ui().reminderEnabled === true + .switch.on 翻转（REG-9 撤回）
+  [chromium] › v21-fix9-settings-bind.spec.ts:275:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 4 项已恢复：全库加密 / 备份位置·浏览 / 快捷键 / 反馈 count=1 且点击有可观测反应
+  [chromium] › v21-fixr6-13-db-skip.spec.ts:4:1 › fixr6-13 · .db 导入失败只跳过本文件，后续 b.md 仍生成节点且提示含 a.db
+  [chromium] › v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close
+  [chromium] › v21-fixr6-close-persist.spec.ts:23:1 › fixr6-10 · 连点关闭只触发一次隐藏与备份
+  [chromium] › v21-fixr6-close-persist.spec.ts:41:1 › review7-12 · 关页前 flushPendingLogs 补齐待落盘 activity 日志
+  [chromium] › v21-fixr6-merge-equal-ts.spec.ts:4:1 › fixr6-8 · 两标签各落盘 10 节点后磁盘必须为 20（写盘前合并门槛）
+  [chromium] › v21-review5-feature-entries.spec.ts:5:1 › review5 · 主题/导入/完整备份/打印入口可达且点击不抛错
+Total: 176 tests in 69 files

@@ -1,0 +1,16 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-B1n0v_uB.js
+[plugin vite:singlefile] Inlining: style-BheOwebL.css
+[probe] day={"--bg":"rgb(223, 236, 213)","--bg-panel":"rgb(234, 243, 225)","--fg":"rgb(0, 0, 0)","--icon":"rgb(74, 122, 94)","--now-line":"rgb(124, 24, 35)","--mm-node-stroke":"rgb(74, 122, 94)","--cp-custom-alt":"rgb(0, 0, 0)"}
+[probe] night={"--fg":"rgb(255, 255, 255)","--accent-fg":"rgb(255, 255, 255)","--sb-nav-active-fg":"rgb(255, 255, 255)","--now-line":"rgb(124, 24, 35)","--bg":"rgb(10, 25, 41)"}
+[probe] print={"--bg":"rgb(223, 236, 213)","--bg-panel":"rgb(234, 243, 225)","--fg":"rgb(0, 0, 0)","--icon":"rgb(74, 122, 94)","--now-line":"rgb(124, 24, 35)","--mm-node-stroke":"rgb(74, 122, 94)","--cp-custom-alt":"rgb(0, 0, 0)"} body=rgba(255, 255, 255, 0.082)
+[probe] RESULT=PASS
+  ok 1 [chromium] › tests\probe-review9-14.spec.ts:25:1 › review9-14 · hex 提为 --c-* 后日/夜/打印三态计算值不变 (4.8s)
+
+  1 passed (7.2s)

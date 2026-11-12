@@ -1,0 +1,5 @@
+[L16-W14] soak-style persist chain measurement (nodes=20000, ops=40)
+legacy(chain: json + clone/stringify + sync graphpos) | ops=40 | median=75.75ms | p95=83.38ms | max=140.08ms | slowTicks(>50ms)=40 [72.55,79.79,86.45,79.76,83.38,71.15,78.14,70.6,74.66,76.93,72.88,76.81,74.6,73.87,76.36,73.07,75.96,72.81,74.74,77.23,71.2,77.83,72.7,76.45,78.68,69.86,140.08,72.61,75.75,70.2,76.82,78.98,72.3,79.69,70.07,76.32,78.45,72.22,75.41,73.88] | heapPeakDelta=98.93MB
+l16w14(chain: json + concat payload + debounced graphpos) | ops=40 | median=26.79ms | p95=31.83ms | max=33.08ms | slowTicks(>50ms)=0 | heapPeakDelta=0.00MB
+DELTA | p95_drop=61.82% | max_drop=76.38% | slowTicks 40 -> 0
+ACCEPTANCE | reuse_p95_le_200ms=true | reuse_max_lt_300ms=true | slowTicks_empty=true

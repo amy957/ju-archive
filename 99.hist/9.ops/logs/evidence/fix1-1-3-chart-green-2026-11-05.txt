@@ -1,0 +1,8 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix22-calendar-chart.spec.ts:28:1 › fix22 · 字数统计 / 任务统计柱状图不坍塌、X 轴文字不重叠、无 CSP 拦截 (5.1s)
+
+  1 passed (6.7s)

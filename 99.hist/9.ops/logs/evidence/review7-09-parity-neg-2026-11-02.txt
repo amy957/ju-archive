@@ -1,0 +1,1 @@
+[parity] ✗ 缺少 6.P0-T3基线/m07-vite/dist/index.html（先跑 build-all 或设置 JU_BUILD_DATE）

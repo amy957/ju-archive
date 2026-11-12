@@ -1,0 +1,40 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\update-crash.spec.ts:242:3 鈥?M5-1a / M5-1b 妗岄潰澧炲己閫氶亾 鈥?鑷姩鏇存柊纭妗嗭紙v2.2.0锛変笌宕╂簝鍖?save_crash_dump IPC 鍧囩湡瀹炶Е鍙?(2.6s)
+  x  2 [chromium] 鈥?tests\update-crash.spec.ts:483:3 鈥?M5-1a / M5-1b 妗岄潰澧炲己閫氶亾 鈥?鏃?__TAURI__ 鏃?readCrashDumps 蹇呴』杩斿洖 ok:false (4ms)
+
+
+  1) [chromium] 鈥?tests\update-crash.spec.ts:483:3 鈥?M5-1a / M5-1b 妗岄潰澧炲己閫氶亾 鈥?鏃?__TAURI__ 鏃?readCrashDumps 蹇呴』杩斿洖 ok:false 
+
+    Error: 鏃?__TAURI__ 鏃?readCrashDumps 蹇呴』 ok === false
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      485 |     bindErrorDeps({ desktopInvoke: () => Promise.resolve(null) });
+      486 |     const res = await readCrashDumps();
+    > 487 |     expect(res.ok, '鏃?__TAURI__ 鏃?readCrashDumps 蹇呴』 ok === false').toBe(false);
+          |                                                                    ^
+      488 |     expect(res.error, '澶辫触蹇呴』缁欏嚭鍙瘖鏂師鍥?).toBeTruthy();
+      489 |   });
+      490 | });
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\update-crash.spec.ts:487:68
+
+    Error Context: test-results\update-crash-M5-1a-M5-1b-妗?a2f78-eadCrashDumps-蹇呴』杩斿洖-ok-false-chromium\error-context.md
+
+    attachment #2: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\update-crash-M5-1a-M5-1b-妗?a2f78-eadCrashDumps-蹇呴』杩斿洖-ok-false-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\update-crash-M5-1a-M5-1b-妗?a2f78-eadCrashDumps-蹇呴』杩斿洖-ok-false-chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+  1 failed
+    [chromium] 鈥?tests\update-crash.spec.ts:483:3 鈥?M5-1a / M5-1b 妗岄潰澧炲己閫氶亾 鈥?鏃?__TAURI__ 鏃?readCrashDumps 蹇呴』杩斿洖 ok:false 
+  1 passed (4.1s)

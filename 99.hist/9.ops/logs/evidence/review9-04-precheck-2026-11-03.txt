@@ -1,0 +1,5 @@
+﻿cargo: cargo 1.98.1 (797e8a9bc 2026-08-05)
+node_modules/@tauri-apps/cli: True
+target/release exe: JU.exe 7319552 2026-11-03T06:33:13.2808314Z
+nsis dir: JU_2.1.0_x64-setup.exe 4455698
+release dirs: v2.0-t22-r4-2026-10-18 | v2.1-2026-10-26 | v2.1.0-2026-10-29 | v2.1.0-2026-10-31 | v2.1.0-2026-11-01 | v2.1.0-2026-11-02 | v2.1.0-2026-11-02.prev-1793687596800

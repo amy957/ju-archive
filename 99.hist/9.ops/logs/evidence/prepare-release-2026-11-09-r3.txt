@@ -1,0 +1,10 @@
+﻿[release] 鏃㈡湁褰掓。鏁翠綋鏀瑰悕涓?8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-09.prev-1794286959910锛圝U_RELEASE_OVERWRITE=1锛?[release] ISSUE-012 璁╀綅浠剁Щ鍑?1 浠?鈫?90杩囩▼鏉愭枡/tmp/fixr6-12/prev-release-1794286960113锛屼繚鐣?v2.1.0-2026-11-09.prev-1794286959910锛涙竻鍗曪細v2.1.0-2026-11-09.prev-1794234767238
+[release] Web 鍗曟枃浠剁増   6.P0-T3鍩虹嚎/m07-vite/dist/index.html -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-09/JU-v2.1-Web.html
+[release]   SHA-256 9090523bcb208c4861cb8b0f2b29b0adfe68f9bacde5650854ca5b9e09b08a6d  (4.50 MB)
+[release]   缁濆璺緞 E:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-09\JU-v2.1-Web.html
+[release] 妗岄潰鐗?x64    6.P0-T3鍩虹嚎/m07-vite/src-tauri/target/release/ju.exe -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-09/JU-v2.1-win-x64.exe
+[release]   SHA-256 0c62f6acc18039f154d2824c7c0561a8dda8c7f7fa2b5d24e9cf4a2cf9d89562  (7.04 MB)
+[release]   缁濆璺緞 E:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-09\JU-v2.1-win-x64.exe
+[release] 娓呭崟     8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-09/JU-v2.1-checksums.txt锛? 椤癸級
+[release] 褰掓。鐩綍 E:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-09锛堜綅浜?dist 涔嬪锛屼笉浼氳 Tauri 鍐呭祵锛?[release] 鉁?鍙戝竷鍖呭噯澶囧畬鎴?
+EXIT=0

@@ -1,0 +1,5 @@
+sandbox_RUN1 EXIT=0 PREV=1 
+sandbox_RUN2 EXIT=0 PREV=1 [release] ISSUE-012 让位件移出 1 件 → 90过程材料/tmp/fixr6-12/prev-release-1793722347979，保留 v2.1.0-2026-11-03.prev-1793722347755；清单：v2.1.0-2026-11-03.prev-1793722347380
+MUTATE_CALLS=1
+sandbox-neg_RUN1 EXIT=0 PREV=1 
+sandbox-neg_RUN2 EXIT=0 PREV=2 

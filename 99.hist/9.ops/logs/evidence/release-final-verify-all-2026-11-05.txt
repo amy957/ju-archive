@@ -1,0 +1,18 @@
+﻿[verify] mode=all root=E:\APP\褰掓。\6.P0-T3鍩虹嚎\step9
+琚祴浠讹細浜у搧浠?m07-vite锛坉ist 浜х墿锛壜?PW 闆嗘垚娴嬭瘯 canonical v2.0-t3.html锛坒ile:// 鍔犺浇锛?
+鈻?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?鉁?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?(0 鍛戒腑, 46ms)
+
+鈻?Node 鍗曞厓娴嬭瘯
+  $ node --test --test-concurrency=1 P0-T3/tests/structural-sharing.test.mjs P0-T3/tests/step1-produce.test.mjs P0-T3/tests/step2-commit.test.mjs P0-T3/tests/step3-light.test.mjs t9/t9-persist-layer.test.mjs t9/t9-backend-parity.test.mjs t9/t9-shadow-wiring.test.mjs t9/t10-idb-persist.test.mjs t9/t10-w4-consistency.test.mjs t9/t11-w4-consistency.test.mjs t9/t12-virtual-scroll.test.mjs t9/t12-w4-consistency.test.mjs t9/t13-mb-workset.test.mjs t9/t14-vs-hardening.test.mjs t9/t14-w4-consistency.test.mjs t9/t16-w1-persist-rev.test.mjs t9/t16-w2-cal-rev.test.mjs t9/t16-w3-sidebar-counts.test.mjs t9/t16-w4-outline-header-ro.test.mjs t9/t16-w5-caltg-visibility.test.mjs t9/t16-w6-childset-cache.test.mjs t9/t16-w7-collect-subtree.test.mjs t9/t16-w8-tombstone-sweep.test.mjs t9/t16-w9-theme-token.test.mjs t9/t16-w10-defecta-root-guard.test.mjs t9/t16-w11-tombstone-queue-compaction.test.mjs t9/t16-w12-patch-children-holes.test.mjs t9/t16-w13-remote-received-delete-propagation.test.mjs t9/t16-w14-persist-chain-async.test.mjs t9/t16-w15-sidecounts-fallback.test.mjs t9/t16-w16-sanitize-idempotent.test.mjs t9/t16-w17-boot-backup-fallback.test.mjs t9/t16-w18-pii-redaction.test.mjs t9/t16-w19-enc-stack-placeholder.test.mjs t9/t16-w20-calrev-gate.test.mjs t9/t16-w21-merge-ts-unit.test.mjs t9/t17-w1-rendersubtags-rows.test.mjs t9/t17-w2-weekview-local-day.test.mjs t9/t17-w3-p1-fixes.test.mjs t9/t17-w4-batch-fixes.test.mjs t9/t18-final-patch.test.mjs t9/t19-patch1.test.mjs t9/t19-patch2.test.mjs t9/t19-patch3.test.mjs
+
+鈹佲攣 姝ラ鎽樿 鈹佲攣
+  鉁?闈欐€佹鏌ワ紙閾佸緥 6 路 绂佹 AI 鐢熸垚娉ㄩ噴锛?(46ms)
+node.exe : 
+所在位置 行:1 字符: 1
++ & '99.开发辅助工具\node.exe' '6.P0-T3基线\step9\scripts\verify.js' all *>&1 | ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  鉁?Node 鍗曞厓娴嬭瘯锛? 鐢ㄤ緥锛?(4ms) [spawnSync node ENOENT]
+鉁?Node 鍗曞厓娴嬭瘯锛? 鐢ㄤ緥锛?澶辫触锛堥€€鍑虹爜 1锛?ms锛?

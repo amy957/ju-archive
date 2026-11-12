@@ -1,0 +1,3 @@
+﻿PASS  bindLayoutDeps: 5 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindThemeDeps: 2 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindSelectionDeps: 3 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindSidebarDeps: 17 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindRightbarDeps: 4 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindRenderMainDeps: 8 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  injectBootDeps: 12 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindErrorDeps: 5 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindPersistDeps: 7 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?PASS  bindCryptoDeps: 10 涓叧閿緷璧栧潎涓虹湡瀹炲疄鐜?isDesktop 鍚屾簮: hasDesktopInvoke
+PASS  desktopSave: 鍑芥暟浣撳惈鑳藉姏妫€鏌ヤ笖鎸夊紓甯稿垽璐?
+鍏辨鏌?75 涓緷璧栭敭锛屽け璐?0 椤?P1/P2 PASS: 瑁呴厤鐐规棤绌哄３渚濊禆

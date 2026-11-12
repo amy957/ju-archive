@@ -1,0 +1,50 @@
+﻿{
+  "wave": "L16-W13",
+  "defect": "Defect-F (multitab delete propagation)",
+  "mode": "old",
+  "rounds": 24,
+  "multitab": {
+    "A-union-no-loss": true,
+    "B-lww-convergence": true,
+    "C-delete-propagation": false,
+    "D-burst-30": false,
+    "pass": false
+  },
+  "all": {
+    "json": {
+      "multitab": {
+        "A-union-no-loss": true,
+        "B-lww-convergence": true,
+        "C-delete-propagation": false,
+        "D-burst-30": false,
+        "pass": false
+      }
+    }
+  },
+  "detail": {
+    "A-union-no-loss": {
+      "rounds": 24,
+      "pass": 24,
+      "sample": []
+    },
+    "B-lww-convergence": {
+      "rounds": 24,
+      "pass": 24,
+      "sample": []
+    },
+    "C-delete-propagation": {
+      "rounds": 24,
+      "pass": 0,
+      "sample": [
+        "round0"
+      ]
+    },
+    "D-burst-30": {
+      "rounds": 24,
+      "pass": 0,
+      "sample": [
+        "round0"
+      ]
+    }
+  }
+}

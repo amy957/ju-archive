@@ -1,0 +1,94 @@
+﻿TAP version 13
+# Subtest: L16-W5 搂A 缁撴瀯閿氱偣
+    # Subtest: canonical 鍏峰 _calTgVisHandler锛宻tartCalTgTimer 娉ㄥ唽銆乧learCalTgTimer 娉ㄩ攢鍙鎬х洃鍚?    ok 1 - canonical 鍏峰 _calTgVisHandler锛宻tartCalTgTimer 娉ㄥ唽銆乧learCalTgTimer 娉ㄩ攢鍙鎬х洃鍚?      ---
+      duration_ms: 1.3423
+      type: 'test'
+      ...
+    1..1
+ok 1 - L16-W5 搂A 缁撴瀯閿氱偣
+  ---
+  duration_ms: 2.6727
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂B 鍓嶅彴鍚姩
+    # Subtest: 鍙鏃跺缓绔嬪敮涓€ 60s 杞骞舵敞鍐屼竴涓洃鍚?    ok 1 - 鍙鏃跺缓绔嬪敮涓€ 60s 杞骞舵敞鍐屼竴涓洃鍚?      ---
+      duration_ms: 2.1922
+      type: 'test'
+      ...
+    1..1
+ok 2 - L16-W5 搂B 鍓嶅彴鍚姩
+  ---
+  duration_ms: 2.4224
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂C 鍒囧悗鍙板仠琛?    # Subtest: document.hidden 鏃舵竻绌鸿疆璇紙鍚庡彴闆?tick锛?    ok 1 - document.hidden 鏃舵竻绌鸿疆璇紙鍚庡彴闆?tick锛?      ---
+      duration_ms: 0.4266
+      type: 'test'
+      ...
+    1..1
+ok 3 - L16-W5 搂C 鍒囧悗鍙板仠琛?  ---
+  duration_ms: 1.1189
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂D 鍥炲墠鍙拌嚜鍚?+ 绔嬪嵆閲嶅畾浣?    # Subtest: 鍙涓旂嚎浠嶅湪鎸傛椂閲嶅惎杞骞跺嵆鍒?tick 涓€娆?    ok 1 - 鍙涓旂嚎浠嶅湪鎸傛椂閲嶅惎杞骞跺嵆鍒?tick 涓€娆?      ---
+      duration_ms: 0.8252
+      type: 'test'
+      ...
+    1..1
+ok 4 - L16-W5 搂D 鍥炲墠鍙拌嚜鍚?+ 绔嬪嵆閲嶅畾浣?  ---
+  duration_ms: 1.1482
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂E 鍥炲墠鍙扮嚎鏈寕涓嶉噸鍚?    # Subtest: line.isConnected=false 鏃朵笉閲嶅惎锛堢瓑浠烽潪鍛ㄨ鍥撅級
+    ok 1 - line.isConnected=false 鏃朵笉閲嶅惎锛堢瓑浠烽潪鍛ㄨ鍥撅級
+      ---
+      duration_ms: 0.2835
+      type: 'test'
+      ...
+    1..1
+ok 5 - L16-W5 搂E 鍥炲墠鍙扮嚎鏈寕涓嶉噸鍚?  ---
+  duration_ms: 0.777
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂F 娉ㄩ攢璇箟
+    # Subtest: clearCalTgTimer 绉婚櫎鐩戝惉骞剁疆绌哄彞鏌?    ok 1 - clearCalTgTimer 绉婚櫎鐩戝惉骞剁疆绌哄彞鏌?      ---
+      duration_ms: 0.2074
+      type: 'test'
+      ...
+    1..1
+ok 6 - L16-W5 搂F 娉ㄩ攢璇箟
+  ---
+  duration_ms: 0.3089
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂G 閲嶆覆鏌撳箓绛?    # Subtest: 閲嶅 startCalTgTimer 涓嶄骇鐢熼噸澶嶈疆璇?/ 閲嶅鐩戝惉
+    ok 1 - 閲嶅 startCalTgTimer 涓嶄骇鐢熼噸澶嶈疆璇?/ 閲嶅鐩戝惉
+      ---
+      duration_ms: 0.1622
+      type: 'test'
+      ...
+    1..1
+ok 7 - L16-W5 搂G 閲嶆覆鏌撳箓绛?  ---
+  duration_ms: 0.2224
+  type: 'suite'
+  ...
+# Subtest: L16-W5 搂H tick 鑷竻鐞?    # Subtest: 绾垮嵏杞藉悗 tick 缁?clearCalTgTimer 涓€骞舵竻杞 + 娉ㄩ攢鐩戝惉
+    ok 1 - 绾垮嵏杞藉悗 tick 缁?clearCalTgTimer 涓€骞舵竻杞 + 娉ㄩ攢鐩戝惉
+      ---
+      duration_ms: 0.1401
+      type: 'test'
+      ...
+    1..1
+ok 8 - L16-W5 搂H tick 鑷竻鐞?  ---
+  duration_ms: 0.1926
+  type: 'suite'
+  ...
+1..8
+# tests 8
+# suites 8
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 203.2682

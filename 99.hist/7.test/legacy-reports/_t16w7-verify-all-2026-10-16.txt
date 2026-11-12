@@ -1,0 +1,1462 @@
+JU_ENV_NODE_DIR=E:\����\CodeBuddy CN
+JU_ENV_CHROMIUM_PATH=C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+JU_ENV_ELECTRON_RUN_AS_NODE=1
+JU_ENV_JU_APP_URL=file:///E:/APP/�鵵/6.P0-L3����/step9/v2.0-l3.html.html
+JU_ENV_READY=1
+[verify] mode=all root=E:\APP\归档\6.P0-L3基线\step9
+
+▶ 静态检查（铁律 6 · 禁止 AI 生成注释）
+✓ 静态检查（铁律 6 · 禁止 AI 生成注释） (0 命中, 33ms)
+
+▶ Node 单元测试
+  $ node --test P0-L3/tests/structural-sharing.test.mjs P0-L3/tests/step1-produce.test.mjs P0-L3/tests/step2-commit.test.mjs P0-L3/tests/step3-light.test.mjs l9/l9-persist-layer.test.mjs l9/l9-backend-parity.test.mjs l9/l9-shadow-wiring.test.mjs l9/l10-idb-persist.test.mjs l9/l10-w4-consistency.test.mjs l9/l11-w4-consistency.test.mjs l9/l12-virtual-scroll.test.mjs l9/l12-w4-consistency.test.mjs l9/l13-mb-workset.test.mjs l9/l14-vs-hardening.test.mjs l9/l14-w4-consistency.test.mjs
+TAP version 13
+# 内联 <script> 块数量: 9
+#   script\#0: 语法 OK (235006 chars)
+#   script\#1: 语法 OK (156902 chars)
+#   script\#2: 语法 OK (120839 chars)
+#   script\#3: 语法 OK (51651 chars)
+#   script\#4: 语法 OK (93197 chars)
+#   script\#5: 语法 OK (157272 chars)
+#   script\#6: 语法 OK (4811 chars)
+#   script\#7: 语法 OK (51519 chars)
+#   script\#8: 语法 OK (3561 chars)
+# --- 单元用例（immutable-adapter.md 7.1） ---
+#   PASS  __juProduce({a:1}, d=>{d.a=2}) -> {a:2} 且 base 仍 {a:1}
+#   PASS  __juProduce({a:1}, d=>{}) -> {a:1} 原引用（未修改不复制）
+#   PASS  __juProduce({a:1}, ()=>null) -> null
+#   PASS  __juProduce(null, ()=>1) -> 1
+#   PASS  __juProduce(null, ()=>{}) -> null
+#   PASS  __juProduce(5, d=>d+1) -> 6
+#   PASS  recipe 抛错 -> 原样抛出，base 未污染
+#   PASS  __juProduceSafe 抛错 -> {ok:false, base, error}
+#   PASS  __juProduceSafe({a:1}, d=>{d.a=2}) -> {ok:true, next:{a:2}}
+#   PASS  __juProduce([1,2], d=>{d.push(3)}) -> [1,2,3]
+#   PASS  __juProduce({a:{b:1}}, d=>{d.a.b=2}) -> {a:{b:2}} 深克隆
+#   PASS  __juProduce(new Date(0), ...) -> Date 实例，年份 2000（依赖 structuredClone）
+#   PASS  __juProduce({m:Map}, d=>{}) -> Map 保留（依赖 structuredClone）
+#   PASS  __juProduce("abc", ()=>undefined) -> "abc"
+#   PASS  recipe 非函数 -> TypeError
+#   PASS  循环引用对象 -> structuredClone 正常克隆
+# 结果: 16 通过, 0 失败
+# Subtest: P0-L3\\tests\\step1-produce.test.mjs
+ok 1 - P0-L3\\tests\\step1-produce.test.mjs
+  ---
+  duration_ms: 263.9089
+  type: 'test'
+  ...
+# 内联 <script> 块数量: 9
+#   语法检查: 全部通过
+# --- commit 替换行为（6.1/6.2） ---
+#   PASS  非 light 成功：state 替换为新引用且 foo=1, updatedAt 推进
+# [JU] commit action failed, rolling back Error: x
+#     at commit.silent (evalmachine.<anonymous>:1:25)
+#     at __juProduce (evalmachine.<anonymous>:163:13)
+#     at __juProduceSafe (evalmachine.<anonymous>:187:25)
+#     at commit (evalmachine.<anonymous>:8:11)
+#     at evalmachine.<anonymous>:1:7
+#     at Script.runInContext (node:vm:149:12)
+#     at Object.runInContext (node:vm:301:6)
+#     at run (file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-L3%E5%9F%BA%E7%BA%BF/step9/P0-L3/tests/step2-commit.test.mjs:120:24)
+#     at file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-L3%E5%9F%BA%E7%BA%BF/step9/P0-L3/tests/step2-commit.test.mjs:145:3
+#     at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+# [JU] commit action failed, rolling back Error: x
+#     at commit.light (evalmachine.<anonymous>:1:33)
+#     at __juProduce (evalmachine.<anonymous>:163:13)
+#     at __juProduceSafe (evalmachine.<anonymous>:187:25)
+#     at commit (evalmachine.<anonymous>:8:11)
+#     at evalmachine.<anonymous>:1:1
+#     at Script.runInContext (node:vm:149:12)
+#     at Object.runInContext (node:vm:301:6)
+#     at run (file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-L3%E5%9F%BA%E7%BA%BF/step9/P0-L3/tests/step2-commit.test.mjs:120:24)
+#     at file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-L3%E5%9F%BA%E7%BA%BF/step9/P0-L3/tests/step2-commit.test.mjs:162:3
+#     at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+# [JU] commit action failed, rolling back Error: x
+#     at commit.light (evalmachine.<anonymous>:1:33)
+#     at __juProduce (evalmachine.<anonymous>:163:13)
+#     at __juProduceSafe (evalmachine.<anonymous>:187:25)
+#     at commit (evalmachine.<anonymous>:8:11)
+#     at evalmachine.<anonymous>:1:1
+#     at Script.runInContext (node:vm:149:12)
+#     at Object.runInContext (node:vm:301:6)
+#     at run (file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-L3%E5%9F%BA%E7%BA%BF/step9/P0-L3/tests/step2-commit.test.mjs:120:24)
+#     at file:///E:/APP/%E5%BD%92%E6%A1%A3/6.P0-L3%E5%9F%BA%E7%BA%BF/step9/P0-L3/tests/step2-commit.test.mjs:171:3
+#     at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+#   PASS  非 light 抛错：返回原 state 引用，未替换，通知 1 次，历史栈 0 push
+#   PASS  light 成功：state 引用改变（copy-on-write），colWidth=200
+#   PASS  light 抛错（可回滚语义）：state 原引用不变、无 colWidth 残留，通知 1 次
+#   PASS  light 抛错+noRollback：state 原引用不变、无残留（语义自然满足），通知 1 次
+#   PASS  snapshot=true：historyPast=1, historyFuture=0, state.x=1
+#   PASS  undo：返回 true，historyFuture=1（invertPatch），state 弹出后由 applyPatch 决定，副本非同一引用
+#   PASS  redo：返回 true，historyPast=1（invertPatch 推入），state 由 applyPatch 决定
+#   PASS  连续 snapshot：historyPast 存 patch（mode=snapshot, op=unknown），state.x=2，副本引用隔离
+# 结果: 9 通过, 0 失败
+# Subtest: P0-L3\\tests\\step2-commit.test.mjs
+ok 2 - P0-L3\\tests\\step2-commit.test.mjs
+  ---
+  duration_ms: 380.8705
+  type: 'test'
+  ...
+# 内联 <script> 块数量: 9
+#   语法检查: 全部通过
+# --- Step3 light 污染防护 ---
+#   PASS  light 成功：state 引用改变（copy-on-write），updatedAt 被 bump，值写入
+#   PASS  A2 noRollback 抛错：state 原引用不变、无污染残留（produce 天然回滚）
+#   PASS  A1 safeClone 打桩 + 抛错：state 原引用不变、无残留（备份机制已移除）
+#   PASS  有效备份 + 抛错：state 被回滚（无污染字段），不上报任何 kind
+#   PASS  B1 非 silent 抛错：scheduleNotify 至少被调用 1 次
+#   PASS  C1 light 不入历史栈：第一次 undo=true（回退 snapshot），第二次 undo=false
+#   PASS  Step2 回归：非 light 抛错 state 引用不变、nodes 完好、不上报 light kind
+# 结果: 7 通过, 0 失败
+# Subtest: P0-L3\\tests\\step3-light.test.mjs
+ok 3 - P0-L3\\tests\\step3-light.test.mjs
+  ---
+  duration_ms: 394.4123
+  type: 'test'
+  ...
+# Subtest: 仅变更路径引用变化：改 a.text，b 引用不变
+ok 4 - 仅变更路径引用变化：改 a.text，b 引用不变
+  ---
+  duration_ms: 5.2752
+  type: 'test'
+  ...
+# Subtest: 数组 splice 结构共享：仅 children 数组与根路径变化
+ok 5 - 数组 splice 结构共享：仅 children 数组与根路径变化
+  ---
+  duration_ms: 3.8801
+  type: 'test'
+  ...
+# Subtest: delete 结构共享：删除 a，b 引用不变
+ok 6 - delete 结构共享：删除 a，b 引用不变
+  ---
+  duration_ms: 0.5661
+  type: 'test'
+  ...
+# Subtest: recipe 抛错不污染 base
+ok 7 - recipe 抛错不污染 base
+  ---
+  duration_ms: 0.4469
+  type: 'test'
+  ...
+# Subtest: recipe 返回非 undefined 时直接替换
+ok 8 - recipe 返回非 undefined 时直接替换
+  ---
+  duration_ms: 0.4577
+  type: 'test'
+  ...
+# Subtest: 嵌套数组 push 结构共享
+ok 9 - 嵌套数组 push 结构共享
+  ---
+  duration_ms: 0.5607
+  type: 'test'
+  ...
+# Subtest: F-1 回归：delete 后 draft 中间态语义正确（get/in/keys/JSON/descriptor）
+ok 10 - F-1 回归：delete 后 draft 中间态语义正确（get/in/keys/JSON/descriptor）
+  ---
+  duration_ms: 5.2343
+  type: 'test'
+  ...
+# Subtest: F-1 回归：删后重设 / 重定义，键重新存在
+ok 11 - F-1 回归：删后重设 / 重定义，键重新存在
+  ---
+  duration_ms: 0.7213
+  type: 'test'
+  ...
+# Subtest: O-1：Date 走 safeClone 回退（base 为 Date 实例）
+ok 12 - O-1：Date 走 safeClone 回退（base 为 Date 实例）
+  ---
+  duration_ms: 0.6705
+  type: 'test'
+  ...
+# Subtest: O-1：Map 经路径复制保持实例（不触发 Map 方法代理）
+ok 13 - O-1：Map 经路径复制保持实例（不触发 Map 方法代理）
+  ---
+  duration_ms: 0.5652
+  type: 'test'
+  ...
+# Subtest: O-新：嵌套 Map 方法调用抛 TypeError（仅顶层回退，嵌套不保证）
+ok 14 - O-新：嵌套 Map 方法调用抛 TypeError（仅顶层回退，嵌套不保证）
+  ---
+  duration_ms: 2.1733
+  type: 'test'
+  ...
+# Subtest: BUG-1: __proto__ 写入保留自有数据键，不替换原型
+ok 15 - BUG-1: __proto__ 写入保留自有数据键，不替换原型
+  ---
+  duration_ms: 0.68
+  type: 'test'
+  ...
+# Subtest: BUG-2: 数组 length 截断后越界索引在 draft 与结果中均不可见
+ok 16 - BUG-2: 数组 length 截断后越界索引在 draft 与结果中均不可见
+  ---
+  duration_ms: 1.5921
+  type: 'test'
+  ...
+# Subtest: BUG-3: 别名对象修改只走一条父链（告警而非错误）
+ok 17 - BUG-3: 别名对象修改只走一条父链（告警而非错误）
+  ---
+  duration_ms: 0.3244
+  type: 'test'
+  ...
+# Subtest: BUG-3 深层：别名对象在两个父级下，修改其中一个父级下的引用（告警 + 不保证）
+ok 18 - BUG-3 深层：别名对象在两个父级下，修改其中一个父级下的引用（告警 + 不保证）
+  ---
+  duration_ms: 0.4384
+  type: 'test'
+  ...
+# Subtest: delete arr[i] 后 length 不变，稀疏语义正确
+ok 19 - delete arr[i] 后 length 不变，稀疏语义正确
+  ---
+  duration_ms: 0.3469
+  type: 'test'
+  ...
+# Subtest: L10-W3 §D-1 持久层主模块（N 层）
+    # Subtest: T-94(N) buildPersistBatch 形状 / 删除优先 / 上限
+    ok 1 - T-94(N) buildPersistBatch 形状 / 删除优先 / 上限
+      ---
+      duration_ms: 5.247
+      type: 'test'
+      ...
+    # Subtest: T-95(N) mock 后端等价（idb vs invoke）· 事务落盘 + 投影等价
+    ok 2 - T-95(N) mock 后端等价（idb vs invoke）· 事务落盘 + 投影等价
+      ---
+      duration_ms: 8.8086
+      type: 'test'
+      ...
+    # Subtest: T-96(N) 单批事务原子性（中途 throw → 无半批）
+    ok 3 - T-96(N) 单批事务原子性（中途 throw → 无半批）
+      ---
+      duration_ms: 1.3851
+      type: 'test'
+      ...
+    # Subtest: T-96(N) 降级路径可测：setFailNext / closed → 同 {name,message}
+    ok 4 - T-96(N) 降级路径可测：setFailNext / closed → 同 {name,message}
+      ---
+      duration_ms: 5.3147
+      type: 'test'
+      ...
+    # Subtest: T-97(N) 旧库迁移幂等（逐 id 值等价）
+    ok 5 - T-97(N) 旧库迁移幂等（逐 id 值等价）
+      ---
+      duration_ms: 1.2486
+      type: 'test'
+      ...
+    1..5
+ok 20 - L10-W3 §D-1 持久层主模块（N 层）
+  ---
+  duration_ms: 25.1993
+  type: 'suite'
+  ...
+# Subtest: L10-W4 §崩溃/一致性（崩溃注入套件）
+    # Subtest: T-96(N) 崩溃@BEGIN → 无半批 + 既有行保持 + 降级 full
+    ok 1 - T-96(N) 崩溃@BEGIN → 无半批 + 既有行保持 + 降级 full
+      ---
+      duration_ms: 8.4303
+      type: 'test'
+      ...
+    # Subtest: T-96(N) 崩溃@APPLY（缓冲就绪后 / COMMIT 前）→ 无半批
+    ok 2 - T-96(N) 崩溃@APPLY（缓冲就绪后 / COMMIT 前）→ 无半批
+      ---
+      duration_ms: 0.7157
+      type: 'test'
+      ...
+    # Subtest: T-96(N) checkpoint 失败原子性 → 投影不变 + 降级 full
+    ok 3 - T-96(N) checkpoint 失败原子性 → 投影不变 + 降级 full
+      ---
+      duration_ms: 0.8248
+      type: 'test'
+      ...
+    # Subtest: 一致性 · seq 幂等重放（replay:true，不重复生效）
+    ok 4 - 一致性 · seq 幂等重放（replay:true，不重复生效）
+      ---
+      duration_ms: 2.5199
+      type: 'test'
+      ...
+    1..4
+ok 21 - L10-W4 §崩溃/一致性（崩溃注入套件）
+  ---
+  duration_ms: 14.5296
+  type: 'suite'
+  ...
+# Subtest: L10-W4 §三路径隔离（模型级 · §八 四路径）
+    # Subtest: 三路径互斥分类 + 各路径独立后端无串味
+    ok 1 - 三路径互斥分类 + 各路径独立后端无串味
+      ---
+      duration_ms: 1.9923
+      type: 'test'
+      ...
+    # Subtest: 加密路径 · 落盘字节无明文（结构性密文纯净）
+    ok 2 - 加密路径 · 落盘字节无明文（结构性密文纯净）
+      ---
+      duration_ms: 2.495
+      type: 'test'
+      ...
+    1..2
+ok 22 - L10-W4 §三路径隔离（模型级 · §八 四路径）
+  ---
+  duration_ms: 4.8503
+  type: 'suite'
+  ...
+# Subtest: L10-W4 §哨兵 + §指标
+    # Subtest: T-99(N) 哨兵 · 200 步确定性随机序列 → 投影一致性（结构性）
+    ok 1 - T-99(N) 哨兵 · 200 步确定性随机序列 → 投影一致性（结构性）
+      ---
+      duration_ms: 7.7518
+      type: 'test'
+      ...
+    # Subtest: 指标 · stats().p95 nearest-rank + 有界 ring（L9_METRIC_CAP）
+    ok 2 - 指标 · stats().p95 nearest-rank + 有界 ring（L9_METRIC_CAP）
+      ---
+      duration_ms: 0.8723
+      type: 'test'
+      ...
+    1..2
+ok 23 - L10-W4 §哨兵 + §指标
+  ---
+  duration_ms: 9.2923
+  type: 'suite'
+  ...
+# Subtest: L11-W4 §崩溃/一致性（崩溃注入套件 · 复用 T-96 语义）
+    # Subtest: 一致性 · 崩溃@BEGIN → 无半批 + 既有行保持 + 降级 full
+    ok 1 - 一致性 · 崩溃@BEGIN → 无半批 + 既有行保持 + 降级 full
+      ---
+      duration_ms: 5.9717
+      type: 'test'
+      ...
+    # Subtest: 一致性 · 崩溃@APPLY（缓冲就绪后 / COMMIT 前）→ 无半批
+    ok 2 - 一致性 · 崩溃@APPLY（缓冲就绪后 / COMMIT 前）→ 无半批
+      ---
+      duration_ms: 1.1282
+      type: 'test'
+      ...
+    # Subtest: 一致性 · checkpoint 失败原子性 → 投影不变 + 降级 full
+    ok 3 - 一致性 · checkpoint 失败原子性 → 投影不变 + 降级 full
+      ---
+      duration_ms: 5.6488
+      type: 'test'
+      ...
+    # Subtest: 一致性 · seq 幂等重放（replay:true，不重复生效）
+    ok 4 - 一致性 · seq 幂等重放（replay:true，不重复生效）
+      ---
+      duration_ms: 2.4824
+      type: 'test'
+      ...
+    1..4
+ok 24 - L11-W4 §崩溃/一致性（崩溃注入套件 · 复用 T-96 语义）
+  ---
+  duration_ms: 17.3997
+  type: 'suite'
+  ...
+# Subtest: L11-W4 §四路径隔离（模型级 · §八 四路径逐字）
+    # Subtest: 四路径互斥分类（desktop / encrypted / browser / shadow）+ 各路径独立后端无串味
+    ok 1 - 四路径互斥分类（desktop / encrypted / browser / shadow）+ 各路径独立后端无串味
+      ---
+      duration_ms: 1.5568
+      type: 'test'
+      ...
+    # Subtest: 加密路径 · 落盘字节无明文（结构性密文纯净）
+    ok 2 - 加密路径 · 落盘字节无明文（结构性密文纯净）
+      ---
+      duration_ms: 0.6174
+      type: 'test'
+      ...
+    1..2
+ok 25 - L11-W4 §四路径隔离（模型级 · §八 四路径逐字）
+  ---
+  duration_ms: 2.4414
+  type: 'suite'
+  ...
+# Subtest: L11-W4 §哨兵 + §指标
+    # Subtest: T-105(N) 哨兵 · 200 步确定性随机序列（四路径）→ 投影一致性（结构性）
+    ok 1 - T-105(N) 哨兵 · 200 步确定性随机序列（四路径）→ 投影一致性（结构性）
+      ---
+      duration_ms: 11.3623
+      type: 'test'
+      ...
+    # Subtest: 指标 · stats().p95 nearest-rank + 有界 ring（L9_METRIC_CAP）
+    ok 2 - 指标 · stats().p95 nearest-rank + 有界 ring（L9_METRIC_CAP）
+      ---
+      duration_ms: 0.5937
+      type: 'test'
+      ...
+    # Subtest: 指标 · commit / 切视图 / longtask 三序列 p95（L11-W4 度量口径）
+    ok 3 - 指标 · commit / 切视图 / longtask 三序列 p95（L11-W4 度量口径）
+      ---
+      duration_ms: 0.5936
+      type: 'test'
+      ...
+    1..3
+ok 26 - L11-W4 §哨兵 + §指标
+  ---
+  duration_ms: 12.9899
+  type: 'suite'
+  ...
+# Subtest: L12-W3 §窗口计算契约（H2 绝对定位 · 视口上限）
+    # Subtest: 常量接地 · 阈值/行高/预渲染/池上限均为有效整数
+    ok 1 - 常量接地 · 阈值/行高/预渲染/池上限均为有效整数
+      ---
+      duration_ms: 2.8071
+      type: 'test'
+      ...
+    # Subtest: 渲染工作集规模 · 任意滚动位置 ≤ 池上限（< 视口上限 200）
+    ok 2 - 渲染工作集规模 · 任意滚动位置 ≤ 池上限（< 视口上限 200）
+      ---
+      duration_ms: 2.3403
+      type: 'test'
+      ...
+    # Subtest: 视口外不在 DOM · 窗口严格小于全量且首行归零
+    ok 3 - 视口外不在 DOM · 窗口严格小于全量且首行归零
+      ---
+      duration_ms: 0.4112
+      type: 'test'
+      ...
+    # Subtest: 不变量 \#32 哨兵 · 滚动位置 ↔ 渲染区间映射单调不减
+    ok 4 - 不变量 \#32 哨兵 · 滚动位置 ↔ 渲染区间映射单调不减
+      ---
+      duration_ms: 0.5326
+      type: 'test'
+      ...
+    # Subtest: 可变行高残余（R25）· 估算行高同源且 ≤ 32px
+    ok 5 - 可变行高残余（R25）· 估算行高同源且 ≤ 32px
+      ---
+      duration_ms: 0.2057
+      type: 'test'
+      ...
+    1..5
+ok 27 - L12-W3 §窗口计算契约（H2 绝对定位 · 视口上限）
+  ---
+  duration_ms: 8.5915
+  type: 'suite'
+  ...
+# Subtest: L12-W3 §产物级结构性扫描（默认关闭态 + 引擎 API）
+    # Subtest: 引擎 API 落地（H2 绝对定位 / H3 DOM 复用）
+    ok 1 - 引擎 API 落地（H2 绝对定位 / H3 DOM 复用）
+      ---
+      duration_ms: 8.9805
+      type: 'test'
+      ...
+    # Subtest: 降级路径（H5）· _virtualDisabled + fallback 报告锚
+    ok 2 - 降级路径（H5）· _virtualDisabled + fallback 报告锚
+      ---
+      duration_ms: 3.9055
+      type: 'test'
+      ...
+    # Subtest: D-7 打印全量渲染锚（beforeprint / afterprint + @media print）
+    ok 3 - D-7 打印全量渲染锚（beforeprint / afterprint + @media print）
+      ---
+      duration_ms: 2.4445
+      type: 'test'
+      ...
+    # Subtest: 交互破坏面台账 D-1…D-8 锚点存在性
+    ok 4 - 交互破坏面台账 D-1…D-8 锚点存在性
+      ---
+      duration_ms: 8.0562
+      type: 'test'
+      ...
+    # Subtest: 默认关闭态（LO-7=A）· 阈值门控 + 原全量路径保留
+    ok 5 - 默认关闭态（LO-7=A）· 阈值门控 + 原全量路径保留
+      ---
+      duration_ms: 1.2383
+      type: 'test'
+      ...
+    1..5
+ok 28 - L12-W3 §产物级结构性扫描（默认关闭态 + 引擎 API）
+  ---
+  duration_ms: 25.3029
+  type: 'suite'
+  ...
+# Subtest: L12-W4 §崩溃/一致性（降级三态 + 崩溃注入 · 模型级）
+    # Subtest: T-109(N) 降级三态 · 阈值内 / 超阈值 / 显式关闭 判定
+    ok 1 - T-109(N) 降级三态 · 阈值内 / 超阈值 / 显式关闭 判定
+      ---
+      duration_ms: 2.3234
+      type: 'test'
+      ...
+    # Subtest: T-109(N) 崩溃注入 · 窗口计算抛错 → 降级置位 + 全量行数 = total
+    ok 2 - T-109(N) 崩溃注入 · 窗口计算抛错 → 降级置位 + 全量行数 = total
+      ---
+      duration_ms: 0.6751
+      type: 'test'
+      ...
+    # Subtest: H5 显式开关 · _vsUserDisabled=true → 永不虚拟化（等价全量）
+    ok 3 - H5 显式开关 · _vsUserDisabled=true → 永不虚拟化（等价全量）
+      ---
+      duration_ms: 0.2799
+      type: 'test'
+      ...
+    1..3
+ok 29 - L12-W4 §崩溃/一致性（降级三态 + 崩溃注入 · 模型级）
+  ---
+  duration_ms: 5.4178
+  type: 'suite'
+  ...
+# Subtest: L12-W4 §H5 降级开关（显式 UI 开关 · 产物级只读扫描）
+    # Subtest: H5 锚存在性 · 显式开关符号 + 持久化字段 + 播报文案
+    ok 1 - H5 锚存在性 · 显式开关符号 + 持久化字段 + 播报文案
+      ---
+      duration_ms: 3.3108
+      type: 'test'
+      ...
+    # Subtest: H5 接地 · _vsShouldUse 认显式关闭标志（判定接入）
+    ok 2 - H5 接地 · _vsShouldUse 认显式关闭标志（判定接入）
+      ---
+      duration_ms: 2.2202
+      type: 'test'
+      ...
+    1..2
+ok 30 - L12-W4 §H5 降级开关（显式 UI 开关 · 产物级只读扫描）
+  ---
+  duration_ms: 6.0055
+  type: 'suite'
+  ...
+# Subtest: L12-W4 §哨兵 + §指标
+    # Subtest: T-110(N) 哨兵 · 200 步确定性滚动序列 → 窗口映射有界且单调不减
+    ok 1 - T-110(N) 哨兵 · 200 步确定性滚动序列 → 窗口映射有界且单调不减
+      ---
+      duration_ms: 1.2038
+      type: 'test'
+      ...
+    # Subtest: 指标 · p95 nearest-rank（纯函数）
+    ok 2 - 指标 · p95 nearest-rank（纯函数）
+      ---
+      duration_ms: 0.4145
+      type: 'test'
+      ...
+    # Subtest: 指标 · commit / 切视图 / longtask 三序列独立（合成样本）
+    ok 3 - 指标 · commit / 切视图 / longtask 三序列独立（合成样本）
+      ---
+      duration_ms: 0.9339
+      type: 'test'
+      ...
+    # Subtest: 指标 · canonical 暴露度量锚（ring 上限 + 统计入口 + longtask 观察者）
+    ok 4 - 指标 · canonical 暴露度量锚（ring 上限 + 统计入口 + longtask 观察者）
+      ---
+      duration_ms: 2.1638
+      type: 'test'
+      ...
+    1..4
+ok 31 - L12-W4 §哨兵 + §指标
+  ---
+  duration_ms: 5.7676
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §常量接地（L0-4=A · L0-5=A）
+    # Subtest: MB_LRU_CAP=5,000 / MB_VIEW_CAP=200 / 合批 16ms / 一致性环 64
+    ok 1 - MB_LRU_CAP=5,000 / MB_VIEW_CAP=200 / 合批 16ms / 一致性环 64
+      ---
+      duration_ms: 1.7934
+      type: 'test'
+      ...
+    1..1
+ok 32 - L13-W6 §常量接地（L0-4=A · L0-5=A）
+  ---
+  duration_ms: 3.7147
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §MB-LRU 上限与回填一致（MB-Q1/Q2）
+    # Subtest: 工作集封顶 ≤ 5,000 且 capBreach=0（100k 序列）
+    ok 1 - 工作集封顶 ≤ 5,000 且 capBreach=0（100k 序列）
+      ---
+      duration_ms: 438.6316
+      type: 'test'
+      ...
+    # Subtest: LRU 稳定 · touch 将命中项置顶（插入序 = LRU 序）
+    ok 2 - LRU 稳定 · touch 将命中项置顶（插入序 = LRU 序）
+      ---
+      duration_ms: 1.7545
+      type: 'test'
+      ...
+    # Subtest: 淘汰后再取回填一致（引用等价）
+    ok 3 - 淘汰后再取回填一致（引用等价）
+      ---
+      duration_ms: 0.1687
+      type: 'test'
+      ...
+    # Subtest: 淘汰仅回填后触发（未超限时零淘汰）
+    ok 4 - 淘汰仅回填后触发（未超限时零淘汰）
+      ---
+      duration_ms: 0.1254
+      type: 'test'
+      ...
+    1..4
+ok 33 - L13-W6 §MB-LRU 上限与回填一致（MB-Q1/Q2）
+  ---
+  duration_ms: 441.0852
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §视口段常驻 / 队列（守卫 ① · MB-Q2）
+    # Subtest: 视口段 ≤ 200 常驻不淘汰（总驻留 = 5,200）
+    ok 1 - 视口段 ≤ 200 常驻不淘汰（总驻留 = 5,200）
+      ---
+      duration_ms: 4.7859
+      type: 'test'
+      ...
+    # Subtest: 视口刷新（_mbSetViewport 语义）覆盖旧视口并从工作集剔除
+    ok 2 - 视口刷新（_mbSetViewport 语义）覆盖旧视口并从工作集剔除
+      ---
+      duration_ms: 0.3323
+      type: 'test'
+      ...
+    # Subtest: 合批队列（mbCoalesceCommit 语义）· 同窗多次变更并入单批
+    ok 3 - 合批队列（mbCoalesceCommit 语义）· 同窗多次变更并入单批
+      ---
+      duration_ms: 0.3824
+      type: 'test'
+      ...
+    1..3
+ok 34 - L13-W6 §视口段常驻 / 队列（守卫 ① · MB-Q2）
+  ---
+  duration_ms: 5.8147
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §MB-SEAM 唯一异步边界（S-A 短路 · L0-9=A）
+    # Subtest: 默认态（_mbDisabled=true）· await getNodeAsync(id) === N(id)（同引用）
+    ok 1 - 默认态（_mbDisabled=true）· await getNodeAsync(id) === N(id)（同引用）
+      ---
+      duration_ms: 0.353
+      type: 'test'
+      ...
+    # Subtest: 开启态 · getNodeAsync 经工作集命中 / 回填与 N(id) 等价
+    ok 2 - 开启态 · getNodeAsync 经工作集命中 / 回填与 N(id) 等价
+      ---
+      duration_ms: 0.3473
+      type: 'test'
+      ...
+    1..2
+ok 35 - L13-W6 §MB-SEAM 唯一异步边界（S-A 短路 · L0-9=A）
+  ---
+  duration_ms: 0.8704
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §TS-V 单接入点 + 投影（IF-1…IF-5 · §3.2）
+    # Subtest: T-116(N) 等价哨兵 · off 态 mbResolve 逐项 ≡ 全量投影（degraded=true）
+    ok 1 - T-116(N) 等价哨兵 · off 态 mbResolve 逐项 ≡ 全量投影（degraded=true）
+      ---
+      duration_ms: 2.4364
+      type: 'test'
+      ...
+    # Subtest: 投影不泄漏（仅投影键 / 缺失 → undefined）
+    ok 2 - 投影不泄漏（仅投影键 / 缺失 → undefined）
+      ---
+      duration_ms: 0.1986
+      type: 'test'
+      ...
+    # Subtest: TS-V 单接入点存在 · 6 类视图 descriptor 语义锚（kind 直通）
+    ok 3 - TS-V 单接入点存在 · 6 类视图 descriptor 语义锚（kind 直通）
+      ---
+      duration_ms: 0.2848
+      type: 'test'
+      ...
+    1..3
+ok 36 - L13-W6 §TS-V 单接入点 + 投影（IF-1…IF-5 · §3.2）
+  ---
+  duration_ms: 3.1182
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §RWS 增量 ⊆ 全量对拍（L0-6=A · 不变量 \#33）
+    # Subtest: 增量失效集 ⊆ 已回填集（写集不越读集）
+    ok 1 - 增量失效集 ⊆ 已回填集（写集不越读集）
+      ---
+      duration_ms: 0.2637
+      type: 'test'
+      ...
+    # Subtest: 一致性对拍 · 增量失效后回填与全量逐项 mismatch=0
+    ok 2 - 一致性对拍 · 增量失效后回填与全量逐项 mismatch=0
+      ---
+      duration_ms: 0.7527
+      type: 'test'
+      ...
+    1..2
+ok 37 - L13-W6 §RWS 增量 ⊆ 全量对拍（L0-6=A · 不变量 \#33）
+  ---
+  duration_ms: 1.1516
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §崩溃安全网（会话级降级回全量）
+    # Subtest: 工作集路径抛错 → 降级回全量（不抛错）
+    ok 1 - 工作集路径抛错 → 降级回全量（不抛错）
+      ---
+      duration_ms: 0.2183
+      type: 'test'
+      ...
+    1..1
+ok 38 - L13-W6 §崩溃安全网（会话级降级回全量）
+  ---
+  duration_ms: 0.305
+  type: 'suite'
+  ...
+# Subtest: L13-W6 §产物级结构性扫描（canonical 引擎 API + 守卫锚）
+    # Subtest: L13 引擎 API 落地（MB-SEAM / MB-LRU / TS-V）
+    ok 1 - L13 引擎 API 落地（MB-SEAM / MB-LRU / TS-V）
+      ---
+      duration_ms: 3.1079
+      type: 'test'
+      ...
+    # Subtest: 默认关闭态锚（_mbDisabled=true · 零回归）
+    ok 2 - 默认关闭态锚（_mbDisabled=true · 零回归）
+      ---
+      duration_ms: 0.4212
+      type: 'test'
+      ...
+    # Subtest: 三重淘汰守卫锚（视口 / 脏集 / 显式 pin）
+    ok 3 - 三重淘汰守卫锚（视口 / 脏集 / 显式 pin）
+      ---
+      duration_ms: 0.4275
+      type: 'test'
+      ...
+    # Subtest: W4 防抖 / 合批 / 一致性锚
+    ok 4 - W4 防抖 / 合批 / 一致性锚
+      ---
+      duration_ms: 0.9025
+      type: 'test'
+      ...
+    1..4
+ok 39 - L13-W6 §产物级结构性扫描（canonical 引擎 API + 守卫锚）
+  ---
+  duration_ms: 5.0692
+  type: 'suite'
+  ...
+# Subtest: L14-W3 §加固原语落地（G1–G5 · 判别力锚）
+    # Subtest: G1 · 变高行高度表原语 `__vsHeightTable` 落地
+    ok 1 - G1 · 变高行高度表原语 `__vsHeightTable` 落地
+      ---
+      duration_ms: 2.0455
+      type: 'test'
+      ...
+    # Subtest: G2 · 数据代次缓存原语 `__vsGenCache` 落地（键 = state.updatedAt）
+    ok 2 - G2 · 数据代次缓存原语 `__vsGenCache` 落地（键 = state.updatedAt）
+      ---
+      duration_ms: 0.7151
+      type: 'test'
+      ...
+    # Subtest: G3 · 画廊/导图窗口化原语落地
+    ok 3 - G3 · 画廊/导图窗口化原语落地
+      ---
+      duration_ms: 1.0225
+      type: 'test'
+      ...
+    # Subtest: G4 · 应用内搜索原语 `l14SearchAll` 落地（关闭 OP-14）
+    ok 4 - G4 · 应用内搜索原语 `l14SearchAll` 落地（关闭 OP-14）
+      ---
+      duration_ms: 2.4839
+      type: 'test'
+      ...
+    # Subtest: G5 · 交互护栏原语 `__vsInteractGuard` 落地
+    ok 5 - G5 · 交互护栏原语 `__vsInteractGuard` 落地
+      ---
+      duration_ms: 1.0141
+      type: 'test'
+      ...
+    # Subtest: 默认关闭闸门 · `_l14Enabled` 缺省 false 且接缝 `__l14On` 存在
+    ok 6 - 默认关闭闸门 · `_l14Enabled` 缺省 false 且接缝 `__l14On` 存在
+      ---
+      duration_ms: 0.8027
+      type: 'test'
+      ...
+    # Subtest: 挂接现有虚拟滚动引擎 · 高度表分支 + 原路径保留
+    ok 7 - 挂接现有虚拟滚动引擎 · 高度表分支 + 原路径保留
+      ---
+      duration_ms: 0.8561
+      type: 'test'
+      ...
+    # Subtest: 降级路径锚（RL-7）· `_virtualDisabled` / `_vsUserDisabled` / fallback 报告保留
+    ok 8 - 降级路径锚（RL-7）· `_virtualDisabled` / `_vsUserDisabled` / fallback 报告保留
+      ---
+      duration_ms: 0.667
+      type: 'test'
+      ...
+    1..8
+ok 40 - L14-W3 §加固原语落地（G1–G5 · 判别力锚）
+  ---
+  duration_ms: 11.6301
+  type: 'suite'
+  ...
+# Subtest: L14-W3 §G1 高度表（前缀和）契约（E-①）
+    # Subtest: 常量接地 · 行高/预渲染/池上限/视口上限均为有效整数
+    ok 1 - 常量接地 · 行高/预渲染/池上限/视口上限均为有效整数
+      ---
+      duration_ms: 0.385
+      type: 'test'
+      ...
+    # Subtest: 前缀和严格递增 · total = Σheights · offset(0)=0 · offset(n)=total
+    ok 2 - 前缀和严格递增 · total = Σheights · offset(0)=0 · offset(n)=total
+      ---
+      duration_ms: 1.5017
+      type: 'test'
+      ...
+    # Subtest: indexAt 覆盖边界（0 / total-1 / 中段行首行尾）
+    ok 3 - indexAt 覆盖边界（0 / total-1 / 中段行首行尾）
+      ---
+      duration_ms: 0.966
+      type: 'test'
+      ...
+    # Subtest: range 含 overscan · ≤ 池上限 · 相邻行 offset 连续（无重叠/无空洞）
+    ok 4 - range 含 overscan · ≤ 池上限 · 相邻行 offset 连续（无重叠/无空洞）
+      ---
+      duration_ms: 24.9465
+      type: 'test'
+      ...
+    # Subtest: 变高行（表格/换行）下窗口区间单调不减（滚动位置 ↔ 渲染区间）
+    ok 5 - 变高行（表格/换行）下窗口区间单调不减（滚动位置 ↔ 渲染区间）
+      ---
+      duration_ms: 9.8188
+      type: 'test'
+      ...
+    # Subtest: 行高下限保护 · 非法/零高度回退 VS_ROW_H（杜绝行高错乱）
+    ok 6 - 行高下限保护 · 非法/零高度回退 VS_ROW_H（杜绝行高错乱）
+      ---
+      duration_ms: 0.205
+      type: 'test'
+      ...
+    1..6
+ok 41 - L14-W3 §G1 高度表（前缀和）契约（E-①）
+  ---
+  duration_ms: 38.2875
+  type: 'suite'
+  ...
+# Subtest: L14-W3 §G2 代次缓存与增量等价（E-②③）
+    # Subtest: 增量 patch 与全量重建逐节点等价（id/depth 对齐 → true）
+    ok 1 - 增量 patch 与全量重建逐节点等价（id/depth 对齐 → true）
+      ---
+      duration_ms: 0.2488
+      type: 'test'
+      ...
+    # Subtest: 长度或深度差异 → 不等（触发全量重建兜底）
+    ok 2 - 长度或深度差异 → 不等（触发全量重建兜底）
+      ---
+      duration_ms: 0.2749
+      type: 'test'
+      ...
+    # Subtest: 代次缓存原语接线 · 遍历与视口规模成正比（缓存命中分支存在）
+    ok 3 - 代次缓存原语接线 · 遍历与视口规模成正比（缓存命中分支存在）
+      ---
+      duration_ms: 0.6718
+      type: 'test'
+      ...
+    1..3
+ok 42 - L14-W3 §G2 代次缓存与增量等价（E-②③）
+  ---
+  duration_ms: 1.3335
+  type: 'suite'
+  ...
+# Subtest: L14-W3 §G3/G4/G5 语义哨兵
+    # Subtest: G3 · 视图覆盖上限接线（画廊/导图 ≤ 视口上限）
+    ok 1 - G3 · 视图覆盖上限接线（画廊/导图 ≤ 视口上限）
+      ---
+      duration_ms: 0.5482
+      type: 'test'
+      ...
+    # Subtest: G4 · 应用内搜索契约（跨全文档 / 命中屏外 / 与滚动定位联动）
+    ok 2 - G4 · 应用内搜索契约（跨全文档 / 命中屏外 / 与滚动定位联动）
+      ---
+      duration_ms: 0.9103
+      type: 'test'
+      ...
+    # Subtest: G5 · 交互护栏计数形状（renders / geometryReads / geometryHits）
+    ok 3 - G5 · 交互护栏计数形状（renders / geometryReads / geometryHits）
+      ---
+      duration_ms: 2.2007
+      type: 'test'
+      ...
+    1..3
+ok 43 - L14-W3 §G3/G4/G5 语义哨兵
+  ---
+  duration_ms: 3.8241
+  type: 'suite'
+  ...
+# Subtest: L14-W4 §G6 真规模闸门契约（100k · T-118(N) 等价）
+    # Subtest: 预算常量接地 · longtask/RSS/p95 门槛为冻结值（50 / 200 / 16）
+    ok 1 - 预算常量接地 · longtask/RSS/p95 门槛为冻结值（50 / 200 / 16）
+      ---
+      duration_ms: 1.4494
+      type: 'test'
+      ...
+    # Subtest: longtask 计数 · 仅 duration > 预算计入；maxDuration 单调取大
+    ok 2 - longtask 计数 · 仅 duration > 预算计入；maxDuration 单调取大
+      ---
+      duration_ms: 0.172
+      type: 'test'
+      ...
+    # Subtest: longtask 门 · 100k 切视图无长任务 → ok；出现长任务 → 不通过
+    ok 3 - longtask 门 · 100k 切视图无长任务 → ok；出现长任务 → 不通过
+      ---
+      duration_ms: 0.1732
+      type: 'test'
+      ...
+    # Subtest: RSS 门 · ≤ 200MB 通过 / > 200MB 拒绝 / 未采样条件通过
+    ok 4 - RSS 门 · ≤ 200MB 通过 / > 200MB 拒绝 / 未采样条件通过
+      ---
+      duration_ms: 0.19
+      type: 'test'
+      ...
+    # Subtest: p95 门 · nearest-rank p95 ≤ 16ms；无样本条件通过
+    ok 5 - p95 门 · nearest-rank p95 ≤ 16ms；无样本条件通过
+      ---
+      duration_ms: 0.3484
+      type: 'test'
+      ...
+    # Subtest: 防抖契约 · 同帧多次合批为一次（去抖动）
+    ok 6 - 防抖契约 · 同帧多次合批为一次（去抖动）
+      ---
+      duration_ms: 0.1956
+      type: 'test'
+      ...
+    # Subtest: 节流契约 · 窗口内首沿立即 + 至多一次尾沿（commit(s=>...) 合批）
+    ok 7 - 节流契约 · 窗口内首沿立即 + 至多一次尾沿（commit(s=>...) 合批）
+      ---
+      duration_ms: 0.2015
+      type: 'test'
+      ...
+    # Subtest: 产物级锚 · 闸门原语与暴露出口存在（P 层 T-118 判别力）
+    ok 8 - 产物级锚 · 闸门原语与暴露出口存在（P 层 T-118 判别力）
+      ---
+      duration_ms: 3.1203
+      type: 'test'
+      ...
+    # Subtest: 默认关闭态守持 · `__l14On()` 保护 resize 防抖（缺省不改路径语义）
+    ok 9 - 默认关闭态守持 · `__l14On()` 保护 resize 防抖（缺省不改路径语义）
+      ---
+      duration_ms: 0.6513
+      type: 'test'
+      ...
+    1..9
+ok 44 - L14-W4 §G6 真规模闸门契约（100k · T-118(N) 等价）
+  ---
+  duration_ms: 8.3955
+  type: 'suite'
+  ...
+# Subtest: L14-W4 §崩溃/一致性（降级等阶 · T-116(N) 等价 · 哨兵 \#35 拟）
+    # Subtest: 降级等阶 · off 态与全量路径逐行等价（100% 一致 ⇒ ok）
+    ok 1 - 降级等阶 · off 态与全量路径逐行等价（100% 一致 ⇒ ok）
+      ---
+      duration_ms: 3.6105
+      type: 'test'
+      ...
+    # Subtest: 降级等阶 · 长度 / 行内容差异 ⇒ 不通过（触发全量兜底）
+    ok 2 - 降级等阶 · 长度 / 行内容差异 ⇒ 不通过（触发全量兜底）
+      ---
+      duration_ms: 0.2646
+      type: 'test'
+      ...
+    # Subtest: 崩溃注入 · 闸门观测快照确定性（同输入 ⇒ 同输出 · 无 wall-clock 敏感）
+    ok 3 - 崩溃注入 · 闸门观测快照确定性（同输入 ⇒ 同输出 · 无 wall-clock 敏感）
+      ---
+      duration_ms: 0.328
+      type: 'test'
+      ...
+    # Subtest: 降级锚（RL-7）· `_virtualDisabled` / `_vsUserDisabled` / fallback 报告保留
+    ok 4 - 降级锚（RL-7）· `_virtualDisabled` / `_vsUserDisabled` / fallback 报告保留
+      ---
+      duration_ms: 1.3612
+      type: 'test'
+      ...
+    # Subtest: 哨兵 \#35（拟）· E-2 补全面四断言形状成立
+    ok 5 - 哨兵 \#35（拟）· E-2 补全面四断言形状成立
+      ---
+      duration_ms: 2.8291
+      type: 'test'
+      ...
+    1..5
+ok 45 - L14-W4 §崩溃/一致性（降级等阶 · T-116(N) 等价 · 哨兵 \#35 拟）
+  ---
+  duration_ms: 8.8398
+  type: 'suite'
+  ...
+# Subtest: L9-W3 §mock 后端适配器 parity
+    # Subtest: T-87 适配器清单 + 读写删除查询 parity（同序列 → 同结果）
+    ok 1 - T-87 适配器清单 + 读写删除查询 parity（同序列 → 同结果）
+      ---
+      duration_ms: 2.893
+      type: 'test'
+      ...
+    # Subtest: T-88 事务 / 全量 checkpoint parity：两适配器驱动 PersistStore 行为一致
+    ok 2 - T-88 事务 / 全量 checkpoint parity：两适配器驱动 PersistStore 行为一致
+      ---
+      duration_ms: 3.2635
+      type: 'test'
+      ...
+    # Subtest: T-89 错误传播 parity：非法批 / 后端失败 / 已关闭 → 同 name + 同 message
+    ok 3 - T-89 错误传播 parity：非法批 / 后端失败 / 已关闭 → 同 name + 同 message
+      ---
+      duration_ms: 0.945
+      type: 'test'
+      ...
+    1..3
+ok 46 - L9-W3 §mock 后端适配器 parity
+  ---
+  duration_ms: 8.4451
+  type: 'suite'
+  ...
+# Subtest: L9-W1 §P1a 落盘逻辑
+    # Subtest: T-69 buildPersistBatch：删除优先（D-2）+ 单批上限 + 超限退全量（D-6）
+    ok 1 - T-69 buildPersistBatch：删除优先（D-2）+ 单批上限 + 超限退全量（D-6）
+      ---
+      duration_ms: 4.5499
+      type: 'test'
+      ...
+    # Subtest: T-70 崩溃原子性：事务中途崩溃 → 盘面无半批（BEGIN→apply→COMMIT 三段式）
+    ok 2 - T-70 崩溃原子性：事务中途崩溃 → 盘面无半批（BEGIN→apply→COMMIT 三段式）
+      ---
+      duration_ms: 3.3876
+      type: 'test'
+      ...
+    # Subtest: T-71 幂等投递（K-2）：同 seq 重放不重复应用
+    ok 3 - T-71 幂等投递（K-2）：同 seq 重放不重复应用
+      ---
+      duration_ms: 0.3412
+      type: 'test'
+      ...
+    # Subtest: T-72 flushNow 全量 checkpoint：原子替换 + 清孤儿行 + 收敛计数归零
+    ok 4 - T-72 flushNow 全量 checkpoint：原子替换 + 清孤儿行 + 收敛计数归零
+      ---
+      duration_ms: 0.4531
+      type: 'test'
+      ...
+    # Subtest: T-73 错误处理：FIFO 失败缓冲上限 + 安全网置 full
+    ok 5 - T-73 错误处理：FIFO 失败缓冲上限 + 安全网置 full
+      ---
+      duration_ms: 2.186
+      type: 'test'
+      ...
+    # Subtest: T-74 投影等价：equalProjection 逐 id JSON 比对
+    ok 6 - T-74 投影等价：equalProjection 逐 id JSON 比对
+      ---
+      duration_ms: 0.2577
+      type: 'test'
+      ...
+    1..6
+ok 47 - L9-W1 §P1a 落盘逻辑
+  ---
+  duration_ms: 13.0718
+  type: 'suite'
+  ...
+# Subtest: L9-W1 §Worker 骨架 / 协议 / syncFallback 桥
+    # Subtest: T-75 消息协议形状（请求/响应/错误）
+    ok 1 - T-75 消息协议形状（请求/响应/错误）
+      ---
+      duration_ms: 0.3207
+      type: 'test'
+      ...
+    # Subtest: T-76 syncFallback 保留且可用（LO-1：主线程 L6 同步路径不得删除）
+    ok 2 - T-76 syncFallback 保留且可用（LO-1：主线程 L6 同步路径不得删除）
+      ---
+      duration_ms: 0.5461
+      type: 'test'
+      ...
+    # Subtest: T-77 Worker 骨架：ready 握手 + worker 模式委派 + 超时降级 syncFallback
+    ok 3 - T-77 Worker 骨架：ready 握手 + worker 模式委派 + 超时降级 syncFallback
+      ---
+      duration_ms: 83.3706
+      type: 'test'
+      ...
+    1..3
+ok 48 - L9-W1 §Worker 骨架 / 协议 / syncFallback 桥
+  ---
+  duration_ms: 84.712
+  type: 'suite'
+  ...
+# Subtest: L9-W1 §加解密
+    # Subtest: T-78 全量 roundtrip：encryptState → decryptState 逐字段还原；错密码拒绝
+    ok 1 - T-78 全量 roundtrip：encryptState → decryptState 逐字段还原；错密码拒绝
+      ---
+      duration_ms: 95.5088
+      type: 'test'
+      ...
+    # Subtest: T-79 加密写批（逐条加密 · 设计 §7.1 选项 1）：无明文泄漏 + 可解密还原
+    ok 2 - T-79 加密写批（逐条加密 · 设计 §7.1 选项 1）：无明文泄漏 + 可解密还原
+      ---
+      duration_ms: 64.2789
+      type: 'test'
+      ...
+    # Subtest: T-80 密钥加载：KeyStore unlock/lock 生命周期
+    ok 3 - T-80 密钥加载：KeyStore unlock/lock 生命周期
+      ---
+      duration_ms: 27.9178
+      type: 'test'
+      ...
+    1..3
+ok 49 - L9-W1 §加解密
+  ---
+  duration_ms: 187.9492
+  type: 'suite'
+  ...
+# Subtest: L9-W1 §索引层
+    # Subtest: T-81 build + 四索引查询（cal/tag/search/backlink；_deleted 排除）
+    ok 1 - T-81 build + 四索引查询（cal/tag/search/backlink；_deleted 排除）
+      ---
+      duration_ms: 1.1075
+      type: 'test'
+      ...
+    # Subtest: T-82 增量 update 等价全量 rebuild（含日期迁移 / 软删 / 复活）
+    ok 2 - T-82 增量 update 等价全量 rebuild（含日期迁移 / 软删 / 复活）
+      ---
+      duration_ms: 0.7685
+      type: 'test'
+      ...
+    1..2
+ok 50 - L9-W1 §索引层
+  ---
+  duration_ms: 2.0193
+  type: 'suite'
+  ...
+# Subtest: L9-W3 §DISPOSE / RESULT 协议
+    # Subtest: T-83 协议构造与形状校验：makeResult / isResponse / isDispose
+    ok 1 - T-83 协议构造与形状校验：makeResult / isResponse / isDispose
+      ---
+      duration_ms: 0.291
+      type: 'test'
+      ...
+    # Subtest: T-84 bridge.dispose 幂等：teardown + 在途清空 + post-dispose 拒绝
+    ok 2 - T-84 bridge.dispose 幂等：teardown + 在途清空 + post-dispose 拒绝
+      ---
+      duration_ms: 27.3712
+      type: 'test'
+      ...
+    # Subtest: T-85 RESULT 关联（合成响应）+ unknown-id 安全忽略（无未处理拒绝）
+    ok 3 - T-85 RESULT 关联（合成响应）+ unknown-id 安全忽略（无未处理拒绝）
+      ---
+      duration_ms: 13.7258
+      type: 'test'
+      ...
+    # Subtest: T-86 进程内 worker DISPOSE：ack 后 teardown；terminate 后 postMessage 无回调
+    ok 4 - T-86 进程内 worker DISPOSE：ack 后 teardown；terminate 后 postMessage 无回调
+      ---
+      duration_ms: 93.1519
+      type: 'test'
+      ...
+    1..4
+ok 51 - L9-W3 §DISPOSE / RESULT 协议
+  ---
+  duration_ms: 135.0488
+  type: 'suite'
+  ...
+# Subtest: L9-W4 §指标 p95 wall-clock
+    # Subtest: T-90 stats() 暴露 p95 数值字段，既有契约字段逐项不变（无破坏）
+    ok 1 - T-90 stats() 暴露 p95 数值字段，既有契约字段逐项不变（无破坏）
+      ---
+      duration_ms: 0.3446
+      type: 'test'
+      ...
+    # Subtest: T-91 p95 百分位数学（nearest-rank 最近秩）：已知样本集 → 期望值 + 有界缓冲
+    ok 2 - T-91 p95 百分位数学（nearest-rank 最近秩）：已知样本集 → 期望值 + 有界缓冲
+      ---
+      duration_ms: 0.2121
+      type: 'test'
+      ...
+    # Subtest: T-92 wall-clock 采样为真实耗时（成功 + 失败路径均采样；度量不破坏失败缓冲契约）
+    ok 3 - T-92 wall-clock 采样为真实耗时（成功 + 失败路径均采样；度量不破坏失败缓冲契约）
+      ---
+      duration_ms: 0.1871
+      type: 'test'
+      ...
+    1..3
+ok 52 - L9-W4 §指标 p95 wall-clock
+  ---
+  duration_ms: 0.8468
+  type: 'suite'
+  ...
+# Subtest: L9-W4 §LO-2 影子层接线（哨兵 / 路径隔离 / 幂等 / 降级）
+    # Subtest: W4-0 isProductHost：宿主在场标记判定（无标记即非产品）
+    ok 1 - W4-0 isProductHost：宿主在场标记判定（无标记即非产品）
+      ---
+      duration_ms: 1.4366
+      type: 'test'
+      ...
+    # Subtest: W4-1 路径隔离：支柱 URL 锚定本模块（非 cwd）且确定可缓存
+    ok 2 - W4-1 路径隔离：支柱 URL 锚定本模块（非 cwd）且确定可缓存
+      ---
+      duration_ms: 1.9828
+      type: 'test'
+      ...
+    # Subtest: W4-2 接线成功：置哨兵 + 装命名空间 + 六支柱可解析
+    ok 3 - W4-2 接线成功：置哨兵 + 装命名空间 + 六支柱可解析
+      ---
+      duration_ms: 11.9081
+      type: 'test'
+      ...
+    # Subtest: W4-3 幂等再接线：无重复副作用（loader 仅 1 次 / 命名空间同引用 / 哨兵不翻倍）
+    ok 4 - W4-3 幂等再接线：无重复副作用（loader 仅 1 次 / 命名空间同引用 / 哨兵不翻倍）
+      ---
+      duration_ms: 0.6505
+      type: 'test'
+      ...
+    # Subtest: W4-4 无产品在场：安全 no-op（不置哨兵 / 不装命名空间 / 不新增宿主键）
+    ok 5 - W4-4 无产品在场：安全 no-op（不置哨兵 / 不装命名空间 / 不新增宿主键）
+      ---
+      duration_ms: 0.1939
+      type: 'test'
+      ...
+    # Subtest: W4-5 L9 不可用：安全降级 no-op（loader 抛错 → 不置哨兵）
+    ok 6 - W4-5 L9 不可用：安全降级 no-op（loader 抛错 → 不置哨兵）
+      ---
+      duration_ms: 0.2859
+      type: 'test'
+      ...
+    # Subtest: W4-6 detach：可观测复位（幂等清除哨兵与命名空间）
+    ok 7 - W4-6 detach：可观测复位（幂等清除哨兵与命名空间）
+      ---
+      duration_ms: 0.3753
+      type: 'test'
+      ...
+    1..7
+ok 53 - L9-W4 §LO-2 影子层接线（哨兵 / 路径隔离 / 幂等 / 降级）
+  ---
+  duration_ms: 18.5515
+  type: 'suite'
+  ...
+1..53
+# tests 145
+# suites 34
+# pass 145
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1096.4746
+✓ Node 单元测试（145 用例） (1257ms)
+
+▶ Playwright 集成测试（L3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 用例） + L13 6 = 171 用例
+  $ node node_modules/@playwright/test/cli.js test tests/l3-invariants.spec.ts tests/l3-commit-callbacks.spec.ts tests/l3-reference-semantics.spec.ts tests/l3-light-pollution.spec.ts tests/l4-history.spec.ts tests/l6-index.spec.ts tests/l7-index-worker.spec.ts tests/l8-persist-patch.spec.ts tests/l9-persist-layer.spec.ts tests/l10-idb-persist.spec.ts tests/l13-mb-workset.spec.ts
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 171 tests using 6 workers
+
+(node:10216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:17788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok   6 [chromium] › tests\l3-light-pollution.spec.ts:60:3 › P0-L3 Step3 · light 原地修改污染 › light commit 成功：state 引用改变（copy-on-write），updatedAt 被 bump (4.7s)
+  ok   4 [chromium] › tests\l3-invariants.spec.ts:50:3 › P0-L3 第三步 · 结构不变量对拍 › 树结构：parent 指向正确、父子一致、children 无重复、无环 (4.7s)
+  ok   3 [chromium] › tests\l3-reference-semantics.spec.ts:65:5 › P0-L3 Step6 · 引用语义断言 › __juProduce / __juProduceSafe 引用契约 › 对象 + 修改：返回新引用，base 未污染 (4.6s)
+  ok   1 [chromium] › tests\l13-mb-workset.spec.ts:114:1 › T-111 · MB-SEAM 唯一异步边界（getNodeAsync 缺位 · 红证先行） (4.7s)
+  ok   2 [chromium] › tests\l3-commit-callbacks.spec.ts:53:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › snapshot:true 入历史栈，undo 可回退 (4.6s)
+  ok  10 [chromium] › tests\l13-mb-workset.spec.ts:130:1 › T-112 · MB-LRU 上限（工作集 ≤ 5,000）与回填一致（缺位 · 红证载体） (1.3s)
+  ok   7 [chromium] › tests\l3-light-pollution.spec.ts:91:3 › P0-L3 Step3 · light 原地修改污染 › light + noRollback + action 抛错：state 未污染（produce 失败天然回滚） (1.3s)
+  ok   8 [chromium] › tests\l3-invariants.spec.ts:102:3 › P0-L3 第三步 · 结构不变量对拍 › undo 后 state 与快照值相等、引用不等（历史副本） (1.3s)
+  ok   9 [chromium] › tests\l3-reference-semantics.spec.ts:83:5 › P0-L3 Step6 · 引用语义断言 › __juProduce / __juProduceSafe 引用契约 › 对象 + 空 recipe：返回原引用（Immer 式未修改不复制） (1.4s)
+  ok  11 [chromium] › tests\l3-commit-callbacks.spec.ts:65:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › light:true 不入历史栈，undo 返回 false (1.4s)
+  ok   5 [chromium] › tests\l10-idb-persist.spec.ts:99:3 › L10-W2 · D-1 持久层接缝（P 层 · 真实浏览器 / 门禁断言） › T-93 N+P · 未接线写 8MB → QuotaExceededError；接线后 8MB/32MB 落盘成功且投影等价 (6.3s)
+  ok  12 [chromium] › tests\l13-mb-workset.spec.ts:148:1 › T-113 · 视口集常驻（守卫 ① · 视口段 ≤ 200 不淘汰 · 缺位 · 红证载体） (1.2s)
+  ok  14 [chromium] › tests\l3-invariants.spec.ts:129:3 › P0-L3 第三步 · 结构不变量对拍 › 连续 undo/redo 收敛：状态稳定、空栈边界 false、可再恢复 (1.3s)
+  ok  13 [chromium] › tests\l3-light-pollution.spec.ts:126:3 › P0-L3 Step3 · light 原地修改污染 › light + safeClone 被替换 + action 抛错：state 不受影响（备份机制已移除） (1.3s)
+  ok  15 [chromium] › tests\l3-reference-semantics.spec.ts:97:5 › P0-L3 Step6 · 引用语义断言 › __juProduce / __juProduceSafe 引用契约 › recipe 返回非 undefined：返回值原样透传 (1.5s)
+  ok  17 [chromium] › tests\l10-idb-persist.spec.ts:212:3 › L10-W2 · D-1 持久层接缝（P 层 · 真实浏览器 / 门禁断言） › T-94 N · buildPersistBatch 形状/删除优先/上限（纯函数） (1.4s)
+  ok  16 [chromium] › tests\l3-commit-callbacks.spec.ts:77:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › light:true 引用替换（不再原地改），updatedAt 被 bump (1.6s)
+  ok  20 [chromium] › tests\l4-history.spec.ts:47:3 › L4 §6.1 树结构不变量在 undo 后保持 › T-01 undo 后根可达 + 父子互反 (1.7s)
+  ok  19 [chromium] › tests\l3-light-pollution.spec.ts:157:3 › P0-L3 Step3 · light 原地修改污染 › 非 light + action 抛错：state 引用与内容均不变 (1.8s)
+  ok  18 [chromium] › tests\l13-mb-workset.spec.ts:166:1 › T-114 · TS-V 单接入点 mbResolve（视图不直读 state.nodes · 红证载体 + 探针 ready） (2.0s)
+  ok  22 [chromium] › tests\l10-idb-persist.spec.ts:301:3 › L10-W2 · D-1 持久层接缝（P 层 · 真实浏览器 / 门禁断言） › T-95 P · l9_* → IDB 事务 mock 等价（S-1/S-2 三段式） (2.0s)
+  ok  21 [chromium] › tests\l3-reference-semantics.spec.ts:109:5 › P0-L3 Step6 · 引用语义断言 › __juProduce / __juProduceSafe 引用契约 › 原始值 base：返回 recipe 返回值或原值 (2.3s)
+  -   26 [chromium] › tests\l13-mb-workset.spec.ts:186:1 › T-115 · M-B 内存封顶（100k 真规模闸门 · RSS ≤ 200MB）
+  ok  23 [chromium] › tests\l3-commit-callbacks.spec.ts:98:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › noHistory:true + snapshot:true 清空 historyFuture (2.2s)
+  -   29 [chromium] › tests\l13-mb-workset.spec.ts:242:1 › T-116 · 降级等阶（off 态 ≡ L12 全量路径 · 哨兵 · 不变量 #33）
+  ok  24 [chromium] › tests\l4-history.spec.ts:79:3 › L4 §6.1 树结构不变量在 undo 后保持 › T-02 undo 后无环（DFS 不重复访问） (1.8s)
+  ok  27 [chromium] › tests\l10-idb-persist.spec.ts:394:3 › L10-W2 · D-1 持久层接缝（P 层 · 真实浏览器 / 门禁断言） › T-96 P · 单批事务原子性（中途 throw → 无半批，#28 延伸） (1.3s)
+  ok  28 [chromium] › tests\l3-reference-semantics.spec.ts:129:5 › P0-L3 Step6 · 引用语义断言 › __juProduce / __juProduceSafe 引用契约 › recipe 抛错：base 引用与内容保持不变 (1.7s)
+  ok  30 [chromium] › tests\l3-commit-callbacks.spec.ts:109:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › noHistory:true 不污染 historyPast（snapshot 不入栈） (1.8s)
+  ok  32 [chromium] › tests\l4-history.spec.ts:103:3 › L4 §6.1 树结构不变量在 undo 后保持 › T-03 undo 后 children 无重复 (1.3s)
+  ok  31 [chromium] › tests\l6-index.spec.ts:57:3 › L6 §7.1 extractChangedIds › T-01 空 paths 返回空 Set (1.5s)
+  ok  25 [chromium] › tests\l3-light-pollution.spec.ts:180:3 › P0-L3 Step3 · light 原地修改污染 › light 修改后 _lastWrittenJson 指纹不一致，持久化写入磁盘 (3.1s)
+  ok  33 [chromium] › tests\l10-idb-persist.spec.ts:452:3 › L10-W2 · D-1 持久层接缝（P 层 · 真实浏览器 / 门禁断言） › T-97 P · 旧库迁移幂等（逐 id 值等价） (1.4s)
+  ok  39 [chromium] › tests\l10-idb-persist.spec.ts:509:3 › L10-W2 · D-1 持久层接缝（P 层 · 真实浏览器 / 门禁断言） › T-98 门禁 · verify.js 计数同步（158 + N，LO-7） (77ms)
+  ok  34 [chromium] › tests\l3-reference-semantics.spec.ts:141:5 › P0-L3 Step6 · 引用语义断言 › __juProduce / __juProduceSafe 引用契约 › __juProduceSafe 成功：{ok:true, next}，next 是新引用 (1.5s)
+  ok  35 [chromium] › tests\l3-commit-callbacks.spec.ts:118:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › persistOnly:true 触发持久化调度但不入历史、不 notify（silent:true） (1.5s)
+  ok  36 [chromium] › tests\l4-history.spec.ts:127:3 › L4 §6.2 删除/墓碑不变量 › T-04 undo 删除清墓碑 (1.7s)
+  ok  40 [chromium] › tests\l10-idb-persist.spec.ts:543:3 › L10-W2 · D-1 持久层接缝（P 层 · 真实浏览器 / 门禁断言） › T-99 门禁 · 15+M 方登记 RESULT=PASS（哨兵 · 不变量 #29 · LO-8） (1.3s)
+  ok  38 [chromium] › tests\l3-light-pollution.spec.ts:210:3 › P0-L3 Step3 · light 原地修改污染 › light 不入历史栈：连续两次 undo，第二次返回 false (1.6s)
+  ok  37 [chromium] › tests\l6-index.spec.ts:67:3 › L6 §7.1 extractChangedIds › T-02 单节点修改路径 → 单 id (1.6s)
+  ok  41 [chromium] › tests\l3-reference-semantics.spec.ts:161:5 › P0-L3 Step6 · 引用语义断言 › __juProduce / __juProduceSafe 引用契约 › __juProduceSafe 失败：{ok:false, base, error}，base 是原引用 (1.6s)
+  ok  42 [chromium] › tests\l3-commit-callbacks.spec.ts:136:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › silent:true 不触发 scheduleNotify；silent:false 触发 (1.6s)
+  ok  43 [chromium] › tests\l4-history.spec.ts:142:3 › L4 §6.2 删除/墓碑不变量 › T-05 undo 删除恢复 parent + children (1.4s)
+  ok  45 [chromium] › tests\l6-index.spec.ts:77:3 › L6 §7.1 extractChangedIds › T-03 多节点修改路径 → 多 id 去重 (1.3s)
+  ok  46 [chromium] › tests\l7-index-worker.spec.ts:51:3 › L7-W1 §8.1 模式与回退 › T-35 Worker 不可用 → 降级 sync，功能不降级 (1.2s)
+  ok  44 [chromium] › tests\l3-light-pollution.spec.ts:239:3 › P0-L3 Step3 · light 原地修改污染 › light + action 抛错 + silent:false：scheduleNotify 被调用 (1.4s)
+  ok  47 [chromium] › tests\l3-reference-semantics.spec.ts:186:5 › P0-L3 Step6 · 引用语义断言 › safeClone 深拷贝隔离 › 顶层与嵌套均为新引用 (1.2s)
+  ok  49 [chromium] › tests\l4-history.spec.ts:158:3 › L4 §6.2 删除/墓碑不变量 › T-06 undo 恢复后节点可达（3 层子树） (1.2s)
+  ok  50 [chromium] › tests\l6-index.spec.ts:88:3 › L6 §7.1 extractChangedIds › T-04 顶层字段（非 nodes.）→ 不提取 (1.2s)
+  ok  51 [chromium] › tests\l7-index-worker.spec.ts:77:3 › L7-W1 §8.1 模式与回退 › T-36 blob worker 可用（classic · 修订 R1）→ ready + applyDelta ack（file:// 实测 · R5） (1.3s)
+  ok  52 [chromium] › tests\l8-persist-patch.spec.ts:79:3 › L8-W1 §8.1 采集（脏集投影） › T-53 commit 后仅改动节点入脏集（引用相等 · 默认 patch 模式） (1.2s)
+  ok  48 [chromium] › tests\l3-commit-callbacks.spec.ts:153:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · 标志语义 › persistOnly:true 仍写盘（flush 后 localStorage 变化） (2.1s)
+  ok  53 [chromium] › tests\l3-reference-semantics.spec.ts:202:5 › P0-L3 Step6 · 引用语义断言 › safeClone 深拷贝隔离 › 修改副本不影响原对象 (1.3s)
+  ok  54 [chromium] › tests\l4-history.spec.ts:187:3 › L4 §6.3 标签/索引/缓存不变量 › T-07 undo 文本编辑清标签 (1.2s)
+  ok  55 [chromium] › tests\l6-index.spec.ts:102:3 › L6 §7.2 collectSubtreeIds › T-05 简单 3 节点链 → 收集 3 id (1.2s)
+  ok  56 [chromium] › tests\l7-index-worker.spec.ts:128:3 › L7-W1 §8.2 协议与代次 › T-37 过期 gen 回包被丢弃，当前 gen 计数 (1.2s)
+  ok  57 [chromium] › tests\l8-persist-patch.spec.ts:115:3 › L8-W1 §8.2 撤销/重做标脏 › T-54 undo/redo 同样标脏（落盘写当前态，与历史栈正交） (1.3s)
+  ok  58 [chromium] › tests\l3-commit-callbacks.spec.ts:172:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · dirtyText 三态 › dirtyText:true 失效指定文档字数缓存 (1.4s)
+  ok  59 [chromium] › tests\l3-reference-semantics.spec.ts:219:5 › P0-L3 Step6 · 引用语义断言 › safeClone 深拷贝隔离 › state 快照隔离：修改副本不改变 state (1.3s)
+  ok  60 [chromium] › tests\l4-history.spec.ts:201:3 › L4 §6.3 标签/索引/缓存不变量 › T-08 undo 触发 _wordCountCache 清空 (1.2s)
+  ok  61 [chromium] › tests\l6-index.spec.ts:125:3 › L6 §7.2 collectSubtreeIds › T-06 环引用防护（child == parent） (1.2s)
+  ok  62 [chromium] › tests\l7-index-worker.spec.ts:145:3 › L7-W1 §8.2 协议与代次 › T-38 默认 sync：零 Worker 创建、直通 L6 权威实现 (1.3s)
+  ok  63 [chromium] › tests\l8-persist-patch.spec.ts:156:3 › L8-W1 §8.3 远端合并采集（#22 保持不变） › T-55 mergeRemoteState 后远端新节点入脏集（且不改变历史栈） (1.3s)
+  ok  64 [chromium] › tests\l3-commit-callbacks.spec.ts:185:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · dirtyText 三态 › dirtyText:false 不影响字数缓存 (1.5s)
+  ok  65 [chromium] › tests\l3-reference-semantics.spec.ts:238:5 › P0-L3 Step6 · 引用语义断言 › commit 引用语义 › 非 light 成功：state 引用替换，旧引用不被污染 (1.5s)
+  ok  66 [chromium] › tests\l4-history.spec.ts:220:3 › L4 §6.4 历史栈边界（合并规则 + 14.M2） › T-09 500ms 内文本合并（merge 模式） (1.4s)
+  ok  67 [chromium] › tests\l6-index.spec.ts:145:3 › L6 §7.2 collectSubtreeIds › T-07 不存在节点 → 空 Set (1.4s)
+  ok  68 [chromium] › tests\l7-index-worker.spec.ts:174:3 › L7-W1 §8.3 查询降级 › T-39 非 worker 模式下 query 返回降级结果且不抛错 (1.5s)
+  ok  69 [chromium] › tests\l8-persist-patch.spec.ts:204:3 › L8-W1 §8.4 软删/硬删分流 + LO-3 子树全集 › T-56 软删进 dirty；硬删进 removed 且含 pre 态子树 id 全集 (1.5s)
+  ok  70 [chromium] › tests\l3-commit-callbacks.spec.ts:199:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · dirtyText 三态 › dirtyText:null 实测走失效路径（_clearWC=snapshot） (1.3s)
+  ok  71 [chromium] › tests\l3-reference-semantics.spec.ts:252:5 › P0-L3 Step6 · 引用语义断言 › commit 引用语义 › 非 light 失败：state 引用与内容完全不变 (1.3s)
+  ok  73 [chromium] › tests\l6-index.spec.ts:163:3 › L6 §7.3 updateIncrementalIndexes › T-08 空 changedIds → ok=true, added=0, removed=0 (1.3s)
+  ok  75 [chromium] › tests\l8-persist-patch.spec.ts:265:3 › L8-W1 §8.5 删除优先（终态裁决） › T-57 同 id 先入 dirty 后硬删 → 仅保留于 removed（dirty 剔除） (1.2s)
+  ok  72 [chromium] › tests\l4-history.spec.ts:240:3 › L4 §6.4 历史栈边界（合并规则 + 14.M2） › T-10 500ms 边界外不合并 (1.8s)
+  ok  76 [chromium] › tests\l3-commit-callbacks.spec.ts:214:5 › P0-L3 Step5 · commit 回调行为验证 › 契约级 · dirtyText 三态 › dirtyDocs:null 显式不失效（不影响字数） (1.2s)
+  ok  77 [chromium] › tests\l3-reference-semantics.spec.ts:266:5 › P0-L3 Step6 · 引用语义断言 › commit 引用语义 › light 成功：state 引用改变（copy-on-write，不再原地修改） (1.1s)
+  ok  78 [chromium] › tests\l6-index.spec.ts:175:3 › L6 §7.3 updateIncrementalIndexes › T-09 4 索引未构建（null）→ 静默返回（不抛错） (1.0s)
+  ok  80 [chromium] › tests\l4-history.spec.ts:254:3 › L4 §6.4 历史栈边界（合并规则 + 14.M2） › T-11 结构性操作不合并（snapshot 模式） (1.1s)
+  ok  81 [chromium] › tests\l3-commit-callbacks.spec.ts:233:5 › P0-L3 Step5 · commit 回调行为验证 › 调用点 · actions.* › actions.addNode → snapshot 入栈 (1.2s)
+  ok  82 [chromium] › tests\l3-reference-semantics.spec.ts:283:5 › P0-L3 Step6 · 引用语义断言 › commit 引用语义 › 连续非 light：每次 state 引用唯一 (1.2s)
+  ok  83 [chromium] › tests\l6-index.spec.ts:198:3 › L6 §7.3 updateIncrementalIndexes › T-10 subtreeCleanup 模式 → 仅走 4 索引 remove 路径 (1.1s)
+  ok  79 [chromium] › tests\l8-persist-patch.spec.ts:419:3 › L8-W2 §8.6 真实通道批形状 › T-58 desktopInvoke(patch_nodes,{changed,deleted,seq,baseRev}) 批形状（§六 6.1/6.4） (2.7s)
+  ok  87 [chromium] › tests\l6-index.spec.ts:226:3 › L6 §7.3 updateIncrementalIndexes › T-11 op 参数透传 (1.3s)
+  ok  86 [chromium] › tests\l3-reference-semantics.spec.ts:299:5 › P0-L3 Step6 · 引用语义断言 › commit 引用语义 › updatedAt 严格单调递增（同毫秒内仍 +1） (1.5s)
+  ok  85 [chromium] › tests\l3-commit-callbacks.spec.ts:245:5 › P0-L3 Step5 · commit 回调行为验证 › 调用点 · actions.* › actions.updateText → tags 重算（_manualTags ∪ 正文 #标签） (1.5s)
+  ok  89 [chromium] › tests\l6-index.spec.ts:251:3 › L6 §7.4 calIndexUpdate › T-12 节点 date 改变 → 旧 set 移除 + 新 set 加入 (959ms)
+  ok  90 [chromium] › tests\l3-reference-semantics.spec.ts:317:5 › P0-L3 Step6 · 引用语义断言 › undo / redo 引用语义 › undo 后 state 是新引用（历史副本），不是初始引用 (947ms)
+  ok  91 [chromium] › tests\l3-commit-callbacks.spec.ts:255:5 › P0-L3 Step5 · commit 回调行为验证 › 调用点 · actions.* › actions.toggleDone → done 翻转 (985ms)
+  ok  88 [chromium] › tests\l8-persist-patch.spec.ts:456:3 › L8-W2 §8.7 组批上限 + 超限退全量 › T-59 单批 ≤ L8_MAX_PER_BATCH(500)；脏集 > L8_PATCH_MAX(2000) → over-threshold 退全量（D-6） (1.8s)
+  ok  92 [chromium] › tests\l6-index.spec.ts:286:3 › L6 §7.4 calIndexUpdate › T-13 节点 _deleted → 从 date set 移除 (1.0s)
+  ok  93 [chromium] › tests\l3-reference-semantics.spec.ts:335:5 › P0-L3 Step6 · 引用语义断言 › undo / redo 引用语义 › redo 后 state 是新引用（future 副本） (1.2s)
+  ok  94 [chromium] › tests\l3-commit-callbacks.spec.ts:268:5 › P0-L3 Step5 · commit 回调行为验证 › 调用点 · actions.* › actions.moveNode → 拒绝移入自身 (1.5s)
+  ok  96 [chromium] › tests\l6-index.spec.ts:313:3 › L6 §7.5 tagIndexUpdate › T-14 节点加 #newtag → tagIndex 新增 entry (1.8s)
+  ok  95 [chromium] › tests\l8-persist-patch.spec.ts:495:3 › L8-W2 §8.8 ack 回执（清脏 + 基线维护） › T-60 ack 后：引用比对清脏 / _removedNodes.delete / _diskConfirmed / _rev++ / _persistBatchSeq++ / _lastPersistFingerprint（§六 6.2） (2.9s)
+  ok  74 [chromium] › tests\l7-index-worker.spec.ts:197:3 › L7-W2 §8.4 就绪看门狗 › T-40 构造成功但永不 ready 且无 onerror → 重建一次后降级 sync（W2 补口） (8.9s)
+  ok  98 [chromium] › tests\l3-commit-callbacks.spec.ts:279:5 › P0-L3 Step5 · commit 回调行为验证 › 调用点 · actions.* › actions.removeNode → 递归删除 + 墓碑写入 (2.2s)
+  ok  97 [chromium] › tests\l3-reference-semantics.spec.ts:353:5 › P0-L3 Step6 · 引用语义断言 › undo / redo 引用语义 › 历史栈深拷贝隔离：commit-commit-undo-undo-redo-redo 状态正确 (2.8s)
+  ok  99 [chromium] › tests\l6-index.spec.ts:335:3 › L6 §7.5 tagIndexUpdate › T-15 节点删 #oldtag → tagIndex 移除 entry (1.8s)
+  ok 101 [chromium] › tests\l7-index-worker.spec.ts:258:3 › L7-W2 §8.5 权威切分与双向对拍 › T-41 影子对拍 mismatch 上报且缓冲受 _INDEX_SHADOW_CAP 限制 (1.6s)
+  ok 102 [chromium] › tests\l3-commit-callbacks.spec.ts:295:5 › P0-L3 Step5 · commit 回调行为验证 › 调用点 · actions.* › actions.setDbColumnWidth → light，不入历史栈，引用替换、nodes 共享 (1.5s)
+  ok 103 [chromium] › tests\l3-reference-semantics.spec.ts:374:5 › P0-L3 Step6 · 引用语义断言 › undo / redo 引用语义 › 修改历史副本不影响当前 state（隔离断言） (1.4s)
+  ok 104 [chromium] › tests\l6-index.spec.ts:362:3 › L6 §7.6 searchInvertedUpdate › T-16 文本改 hello→goodbye → searchInverted 增量 (1.5s)
+  ok 105 [chromium] › tests\l7-index-worker.spec.ts:282:3 › L7-W2 §8.5 权威切分与双向对拍 › T-42 对拍 mismatch 超阈值 → 自动回退 shadow→sync 并报告（#23） (1.4s)
+  ok 107 [chromium] › tests\l3-reference-semantics.spec.ts:398:5 › P0-L3 Step6 · 引用语义断言 › 指纹机制与引用解耦 › light 后 state 引用与 _sidebarFingerprint 均变化 (1.3s)
+  ok 100 [chromium] › tests\l8-persist-patch.spec.ts:534:3 › L8-W2 §8.9 轻量指纹守卫 + 探针 w2 + 失败缓冲 › T-61 无变更跳过 invoke（D-8）；探针 w2 字段；__juPersistFailures 上限 L8_FAIL_CAP(50) (3.7s)
+  ok 108 [chromium] › tests\l6-index.spec.ts:397:3 › L6 §7.6 searchInvertedUpdate › T-17 CJK 字符 token 切分 (1.0s)
+  ok 109 [chromium] › tests\l7-index-worker.spec.ts:309:3 › L7-W2 §8.5 权威切分与双向对拍 › T-43 worker 模式 calIndex/tagIndex 查询 = L6 权威结果（等价性） (1.1s)
+  ok 110 [chromium] › tests\l3-reference-semantics.spec.ts:417:5 › P0-L3 Step6 · 引用语义断言 › 指纹机制与引用解耦 › 非 light 后 _sidebarFingerprint 变化 (1.1s)
+  ok 112 [chromium] › tests\l6-index.spec.ts:426:3 › L6 §7.7 backlinkMapUpdate › T-18 节点加 [[doc1]] wiki 引用 → backlinkMap 新增 (951ms)
+  ok 106 [chromium] › tests\l3-commit-callbacks.spec.ts:316:5 › P0-L3 Step5 · commit 回调行为验证 › 调用点 · actions.* › actions.logActivity → 1.5s 防抖后 activity 记录写入 (2.8s)
+  ok 113 [chromium] › tests\l7-index-worker.spec.ts:357:3 › L7-W2 §8.5 权威切分与双向对拍 › T-44 权威切换前置 ready 门槛（未就绪拒绝切 worker） (1.1s)
+  ok 114 [chromium] › tests\l3-reference-semantics.spec.ts:426:5 › P0-L3 Step6 · 引用语义断言 › 指纹机制与引用解耦 › updatedAt 单调 → 指纹可区分任意两次 commit (1.1s)
+  ok 116 [chromium] › tests\l3-commit-callbacks.spec.ts:337:5 › P0-L3 Step5 · commit 回调行为验证 › OBS 复核 › OBS-3 · mindmap 拖拽 snapshot:false（Step4 已落定）：不入历史栈 (1.0s)
+  ok 115 [chromium] › tests\l6-index.spec.ts:457:3 › L6 §7.7 backlinkMapUpdate › T-19 节点删 [[doc1]] wiki 引用 → backlinkMap 移除 (1.1s)
+  ok 117 [chromium] › tests\l7-index-worker.spec.ts:392:3 › L7-W3 §8.6 searchInverted / backlinkMap 迁权威 › T-45 worker 模式 searchInverted / searchInvertedDocs = L6 权威结果（等价性） (1.1s)
+  ok 111 [chromium] › tests\l8-persist-patch.spec.ts:578:3 › L8-W2 §8.10 mode='full' 双重守卫反向护栏 › T-62 mode='full' 阻断 patch 通道（退全量）；切回 'patch' 才发批（不手动跳闸，仅经公开 setMode） (3.1s)
+  ok 118 [chromium] › tests\l3-reference-semantics.spec.ts:438:5 › P0-L3 Step6 · 引用语义断言 › 指纹机制与引用解耦 › light 后 _lastWrittenJson 与当前 state 指纹对比可感知变化 (1.5s)
+  ok 120 [chromium] › tests\l6-index.spec.ts:492:3 › L6 §7.8 undo/redo 反向增量对称性 › T-20 undo 反向增量：从 post → pre 状态反向维护 (1.2s)
+  ok 119 [chromium] › tests\l3-commit-callbacks.spec.ts:357:5 › P0-L3 Step5 · commit 回调行为验证 › OBS 复核 › OBS-1 · commitPendingEditBeforeRender.word 四标志语义正确 (1.2s)
+  ok 121 [chromium] › tests\l7-index-worker.spec.ts:497:3 › L7-W3 §8.6 searchInverted / backlinkMap 迁权威 › T-46 worker 模式 backlinkMap（含计数/多重集口径）= L6 权威结果（等价性） (1.2s)
+  ok 123 [chromium] › tests\l3-reference-semantics.spec.ts:464:5 › P0-L3 Step6 · 引用语义断言 › mergeRemoteState 节点级引用 › 远端新节点：state.nodes[id] 直接引用远端对象 (1.2s)
+  ok 125 [chromium] › tests\l3-commit-callbacks.spec.ts:381:5 › P0-L3 Step5 · commit 回调行为验证 › P1 · UI 一致性 › P1-1/P1-2 · setDbColumnWidth / setDbRowHeight 不抛错 (1.2s)
+  ok 124 [chromium] › tests\l6-index.spec.ts:529:3 › L6 §7.8 undo/redo 反向增量对称性 › T-21 redo 反向增量：从 pre → post 状态前向维护 (1.2s)
+  ok 126 [chromium] › tests\l7-index-worker.spec.ts:607:3 › L7-W4 §8.7 骨架屏 + progress + 异步分块 › T-47 骨架屏同步渲染（阶段1）+ 进度出口 + 就绪后填充（阶段2） (1.2s)
+  -  130 [chromium] › tests\l7-index-worker.spec.ts:699:8 › L7-W4 §8.7 骨架屏 + progress + 异步分块 › T-48 大库（12k）切标签视图：阶段1 同步骨架 + 分块建索引 → 主线程 longtask=0 【W5 隔离：负载敏感 wall-clock 指标】
+  -  131 [chromium] › tests\l7-index-worker.spec.ts:833:8 › L7-W4 §8.7 骨架屏 + progress + 异步分块 › T-49 大库（12k）切日历视图：阶段1 同步骨架 + 分块建 calIndex → 主线程 longtask=0 【W5 隔离：负载敏感 wall-clock 指标】
+  ok 128 [chromium] › tests\l3-commit-callbacks.spec.ts:394:5 › P0-L3 Step5 · commit 回调行为验证 › P1 · UI 一致性 › P1-3 · flushPendingLogs 清空 _logTimers (1.0s)
+  ok 127 [chromium] › tests\l3-reference-semantics.spec.ts:501:5 › P0-L3 Step6 · 引用语义断言 › mergeRemoteState 节点级引用 › 远端较新：覆盖本地引用 (1.1s)
+  ok 129 [chromium] › tests\l6-index.spec.ts:571:3 › L6 §7.9 __juIndexFailures › T-22 容量 50 FIFO (1.0s)
+  ok 122 [chromium] › tests\l8-persist-patch.spec.ts:629:3 › L8-W3 §8.11 崩溃恢复 · 半批（COMMIT 前崩溃 → 批前态） › T-63 批中途崩溃 → 崩时盘面逐字节 == 批前（无半批）；reload 后无撕裂批（#28 / K-1 / K-5） (3.5s)
+  ok 133 [chromium] › tests\l3-commit-callbacks.spec.ts:412:5 › P0-L3 Step5 · commit 回调行为验证 › Step2 / Step3 回归 › Step2 · 非 light 抛错时 state 引用与内容完全不变 (982ms)
+  ok 134 [chromium] › tests\l3-reference-semantics.spec.ts:534:5 › P0-L3 Step6 · 引用语义断言 › mergeRemoteState 节点级引用 › 本地较新：保留本地引用 (995ms)
+  ok 135 [chromium] › tests\l6-index.spec.ts:585:3 › L6 §7.9 __juIndexFailures › T-23 连续 3 次失败 → 强制 4 索引 null（自决 2） (1.1s)
+  ok 132 [chromium] › tests\l7-index-worker.spec.ts:948:3 › L7-W4 §8.7 骨架屏 + progress + 异步分块 › T-50 progress 协议：Worker fullRebuild 分块上报（0 → 100%，单调）→ 主线程进度出口 + 骨架进度条 (2.0s)
+  ok  84 [chromium] › tests\l4-history.spec.ts:273:3 › L4 §6.5 undo/redo 等价 + 内存 › T-12 patch 内存目标（30 条 < 30KB） (17.3s)
+  ok 137 [chromium] › tests\l3-commit-callbacks.spec.ts:426:5 › P0-L3 Step5 · commit 回调行为验证 › Step2 / Step3 回归 › Step3 · light + noRollback + action 抛错 → 原引用不变、零污染、无 kind (1.1s)
+  ok 138 [chromium] › tests\l3-reference-semantics.spec.ts:568:5 › P0-L3 Step6 · 引用语义断言 › 危险键引用安全 › mergeRemoteState 跳过 __proto__，不污染原型链 (1.1s)
+  ok 139 [chromium] › tests\l6-index.spec.ts:631:3 › L6 §7.10 #22.22.M1 merge 豁免 › T-24 mergeRemoteState 入口/出口 __juInMerge 切换 (1.1s)
+  ok 140 [chromium] › tests\l7-index-worker.spec.ts:1078:3 › L7-W4 §8.7 骨架屏 + progress + 异步分块 › T-51 异步分块构建 = 同步 L6 构建（4 索引 digest 逐项一致 + 在途去重） (1.2s)
+  ok 141 [chromium] › tests\l4-history.spec.ts:288:3 › L4 §6.5 undo/redo 等价 + 内存 › T-13 undo 还原等价（patch 路径覆盖） (1.1s)
+  ok 143 [chromium] › tests\l3-reference-semantics.spec.ts:596:5 › P0-L3 Step6 · 引用语义断言 › 危险键引用安全 › __juProduce 不清洗危险键（清洗责任在消费路径） (1.0s)
+  ok 142 [chromium] › tests\l3-commit-callbacks.spec.ts:447:5 › P0-L3 Step5 · commit 回调行为验证 › Step2 / Step3 回归 › Step3 · light + safeClone 覆盖 + action 抛错 → produce 天然隔离 (1.0s)
+  ok 144 [chromium] › tests\l6-index.spec.ts:669:3 › L6 §7.11 fuzz 增量一致性 › T-25 100 步随机 date 变更 → 增量 vs 全表重建一致 (1.2s)
+  ok 136 [chromium] › tests\l8-persist-patch.spec.ts:691:3 › L8-W3 §8.12 崩溃恢复 · 提交后未 ack（COMMIT 已落盘 → 批后态 + 不重放） › T-64 批已 COMMIT 但 ack 丢失 → 崩时盘面 == 批后（已提交不丢）；reload 后无同 seq 重放（#28 / K-1 / K-2） (2.9s)
+  ok 146 [chromium] › tests\l4-history.spec.ts:303:3 › L4 §6.5 undo/redo 等价 + 内存 › T-14 redo 推进等价 (1.1s)
+  ok 145 [chromium] › tests\l7-index-worker.spec.ts:1213:3 › L7-W5 §8.8 #26 不变量哨兵（骨架屏 + progress 出口 + 分块异步构建） › T-52 #26 哨兵：骨架两阶段 + progress 0→100 单调 + 分块预算 8ms + 异步≡同步 digest (1.3s)
+  ok 147 [chromium] › tests\l9-persist-layer.spec.ts:104:3 › L9-W3 · 持久层 / 加解密 / 索引 / Worker 协议（P 层 · 真实浏览器） › L9-1 影子层注入：产品全局零影响 + P1a 落盘 round-trip（含同 seq 重放幂等 / 超限退全量） (1.2s)
+  ok 148 [chromium] › tests\l6-index.spec.ts:710:3 › L6 §7.11 fuzz 增量一致性 › T-26 50 步 tag 增删 fuzz → 增量 vs 全表重建一致 (1.1s)
+  ok 150 [chromium] › tests\l4-history.spec.ts:330:3 › L4 §6.6 多标签 LWW + #22 远端合并不可撤销（修正 1 后） › T-15 mergeRemoteState 保持 historyPast (1.1s)
+  ok 152 [chromium] › tests\l6-index.spec.ts:760:3 › L6 §7.12 calIndex 复活对称性（#14.M4 / #15.M4） › T-27 calIndexUpdate 复活（_deleted true→false, date 不变）→ 重新加入 (766ms)
+  ok 151 [chromium] › tests\l9-persist-layer.spec.ts:148:3 › L9-W3 · 持久层 / 加解密 / 索引 / Worker 协议（P 层 · 真实浏览器） › L9-2 加解密（浏览器真实 WebCrypto）：全量 roundtrip + 逐条批无明文 + 错密码拒绝 (1.0s)
+  ok 153 [chromium] › tests\l4-history.spec.ts:353:3 › L4 §6.6 多标签 LWW + #22 远端合并不可撤销（修正 1 后） › T-16 undo 不得触达 merge 中间态 (669ms)
+  ok 154 [chromium] › tests\l6-index.spec.ts:783:3 › L6 §7.12 calIndex 复活对称性（#14.M4 / #15.M4） › T-28 反向对称：软删移除 → undo 复活后 calIndex 复原 (634ms)
+  ok 156 [chromium] › tests\l4-history.spec.ts:386:3 › L4 §6.7 旁路/兼容 + 系统自愈不入历史 › T-17 setDbColumnWidth 不入历史（兼容 light） (645ms)
+  ok 155 [chromium] › tests\l9-persist-layer.spec.ts:200:3 › L9-W3 · 持久层 / 加解密 / 索引 / Worker 协议（P 层 · 真实浏览器） › L9-3 索引层：build + 四索引查询 + 增量 update 与全量 rebuild 逐键等价 (704ms)
+  ok 157 [chromium] › tests\l6-index.spec.ts:815:3 › L6 §7.12 calIndex 复活对称性（#14.M4 / #15.M4） › T-29 restoreFromTrash 正向：deleted→alive 重新加入 calIndex (665ms)
+  ok 158 [chromium] › tests\l4-history.spec.ts:400:3 › L4 §6.7 旁路/兼容 + 系统自愈不入历史 › T-18 旧 snapshot:true 兼容（→ historyMode snapshot） (753ms)
+  ok 159 [chromium] › tests\l9-persist-layer.spec.ts:245:3 › L9-W3 · 持久层 / 加解密 / 索引 / Worker 协议（P 层 · 真实浏览器） › L9-4 可插拔 mock 适配器 parity（IDB-style vs invoke-style）：同序列同结果 + 同错误形状 (774ms)
+  ok 160 [chromium] › tests\l6-index.spec.ts:845:3 › L6 §7.13 M5 边界条件 + 注入点降级 › T-30 边界：复活 + date 变更（旧 date 不残留、新 date 加入） (840ms)
+  ok 161 [chromium] › tests\l4-history.spec.ts:414:3 › L4 §6.7 旁路/兼容 + 系统自愈不入历史 › T-20 dedupCalRoots (4731) 不入历史（澄清 2） (797ms)
+  ok 162 [chromium] › tests\l9-persist-layer.spec.ts:294:3 › L9-W3 · 持久层 / 加解密 / 索引 / Worker 协议（P 层 · 真实浏览器） › L9-5 Worker 生命周期（真实 file:// classic Blob Worker）：ready → PATCH ack → DISPOSE 幂等 → post-dispose 拒绝 (894ms)
+  ok 163 [chromium] › tests\l6-index.spec.ts:877:3 › L6 §7.13 M5 边界条件 + 注入点降级 › T-31 边界：幂等 —— 索引已含该 id 时复活不重复添加 (675ms)
+  ok 164 [chromium] › tests\l4-history.spec.ts:447:3 › L4 §6.8 序列化失败降级 › T-19 patch 序列化失败 → never + 记录报告（注入点：commit 收口 catch） (622ms)
+  ok 165 [chromium] › tests\l9-persist-layer.spec.ts:340:3 › L9-W3 · 持久层 / 加解密 / 索引 / Worker 协议（P 层 · 真实浏览器） › L9-6 RESULT 关联 + 协议形状 + unknown-id 安全忽略（无未处理拒绝 / 无悬挂 timer） (656ms)
+  ok 166 [chromium] › tests\l6-index.spec.ts:906:3 › L6 §7.13 M5 边界条件 + 注入点降级 › T-32 边界：硬删子树清理 → undo 逐节点重加（反向对称） (572ms)
+  ok 167 [chromium] › tests\l6-index.spec.ts:957:3 › L6 §7.13 M5 边界条件 + 注入点降级 › T-33 边界：空 changedIds + 无 subtreeIds → 安全空操作 (525ms)
+  ok 149 [chromium] › tests\l8-persist-patch.spec.ts:756:3 › L8-W3 §8.13 checkpoint 与 patch 混合（含 OP-3 / #17 回归子断言，编号不新增） › T-65 N 批 patch + 1 次全量 checkpoint + M 批 patch：投影逐 id 等价 / sinceFull 归零 / 无孤儿行 / pending=false（#27 / K-7 / D-10） (6.2s)
+  ok 168 [chromium] › tests\l6-index.spec.ts:976:3 › L6 §7.13 M5 边界条件 + 注入点降级 › T-34 M5-2 注入点降级：l6InjectionFailure 记录失败 + 强制 4 索引 null (593ms)
+  ok 169 [chromium] › tests\l8-persist-patch.spec.ts:884:3 › L8-W4 §8.14 路径隔离 · 浏览器（非桌面） › T-66 非桌面：sent===0 且不采集；localStorage[STORE_KEY] 全量更新（§七 7.3） (1.7s)
+  ok 170 [chromium] › tests\l8-persist-patch.spec.ts:939:3 › L8-W4 §8.15 路径隔离 · 加密 › T-67 加密态：桌面亦不发批；writeEncryptedStore 命中；不采集（§七 7.2） (1.9s)
+  ok 171 [chromium] › tests\l8-persist-patch.spec.ts:994:3 › L8-W4 §8.16 哨兵 · 不变量 #27（200 步随机序列 · 负载鲁棒） › T-68 200 步增/改/删/撤销/重做/合并后 投影===内存（结构性 + 单调性） (6.7s)
+
+  4 skipped
+  167 passed (1.1m)
+✓ Playwright 集成测试（L3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 用例） + L13 6 = 171 用例 (65309ms)
+
+▶ 性能对拍（排除 commitRewriteAllText）
+  $ node scripts/compare-bench.js bench-p0-baseline.json bench-p0-after-l3.json --exclude-op=commitRewriteAllText
+[compare-bench] 排除场景（不参与判定/退出码）：commitRewriteAllText
+# 基准对比
+
+- baseline: `baseline` sha256=`0635e55a2c8212d6…`
+- after   : `after` sha256=`846ccdc9f794f1b6…`
+- 运行时间: baseline 2026-10-08T16:03:18.291Z / after 2026-10-08T16:03:28.509Z
+
+| op | size | baseline median (ms) | after median (ms) | delta | baseline p95 | after p95 | p95 delta | 判定 |
+|---|---|---|---|---|---|---|---|---|
+| commitLight | 100 | 0 | 0.0000 | —（近零） | 0.2 | 0.1 | — | ✅ 通过（近零，计时分辨率内） |
+| commitLight | 500 | 0 | 0.0000 | —（近零） | 0.1 | 0.1 | — | ✅ 通过（近零，计时分辨率内） |
+| commitNonLight | 100 | 0.2 | 0.1 | -50.0% | 0.5 | 0.4 | -20.0% | ✅ 通过 |
+| commitNonLight | 500 | 0.8 | 0.2 | -75.0% | 1.5 | 0.5 | -66.7% | ✅ 通过 |
+| commitRewriteAllText | 100 | 0.2 | 0.4 | — | 0.4 | 1 | — | ⏭ 排除（--exclude-op） |
+| commitRewriteAllText | 500 | 0.9 | 2.1 | — | 1.5 | 3.1 | — | ⏭ 排除（--exclude-op） |
+| juProduce@100 | - | - | - | - | - | - | - | 缺数据（baseline无此场景） |
+| juProduce@1000 | - | - | - | - | - | - | - | 缺数据（baseline无此场景） |
+| juProduce@5000 | - | - | - | - | - | - | - | 缺数据（baseline无此场景） |
+| mergeRemoteNew | 1 | 0 | 0.0000 | —（近零） | 0.2 | 0.1 | — | ✅ 通过（近零，计时分辨率内） |
+| mergeRemoteUpdate | 1 | 0 | 0.0000 | —（近零） | 0.1 | 0.1 | — | ✅ 通过（近零，计时分辨率内） |
+| safeClone | 100 | 0.1 | 0.1 | 0.0% | 0.5 | 0.5 | 0.0% | ✅ 通过 |
+| safeClone | 1000 | 1 | 1 | 0.0% | 1.6 | 1.4 | -12.5% | ✅ 通过 |
+| safeClone | 5000 | 5.9 | 5.7 | -3.4% | 8.8 | 9 | 2.3% | ✅ 通过 |
+| undoRedo | 100 | 0.7 | 0.6 | -14.3% | 2.9 | 1.5 | -48.3% | ✅ 通过 |
+| undoRedo | 500 | 3.2 | 2.5 | -21.9% | 6.5 | 4.6 | -29.2% | ✅ 通过 |
+
+## 摘要
+
+- 可比场景总数：7
+- ✅ 通过（delta ≤ +30%）：7
+- ⚠ 警告（+30% < delta ≤ +100%）：0
+- ❌ 失败（delta > +100%）：0
+- 最大恶化：0.0%
+- 中位数恶化：-14.3%
+✓ 性能对拍（排除 commitRewriteAllText） (174ms)
+
+━━ 步骤摘要 ━━
+  ✓ 静态检查（铁律 6 · 禁止 AI 生成注释） (33ms)
+  ✓ Node 单元测试（145 用例） (1257ms)
+  ✓ Playwright 集成测试（L3 64 + L4 20 + L6 34 + L7 18 + L8 16 + L9 6 + L10 7 = 165 用例） + L13 6 = 171 用例 (65309ms)
+  ✓ 性能对拍（排除 commitRewriteAllText） (174ms)
+
+[verify] 全部通过

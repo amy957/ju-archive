@@ -1,0 +1,20 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const BASE = 'http://localhost:5173';
+test('fix36-1 · 星标列表点文档即回落正文视图', async ({ browser }) => {
+  const ctx = await browser.newContext({ baseURL: BASE, viewport: { width: 1200, height: 900 } });
+  await ctx.route(BASE + '/**', (r) => { const p = new URL(r.request().url()).pathname; const f = path.join(ROOT, 'dist', p === '/' ? 'index.html' : decodeURIComponent(p)); try { return r.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: fs.readFileSync(f) }); } catch { throw new Error('dist/index.html 缺失，请先 vite build'); } });
+  const page = await ctx.newPage();
+  await page.goto(BASE, { waitUntil: 'load' });
+  await page.waitForFunction(() => { const J = (window as any).JU; return !!(J && J.actions && J.actions.setStar); }, null, { timeout: 60_000 });
+  const id = await page.evaluate(() => { const J: any = (window as any).JU; const d = J.actions.createDoc('星标回归文档'); J.actions.setStar(d, 2); return d; });
+  await page.locator('.sb-nav-item[data-nav="starred"]').click();
+  await expect(page.locator('#content .files-grid .file-card')).toHaveCount(1);
+  await page.locator(`#subStarred .sb-row[data-id="${id}"]`).click();
+  await expect(page.locator('#content .files-grid .file-card')).toHaveCount(0);
+  await expect(page.locator('#content .doc-header-title')).toHaveText('星标回归文档');
+  await ctx.close();
+});

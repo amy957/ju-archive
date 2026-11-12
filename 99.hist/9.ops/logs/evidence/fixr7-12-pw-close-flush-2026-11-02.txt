@@ -1,0 +1,8 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:41:1 鈥?review7-12 路 鍏抽〉鍓?flushPendingLogs 琛ラ綈寰呰惤鐩?activity 鏃ュ織 (1.6s)
+
+  1 passed (3.4s)

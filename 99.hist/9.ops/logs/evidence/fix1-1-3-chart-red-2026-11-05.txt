@@ -1,0 +1,42 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix22-calendar-chart.spec.ts:28:1 › fix22 · 字数统计 / 任务统计柱状图不坍塌、X 轴文字不重叠、无 CSP 拦截 (5.8s)
+
+
+  1) [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix22-calendar-chart.spec.ts:28:1 › fix22 · 字数统计 / 任务统计柱状图不坍塌、X 轴文字不重叠、无 CSP 拦截 
+
+    Error: 任务统计 0 值不得渲染数值标签
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 30
+
+      141 |     /* fix1-1 · 「任务统计」数值标签与「字数统计」同口径：0 值不渲染文本节点（截图中的一排 0） */
+      142 |     const statVals = await page.locator('svg.stats-chart .cal-chart-val').allTextContents();
+    > 143 |     expect(statVals.filter((t) => t.trim() === '0').length, '任务统计 0 值不得渲染数值标签').toBe(0);
+          |                                                                                 ^
+      144 |     /* fix1-1 · 数据绑定：完成一条今日待办后柱状图必须重绘出 1（与字数统计同一条 forceRender 链路） */
+      145 |     await page.evaluate(() => {
+      146 |       const J: any = (window as any).JU;
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fix22-calendar-chart.spec.ts:143:81
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    6.P0-T3基线\m07-vite\test-results\v21-fix22-calendar-chart-f-0d5c6-务统计柱状图不坍塌、X-轴文字不重叠、无-CSP-拦截-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: 6.P0-T3基线\m07-vite\test-results\v21-fix22-calendar-chart-f-0d5c6-务统计柱状图不坍塌、X-轴文字不重叠、无-CSP-拦截-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    6.P0-T3基线\m07-vite\test-results\v21-fix22-calendar-chart-f-0d5c6-务统计柱状图不坍塌、X-轴文字不重叠、无-CSP-拦截-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace 6.P0-T3基线\m07-vite\test-results\v21-fix22-calendar-chart-f-0d5c6-务统计柱状图不坍塌、X-轴文字不重叠、无-CSP-拦截-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › 6.P0-T3基线\m07-vite\tests\v21-fix22-calendar-chart.spec.ts:28:1 › fix22 · 字数统计 / 任务统计柱状图不坍塌、X 轴文字不重叠、无 CSP 拦截 

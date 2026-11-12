@@ -1,0 +1,11 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 4 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close (1.5s)
+  ok 2 [chromium] › tests\v21-fixr6-close-persist.spec.ts:23:1 › fixr6-10 · 连点关闭只触发一次隐藏与备份 (1.3s)
+  ok 3 [chromium] › tests\v21-fixr6-close-persist.spec.ts:41:1 › review7-12 · 关页前 flushPendingLogs 补齐待落盘 activity 日志 (1.4s)
+  ok 4 [chromium] › tests\v21-fixr6-close-persist.spec.ts:56:1 › review9-03 · 自动备份关闭时关闭仍先等主库 save_state 落盘 (1.3s)
+
+  4 passed (7.3s)

@@ -1,0 +1,13 @@
+批次：review12-rerun347（#3/#4/#7 实机复核）
+时间：2026-11-05
+exe：8.发布与CI/release/v2.1.0-2026-11-05/JU-v2.1-win-x64.exe
+exe 字节/哈希：7,324,672 B / 6BF223D2DD0A34F796767AF02914AC161AAE7D8C2EF1D3BDEC22BB0613E33C8A
+DIST_BEFORE：4,714,056 B / BBF4F861E4DAD162FCD4029A2F00E24F5F01F1B0495F2029F8BD00B18F875641（本轮未构建）
+APPDATA 隔离：%APPDATA%\com.ju.app 与 %LOCALAPPDATA%\com.ju.app 改名为 *. __bak_347
+还原：79,646 B / 3DCF3235AFB23D52C8A248AA2E483719C2BA9985155D6D65FF0D691F96C7F939 / 2026-11-01T22:22:52
+结果 #3：失败；自定义 X 6 轮 0 备份；Alt+F4 对照 FINAL=6（>5）
+结果 #4：失败；90ms 双击后 MARKER_FOUND=0；Alt+F4 对照 MARKER_FOUND=1
+结果 #7：失败；113ms 强杀 MARKER_FOUND=0；2s 对照 MARKER_FOUND=2
+checklist：90过程材料/tmp/review12-realcheck/checklist.md 已更新
+台账：未升格 review7~review12 遗留项（未全绿，条件未满足）
+edge_profile*：90过程材料/tmp 下匹配 0 项，跳过，未删其他内容

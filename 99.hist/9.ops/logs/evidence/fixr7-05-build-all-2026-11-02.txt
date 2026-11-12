@@ -1,0 +1,418 @@
+[build:all] 产品件（m07-vite）本地一键发版开始（共 12 步）：tsc → 1b → 1c → 1d → 1e → test → vite → 3b → e2e → tauri → prepare-release → 6b
+[build:all] ━━━ [1/12] 类型检查 tsc --noEmit ━━━
+[build:all] ✓ 类型检查 tsc --noEmit 通过（6.0s）
+[build:all] ━━━ [1b/12] 装配门禁 check-deps-wired ━━━
+PASS  bindLayoutDeps: 5 个关键依赖均为真实实现
+PASS  bindThemeDeps: 2 个关键依赖均为真实实现
+PASS  bindSelectionDeps: 3 个关键依赖均为真实实现
+PASS  bindSidebarDeps: 17 个关键依赖均为真实实现
+PASS  bindRightbarDeps: 4 个关键依赖均为真实实现
+PASS  bindRenderMainDeps: 8 个关键依赖均为真实实现
+PASS  injectBootDeps: 11 个关键依赖均为真实实现
+PASS  bindErrorDeps: 5 个关键依赖均为真实实现
+PASS  bindPersistDeps: 7 个关键依赖均为真实实现
+PASS  bindCryptoDeps: 10 个关键依赖均为真实实现
+isDesktop 同源: hasDesktopInvoke
+PASS  desktopSave: 函数体含能力检查且按异常判败
+
+共检查 74 个依赖键，失败 0 项
+P1/P2 PASS: 装配点无空壳依赖
+[build:all] ✓ 装配门禁 check-deps-wired 通过（0.1s）
+[build:all] ━━━ [1c/12] 零漂移与内联样式闸门 ━━━
+PARITY OK  sha256=5fed021578e775b560bf98af719046eb2916472f4053354a33a1a436dfbff818  bytes=1316707
+VERSION OK  main.ts JU_VER=2.1.0  errors.ts JU_VER=''  package.json.version=2.1.0  Cargo.toml=2.1.0  tauri.conf.json=2.1.0
+[build:all] ✓ 零漂移与内联样式闸门 通过（0.1s）
+[build:all] ━━━ [1d/12] 许可审计 audit-license ━━━
+[audit-license] 写入 docs\LICENSE-AUDIT.md
+[audit-license] 依赖 79（runtime 0 / dev 79） · strong 0 · weak 0 · permissive 79 · unknown 0
+[audit-license] OK：无 AGPL / GPL / SSPL 强传染协议
+[build:all] ✓ 许可审计 audit-license 通过（0.1s）
+[build:all] ━━━ [1e/12] 未使用导出统计 check-unused-exports ━━━
+[unused-exports] 扫描 50 个文件，导出 1213 个，未使用 212 个（使用率 82.5%）。
+  - src/views/outline.ts: 25
+  - src/core/richtext.ts: 16
+  - src/views/calendar.ts: 11
+  - src/core/virtual-scroll.ts: 10
+  - src/utils/lunar.ts: 10
+  - src/core/idb.ts: 9
+  - src/core/persist.ts: 9
+  - src/ui/editors.ts: 9
+  - src/io/import.ts: 8
+  - src/core/search.worker.ts: 7
+  - src/core/store.ts: 7
+  - src/core/wordcount.worker.ts: 7
+  - src/ui/xselect.ts: 7
+  - src/ui/rightbar.ts: 5
+  - src/core/crypto.ts: 4
+  - src/io/export.ts: 4
+  - src/ui/focus.ts: 4
+  - src/ui/layout.ts: 4
+  - src/ui/timepicker.ts: 4
+  - src/views/database/formula.ts: 4
+  - src/views/database/panels.ts: 4
+  - src/views/graph.ts: 4
+  - src/views/slides.ts: 4
+  - src/app/boot.ts: 3
+  - src/contract/lifecycle.ts: 3
+  - src/contract/registry.ts: 3
+  - src/views/lists.ts: 3
+  - src/app/render.ts: 2
+  - src/core/actions.ts: 2
+  - src/core/errors.ts: 2
+  - src/ui/print.ts: 2
+  - src/ui/selection.ts: 2
+  - src/utils/regions.ts: 2
+  - src/views/database/render.ts: 2
+  - src/views/mindmap.ts: 2
+  - src/views/presentation.ts: 2
+  - src/core/audio.ts: 1
+  - src/legacy/loader.ts: 1
+  - src/ui/common.ts: 1
+  - src/ui/manual.ts: 1
+  - src/ui/sidebar.ts: 1
+  - src/ui/theme.ts: 1
+[unused-exports] 报告已写入 docs\UNUSED-EXPORTS.md
+[build:all] ✓ 未使用导出统计 check-unused-exports 通过（0.3s）
+[build:all] ━━━ [2/12] 契约单元测试 node --test test/*.mjs src/test/*.mjs ━━━
+TAP version 13
+# [D-01] IDB_USED=true dbs=["juju.store"] writes=3 recoveredBytes=2530 localStorageBytes=2530
+# Subtest: D-01 · 打开页面后 indexedDB.databases() 非空且 juju.store 库存在
+ok 1 - D-01 · 打开页面后 indexedDB.databases() 非空且 juju.store 库存在
+  ---
+  duration_ms: 1426.7864
+  type: 'test'
+  ...
+# Subtest: D-02 · color(srgb r g b / a) 归一为 rgba()，且匹配合法颜色形态
+ok 2 - D-02 · color(srgb r g b / a) 归一为 rgba()，且匹配合法颜色形态
+  ---
+  duration_ms: 1.7753
+  type: 'test'
+  ...
+# Subtest: D-02 · 不透明 srgb 归一为 \#RRGGBB
+ok 3 - D-02 · 不透明 srgb 归一为 \#RRGGBB
+  ---
+  duration_ms: 0.2973
+  type: 'test'
+  ...
+# Subtest: D-02 · srgb 百分比口径（×2.55 取整）
+ok 4 - D-02 · srgb 百分比口径（×2.55 取整）
+  ---
+  duration_ms: 0.1545
+  type: 'test'
+  ...
+# Subtest: D-02 · 空格语法 rgb(r g b / a) 与逗号语法 rgba() 均归一
+ok 5 - D-02 · 空格语法 rgb(r g b / a) 与逗号语法 rgba() 均归一
+  ---
+  duration_ms: 0.3471
+  type: 'test'
+  ...
+# Subtest: D-02 · 已是 hex / 命名色 / 其它语法一律原样返回（不做猜测）
+ok 6 - D-02 · 已是 hex / 命名色 / 其它语法一律原样返回（不做猜测）
+  ---
+  duration_ms: 0.2247
+  type: 'test'
+  ...
+# Subtest: D-02 · normalizeInlineDeclValue：颜色属性归一并支持驼峰写法
+ok 7 - D-02 · normalizeInlineDeclValue：颜色属性归一并支持驼峰写法
+  ---
+  duration_ms: 0.3202
+  type: 'test'
+  ...
+# Subtest: D-02 · applyInlineStyle 入口接线：写入前必过 normalizeInlineDeclValue
+ok 8 - D-02 · applyInlineStyle 入口接线：写入前必过 normalizeInlineDeclValue
+  ---
+  duration_ms: 1.4161
+  type: 'test'
+  ...
+# Subtest: D-02 · CSS_WHITELIST 显式放行 color / background-color / font-size / font-weight
+ok 9 - D-02 · CSS_WHITELIST 显式放行 color / background-color / font-size / font-weight
+  ---
+  duration_ms: 0.1449
+  type: 'test'
+  ...
+# Subtest: D-02 · sanitizeStyle 清洗后颜色仍为归一形态，且四项白名单不被丢弃
+ok 10 - D-02 · sanitizeStyle 清洗后颜色仍为归一形态，且四项白名单不被丢弃
+  ---
+  duration_ms: 1.0426
+  type: 'test'
+  ...
+# Subtest: 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+ok 11 - 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+  ---
+  duration_ms: 2.7325
+  type: 'test'
+  ...
+# Subtest: 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+ok 12 - 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+  ---
+  duration_ms: 2.221
+  type: 'test'
+  ...
+# Subtest: 错误消息与告警前缀字面量逐字一致
+ok 13 - 错误消息与告警前缀字面量逐字一致
+  ---
+  duration_ms: 0.4223
+  type: 'test'
+  ...
+# Subtest: 产品件在本次对拍中零写入（只读快照哈希稳定）
+ok 14 - 产品件在本次对拍中零写入（只读快照哈希稳定）
+  ---
+  duration_ms: 7.0169
+  type: 'test'
+  ...
+# Subtest: register / require 正常往返取值
+ok 15 - register / require 正常往返取值
+  ---
+  duration_ms: 1.17
+  type: 'test'
+  ...
+# Subtest: require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+ok 16 - require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+  ---
+  duration_ms: 0.4878
+  type: 'test'
+  ...
+# Subtest: lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+ok 17 - lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+  ---
+  duration_ms: 0.8679
+  type: 'test'
+  ...
+# Subtest: lifecycle.dispose 逆序执行（栈语义 pop）
+ok 18 - lifecycle.dispose 逆序执行（栈语义 pop）
+  ---
+  duration_ms: 0.2209
+  type: 'test'
+  ...
+# Subtest: 单个 disposer 抛错不阻断后续 disposer
+ok 19 - 单个 disposer 抛错不阻断后续 disposer
+  ---
+  duration_ms: 0.2928
+  type: 'test'
+  ...
+# Subtest: lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+ok 20 - lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+  ---
+  duration_ms: 0.2543
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2093.5331
+[build:all] ✓ 契约单元测试 node --test test/*.mjs src/test/*.mjs 通过（2.2s）
+[build:all] ━━━ [3/12] Web 构建 vite build ━━━
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 62 modules transformed.
+rendering chunks...
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-ButREh2I.js
+[plugin vite:singlefile] Inlining: style-DTlSN7Yb.css
+computing gzip size...
+[2mdist/[22m[32mindex.html  [39m[1m[2m4,681.67 kB[22m[1m[22m[2m │ gzip: 3,177.06 kB[22m
+[32m✓ built in 2.28s[39m
+[build:all] ✓ Web 构建 vite build 通过（2.9s）
+[build:all] ━━━ [3b/12] 内联样式闸门 ━━━
+dist/index.html bytes = 4705410
+<style> blocks = 4 (inline css chars = 116266)
+index.html inline style attrs = 0
+dist inline style attrs = 61（运行期模板，仅记录，不参与硬门禁）
+PASS  has <style tag
+PASS  has --bg variable
+PASS  has body{ rule
+PASS  has #sidebarLeft rule
+PASS  has .sb-row rule
+PASS  has .main-toggle rule
+PASS  has .tb-wbtn rule
+PASS  no external stylesheet link
+PASS  no inline style attribute in index.html
+P0 PASS: 样式已内联进单文件产物
+[build:all] ✓ 内联样式闸门 通过（0.1s）
+[build:all] Web 产物指纹：dist/index.html  4705410 B  SHA-256 3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[build:all] ✓ Web 产物含特征符号：applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] ━━━ [4/12] E2E 冒烟 + 全链路 + 并发（playwright） ━━━
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 18 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-ButREh2I.js
+[plugin vite:singlefile] Inlining: style-DTlSN7Yb.css
+[M1-2] perTab stats=[{"add":519,"update":316,"remove":165,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":747,"storedBytes":281302},{"add":563,"update":287,"remove":150,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":743,"storedBytes":281302},{"add":545,"update":286,"remove":169,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":517,"storedBytes":202542}]
+[M1-2] {
+  "perTab": [
+    {
+      "tab": "tab-1",
+      "add": 519,
+      "update": 316,
+      "remove": 165,
+      "finalCount": 747,
+      "storedBytes": 281302
+    },
+    {
+      "tab": "tab-2",
+      "add": 563,
+      "update": 287,
+      "remove": 150,
+      "finalCount": 743,
+      "storedBytes": 281302
+    },
+    {
+      "tab": "tab-3",
+      "add": 545,
+      "update": 286,
+      "remove": 169,
+      "finalCount": 517,
+      "storedBytes": 202542
+    }
+  ],
+  "totalOps": 3000,
+  "convergedCounts": [
+    743,
+    743,
+    743
+  ],
+  "memoryProjectionHash": [
+    "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85",
+    "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85",
+    "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85"
+  ],
+  "diskProjectionHash": [
+    "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85",
+    "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85",
+    "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85"
+  ],
+  "diskRawHash": [
+    "31389b794257129a4c711bef3e9a2a9af30dbf82dd2716c015549059e9041342",
+    "31389b794257129a4c711bef3e9a2a9af30dbf82dd2716c015549059e9041342",
+    "31389b794257129a4c711bef3e9a2a9af30dbf82dd2716c015549059e9041342"
+  ],
+  "memoryDiskAligned": [
+    {
+      "tab": "tab-1",
+      "mem": "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85",
+      "disk": "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85"
+    },
+    {
+      "tab": "tab-2",
+      "mem": "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85",
+      "disk": "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85"
+    },
+    {
+      "tab": "tab-3",
+      "mem": "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85",
+      "disk": "35245cb1c1ebe2547bbb8a01c42ddb79ae6dd8133839154ea8e62d11a8e96c85"
+    }
+  ],
+  "canonicalEqual": true,
+  "pageErrors": []
+}
+  ok  1 [chromium] › tests\concurrency.spec.ts:154:1 › M1-2 3 标签并发收敛测试（内存态 + 磁盘态） (1.1m)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-ButREh2I.js
+[plugin vite:singlefile] Inlining: style-DTlSN7Yb.css
+  ok  2 [chromium] › tests\full-e2e.spec.ts:427:3 › CI · 终极全链路 E2E 业务验收 › 用例 1 · 加密与解锁闭环：设置开启全库加密 → 刷新锁定 → 解锁后数据零丢失 (3.6s)
+[full-e2e] download=导入文档-2026-11-02.md bytes=76
+  ok  3 [chromium] › tests\full-e2e.spec.ts:589:3 › CI · 终极全链路 E2E 业务验收 › 用例 2 · 导入与导出闭环：导入 3 节点 JSON → 渲染 → 导出 Markdown 含导入文本 (1.3s)
+  ok  4 [chromium] › tests\full-e2e.spec.ts:684:3 › CI · 终极全链路 E2E 业务验收 › 用例 3 · 多维表格与日历联动：表格新建行 → 设今天 → 日历当日待办可见 (1.2s)
+[smoke] dist files=["index.html"] dirs=[]
+[smoke] dist/index.html bytes=4705410
+  ok  5 [chromium] › tests\smoke.spec.ts:88:3 › M1-1 单 HTML 产物 › dist 必须产出 index.html，且脚本 / 样式已内联 (30ms)
+  ok  6 [chromium] › tests\smoke.spec.ts:120:3 › M1-1 单 HTML 产物 › 加载构建产物：标题 / JU.getState 欢迎节点 / 三区 DOM 均存在 (821ms)
+  ok  7 [chromium] › tests\v21-fix30-topbar-popover.spec.ts:7:1 › fix30 · 浮窗初始关闭 · 提醒浮窗落在视口内 (1.2s)
+  ok  8 [chromium] › tests\v21-fix31-topbar-popover.spec.ts:7:1 › fix31 · 顶栏设置/提醒浮窗可开且落在视口内 · 置顶有反馈 (1.4s)
+  ok  9 [chromium] › tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 › fix33-8 · 打开取色器后点 #btnSettings 取色器关闭 (1.3s)
+  ok 10 [chromium] › tests\v21-fix33-8-topbar-doc-close.spec.ts:20:1 › fixr6-6 · __TAURI__ 缺 window 命名空间时 #btnClose 不抛 TypeError 并提示窗口 API (1.5s)
+  ok 11 [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:16:1 › fix33-3 · 负向：__TAURI__ 无 invoke 时判定非桌面并回落到 localStorage 分支 (2.3s)
+  ok 12 [chromium] › tests\v21-fix33-desktop-save-guard.spec.ts:18:1 › fix33-3 · 正向：invoke resolve(null) 时不得出现「桌面存储保存失败」toast (2.4s)
+  ok 13 [chromium] › tests\v21-fix40-topbar-close-backup.spec.ts:7:1 › fix40 · 置顶/设置顺序对调 + 关闭无确认 + 关闭时写备份文件 (1.2s)
+  ok 14 [chromium] › tests\v21-fix41-close-hidden-backup.spec.ts:4:1 › fix41 · 关闭先隐藏再静默落盘再退出 (1.1s)
+  ok 15 [chromium] › tests\v21-fix43-bridge-capability.spec.ts:5:1 › fix43-1 · 仅注入 window 的 __TAURI__ 时加密保存落 localStorage (1.7s)
+  ok 16 [chromium] › tests\v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close (2.2s)
+  ok 17 [chromium] › tests\v21-fixr6-close-persist.spec.ts:23:1 › fixr6-10 · 连点关闭只触发一次隐藏与备份 (2.5s)
+  ok 18 [chromium] › tests\v21-fixr6-merge-equal-ts.spec.ts:4:1 › fixr6-8 · 两标签各落盘 10 节点后磁盘必须为 20（写盘前合并门槛） (3.3s)
+
+  18 passed (1.7m)
+[build:all] ✓ E2E 冒烟 + 全链路 + 并发（playwright） 通过（104.0s）
+[build:all] E2E 重建后的 Web 产物指纹（即将被 tauri build 内嵌的字节）：
+[build:all] Web 产物指纹：dist/index.html  4705410 B  SHA-256 3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[build:all] ✓ Web 产物含特征符号：applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] dist 内容：files=[index.html]  dirs=[]
+[build:all] ✓ dist 内 HTML 恰好 1 份：index.html（内嵌范围收敛）
+[build:all] 清理历史 tauri-codegen 资产残留（第 5 步前置）：
+[build:all]   清理 codegen 资产目录：src-tauri/target/release/build/app-3e2ce4bea8f00c9f/out/tauri-codegen-assets（1 个文件）
+[build:all]     - f5d696cc9d60a6bbc208be7a55bfa6ff5e2e614606a350c293cfc1e2a7e5969c.html  3135897 B
+[build:all]   已触碰 src-tauri/build.rs（强制 codegen 重建）
+[build:all] ✓ codegen 资产清理完成：目录 1 个 / 文件 1 个（构建后应 stale=0）
+[build:all] ━━━ [5/12] 桌面构建 tauri build --bundles nsis ━━━
+   Compiling app v2.1.0 (E:\APP\归档\6.P0-T3基线\m07-vite\src-tauri)
+warning: function `patch_nodes` is never used
+   --> src\main.rs:116:4
+    |
+116 | fn patch_nodes(
+    |    ^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `app` (bin "app") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 19.31s
+        Info Target: x64
+     Running makensis.exe to produce e:\APP\归档\6.P0-T3基线\m07-vite\src-tauri\target\release\bundle\nsis\JU_2.1.0_x64-setup.exe
+    Finished 1 bundle at:
+        e:\APP\归档\6.P0-T3基线\m07-vite\src-tauri\target\release\bundle\nsis\JU_2.1.0_x64-setup.exe
+
+[build:all] ✓ 桌面构建 tauri build --bundles nsis 通过（24.0s）
+[build:all] 第 5 步产出时间戳：
+[build:all]   web e:\APP\归档\6.P0-T3基线\m07-vite\dist\index.html  4705410 B  2026-11-02T13:06:11.345Z
+[build:all]   exe e:\APP\归档\6.P0-T3基线\m07-vite\src-tauri\target\release\JU.exe  7304192 B  2026-11-02T13:07:02.366Z
+[build:all]   codegen 资产（构建后）：src-tauri/target/release/build/app-3e2ce4bea8f00c9f/out/tauri-codegen-assets  html=1 exe=0  [f5d696cc9d60a6bbc208be7a55bfa6ff5e2e614606a350c293cfc1e2a7e5969c.html]
+[build:all] ✓ codegen 资产目录干净（仅本轮产物，无残留 HTML/exe）
+[build:all] dist 内容：files=[index.html]  dirs=[]
+[build:all] ✓ dist 内 HTML 恰好 1 份：index.html（内嵌范围收敛）
+[build:all] ━━━ [6/12] 发布归档 prepare-release ━━━
+[release] ISSUE-012 让位件移出 1 件 → 90过程材料/tmp/fixr6-12/prev-release-1793624825640，保留 v2.1.0-2026-11-02.prev-1793624357374；清单：v2.1.0-2026-11-02.prev-1793612249014
+[release] 既有归档整体改名为 8.发布与CI/release/v2.1.0-2026-11-02.prev-1793624825642（JU_RELEASE_OVERWRITE=1）
+[release] Web 单文件版   6.P0-T3基线/m07-vite/dist/index.html -> 8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-Web.html
+[release]   SHA-256 3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221  (4.49 MB)
+[release]   绝对路径 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-11-02\JU-v2.1-Web.html
+[release] 桌面版 x64    6.P0-T3基线/m07-vite/src-tauri/target/release/ju.exe -> 8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe
+[release]   SHA-256 796e5606aed6f9a9dc07bb3531965675b6864a1a3eb83df4ab2385e666ffa2ec  (6.97 MB)
+[release]   绝对路径 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-11-02\JU-v2.1-win-x64.exe
+[release] 清单     8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-checksums.txt（2 项）
+[release] 归档目录 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-11-02（位于 dist 之外，不会被 Tauri 内嵌）
+[release] ✓ 发布包准备完成
+[build:all] ✓ 发布归档 prepare-release 通过（0.2s）
+[build:all] ━━━ [6b/12] 归档三角校验 check-release-parity ━━━
+[parity] v2.1.0-2026-11-02/JU-v2.1-Web.html  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[parity] dist/index.html  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[parity] ✓ 归档 Web 与 dist 一致
+[parity] v2.1.0-2026-11-02/JU-v2.1-win-x64.exe  796e5606aed6f9a9dc07bb3531965675b6864a1a3eb83df4ab2385e666ffa2ec
+[parity] 6.P0-T3基线\m07-vite\src-tauri\target\release\ju.exe  796e5606aed6f9a9dc07bb3531965675b6864a1a3eb83df4ab2385e666ffa2ec
+[parity] ✓ 归档 exe 与构建产物一致
+[build:all] ✓ 归档三角校验 check-release-parity 通过（0.1s）
+[build:all] ✓ 归档同步：../../8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-Web.html == dist/index.html（3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221）
+[build:all] ✓ 归档同步：../../8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe == src-tauri/target/release/JU.exe（796e5606aed6f9a9dc07bb3531965675b6864a1a3eb83df4ab2385e666ffa2ec）
+[build:all] ✓ NSIS 入档：JU_2.1.0_x64-setup.exe → ../../8.发布与CI/release/v2.1.0-2026-11-02/JU_2.1.0_x64-setup.exe（已登记 checksums）
+[build:all] 
+[build:all] ══════════════════ 构建产物清单 ══════════════════
+[build:all] 
+[build:all] 文件                                                                        字节  SHA-256
+[build:all] --------------------------------------------------------------  ------------  ----------------------------------------------------------------
+[build:all] dist/index.html                                                      4705410  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[build:all] ../../8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-Web.html             4705410  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[build:all] ../../8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-checksums.txt            258  fb27e21494a6e706481db9e241a8ec6aa2294ad0ea0146435d8f73c2cd6e9aee
+[build:all] ../../8.发布与CI/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe          7304192  796e5606aed6f9a9dc07bb3531965675b6864a1a3eb83df4ab2385e666ffa2ec
+[build:all] ../../8.发布与CI/release/v2.1.0-2026-11-02/JU_2.1.0_x64-setup.exe       4449295  e35701237ffd6e5e0a78adf5ca985415d064c579f732cce93c18b91cc0da0953
+[build:all] 
+[build:all] 合计 5 个文件，21,164,565 字节
+[build:all] ✓ 一键发版链路完成

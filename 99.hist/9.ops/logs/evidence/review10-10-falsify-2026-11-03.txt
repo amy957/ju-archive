@@ -1,0 +1,55 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-D4Uwb0db.js
+[plugin vite:singlefile] Inlining: style-DcRb7I75.css
+[probe] day={"--bg-soft":"rgb(202, 211, 196)","--bg-mid":"rgb(214, 227, 203)","--bg-panel2":"rgb(226, 237, 215)","--bg-menu":"rgb(211, 222, 201)","--line-soft":"rgb(189, 204, 174)","--accent-soft":"rgb(201, 220, 196)","--bg":"rgb(223, 236, 213)"}
+  x  1 [chromium] 鈥?tests\probe-review10-10.spec.ts:9:1 鈥?review10-10 路 :root hex 鎻愪负 --c-* 鍚庢棩/澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?(3.5s)
+
+
+  1) [chromium] 鈥?tests\probe-review10-10.spec.ts:9:1 鈥?review10-10 路 :root hex 鎻愪负 --c-* 鍚庢棩/澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,7 +1,7 @@
+      Array [
+    -   "rgb(202, 211, 195)",
+    +   "rgb(202, 211, 196)",
+        "rgb(214, 227, 203)",
+        "rgb(226, 237, 215)",
+        "rgb(211, 222, 201)",
+        "rgb(189, 204, 174)",
+        "rgb(201, 220, 196)",
+
+      16 |   const day = await snap(page);
+      17 |   console.log('[probe] day=' + JSON.stringify(day));
+    > 18 |   expect(Object.values(day)).toEqual(DAY);
+         |                              ^
+      19 |   await page.evaluate(() => { document.documentElement.dataset.theme = 'night'; });
+      20 |   const night = await snap(page);
+      21 |   console.log('[probe] night=' + JSON.stringify(night));
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\probe-review10-10.spec.ts:18:30
+
+    attachment #1: screenshot (image/png) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\probe-review10-10-review10-d75a4--hex-鎻愪负---c--鍚庢棩-澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?chromium\test-failed-1.png
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error Context: test-results\probe-review10-10-review10-d75a4--hex-鎻愪负---c--鍚庢棩-澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?chromium\error-context.md
+
+    attachment #3: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\probe-review10-10-review10-d75a4--hex-鎻愪负---c--鍚庢棩-澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\probe-review10-10-review10-d75a4--hex-鎻愪负---c--鍚庢棩-澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+  1 failed
+    [chromium] 鈥?tests\probe-review10-10.spec.ts:9:1 鈥?review10-10 路 :root hex 鎻愪负 --c-* 鍚庢棩/澶?鎵撳嵃涓夋€佽绠楀€间笉鍙?

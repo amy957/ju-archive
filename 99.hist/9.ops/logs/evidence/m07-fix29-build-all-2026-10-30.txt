@@ -1,0 +1,231 @@
+[build:all] 本地一键发版开始：tsc → test → vite → e2e → tauri → prepare-release
+[build:all] ━━━ [1/6] 类型检查 tsc --noEmit ━━━
+[build:all] ✓ 类型检查 tsc --noEmit 通过（4.8s）
+[build:all] ━━━ [2/6] 契约单元测试 node --test test/*.mjs ━━━
+TAP version 13
+# Subtest: 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+ok 1 - 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+  ---
+  duration_ms: 1.9701
+  type: 'test'
+  ...
+# Subtest: 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+ok 2 - 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+  ---
+  duration_ms: 2.1594
+  type: 'test'
+  ...
+# Subtest: 错误消息与告警前缀字面量逐字一致
+ok 3 - 错误消息与告警前缀字面量逐字一致
+  ---
+  duration_ms: 0.4083
+  type: 'test'
+  ...
+# Subtest: 产品件在本次对拍中零写入（只读快照哈希稳定）
+ok 4 - 产品件在本次对拍中零写入（只读快照哈希稳定）
+  ---
+  duration_ms: 7.0833
+  type: 'test'
+  ...
+# Subtest: register / require 正常往返取值
+ok 5 - register / require 正常往返取值
+  ---
+  duration_ms: 1.1162
+  type: 'test'
+  ...
+# Subtest: require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+ok 6 - require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+  ---
+  duration_ms: 0.7534
+  type: 'test'
+  ...
+# Subtest: lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+ok 7 - lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+  ---
+  duration_ms: 0.9756
+  type: 'test'
+  ...
+# Subtest: lifecycle.dispose 逆序执行（栈语义 pop）
+ok 8 - lifecycle.dispose 逆序执行（栈语义 pop）
+  ---
+  duration_ms: 0.2095
+  type: 'test'
+  ...
+# Subtest: 单个 disposer 抛错不阻断后续 disposer
+ok 9 - 单个 disposer 抛错不阻断后续 disposer
+  ---
+  duration_ms: 0.2593
+  type: 'test'
+  ...
+# Subtest: lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+ok 10 - lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+  ---
+  duration_ms: 0.2448
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 186.5503
+[build:all] ✓ 契约单元测试 node --test test/*.mjs 通过（0.3s）
+[build:all] ━━━ [3/6] Web 构建 vite build ━━━
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 62 modules transformed.
+rendering chunks...
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BcxRwdOg.js
+[plugin vite:singlefile] Inlining: style-rIj2q606.css
+computing gzip size...
+[2mdist/[22m[32mindex.html  [39m[1m[2m4,676.95 kB[22m[1m[22m[2m │ gzip: 3,176.02 kB[22m
+[32m✓ built in 2.03s[39m
+[build:all] ✓ Web 构建 vite build 通过（2.7s）
+[build:all] Web 产物指纹：dist/index.html  4700788 B  SHA-256 1130e94f73f5461c65bd0224d6d8576c4313c4e744ff181d137b087c960ee18d
+[build:all] ✓ Web 产物含特征符号：applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] ━━━ [4/6] E2E 冒烟 + 全链路 + 并发（playwright） ━━━
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 6 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BcxRwdOg.js
+[plugin vite:singlefile] Inlining: style-rIj2q606.css
+[M1-2] perTab stats=[{"add":519,"update":316,"remove":165,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":927,"storedBytes":335835},{"add":563,"update":287,"remove":150,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":924,"storedBytes":334589},{"add":545,"update":286,"remove":169,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":694,"storedBytes":249849}]
+[M1-2] {
+  "perTab": [
+    {
+      "tab": "tab-1",
+      "add": 519,
+      "update": 316,
+      "remove": 165,
+      "finalCount": 927,
+      "storedBytes": 335835
+    },
+    {
+      "tab": "tab-2",
+      "add": 563,
+      "update": 287,
+      "remove": 150,
+      "finalCount": 924,
+      "storedBytes": 334589
+    },
+    {
+      "tab": "tab-3",
+      "add": 545,
+      "update": 286,
+      "remove": 169,
+      "finalCount": 694,
+      "storedBytes": 249849
+    }
+  ],
+  "totalOps": 3000,
+  "convergedCounts": [
+    926,
+    926,
+    926
+  ],
+  "memoryProjectionHash": [
+    "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483",
+    "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483",
+    "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483"
+  ],
+  "diskProjectionHash": [
+    "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483",
+    "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483",
+    "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483"
+  ],
+  "diskRawHash": [
+    "8e842b5b06e026c0c0eed1c74c30d98fa76cbaa30d394008eeaace2a02bfe31e",
+    "8e842b5b06e026c0c0eed1c74c30d98fa76cbaa30d394008eeaace2a02bfe31e",
+    "8e842b5b06e026c0c0eed1c74c30d98fa76cbaa30d394008eeaace2a02bfe31e"
+  ],
+  "memoryDiskAligned": [
+    {
+      "tab": "tab-1",
+      "mem": "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483",
+      "disk": "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483"
+    },
+    {
+      "tab": "tab-2",
+      "mem": "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483",
+      "disk": "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483"
+    },
+    {
+      "tab": "tab-3",
+      "mem": "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483",
+      "disk": "1fa3640a7ff2f91b47efd49161c0977566762a9d3db5840db79542c1b0b88483"
+    }
+  ],
+  "canonicalEqual": true,
+  "pageErrors": []
+}
+  ok 1 [chromium] › tests\concurrency.spec.ts:154:1 › M1-2 3 标签并发收敛测试（内存态 + 磁盘态） (1.0m)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BcxRwdOg.js
+[plugin vite:singlefile] Inlining: style-rIj2q606.css
+  ok 2 [chromium] › tests\full-e2e.spec.ts:427:3 › CI · 终极全链路 E2E 业务验收 › 用例 1 · 加密与解锁闭环：设置开启全库加密 → 刷新锁定 → 解锁后数据零丢失 (3.0s)
+[full-e2e] download=导入文档-2026-10-30.md bytes=78
+  ok 3 [chromium] › tests\full-e2e.spec.ts:589:3 › CI · 终极全链路 E2E 业务验收 › 用例 2 · 导入与导出闭环：导入 3 节点 JSON → 渲染 → 导出 Markdown 含导入文本 (1.2s)
+  ok 4 [chromium] › tests\full-e2e.spec.ts:684:3 › CI · 终极全链路 E2E 业务验收 › 用例 3 · 多维表格与日历联动：表格新建行 → 设今天 → 日历当日待办可见 (1.2s)
+[smoke] dist files=["index.html"] dirs=[]
+[smoke] dist/index.html bytes=4700788
+  ok 5 [chromium] › tests\smoke.spec.ts:88:3 › M1-1 单 HTML 产物 › dist 必须产出 index.html，且脚本 / 样式已内联 (29ms)
+  ok 6 [chromium] › tests\smoke.spec.ts:120:3 › M1-1 单 HTML 产物 › 加载构建产物：标题 / JU.getState 欢迎节点 / 三区 DOM 均存在 (755ms)
+
+  6 passed (1.2m)
+[build:all] ✓ E2E 冒烟 + 全链路 + 并发（playwright） 通过（75.0s）
+[build:all] E2E 重建后的 Web 产物指纹（即将被 tauri build 内嵌的字节）：
+[build:all] Web 产物指纹：dist/index.html  4700788 B  SHA-256 1130e94f73f5461c65bd0224d6d8576c4313c4e744ff181d137b087c960ee18d
+[build:all] ✓ Web 产物含特征符号：applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] dist 内容：files=[index.html]  dirs=[]
+[build:all] ✓ dist 内 HTML 恰好 1 份：index.html（内嵌范围收敛）
+[build:all] 清理历史 tauri-codegen 资产残留（第 5 步前置）：
+[build:all]   清理 codegen 资产目录：src-tauri/target/release/build/app-e879dede60df386f/out/tauri-codegen-assets（1 个文件）
+[build:all]     - 800c2f2561b8abee9d0db8b2a84d43442bbd9249c09364f226bc27750ba8f00a.html  3136785 B
+[build:all]   已触碰 src-tauri/build.rs（强制 codegen 重建）
+[build:all] ✓ codegen 资产清理完成：目录 1 个 / 文件 1 个（构建后应 stale=0）
+[build:all] ━━━ [5/6] 桌面构建 tauri build --bundles none ━━━
+   Compiling app v0.1.0 (E:\APP\归档\6.P0-T3基线\m07-vite\src-tauri)
+    Finished `release` profile [optimized] target(s) in 17.76s
+[build:all] ✓ 桌面构建 tauri build --bundles none 通过（19.5s）
+[build:all] 第 5 步产出时间戳：
+[build:all]   web e:\APP\归档\6.P0-T3基线\m07-vite\dist\index.html  4700788 B  2026-10-30T15:33:19.219Z
+[build:all]   exe e:\APP\归档\6.P0-T3基线\m07-vite\src-tauri\target\release\JU.exe  6759936 B  2026-10-30T15:33:45.468Z
+[build:all]   codegen 资产（构建后）：src-tauri/target/release/build/app-e879dede60df386f/out/tauri-codegen-assets  html=1 exe=0  [051f9d5f6635687aa9ddea7de02c4c5577e2dc75a8dbeae28e4d210c2e7b1a05.html]
+[build:all] ✓ codegen 资产目录干净（仅本轮产物，无残留 HTML/exe）
+[build:all] dist 内容：files=[index.html]  dirs=[]
+[build:all] ✓ dist 内 HTML 恰好 1 份：index.html（内嵌范围收敛）
+[build:all] ━━━ [6/6] 发布归档 prepare-release ━━━
+[release] Web 单文件版   6.P0-T3基线/m07-vite/dist/index.html -> 8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-Web.html
+[release]   SHA-256 1130e94f73f5461c65bd0224d6d8576c4313c4e744ff181d137b087c960ee18d  (4.48 MB)
+[release]   绝对路径 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-29\JU-v2.1-Web.html
+[release] 桌面版 x64    6.P0-T3基线/m07-vite/src-tauri/target/release/ju.exe -> 8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe
+[release]   SHA-256 c1f162aadc750f721a29ee604f7f63d2fda599ae96c8ec86ef5dfdee212c146c  (6.45 MB)
+[release]   绝对路径 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-29\JU-v2.1-win-x64.exe
+[release] 清单     8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-checksums.txt（2 项）
+[release] 归档目录 e:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-29（位于 dist 之外，不会被 Tauri 内嵌）
+[release] ✓ 发布包准备完成
+[build:all] ✓ 发布归档 prepare-release 通过（0.2s）
+[build:all] ✓ 归档同步：../../8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-Web.html == dist/index.html（1130e94f73f5461c65bd0224d6d8576c4313c4e744ff181d137b087c960ee18d）
+[build:all] ✓ 归档同步：../../8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe == src-tauri/target/release/JU.exe（c1f162aadc750f721a29ee604f7f63d2fda599ae96c8ec86ef5dfdee212c146c）
+[build:all] 
+[build:all] ══════════════════ 构建产物清单 ══════════════════
+[build:all] 
+[build:all] 文件                                                                       字节  SHA-256
+[build:all] -------------------------------------------------------------  ------------  ----------------------------------------------------------------
+[build:all] dist/index.html                                                     4700788  1130e94f73f5461c65bd0224d6d8576c4313c4e744ff181d137b087c960ee18d
+[build:all] ../../8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-Web.html            4700788  1130e94f73f5461c65bd0224d6d8576c4313c4e744ff181d137b087c960ee18d
+[build:all] ../../8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-checksums.txt           169  95b166a830a4432ae65ba4dbab1c5e44d3bfed2a14853e340f128afe40362591
+[build:all] ../../8.发布与CI/release/v2.1.0-2026-10-29/JU-v2.1-win-x64.exe         6759936  c1f162aadc750f721a29ee604f7f63d2fda599ae96c8ec86ef5dfdee212c146c
+[build:all] 
+[build:all] 合计 4 个文件，16,161,681 字节
+[build:all] ✓ 一键发版链路完成

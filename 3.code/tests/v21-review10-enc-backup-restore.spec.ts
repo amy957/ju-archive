@@ -1,0 +1,22 @@
+import { test, expect } from '@playwright/test';
+import { prepare, skeleton, ready } from './review8-helpers';
+const PW = 'review10-enc', TITLE = 'REVIEW10-ENCBACKUP';
+const OUT = (p: any) => p.evaluate(() => { const J = (window as any).JU; const s = J.getState(); const t = s.nodes[s.rootId] ? String(s.nodes[s.rootId].text || '') : ''; const el = document.querySelector('#toast'); return t === 'REVIEW10-ENCBACKUP' ? t : ((el && el.textContent) || t); });
+test('review10-02 · 加密关闭备份可导入恢复', async ({ context, page }) => {
+  test.setTimeout(240_000); await prepare(context); await skeleton(context);
+  await context.addInitScript(() => { const calls: any[] = []; const api: any = { minimize: async () => {}, toggleMaximize: async () => {}, setAlwaysOnTop: async () => {}, hide: async () => {}, close: async () => {}, onCloseRequested: async (cb: any) => { (window as any).__closeCb = cb; } }; (window as any).__ioCalls = calls; (window as any).__TAURI__ = { window: { getCurrent: () => api, getCurrentWindow: () => api }, core: { invoke: async (cmd: string, args: any) => { calls.push({ cmd, args }); return 'ok'; } } }; });
+  await page.goto('/'); await ready(page);
+  await page.waitForFunction(() => !!(window as any).__closeCb, null, { timeout: 60_000 });
+  await page.evaluate(({ t, pw }: any) => { const J = (window as any).JU; const u = typeof J.ui === 'function' ? J.ui() : J.ui; u.encrypted = true; u.encKey = pw; const s = J.getState(); s.nodes[s.rootId].text = t; }, { t: TITLE, pw: PW });
+  await page.evaluate(async () => { await (window as any).__closeCb({ preventDefault: () => {} }); });
+  const call: any = await (await page.waitForFunction(() => ((window as any).__ioCalls || []).find((c: any) => c.cmd === 'save_backup') || null, null, { timeout: 30_000 })).jsonValue();
+  const enc = String(call.args.content);
+  expect(enc, '关闭备份应为密文').toContain('"cipher"');
+  expect(enc, '关闭备份不得含明文标题').not.toContain(TITLE);
+  await page.evaluate(() => { const s = (window as any).JU.getState(); s.nodes[s.rootId].text = 'REVIEW10-BEFORE'; });
+  await page.evaluate((json: string) => { const f = new File([json], 'JU-备份-enc.enc.json', { type: 'application/json' }); void (window as any).JU.handleImportFiles([f]); }, enc);
+  await page.waitForFunction(() => !!document.querySelector('.modal-overlay .modal [data-ok]') || /不是有效的JU备份/.test(((document.querySelector('#toast') || {}) as any).textContent || ''), null, { timeout: 60_000 });
+  if (await page.locator('.modal-overlay .modal [data-ok]').count()) await page.locator('.modal-overlay .modal [data-ok]').last().click({ timeout: 30_000 });
+  await expect.poll(() => OUT(page), { timeout: 90_000 }).toBe(TITLE);
+  expect(await page.evaluate(() => JSON.stringify((window as any).JU.getState())), 'state 不得残留密文字段').not.toContain('"cipher"');
+});

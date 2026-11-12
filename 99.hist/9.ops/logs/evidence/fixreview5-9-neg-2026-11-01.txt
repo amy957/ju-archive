@@ -1,0 +1,40 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › tests\v21-fix31-topbar-popover.spec.ts:7:1 › fix31 · 顶栏设置/提醒浮窗可开且落在视口内 · 置顶有反馈 (1.1s)
+
+
+  1) [chromium] › tests\v21-fix31-topbar-popover.spec.ts:7:1 › fix31 · 顶栏设置/提醒浮窗可开且落在视口内 · 置顶有反馈 ───
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      19 |   expect(await page.locator('#tbNav[data-tauri-drag-region]').count()).toBe(0);
+      20 |   expect(await page.locator('#tbNav .tb-nav-btn[data-tauri-drag-region]').count()).toBe(0);
+    > 21 |   expect(await page.locator('#topbar[data-tauri-drag-region]').count()).toBe(1);
+         |                                                                         ^
+      22 |   expect(await page.locator('#tbClock[data-tauri-drag-region]').count()).toBe(1);
+      23 |   await page.locator('#btnPin').click(); await expect(page.locator('#btnPin')).toHaveClass(/\bon\b/);
+      24 |   expect(logs).toContain('[btnSet] clicked'); expect(logs).toContain('[btnBell] clicked'); expect(logs.some((l) => l.startsWith('[popover] toggle'))).toBe(true);
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fix31-topbar-popover.spec.ts:21:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\v21-fix31-topbar-popover-fix31-·-顶栏设置-提醒浮窗可开且落在视口内-·-置顶有反馈-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\v21-fix31-topbar-popover-fix31-·-顶栏设置-提醒浮窗可开且落在视口内-·-置顶有反馈-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v21-fix31-topbar-popover-fix31-·-顶栏设置-提醒浮窗可开且落在视口内-·-置顶有反馈-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fix31-topbar-popover-fix31-·-顶栏设置-提醒浮窗可开且落在视口内-·-置顶有反馈-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\v21-fix31-topbar-popover.spec.ts:7:1 › fix31 · 顶栏设置/提醒浮窗可开且落在视口内 · 置顶有反馈 ────

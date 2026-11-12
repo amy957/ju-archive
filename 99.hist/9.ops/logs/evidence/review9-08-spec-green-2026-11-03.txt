@@ -1,0 +1,19 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BZsNcXW7.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+REVIEW908 {"tagColors":"object","dbFields":true,"activity":"object","ver":"number","dangling":[],"docText":"旧文档","orphanParent":"old-root"}
+  ok 1 [chromium] › tests\probe-review9-08.spec.ts:40:1 › review9-08 · 旧备份导入补齐缺省字段且无悬空 children (3.6s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BZsNcXW7.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+REVIEW908NEW {"tagColors":{"标签甲":"#ff0000"},"dbFields":["标题"],"activity":{"2026-11-03":{"add":["a1"],"mod":[],"del":[]}},"ver":18,"rootKids":["new-doc","zdxj34gyhtk"],"docKids":["new-kid"],"delText":"回收站根","delDeleted":true}
+  ok 2 [chromium] › tests\probe-review9-08.spec.ts:75:1 › review9-08 · 合法新备份导入零改动（含回收站子树脱离活树） (2.8s)
+
+  2 passed (8.3s)

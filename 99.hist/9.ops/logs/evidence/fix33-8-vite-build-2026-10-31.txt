@@ -1,0 +1,12 @@
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 62 modules transformed.
+rendering chunks...
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-Bfhcu5TJ.js
+[plugin vite:singlefile] Inlining: style-BxcvMRpA.css
+computing gzip size...
+[2mdist/[22m[32mindex.html  [39m[1m[2m4,674.46 kB[22m[1m[22m[2m │ gzip: 3,174.92 kB[22m
+[32m✓ built in 2.08s[39m
+[fix33-8] vite build done

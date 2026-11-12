@@ -1,0 +1,16 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/1] [chromium] › tests\v21-review8-recovery.spec.ts:4:1 › review8 · preimport 自动备份可恢复
+[chromium] › tests\v21-review8-recovery.spec.ts:4:1 › review8 · preimport 自动备份可恢复
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-BZsNcXW7.js
+
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+
+  1 passed (6.1s)

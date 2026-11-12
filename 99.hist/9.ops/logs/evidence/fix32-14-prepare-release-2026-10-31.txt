@@ -1,0 +1,9 @@
+﻿node.exe : [release] ✗ 归档目录已存在：E:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-31
+所在位置 行:1 字符: 50
++ ... ing]::UTF8; & '.\99.开发辅助工具\node.exe' '6.P0-T3基线\m07-vite\scripts\prep ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([release] ✗ 归档目....1.0-2026-10-31:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[release]   请修改 package.json version 或 release-paths.mjs BUILD_DATE
+[release] ✗ 归档未执行：E:\APP\归档\8.发布与CI\release\v2.1.0-2026-10-31 未写入任何文件

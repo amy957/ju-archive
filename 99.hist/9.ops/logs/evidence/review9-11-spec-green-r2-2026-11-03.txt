@@ -1,0 +1,8 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\probe-review9-11.spec.ts:5:1 › review9-11 · JSON 恢复后同批 b.md 继续导入 (2.6s)
+
+  1 passed (4.6s)

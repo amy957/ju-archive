@@ -1,0 +1,42 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › tests\v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close (1.9s)
+
+
+  1) [chromium] › tests\v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close 
+
+    Error: save_state 尚未 resolve 即 close
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "hide,save_state:req"
+    Received: "hide,save_state:req,close"
+
+      13 |   await page.evaluate(() => { const w = window as any; const J = w.JU; w.__ev.length = 0; w.__hold = true; J.actions.addNode(J.getState().rootId, null, { text: 'fixr6-4' }); document.getElementById('btnClose')!.click(); });
+      14 |   await page.waitForTimeout(400); const mid: string[] = await page.evaluate(() => (window as any).__ev);
+    > 15 |   expect(mid.join(','), 'save_state 尚未 resolve 即 close').toBe('hide,save_state:req');
+         |                                                          ^
+      16 |   await page.evaluate(() => (window as any).__release());
+      17 |   await page.waitForFunction(() => ((window as any).__ev as string[]).includes('close'), null, { timeout: 20_000 }); const ev: string[] = await page.evaluate(() => (window as any).__ev);
+      18 |   expect(ev.indexOf('save_state:ok'), 'save_state 先于 close 完成').toBeLessThan(ev.indexOf('close'));
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-fixr6-close-persist.spec.ts:15:58
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\v21-fixr6-close-persist-fi-79c33-关窗等主库-save-state-落盘后再-close-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\v21-fixr6-close-persist-fi-79c33-关窗等主库-save-state-落盘后再-close-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v21-fixr6-close-persist-fi-79c33-关窗等主库-save-state-落盘后再-close-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fixr6-close-persist-fi-79c33-关窗等主库-save-state-落盘后再-close-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close ─

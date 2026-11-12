@@ -1,0 +1,7 @@
+﻿node.exe : [manifest] RESULT=FAIL docs/OPEN-ISSUES.md 与 gen-open-issues.mjs 输出不一致（手改即红，请重跑生成器）
+所在位置 行:1 字符: 253
++ ... _EXIT='+$LASTEXITCODE; & $n 'scripts\check-manifest.mjs' 2>&1 | Out-F ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([manifest] RESU...一致（手改即红，请重跑生成器）:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

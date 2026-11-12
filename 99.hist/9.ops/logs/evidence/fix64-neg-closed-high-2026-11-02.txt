@@ -1,0 +1,194 @@
+[build:all] 产品件（m07-vite）本地一键发版开始：tsc → 装配门禁 → test → vite → e2e → tauri → prepare-release
+[build:all] ━━━ [1/11] 类型检查 tsc --noEmit ━━━
+[build:all] ✓ 类型检查 tsc --noEmit 通过（5.0s）
+[build:all] ━━━ [1b/11] 装配门禁 check-deps-wired ━━━
+PASS  bindLayoutDeps: 5 个关键依赖均为真实实现
+PASS  bindThemeDeps: 2 个关键依赖均为真实实现
+PASS  bindSelectionDeps: 3 个关键依赖均为真实实现
+PASS  bindSidebarDeps: 17 个关键依赖均为真实实现
+PASS  bindRightbarDeps: 4 个关键依赖均为真实实现
+PASS  bindRenderMainDeps: 8 个关键依赖均为真实实现
+PASS  injectBootDeps: 8 个关键依赖均为真实实现
+PASS  bindErrorDeps: 5 个关键依赖均为真实实现
+PASS  bindPersistDeps: 7 个关键依赖均为真实实现
+PASS  bindCryptoDeps: 10 个关键依赖均为真实实现
+isDesktop 同源: hasDesktopInvoke
+PASS  desktopSave: 函数体含能力检查且按异常判败
+
+共检查 71 个依赖键，失败 0 项
+P1/P2 PASS: 装配点无空壳依赖
+[build:all] ✓ 装配门禁 check-deps-wired 通过（0.1s）
+[build:all] ━━━ [1c/11] 零漂移与内联样式闸门 ━━━
+PARITY OK  sha256=5fed021578e775b560bf98af719046eb2916472f4053354a33a1a436dfbff818  bytes=1316707
+VERSION OK  main.ts JU_VER=2.1.0  errors.ts JU_VER=''  package.json.version=2.1.0  Cargo.toml=2.1.0  tauri.conf.json=2.1.0
+[build:all] ✓ 零漂移与内联样式闸门 通过（0.1s）
+[build:all] ━━━ [1d/11] 许可审计 audit-license ━━━
+[audit-license] 写入 docs\LICENSE-AUDIT.md
+[audit-license] 依赖 79（runtime 0 / dev 79） · strong 0 · weak 0 · permissive 79 · unknown 0
+[audit-license] OK：无 AGPL / GPL / SSPL 强传染协议
+[build:all] ✓ 许可审计 audit-license 通过（0.1s）
+[build:all] ━━━ [2/11] 契约单元测试 node --test test/*.mjs src/test/*.mjs ━━━
+TAP version 13
+# [D-01] IDB_USED=true dbs=["juju.store"] writes=3 recoveredBytes=2530 localStorageBytes=2530
+# Subtest: D-01 · 打开页面后 indexedDB.databases() 非空且 juju.store 库存在
+ok 1 - D-01 · 打开页面后 indexedDB.databases() 非空且 juju.store 库存在
+  ---
+  duration_ms: 897.0726
+  type: 'test'
+  ...
+# Subtest: D-02 · color(srgb r g b / a) 归一为 rgba()，且匹配合法颜色形态
+ok 2 - D-02 · color(srgb r g b / a) 归一为 rgba()，且匹配合法颜色形态
+  ---
+  duration_ms: 1.6254
+  type: 'test'
+  ...
+# Subtest: D-02 · 不透明 srgb 归一为 \#RRGGBB
+ok 3 - D-02 · 不透明 srgb 归一为 \#RRGGBB
+  ---
+  duration_ms: 0.357
+  type: 'test'
+  ...
+# Subtest: D-02 · srgb 百分比口径（×2.55 取整）
+ok 4 - D-02 · srgb 百分比口径（×2.55 取整）
+  ---
+  duration_ms: 0.167
+  type: 'test'
+  ...
+# Subtest: D-02 · 空格语法 rgb(r g b / a) 与逗号语法 rgba() 均归一
+ok 5 - D-02 · 空格语法 rgb(r g b / a) 与逗号语法 rgba() 均归一
+  ---
+  duration_ms: 0.3325
+  type: 'test'
+  ...
+# Subtest: D-02 · 已是 hex / 命名色 / 其它语法一律原样返回（不做猜测）
+ok 6 - D-02 · 已是 hex / 命名色 / 其它语法一律原样返回（不做猜测）
+  ---
+  duration_ms: 0.2308
+  type: 'test'
+  ...
+# Subtest: D-02 · normalizeInlineDeclValue：颜色属性归一并支持驼峰写法
+ok 7 - D-02 · normalizeInlineDeclValue：颜色属性归一并支持驼峰写法
+  ---
+  duration_ms: 0.2987
+  type: 'test'
+  ...
+# Subtest: D-02 · applyInlineStyle 入口接线：写入前必过 normalizeInlineDeclValue
+ok 8 - D-02 · applyInlineStyle 入口接线：写入前必过 normalizeInlineDeclValue
+  ---
+  duration_ms: 0.9022
+  type: 'test'
+  ...
+# Subtest: D-02 · CSS_WHITELIST 显式放行 color / background-color / font-size / font-weight
+ok 9 - D-02 · CSS_WHITELIST 显式放行 color / background-color / font-size / font-weight
+  ---
+  duration_ms: 0.142
+  type: 'test'
+  ...
+# Subtest: D-02 · sanitizeStyle 清洗后颜色仍为归一形态，且四项白名单不被丢弃
+ok 10 - D-02 · sanitizeStyle 清洗后颜色仍为归一形态，且四项白名单不被丢弃
+  ---
+  duration_ms: 1.0503
+  type: 'test'
+  ...
+# Subtest: 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+ok 11 - 产品件：J.register / J.require / J.lifecycle 定义片段可定位
+  ---
+  duration_ms: 1.6141
+  type: 'test'
+  ...
+# Subtest: 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+ok 12 - 方法名集合 {register,require,add,on,dispose} 产品侧 vs src/contract/*.ts 一致
+  ---
+  duration_ms: 2.3511
+  type: 'test'
+  ...
+# Subtest: 错误消息与告警前缀字面量逐字一致
+ok 13 - 错误消息与告警前缀字面量逐字一致
+  ---
+  duration_ms: 0.3798
+  type: 'test'
+  ...
+# Subtest: 产品件在本次对拍中零写入（只读快照哈希稳定）
+ok 14 - 产品件在本次对拍中零写入（只读快照哈希稳定）
+  ---
+  duration_ms: 6.5617
+  type: 'test'
+  ...
+# Subtest: register / require 正常往返取值
+ok 15 - register / require 正常往返取值
+  ---
+  duration_ms: 1.0833
+  type: 'test'
+  ...
+# Subtest: require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+ok 16 - require 缺失抛错消息逐字等于 "JU.require missing: xxx"
+  ---
+  duration_ms: 0.4684
+  type: 'test'
+  ...
+# Subtest: lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+ok 17 - lifecycle.add 正序执行：已登记 disposer 全部执行且各执行一次
+  ---
+  duration_ms: 0.9671
+  type: 'test'
+  ...
+# Subtest: lifecycle.dispose 逆序执行（栈语义 pop）
+ok 18 - lifecycle.dispose 逆序执行（栈语义 pop）
+  ---
+  duration_ms: 0.2166
+  type: 'test'
+  ...
+# Subtest: 单个 disposer 抛错不阻断后续 disposer
+ok 19 - 单个 disposer 抛错不阻断后续 disposer
+  ---
+  duration_ms: 0.2537
+  type: 'test'
+  ...
+# Subtest: lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+ok 20 - lifecycle.on：addEventListener 调用一次，dispose 后 removeEventListener 调用一次
+  ---
+  duration_ms: 0.2611
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1445.6873
+[build:all] ✓ 契约单元测试 node --test test/*.mjs src/test/*.mjs 通过（1.5s）
+[build:all] ━━━ [3/11] Web 构建 vite build ━━━
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 62 modules transformed.
+rendering chunks...
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-Bc4AVCBV.js
+[plugin vite:singlefile] Inlining: style-DTlSN7Yb.css
+computing gzip size...
+[2mdist/[22m[32mindex.html  [39m[1m[2m4,681.23 kB[22m[1m[22m[2m │ gzip: 3,176.87 kB[22m
+[32m✓ built in 1.95s[39m
+[build:all] ✓ Web 构建 vite build 通过（2.6s）
+[build:all] ━━━ [3b/11] 内联样式闸门 ━━━
+dist/index.html bytes = 4704898
+<style> blocks = 4 (inline css chars = 116266)
+index.html inline style attrs = 0
+dist inline style attrs = 61（运行期模板，仅记录，不参与硬门禁）
+PASS  has <style tag
+PASS  has --bg variable
+PASS  has body{ rule
+PASS  has #sidebarLeft rule
+PASS  has .sb-row rule
+PASS  has .main-toggle rule
+PASS  has .tb-wbtn rule
+PASS  no external stylesheet link
+PASS  no inline style attribute in index.html
+P0 PASS: 样式已内联进单文件产物
+[build:all] ✓ 内联样式闸门 通过（0.1s）
+[build:all] Web 产物指纹：dist/index.html  4704898 B  SHA-256 80ca0473d320efa01816d0ff410dee10ae0f61816544c322db42e615c28e4fd7
+[build:all] ✓ Web 产物含特征符号：applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] ✗ 发版 E2E 缺少关闭链路定向用例：tests/v21-fixr6-close-persist.spec.ts

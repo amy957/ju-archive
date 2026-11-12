@@ -1,0 +1,21 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 6 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:4:1 鈥?fixr6-4 路 鍏崇獥绛変富搴?save_state 钀界洏鍚庡啀 close (2.7s)
+  ok 2 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:23:1 鈥?fixr6-10 路 杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤 (2.1s)
+  ok 3 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:41:1 鈥?review7-12 路 鍏抽〉鍓?flushPendingLogs 琛ラ綈寰呰惤鐩?activity 鏃ュ織 (1.8s)
+  ok 4 [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:56:1 鈥?review9-03 路 鑷姩澶囦唤鍏抽棴鏃跺叧闂粛鍏堢瓑涓诲簱 save_state 钀界洏 (2.0s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BWYfgqEN.js
+[plugin vite:singlefile] Inlining: style-BheOwebL.css
+  ok 5 [chromium] 鈥?tests\v21-review8-recovery.spec.ts:4:1 鈥?review8 路 preimport 鑷姩澶囦唤鍙仮澶?(7.2s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BWYfgqEN.js
+[plugin vite:singlefile] Inlining: style-BheOwebL.css
+  ok 6 [chromium] 鈥?tests\v21-review8-recovery.spec.ts:23:1 鈥?review8 路 鏃т富搴撶己 dbFields 瑁呰浇鍚庤ˉ榻?(5.5s)
+
+  6 passed (24.8s)

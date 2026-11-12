@@ -1,0 +1,54 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/2] [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:4:1 鈥?fixr6-4 路 鍏崇獥绛変富搴?save_state 钀界洏鍚庡啀 close
+[2/2] [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:23:1 鈥?fixr6-10 路 杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤
+  1) [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:23:1 鈥?fixr6-10 路 杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error: 涓ゆ close-requested 鍧?preventDefault锛屽浠?闅愯棌鍚勪竴娆?
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        1,
+        1,
+    +   1,
+    +   true,
+        2,
+        false,
+    -   2,
+    -   true,
+      ]
+
+      34 |   await page.waitForTimeout(500); const mid: string[] = await page.evaluate(() => (window as any).__ev);
+      35 |   const [pd, term, pdLog]: [number, boolean, boolean[]] = await page.evaluate(() => { const w = window as any; return [w.__pd, w.__terminated, w.__pdLog.map((e: any) => e.prevented)]; });
+    > 36 |   expect([mid.filter((x) => x === 'save_state:req').length, mid.filter((x) => x === 'hide').length, pd, term, pdLog.length, pdLog.every(Boolean)], '涓ゆ close-requested 鍧?preventDefault锛屽浠?闅愯棌鍚勪竴娆?).toEqual([1, 1, 2, false, 2, true]);
+         |                                                                                                                                                                                                    ^
+      37 |   await page.evaluate(() => (window as any).__release());
+      38 |   await page.waitForFunction(() => ((window as any).__ev as string[]).includes('close'), null, { timeout: 20_000 }); await page.waitForTimeout(300); const ev: string[] = await page.evaluate(() => (window as any).__ev);
+      39 |   expect([ev.filter((x) => x === 'save_state:req').length, ev.filter((x) => x === 'hide').length], '杩炵偣鍏ㄧ▼鍙浠?闅愯棌涓€娆?).toEqual([1, 1]);
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\v21-fixr6-close-persist.spec.ts:36:196
+
+    attachment #1: screenshot (image/png) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-fixr6-close-persist-fixr6-10-路-杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤-chromium\test-failed-1.png
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error Context: test-results\v21-fixr6-close-persist-fixr6-10-路-杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤-chromium\error-context.md
+
+    attachment #3: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\v21-fixr6-close-persist-fixr6-10-路-杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-fixr6-close-persist-fixr6-10-路-杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤-chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+
+  1 failed
+    [chromium] 鈥?tests\v21-fixr6-close-persist.spec.ts:23:1 鈥?fixr6-10 路 杩炵偣鍏抽棴鍙Е鍙戜竴娆￠殣钘忎笌澶囦唤 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+  1 passed (6.7s)

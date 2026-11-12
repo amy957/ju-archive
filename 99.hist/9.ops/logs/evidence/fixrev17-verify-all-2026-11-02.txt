@@ -1,0 +1,14 @@
+[verify] mode=all root=e:\APP\归档\6.P0-T3基线\step9
+被测件：产品件 m07-vite（dist 产物）· PW 集成测试 canonical v2.0-t3.html（file:// 加载）
+
+▶ 静态检查（铁律 6 · 禁止 AI 生成注释）
+✓ 静态检查（铁律 6 · 禁止 AI 生成注释） (0 命中, 23ms)
+
+▶ Node 单元测试
+  $ node --test --test-concurrency=1 P0-T3/tests/structural-sharing.test.mjs P0-T3/tests/step1-produce.test.mjs P0-T3/tests/step2-commit.test.mjs P0-T3/tests/step3-light.test.mjs t9/t9-persist-layer.test.mjs t9/t9-backend-parity.test.mjs t9/t9-shadow-wiring.test.mjs t9/t10-idb-persist.test.mjs t9/t10-w4-consistency.test.mjs t9/t11-w4-consistency.test.mjs t9/t12-virtual-scroll.test.mjs t9/t12-w4-consistency.test.mjs t9/t13-mb-workset.test.mjs t9/t14-vs-hardening.test.mjs t9/t14-w4-consistency.test.mjs t9/t16-w1-persist-rev.test.mjs t9/t16-w2-cal-rev.test.mjs t9/t16-w3-sidebar-counts.test.mjs t9/t16-w4-outline-header-ro.test.mjs t9/t16-w5-caltg-visibility.test.mjs t9/t16-w6-childset-cache.test.mjs t9/t16-w7-collect-subtree.test.mjs t9/t16-w8-tombstone-sweep.test.mjs t9/t16-w9-theme-token.test.mjs t9/t16-w10-defecta-root-guard.test.mjs t9/t16-w11-tombstone-queue-compaction.test.mjs t9/t16-w12-patch-children-holes.test.mjs t9/t16-w13-remote-received-delete-propagation.test.mjs t9/t16-w14-persist-chain-async.test.mjs t9/t16-w15-sidecounts-fallback.test.mjs t9/t16-w16-sanitize-idempotent.test.mjs t9/t16-w17-boot-backup-fallback.test.mjs t9/t16-w18-pii-redaction.test.mjs t9/t16-w19-enc-stack-placeholder.test.mjs t9/t16-w20-calrev-gate.test.mjs t9/t16-w21-merge-ts-unit.test.mjs t9/t17-w1-rendersubtags-rows.test.mjs t9/t17-w2-weekview-local-day.test.mjs t9/t17-w3-p1-fixes.test.mjs t9/t17-w4-batch-fixes.test.mjs t9/t18-final-patch.test.mjs t9/t19-patch1.test.mjs t9/t19-patch2.test.mjs t9/t19-patch3.test.mjs
+
+✗ Node 单元测试（? 用例） 失败（退出码 1，2ms）
+
+━━ 步骤摘要 ━━
+  ✓ 静态检查（铁律 6 · 禁止 AI 生成注释） (23ms)
+  ✗ Node 单元测试（? 用例） (2ms) [spawnSync node ENOENT]

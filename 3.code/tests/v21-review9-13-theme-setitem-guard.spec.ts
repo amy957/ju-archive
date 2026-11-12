@@ -1,0 +1,21 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'); const BASE = 'http://localhost:5173';
+test('review9-13 · setItem 抛错不中断主题选择与 toggleTheme', async ({ browser }) => {
+  const ctx = await browser.newContext({ baseURL: BASE, viewport: { width: 1200, height: 900 } });
+  await ctx.route(BASE + '/**', (r: any) => { const p = new URL(r.request().url()).pathname; const f = path.join(ROOT, 'dist', p === '/' ? 'index.html' : decodeURIComponent(p)); try { return r.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: fs.readFileSync(f) }); } catch { return r.fulfill({ status: 404, body: '' }); } });
+  await ctx.addInitScript(() => { const w = window as any; w.__r913 = []; window.addEventListener('error', (e: any) => { w.__r913.push(String((e && e.error && e.error.message) || (e && e.message) || e)); }); const s = Storage.prototype.setItem; Storage.prototype.setItem = function (k: string, v: string) { if (k === 'juju.theme.manual') throw new Error('review9-13-quota'); return s.call(this, k, v); }; });
+  const page = await ctx.newPage(); const errs: string[] = []; page.on('pageerror', (e) => errs.push(String(e)));
+  await page.goto(BASE, { waitUntil: 'load' });
+  await page.waitForFunction(() => { const J = (window as any).JU; return !!(J && J.toggleTheme && J.actions); }, null, { timeout: 60_000 });
+  const before = await page.evaluate(() => document.documentElement.dataset.theme || 'day');
+  await page.locator('#btnTheme').click(); await page.locator('[data-theme-card="' + (before === 'night' ? 'day' : 'night') + '"]').last().click();
+  await page.locator('.modal .btn.primary').last().click();
+  const sel = await page.evaluate(() => document.documentElement.dataset.theme);
+  expect(sel, '主题选择确认仍应生效').not.toBe(before);
+  await page.evaluate(() => { (window as any).JU.toggleTheme(); });
+  const r = await page.evaluate(() => ({ theme: document.documentElement.dataset.theme, errs: (window as any).__r913 }));
+  expect(r.theme, 'toggleTheme 仍应切换').not.toBe(sel);
+  expect(r.errs, '不得有未捕获错误').toEqual([]); expect(errs, 'pageerror 必须为空').toEqual([]);
+  await ctx.close();
+});

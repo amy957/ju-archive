@@ -1,0 +1,50 @@
+﻿    {
+      "tab": "tab-3",
+      "mem": "ee1204bba0d5f399b3a44d9500ab6be898ceb9c81a1ba63dae2f75e9057ceced",
+      "disk": "ee1204bba0d5f399b3a44d9500ab6be898ceb9c81a1ba63dae2f75e9057ceced"
+    }
+  ],
+  "canonicalEqual": true,
+  "pageErrors": []
+}
+  ok 1 [chromium] 鈥?tests\concurrency.spec.ts:154:1 鈥?M1-2 3 鏍囩骞跺彂鏀舵暃娴嬭瘯锛堝唴瀛樻€?+ 纾佺洏鎬侊級 (1.2m)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-em2xKGQV.js
+[plugin vite:singlefile] Inlining: style-rIj2q606.css
+  ok 2 [chromium] 鈥?tests\full-e2e.spec.ts:427:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 1 路 鍔犲瘑涓庤В閿侀棴鐜細璁剧疆寮€鍚叏搴撳姞瀵?鈫?鍒锋柊閿佸畾 鈫?瑙ｉ攣鍚庢暟鎹浂涓㈠け (3.1s)
+[full-e2e] download=瀵煎叆鏂囨。-2026-10-30.md bytes=78
+  ok 3 [chromium] 鈥?tests\full-e2e.spec.ts:589:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 2 路 瀵煎叆涓庡鍑洪棴鐜細瀵煎叆 3 鑺傜偣 JSON 鈫?娓叉煋 鈫?瀵煎嚭 Markdown 鍚鍏ユ枃鏈?(1.2s)
+  ok 4 [chromium] 鈥?tests\full-e2e.spec.ts:684:3 鈥?CI 路 缁堟瀬鍏ㄩ摼璺?E2E 涓氬姟楠屾敹 鈥?鐢ㄤ緥 3 路 澶氱淮琛ㄦ牸涓庢棩鍘嗚仈鍔細琛ㄦ牸鏂板缓琛?鈫?璁句粖澶?鈫?鏃ュ巻褰撴棩寰呭姙鍙 (1.3s)
+[smoke] dist files=["index.html"] dirs=[]
+[smoke] dist/index.html bytes=4700328
+  ok 5 [chromium] 鈥?tests\smoke.spec.ts:88:3 鈥?M1-1 鍗?HTML 浜х墿 鈥?dist 蹇呴』浜у嚭 index.html锛屼笖鑴氭湰 / 鏍峰紡宸插唴鑱?(28ms)
+  ok 6 [chromium] 鈥?tests\smoke.spec.ts:120:3 鈥?M1-1 鍗?HTML 浜х墿 鈥?鍔犺浇鏋勫缓浜х墿锛氭爣棰?/ JU.getState 娆㈣繋鑺傜偣 / 涓夊尯 DOM 鍧囧瓨鍦?(752ms)
+
+  6 passed (1.4m)
+[build:all] 鉁?E2E 鍐掔儫 + 鍏ㄩ摼璺?+ 骞跺彂锛坧laywright锛?閫氳繃锛?7.3s锛?[build:all] E2E 閲嶅缓鍚庣殑 Web 浜х墿鎸囩汗锛堝嵆灏嗚 tauri build 鍐呭祵鐨勫瓧鑺傦級锛?[build:all] Web 浜х墿鎸囩汗锛歞ist/index.html  4700328 B  SHA-256 81f348d3e02f53f72d9f915c94e09f0751d82a596fdc67c02dbc672007111e07
+[build:all] 鉁?Web 浜х墿鍚壒寰佺鍙凤細applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+[build:all] 娓呯悊鍘嗗彶 tauri-codegen 璧勪骇娈嬬暀锛堢 5 姝ュ墠缃級锛?[build:all]   娓呯悊 codegen 璧勪骇鐩綍锛歴rc-tauri/target/release/build/app-e879dede60df386f/out/tauri-codegen-assets锛? 涓枃浠讹級
+[build:all]     - 50d72db322ac1ee7573abcf12dfa7b96c0afc98c3535afdbd98071eeaa15ffe5.html  3139335 B
+[build:all]   宸茶Е纰?src-tauri/build.rs锛堝己鍒?codegen 閲嶅缓锛?[build:all] 鉁?codegen 璧勪骇娓呯悊瀹屾垚锛氱洰褰?1 涓?/ 鏂囦欢 1 涓紙鏋勫缓鍚庡簲 stale=0锛?[build:all] 鈹佲攣鈹?[5/6] 妗岄潰鏋勫缓 tauri build --bundles none 鈹佲攣鈹?   Compiling tauri v1.8.3
+   Compiling app v0.1.0 (E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri)
+    Finished `release` profile [optimized] target(s) in 21.47s
+[build:all] 鉁?妗岄潰鏋勫缓 tauri build --bundles none 閫氳繃锛?4.9s锛?[build:all] 绗?5 姝ヤ骇鍑烘椂闂存埑锛?[build:all]   web e:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\dist\index.html  4700328 B  2026-10-30T14:50:58.461Z
+[build:all]   exe e:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\JU.exe  6759936 B  2026-10-30T14:51:30.195Z
+[build:all]   codegen 璧勪骇锛堟瀯寤哄悗锛夛細src-tauri/target/release/build/app-e879dede60df386f/out/tauri-codegen-assets  html=1 exe=0  [9cae9801ce27dc599b66c099bafa3332ef87527604a970f4a63682a2a75af0dc.html]
+[build:all] 鉁?codegen 璧勪骇鐩綍骞插噣锛堜粎鏈疆浜х墿锛屾棤娈嬬暀 HTML/exe锛?[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+[build:all] 鈹佲攣鈹?[6/6] 鍙戝竷褰掓。 prepare-release 鈹佲攣鈹?file:///e:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/m07-vite/scripts/prepare-release.mjs:55
+if (fs.existsSync(targetDir)) throw new Error('target exists: ' + targetDir);
+                                    ^
+
+Error: target exists: e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-10-29
+    at file:///e:/APP/%E5%BD%92%E6%A1%A3/6.P0-T3%E5%9F%BA%E7%BA%BF/m07-vite/scripts/prepare-release.mjs:55:37
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.22.2
+[build:all] 鉁?鍙戝竷褰掓。 prepare-release 澶辫触锛欵xit 1锛?.1s锛?[build:all]   寤鸿锛氬厛瀹屾垚 vite build 涓?tauri build锛屽啀鎵ц node scripts/prepare-release.mjs

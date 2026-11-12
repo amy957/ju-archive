@@ -1,0 +1,41 @@
+﻿{
+  "allGreen": true,
+  "gates": {
+    "smoke": true,
+    "property.full": true,
+    "property.clean": true,
+    "fuzz": true,
+    "crash": true,
+    "multitab": true,
+    "soak": true,
+    "mutation": true,
+    "error_report": true,
+    "dynamic": true,
+    "static": true
+  },
+  "elapsedMs": 7422,
+  "fatal": null,
+  "summary": {
+    "static": 9,
+    "smoke": "6/6",
+    "propertyFull": {
+      "I1": 0,
+      "I3": 0,
+      "I4": 0,
+      "I5": 0
+    },
+    "propertyClean": {
+      "I2": 0
+    },
+    "fuzz": "31/31",
+    "crash": "6/6",
+    "multitab": "4/4",
+    "soak": {
+      "ticks": [],
+      "max": 25.1
+    },
+    "mutation": "5/5",
+    "errorReport": "9/9",
+    "dynamic": "15/15"
+  }
+}

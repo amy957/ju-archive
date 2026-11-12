@@ -1,0 +1,14 @@
+dist/index.html bytes = 4698196
+<style> blocks = 4 (inline css chars = 116203)
+index.html inline style attrs = 0
+dist inline style attrs = 65（运行期模板，仅记录，不参与硬门禁）
+PASS  has <style tag
+PASS  has --bg variable
+PASS  has body{ rule
+PASS  has #sidebarLeft rule
+PASS  has .sb-row rule
+PASS  has .main-toggle rule
+PASS  has .tb-wbtn rule
+PASS  no external stylesheet link
+PASS  no inline style attribute in index.html
+P0 PASS: 样式已内联进单文件产物

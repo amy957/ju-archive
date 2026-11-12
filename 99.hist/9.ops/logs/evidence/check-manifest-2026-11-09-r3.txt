@@ -1,0 +1,8 @@
+﻿node.exe : [manifest] RESULT=FAIL docs/OPEN-ISSUES.md 涓?gen-open-issues.mjs 杈撳嚭涓嶄竴鑷达紙鎵嬫敼鍗崇孩锛岃閲嶈窇鐢熸垚鍣級
+所在位置 行:1 字符: 307
++ ... IT=' + $p); & '..\..\99.开发辅助工具\node.exe' 'scripts\check-manifest.mjs' ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([manifest] RESU...鍗崇孩锛岃閲嶈窇鐢熸垚鍣級:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+EXIT=1

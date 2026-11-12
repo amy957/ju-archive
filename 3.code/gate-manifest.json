@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "e2e_specs": [
+    "tests/smoke.spec.ts", "tests/full-e2e.spec.ts", "tests/concurrency.spec.ts", "tests/v21-fix30-topbar-popover.spec.ts", "tests/v21-fix31-topbar-popover.spec.ts",
+    "tests/v21-fix33-desktop-save-guard.spec.ts", "tests/v21-fix33-8-topbar-doc-close.spec.ts", "tests/v21-fix40-topbar-close-backup.spec.ts", "tests/v21-fix41-close-hidden-backup.spec.ts", "tests/v21-fixr6-close-persist.spec.ts",
+    "tests/v21-fixr6-merge-equal-ts.spec.ts", "tests/v21-fix43-bridge-capability.spec.ts", "tests/v21-review8-recovery.spec.ts", "tests/v21-review9-01-close-backup-enc.spec.ts", "tests/v21-review9-02-preimport-enc.spec.ts",
+    "tests/v21-review9-05-locked-backup.spec.ts", "tests/v21-review9-06-rt-console.spec.ts", "tests/v21-review9-08-legacy-backup-normalize.spec.ts", "tests/v21-review9-11-batch-import-continue.spec.ts", "tests/v21-review9-12-snapshot-ui-prefs.spec.ts",
+    "tests/v21-review9-13-theme-setitem-guard.spec.ts", "tests/v21-review9-14-css-token-integrity.spec.ts", "tests/v21-review10-enc-preimport.spec.ts", "tests/v21-review10-enc-backup-restore.spec.ts", "tests/v21-review11-preimport-once.spec.ts",
+    "tests/v21-review12-preimport-lifecycle.spec.ts", "tests/v21-fixr6-13-db-skip.spec.ts", "tests/v21-review5-feature-entries.spec.ts", "tests/review18-12-close-backup-error-log.spec.ts", "tests/v21-review25-04-relative-backup-dir.spec.ts",
+    "tests/v21-review25-07-pending-key.spec.ts", "tests/v21-review27-paste-multinode.spec.ts"
+  ],
+  "closed_high_specs": [
+    "tests/review18-12-close-backup-error-log.spec.ts", "tests/v21-fixr6-13-db-skip.spec.ts", "tests/v21-fixr6-close-persist.spec.ts", "tests/v21-fixr6-merge-equal-ts.spec.ts", "tests/v21-review10-enc-backup-restore.spec.ts",
+    "tests/v21-review10-enc-preimport.spec.ts", "tests/v21-review11-preimport-once.spec.ts", "tests/v21-review12-preimport-lifecycle.spec.ts", "tests/v21-review25-04-relative-backup-dir.spec.ts", "tests/v21-review25-07-pending-key.spec.ts",
+    "tests/v21-review5-feature-entries.spec.ts", "tests/v21-review8-recovery.spec.ts", "tests/v21-review9-01-close-backup-enc.spec.ts", "tests/v21-review9-02-preimport-enc.spec.ts", "tests/v21-review9-05-locked-backup.spec.ts",
+    "tests/v21-review9-06-rt-console.spec.ts", "tests/v21-review9-08-legacy-backup-normalize.spec.ts", "tests/v21-review9-11-batch-import-continue.spec.ts", "tests/v21-review9-12-snapshot-ui-prefs.spec.ts", "tests/v21-review9-13-theme-setitem-guard.spec.ts",
+    "tests/v21-review9-14-css-token-integrity.spec.ts", "tests/v21-review27-paste-multinode.spec.ts"
+  ],
+  "build_all_gates": ["check-manifest", "check-dist-parity", "check-web-parity", "check-no-sleep", "check-deps-wired", "check-inline-style", "check-unused-exports", "audit-license", "check-parity"],
+  "ci_gates": ["check-dist-parity", "check-web-parity", "check-release-parity", "verify-hash-registry", "verify-all", "check-manifest"],
+  "required_probes": [
+    { "id": "review9-08", "re": "^v21-review9-08-.*\\.spec\\.ts$" }, { "id": "review9-11", "re": "^v21-review9-11-.*\\.spec\\.ts$" },
+    { "id": "review9-12", "re": "^v21-review9-12-.*\\.spec\\.ts$" }, { "id": "review9-13", "re": "^v21-review9-13-.*\\.spec\\.ts$" },
+    { "id": "review9-14", "re": "^v21-review9-14-.*\\.spec\\.ts$" }
+  ]
+}

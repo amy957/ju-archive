@@ -1,0 +1,8 @@
+﻿node.exe : [manifest] RESULT=FAIL parity 涓?docs/OPEN-ISSUES.md 澹版槑涓嶄竴鑷?docs=PASS manifest=BLOCK
+所在位置 行:1 字符: 213
++ ... STEXITCODE; & '..\..\99.开发辅助工具\node.exe' 'scripts\check-manifest.mjs' ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([manifest] RESU... manifest=BLOCK:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+EXIT=1

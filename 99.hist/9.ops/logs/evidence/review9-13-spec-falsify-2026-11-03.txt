@@ -1,0 +1,51 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BD8fOaDm.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+[probe] {"sel":"night","tog":"day","errs":["review9-13-quota","review9-13-quota"],"pageErrors":[]}
+  x  1 [chromium] 鈥?tests\review9-13-probe.spec.ts:3:1 鈥?review9-13 路 setItem 鎶涢敊涓嶉樆鏂富棰樺垏鎹?(6.3s)
+
+
+  1) [chromium] 鈥?tests\review9-13-probe.spec.ts:3:1 鈥?review9-13 路 setItem 鎶涢敊涓嶉樆鏂富棰樺垏鎹?鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "review9-13-quota",
+    +   "review9-13-quota",
+    + ]
+
+      21 |   expect(sel).toBe('night');
+      22 |   expect(r.theme).toBe('day');
+    > 23 |   expect(r.errs).toEqual([]);
+         |                  ^
+      24 |   expect(errors).toEqual([]);
+      25 | });
+      26 |
+        at E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\tests\review9-13-probe.spec.ts:23:18
+
+    attachment #1: screenshot (image/png) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\review9-13-probe-review9-13-路-setItem-鎶涢敊涓嶉樆鏂富棰樺垏鎹?chromium\test-failed-1.png
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+    Error Context: test-results\review9-13-probe-review9-13-路-setItem-鎶涢敊涓嶉樆鏂富棰樺垏鎹?chromium\error-context.md
+
+    attachment #3: trace (application/zip) 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+    test-results\review9-13-probe-review9-13-路-setItem-鎶涢敊涓嶉樆鏂富棰樺垏鎹?chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\review9-13-probe-review9-13-路-setItem-鎶涢敊涓嶉樆鏂富棰樺垏鎹?chromium\trace.zip
+
+    鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+
+  1 failed
+    [chromium] 鈥?tests\review9-13-probe.spec.ts:3:1 鈥?review9-13 路 setItem 鎶涢敊涓嶉樆鏂富棰樺垏鎹?鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€

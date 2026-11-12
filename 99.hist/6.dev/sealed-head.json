@@ -1,0 +1,11 @@
+{
+  "canonical_version": "v2.0-l13-frozen-l22-final-r5-2026-10-20",
+  "byte_size": 1212364,
+  "sha256": "FE04CC1ADA7788FAFB84C11F4423CC303A42A124A9FB7E78A5ED4DF8A3F7C1D5",
+  "path": "6.P0-T3基线/v2.0-t3.html",
+  "frozen_path": "1.历史归档/1.1冻结版本/legacy-pre-tail-removal/v2.0-frozen.html",
+  "previous_version": "v2.0-l13-frozen-l22-final-r4-2026-10-19",
+  "previous_frozen_path": "1.历史归档/1.1冻结版本/v2.0-frozen.html",
+  "note": "r22 · 富文本（Word）模式安全下线（2026-10-20）：严格「先迁移数据、再删代码」——① migrateStateObject 末尾调用新增的 migrateWordToOutline(st)：旧节点 content 按块级标签（P/DIV/H1-6/LI/BLOCKQUOTE/PRE）拆成大纲子节点（空 content 时保留原 children），随后清除 _isWord / _wordFlat / content；已拍平进 content 的旧 children 随之移除，避免 repairTreeConsistency 挂回造成段落重复；mergeRemoteState 合入前同口径降级（旧版标签页写入的 Word 节点自动转换）。② 删除 VIEW_KIND.WORD、viewOf 的 word 分支、isWordDoc、getNodeSvg 的 word 图标、renderWordEditor、ensureWordInit、editorRole / editorSelector 的 word 角色、commitPendingEditBeforeRender 的 word 分支、右键菜单「转为富文本 / 转为大纲文档」整块、toHtml / docToExcel / showPrintPreview / doPrint 的 word 正文块、.word-editor / .we-body 五条 CSS 规则、bindRightSidebar 的 we-body 选择器；字数统计（docWordCount / __l14IntroJob）不再叠加 content、不再跳过子节点。③ 历史快照恢复改为就地迁移（不再单纯丢字段，避免旧快照正文丢失）。数据契约 / 加密 payload / 公开 API 零变更；<script> 块数保持 9。canonical / step9 镜像 / r22 冻结件三方逐字节一致（1,212,364 B / FE04CC1A…7C1D5，LF · CR=0 · LF=22,387）。全量门禁 exit 0：静态检查 0 命中 · Node 502 用例全通过 · Playwright 167 passed + 4 skipped = 171 · bench 7/7 通过（最大恶化 0.0%）；登记器 PARTY_COUNT=63 / FIVE_PARTY_DRIFT_COUNT=0 / RESULT=PASS。r4 真（1,205,588 B / 11B96CBC…41B2）物理保留为历史只读锚，字节不变。",
+  "updated_at": "2026-10-20T12:00:00+08:00"
+}

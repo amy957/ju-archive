@@ -1,0 +1,162 @@
+# ============================================================================
+# M07 · 产品 CI 流水线（类型检查 → 契约测试 → E2E → 构建 → 产物上传）
+# ---------------------------------------------------------------------------
+# ISSUE-004（2026-10-29）：GitHub Actions 只加载仓库根 `.github/workflows/`，
+# 原本位于 `3.code/.github/workflows/ci.yml` 的 workflow 从未被
+# 任何平台执行（子目录 workflow 不会被发现）。本文件是该流水线的唯一活动副本，
+# 原副本已删除；步骤集合与原文件逐步一致：
+#   tsc --noEmit → node --test → playwright install → playwright test
+#   → 上传 dist/index.html（CI 预构建产物）
+#
+# 触发：push 到 main（仅当 m07-vite 子树变更）/ 任意 pull_request（同路径过滤）
+# 运行环境：windows-latest（与桌面壳构建宿主一致）
+#
+# 说明：
+#   - 所有 `run` 步骤统一 `working-directory: 3.code`
+#     （package.json / tsconfig.json / playwright.config.ts 均在该目录）；
+#   - `uses:` 步骤（checkout / setup-node / upload-artifact）的 path 与
+#     cache-dependency-path 不受 working-directory 约束，必须写仓库根相对路径；
+#   - `node --test test/*.mjs` 的 glob 由 Node 测试运行器自身展开（Node ≥ 21），
+#     不依赖 PowerShell 通配符展开，行为与本地 `npm test` 一致；
+#   - CI 先构建一次（`vite build`），E2E 复用同一份 dist，避免测旧包；
+#     上传的即该次构建产出的 dist/index.html；
+#   - 末尾仅上传 `dist/index.html`（单文件 Web 交付物），缺失即视为失败；
+#   - 6/6b 构建在本地 build-all；CI 运行 parity/manifest 预检与回归。
+# ============================================================================
+name: m07-ci
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '3.code/**'
+  pull_request:
+    paths:
+      - '3.code/**'
+
+defaults:
+  run:
+    working-directory: 3.code
+
+jobs:
+  ci:
+    name: Type Check / Unit / E2E / Build
+    runs-on: windows-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # ISSUE-003：check-no-sleep 需要 HEAD~1 作为基线，浅克隆会让 diff 为空造成假绿
+          fetch-depth: 2
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: npm
+          cache-dependency-path: 3.code/package-lock.json
+
+      - name: Install dependencies
+        working-directory: 3.code
+        run: npm ci
+
+      # ISSUE-004（review17）：stale dist 必须在任何 vite build / Playwright 之前暴露。
+      # 多数 spec 的 prepareDist() 会先重建 dist，若 parity 放在 E2E 之后则永远绿。
+      # 顺序固定 dist → web → release；干净检出无 dist 时 --ci-mode 降级跳过前两项，
+      # 构建后的 parity step 保留为二次校验。
+      - name: Dist parity (src ↔ dist, pre-build)
+        working-directory: 3.code
+        run: node scripts/check-dist-parity.mjs --ci-mode
+
+      - name: Web parity (dist ↔ 归档 Web, pre-build)
+        working-directory: 3.code
+        run: node scripts/check-web-parity.mjs --ci-mode
+
+      # CI 无 src-tauri/target/release（target/ 被 gitignore）：以 --ci-mode 降级为归档自洽校验，
+      # 只验归档内 Web/exe/setup/checksums 是否自洽，不报 EXE_MISMATCH（历史编号 010）。
+      - name: Release parity (归档 Web/exe/setup/checksums 自洽, pre-build)
+        working-directory: 3.code
+        run: node scripts/check-release-parity.mjs --ci-mode
+
+      - name: Type check (tsc --noEmit)
+        working-directory: 3.code
+        run: npx tsc --noEmit
+
+      - name: Spec registration gate (check-spec-registration)
+        working-directory: 3.code
+        run: node scripts/check-spec-registration.mjs
+
+      - name: No new waitForTimeout
+        working-directory: 3.code
+        run: node scripts/check-no-sleep.mjs
+
+      - name: Deps wired gate (check-deps-wired)
+        working-directory: 3.code
+        run: node scripts/check-deps-wired.mjs
+
+      - name: Zero-drift gate (check-parity: canonical vs public copy)
+        working-directory: 3.code
+        run: node scripts/check-parity.mjs
+
+      - name: 未使用导出统计 (check-unused-exports)
+        working-directory: 3.code
+        run: node scripts/check-unused-exports.mjs --check
+
+      - name: Rust tests (cargo test 数据安全用例)
+        working-directory: 3.code
+        run: cargo test --manifest-path src-tauri/Cargo.toml
+ 
+      - name: Contract unit tests (node --test)
+        working-directory: 3.code
+        run: node --test test/*.mjs src/test/*.mjs
+
+      - name: Install Playwright Chromium
+        working-directory: 3.code
+        run: npx playwright install chromium
+
+      - name: Build web bundle (vite build)
+        working-directory: 3.code
+        run: npx vite build
+
+      - name: Inline style gate (check-inline-style)
+        working-directory: 3.code
+        run: node scripts/check-inline-style.mjs
+
+      - name: 许可审计
+        working-directory: 3.code
+        run: node scripts/audit-license.mjs --check
+
+      # ISSUE-004（review11-04）：归档自带清单必须在 CI 可见——manifest 的 bytes/SHA-256 与
+      # checksums 不符、缺件或归档缺失即 Exit 1（无构建产物依赖，parity 仍在本地 build-all 第 6b 步）。
+      - name: Release manifest gate (check-manifest)
+        run: node scripts/check-manifest.mjs
+
+      - name: E2E tests (playwright)
+        working-directory: 3.code
+        run: npx playwright test
+
+      - name: Dist parity (src ↔ dist)
+        working-directory: 3.code
+        run: node scripts/check-dist-parity.mjs
+
+      - name: Web parity (dist ↔ 归档 Web)
+        working-directory: 3.code
+        run: node scripts/check-web-parity.mjs
+
+      # ISSUE-010（review18-10）：归档自洽（不校验 exe 与构建产物同源）；权威判定在本地 build-all 6b。
+      # GITHUB_ACTIONS 置 false 仅使降级条件回到「无 src-tauri/target/release exe」；缺件/旧 setup/校验和不符照常 Exit 1。
+      - name: Release parity (归档自洽，不校验 exe 与构建产物同源)
+        working-directory: 3.code
+        env:
+          GITHUB_ACTIONS: 'false'
+        run: node scripts/check-release-parity.mjs
+
+      - name: Upload dist/index.html
+        uses: actions/upload-artifact@v4
+        with:
+          name: ju-web-dist
+          path: 3.code/dist/index.html
+          if-no-files-found: error
+          retention-days: 14

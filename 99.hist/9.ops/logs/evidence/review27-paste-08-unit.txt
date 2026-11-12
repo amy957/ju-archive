@@ -1,0 +1,79 @@
+TAP version 13
+# [PASTE-DBG richtext] html<=200: <ul><li>A<ul><li>B<ul><li>C</li></ul></li></ul></li></ul>
+# [PASTE-DBG richtext] plain<=200: 
+# [PASTE-DBG richtext] out.tree is null: false
+# [PASTE-DBG richtext] html<=200: <div data-indent="0">A</div><div data-indent="1">B</div><div data-indent="2">C</div>
+# [PASTE-DBG richtext] plain<=200: 
+# [PASTE-DBG richtext] out.tree is null: false
+# [PASTE-DBG richtext] html<=200: <div>A</div><div>B</div><div>C</div>
+# [PASTE-DBG richtext] plain<=200: 
+# [PASTE-DBG richtext] out.tree is null: false
+# Subtest: fixPaste-1 多行缩进纯文本解析为节点树
+ok 1 - fixPaste-1 多行缩进纯文本解析为节点树
+  ---
+  duration_ms: 2.0202
+  type: 'test'
+  ...
+# Subtest: fixPaste-1 制表符缩进同样成树
+ok 2 - fixPaste-1 制表符缩进同样成树
+  ---
+  duration_ms: 0.2651
+  type: 'test'
+  ...
+# Subtest: PASTE-001 无缩近平铺 A\\nB 建为 2 个根节点
+ok 3 - PASTE-001 无缩近平铺 A\\nB 建为 2 个根节点
+  ---
+  duration_ms: 0.234
+  type: 'test'
+  ...
+# Subtest: PASTE-001 无缩近平铺 A\\nB\\nC 建为 3 个根节点
+ok 4 - PASTE-001 无缩近平铺 A\\nB\\nC 建为 3 个根节点
+  ---
+  duration_ms: 0.265
+  type: 'test'
+  ...
+# Subtest: PASTE-002 嵌套 ul 输出深度 0/1/2
+ok 5 - PASTE-002 嵌套 ul 输出深度 0/1/2
+  ---
+  duration_ms: 1.7156
+  type: 'test'
+  ...
+# Subtest: PASTE-002 data-indent 0/1/2 输出链式父子
+ok 6 - PASTE-002 data-indent 0/1/2 输出链式父子
+  ---
+  duration_ms: 0.4865
+  type: 'test'
+  ...
+# Subtest: PASTE-002 平铺无 ind 输出 3 根
+ok 7 - PASTE-002 平铺无 ind 输出 3 根
+  ---
+  duration_ms: 0.5795
+  type: 'test'
+  ...
+# Subtest: PASTE-004 剥离无序列表标记 - * +
+ok 8 - PASTE-004 剥离无序列表标记 - * +
+  ---
+  duration_ms: 0.3212
+  type: 'test'
+  ...
+# Subtest: PASTE-004 剥离有序列表标记 1. 与 2)
+ok 9 - PASTE-004 剥离有序列表标记 1. 与 2)
+  ---
+  duration_ms: 0.3786
+  type: 'test'
+  ...
+# Subtest: PASTE-004 保留连字符开头无空白文本 -abc
+ok 10 - PASTE-004 保留连字符开头无空白文本 -abc
+  ---
+  duration_ms: 0.4043
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 162.3303

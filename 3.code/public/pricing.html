@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JU · 版本与购买</title>
+  <!--
+    Track B · 批次 CY · Supporter 购买页（纯静态，无外部依赖）
+    ------------------------------------------------------------------
+    · 展示免费版 / Pro 版功能对比（免费版 500 节点上限）；
+    · 底部「立即购买」→ `fetch(<mock 服务>/api/checkout)` 申请授权码；
+    · 成功后弹窗展示授权码，并提示「请前往设置中激活」；
+    · Mock 服务默认 `http://localhost:8081`（server/license-server.mjs，已开启 CORS：
+      `Access-Control-Allow-Origin: *`），跨端口请求依赖该响应头；
+    · 可用 `?api=http://host:port` 覆盖 Mock 地址（本地验收 / 换端口时使用）。
+  -->
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --fg: #1f2329;
+      --dim: #6b7280;
+      --line: #e5e7eb;
+      --brand: #3b6cf6;
+      --brand-dark: #2f57c9;
+      --pro: #f5a623;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px 20px 64px;
+      background: var(--bg);
+      color: var(--fg);
+      font: 15px/1.7 "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 32px; }
+    header h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: .5px; }
+    header p { margin: 0; color: var(--dim); }
+    .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    @media (max-width: 700px) { .plans { grid-template-columns: 1fr; } }
+    .plan {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+    }
+    .plan.pro { border-color: var(--pro); box-shadow: 0 6px 24px rgba(245, 166, 35, .16); }
+    .plan h2 { margin: 0 0 4px; font-size: 20px; }
+    .plan .tag {
+      display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px;
+      background: rgba(59, 108, 246, .1); color: var(--brand); margin-left: 8px; vertical-align: middle;
+    }
+    .plan.pro .tag { background: rgba(245, 166, 35, .16); color: #b57500; }
+    .plan .price { font-size: 26px; font-weight: 700; margin: 12px 0 4px; }
+    .plan .price small { font-size: 13px; font-weight: 400; color: var(--dim); }
+    .plan ul { list-style: none; margin: 16px 0 0; padding: 0; }
+    .plan li { padding: 7px 0 7px 26px; position: relative; border-top: 1px dashed var(--line); }
+    .plan li:first-child { border-top: 0; }
+    .plan li::before {
+      content: "✓"; position: absolute; left: 0; top: 7px;
+      color: #16a34a; font-weight: 700;
+    }
+    .plan li.no { color: var(--dim); }
+    .plan li.no::before { content: "×"; color: #d1d5db; }
+    table { width: 100%; border-collapse: collapse; margin-top: 32px; background: var(--card); border-radius: 12px; overflow: hidden; }
+    caption { text-align: left; font-weight: 600; padding: 0 0 10px; }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; font-size: 14px; }
+    thead th { background: #fbfbfd; font-weight: 600; }
+    tbody tr:last-child td { border-bottom: 0; }
+    td.yes { color: #16a34a; font-weight: 600; }
+    td.no { color: var(--dim); }
+    .buy-bar { margin-top: 36px; text-align: center; }
+    button.buy {
+      appearance: none; border: 0; cursor: pointer;
+      padding: 14px 44px; border-radius: 999px;
+      font-size: 16px; font-weight: 600; color: #fff;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    button.buy:hover { transform: translateY(-1px); }
+    button.buy:disabled { opacity: .6; cursor: progress; transform: none; }
+    .hint { margin-top: 12px; font-size: 13px; color: var(--dim); min-height: 20px; }
+    .hint.err { color: #dc2626; }
+    .mask {
+      position: fixed; inset: 0; background: rgba(15, 23, 42, .45);
+      display: none; align-items: center; justify-content: center; padding: 20px; z-index: 50;
+    }
+    .mask.on { display: flex; }
+    .dialog {
+      background: #fff; border-radius: 14px; padding: 24px; width: min(520px, 100%);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, .25);
+    }
+    .dialog h3 { margin: 0 0 6px; font-size: 18px; }
+    .dialog p { margin: 0 0 12px; color: var(--dim); font-size: 14px; }
+    .dialog code {
+      display: block; word-break: break-all; padding: 12px;
+      background: #f4f5f7; border: 1px solid var(--line); border-radius: 8px;
+      font: 12px/1.6 ui-monospace, Consolas, "Courier New", monospace;
+      max-height: 160px; overflow: auto;
+    }
+    .dialog .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; }
+    .dialog button {
+      appearance: none; cursor: pointer; padding: 9px 18px; border-radius: 8px;
+      border: 1px solid var(--line); background: #fff; font: inherit;
+    }
+    .dialog button.primary { border-color: var(--brand); background: var(--brand); color: #fff; }
+    footer { margin-top: 44px; text-align: center; font-size: 12px; color: var(--dim); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>JU 版本与购买</h1>
+      <p>免费版开箱即用；Pro 版解除规模限制，并解锁多端同步与协作能力。</p>
+    </header>
+
+    <section class="plans">
+      <div class="plan free">
+        <h2>免费版<span class="tag">永久免费</span></h2>
+        <div class="price">¥0 <small>/ 永久</small></div>
+        <ul>
+          <li>全部视图（大纲 / 导图 / 图谱 / 日历 / 表格 / 演示）</li>
+          <li>本地存储 + 本地加密</li>
+          <li>最多 500 个节点</li>
+          <li class="no">多端同步</li>
+          <li class="no">大库分片导出加速</li>
+        </ul>
+      </div>
+
+      <div class="plan pro">
+        <h2>Pro<span class="tag">推荐</span></h2>
+        <div class="price">¥199 <small>/ 年</small></div>
+        <ul>
+          <li>免费版全部能力</li>
+          <li>无限节点（不受 500 上限限制）</li>
+          <li>多端同步（桌面 / 浏览器 / 移动端）</li>
+          <li>大库分片导出与后台 Worker 加速</li>
+          <li>优先支持与更新通道</li>
+        </ul>
+      </div>
+    </section>
+
+    <table>
+      <caption>功能对比</caption>
+      <thead>
+        <tr><th>能力</th><th>免费版</th><th>Pro 版</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>节点数量上限</td><td class="no">500 个</td><td class="yes">无限</td></tr>
+        <tr><td>大纲 / 导图 / 图谱 / 日历 / 表格视图</td><td class="yes">支持</td><td class="yes">支持</td></tr>
+        <tr><td>本地存储与本地加密</td><td class="yes">支持</td><td class="yes">支持</td></tr>
+        <tr><td>多端同步</td><td class="no">不支持</td><td class="yes">支持</td></tr>
+        <tr><td>大库导出加速（分片 / Worker）</td><td class="no">不支持</td><td class="yes">支持</td></tr>
+        <tr><td>更新通道</td><td>常规</td><td class="yes">优先</td></tr>
+      </tbody>
+    </table>
+
+    <div class="buy-bar">
+      <button class="buy" id="btnBuy" type="button">立即购买</button>
+      <div class="hint" id="buyHint">购买后请在应用内「设置 → 许可证激活」粘贴授权码。</div>
+    </div>
+
+    <footer>本页为本地 Mock 购买闭环：授权码由 server/license-server.mjs 签发，不上传、不联网。</footer>
+  </div>
+
+  <div class="mask" id="licenseMask">
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="licenseTitle">
+      <h3 id="licenseTitle">授权码已生成</h3>
+      <p>请前往 <strong>设置 → 许可证激活</strong> 粘贴下方授权码完成激活。</p>
+      <code id="licenseKeyBox"></code>
+      <div class="actions">
+        <button type="button" id="btnCopyLicense">复制授权码</button>
+        <button type="button" class="primary" id="btnCloseLicense">知道了</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      /* Mock 服务基址：`?api=` 覆盖 > 页面同源（若由 Mock 直接托管）> 默认 8081 */
+      var params = new URLSearchParams(location.search);
+      var override = params.get('api');
+      var MOCK_BASE = override
+        ? String(override).replace(/\/+$/, '')
+        : (location.protocol === 'file:' ? 'http://localhost:8081' : location.origin);
+      /* 页面由 Vite / 静态服务器承载（如 5173）时，换到 Mock 服务的 8081 端口 */
+      if (!override && /^https?:$/.test(location.protocol)) {
+        MOCK_BASE = location.protocol + '//' + location.hostname + ':8081';
+      }
+      var CHECKOUT_URL = MOCK_BASE + '/api/checkout';
+
+      var btn = document.getElementById('btnBuy');
+      var hint = document.getElementById('buyHint');
+      var mask = document.getElementById('licenseMask');
+      var keyBox = document.getElementById('licenseKeyBox');
+      var btnCopy = document.getElementById('btnCopyLicense');
+      var btnClose = document.getElementById('btnCloseLicense');
+      var lastLicense = '';
+
+      function setHint(text, isError) {
+        hint.textContent = text;
+        hint.className = isError ? 'hint err' : 'hint';
+      }
+
+      function openDialog(license) {
+        lastLicense = license;
+        keyBox.textContent = license;
+        mask.classList.add('on');
+      }
+
+      function closeDialog() {
+        mask.classList.remove('on');
+      }
+
+      btn.addEventListener('click', function () {
+        /* 购买身份：Mock 闭环不收集任何个人信息，使用本地随机访客 id */
+        var userId = 'guest-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+        btn.disabled = true;
+        setHint('正在向本地授权服务申请授权码…', false);
+        fetch(CHECKOUT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: userId, plan: 'pro' }),
+        })
+          .then(function (res) {
+            return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+          })
+          .then(function (r) {
+            if (!r.ok || !r.data || r.data.ok !== true || !r.data.license) {
+              throw new Error((r.data && r.data.error) || '授权服务返回异常');
+            }
+            openDialog(String(r.data.license));
+            setHint('授权码已生成，请前往设置中激活。', false);
+          })
+          .catch(function (e) {
+            setHint('申请失败：' + (e && e.message ? e.message : e) +
+              '（请确认已执行 node server/license-server.mjs，端口 8081 可访问）', true);
+          })
+          .then(function () { btn.disabled = false; });
+      });
+
+      btnCopy.addEventListener('click', function () {
+        var text = lastLicense;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            setHint('授权码已复制，请前往设置中激活。', false);
+          }).catch(function () { setHint('复制失败，请手动选中授权码复制。', true); });
+        } else {
+          setHint('当前浏览器不支持自动复制，请手动选中授权码复制。', true);
+        }
+      });
+
+      btnClose.addEventListener('click', closeDialog);
+      mask.addEventListener('click', function (e) { if (e.target === mask) closeDialog(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDialog(); });
+    })();
+  </script>
+</body>
+</html>

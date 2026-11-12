@@ -1,0 +1,14 @@
+﻿dist/index.html bytes = 4712563
+<style> blocks = 4 (inline css chars = 118467)
+index.html inline style attrs = 0
+dist inline style attrs = 61锛堣繍琛屾湡妯℃澘锛屼粎璁板綍锛屼笉鍙備笌纭棬绂侊級
+PASS  has <style tag
+PASS  has --bg variable
+PASS  has body{ rule
+PASS  has #sidebarLeft rule
+PASS  has .sb-row rule
+PASS  has .main-toggle rule
+PASS  has .tb-wbtn rule
+PASS  no external stylesheet link
+PASS  no inline style attribute in index.html
+P0 PASS: 鏍峰紡宸插唴鑱旇繘鍗曟枃浠朵骇鐗?

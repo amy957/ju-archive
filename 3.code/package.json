@@ -1,0 +1,30 @@
+{
+  "name": "m07-vite",
+  "private": true,
+  "version": "2.1.0",
+  "type": "module",
+  "description": "JU Core",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:app": "tauri build --ci",
+    "build:all": "node scripts/build-all.mjs",
+    "typecheck": "tsc --noEmit",
+    "release": "node scripts/build-all.mjs",
+    "preview": "vite preview",
+    "test": "node --test test/*.mjs src/test/*.mjs",
+    "parity": "node scripts/check-parity.mjs",
+    "scan:unused": "node scripts/check-unused-exports.mjs --write",
+    "scan:license": "node scripts/audit-license.mjs --write",
+    "server:license": "node server/license-server.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@tauri-apps/api": "^1.6.0",
+    "@tauri-apps/cli": "^1.6.3",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vite-plugin-singlefile": "^2.3.4"
+  }
+}

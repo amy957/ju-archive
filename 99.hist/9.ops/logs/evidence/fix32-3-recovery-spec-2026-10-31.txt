@@ -1,0 +1,17 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-DQ3Q9R2l.js
+[plugin vite:singlefile] Inlining: style-B2erJ0Yf.css
+  ok 1 [chromium] 鈥?tests\recovery.spec.ts:138:3 鈥?M3-3a 澶囦唤/鎭㈠鏁呴殰娉ㄥ叆 鈥?鎹熷潖鐨勪富搴?JSON 鑷姩鎭㈠榛樿娆㈣繋鑺傜偣 (4.9s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-DQ3Q9R2l.js
+[plugin vite:singlefile] Inlining: style-B2erJ0Yf.css
+  ok 2 [chromium] 鈥?tests\recovery.spec.ts:208:3 鈥?M3-3a 澶囦唤/鎭㈠鏁呴殰娉ㄥ叆 鈥?瀛樺偍閰嶉婊℃椂闄嶇骇鎻愮ず涓斾笉宕╂簝 (2.9s)
+
+  2 passed (9.7s)

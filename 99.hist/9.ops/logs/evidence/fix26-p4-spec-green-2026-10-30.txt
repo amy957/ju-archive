@@ -1,0 +1,8 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] 鈥?6.P0-T3鍩虹嚎\m07-vite\tests\v21-fix26-p4-sidebar-rename.spec.ts:15:1 鈥?fix26-p4 路 渚ф爮閲嶅懡鍚嶅悗 .sb-label 绔嬪嵆鍙樹负鏂板悕绉?(6.7s)
+
+  1 passed (8.1s)

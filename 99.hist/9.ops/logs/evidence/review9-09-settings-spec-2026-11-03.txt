@@ -1,0 +1,21 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 6 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+[1/6] [chromium] › tests\v21-fix9-settings-bind.spec.ts:135:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 字号滑杆 #setFontSize：拖到 155 → ui().scale ≈ 1.55 + --font-size 变化 + 百分比更新
+[chromium] › tests\v21-fix9-settings-bind.spec.ts:135:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 字号滑杆 #setFontSize：拖到 155 → ui().scale ≈ 1.55 + --font-size 变化 + 百分比更新
+[plugin vite:singlefile] 
+
+
+[plugin vite:singlefile] Inlining: main-BZsNcXW7.js
+
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+
+[2/6] [chromium] › tests\v21-fix9-settings-bind.spec.ts:178:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 自动备份开关 #setAutoBackupClose：点击 → ui().autoBackupOnClose 变化 + .switch.on 变化
+[3/6] [chromium] › tests\v21-fix9-settings-bind.spec.ts:215:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 恢复默认路径 #btnBackupDirReset：点击 → toast「已恢复默认备份路径」+ ui().backupDir 清空
+[4/6] [chromium] › tests\v21-fix9-settings-bind.spec.ts:230:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 从备份恢复 #btnRestoreBackup：点击 → 打开导入弹窗（openImportDialog）
+[5/6] [chromium] › tests\v21-fix9-settings-bind.spec.ts:246:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 系统提醒通知 #setReminder：点击 → ui().reminderEnabled === true + .switch.on 翻转（REG-9 撤回）
+[6/6] [chromium] › tests\v21-fix9-settings-bind.spec.ts:277:3 › v2.1 fix9 · 设置浮窗补绑（SIMPLE 4 项） › 4 项已恢复：全库加密 / 备份位置·浏览 / 快捷键 / 反馈 count=1 且点击有可观测反应
+  6 passed (20.4s)

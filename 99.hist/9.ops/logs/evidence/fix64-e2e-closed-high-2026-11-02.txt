@@ -1,0 +1,11 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 4 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  ok 1 [chromium] › tests\v21-fix33-8-topbar-doc-close.spec.ts:7:1 › fix33-8 · 打开取色器后点 #btnSettings 取色器关闭 (1.4s)
+  ok 2 [chromium] › tests\v21-fix33-8-topbar-doc-close.spec.ts:20:1 › fixr6-6 · __TAURI__ 缺 window 命名空间时 #btnClose 不抛 TypeError 并提示窗口 API (1.4s)
+  ok 3 [chromium] › tests\v21-fixr6-close-persist.spec.ts:4:1 › fixr6-4 · 关窗等主库 save_state 落盘后再 close (2.1s)
+  ok 4 [chromium] › tests\v21-fixr6-merge-equal-ts.spec.ts:4:1 › fixr6-8 · 两标签各落盘 10 节点后磁盘必须为 20（写盘前合并门槛） (3.1s)
+
+  4 passed (9.5s)

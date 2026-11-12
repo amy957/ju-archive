@@ -1,0 +1,47 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+  x  1 [chromium] › tests\v21-review5-feature-entries.spec.ts:5:1 › review5 · 主题/导入/完整备份/打印入口可达且点击不抛错 (20.7s)
+
+
+  1) [chromium] › tests\v21-review5-feature-entries.spec.ts:5:1 › review5 · 主题/导入/完整备份/打印入口可达且点击不抛错 
+
+    Error: a.db 不得中断整批：b.md 必须生成节点
+
+    a.db 不得中断整批：b.md 必须生成节点
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+      26 |     { name: 'b.md', mimeType: 'text/markdown', buffer: Buffer.from('imp-md 节点') },
+      27 |   ]);
+    > 28 |   await expect.poll(impMd, { message: 'a.db 不得中断整批：b.md 必须生成节点', timeout: 20_000 }).toBe(1);
+         |                                                                                     ^
+      29 |   await expect(page.locator('#toast')).toContainText('a.db');
+      30 |   await page.keyboard.press('Escape'); await expect(page.locator('.modal-overlay')).toHaveCount(0);
+      31 |   await page.locator('.sr-title', { hasText: '打印' }).first().click();
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-review5-feature-entries.spec.ts:28:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\v21-review5-feature-entrie-02f86-5-·-主题-导入-完整备份-打印入口可达且点击不抛错-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\v21-review5-feature-entrie-02f86-5-·-主题-导入-完整备份-打印入口可达且点击不抛错-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v21-review5-feature-entrie-02f86-5-·-主题-导入-完整备份-打印入口可达且点击不抛错-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-review5-feature-entrie-02f86-5-·-主题-导入-完整备份-打印入口可达且点击不抛错-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\v21-review5-feature-entries.spec.ts:5:1 › review5 · 主题/导入/完整备份/打印入口可达且点击不抛错 ─

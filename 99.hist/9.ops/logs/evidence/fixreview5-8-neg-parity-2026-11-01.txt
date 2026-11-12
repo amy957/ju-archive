@@ -1,0 +1,26 @@
+[build:all] 产品件（m07-vite）本地一键发版开始：tsc → 装配门禁 → test → vite → e2e → tauri → prepare-release
+[build:all] ━━━ [1/6] 类型检查 tsc --noEmit ━━━
+[build:all] ✓ 类型检查 tsc --noEmit 通过（5.0s）
+[build:all] ━━━ [1b/6] 装配门禁 check-deps-wired ━━━
+PASS  bindLayoutDeps: 5 个关键依赖均为真实实现
+PASS  bindThemeDeps: 2 个关键依赖均为真实实现
+PASS  bindSelectionDeps: 3 个关键依赖均为真实实现
+PASS  bindSidebarDeps: 17 个关键依赖均为真实实现
+PASS  bindRightbarDeps: 4 个关键依赖均为真实实现
+PASS  bindRenderMainDeps: 8 个关键依赖均为真实实现
+PASS  injectBootDeps: 8 个关键依赖均为真实实现
+PASS  bindErrorDeps: 5 个关键依赖均为真实实现
+PASS  bindPersistDeps: 7 个关键依赖均为真实实现
+PASS  bindCryptoDeps: 10 个关键依赖均为真实实现
+isDesktop 同源: hasDesktopInvoke
+PASS  desktopSave: 函数体含能力检查且按异常判败
+
+共检查 71 个依赖键，失败 0 项
+P1/P2 PASS: 装配点无空壳依赖
+[build:all] ✓ 装配门禁 check-deps-wired 通过（0.1s）
+[build:all] ━━━ [1c/6] 零漂移与内联样式闸门 ━━━
+PARITY FAIL
+  copy  : sha256=b6ae2e1121329c30d1996a5ee9bbdd70c9d01ea1d728216be97c99802af4e7eb  bytes=1316708  e:\APP\归档\6.P0-T3基线\m07-vite\public\v2.0-t3.html
+  canon : sha256=5fed021578e775b560bf98af719046eb2916472f4053354a33a1a436dfbff818  bytes=1316707  e:\APP\归档\6.P0-T3基线\v2.0-t3.html
+[build:all] ✗ 零漂移与内联样式闸门 失败：Exit 1（0.1s）
+[build:all]   建议：node scripts/check-parity.mjs

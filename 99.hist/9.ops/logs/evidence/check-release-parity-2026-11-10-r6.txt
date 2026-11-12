@@ -1,0 +1,6 @@
+﻿[parity] v2.1.0-2026-11-10/JU-v2.1-Web.html  6fed7d742f2b75636a7122a03ea6af9cf21938247e1897d9efd1e4f419868e34
+[parity] dist/index.html  6fed7d742f2b75636a7122a03ea6af9cf21938247e1897d9efd1e4f419868e34
+[parity] 鉁?褰掓。 Web 涓?dist 涓€鑷?[parity] v2.1.0-2026-11-10/JU-v2.1-win-x64.exe  58a7ce4489bf401b0e85e73fea8d934b81fb629e08bdd98412210fc24f8f7527
+[parity] 6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\ju.exe  58a7ce4489bf401b0e85e73fea8d934b81fb629e08bdd98412210fc24f8f7527
+[parity] 鉁?褰掓。 exe 涓庢瀯寤轰骇鐗╀竴鑷?[parity] 鉁?exe 鈮?src 鏈€鏂板彉鏇?[parity] 鉁?褰掓。婧愮爜鎸囩汗涓庡綋鍓嶆簮鐮佷竴鑷?3e8fa03cf5debfa6c1bd5d3926781bfa549f412907ace86d1229efedf9498542
+[parity] v2.1.0-2026-11-10/JU_2.1.0_x64-setup.exe  4468840 bytes  鉁?[parity] 鉁?checksums 3 椤瑰绠椾竴鑷?

@@ -1,0 +1,46 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-n_gEjmpA.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  x  1 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:241:1 › review17 · H 复核失败保持明文态：load_state 首抛一次不回滚 (6.1s)
+
+
+  1) [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:241:1 › review17 · H 复核失败保持明文态：load_state 首抛一次不回滚 
+
+    Error: 复核失败不得回滚 ui.encrypted=true
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      254 |   await expect.poll(async () => { const t = await r14Toast(page); return /已关闭加密|关闭加密失败/.test(t) ? 'done' : t; }, { timeout: 60_000 }).toBe('done');
+      255 |   const ui = await page.evaluate(() => { const J = (window as any).JU; const u = typeof J.ui === 'function' ? J.ui() : J.ui; return { encrypted: !!u.encrypted, encKey: u.encKey }; });
+    > 256 |   expect(ui.encrypted, '复核失败不得回滚 ui.encrypted=true').toBe(false);
+          |                                                      ^
+      257 |   expect(ui.encKey, '复核失败不得恢复 encKey').toBeFalsy();
+      258 |   const st: any = await r14Load(page);
+      259 |   expect(String(st.encStore || ''), '复核失败后盘上不得有 encStore').toBe('');
+        at e:\APP\归档\6.P0-T3基线\m07-vite\tests\v21-review12-preimport-lifecycle.spec.ts:256:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\v21-review12-preimport-lif-e25f7-核失败保持明文态：load-state-首抛一次不回滚-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\v21-review12-preimport-lif-e25f7-核失败保持明文态：load-state-首抛一次不回滚-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v21-review12-preimport-lif-e25f7-核失败保持明文态：load-state-首抛一次不回滚-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v21-review12-preimport-lif-e25f7-核失败保持明文态：load-state-首抛一次不回滚-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:241:1 › review17 · H 复核失败保持明文态：load_state 首抛一次不回滚 

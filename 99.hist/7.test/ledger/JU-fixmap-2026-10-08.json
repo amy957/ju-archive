@@ -1,0 +1,1072 @@
+{
+  "$schema": "internal://ju/fix-map/v1",
+  "version": "v2.0-frozen",
+  "frozenAt": "2026-10-08T11:40:00.000Z",
+  "baseline": {
+    "file": "P0-L3/baseline/v2.0-l3__baseline_original.html",
+    "sha256": "0635e55a2c8212d60c7ff2450aebf2c77a5277a502b19f9528fbac09829da1c6"
+  },
+  "baselineStep1": {
+    "file": "P0-L3/baseline-step1.html",
+    "sha256": "2d79f53373018dd62af0e2906f300df696564a3ee21e50fc7e1649f7519017ee",
+    "note": "Step0 原始 + step1.diff（-p0）中间产物；功能对拍的 P0 前基线（含 __juProduce，无 Step2/3）"
+  },
+  "after": {
+    "file": "v2.0-l3.html.html",
+    "sha256": "d67d349dff46e7fb955bdadae7a94443543b25ddbfa25083602831abd586fb78"
+  },
+  "summary": {
+    "fixes": 59,
+    "tests": 68,
+    "docs": 16,
+    "tools": 3,
+    "byLevel": {
+      "P0": 0,
+      "P1": 15,
+      "P2": 8,
+      "OK": 36
+    },
+    "byStatus": {
+      "完成": 35,
+      "7 通过": 1,
+      "24 通过": 1,
+      "28 通过": 1,
+      "待办": 5,
+      "审计通过": 10,
+      "已复核": 3,
+      "已闭环": 1,
+      "完成（评估关闭）": 2
+    },
+    "byCategory": {
+      "code": 8,
+      "tool": 3,
+      "test": 3,
+      "doc": 14,
+      "action": 10,
+      "ok": 10,
+      "obs": 4,
+      "agg": 7
+    }
+  },
+  "fixes": [
+    {
+      "id": "L3-01",
+      "category": "code",
+      "title": "内联 __juProduce",
+      "location": "v2.0-l3.html.html",
+      "level": "OK",
+      "status": "完成",
+      "owner": "core",
+      "step": 1,
+      "artifacts": [
+        "P0-L3/选型记录.md",
+        "P0-L3/immutable-adapter.md"
+      ],
+      "evidence": [
+        "tests/l3-reference-semantics.spec.ts#I-01~I-05"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-02",
+      "category": "code",
+      "title": "内联 __juProduceSafe",
+      "location": "v2.0-l3.html.html",
+      "level": "OK",
+      "status": "完成",
+      "owner": "core",
+      "step": 1,
+      "artifacts": [
+        "P0-L3/immutable-adapter.md"
+      ],
+      "evidence": [
+        "tests/l3-reference-semantics.spec.ts#I-06~I-07"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-03",
+      "category": "code",
+      "title": "commit 非 light 走 __juProduceSafe",
+      "location": "commit()",
+      "level": "OK",
+      "status": "完成",
+      "owner": "core",
+      "step": 2,
+      "artifacts": [
+        "P0-L3/commit-diff.patch",
+        "P0-L3/commit替换说明.md"
+      ],
+      "evidence": [
+        "tests/l3-commit-callbacks.spec.ts#Step2"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-04",
+      "category": "code",
+      "title": "undo/redo 统一 safeClone 入栈",
+      "location": "undo()/redo()",
+      "level": "OK",
+      "status": "完成",
+      "owner": "core",
+      "step": 2,
+      "artifacts": [
+        "P0-L3/commit-diff.patch"
+      ],
+      "evidence": [
+        "tests/l3-reference-semantics.spec.ts#I-16~I-18"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-05",
+      "category": "code",
+      "title": "light _backupValid 检测（机制已废除：produce 失败天然不污染 base，无回滚检测）",
+      "location": "commit()",
+      "level": "P1",
+      "status": "完成",
+      "owner": "core",
+      "step": 3,
+      "artifacts": [
+        "P0-L3/light污染修复记录.md"
+      ],
+      "evidence": [
+        "tests/l3-light-pollution.spec.ts#A1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-06",
+      "category": "code",
+      "title": "light 抛错 reportError（两种 kind）（机制已废除：produce 失败不产生 kind，无上报）",
+      "location": "commit()",
+      "level": "P1",
+      "status": "完成",
+      "owner": "core",
+      "step": 3,
+      "artifacts": [
+        "P0-L3/light污染修复记录.md"
+      ],
+      "evidence": [
+        "tests/l3-light-pollution.spec.ts#A1",
+        "tests/l3-light-pollution.spec.ts#A2"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-07",
+      "category": "code",
+      "title": "light 抛错强制通知（非 silent）（语义保持：失败非 silent 时 scheduleNotify 一次）",
+      "location": "commit()",
+      "level": "P1",
+      "status": "完成",
+      "owner": "core",
+      "step": 3,
+      "artifacts": [
+        "P0-L3/light污染修复记录.md"
+      ],
+      "evidence": [
+        "tests/l3-light-pollution.spec.ts#B1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-08",
+      "category": "code",
+      "title": "flushPendingLogs 关页前告警断言",
+      "location": "flushBeforeUnload",
+      "level": "P1",
+      "status": "完成",
+      "owner": "core",
+      "step": 5,
+      "artifacts": [
+        "P0-L3/回调验证记录.md"
+      ],
+      "evidence": [
+        "tests/l3-commit-callbacks.spec.ts#P1-3"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-11",
+      "category": "tool",
+      "title": "审计工具集（audit-commit-callbacks.js + audit-indirect-calls.js）",
+      "location": "tools/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "tooling",
+      "step": 4,
+      "artifacts": [
+        "P0-L3/commit-callback-audit.csv",
+        "P0-L3/commit-callback-indirect.csv",
+        "P0-L3/Step9-tools-输出.md"
+      ],
+      "evidence": [
+        "P0-L3/Step9-tools-输出.md"
+      ],
+      "relatedActions": [
+        "ACT-4"
+      ]
+    },
+    {
+      "id": "L3-12",
+      "category": "tool",
+      "title": "compare-bench.js",
+      "location": "scripts/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "tooling",
+      "step": 7,
+      "artifacts": [
+        "P0-L3/P0后基准对比.md"
+      ],
+      "evidence": [
+        "node scripts/compare-bench.js"
+      ],
+      "relatedActions": [
+        "BENCH-ACT-1"
+      ]
+    },
+    {
+      "id": "L3-13",
+      "category": "tool",
+      "title": "bench-p0-after-l3.spec.ts",
+      "location": "tests/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "tooling",
+      "step": 7,
+      "artifacts": [
+        "bench-p0-after-l3.json",
+        "bench-p0-baseline.json"
+      ],
+      "evidence": [
+        "npx playwright test tests/bench-p0-after-l3.spec.ts"
+      ],
+      "relatedActions": [
+        "BENCH-ACT-1",
+        "BENCH-ACT-3"
+      ]
+    },
+    {
+      "id": "L3-21",
+      "category": "test",
+      "title": "l3-light-pollution.spec.ts",
+      "location": "tests/",
+      "level": "P1",
+      "status": "7 通过",
+      "owner": "qa",
+      "step": 3,
+      "artifacts": [
+        "P0-L3/light污染修复记录.md"
+      ],
+      "evidence": [
+        "playwright-report"
+      ],
+      "relatedActions": [
+        "REG-ACT-1"
+      ]
+    },
+    {
+      "id": "L3-22",
+      "category": "test",
+      "title": "l3-commit-callbacks.spec.ts",
+      "location": "tests/",
+      "level": "P1",
+      "status": "24 通过",
+      "owner": "qa",
+      "step": 5,
+      "artifacts": [
+        "P0-L3/回调验证记录.md"
+      ],
+      "evidence": [
+        "playwright-report"
+      ],
+      "relatedActions": [
+        "REG-ACT-1",
+        "REF-ACT-3"
+      ]
+    },
+    {
+      "id": "L3-23",
+      "category": "test",
+      "title": "l3-reference-semantics.spec.ts",
+      "location": "tests/",
+      "level": "P1",
+      "status": "28 通过",
+      "owner": "qa",
+      "step": 6,
+      "artifacts": [
+        "P0-L3/引用语义测试报告.md"
+      ],
+      "evidence": [
+        "playwright-report"
+      ],
+      "relatedActions": [
+        "REF-ACT-3"
+      ]
+    },
+    {
+      "id": "L3-31",
+      "category": "doc",
+      "title": "P0-L3/README.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 0,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/README.md"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-32",
+      "category": "doc",
+      "title": "P0-L3/基线核对.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 0,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/基线核对.md"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-33",
+      "category": "doc",
+      "title": "P0-L3/选型记录.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 1,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/选型记录.md"
+      ],
+      "relatedActions": [
+        "REF-ACT-1"
+      ]
+    },
+    {
+      "id": "L3-34",
+      "category": "doc",
+      "title": "P0-L3/immutable-adapter.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 1,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/immutable-adapter.md"
+      ],
+      "relatedActions": [
+        "ACT-3",
+        "REF-ACT-1"
+      ]
+    },
+    {
+      "id": "L3-35",
+      "category": "doc",
+      "title": "P0-L3/commit-diff.patch",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 2,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-diff.patch"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-36",
+      "category": "doc",
+      "title": "P0-L3/commit替换说明.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 2,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit替换说明.md"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-37",
+      "category": "doc",
+      "title": "P0-L3/light污染修复记录.md",
+      "location": "P0-L3/",
+      "level": "P1",
+      "status": "完成",
+      "owner": "docs",
+      "step": 3,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/light污染修复记录.md"
+      ],
+      "relatedActions": [
+        "ACT-3"
+      ]
+    },
+    {
+      "id": "L3-38",
+      "category": "doc",
+      "title": "P0-L3/commit-callback-audit.md",
+      "location": "P0-L3/",
+      "level": "P1",
+      "status": "完成",
+      "owner": "docs",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.md"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-39",
+      "category": "doc",
+      "title": "P0-L3/commit-callback-audit.csv（显式 84 条）",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv",
+        "P0-L3/commit-callback-indirect.csv"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-40",
+      "category": "doc",
+      "title": "P0-L3/回调验证记录.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 5,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/回调验证记录.md"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "L3-41",
+      "category": "doc",
+      "title": "P0-L3/引用语义测试报告.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 6,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/引用语义测试报告.md"
+      ],
+      "relatedActions": [
+        "REF-ACT-1",
+        "REF-ACT-2"
+      ]
+    },
+    {
+      "id": "L3-42",
+      "category": "doc",
+      "title": "P0-L3/P0后基准对比.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 7,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/P0后基准对比.md"
+      ],
+      "relatedActions": [
+        "BENCH-ACT-1",
+        "BENCH-ACT-3"
+      ]
+    },
+    {
+      "id": "L3-43",
+      "category": "doc",
+      "title": "P0-L3/回归对拍报告.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 7,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/回归对拍报告.md"
+      ],
+      "relatedActions": [
+        "REG-ACT-1",
+        "REG-ACT-3"
+      ]
+    },
+    {
+      "id": "L3-44",
+      "category": "doc",
+      "title": "P0-L3/性能预算.md",
+      "location": "P0-L3/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "docs",
+      "step": 9,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/性能预算.md"
+      ],
+      "relatedActions": [
+        "BENCH-ACT-3"
+      ]
+    },
+    {
+      "id": "ACT-1",
+      "category": "action",
+      "title": "OBS-3 落定：mindmap 拖拽改 snapshot:false",
+      "location": "renderMindmap",
+      "level": "P1",
+      "status": "完成",
+      "owner": "core",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.md#OBS-3",
+        "P0-L3/回调验证记录.md#OBS-3"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "ACT-2",
+      "category": "action",
+      "title": "P1 UI 一致性：列/行拖拽 up 回调 try/finally",
+      "location": "renderDbTable",
+      "level": "P1",
+      "status": "完成",
+      "owner": "core",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.md#P1-1",
+        "tests/l3-commit-callbacks.spec.ts#P1-1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "ACT-3",
+      "category": "action",
+      "title": "light 引用不变量 + dirtyText 三态文档补遗",
+      "location": "immutable-adapter.md",
+      "level": "P2",
+      "status": "完成",
+      "owner": "docs",
+      "step": 6,
+      "artifacts": [
+        "P0-L3/immutable-adapter.md"
+      ],
+      "evidence": [
+        "P0-L3/immutable-adapter.md#第九节",
+        "P0-L3/immutable-adapter.md#第十节"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "ACT-4",
+      "category": "action",
+      "title": "三套功能 spec 纳入 CI",
+      "location": "CI",
+      "level": "P1",
+      "status": "待办",
+      "owner": "tooling",
+      "step": 9,
+      "artifacts": [],
+      "evidence": [],
+      "relatedActions": [
+        "REG-ACT-1",
+        "REF-ACT-3"
+      ]
+    },
+    {
+      "id": "REF-ACT-1",
+      "category": "action",
+      "title": "Immer 式未修改返回原引用评估",
+      "location": "选型",
+      "level": "P2",
+      "status": "完成（评估关闭）",
+      "owner": "core",
+      "step": 9,
+      "artifacts": [
+        "P0-L3/引用语义测试报告.md"
+      ],
+      "evidence": [
+        "P0-L3/引用语义测试报告.md#REF-ACT-1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "REF-ACT-2",
+      "category": "action",
+      "title": "mergeRemoteState 克隆式合并评估",
+      "location": "merge",
+      "level": "P2",
+      "status": "完成（评估关闭）",
+      "owner": "core",
+      "step": 9,
+      "artifacts": [
+        "P0-L3/引用语义测试报告.md"
+      ],
+      "evidence": [
+        "P0-L3/引用语义测试报告.md#REF-ACT-2"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "REF-ACT-3",
+      "category": "action",
+      "title": "Step5 + Step6 spec 入 CI",
+      "location": "CI",
+      "level": "P1",
+      "status": "待办",
+      "owner": "tooling",
+      "step": 9,
+      "artifacts": [],
+      "evidence": [],
+      "relatedActions": [
+        "ACT-4"
+      ]
+    },
+    {
+      "id": "BENCH-ACT-1",
+      "category": "action",
+      "title": "性能对拍纳入 CI",
+      "location": "CI",
+      "level": "P1",
+      "status": "待办",
+      "owner": "tooling",
+      "step": 9,
+      "artifacts": [],
+      "evidence": [
+        "scripts/compare-bench.js"
+      ],
+      "relatedActions": [
+        "ACT-4"
+      ]
+    },
+    {
+      "id": "BENCH-ACT-3",
+      "category": "action",
+      "title": "性能预算文档",
+      "location": "CI",
+      "level": "P2",
+      "status": "待办",
+      "owner": "docs",
+      "step": 9,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/P0后基准对比.md#BENCH-ACT-3"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "REG-ACT-1",
+      "category": "action",
+      "title": "功能 spec 入 CI（PR 卡口）",
+      "location": "CI",
+      "level": "P1",
+      "status": "待办",
+      "owner": "tooling",
+      "step": 9,
+      "artifacts": [],
+      "evidence": [],
+      "relatedActions": [
+        "ACT-4"
+      ]
+    },
+    {
+      "id": "OK-01",
+      "category": "ok",
+      "title": "actions.addNode snapshot 齐全",
+      "location": "L1160",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-02",
+      "category": "ok",
+      "title": "actions.updateText tags 重算",
+      "location": "L1173",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#2"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-03",
+      "category": "ok",
+      "title": "actions.toggleDone 双向切换",
+      "location": "L1181",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#3"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-04",
+      "category": "ok",
+      "title": "actions.moveNode 拒绝自环",
+      "location": "L1215",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#5"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-05",
+      "category": "ok",
+      "title": "actions.removeNode 递归 + 墓碑",
+      "location": "L1236",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#6"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-06",
+      "category": "ok",
+      "title": "commitPendingEditBeforeRender 三态",
+      "location": "L2124",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#38"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-07",
+      "category": "ok",
+      "title": "openCalTimeModal 时间/重复",
+      "location": "L3573",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#25"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-08",
+      "category": "ok",
+      "title": "renderCalNode blur 日期解析",
+      "location": "L5655",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#30"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-09",
+      "category": "ok",
+      "title": "ensureWordInit 幂等迁移",
+      "location": "L7420",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#33"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OK-10",
+      "category": "ok",
+      "title": "importOutline 缩进单位推断",
+      "location": "L9600",
+      "level": "OK",
+      "status": "审计通过",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.csv#57"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OBS-1",
+      "category": "obs",
+      "title": "commitPendingEditBeforeRender.word 四标志",
+      "location": "L2147",
+      "level": "P2",
+      "status": "已复核",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/回调验证记录.md#OBS-1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OBS-2",
+      "category": "obs",
+      "title": "renderDbTable.titleInput 400ms 防抖",
+      "location": "L6290",
+      "level": "P2",
+      "status": "已复核",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.md#OBS-2"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OBS-3",
+      "category": "obs",
+      "title": "renderMindmap 拖拽 snapshot 决策",
+      "location": "L7900",
+      "level": "P2",
+      "status": "已闭环",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/回调验证记录.md#OBS-3",
+        "P0-L3/diffs/step4.diff"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "OBS-4",
+      "category": "obs",
+      "title": "ensureWordInit _wordFlat 标记",
+      "location": "L7420",
+      "level": "P2",
+      "status": "已复核",
+      "owner": "audit",
+      "step": 4,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/commit-callback-audit.md#OBS-4"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "58-01",
+      "category": "agg",
+      "title": "__juProduce 与 safeClone 量级同级（固定开销不可测）",
+      "location": "-",
+      "level": "OK",
+      "status": "完成",
+      "owner": "bench",
+      "step": 7,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/P0后基准对比.md#观察3"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "58-02",
+      "category": "agg",
+      "title": "commit 非 light delta 0.0%（@100/@500）",
+      "location": "-",
+      "level": "OK",
+      "status": "完成",
+      "owner": "bench",
+      "step": 7,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/P0后基准对比.md#4.1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "58-03",
+      "category": "agg",
+      "title": "commit light 近零（计时分辨率内）",
+      "location": "-",
+      "level": "OK",
+      "status": "完成",
+      "owner": "bench",
+      "step": 7,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/P0后基准对比.md#4.1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "58-04",
+      "category": "agg",
+      "title": "undoRedo delta 0.0%（p95 @500 噪声 -21%）",
+      "location": "-",
+      "level": "OK",
+      "status": "完成",
+      "owner": "bench",
+      "step": 7,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/P0后基准对比.md#4.1"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "58-05",
+      "category": "agg",
+      "title": "三套 spec 合计 59 用例全绿（after）",
+      "location": "tests/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "qa",
+      "step": "5-6",
+      "artifacts": [],
+      "evidence": [
+        "playwright-report"
+      ],
+      "relatedActions": [
+        "ACT-4"
+      ]
+    },
+    {
+      "id": "58-06",
+      "category": "agg",
+      "title": "P0 前基线（baseline-step1）4 条预期失败 → after 全通过",
+      "location": "tests/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "qa",
+      "step": "3-7",
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/回归对拍报告.md#3.4"
+      ],
+      "relatedActions": []
+    },
+    {
+      "id": "58-07",
+      "category": "agg",
+      "title": "引用不变量 28 条锁定",
+      "location": "tests/",
+      "level": "OK",
+      "status": "完成",
+      "owner": "qa",
+      "step": 6,
+      "artifacts": [],
+      "evidence": [
+        "P0-L3/引用语义测试报告.md"
+      ],
+      "relatedActions": [
+        "REF-ACT-3"
+      ]
+    }
+  ],
+  "artifacts": {
+    "docs": [
+      "P0-L3/README.md",
+      "P0-L3/基线核对.md",
+      "P0-L3/选型记录.md",
+      "P0-L3/immutable-adapter.md",
+      "P0-L3/commit-diff.patch",
+      "P0-L3/commit替换说明.md",
+      "P0-L3/light污染修复记录.md",
+      "P0-L3/commit-callback-audit.md",
+      "P0-L3/commit-callback-audit.csv",
+      "P0-L3/回调验证记录.md",
+      "P0-L3/引用语义测试报告.md",
+      "P0-L3/P0后基准对比.md",
+      "P0-L3/回归对拍报告.md",
+      "P0-L3/L3验收记录.md",
+      "P0-L3/性能预算.md",
+      "项目日志.md"
+    ],
+    "tools": [
+      "tools/audit-commit-callbacks.js",
+      "tools/audit-indirect-calls.js",
+      "scripts/compare-bench.js"
+    ],
+    "tests": [
+      "tests/l3-light-pollution.spec.ts",
+      "tests/l3-commit-callbacks.spec.ts",
+      "tests/l3-reference-semantics.spec.ts",
+      "tests/bench-p0-after-l3.spec.ts"
+    ],
+    "boards": [
+      "ju-week-board.html.html"
+    ],
+    "freezeList": [
+      "JU-58项修复回归清单-v2.0-frozen.md",
+      "回归清单.csv",
+      "fix-map.json"
+    ]
+  },
+  "nextStep": {
+    "id": "Step9",
+    "title": "CI 集成与后续行动闭环",
+    "items": [
+      "ACT-4",
+      "REF-ACT-3",
+      "BENCH-ACT-1",
+      "BENCH-ACT-3",
+      "REG-ACT-1"
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 2 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-B91AklPE.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+[M1-2] perTab stats=[{"add":519,"update":316,"remove":165,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":454,"storedBytes":189944},{"add":563,"update":287,"remove":150,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":450,"storedBytes":190100},{"add":545,"update":286,"remove":169,"skipped":0,"limitBlocked":0,"addNull":0,"errors":[],"finalCount":101,"storedBytes":85771}]
+[M1-2] {
+  "perTab": [
+    {
+      "tab": "tab-1",
+      "add": 519,
+      "update": 316,
+      "remove": 165,
+      "finalCount": 454,
+      "storedBytes": 189944
+    },
+    {
+      "tab": "tab-2",
+      "add": 563,
+      "update": 287,
+      "remove": 150,
+      "finalCount": 450,
+      "storedBytes": 190100
+    },
+    {
+      "tab": "tab-3",
+      "add": 545,
+      "update": 286,
+      "remove": 169,
+      "finalCount": 101,
+      "storedBytes": 85771
+    }
+  ],
+  "totalOps": 3000,
+  "convergedCounts": [
+    451,
+    451,
+    451
+  ],
+  "memoryProjectionHash": [
+    "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0",
+    "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0",
+    "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0"
+  ],
+  "diskProjectionHash": [
+    "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0",
+    "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0",
+    "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0"
+  ],
+  "diskRawHash": [
+    "ad8c9d4d161ae58088051ee94efd98d1d3df9b28c81adc2fec5935df83421ee2",
+    "ad8c9d4d161ae58088051ee94efd98d1d3df9b28c81adc2fec5935df83421ee2",
+    "ad8c9d4d161ae58088051ee94efd98d1d3df9b28c81adc2fec5935df83421ee2"
+  ],
+  "memoryDiskAligned": [
+    {
+      "tab": "tab-1",
+      "mem": "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0",
+      "disk": "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0"
+    },
+    {
+      "tab": "tab-2",
+      "mem": "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0",
+      "disk": "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0"
+    },
+    {
+      "tab": "tab-3",
+      "mem": "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0",
+      "disk": "ce60c6db89c402cad60648b0c1d739db442f1c02659b5068cb271f0ec015c8d0"
+    }
+  ],
+  "canonicalEqual": true,
+  "pageErrors": []
+}
+  ok 1 [chromium] › tests\concurrency.spec.ts:154:1 › M1-2 3 标签并发收敛测试（内存态 + 磁盘态） (2.0m)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-B91AklPE.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 2 [chromium] › tests\concurrency.spec.ts:373:1 › review13 · 两窗口交替编辑后强杀不丢最后编辑（ISSUE-001 单通道） (6.2s)
+
+  2 passed (2.2m)

@@ -1,0 +1,37 @@
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 6 tests using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-C-KNM0W7.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 1 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:14:1 › review12 · A 主库可读 + 残留快照 → 不复活且快照被清除 (4.7s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-C-KNM0W7.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 2 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:28:1 › review12 · B 忘记密码清空后 preimport 与主库均不复活 (4.9s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-C-KNM0W7.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 3 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:59:1 › review12 · C 主库不可读时快照被消费且一次性清除 (3.0s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-C-KNM0W7.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 4 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:73:1 › review13 · D clear_encrypted 失败必须保持锁定并提示（ISSUE-005） (3.9s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-C-KNM0W7.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 5 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:139:1 › review14 · E 关闭加密：在途密文写盘后先明文落盘再清 encStore (4.0s)
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-C-KNM0W7.js
+[plugin vite:singlefile] Inlining: style-CK_-BAAO.css
+  ok 6 [chromium] › tests\v21-review12-preimport-lifecycle.spec.ts:170:1 › review14 · F 关闭加密 clear 失败必须回滚加密态且保留 encStore (4.3s)
+
+  6 passed (27.1s)

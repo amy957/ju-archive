@@ -1,0 +1,13 @@
+﻿[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+
+Running 1 test using 1 worker
+
+[playwright] Chromium: C:\Users\12601\AppData\Local\Google\Chrome\Application\chrome.exe
+[plugin vite:singlefile] 
+
+[plugin vite:singlefile] Inlining: main-BD8fOaDm.js
+[plugin vite:singlefile] Inlining: style-yB3PHiSZ.css
+[diag] {"direct":"threw:diag-quota","afterRaw":"[]","errors":[]}
+  ok 1 [chromium] 鈥?tests\review9-13-diag.spec.ts:3:1 鈥?diag (5.9s)
+
+  1 passed (8.4s)

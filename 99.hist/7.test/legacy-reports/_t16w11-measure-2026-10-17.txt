@@ -1,0 +1,48 @@
+{
+  "sparse3600": {
+    "qlen": 3600,
+    "msize": 31,
+    "head": 0,
+    "maxQ": 3600,
+    "maxM": 230
+  },
+  "sparse3600Old": {
+    "qlen": 3600,
+    "msize": 31,
+    "head": 0
+  },
+  "sparse12000": {
+    "qlen": 4031,
+    "msize": 31,
+    "head": 0,
+    "maxQ": 4096
+  },
+  "sparse12000Old": {
+    "qlen": 12000,
+    "msize": 31,
+    "head": 0,
+    "maxQ": 12000
+  },
+  "burst5000": {
+    "qlen": 903,
+    "msize": 2000,
+    "head": 903
+  },
+  "bigStateP95": {
+    "p50": 0.0004,
+    "p95": 0.001,
+    "p99": 0.0036,
+    "max": 0.267,
+    "qlen": 2031,
+    "msize": 31,
+    "head": 0
+  }
+}
+---
+SPARSE3600_QLEN=3600 SPARSE3600_MAXQ=3600 SPARSE3600_MSIZE=31
+SPARSE3600_OLD_QLEN=3600
+SPARSE12000_QLEN=4031 SPARSE12000_MAXQ=4096
+SPARSE12000_OLD_QLEN=12000 OLD_MAXQ=12000
+BURST5000_QLEN=903 BURST5000_MSIZE=2000
+BIGSTATE_P50_MS=0.0004 BIGSTATE_P95_MS=0.0010 BIGSTATE_P99_MS=0.0036 BIGSTATE_MAX_MS=0.2670
+RESULT=PASS

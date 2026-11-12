@@ -1,0 +1,45 @@
+﻿[build:all] 鉁?Web 浜х墿鍚壒寰佺鍙凤細applyInlineStyle, normalizeInlineStyles, initRichtextStyleMode
+[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+[build:all] 娓呯悊鍘嗗彶 tauri-codegen 璧勪骇娈嬬暀锛堢 5 姝ュ墠缃級锛?[build:all]   娓呯悊 codegen 璧勪骇鐩綍锛歴rc-tauri/target/release/build/app-3e2ce4bea8f00c9f/out/tauri-codegen-assets锛? 涓枃浠讹級
+[build:all]     - c67b44dfc8ad03c82898888af5d8b58ba17cb98f6d551ed1ec1e0028255b148d.html  3135786 B
+[build:all]   宸茶Е纰?src-tauri/build.rs锛堝己鍒?codegen 閲嶅缓锛?[build:all] 鉁?codegen 璧勪骇娓呯悊瀹屾垚锛氱洰褰?1 涓?/ 鏂囦欢 1 涓紙鏋勫缓鍚庡簲 stale=0锛?[build:all] 鈹佲攣鈹?[5/12] 妗岄潰鏋勫缓 tauri build --bundles none 鈹佲攣鈹?   Compiling app v2.1.0 (E:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri)
+warning: function `patch_nodes` is never used
+   --> src\main.rs:116:4
+    |
+116 | fn patch_nodes(
+    |    ^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `app` (bin "app") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 20.64s
+[build:all] 鉁?妗岄潰鏋勫缓 tauri build --bundles none 閫氳繃锛?2.3s锛?[build:all] 绗?5 姝ヤ骇鍑烘椂闂存埑锛?[build:all]   web e:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\dist\index.html  4705410 B  2026-11-02T12:58:24.720Z
+[build:all]   exe e:\APP\褰掓。\6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\JU.exe  7304192 B  2026-11-02T12:59:17.133Z
+[build:all]   codegen 璧勪骇锛堟瀯寤哄悗锛夛細src-tauri/target/release/build/app-3e2ce4bea8f00c9f/out/tauri-codegen-assets  html=1 exe=0  [f5d696cc9d60a6bbc208be7a55bfa6ff5e2e614606a350c293cfc1e2a7e5969c.html]
+[build:all] 鉁?codegen 璧勪骇鐩綍骞插噣锛堜粎鏈疆浜х墿锛屾棤娈嬬暀 HTML/exe锛?[build:all] dist 鍐呭锛歠iles=[index.html]  dirs=[]
+[build:all] 鉁?dist 鍐?HTML 鎭板ソ 1 浠斤細index.html锛堝唴宓岃寖鍥存敹鏁涳級
+[build:all] 鈹佲攣鈹?[6/12] 鍙戝竷褰掓。 prepare-release 鈹佲攣鈹?[release] ISSUE-012 璁╀綅浠剁Щ鍑?1 浠?鈫?90杩囩▼鏉愭枡/tmp/fixr6-12/prev-release-1793624357370锛屼繚鐣?v2.1.0-2026-11-02.prev-1793612249014锛涙竻鍗曪細v2.1.0-2026-11-01.prev-1793607517501
+[release] 鏃㈡湁褰掓。鏁翠綋鏀瑰悕涓?8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02.prev-1793624357374锛圝U_RELEASE_OVERWRITE=1锛?[release] Web 鍗曟枃浠剁増   6.P0-T3鍩虹嚎/m07-vite/dist/index.html -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-Web.html
+[release]   SHA-256 3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221  (4.49 MB)
+[release]   缁濆璺緞 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-02\JU-v2.1-Web.html
+[release] 妗岄潰鐗?x64    6.P0-T3鍩虹嚎/m07-vite/src-tauri/target/release/ju.exe -> 8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe
+[release]   SHA-256 fa477029eb6024f3046f414dcfe6f06b48683720b711501acbc6943e9bd8e78e  (6.97 MB)
+[release]   缁濆璺緞 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-02\JU-v2.1-win-x64.exe
+[release] 娓呭崟     8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-checksums.txt锛? 椤癸級
+[release] 褰掓。鐩綍 e:\APP\褰掓。\8.鍙戝竷涓嶤I\release\v2.1.0-2026-11-02锛堜綅浜?dist 涔嬪锛屼笉浼氳 Tauri 鍐呭祵锛?[release] 鉁?鍙戝竷鍖呭噯澶囧畬鎴?[build:all] 鉁?鍙戝竷褰掓。 prepare-release 閫氳繃锛?.2s锛?[build:all] 鈹佲攣鈹?[6b/12] 褰掓。涓夎鏍￠獙 check-release-parity 鈹佲攣鈹?[parity] v2.1.0-2026-11-02/JU-v2.1-Web.html  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[parity] dist/index.html  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[parity] 鉁?褰掓。 Web 涓?dist 涓€鑷?[parity] v2.1.0-2026-11-02/JU-v2.1-win-x64.exe  fa477029eb6024f3046f414dcfe6f06b48683720b711501acbc6943e9bd8e78e
+[parity] 6.P0-T3鍩虹嚎\m07-vite\src-tauri\target\release\ju.exe  fa477029eb6024f3046f414dcfe6f06b48683720b711501acbc6943e9bd8e78e
+[parity] 鉁?褰掓。 exe 涓庢瀯寤轰骇鐗╀竴鑷?[build:all] 鉁?褰掓。涓夎鏍￠獙 check-release-parity 閫氳繃锛?.1s锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-Web.html == dist/index.html锛?583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221锛?[build:all] 鉁?褰掓。鍚屾锛?./../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe == src-tauri/target/release/JU.exe锛坒a477029eb6024f3046f414dcfe6f06b48683720b711501acbc6943e9bd8e78e锛?[build:all] 
+[build:all] 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 鏋勫缓浜х墿娓呭崟 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲
+[build:all] 
+[build:all] 鏂囦欢                                                                       瀛楄妭  SHA-256
+[build:all] -------------------------------------------------------------  ------------  ----------------------------------------------------------------
+[build:all] dist/index.html                                                     4705410  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-Web.html            4705410  3583c822f21762d1141723fe5766bd4fead23ba9617be298402d35d9b29dd221
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-checksums.txt           169  aba1cfa880b21a4680e4e1bf6f1fe51fe0b0015960c15f79e46af3a044298907
+[build:all] ../../8.鍙戝竷涓嶤I/release/v2.1.0-2026-11-02/JU-v2.1-win-x64.exe         7304192  fa477029eb6024f3046f414dcfe6f06b48683720b711501acbc6943e9bd8e78e
+[build:all] 
+[build:all] 鍚堣 4 涓枃浠讹紝16,715,181 瀛楄妭
+[build:all] 鉁?涓€閿彂鐗堥摼璺畬鎴?

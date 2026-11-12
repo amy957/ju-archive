@@ -1,0 +1,85 @@
+﻿{
+  "allGreen": true,
+  "gatesAll": true,
+  "gates": {
+    "smoke": true,
+    "property.full": true,
+    "property.clean": true,
+    "fuzz": true,
+    "crash": true,
+    "multitab": true,
+    "soak": true,
+    "mutation": true,
+    "error_report": true,
+    "dynamic": true,
+    "static": true
+  },
+  "verdict": {
+    "pass": true,
+    "statement": "L16 鍏ㄩ噺 QA 缁堥獙閫氳繃锛岀己闄?A~L 宸插叏閮ㄩ棴鐜?
+  },
+  "defectRows": 12,
+  "htmlHasForbiddenNote": false,
+  "mdHasForbiddenNote": false,
+  "mdHasConclusion": true,
+  "canonicalBytes": 1122483,
+  "canonicalSha": "31BE83ABEDBABA7F457F5C0C01CD5C2FA74F2E67617FB7D6E28ED5698AA751F8",
+  "mirrorBytes": 1122483,
+  "mirrorSha": "31BE83ABEDBABA7F457F5C0C01CD5C2FA74F2E67617FB7D6E28ED5698AA751F8",
+  "artifacts": {
+    "all-l16-fixed.json": "77373EAECEAE14AB39C3E10332D95F54F98451BDC1019AA11AD0BBFAC3F9A1CD",
+    "all.json": "F1F3E9AE3EBA6B43E4398282992FB6001044B951DAAAFD6DD9566C560A68AB01",
+    "JU-Workbench-v2.0-L16-娴嬭瘯鎶ュ憡.html": "D5B6EBCA534B9EF68EEB0ACFC90646B88993570BAA516AF0CFCEA7008DAC71D2",
+    "L16-缁堥獙瀹屾垚鎶ュ憡-2026-10-17.md": "BF1923FB5BA5A6E0B251C9A7508C3A471AA38E5EC82B014243C330DA9DAC5A65"
+  },
+  "soak": {
+    "pass": true,
+    "__slowTicks": [],
+    "__maxOpMs": 25.1,
+    "nodes": 20000,
+    "ops": 40
+  },
+  "propertyFull": {
+    "pass": true,
+    "iterations": 200,
+    "invFails": {
+      "I1": 0,
+      "I3": 0,
+      "I4": 0,
+      "I5": 0
+    },
+    "errors": 0,
+    "defectARootOps": 0,
+    "samples": [],
+    "nodeCount": 6
+  },
+  "propertyClean": {
+    "pass": true,
+    "iterations": 200,
+    "legacyScenarios": 22,
+    "invFails": {
+      "I2": 0
+    },
+    "samples": []
+  },
+  "fuzz": {
+    "pass": true,
+    "fuzz": "31/31",
+    "fuzzTotal": 31,
+    "fuzzPass": 31,
+    "unsafeInState": false,
+    "unsafeCount": 0,
+    "unsafeSamples": [],
+    "pwned": 0,
+    "xss": "14/14",
+    "pwnedSamples": []
+  },
+  "crash": "6/6",
+  "multitab": "4/4",
+  "mutation": "5/5",
+  "errorReport": "9/9",
+  "dynamic": {
+    "checks": "15/15",
+    "knownA": false
+  }
+}
