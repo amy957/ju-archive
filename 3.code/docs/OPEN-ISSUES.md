@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED, DO NOT EDIT -->
-ISSUE-001 关闭加密复核失败仍回滚加密态（实时 dist=361B27F0…、归档 Web=361B27F0…；exe/setup 哈希见归档清单，待 P-15/P-16 实机复核）
+ISSUE-001 关闭加密复核失败仍回滚加密态（实时 dist=784D2437…、归档 Web=784D2437…；exe/setup 哈希见归档清单，待 P-15/P-16 实机复核）
 ISSUE-002 发布准入曾判「可发布」而 CSP 风险接受未签字（发布准入已回退不可发布，待签字复核）
-ISSUE-003 dist 早于 src 最新变更，check-dist-parity 真实红未登记（当前 dist=361B27F0…、归档 Web=361B27F0…；check-release-parity Exit 0；parity=PASS；发布阻塞=否，待真实重建重写清单后关闭）
+ISSUE-003 dist 早于 src 最新变更，check-dist-parity 真实红未登记（当前 dist=784D2437…、归档 Web=784D2437…；check-release-parity Exit 0；parity=PASS；发布阻塞=否，待真实重建重写清单后关闭）
 ISSUE-004 CI 在 vite build / Playwright 之后才跑 parity，stale dist 被刷新后掩盖（已前置为 pre-build/pre-verify，待 CI 首跑证据）
 ISSUE-005 发布说明只列 1 项未关闭缺陷，漏报其余项（清单已收敛为 docs 唯一真相源；承接 ISSUE-011 的 review9-08/11/12/13/14 探针补建登记，待复核关闭）
 ISSUE-008 CSP style-src unsafe-inline 仍无有效风险接受（风险接受文件已签字，待复核关闭）
