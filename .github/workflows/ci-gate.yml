@@ -112,7 +112,7 @@ jobs:
 
       - name: Inline style gate (check-inline-style)
         working-directory: 3.code
-        run: node scripts/check-inline-style.mjs
+        run: node scripts/check-inline-style.mjs --ci-mode
 
       - name: No fixed-sleep gate (check-no-sleep)
         working-directory: 3.code

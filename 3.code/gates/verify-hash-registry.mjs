@@ -1702,7 +1702,9 @@ const TARGETS = [
      RELEASE-NOTES.md 与 checksums.sha256 期望按落盘实测重算（含 RELEASE-NOTES 校验脚本首列空字段修正后
      的二次重算），且 status 由 current 改为 INVALID，期望值随之重算
      （7,106/AD813263… → 8,465/2667A8AC…）；方数保持 49。 */
-  ['release-manifest.json',                path.join(ROOT, '0.stage', '_quarantine', '8.rel-archive-20261112', 'legacy', 'v2.0-t22-r4-2026-10-18', 'release-manifest.json'), 8465, '2667A8ACF07115F80B896141B00A52AC50183C2CFD938B9AC7294AEE0A3C06D2', 'CRLF'],
+  /* 退役（2026-11-12）：release-manifest.json 指向 0.stage/_quarantine/ 下的历史归档，
+     该目录被 .gitignore 排除，干净检出必然 ENOENT —— 登记一个装不进仓库的文件等于让
+     CI 恒红。历史 manifest 已随 8.rel-archive-20261112 一并隔离，内容不再参与判定。 */
   /* 批次 3（2026-10-20 · 不变量清单文书面纳编）：L941 遗留旧色值硬编码清理
      （#DFECD5 / #CAD3C3 / #1772B4 / #3170A7  →  #DFECD5 / #CAD3C3 / #0A1929 / #152A4A / #1D355E）
      + 文件末尾物理追加 §二十三「2026-10-20 代码-清单对拍修复登记」（修复登记 68–74 / 51 行，

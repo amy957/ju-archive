@@ -25,7 +25,7 @@ const sourceIds = () => {
 const ARCH = sha8(path.join(resolveLatestReleaseDir(), WEB_OUT_NAME));
 /* 干净检出（CI）无 dist：仅在 dist 缺失时回落到归档 Web 哈希。
    否则文档内容随「本机有没有构建」漂移，check-manifest 在 CI 恒红。 */
-const DIST = sha8(WEB_BUNDLE) || ARCH;
+const DIST = existsSync(WEB_BUNDLE) ? sha8(WEB_BUNDLE) : ARCH;
 const PE = parityExit();
 const PARITY = PE === 0 ? 'PASS' : 'BLOCK', BLOCKED = PE === 0 ? '否' : '是';
 const BODY_ALL = [
