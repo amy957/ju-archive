@@ -2,9 +2,9 @@
   "release": "v2.1.0",
   "version": "v2.1.0",
   "status": "RELEASE-HOLD",
-  "reason": "parity=PASS（12 项门禁本轮实跑全绿）；剩余阻塞=13 项桌面实机未验证（ISSUE-101~113）",
+  "reason": "parity=PASS（14 项门禁本轮实跑全绿，且已在全新克隆等价验证 CI 全部门禁步骤）；剩余阻塞=13 项桌面实机未验证（ISSUE-101~113）+ CI 首跑未出绿",
   "manifest": "release-manifest.json",
   "notes": "唯一现行交付目录（固定名 v2.1.0）；历史发布包已归档隔离至 0.stage/_quarantine/8.rel-archive-20261112/",
-  "updated_at": "2026-11-12T19:57:57+08:00",
+  "updated_at": "2026-11-12T23:50:01+08:00",
   "parity": "PASS"
 }
