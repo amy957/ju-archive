@@ -30,7 +30,7 @@ const __dirname = path.dirname(__filename);
 const STEP9 = path.resolve(__dirname, '..');
 const APP_URL =
   process.env.JU_APP_URL ||
-  'file://' + path.join(STEP9, 'v2.0-t3.html');
+  'file://' + path.join(STEP9, '..', 'canonical', 'v2.0-t3.html');
 
 const L11_ON = process.env.JU_L11 === '1';
 
@@ -66,7 +66,7 @@ test('T-100 · 接缝默认启用态（缺省即安装 __juL10D1；显式 false 
 });
 
 test('T-101 · 产品尾页脚（字节冻结件组成部分 · 39 B）保持', async () => {
-  const buf = fs.readFileSync(path.join(STEP9, 'v2.0-t3.html'));
+  const buf = fs.readFileSync(path.join(STEP9, '..', 'canonical', 'v2.0-t3.html'));
   const tail = buf.subarray(buf.length - 39).toString('utf8');
   expect(buf.length).toBe(972267);
   expect(tail.startsWith('<!-- ')).toBe(true);

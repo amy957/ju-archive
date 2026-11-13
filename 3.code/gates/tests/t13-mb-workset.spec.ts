@@ -35,7 +35,7 @@ const STEP9 = path.resolve(__dirname, '..');
 const CANONICAL = path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 const APP_URL =
   process.env.JU_APP_URL ||
-  'file://' + path.join(STEP9, 'v2.0-t3.html');
+  'file://' + path.join(STEP9, '..', 'canonical', 'v2.0-t3.html');
 
 /* 【L13-W3 · 门禁激活】由 W2 的「默认 false（红证载体）」改为「激活/开启」：
    缺省即运行（显式 JU_L13=0 才关闭），确保 T-111~T-114 真实运行；T-115/T-116 条件跳过。 */

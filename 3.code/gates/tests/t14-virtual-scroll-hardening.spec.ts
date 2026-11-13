@@ -44,7 +44,7 @@ const STEP9 = path.resolve(__dirname, '..');
 const CANONICAL = path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 const APP_URL =
   process.env.JU_APP_URL ||
-  'file://' + path.join(STEP9, 'v2.0-t3.html');
+  'file://' + path.join(STEP9, '..', 'canonical', 'v2.0-t3.html');
 
 /* L14 接缝（seam）门禁 —— 默认不启用（承 l14-w1 §3.2 RL-7 与 LO-7=A）：
    仅当 JU_L14=1 时本 spec 纳入门禁；缺省整文件 skip，PW 与 L13 逐项一致（171）。 */

@@ -58,7 +58,7 @@ const __dirname = path.dirname(__filename);
 const STEP9 = path.resolve(__dirname, '..');
 const APP_URL =
   process.env.JU_APP_URL ||
-  'file://' + path.join(STEP9, 'v2.0-t3.html');
+  'file://' + path.join(STEP9, '..', 'canonical', 'v2.0-t3.html');
 
 /* ── 接缝契约常量（与上文冻结契约 ①② 一致） ── */
 const SEAM_FLAG = '__juL10D1Seam';

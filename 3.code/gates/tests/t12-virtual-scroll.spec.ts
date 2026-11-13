@@ -33,7 +33,7 @@ const STEP9 = path.resolve(__dirname, '..');
 const CANONICAL = path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 const APP_URL =
   process.env.JU_APP_URL ||
-  'file://' + path.join(STEP9, 'v2.0-t3.html');
+  'file://' + path.join(STEP9, '..', 'canonical', 'v2.0-t3.html');
 
 const L12_ON = process.env.JU_L12 === '1';
 /* 视口上限（= VIRTUAL_THRESHOLD，l12-w1 §四 冻结；真虚拟滚动渲染节点数上限） */
