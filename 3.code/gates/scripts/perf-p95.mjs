@@ -37,12 +37,6 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 await page.goto('file://' + APP.replace(/\\/g, '/'));
 await page.waitForFunction(() => typeof state === 'object' && state && state.rootId, null, { timeout: 20000 });
 
-/* 首屏：导航起算到 First Contentful Paint */
-const firstPaint = await page.evaluate(() => {
-  const e = performance.getEntriesByType('paint').find((x) => x.name === 'first-contentful-paint');
-  return e ? e.startTime : null;
-});
-
 /* 造 1000 节点（直接构造 state 节点树，形状与产品一致），再走产品自带的渲染入口 */
 const built = await page.evaluate((target) => {
   const s = state;
@@ -67,25 +61,38 @@ await page.evaluate(() => {
   const b = [...document.querySelectorAll('button')].find((x) => (x.textContent || '').trim() === '大纲');
   if (b) b.click();
 });
+/* 首屏：导航起算到 First Contentful Paint（在渲染之后读取，避免条目尚未生成） */
+const firstPaint = await page.evaluate(() => {
+  const e = performance.getEntriesByType('paint').find((x) => x.name === 'first-contentful-paint');
+  return e ? e.startTime : null;
+});
 await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
 
-/* 滚动：在可视滚动容器上连续滚动，采样每次滚动的帧间隔 */
-const scroll = await page.evaluate(async (samples) => {
-  const cands = [...document.querySelectorAll('div')]
-    .filter((e) => e.scrollHeight > e.clientHeight + 200 && e.clientHeight > 200);
-  const box = cands.sort((a, b) => b.scrollHeight - a.scrollHeight)[0];
-  /* 大纲是虚拟列表：容器 scrollHeight 可能等于 clientHeight，没有实体滚动条；
-     此时如实返回 reason，由上层标 skipped，不用 0ms 冒充通过。 */
-  if (!box) return { ok: false, reason: 'no scroll container（虚拟列表无实体滚动条）' };
+/* 渲染行数：用于判定「注入的节点是否真的进了渲染树」，避免拿假数据量测滚动 */
+const renderedRows = await page.evaluate(() => document.querySelectorAll('#content [data-nid], #content .ju-row, #content .ol-row').length);
+
+/* 滚动：大纲是虚拟列表，没有实体滚动条（#content scrollHeight == clientHeight），
+   因此用真实滚轮事件（Playwright mouse.wheel → 受信任输入）驱动，再测「滚轮→两帧落定」耗时。
+   同时用首行元素位移判定「确实滚动了」，避免在不能滚的页面测出假绿。 */
+const scroll = await (async () => {
+  await page.mouse.move(640, 320);
+  const posOf = () => page.evaluate(() => {
+    const c = document.querySelector('#content');
+    return { doc: Math.round(window.scrollY || 0), content: c ? Math.round(c.scrollTop) : 0 };
+  });
+  const before = await posOf();
   const frames = [];
-  for (let i = 0; i < samples; i += 1) {
-    const t0 = performance.now();
-    box.scrollTop += 120;
-    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    frames.push(performance.now() - t0);
+  for (let i = 0; i < SCROLL_SAMPLES; i += 1) {
+    const t0 = Date.now();
+    await page.mouse.wheel(0, 240);
+    await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+    frames.push(Date.now() - t0);
   }
-  return { ok: true, frames, scrollHeight: box.scrollHeight, clientHeight: box.clientHeight };
-}, SCROLL_SAMPLES);
+  const after = await posOf();
+  const movedPx = Math.abs(after.content - before.content) + Math.abs(after.doc - before.doc);
+  if (movedPx === 0) return { ok: false, reason: '滚轮未产生位移（页面无滚动入口）', before, after };
+  return { ok: true, frames, moved_px: movedPx };
+})();
 
 /* 视图切换：工具栏「思维导图」/「大纲」往返，取每次点击→两帧后落定的耗时 */
 const switchRes = await page.evaluate(async (rounds) => {
@@ -113,9 +120,10 @@ const report = {
   generated_at: new Date().toISOString(),
   artifact: path.relative(path.resolve(HERE, '..', '..'), APP).replace(/\\/g, '/'),
   nodes: built,
+  rendered_rows: renderedRows,
   first_paint_ms: firstPaint === null ? null : round(firstPaint),
   scroll: scroll.ok
-    ? { samples: scroll.frames.length, p95_ms: round(scrollP95), budget_ms: BUDGET_SCROLL_MS, pass: scrollP95 < BUDGET_SCROLL_MS }
+    ? { samples: scroll.frames.length, moved_px: scroll.moved_px, p95_ms: round(scrollP95), budget_ms: BUDGET_SCROLL_MS, pass: scrollP95 < BUDGET_SCROLL_MS }
     : { samples: 0, p95_ms: null, budget_ms: BUDGET_SCROLL_MS, pass: null, skipped: scroll.reason },
   view_switch: { samples: switchRes.ok ? switchRes.times.length : 0, p95_ms: round(switchP95), budget_ms: BUDGET_SWITCH_MS, pass: switchRes.ok && switchP95 < BUDGET_SWITCH_MS },
 };
