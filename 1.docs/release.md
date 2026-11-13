@@ -75,3 +75,33 @@ node '6.P0-T3基线\m07-vite\scripts\build-all.mjs'   # 连续两次均以「✓
 - 让位目录名：`v<版本>-<日期>.prev-<UTCms>`，与正式归档目录同级。
 - `build-all.mjs` 产物清单、`check-release-parity.mjs` 的「最新归档」判定均按名排除 `.prev-*`。
 - 未设该变量时链路仍在发布归档步骤中止（Exit 1），提示中会给出变量名。
+
+## CI 首跑（2026-11-13 · 已出绿）
+
+`.github/workflows/ci-gate.yml` 首次完整通过，作为「门禁可在干净环境复现」的硬证据留存。
+
+| 项 | 值 |
+|---|---|
+| workflow | `ju-ci-gate`（job `verify + registrar`） |
+| run ID | `43363821905` |
+| job ID | `131683374035` |
+| 提交 | `c48fff8` |
+| 运行环境 | `windows-latest` · Node 22 |
+| 耗时 | 2m39s |
+| 结论 | **success**（24 个步骤全绿） |
+| 链接 | https://github.com/amy957/ju-archive/actions/runs/43363821905 |
+
+覆盖内容：dist/web/release 三项 parity（`--ci-mode`）· spec-registration · deps-wired ·
+inline-style · no-fixed-sleep · css-tokens · package-scripts · security · Registrar（PARTY_COUNT=63 / drift=0）·
+**Regression · spec**（lint + Node 503 + Playwright 171 + invariants）· **Regression · bench**（7 项）·
+check-manifest · 二次 parity 与 release parity。
+
+使 CI 可绿的关键修复（均为「只有本地能过」的隐性依赖）：
+
+1. `npm ci` / chromium 安装 / Registrar / verify 缺 `working-directory`（根目录无 package.json）。
+2. 源码指纹直接哈希原始字节，受行尾影响 → 改为 CRLF→LF 归一（`3a0532e1…`）。
+3. `.gitattributes` 统一 `eol=lf`，登记表按 LF 口径重冻结；退役 1 条指向 `_quarantine/` 的条目（64→63）。
+4. `check-inline-style` 干净检出无 `dist` → `--ci-mode` 降级。
+5. `gen-open-issues` 无 `dist` 时回落到归档 Web 哈希。
+6. 55+ 个门禁用例仍引用重组前路径（`3.code/v2.0-t3.html`、`1.历史归档/…`）→ 全部指向
+   `3.code/canonical/v2.0-t3.html` 与 `99.hist/6.dev/frozen/`。
