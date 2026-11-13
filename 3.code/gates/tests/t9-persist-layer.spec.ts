@@ -28,7 +28,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const APP_URL =
   process.env.JU_APP_URL ||
-  'file://' + path.resolve(__dirname, '..', 'v2.0-t3.html');
+  'file://' + path.resolve(__dirname, '..', '..', 'canonical', 'v2.0-t3.html');
 
 /* ── ESM → classic：剥离 import/export，按依赖序拼接（不改源文件） ── */
 function classicBundle(src: string): string {

@@ -24,7 +24,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const CANON = path.join(HERE, '..', 'v2.0-t3.html');
+const CANON = path.join(HERE, '..', '..', 'canonical', 'v2.0-t3.html');
 const SRC = fs.readFileSync(CANON, 'utf8');
 
 function grab(re, name) {

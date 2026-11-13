@@ -30,7 +30,7 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const STEP9 = path.resolve(HERE, '..');
-const CANONICAL = path.resolve(STEP9, '..', 'v2.0-t3.html');
+const CANONICAL = path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 const SRC = readFileSync(CANONICAL, 'utf8');
 
 const HEX6 = /#[0-9A-Fa-f]{6}\b/g;

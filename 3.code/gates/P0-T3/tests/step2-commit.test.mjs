@@ -10,7 +10,7 @@ import vm from 'node:vm';
 
 /* 路径解析：JU_APP_URL 同款约定；默认取 step9 根的 v2.0-t3.html（接线修正：原硬编码归档外 Linux 路径） */
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const FILE = process.env.JU_APP_PATH || path.resolve(HERE, '..', '..', 'v2.0-t3.html');
+const FILE = process.env.JU_APP_PATH || path.resolve(HERE, '..', '..', '..', 'canonical', 'v2.0-t3.html');
 const html = fs.readFileSync(FILE, 'utf8');
 
 let pass = 0, fail = 0;

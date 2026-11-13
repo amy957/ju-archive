@@ -31,9 +31,9 @@ const STEP9 = path.resolve(HERE, '..');
 const ROOT = path.resolve(STEP9, '..', '..');
 const CANONICAL = process.env.JU_L17W3_CANONICAL
   ? path.resolve(process.env.JU_L17W3_CANONICAL)
-  : path.resolve(STEP9, '..', 'v2.0-t3.html');
+  : path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 /* 只读历史锚（改前形态 · 仅读取 · 不写入） */
-const FROZEN_L14 = path.resolve(ROOT, '1.历史归档', '1.1冻结版本', 'v2.0-t3-frozen-t14-2026-10-16.html');
+const FROZEN_L14 = path.resolve(ROOT, '99.hist', '6.dev', 'frozen', 'v2.0-t3-frozen-t14-2026-10-16.html');
 
 const SRC = readFileSync(CANONICAL, 'utf8');
 const STRIP = (s) => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '');

@@ -13,7 +13,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const FILE = path.resolve(HERE, '..', '..', 'v2.0-t3.html');
+const FILE = path.resolve(HERE, '..', '..', '..', 'canonical', 'v2.0-t3.html');
 const html = fs.readFileSync(FILE, 'utf8');
 const scripts = [...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(m => m[1]);
 const all = scripts.join('\n');

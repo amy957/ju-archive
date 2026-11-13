@@ -1629,10 +1629,10 @@ const TARGETS = [
   /* UI-P0/P1/P2 修正波（2026-10-19）：按实测重锚（15,064/995DE392… → 15,868/A47A9678…）。 */
   ['verify.js',        path.join(STEP9, 'scripts', 'verify.js'),                                  23566, '1B117CA074C2920342A434FD3571BB888199E398B8692A8DA03827789B888DE0', 'LF'],
   /* --- 测试 spec --- */
-  ['l8-spec',          path.join(STEP9, 'tests', 't8-persist-patch.spec.ts'),                     62890, '337E45616F526C6F817FA5745EB45BA6C3FDA639FDF9B7CE6A24C0EDC106BA3E', 'LF'],
+  ['l8-spec',          path.join(STEP9, 'tests', 't8-persist-patch.spec.ts'),                     62909, '297A79C880F8B52D57406309192B0DEAB02DFAF0A3340B2ADD1F1FC2E7CC6BE6', 'LF'],
   /* L22-R5 收尾（2026-10-18）：L22-Rename 后支柱目录 `l9/` → `t9/`，本 spec 的 L9_DIR
      基址漏改导致启动期 ENOENT；修正后期望重算（19,846/0CECC43D… → 20,030/C409E738…）。 */
-  ['l9-spec',          path.join(STEP9, 'tests', 't9-persist-layer.spec.ts'),                     19639, 'B08B37291B091C4C828942308205D0DF8E2F3E0B7B10FFC6EC916A70B629FBD7', 'LF'],
+  ['l9-spec',          path.join(STEP9, 'tests', 't9-persist-layer.spec.ts'),                     19658, 'ACA49BFC545D85A9CC8403B1A7EED3ED93F3177E4135F775C8E3C190B3A8190D', 'LF'],
   /* L22-Rename（2026-10-17）：登记器更名后 T-99 执行路径同步（l9/t9-hash-check.mjs → verify-hash-registry.mjs），本 spec 字节锚随之重算。 */
   ['l10-spec',         path.join(STEP9, 'tests', 't10-idb-persist.spec.ts'),   31491, 'FF386B0C150F708BE62897221FA233A839F215D6A7145FE283E3A8C3F0153C42', 'LF'],
   /* --- L9 支柱（运行态模块；不含 .test.mjs） --- */
@@ -1652,12 +1652,12 @@ const TARGETS = [
      （1,854/E54EEFED… → 2,072/D2F296A9…）；同步安装 @types/node 消解 node:* / process 类型报错。 */
   /* UI-P0/P1/P2 修正波（2026-10-19）：按实测重锚（2,072/D2F296A9… → 2,541/FB5A3DFF…）。 */
   ['playwright.config.ts',           path.join(STEP9, 'playwright.config.ts'),                        2541, 'FB5A3DFF79009BC4FAF85B688E36B5A8FDC49BC72EC4BCEA79B0CE1517E0EE66', 'LF'],
-  ['t7-index-worker.spec.ts',        path.join(STEP9, 'tests', 't7-index-worker.spec.ts'),            78996, 'A2C819D3F58B19BCF72232CE972D91E2788E78F9661E99FB98E1C47788BB3DE3', 'LF'],
-  ['t3-invariants.spec.ts',          path.join(STEP9, 'tests', 't3-invariants.spec.ts'),             17957, '5D094B83F6A103FB6B95A157F0E6FCFE95A5889723E88CFB7A16F4958303899B', 'LF'],
-  ['t3-commit-callbacks.spec.ts',    path.join(STEP9, 'tests', 't3-commit-callbacks.spec.ts'),        21366, 'E45445944DD0DB469C447E89BA55DDB437133787AAF92A766FBF3D9F904DF1C4', 'LF'],
+  ['t7-index-worker.spec.ts',        path.join(STEP9, 'tests', 't7-index-worker.spec.ts'),            79015, 'BB234E53147CA453B950E008EA6A0E04876E54C2154EBF2484457236F8DDBA10', 'LF'],
+  ['t3-invariants.spec.ts',          path.join(STEP9, 'tests', 't3-invariants.spec.ts'),             17976, '88F7764BB94541338AC4EC5F4C1E4877C4023B1715405EC3754361C4C6547981', 'LF'],
+  ['t3-commit-callbacks.spec.ts',    path.join(STEP9, 'tests', 't3-commit-callbacks.spec.ts'),        21385, '3EC895DA1F1EBB6FC3D895BB714770E4BEFF37703697D79C71665FB61B18FB87', 'LF'],
   /* UI-P0/P1/P2 修正波（2026-10-19）：按实测重锚（26,143/AD993FF3… → 27,497/DE5C2181…）。 */
-  ['t3-reference-semantics.spec.ts', path.join(STEP9, 'tests', 't3-reference-semantics.spec.ts'),     27497, 'DE5C218161946A422233737667FA1F8202AF697C9F383309D0F862498C4E71EC', 'LF'],
-  ['t3-light-pollution.spec.ts',     path.join(STEP9, 'tests', 't3-light-pollution.spec.ts'),         11103, 'D3C707DE8363555F55647262662E13E995A207688F72A55801D54901B65CC80E', 'LF'],
+  ['t3-reference-semantics.spec.ts', path.join(STEP9, 'tests', 't3-reference-semantics.spec.ts'),     27516, '84B486C6F467C9327E0D6C66CD7433B18E6BDF8CE246B8C15D2CF6EE41BF784D', 'LF'],
+  ['t3-light-pollution.spec.ts',     path.join(STEP9, 'tests', 't3-light-pollution.spec.ts'),         11122, '5ADC5EE291B9328E74E9DC21C16F83EBF2B4DB401163C6B2CDC8F8D72741904D', 'LF'],
   ['compare-bench.js',               path.join(STEP9, 'scripts', 'compare-bench.js'),                 6681, '60F9AB83F6FC17E05403805850C623058CDC67861E9077AD112CF911AFCA21B5', 'LF'],
   /* L22-R5 收尾（2026-10-18）：废弃守卫 + 未知 mode 非零退出后期望重算
      （3,752/C418D29F… → 5,149/092DB56C…）。 */
@@ -1665,29 +1665,29 @@ const TARGETS = [
   /* --- L11-W4 纳编（LO-8=B 续扩 · 28 → 30 方） --- */
   ['t11-w4-consistency.test.mjs',    path.join(STEP9, 't9', 't11-w4-consistency.test.mjs'),           16032, 'AFEA4866D2B083DC372A70CB3838B88FCC6D7F6307C870CF32A8100437867628', 'LF'],
   /* L22-Rename（2026-10-17）：T-102 执行路径同步（verify-hash-registry.mjs），本 spec 字节锚随之重算。 */
-  ['t11-anchor-governance.spec.ts',  path.join(STEP9, 'tests', 't11-anchor-governance.spec.ts'),      8959, '16861D630B15CADC0646DBB658C6B619BF2088D2158585CC317CBAEAC3E59EE1', 'LF'],
+  ['t11-anchor-governance.spec.ts',  path.join(STEP9, 'tests', 't11-anchor-governance.spec.ts'),      8972, '4FDE555E552E345C40F8E72B5A41FAB1704E3A060136D1A4F1AAC128B2EFA91F', 'LF'],
   /* --- L12-W5 纳编（LO-8=B 续扩 · 32 → 36 方） --- */
-  ['t12-virtual-scroll.test.mjs',    path.join(STEP9, 't9', 't12-virtual-scroll.test.mjs'),           6828, '5F2D75DB3AE5FCFF5A2DDCC1086E7935E0D348DA3E86DD32A1D147BFF12BC031', 'LF'],
-  ['t12-w4-consistency.test.mjs',    path.join(STEP9, 't9', 't12-w4-consistency.test.mjs'),          12975, '3717B7B7057BA8E94904F701497C9CFE35F5AACF0DDF18DAF0F9DCAF14716CAC', 'LF'],
-  ['t12-virtual-scroll.spec.ts',     path.join(STEP9, 'tests', 't12-virtual-scroll.spec.ts'),        11020, '29E8C50B607D5313830660BCFBC532849574DBAD347E068F8324907C146A6400', 'LF'],
+  ['t12-virtual-scroll.test.mjs',    path.join(STEP9, 't9', 't12-virtual-scroll.test.mjs'),           6841, '9A0507DD2DB3C26EEC90E67636E15CE1FD7752B0472FB75BB18CAFCBEBD3ECA6', 'LF'],
+  ['t12-w4-consistency.test.mjs',    path.join(STEP9, 't9', 't12-w4-consistency.test.mjs'),          12988, '7F38A6D2780C54B079B8655921CA2009B7B72D19902DC428B6E2A85595CE2E3D', 'LF'],
+  ['t12-virtual-scroll.spec.ts',     path.join(STEP9, 'tests', 't12-virtual-scroll.spec.ts'),        11033, '13F49036F41CA0FFBF713F6FF4CD144F90652465A98387A38D204C87C25B7914', 'LF'],
   /* --- L13-W5 纳编（L0-8=B 修订 · 38 方）：P 层 L13 spec --- */
-  ['t13-mb-workset.spec.ts',         path.join(STEP9, 'tests', 't13-mb-workset.spec.ts'),             15097, 'B90CB8026D0A2F3FA0C26F8A0D8A194ACFFA4C697C4B77887D76588E35EDA18E', 'LF'],
+  ['t13-mb-workset.spec.ts',         path.join(STEP9, 'tests', 't13-mb-workset.spec.ts'),             15110, 'DA75D8CE416AD1A01A5578F6D973C2174CDAF3E24791F4F24EF4E69450BD6A15', 'LF'],
   /* --- L13-W6 纳编（OP-19 补全 · 39 方）：N 层 T-116(N) 等价哨兵载体 --- */
-  ['t13-mb-workset.test.mjs',        path.join(STEP9, 't9', 't13-mb-workset.test.mjs'),               16685, '656F74E3612E809D01965ED6B8DCD2329757465514D6E808C56D68B2D34DFD81', 'LF'],
+  ['t13-mb-workset.test.mjs',        path.join(STEP9, 't9', 't13-mb-workset.test.mjs'),               16698, 'AA7F1BC2AD880136C612EBC2C8C9D54EE8F14E1DA7DF46ABD6D4A93E359E8332', 'LF'],
   /* --- L14-W5 纳编（L0-8=B 续扩 · 39 → 43 方）：L14 N 层等价哨兵载体 ×2 + P 层 L14 spec --- */
-  ['t14-vs-hardening.test.mjs',           path.join(STEP9, 't9', 't14-vs-hardening.test.mjs'),             14247, '9E9A0555F8DA1FE123E2D9421DA4AF5085071103949EE080F7F69E9DD74F859A', 'LF'],
-  ['t14-w4-consistency.test.mjs',         path.join(STEP9, 't9', 't14-w4-consistency.test.mjs'),           11192, 'A46E2EF5031035F7F9B45F1FB9821EF9B3A84FB71DF7FD3F3B319AF240DA8A56', 'LF'],
-  ['t14-virtual-scroll-hardening.spec.ts', path.join(STEP9, 'tests', 't14-virtual-scroll-hardening.spec.ts'), 15043, '7D7BB9D570B1AAB33F688BAFF774AA41D3CD76E8CCC5AFA770A5AC4952ADF835', 'LF'],
+  ['t14-vs-hardening.test.mjs',           path.join(STEP9, 't9', 't14-vs-hardening.test.mjs'),             14260, 'FC04F93444358EDE68E38445FD5A5386725D60F9D14A6D24BAFC6F111F67DBCB', 'LF'],
+  ['t14-w4-consistency.test.mjs',         path.join(STEP9, 't9', 't14-w4-consistency.test.mjs'),           11205, 'F7A30628A8D24786623DC1832CD4B586CE22DECE58510BCF072C7334FF33C223', 'LF'],
+  ['t14-virtual-scroll-hardening.spec.ts', path.join(STEP9, 'tests', 't14-virtual-scroll-hardening.spec.ts'), 15056, '8DA1FAB03B6690DFF6B2817A678BA341B2A47202097685A3757E3037FB3B5324', 'LF'],
   /* --- L17-QA 纳编（L0-8=B 续扩 · 43 → 45 方）：L17 N 层用例（frozen-l17 见上方冻结件段） --- */
-  ['t17-w4-batch-fixes.test.mjs',         path.join(STEP9, 't9', 't17-w4-batch-fixes.test.mjs'),           13524, '2AAAE1CCB2A54E75A441EDEFF118C0F4601A9AF676A789B3D8A12DD0A92C6092', 'LF'],
+  ['t17-w4-batch-fixes.test.mjs',         path.join(STEP9, 't9', 't17-w4-batch-fixes.test.mjs'),           13530, 'B84E416D271070161AB9034795E63E3021F6372CC60859E4DD467E601D89D667', 'LF'],
   /* R32 纳编（2026-10-21 · 64 → 65 方）：L17-W1 Defect-P0-1 N 层回归用例。R31 已把 renderSubTags 的
      dot.style.background 改为 dot.style.setProperty('--tag-color', …)，本用例的 DOM 装配随之补齐
      _vars / setProperty / getPropertyValue，并新增「renderSubTags 仍写内联 background」的反向断言 ⇒
      文件字节 14,180 / 72933C27…F491（CRLF · CR=291 · LF=291）。该文件此前不在登记面内（原注释口径为
      「不纳入 t9-hash-check 43 方登记」），本波按不变量 #87 的可审计要求纳入。 */
-  ['t17-w1-rendersubtags-rows.test.mjs',  path.join(STEP9, 't9', 't17-w1-rendersubtags-rows.test.mjs'),  13908, 'E4B8BC48E72E0E8FB0C71C7BAA15A79E194086C93AE26AF3E2C5B4BEFE4D41BB', 'LF'],
+  ['t17-w1-rendersubtags-rows.test.mjs',  path.join(STEP9, 't9', 't17-w1-rendersubtags-rows.test.mjs'),  13914, '5D42AFABA60ECE1F9662FB06AD9E07302DC1E9C4CC787295B96FF123CC1FB64A', 'LF'],
   /* --- L19-QA 纳编（L0-8=B 续扩 · 45 → 47 方）：L19 N 层代表用例（frozen-l19 见上方冻结件段） --- */
-  ['t19-patch3.test.mjs',                  path.join(STEP9, 't9', 't19-patch3.test.mjs'),                 10555, '97854DA7768BF3404F8C5DEDCAF74E624238EFCAFE1AA942BE5F0F08A66F2E9C', 'LF'],
+  ['t19-patch3.test.mjs',                  path.join(STEP9, 't9', 't19-patch3.test.mjs'),                 10561, '9646D6E23375CB23F3384E9CF32CAEE209AA4E080D7B649809A1FF145EC4A71F', 'LF'],
   /* --- L22-R5 收尾纳编（2026-10-18 · 47 → 49 方）：重复冻结件说明与 r4 发布清单纳入防篡改面 --- */
   /* 批次 3 缺陷修复（2026-10-18 · ISSUE-020）：ALIAS.md 追加「取件指引」段（检索仅用 canonical/r4 与
      frozen-l13/l14 之后代次），期望值随之重算（2,949/53F72206… → 3,691/B2B233A8…）；方数保持 49。 */

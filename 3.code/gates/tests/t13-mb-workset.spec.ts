@@ -32,7 +32,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const STEP9 = path.resolve(__dirname, '..');
-const CANONICAL = path.resolve(STEP9, '..', 'v2.0-t3.html');
+const CANONICAL = path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 const APP_URL =
   process.env.JU_APP_URL ||
   'file://' + path.join(STEP9, 'v2.0-t3.html');

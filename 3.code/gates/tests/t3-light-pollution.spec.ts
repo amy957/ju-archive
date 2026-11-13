@@ -31,7 +31,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const APP_URL =
   process.env.JU_APP_URL ||
-  'file://' + path.resolve(__dirname, '..', 'v2.0-t3.html');
+  'file://' + path.resolve(__dirname, '..', '..', 'canonical', 'v2.0-t3.html');
 /** 打开应用并等待关键原语就绪。 */
 async function bootApp(page: import('@playwright/test').Page) {
   await page.goto(APP_URL, { waitUntil: 'domcontentloaded' });

@@ -19,7 +19,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const APP_URL = process.env.JU_APP_URL || 'file://' + path.resolve(__dirname, '..', 'v2.0-t3.html');
+const APP_URL = process.env.JU_APP_URL || 'file://' + path.resolve(__dirname, '..', '..', 'canonical', 'v2.0-t3.html');
 const ROOT_DIR = path.resolve(__dirname, '..', '..', '..');
 /* ISSUE-018：物理截图与宽度度量一律落子目录，禁止在归档根目录新建目录。
    截图 -> 4.回归与验收/uw-screenshots；度量 JSON -> 90过程材料/_哈希与行尾校验。 */

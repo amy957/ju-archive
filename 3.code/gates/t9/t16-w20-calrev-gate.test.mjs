@@ -29,7 +29,7 @@ const STEP9 = path.resolve(HERE, '..');
 /* 红证支持：JU_W20_CANONICAL 可指向改前字节副本（默认 canonical） */
 const CANONICAL = process.env.JU_W20_CANONICAL
   ? path.resolve(process.env.JU_W20_CANONICAL)
-  : path.resolve(STEP9, '..', 'v2.0-t3.html');
+  : path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 const SRC = readFileSync(CANONICAL, 'utf8');
 
 /* ---------- 0) 源码切片：按大括号配对提取函数（跳过注释 / 字符串 / 模板） ---------- */

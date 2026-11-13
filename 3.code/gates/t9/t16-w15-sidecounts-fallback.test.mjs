@@ -25,7 +25,7 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const STEP9 = path.resolve(HERE, '..');
-const CANONICAL = path.resolve(STEP9, '..', 'v2.0-t3.html');
+const CANONICAL = path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 const SRC = readFileSync(CANONICAL, 'utf8');
 
 /* ---------- 1) 提取真实产品实现：侧栏计数段 ---------- */

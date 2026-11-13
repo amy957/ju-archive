@@ -108,7 +108,7 @@ test('T-104 · M-I 接缝默认启用零回归（default-on 四路径等价 · �
 });
 
 /* ── L11-W4 追加（E-1 · 四路径隔离哨兵 + 指标采集；默认关闭态不变） ── */
-const CANONICAL = path.resolve(STEP9, '..', 'v2.0-t3.html');
+const CANONICAL = path.resolve(STEP9, '..', 'canonical', 'v2.0-t3.html');
 
 test('T-105 · 四路径隔离（产物级 · §八 四行逐字：桌面/加密/浏览器/影子层）哨兵', async () => {
   const text = fs.readFileSync(CANONICAL, 'utf8');
