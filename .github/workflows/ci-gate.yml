@@ -74,8 +74,11 @@ jobs:
         run: npx playwright install chromium
 
       # OP-12 / S1: inject the machine-portable Chromium path (no bundled cache).
+      # 必须取「实际执行 Playwright 的那一侧」的路径：verify.js 在 3.code/gates 下跑，
+      # 其 @playwright/test 版本与 3.code 不同，捆绑的 chromium 版本也不同；
+      # 指错版本会让全部 171 个 spec 秒退（Executable doesn't exist）。
       - name: Inject JU_CHROMIUM_PATH
-        working-directory: 3.code
+        working-directory: 3.code/gates
         shell: pwsh
         run: |
           $p = node -e "console.log(require('@playwright/test').chromium.executablePath())"
@@ -137,9 +140,15 @@ jobs:
 
       # Stage 2 - full regression (Node 以 verify.js 输出为准 + Playwright 171 + bench 7). Read-only.
       # L13 (E-3 / M-B) is enabled by default; JU_L13=0 falls back to the 165 baseline.
-      - name: Full regression (verify:all)
+      # 拆成两步：verify.js all = lint + node + pw + invar + bench，混在一个 step 里
+      # 失败时无法判断是「用例红」还是「性能阈值抖」，CI 上必须能归因。
+      - name: Regression · spec (lint + node + playwright + invariants)
         working-directory: 3.code/gates
-        run: node scripts/verify.js all
+        run: node scripts/verify.js spec
+
+      - name: Regression · bench (performance parity, 7 metrics)
+        working-directory: 3.code/gates
+        run: node scripts/verify.js bench
 
       # ISSUE-004（review11-04）：release 归档自带清单只读闸门——manifest 与 checksums/真实字节不符
       # 或缺件即 Exit 1；不依赖构建产物，故在 m07-vite 目录跑（该脚本不 Load npm 依赖）。
